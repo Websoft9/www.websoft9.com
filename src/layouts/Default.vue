@@ -1,14 +1,19 @@
 <template>
   <div class="layout">
     <header class="header">
-      <g-link to="/"><g-image src="~/images/logo.png" to="/" width="150"/></g-link>
+      <g-link to="/"><g-image src="~/assets/logo.png" to="/" width="150"/></g-link>
       <nav class="nav">
-        <g-link class="nav__link" to="/apps/">应用</g-link>
-        <g-link class="nav__link" to="/apps/">价格</g-link>
+        <g-link class="nav__link" to="/cn/apps/">应用</g-link>
+        <g-link class="nav__link" to="/cn/apps/">价格</g-link>
         <g-link class="nav__link" to="https://support.websoft9.com">支持</g-link>
         <g-link class="nav__link" to="https://blog.websoft9.com">博客</g-link>
-        <g-link class="nav__link" to="/apps/">伙伴</g-link>
-        <g-link class="nav__link" to="/about/">资源</g-link>
+        <g-link class="nav__link" to="/cn/apps/">伙伴</g-link>
+        <g-link class="nav__link" to="/cn/about/">资源</g-link>
+        <g-link class="nav__link" to="/cn/about/">关于</g-link>
+        <b-nav-item-dropdown text="Lang" right>
+          <b-dropdown-item href="#">简体中文</b-dropdown-item>
+          <b-dropdown-item href="#">英文</b-dropdown-item>
+        </b-nav-item-dropdown>
       </nav>
     </header>
     <slot/>
@@ -30,14 +35,12 @@ body {
   padding:0;
   line-height: 1.5;
 }
-
 .layout {
   max-width: 1280px;
   margin: 0 auto;
   padding-left: 20px;
   padding-right: 20px;
 }
-
 .header {
   display: flex;
   justify-content: space-between;
@@ -45,7 +48,6 @@ body {
   margin-bottom: 20px;
   height: 80px;
 }
-
 .nav__link {
   margin-left: 20px;
 }
