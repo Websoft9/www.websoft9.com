@@ -1,5 +1,5 @@
 <template>
-  <Layout>
+  <EnglishLayout>
     <h1>关于我们</h1>
     <p>
     Websoft9（“网久软件”）专注于开源软件的集成、自动化安装与商业级支持服务，通过我们的 Cloud Installer 技术，用户可以在云平台上更快速地完成软件个性化部署，简单、安全、高效，无需繁琐的安装与配置。
@@ -11,13 +11,20 @@
 目前，我们已与全球主流的云平台进行合作，服务 140 多个国家和地区的 20000+ 企业客户。
     
     </p>
-  </Layout>
+  </EnglishLayout>
 </template>
 
 <script>
+import EnglishLayout from '~/layouts/English.vue'
+
 export default {
+
   metaInfo: {
-    title: 'About us'
+    title: 'About Us'
+  },
+
+  components: {
+    EnglishLayout
   }
 }
 </script>

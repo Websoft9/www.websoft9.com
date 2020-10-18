@@ -1,33 +1,47 @@
-<template>
-  <Layout>
-
-    <!-- Learn how to use images here: https://gridsome.org/docs/images -->
-    <g-image alt="Example image" src="~/favicon.png" width="135" />
-
-    <h1>Hello, world!</h1>
-
-    <p>
-      Lorem ipsum dolor sit amet, consectetur adipisicing elit. Pariatur excepturi labore tempore expedita, et iste tenetur suscipit explicabo! Dolores, aperiam non officia eos quod asperiores
-    </p>
-
-    <p class="home-links">
-      <a href="https://gridsome.org/docs/" target="_blank" rel="noopener">Gridsome Docs</a>
-      <a href="https://github.com/gridsome/gridsome" target="_blank" rel="noopener">GitHub</a>
-    </p>
-
-  </Layout>
-</template>
-
-<script>
-export default {
-  metaInfo: {
-    title: 'Hello, world!'
-  }
-}
+<script> 
+ 
+var type=navigator.appName 
+ 
+if (type=="Netscape") 
+ 
+var lang = navigator.language 
+ 
+else
+ 
+var lang = navigator.userLanguage 
+ 
+//cut down to first 2 chars of country code 
+ 
+var lang = lang.substr(0,2) 
+ 
+// 英语
+ 
+if (lang == "en") 
+ 
+window.location.replace('url') 
+ 
+// 简体中文
+ 
+else if (lang == "zh-cn") 
+ 
+window.location.replace('url') 
+ 
+// 繁体中文
+ 
+else if (lang == "zh-tw") 
+ 
+window.location.replace('url') 
+ 
+// 德语
+ 
+else if (lang == "de") 
+ 
+window.location.replace('url') 
+ 
+// 除上面所列的语言
+ 
+else
+ 
+window.location.replace('url')
+ 
 </script>
-
-<style>
-.home-links a {
-  margin-right: 1rem;
-}
-</style>

@@ -1,5 +1,6 @@
 <template>
-  <Layout>
+  <ChineseLayout>
+  <Banner></Banner> 
     <h1>关于我们</h1>
 <p>
     Websoft9（“网久软件”）专注于开源软件的集成、自动化安装与商业级支持服务，通过我们的 Cloud Installer 技术，用户可以在云平台上更快速地完成软件个性化部署，简单、安全、高效，无需繁琐的安装与配置。
@@ -25,14 +26,26 @@
     </b-col>
   </b-row>
 </b-container>
+  </ChineseLayout>
 
-  </Layout>
+
+
 </template>
 
 <script>
+import BackToTop from 'vue-backtotop'
+import ChineseLayout from '~/layouts/Chinese.vue'
+import Banner from '~/components/cn/Banner.vue'
+
 export default {
+
   metaInfo: {
-    title: 'About us'
+    title: '关于'
+  },
+
+  components: {
+    ChineseLayout,
+    Banner
   }
 }
 </script>
