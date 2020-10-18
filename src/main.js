@@ -4,7 +4,7 @@
 //import ChineseLayout from '~/layouts/Chinese.vue'
 //import EnglishLayout from '~/layouts/English.vue'
 
-import '~/assets/styles.css'
+import '~/assets/style/custom.scss'
 
 import BootstrapVue from 'bootstrap-vue'
 import 'bootstrap/dist/css/bootstrap.css'

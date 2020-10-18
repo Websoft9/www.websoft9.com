@@ -13,5 +13,9 @@
     "gridsome": "^0.7.0",
     "vue": "^2.6.12",
     "vue-backtotop": "^1.6.1"
+  },
+  "devDependencies": {
+    "node-sass": "^4.14.1",
+    "sass-loader": "^10.0.3"
   }
 }
