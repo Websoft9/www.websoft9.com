@@ -6,7 +6,7 @@
         <div class="startp-nav">
             <div class="container">
                 <nav class="navbar navbar-expand-md navbar-light">
-                    <router-link class="navbar-brand" to="/">
+                    <router-link class="navbar-brand" to="/cn">
                         <img src="../assets/logo.png" alt="logo" />
                     </router-link>
 
@@ -16,52 +16,74 @@
                     <b-collapse class="collapse navbar-collapse mean-menu" id="navbarSupportedContent" is-nav>
                         <ul class="navbar-nav nav ml-auto">
                             <li class="nav-item">
-                                <a href="/apps" class="nav-link active">
+                                <a href="#" class="nav-link active">
                                     应用 <feather type="chevron-down"></feather>
                                 </a>
 
                                 <ul class="dropdown_menu">
                                     <li class="nav-item">
-                                        <router-link to="/" class="nav-link">阿里云</router-link>
+                                        <a href="https://shop658hlt17.market.aliyun.com/" class="nav-link" target="_blank">阿里云</a>
                                     </li>
                                     <li class="nav-item">
-                                        <router-link to="/developer" class="nav-link">腾讯云</router-link>
+                                        <a href="https://market.cloud.tencent.com/stores/1252192180" class="nav-link" target="_blank">腾讯云</a>
                                     </li>
                                     <li class="nav-item">
-                                        <router-link to="/web-hosting" class="nav-link">华为云</router-link>
+                                        <a href="https://market.huaweicloud.com/seller/e57458aa054b430fb2f82a066105f986" class="nav-link" target="_blank">华为云</a>
                                     </li>
                                     <li class="nav-item">
-                                        <router-link to="/repair-center" class="nav-link">Azure</router-link>
+                                        <a href="https://azuremarketplace.microsoft.com/en-us/marketplace/apps?search=websoft9&page=1" class="nav-link" target="_blank">Azure</a>
                                     </li>
                                     <li class="nav-item">
-                                        <router-link to="/iot" class="nav-link">AWS</router-link>
+                                        <a href="https://aws.amazon.com/marketplace/seller-profile?id=c639a579-182c-4d30-8578-4d4d89fba658" class="nav-link" target="_blank">AWS</a>
                                     </li>
                                 
                                 </ul>
                             </li>
+                            
+                            <li class="nav-item">
+                                <router-link to="/cn/pricing" class="nav-link">价格</router-link>
+                            </li>
 
-                            <li class="nav-item"><a href="#" class="nav-link">About <feather type="chevron-down"></feather></a>
+                            <li class="nav-item">
+                                <router-link to="/cn/services" class="nav-link">服务市场</router-link>
+                            </li>
+
+                            <li class="nav-item"><a href="#" class="nav-link">文档与支持<feather type="chevron-down"></feather></a>
                                 <ul class="dropdown_menu">
                                     <li class="nav-item">
-                                        <router-link to="/about-style-one" class="nav-link">About Style 1</router-link>
+                                        <a href="https://support.websoft9.com/zh/alldocs.html" target="_blank" class="nav-link">文档</a>
                                     </li>
-                                    
+
                                     <li class="nav-item">
-                                        <router-link to="/about-style-two" class="nav-link">About Style 2</router-link>
+                                        <a href="https://support.websoft9.com/docs/faq/zh" target="_blank" class="nav-link">FAQ</a>
                                     </li>
-                                    
+
                                     <li class="nav-item">
-                                        <router-link to="/about-style-three" class="nav-link">About Style 3</router-link>
+                                        <a href="https://desk.zoho.com.cn/portal/websoft9/newticket" target="_blank" class="nav-link">7×24 工单</a>
                                     </li>
+
+                                    <li class="nav-item">
+                                        <a href="https://support.websoft9.com/zh/contact.html" target="_blank" class="nav-link">人工支持</a>
+                                    </li>
+
+                                    <li class="nav-item">
+                                        <a href="https://support.websoft9.com/zh/terms.html" target="_blank" class="nav-link">支持须知</a>
+                                    </li>
+
                                 </ul>
                             </li>
 
+
                             <li class="nav-item">
-                                <router-link to="/shop" class="nav-link">Shop</router-link>
+                                <router-link to="/cn/partner" class="nav-link">伙伴</router-link>
                             </li>
-                            
+
                             <li class="nav-item">
-                                <a href="#" class="nav-link">Pages <feather type="chevron-down"></feather></a>
+                                <a href="https://blog.websoft9.com" target="_blank" class="nav-link">博客</a>
+                            </li>
+
+                            <li class="nav-item">
+                                <a href="#" class="nav-link">关于<feather type="chevron-down"></feather></a>
                                 <ul class="dropdown_menu">
                                     <li class="nav-item"><a href="#" class="nav-link">Features</a>
                                         <ul class="dropdown_menu">
@@ -140,53 +162,12 @@
                                     </li>
                                 </ul>
                             </li>
-                            
-
-                            <li class="nav-item"><a href="#" class="nav-link">Blog <feather type="chevron-down"></feather></a>
-                                <ul class="dropdown_menu">
-                                    <li class="nav-item">
-                                        <router-link to="/blog-grid" class="nav-link">Blog Grid</router-link>
-                                    </li>
-
-                                    <li class="nav-item">
-                                        <router-link to="/blog-right-sidebar" class="nav-link">Blog Right Sidebar</router-link>
-                                    </li>
-
-                                    <li class="nav-item">
-                                        <router-link to="/blog-grid-two" class="nav-link">Blog Grid 2</router-link>
-                                    </li>
-
-                                    <li class="nav-item">
-                                        <router-link to="/blog-right-sidebar-two" class="nav-link">Blog Right Sidebar 2</router-link>
-                                    </li>
-
-                                    <li class="nav-item">
-                                        <router-link to="/blog-grid-three" class="nav-link">Blog Grid 3</router-link>
-                                    </li>
-
-                                    <li class="nav-item">
-                                        <router-link to="/blog-right-sidebar-three" class="nav-link">Blog Right Sidebar 3</router-link>
-                                    </li>
-                                    
-                                    <li class="nav-item">
-                                        <router-link to="/blog-details" class="nav-link">Blog Details</router-link>
-                                    </li>
-                                </ul>
-                            </li>
-
-                            <li class="nav-item">
-                                <router-link to="/contact" class="nav-link">Contact</router-link>
-                            </li>
                         </ul>
                     </b-collapse>
 
                     <div class="others-option">
-                        <router-link to="/cart" class="cart-wrapper-btn">
-                            <feather type="shopping-cart"></feather>
-                            <span>标签</span>
-                        </router-link>
-                        <a href="#" class="btn btn-light">Support</a>
-                        <a href="#" class="btn btn-primary">Login</a>
+                        <a href="https://github.com/websoft9" target="_blank" class="btn btn-light">Github</a>
+                        <a href="#" class="btn btn-primary">登录</a>
                     </div>
                 </nav>
             </div> 
@@ -204,10 +185,10 @@
                     <div class="single-footer-widget">
                         <div class="logo">
                             <a href="/">
-                                <img src="../assets/img/logo.png" alt="logo" />
+                                <img src="../assets/logo.png" alt="logo" />
                             </a>
                         </div>
-                        <p>Quis ipsum suspendisse ultrices gravida. Risus commodo viverra maecenas accumsan lacus vel facilisis.</p>
+                        <p>Websoft9 是一家基于开源的软件公司，面向数百个云端业务场景提供开源解决方案。并自动化部署技术，分发到全球主流云市场，服务全球3000万云端企业客户。</p>
                     </div>
                 </div>
 
@@ -239,12 +220,12 @@
 
                 <div class="col-lg-3 col-md-6 col-sm-6">
                     <div class="single-footer-widget">
-                        <h3>Address</h3>
+                        <h3>地址</h3>
                         
                         <ul class="footer-contact-info">
-                            <li><feather type="map-pin"></feather> 27 Division St, New York, NY 10002, USA</li>
-                            <li><feather type="mail"></feather> Email: <a href="#">startp@gmail.com</a></li>
-                            <li><feather type="phone-call"></feather> Phone: <a href="#">+ (321) 984 754</a></li>
+                            <li><feather type="map-pin"></feather>长沙市岳麓区潇湘中路283号岳麓科创港1035室，中国.湖南</li>
+                            <li><feather type="mail"></feather> Email: <a href="#">help@websoft9.com</a></li>
+                            <li><feather type="phone-call"></feather> 电话: <a href="#">0731-89572759</a></li>
                         </ul>
                         <ul class="social-links">
                             <li><a href="#" class="facebook"><feather type="facebook"></feather></a></li>
@@ -257,20 +238,14 @@
 
                 <div class="col-lg-12 col-md-12">
                     <div class="copyright-area">
-                        <p>Copyright &copy;2020 Pasona. All Rights Reserved</p>
+                        <p>©2014-2020 长沙网久软件有限公司 备案：<a href="http://beian.miit.gov.cn/" target="_blank">湘ICP备16009117号</a></p>
                     </div>
                 </div>
             </div>
         </div>
 
         <img src="../assets/img/map.png" class="map" alt="map">
-        <div class="shape1"><img src="../assets/img/shape1.png" alt="shape"></div>
-        <div class="shape8 rotateme"><img src="../assets/img/shape2.svg" alt="shape"></div>
-        <!-- <div class="go-top"><feather type="arrow-up"></feather></div> -->
 
-        <back-to-top bottom="50px" right="50px">
-            <div class="go-top"><feather type="arrow-up"></feather></div>
-        </back-to-top>
     </footer>
     <!-- End Footer Area -->
   </div>
@@ -311,5 +286,7 @@ export default {
             return this.$store.state.cart;
         }
     }
-}
+};
+
+
 </script>
