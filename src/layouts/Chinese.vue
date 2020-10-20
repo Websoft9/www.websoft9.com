@@ -83,83 +83,45 @@
                             </li>
 
                             <li class="nav-item">
-                                <a href="#" class="nav-link">关于<feather type="chevron-down"></feather></a>
+                                <a href="/cn/about" class="nav-link">关于<feather type="chevron-down"></feather></a>
                                 <ul class="dropdown_menu">
-                                    <li class="nav-item"><a href="#" class="nav-link">Features</a>
-                                        <ul class="dropdown_menu">
-                                            <li class="nav-item">
-                                                <router-link to="/features" class="nav-link">Features</router-link>
-                                            </li>
 
-                                            <li class="nav-item">
-                                                <router-link to="/feature-details" class="nav-link">Features Details</router-link>
-                                            </li>
-                                        </ul>
-                                    </li>
-
-                                    <li class="nav-item"><a href="#" class="nav-link">Services</a>
-                                        <ul class="dropdown_menu">
-                                            <li class="nav-item">
-                                                <router-link to="/service-style-one" class="nav-link">Services Style 1</router-link>
-                                            </li>
-
-                                            <li class="nav-item">
-                                                <router-link to="/service-style-two" class="nav-link">Services Style 2</router-link>
-                                            </li>
-
-                                            <li class="nav-item">
-                                                <router-link to="/service-style-three" class="nav-link">Services Style 3</router-link>
-                                            </li>
-                                            
-                                            <li class="nav-item">
-                                                <router-link to="/service-style-four" class="nav-link">Services Style 4</router-link>
-                                            </li>
-                                            
-                                            <li class="nav-item">
-                                                <router-link to="/service-style-five" class="nav-link">Services Style 5</router-link>
-                                            </li>
-
-                                            <li class="nav-item">
-                                                <router-link to="/service-details" class="nav-link">Services Details</router-link>
-                                            </li>
-                                        </ul>
-                                    </li>
-                                    
-                                    <li class="nav-item"><a href="#" class="nav-link">Project</a>
-                                        <ul class="dropdown_menu">
-                                            <li class="nav-item">
-                                                <router-link to="/project-style-one" class="nav-link">Project Style 1</router-link>
-                                            </li>
-
-                                            <li class="nav-item">
-                                                <router-link to="/project-style-two" class="nav-link">Project Style 2</router-link>
-                                            </li>
-                                            
-                                            <li class="nav-item">
-                                                <router-link to="/project-details" class="nav-link">Project Details</router-link>
-                                            </li>
-                                        </ul>
+                                    <li class="nav-item">
+                                        <router-link to="/cn/about" class="nav-link">公司介绍</router-link>
                                     </li>
 
                                     <li class="nav-item">
-                                        <router-link to="/team" class="nav-link">Team</router-link>
+                                        <router-link to="/cn/cases" class="nav-link">客户案例</router-link>
                                     </li>
 
                                     <li class="nav-item">
-                                        <router-link to="/pricing" class="nav-link">Pricing</router-link>
+                                        <router-link to="/cn/partner" class="nav-link">合作伙伴</router-link>
+                                    </li>
+
+                                    <li class="nav-item">
+                                        <router-link to="/cn/news" class="nav-link">公司新闻</router-link>
                                     </li>
                                     
                                     <li class="nav-item">
-                                        <router-link to="/faq" class="nav-link">FAQ</router-link>
+                                        <a href="https://blog.websoft9.com" target="_blank" class="nav-link">博客</a>
+                                    </li>
+                                    
+                                    <li class="nav-item">
+                                        <router-link to="/faq" class="nav-link">招聘</router-link>
                                     </li>
 
                                     <li class="nav-item">
-                                        <router-link to="/coming-soon" class="nav-link">Coming Soon</router-link>
+                                        <a href="https://support.websoft9.com/docs/legal/zh/" target="_blank" class="nav-link">社会责任</a>
+                                    </li>
+                                    
+                                    <li class="nav-item">
+                                        <a href="https://support.websoft9.com/docs/legal/zh/" target="_blank" class="nav-link">法律条款</a>
                                     </li>
 
                                     <li class="nav-item">
-                                        <router-link to="/not-found" class="nav-link">404 Error</router-link>
+                                        <router-link to="/coming-soon" class="nav-link">联系我们</router-link>
                                     </li>
+
                                 </ul>
                             </li>
                         </ul>
@@ -167,7 +129,7 @@
 
                     <div class="others-option">
                         <a href="https://github.com/websoft9" target="_blank" class="btn btn-light">Github</a>
-                        <a href="#" class="btn btn-primary">登录</a>
+                        <a href="/en" class="btn btn-primary">English</a>
                     </div>
                 </nav>
             </div> 
@@ -188,32 +150,33 @@
                                 <img src="../assets/logo.png" alt="logo" />
                             </a>
                         </div>
-                        <p>Websoft9 是一家基于开源的软件公司，面向数百个云端业务场景提供开源解决方案。并自动化部署技术，分发到全球主流云市场，服务全球3000万云端企业客户。</p>
+                        <p>网久软件（英文名称：Websoft9）是一家开源软件公司，优选和集成数百个热门的云原生应用。目前与全球主流云平台（Azure，AWS，阿里云，腾讯云，华为云等）合作，应用直达 3000 万云端企业客户。</p>
                     </div>
                 </div>
 
                 <div class="col-lg-3 col-md-6 col-sm-6">
                     <div class="single-footer-widget pl-5">
-                        <h3>Company</h3>
+                        <h3>公司</h3>
                         <ul class="list">
                             <li><a href="#">关于我们</a></li>
                             <li><a href="#">服务</a></li>
-                            <li><a href="#">Features</a></li>
-                            <li><a href="#">Our Pricing</a></li>
-                            <li><a href="#">Latest News</a></li>
+                            <li><a href="#">合作伙伴</a></li>
+                            <li><a href="#">联系我们</a></li>
+                            <li><a href="https://support.websoft9.com/docs/legal/zh/" target="_blank">法律条款</a></li>
                         </ul>
                     </div>
                 </div>
 
                 <div class="col-lg-3 col-md-6 col-sm-6">
                     <div class="single-footer-widget">
-                        <h3>Support</h3>
+                        <h3>资源</h3>
                         <ul class="list">
-                            <li><a href="#">FAQ's</a></li>
-                            <li><a href="#">Privacy Policy</a></li>
-                            <li><a href="#">Terms & Condition</a></li>
-                            <li><a href="#">Community</a></li>
-                            <li><a href="#">Contact Us</a></li>
+                            <li><a href="#">文档</a></li>
+                            <li><a href="#">FAQ</a></li>
+                            <li><a href="#">工单</a></li>
+                            <li><a href="#">开具发票</a></li>
+                            <li><a href="https://github.com/websoft9">Github</a></li>
+
                         </ul>
                     </div>
                 </div>

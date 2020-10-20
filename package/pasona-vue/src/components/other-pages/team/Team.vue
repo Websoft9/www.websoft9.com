@@ -10,14 +10,14 @@
                 </div>
 			</div>
 			
-			<div class="shape1"><img src="../../../assets/img/shape1.png" alt="shape"></div>
-			<div class="shape2 rotateme"><img src="../../../assets/img/shape2.svg" alt="shape"></div>
-			<div class="shape3"><img src="../../../assets/img/shape3.svg" alt="shape"></div>
-			<div class="shape4"><img src="../../../assets/img/shape4.svg" alt="shape"></div>
-			<div class="shape5"><img src="../../../assets/img/shape5.png" alt="shape"></div>
-			<div class="shape6 rotateme"><img src="../../../assets/img/shape4.svg" alt="shape"></div>
-			<div class="shape7"><img src="../../../assets/img/shape4.svg" alt="shape"></div>
-			<div class="shape8 rotateme"><img src="../../../assets/img/shape2.svg" alt="shape"></div>
+			<div class="shape1"><img src="../../assets/img/shape1.png" alt="shape"></div>
+			<div class="shape2 rotateme"><img src="../../assets/img/shape2.svg" alt="shape"></div>
+			<div class="shape3"><img src="../../assets/img/shape3.svg" alt="shape"></div>
+			<div class="shape4"><img src="../../assets/img/shape4.svg" alt="shape"></div>
+			<div class="shape5"><img src="../../assets/img/shape5.png" alt="shape"></div>
+			<div class="shape6 rotateme"><img src="../../assets/img/shape4.svg" alt="shape"></div>
+			<div class="shape7"><img src="../../assets/img/shape4.svg" alt="shape"></div>
+			<div class="shape8 rotateme"><img src="../../assets/img/shape2.svg" alt="shape"></div>
         </div>
         <!-- End Page Title -->
 
@@ -28,7 +28,7 @@
 					<div class="col-lg-4 col-md-6 col-sm-6">
 						<div class="single-team">
 							<div class="team-image">
-								<img src="../../../assets/img/team-image/1.jpg" alt="image">
+								<img src="../../assets/img/team-image/1.jpg" alt="image">
 							</div>
 
 							<div class="team-content">
@@ -52,7 +52,7 @@
 					<div class="col-lg-4 col-md-6 col-sm-6">
 						<div class="single-team">
 							<div class="team-image">
-								<img src="../../../assets/img/team-image/2.jpg" alt="image">
+								<img src="../../assets/img/team-image/2.jpg" alt="image">
 							</div>
 
 							<div class="team-content">
@@ -76,7 +76,7 @@
 					<div class="col-lg-4 col-md-6 col-sm-6">
 						<div class="single-team">
 							<div class="team-image">
-								<img src="../../../assets/img/team-image/3.jpg" alt="image">
+								<img src="../../assets/img/team-image/3.jpg" alt="image">
 							</div>
 
 							<div class="team-content">
@@ -100,7 +100,7 @@
 					<div class="col-lg-4 col-md-6 col-sm-6">
 						<div class="single-team">
 							<div class="team-image">
-								<img src="../../../assets/img/team-image/4.jpg" alt="image">
+								<img src="../../assets/img/team-image/4.jpg" alt="image">
 							</div>
 
 							<div class="team-content">
@@ -124,7 +124,7 @@
 					<div class="col-lg-4 col-md-6 col-sm-6">
 						<div class="single-team">
 							<div class="team-image">
-								<img src="../../../assets/img/team-image/5.jpg" alt="image">
+								<img src="../../assets/img/team-image/5.jpg" alt="image">
 							</div>
 
 							<div class="team-content">
@@ -148,7 +148,7 @@
 					<div class="col-lg-4 col-md-6 col-sm-6">
 						<div class="single-team">
 							<div class="team-image">
-								<img src="../../../assets/img/team-image/1.jpg" alt="image">
+								<img src="../../assets/img/team-image/1.jpg" alt="image">
 							</div>
 
 							<div class="team-content">
@@ -172,7 +172,7 @@
 					<div class="col-lg-4 col-md-6 col-sm-6">
 						<div class="single-team">
 							<div class="team-image">
-								<img src="../../../assets/img/team-image/2.jpg" alt="image">
+								<img src="../../assets/img/team-image/2.jpg" alt="image">
 							</div>
 
 							<div class="team-content">
@@ -196,7 +196,7 @@
 					<div class="col-lg-4 col-md-6 col-sm-6">
 						<div class="single-team">
 							<div class="team-image">
-								<img src="../../../assets/img/team-image/3.jpg" alt="image">
+								<img src="../../assets/img/team-image/3.jpg" alt="image">
 							</div>
 
 							<div class="team-content">
@@ -220,7 +220,7 @@
 					<div class="col-lg-4 col-md-6 col-sm-6">
 						<div class="single-team">
 							<div class="team-image">
-								<img src="../../../assets/img/team-image/4.jpg" alt="image">
+								<img src="../../assets/img/team-image/4.jpg" alt="image">
 							</div>
 
 							<div class="team-content">

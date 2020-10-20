@@ -13,6 +13,7 @@
     "gridsome": "^0.7.0",
     "vue": "^2.6.12",
     "vue-backtotop": "^1.6.1",
+    "vue-cool-lightbox": "^2.6.4",
     "vue-faq-accordion": "^1.6.2"
   },
   "devDependencies": {

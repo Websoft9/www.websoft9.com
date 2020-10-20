@@ -16,7 +16,7 @@
 		<section class="pricing-area ptb-80 bg-f9f6f6">
 			<div class="container">
 				<div class="section-title">
-					<h2>定价计划</h2>
+					<h3>定价计划</h3>
 					<div class="bar"></div>
 					<p>我们的所有定价计划基于“仅人工服务需要成本”的原则，按需订阅，最大程度帮您节省费用的同时获得企业级支持服务。</p>
 				</div>

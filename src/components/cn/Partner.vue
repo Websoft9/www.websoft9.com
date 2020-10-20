@@ -18,7 +18,7 @@
 		<section class="pricing-area ptb-80 bg-f9f6f6">
 			<div class="container">
 				<div class="section-title">
-					<h2>生态模式</h2>
+					<h3>生态模式</h3>
 					<div class="bar"></div>
 					<p>我们携手合作，通过赋能或被集成，实现最大的连接价值</p>
 				</div>
