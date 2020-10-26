@@ -19,5 +19,20 @@ module.exports = {
         typeName: 'Post',
       },
     },
+
+    {
+      use: '@gridsome/source-ghost',
+      options: {
+        typeName: 'Ghost',
+        baseUrl: 'http://test.websoft9.com',
+        contentKey: '489975ed110fc6c07d4eea7d66',
+        version: 'v3' // default
+      }
+    },
   ],
+
+  templates: {
+    GhostPost: '/:year/:month/:day/:slug',
+    GhostTag: '/tag/:slug'
+  },
 }

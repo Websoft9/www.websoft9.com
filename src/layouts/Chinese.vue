@@ -1,6 +1,7 @@
 <!-- Layout -->
 <template>
   <div class="layout">
+  
     <!-- Start Navbar Area -->
     <header id="header" :class="['headroom', {'is-sticky': isSticky}]">
         <div class="startp-nav">
@@ -59,7 +60,7 @@
                                     </li>
 
                                     <li class="nav-item">
-                                        <a href="https://desk.zoho.com.cn/portal/websoft9/newticket" target="_blank" class="nav-link">7×24 工单</a>
+                                        <router-link to="/cn/ticket" class="nav-link">7×24 工单</router-link>
                                     </li>
 
                                     <li class="nav-item">
@@ -183,18 +184,18 @@
 
                 <div class="col-lg-3 col-md-6 col-sm-6">
                     <div class="single-footer-widget">
-                        <h3>地址</h3>
+                        <h3>联系我们</h3>
                         
                         <ul class="footer-contact-info">
-                            <li><feather type="map-pin"></feather>长沙市岳麓区潇湘中路283号岳麓科创港1035室，中国.湖南</li>
-                            <li><feather type="mail"></feather> Email: <a href="#">help@websoft9.com</a></li>
-                            <li><feather type="phone-call"></feather> 电话: <a href="#">0731-89572759</a></li>
+                            <li><b-icon-geo-alt></b-icon-geo-alt> 长沙市岳麓区潇湘中路283号岳麓科创港1035室，中国.湖南</li>
+                            <li><b-icon-envelope></b-icon-envelope> Email: <a href="#">help@websoft9.com</a></li>
+                            <li><b-icon-telephone></b-icon-telephone> 电话: <a href="#">0731-89572759</a></li>
                         </ul>
                         <ul class="social-links">
-                            <li><a href="#" class="facebook"><feather type="facebook"></feather></a></li>
-                            <li><a href="#" class="twitter"><feather type="twitter"></feather></a></li>
-                            <li><a href="#" class="instagram"><feather type="instagram"></feather></a></li>
-                            <li><a href="#" class="linkedin"><feather type="linkedin"></feather></a></li>
+                            <li><a href="#" class="github"><font-awesome :icon="['fab', 'github']"/></a></li>
+                            <li><a href="#" class="twitter"><font-awesome :icon="['fab', 'github']"/></a></li>
+                            <li><a href="#" class="instagram"><font-awesome :icon="['fab', 'github']"/></a></li>
+                            <li><a href="#" class="linkedin"><font-awesome :icon="['fab', 'github']"/></a></li>
                         </ul>
                     </div>
                 </div>
