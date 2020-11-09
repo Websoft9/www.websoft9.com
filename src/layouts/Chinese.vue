@@ -100,7 +100,7 @@
                                     </li>
 
                                     <li class="nav-item">
-                                        <a href="https://blog.websoft9.com" target="_blank" class="nav-link">公司新闻</a>
+                                        <router-link to="/cn/news" class="nav-link">公司新闻</router-link>
                                     </li>
                                     
                                     <li class="nav-item">
