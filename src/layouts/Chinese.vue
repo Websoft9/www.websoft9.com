@@ -18,7 +18,7 @@
                         <ul class="navbar-nav nav ml-auto">
                             <li class="nav-item">
                                 <a href="#" class="nav-link active">
-                                    应用 <feather type="chevron-down"></feather>
+                                    产品
                                 </a>
 
                                 <ul class="dropdown_menu">
@@ -40,16 +40,17 @@
                                 
                                 </ul>
                             </li>
-                            
+
+                            <li class="nav-item">
+                                <router-link to="/cn/services" class="nav-link">服务</router-link>
+                            </li>
+
                             <li class="nav-item">
                                 <router-link to="/cn/pricing" class="nav-link">价格</router-link>
                             </li>
 
-                            <li class="nav-item">
-                                <router-link to="/cn/services" class="nav-link">服务市场</router-link>
-                            </li>
 
-                            <li class="nav-item"><a href="#" class="nav-link">文档与支持<feather type="chevron-down"></feather></a>
+                            <li class="nav-item"><a href="/cn/support" class="nav-link">文档与支持</a>
                                 <ul class="dropdown_menu">
                                     <li class="nav-item">
                                         <a href="https://support.websoft9.com/zh/alldocs.html" target="_blank" class="nav-link">文档</a>
@@ -58,7 +59,6 @@
                                     <li class="nav-item">
                                         <a href="https://support.websoft9.com/docs/faq/zh" target="_blank" class="nav-link">FAQ</a>
                                     </li>
-
                                     <li class="nav-item">
                                         <router-link to="/cn/ticket" class="nav-link">7×24 工单</router-link>
                                     </li>
@@ -84,7 +84,7 @@
                             </li>
 
                             <li class="nav-item">
-                                <a href="/cn/about" class="nav-link">关于<feather type="chevron-down"></feather></a>
+                                <a href="/cn/about" class="nav-link">关于</a>
                                 <ul class="dropdown_menu">
 
                                     <li class="nav-item">
@@ -100,7 +100,7 @@
                                     </li>
 
                                     <li class="nav-item">
-                                        <router-link to="/cn/news" class="nav-link">公司新闻</router-link>
+                                        <a href="https://blog.websoft9.com" target="_blank" class="nav-link">公司新闻</a>
                                     </li>
                                     
                                     <li class="nav-item">
@@ -108,11 +108,11 @@
                                     </li>
                                     
                                     <li class="nav-item">
-                                        <router-link to="/faq" class="nav-link">招聘</router-link>
+                                        <router-link to="/cn/job" class="nav-link">招聘</router-link>
                                     </li>
 
                                     <li class="nav-item">
-                                        <a href="https://support.websoft9.com/docs/legal/zh/" target="_blank" class="nav-link">社会责任</a>
+                                        <router-link to="/cn/trust" class="nav-link">社会责任</router-link>
                                     </li>
                                     
                                     <li class="nav-item">
@@ -120,7 +120,7 @@
                                     </li>
 
                                     <li class="nav-item">
-                                        <router-link to="/coming-soon" class="nav-link">联系我们</router-link>
+                                        <router-link to="/cn/contact" class="nav-link">联系我们</router-link>
                                     </li>
 
                                 </ul>
@@ -157,45 +157,61 @@
 
                 <div class="col-lg-3 col-md-6 col-sm-6">
                     <div class="single-footer-widget pl-5">
-                        <h3>公司</h3>
+                        <h3>产品与服务</h3>
                         <ul class="list">
-                            <li><a href="#">关于我们</a></li>
-                            <li><a href="#">服务</a></li>
-                            <li><a href="#">合作伙伴</a></li>
-                            <li><a href="#">联系我们</a></li>
-                            <li><a href="https://support.websoft9.com/docs/legal/zh/" target="_blank">法律条款</a></li>
+                            <li><a href="/cn/services">应用</a></li>
+                            <li><a href="/cn/services">服务</a></li>
+                            <li><a href="/cn/services">解决方案</a></li>
+                            <li><a href="/cn/services">行业</a></li>
+                            <li><a href="/cn/services">特征</a></li>
                         </ul>
                     </div>
                 </div>
 
-                <div class="col-lg-3 col-md-6 col-sm-6">
+                <div class="col-lg-2 col-md-6 col-sm-6">
+                    <div class="single-footer-widget">
+                        <h3>支持</h3>
+                        <ul class="list">
+                            <li><a href="https://support.websoft9.com/zh/alldocs.html" target="_blank">文档</a></li>
+                            <li><a href="https://support.websoft9.com/docs/faq/zh" target="_blank">FAQ</a></li>
+                            <li><a href="/cn/ticket" target="_blank">工单</a></li>
+                            <li><a href="https://share.hsforms.com/1GJv3at4TRpOXm_YW_76OVg568t5" target="_blank">开具发票</a></li>
+                            <li><a href="/cn/contact" target="_blank">人工客服</a></li>
+
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="col-lg-2 col-md-6 col-sm-6">
                     <div class="single-footer-widget">
                         <h3>资源</h3>
                         <ul class="list">
-                            <li><a href="#">文档</a></li>
-                            <li><a href="#">FAQ</a></li>
-                            <li><a href="#">工单</a></li>
-                            <li><a href="#">开具发票</a></li>
-                            <li><a href="https://github.com/websoft9">Github</a></li>
+                            <li><a href="/cn/cases" target="_blank">客户案例</a></li>
+                            <li><a href="https://support.websoft9.com/docs/faq/zh/tech-tools.html" target="_blank">小工具</a></li>
+                            <li><a href="https://github.com/websoft9" target="_blank">Github</a></li>
+                            <li><a href="#" target="_blank">视频学习</a></li>
+                            <li><a href="#" target="_blank">直播课堂</a></li>
+                            <li><a href="#" target="_blank">中小企业上云</a></li>
+                            <li><a href="#" target="_blank">开发者</a></li>
+                            <li><a href="https://blog.websoft9.com/1111-buy-20-off-all-in-websoft9/" target="_blank">优惠折扣</a></li>
+                            <li><a href="#" target="_blank">创客赋能</a></li>
+                            <li><a href="/cn/distribution">全球分发</a></li>
+                            <li><a href="/cn/donate">捐赠开源</a></li>
 
                         </ul>
                     </div>
                 </div>
 
-                <div class="col-lg-3 col-md-6 col-sm-6">
+                                <div class="col-lg-2 col-md-6 col-sm-6">
                     <div class="single-footer-widget">
-                        <h3>联系我们</h3>
-                        
-                        <ul class="footer-contact-info">
-                            <li><b-icon-geo-alt></b-icon-geo-alt> 长沙市岳麓区潇湘中路283号岳麓科创港1035室，中国.湖南</li>
-                            <li><b-icon-envelope></b-icon-envelope> Email: <a href="#">help@websoft9.com</a></li>
-                            <li><b-icon-telephone></b-icon-telephone> 电话: <a href="#">0731-89572759</a></li>
-                        </ul>
-                        <ul class="social-links">
-                            <li><a href="#" class="github"><font-awesome :icon="['fab', 'github']"/></a></li>
-                            <li><a href="#" class="twitter"><font-awesome :icon="['fab', 'github']"/></a></li>
-                            <li><a href="#" class="instagram"><font-awesome :icon="['fab', 'github']"/></a></li>
-                            <li><a href="#" class="linkedin"><font-awesome :icon="['fab', 'github']"/></a></li>
+                        <h3>关于我们</h3>
+                        <ul class="list">
+                            <li><a href="/cn/about">公司介绍</a></li>
+                            <li><a href="https://blog.websoft9.com/" target="_blank">新闻博客</a></li>
+                            <li><a href="/cn/partner">合作伙伴</a></li>
+                            <li><a href="https://support.websoft9.com/docs/legal/zh/" target="_blank">法律条款</a></li>
+                            <li><a href="/cn/job">招聘</a></li>
+                            <li><a href="/cn/contact">联系我们</a></li>
                         </ul>
                     </div>
                 </div>

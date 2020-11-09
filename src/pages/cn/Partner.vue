@@ -1,12 +1,14 @@
 <template>
   <ChineseLayout>
     <Partner></Partner>
+    <Clouds></Clouds>
   </ChineseLayout>
 </template>
 
 <script>
 import ChineseLayout from '~/layouts/Chinese.vue'
 import Partner from '~/components/cn/Partner.vue'
+import Clouds from '~/components/cn/Clouds.vue'
 
 export default {
 
@@ -16,7 +18,8 @@ export default {
 
   components: {
     ChineseLayout,
-    Partner
+    Partner,
+    Clouds
   }
 }
 </script>

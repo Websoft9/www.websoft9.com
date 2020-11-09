@@ -7,65 +7,46 @@
         </div>
         <div class="container">
             <div class="row">
-                <div class="col-lg-4 col-sm-6 col-md-6">
+                <div class="col-lg-3 col-sm-6 col-md-6">
                     <div class="single-ml-services-box">
                         <div class="image">
-                            <img src="../../assets/img/services-image/1.png" alt="image">
+                            <a href="https://shop658hlt17.market.aliyun.com/" target="_blank"><img src="../../assets/img/partner-img/aliyun-logo.png" alt="image"></a>
                         </div>
-                        <h3><a href="#">埃莫运动控制技术（中国）</a></h3>
-                        <p>Lorem ipsum dolor sit amet elit, adipiscing, sed do eiusmod tempor incididunt ut labore dolore magna aliqua.</p>
                     </div>
                 </div>
 
-                <div class="col-lg-4 col-sm-6 col-md-6">
+                <div class="col-lg-3 col-sm-6 col-md-6">
                     <div class="single-ml-services-box">
                         <div class="image">
-                            <img src="../../assets/img/services-image/2.png" alt="image">
+                            <a href="https://market.cloud.tencent.com/stores/1252192180" target="_blank"><img src="../../assets/img/partner-img/qcloud-logo.png" alt="image"></a>
                         </div>
-                        <h3><a href="#">上海交复科技</a></h3>
-                        <p>Lorem ipsum dolor sit amet elit, adipiscing, sed do eiusmod tempor incididunt ut labore dolore magna aliqua.</p>
                     </div>
                 </div>
 
-                <div class="col-lg-4 col-sm-6 col-md-6">
+                <div class="col-lg-3 col-sm-6 col-md-6">
                     <div class="single-ml-services-box">
                         <div class="image">
-                            <img src="../../assets/img/services-image/3.png" alt="image">
+                            <a href="https://market.huaweicloud.com/seller/e57458aa054b430fb2f82a066105f986" target="_blank"><img src="../../assets/img/partner-img/huaweiyun-logo.png" alt="image"></a>
                         </div>
-                        <h3><a href="#">e 算量软件</a></h3>
-                        <p>Lorem ipsum dolor sit amet elit, adipiscing, sed do eiusmod tempor incididunt ut labore dolore magna aliqua.</p>
                     </div>
                 </div>
 
-                <div class="col-lg-4 col-sm-6 col-md-6">
+                <div class="col-lg-3 col-sm-6 col-md-6">
                     <div class="single-ml-services-box">
                         <div class="image">
-                            <img src="../../assets/img/services-image/4.png" alt="image">
+                            <a href="https://azuremarketplace.microsoft.com/en-us/marketplace/apps?search=websoft9&page=1" target="_blank"><img src="../../assets/img/partner-img/azure-logo.png" alt="image"></a>
                         </div>
-                        <h3><a href="#">思德福国际学校</a></h3>
-                        <p>Lorem ipsum dolor sit amet elit, adipiscing, sed do eiusmod tempor incididunt ut labore dolore magna aliqua.</p>
                     </div>
                 </div>
 
-                <div class="col-lg-4 col-sm-6 col-md-6">
+                <div class="col-lg-3 col-sm-6 col-md-6">
                     <div class="single-ml-services-box">
                         <div class="image">
-                            <img src="../../assets/img/services-image/5.png" alt="image">
+                            <a href="https://aws.amazon.com/marketplace/seller-profile?id=c639a579-182c-4d30-8578-4d4d89fba658" target="_blank"><img src="../../assets/img/partner-img/aws-logo.png" alt="image"></a>
                         </div>
-                        <h3><a href="#">extripod.com 在线电子商务</a></h3>
-                        <p>Lorem ipsum dolor sit amet elit, adipiscing, sed do eiusmod tempor incididunt ut labore dolore magna aliqua.</p>
                     </div>
                 </div>
 
-                <div class="col-lg-4 col-sm-6 col-md-6">
-                    <div class="single-ml-services-box">
-                        <div class="image">
-                            <img src="../../assets/img/services-image/6.png" alt="image">
-                        </div>
-                        <h3><a href="#">萌芽公益</a></h3>
-                        <p>Lorem ipsum dolor sit amet elit, adipiscing, sed do eiusmod tempor incididunt ut labore dolore magna aliqua.</p>
-                    </div>
-                </div>
             </div>
         </div>
 

@@ -1,22 +1,22 @@
 <template>
   <ChineseLayout>
-    <Banner></Banner>
+    <Trust></Trust>
   </ChineseLayout>
 </template>
 
 <script>
 import ChineseLayout from '~/layouts/Chinese.vue'
-import Banner from '~/components/cn/Banner.vue'
+import Trust from '~/components/cn/Trust.vue'
 
 export default {
 
   metaInfo: {
-    title: '首页'
+    title: '社会责任'
   },
 
   components: {
     ChineseLayout,
-    Banner
+    Trust
   }
 }
 </script>

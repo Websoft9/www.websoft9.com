@@ -10,7 +10,7 @@
 					<div class="col-lg-6 col-md-6 col-sm-6">
 						<div class="single-team">
 							<div class="team-image">
-								<img src="../../assets/img/team-image/1.jpg" alt="image">
+								<img src="../../assets/img/team-image/cdl.jpg" alt="image">
 							</div>
 
 							<div class="team-content">
@@ -18,14 +18,6 @@
 									<h3>谌德林</h3>
 									<span>CEO & 创始人</span>
 								</div>
-
-								<ul>
-									<li><a href="#"><feather type="facebook"></feather></a></li>
-									<li><a href="#"><feather type="twitter"></feather></a></li>
-									<li><a href="#"><feather type="linkedin"></feather></a></li>
-									<li><a href="#"><feather type="gitlab"></feather></a></li>
-								</ul>
-
 								<p>2007 年毕业于湖南师范大学，计算机硕士，连续创业者。先后在太极股份、SYNNEX、KRONOS 等知名IT企业从事技术与销售管理相关工作。2016年创立网久软件，致力于通过云计算与开源技术，构建云计算在线商业体系，服务全球云生态。 </p>
 							</div>
 						</div>
@@ -34,7 +26,7 @@
 					<div class="col-lg-6 col-md-6 col-sm-6">
 						<div class="single-team">
 							<div class="team-image">
-								<img src="../../assets/img/team-image/2.jpg" alt="image">
+								<img src="../../assets/img/team-image/xw.jpg" alt="image">
 							</div>
 
 							<div class="team-content">
@@ -42,13 +34,6 @@
 									<h3>徐伟</h3>
 									<span>CTO & 联合创始人</span>
 								</div>
-
-								<ul>
-									<li><a href="#"><feather type="facebook"></feather></a></li>
-									<li><a href="#"><feather type="twitter"></feather></a></li>
-									<li><a href="#"><feather type="linkedin"></feather></a></li>
-									<li><a href="#"><feather type="gitlab"></feather></a></li>
-								</ul>
 
 								<p>2004年毕业于湖南师范大学。曾服务于NEC（总部），创智，诺基亚等500强企业。具有深厚的企业级软件研发、互联网应用和项目管理经验。目前负责公司云原生技术框架研究、自动化产品体系研发、技术团队建设、开源生态发展以及全球化技术发展。</p>
 							</div>

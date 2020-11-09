@@ -26,3 +26,9 @@
 ```
 
 #### 调用外部api，markdown
+
+#### 如何使用 Bootstrap 图标？
+
+参考：https://bootstrap-vue.org/docs/icons
+
+#### 集成外部表单后，不刷新，页面出不来

@@ -3,7 +3,6 @@
 
 import '~/assets/style/custom.scss'
 import Vue from 'vue'
-import vueCustomElement from 'vue-custom-element'
 
 import { BootstrapVue, BootstrapVueIcons } from 'bootstrap-vue'
 import 'bootstrap/dist/css/bootstrap.css'
@@ -24,15 +23,4 @@ export default function (Vue, { router, head, isClient }) {
   Vue.use(BootstrapVue)
   Vue.use(BootstrapVueIcons)
   Vue.component('font-awesome', FontAwesomeIcon)
-  Vue.customElement('widget-vue', {
-    props: [
-      'prop1',
-      'prop2',
-      'prop3'
-    ],
-    data: {
-      message: 'Hello Vue!'
-    },
-    template: '<p>{{ message }}, {{ prop1  }}, {{prop2}}, {{prop3}}</p>'
-  })
 }

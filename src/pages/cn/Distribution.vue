@@ -1,22 +1,22 @@
 <template>
   <ChineseLayout>
-    <Banner></Banner>
+    <Distribution></Distribution>
   </ChineseLayout>
 </template>
 
 <script>
 import ChineseLayout from '~/layouts/Chinese.vue'
-import Banner from '~/components/cn/Banner.vue'
+import Distribution from '~/components/cn/Distribution.vue'
 
 export default {
 
   metaInfo: {
-    title: '首页'
+    title: '应用分发'
   },
 
   components: {
     ChineseLayout,
-    Banner
+    Distribution
   }
 }
 </script>
