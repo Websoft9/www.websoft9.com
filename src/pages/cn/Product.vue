@@ -1,26 +1,25 @@
 <template>
   <ChineseLayout>
-    <Banner></Banner>
+    <Product></Product>
     <Clouds></Clouds>
   </ChineseLayout>
 </template>
 
 <script>
 import ChineseLayout from '~/layouts/Chinese.vue'
-import Banner from '~/components/cn/Banner.vue'
+import Product from '~/components/cn/Product.vue'
 import Clouds from '~/components/cn/Clouds.vue'
 
 export default {
 
   metaInfo: {
-    title: '首页'
+    title: '加入网久'
   },
 
   components: {
     ChineseLayout,
-    Banner,
+    Product,
     Clouds
-
   }
 }
 </script>

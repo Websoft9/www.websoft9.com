@@ -24,11 +24,11 @@ module.exports = {
       use: '@gridsome/source-ghost',
       options: {
         typeName: 'Ghost',
-        baseUrl: 'http://test.websoft9.com',
-        contentKey: '489975ed110fc6c07d4eea7d66',
+        baseUrl: 'http://blog.websoft9.com',
+        contentKey: 'd88d3cba606d8a2c5411ff2728',
         version: 'v3' // default
       }
-    },
+    }
   ],
 
   templates: {

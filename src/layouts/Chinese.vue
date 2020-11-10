@@ -17,7 +17,7 @@
                     <b-collapse class="collapse navbar-collapse mean-menu" id="navbarSupportedContent" is-nav>
                         <ul class="navbar-nav nav ml-auto">
                             <li class="nav-item">
-                                <a href="#" class="nav-link active">
+                                <a href="/cn/product" class="nav-link">
                                     产品
                                 </a>
 
