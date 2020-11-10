@@ -1,4 +1,5 @@
 <template>
+
 <div>
         <!-- Start Page Title -->
         <div class="page-title-area">
@@ -13,150 +14,25 @@
         </div>
         <!-- End Page Title -->
 
+
         <!-- Start Blog Area -->
 		<section class="blog-area ptb-80">
 			<div class="container">
 				<div class="row">
-					<div class="col-lg-4 col-md-6">
+					<div v-for="edge in $static.allBlogPost.edges" :key="edge.node.id" class="col-lg-4 col-md-6">
 						<div class="single-blog-post">
 							<div class="blog-image">
-								<a href="#">
-									<img src="../../assets/img/blog-image/1.jpg" alt="image">
+								<a :href= "edge.node.url">
+									<img :src="edge.node.feature_image" alt="image">
 								</a>
 
 								<div class="date">
-									<feather type="calendar"></feather> March 15, 2019
+									<feather type="calendar"></feather> {{ edge.node.created_at}}
 								</div>
 							</div>
 
 							<div class="blog-post-content">
-								<h3><a href="#">The security risks of changing package owners</a></h3>
-
-								<span>by <a href="#">admin</a></span>
-
-								<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Quis ipsum suspendisse ultrices gravida.</p>
-
-								<a href="#" class="read-more-btn">Read More <feather type="arrow-right"></feather> </a>
-							</div>
-						</div>
-					</div>
-
-					<div class="col-lg-4 col-md-6">
-						<div class="single-blog-post">
-							<div class="blog-image">
-								<a href="#">
-									<img src="../../assets/img/blog-image/2.jpg" alt="image">
-								</a>
-
-								<div class="date">
-									<feather type="calendar"></feather> March 17, 2019
-								</div>
-							</div>
-
-							<div class="blog-post-content">
-								<h3><a href="#">Tips to Protecting Your Business and Family</a></h3>
-
-								<span>by <a href="#">smith</a></span>
-
-								<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Quis ipsum suspendisse ultrices gravida.</p>
-
-								<a href="#" class="read-more-btn">Read More <feather type="arrow-right"></feather> </a>
-							</div>
-						</div>
-					</div>
-
-					<div class="col-lg-4 col-md-6">
-						<div class="single-blog-post">
-							<div class="blog-image">
-								<a href="#">
-									<img src="../../assets/img/blog-image/3.jpg" alt="image">
-								</a>
-
-								<div class="date">
-									<feather type="calendar"></feather> March 19, 2019
-								</div>
-							</div>
-
-							<div class="blog-post-content">
-								<h3><a href="#">Protect Your Workplace from Cyber Attacks</a></h3>
-
-								<span>by <a href="#">john</a></span>
-
-								<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Quis ipsum suspendisse ultrices gravida.</p>
-
-								<a href="#" class="read-more-btn">Read More <feather type="arrow-right"></feather> </a>
-							</div>
-						</div>
-					</div>
-					
-					<div class="col-lg-4 col-md-6">
-						<div class="single-blog-post">
-							<div class="blog-image">
-								<a href="#">
-									<img src="../../assets/img/blog-image/4.jpg" alt="image">
-								</a>
-
-								<div class="date">
-									<feather type="calendar"></feather> March 15, 2019
-								</div>
-							</div>
-
-							<div class="blog-post-content">
-								<h3><a href="#">The security risks of changing package owners</a></h3>
-
-								<span>by <a href="#">admin</a></span>
-
-								<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Quis ipsum suspendisse ultrices gravida.</p>
-
-								<a href="#" class="read-more-btn">Read More <feather type="arrow-right"></feather> </a>
-							</div>
-						</div>
-					</div>
-
-					<div class="col-lg-4 col-md-6">
-						<div class="single-blog-post">
-							<div class="blog-image">
-								<a href="#">
-									<img src="../../assets/img/blog-image/5.jpg" alt="image">
-								</a>
-
-								<div class="date">
-									<feather type="calendar"></feather> March 17, 2019
-								</div>
-							</div>
-
-							<div class="blog-post-content">
-								<h3><a href="#">Tips to Protecting Your Business and Family</a></h3>
-
-								<span>by <a href="#">smith</a></span>
-
-								<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Quis ipsum suspendisse ultrices gravida.</p>
-
-								<a href="#" class="read-more-btn">Read More <feather type="arrow-right"></feather> </a>
-							</div>
-						</div>
-					</div>
-
-					<div class="col-lg-4 col-md-6">
-						<div class="single-blog-post">
-							<div class="blog-image">
-								<a href="#">
-									<img src="../../assets/img/blog-image/6.jpg" alt="image">
-								</a>
-
-								<div class="date">
-									<feather type="calendar"></feather> March 19, 2019
-								</div>
-							</div>
-
-							<div class="blog-post-content">
-								<h3><a href="#">Protect Your Workplace from Cyber Attacks</a></h3>
-
-								<span>by <a href="#">john</a></span>
-
-								<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Quis ipsum suspendisse ultrices gravida.</p>
-
-								<a href="#" class="read-more-btn">Read More <feather type="arrow-right"></feather> </a>
+								<h3><a :href= "edge.node.url" target="_blank">{{ edge.node.title }}</a></h3>
 							</div>
 						</div>
 					</div>
@@ -181,11 +57,50 @@
 </div>
 
 
-
 </template>
 
 <script>
+import { Pager } from 'gridsome'
 export default {
+  components: {
+    Pager
+  },
     name: 'News'
 }
 </script>
+
+<static-query>
+query($page: Int){
+    allBlogPost: allGhostPost(filter: { tags: { contains:"5f98c30a04180f0001c3bda"}},perPage: 200, page: $page) @paginate {
+ 		totalCount
+        pageInfo {
+        totalPages
+        currentPage
+      }
+    edges {
+      node {
+        title
+        id
+        slug
+        comment_id
+        plaintext
+        html
+        meta_title
+		feature_image
+        path
+        meta_description
+        tags {
+          name
+          id
+        }
+        created_at
+        authors {
+          id
+          name
+        }
+        url
+      }
+    }
+  }
+}
+</static-query>
