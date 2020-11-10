@@ -22,12 +22,13 @@
 					<div v-for="edge in $static.allBlogPost.edges" :key="edge.node.id" class="col-lg-4 col-md-6">
 						<div class="single-blog-post">
 							<div class="blog-image">
-								<a :href= "edge.node.url">
-									<img :src="edge.node.feature_image" alt="image">
+								<a :href= "edge.node.url" target="_blank">
+									<img v-if="edge.node.feature_image != null" :src="edge.node.feature_image" alt="image">
+                  <img v-else src="../../assets/img/blog-image/1.jpg" alt="image">
 								</a>
 
 								<div class="date">
-									<feather type="calendar"></feather> {{ edge.node.created_at}}
+									<feather type="calendar"></feather> {{ edge.node.created_at | formatDate}}
 								</div>
 							</div>
 
@@ -65,13 +66,30 @@ export default {
   components: {
     Pager
   },
-    name: 'News'
+  name: 'News',
+  filters: {
+    formatDate: function (value) {
+      let date = new Date(value);
+      let y = date.getFullYear();
+      let MM = date.getMonth() + 1;
+      MM = MM < 10 ? ('0' + MM) : MM;
+      let d = date.getDate();
+      d = d < 10 ? ('0' + d) : d;
+      let h = date.getHours();
+      h = h < 10 ? ('0' + h) : h;
+      let m = date.getMinutes();
+      m = m < 10 ? ('0' + m) : m;
+      let s = date.getSeconds();
+      s = s < 10 ? ('0' + s) : s;
+      return y + '-' + MM + '-' + d + ' ' + h + ':' + m + ':' + s;
+    }
+  }
 }
 </script>
 
 <static-query>
 query($page: Int){
-    allBlogPost: allGhostPost(filter: { tags: { contains:"5f98c30a04180f0001c3bda"}},perPage: 200, page: $page) @paginate {
+    allBlogPost: allGhostPost(filter: { tags: { contains:"5f98c30a04180f0001c3bda"}},perPage: 6, page: $page) @paginate {
  		totalCount
         pageInfo {
         totalPages
