@@ -51,7 +51,13 @@ module.exports = {
               typeName: 'solution',
               select: {},
               links: [
-                  {}
+              ]
+            },
+            {
+              name: 'Tags',// 导入场景，解决方案
+              typeName: 'tags',
+              select: {},
+              links: [
               ]
             },
             {
@@ -62,7 +68,12 @@ module.exports = {
                   {
                       fieldName: 'Solution',
                       typeName: 'solution',
-                      linkToFirst: false
+                      linkToFirst: true
+                  },
+                  {
+                    fieldName: 'Tags',
+                    typeName: 'tags',
+                    linkToFirst: true
                   }
               ]
             },
