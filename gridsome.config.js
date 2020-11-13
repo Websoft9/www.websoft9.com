@@ -21,6 +21,56 @@ module.exports = {
     },
 
     {
+      use: '@gridsome/source-airtable',
+      options: {
+        apiKey: 'keyyVDd8X3gcJ2hBX',
+        base: 'appkEhsZE422idMEo',
+        tables: [
+            {
+                name: 'Product',// 导入产品表
+                typeName: 'product',
+                select: {},
+                links: [
+                    {
+                        fieldName: 'Vendor',
+                        typeName: 'vendor',
+                        linkToFirst: false
+                    }
+                ]
+            },
+            {
+              name: 'Vendor',// 导入供应商
+              typeName: 'vendor',
+              select: {},
+              links: [
+                  {}
+              ]
+            },
+            {
+              name: 'Solution',// 导入场景，解决方案
+              typeName: 'solution',
+              select: {},
+              links: [
+                  {}
+              ]
+            },
+            {
+              name: 'Service',// 导入服务
+              typeName: 'service',
+              select: {},
+              links: [
+                  {
+                      fieldName: 'Solution',
+                      typeName: 'solution',
+                      linkToFirst: false
+                  }
+              ]
+            },
+        ],
+      },
+    },
+
+    {
       use: '@gridsome/source-ghost',
       options: {
         typeName: 'Ghost',

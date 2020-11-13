@@ -1,21 +1,19 @@
 <template>
 
 <div>
-        <!-- Start Page Title -->
-        <div class="page-title-area">
-            <div class="d-table">
-                <div class="d-table-cell">
-                    <div class="container">
-                        <h2>公司新闻</h2>
-                    </div>
-                </div>
-			</div>
-			
+    <!-- Start Page Title -->
+    <div class="page-title-area">
+      <div class="d-table">
+        <div class="d-table-cell">
+            <div class="container">
+                <h2>公司新闻</h2>
+            </div>
         </div>
-        <!-- End Page Title -->
+      </div>
+    </div>
+    <!-- End Page Title -->
 
-
-        <!-- Start Blog Area -->
+    <!-- Start Blog Area -->
 		<section class="blog-area ptb-80">
 			<div class="container">
 				<div class="row">
@@ -37,7 +35,7 @@
 							</div>
 						</div>
 					</div>
-					
+
 					<div class="col-lg-12 col-md-12">
 						<div class="pagination-area">
 							<nav aria-label="Page navigation">
@@ -48,12 +46,14 @@
 									<li class="page-item"><a class="page-link" href="#">3</a></li>
 									<li class="page-item"><a class="page-link" href="#">Next</a></li>
 								</ul>
+                <!-- <Pager :info="$static.allBlogPost.pageInfo"/> -->
 							</nav>
 						</div>
 					</div>
 				</div>
 			</div>
 		</section>
+
 		<!-- End Blog Area -->
 </div>
 
@@ -81,7 +81,7 @@ export default {
       m = m < 10 ? ('0' + m) : m;
       let s = date.getSeconds();
       s = s < 10 ? ('0' + s) : s;
-      return y + '-' + MM + '-' + d + ' ' + h + ':' + m + ':' + s;
+      return y + '-' + MM + '-' + d ;
     }
   }
 }
@@ -90,10 +90,13 @@ export default {
 <static-query>
 query($page: Int){
     allBlogPost: allGhostPost(filter: { tags: { contains:"5f98c30a04180f0001c3bda"}},perPage: 6, page: $page) @paginate {
- 		totalCount
+ 		  
         pageInfo {
         totalPages
         currentPage
+        totalItems
+        isFirst
+        isLast
       }
     edges {
       node {
@@ -104,7 +107,7 @@ query($page: Int){
         plaintext
         html
         meta_title
-		feature_image
+		    feature_image
         path
         meta_description
         tags {
