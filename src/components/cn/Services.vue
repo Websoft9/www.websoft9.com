@@ -30,7 +30,7 @@
             </div>
             <div class="col-lg-3 col-md-5 col-sm-5" style=" display: inline-block;">
                 <div class="woocommerce-topbar-ordering">
-                    <select class="form-control" name="serviceType">
+                    <select class="form-control" ref="serviceType"  @change="getValue">
                         <option value="0">请选择服务类型</option>
                         <option value="1">安装</option>
                         <option value="2">技术咨询</option>
@@ -45,10 +45,10 @@
             </div>
             <div class="col-lg-3 col-md-5 col-sm-5" style=" display: inline-block;">
                 <div class="woocommerce-topbar-ordering">
-                    <select class="form-control" name="serviceUser">
+                    <select class="form-control" ref="serviceUser" @change="getValue">
                         <option value="0">请选择服务对象</option>
                         <option value="1">软件供应商</option>
-                        <option value="2">软件使用客户</option>
+                        <option value="2">客户</option>
                     </select>
                 </div>
             </div>
@@ -91,51 +91,75 @@ export default {
         return {
             returnData: [],
             webData: [],
-            temList: [],
+            // temList: [],
         }
     },
     async created () {
+       // GraphQL持久化保存的数据
        this.returnData = this.$static.Websoft9service
-       this.webData = this.$static.Websoft9service
+       // 页面展示的数据，初期化的时候是全部查询
+       this.webData = JSON.parse(JSON.stringify(this.returnData))
        this.temList = []
     },
+    
     methods: {
+
         getValue: function(){
             
-            this.temList = []
-            alert(this.$refs.servicePrice.value);
-            alert(this.returnData.edges.length);
-            // console.info(this.returnData);
-            
-            for(const item of this.returnData.edges){
-     
+            var obj=JSON.parse(JSON.stringify(this.returnData));
+            console.info("GraphQL持久化保存的数据"+obj);
+            // 情况上次返回的数据
+            this.temList = [];
+
+            var serviceTypeList = ['请选择服务类型','安装','技术咨询','故障处理','技术配置','项目实施','运维外包','开发','商务合作'];
+            var serviceUserList = ['请选择服务对象','软件供应商','客户'];
+            var typeIndex = this.$refs.serviceType.value;
+            var userIndex = this.$refs.serviceUser.value;
+
+            // 根据价格查询
+            for(const item of obj.edges){
+
                 // this.temList.push(item);
                 if (this.$refs.servicePrice.value == 0){
-                    this.temList.push(item);
+                    if ((typeIndex == 0 || serviceTypeList[typeIndex] == item.node.category[0]) && (userIndex == 0 || item.node.target[0].match(serviceUserList[userIndex]))){
+                        this.temList.push(item);
+                    }
+                    
                 }else if (this.$refs.servicePrice.value == 1){
                     if (item.node.pricing <=  300){
-                        this.temList.push(item);
+                        if ((typeIndex == 0 || serviceTypeList[typeIndex] == item.node.category[0]) && (userIndex == 0 || item.node.target[0].match(serviceUserList[userIndex]))){
+                            this.temList.push(item);
+                        }
                     }
                 }else if (this.$refs.servicePrice.value == 2){
                     if (item.node.pricing >  300 && item.node.pricing <= 500){
-                        this.temList.push(item);
+                        if ((typeIndex == 0 || serviceTypeList[typeIndex] == item.node.category[0]) && (userIndex == 0 || item.node.target[0].match(serviceUserList[userIndex]))){
+                            this.temList.push(item);
+                        }
                     }
                 }else if (this.$refs.servicePrice.value == 3){
                     if (item.node.pricing >  500 && item.node.pricing <= 1000){
-                        this.temList.push(item);
+                        if ((typeIndex == 0 || serviceTypeList[typeIndex] == item.node.category[0]) && (userIndex == 0 || item.node.target[0].match(serviceUserList[userIndex]))){
+                            this.temList.push(item);
+                        }
                     }
                 }else if (this.$refs.servicePrice.value == 4){
                     if (item.node.pricing >  1000 && item.node.pricing <= 3000){
-                        this.temList.push(item);
+                        if ((typeIndex == 0 || serviceTypeList[typeIndex] == item.node.category[0]) && (userIndex == 0 || item.node.target[0].match(serviceUserList[userIndex]))){
+                            this.temList.push(item);
+                        }
                     }
                 }else if (this.$refs.servicePrice.value == 5){
                     if (item.node.pricing >  3000){
-                        this.temList.push(item);
+                        if ((typeIndex == 0 || serviceTypeList[typeIndex] == item.node.category[0]) && (userIndex == 0 || item.node.target[0].match(serviceUserList[userIndex]))){
+                            this.temList.push(item);
+                        }
                     }
                 }
                 
             }
-            console.info(this.temList);
+
+            console.info("页面展示的数据"+this.temList);
             this.webData.edges = this.temList;
             
         }
