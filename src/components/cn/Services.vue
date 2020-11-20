@@ -33,7 +33,7 @@
                     <select class="form-control" ref="serviceType"  @change="getValue">
                         <option value="0">请选择服务类型</option>
                         <option value="1">安装</option>
-                        <option value="2">技术咨询</option>
+                        <option value="2">咨询</option>
                         <option value="3">故障处理</option>
                         <option value="4">技术配置</option>
                         <option value="5">项目实施</option>
@@ -111,7 +111,7 @@ export default {
             // 情况上次返回的数据
             this.temList = [];
 
-            var serviceTypeList = ['请选择服务类型','安装','技术咨询','故障处理','技术配置','项目实施','运维外包','开发','商务合作'];
+            var serviceTypeList = ['请选择服务类型','安装','咨询','故障处理','技术配置','项目实施','运维外包','开发','商务合作'];
             var serviceUserList = ['请选择服务对象','软件供应商','客户'];
             var typeIndex = this.$refs.serviceType.value;
             var userIndex = this.$refs.serviceUser.value;
