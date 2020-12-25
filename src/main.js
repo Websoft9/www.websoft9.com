@@ -3,6 +3,7 @@
 
 import '~/assets/style/custom.scss'
 import Vue from 'vue'
+var btoa = require('btoa')
 
 import { BootstrapVue, BootstrapVueIcons } from 'bootstrap-vue'
 import 'bootstrap/dist/css/bootstrap.css'
