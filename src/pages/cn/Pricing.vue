@@ -1,6 +1,8 @@
 <template>
   <ChineseLayout>
+  <ClientOnly>
   <Pricing></Pricing>
+  </ClientOnly>
   </ChineseLayout>
 </template>
 

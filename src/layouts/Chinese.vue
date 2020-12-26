@@ -130,7 +130,7 @@
 
                     <div class="others-option">
                         <a href="https://github.com/websoft9" target="_blank" class="btn btn-light">Github</a>
-                        <a href="/en" class="btn btn-primary">English</a>
+                        <a href="https://en.websoft9.com" target="_blank" class="btn btn-primary">English</a>
                     </div>
                 </nav>
             </div> 

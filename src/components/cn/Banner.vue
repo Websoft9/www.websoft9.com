@@ -7,30 +7,22 @@
                     <div class="row h-100 justify-content-center align-items-center">
                         <div class="col-lg-5">
                             <div class="hero-content">
-                                <h1>Secure IT Solutions for a more secure environment</h1>
-                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Quis ipsum suspendisse ultrices gravida.</p>
+                                <h1>云原生构建在线商业</h1>
+                                <p>优选和集成数百个热门的云原生应用，帮助现代企业快速构建可以【在线的】面向全球运作的业务体系。</p>
                                 
                                 <a href="#" class="btn btn-primary">Get Started</a>
                             </div>
                         </div>
 
                         <div class="col-lg-6 offset-lg-1">
-                            <div class="banner-image">
-                            </div>
+                        <img src="../../assets/img/banner-image/cloudnative.png" alt="image">
                         </div>
                     </div>
                 </div>
             </div>
         </div>
 
-        <div class="shape1"><img src="../../assets/img/shape1.png" alt="shape"></div>
-        <div class="shape2 rotateme"><img src="../../assets/img/shape2.svg" alt="shape"></div>
-        <div class="shape3"><img src="../../assets/img/shape3.svg" alt="shape"></div>
-        <div class="shape4"><img src="../../assets/img/shape4.svg" alt="shape"></div>
-        <div class="shape5"><img src="../../assets/img/shape5.png" alt="shape"></div>
-        <div class="shape6 rotateme"><img src="../../assets/img/shape4.svg" alt="shape"></div>
-        <div class="shape7"><img src="../../assets/img/shape4.svg" alt="shape"></div>
-        <div class="shape8 rotateme"><img src="../../assets/img/shape2.svg" alt="shape"></div>
+
     </div>
     <!-- End Main Banner -->
 </template>
