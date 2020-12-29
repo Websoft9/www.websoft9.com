@@ -18,38 +18,34 @@
                         <ul class="navbar-nav nav ml-auto">
                             <li class="nav-item">
                                 <a href="#" class="nav-link active">
-                                    应用
+                                    Product
                                 </a>
+
 
                                 <ul class="dropdown_menu">
                                     <li class="nav-item">
-                                        <a href="https://shop658hlt17.market.aliyun.com/" class="nav-link" target="_blank">阿里云</a>
+                                        <a href="https://aws.amazon.com/marketplace/seller-profile?id=c639a579-182c-4d30-8578-4d4d89fba658" class="nav-link" target="_blank">On AWS</a>
                                     </li>
+
                                     <li class="nav-item">
-                                        <a href="https://market.cloud.tencent.com/stores/1252192180" class="nav-link" target="_blank">腾讯云</a>
+                                        <a href="https://azuremarketplace.microsoft.com/en-us/marketplace/apps?search=websoft9&page=1" class="nav-link" target="_blank">On Azure</a>
                                     </li>
+
                                     <li class="nav-item">
-                                        <a href="https://market.huaweicloud.com/seller/e57458aa054b430fb2f82a066105f986" class="nav-link" target="_blank">华为云</a>
+                                        <a href="https://shop658hlt17.market.aliyun.com/" class="nav-link" target="_blank">On AlibabaCloud</a>
                                     </li>
+
                                     <li class="nav-item">
-                                        <a href="https://azuremarketplace.microsoft.com/en-us/marketplace/apps?search=websoft9&page=1" class="nav-link" target="_blank">Azure</a>
+                                        <a href="https://marketplace-intl.huaweicloud.com/seller/a0d01460031d46639391c78a61de9a0f" class="nav-link" target="_blank">On HUAWEI CLOUD</a>
                                     </li>
-                                    <li class="nav-item">
-                                        <a href="https://aws.amazon.com/marketplace/seller-profile?id=c639a579-182c-4d30-8578-4d4d89fba658" class="nav-link" target="_blank">AWS</a>
-                                    </li>
-                                
                                 </ul>
                             </li>
                             
                             <li class="nav-item">
-                                <router-link to="/cn/pricing" class="nav-link">价格</router-link>
+                                <router-link to="/en/pricing" class="nav-link">Pricing</router-link>
                             </li>
 
-                            <li class="nav-item">
-                                <router-link to="/cn/services" class="nav-link">服务市场</router-link>
-                            </li>
-
-                            <li class="nav-item"><a href="#" class="nav-link">文档与支持</a>
+                            <li class="nav-item"><a href="/en/support" class="nav-link">Support</a>
                                 <ul class="dropdown_menu">
                                     <li class="nav-item">
                                         <a href="https://support.websoft9.com/zh/alldocs.html" target="_blank" class="nav-link">文档</a>
@@ -75,15 +71,15 @@
 
 
                             <li class="nav-item">
-                                <router-link to="/cn/partner" class="nav-link">伙伴</router-link>
+                                <router-link to="/cn/partner" class="nav-link">Partner</router-link>
                             </li>
 
                             <li class="nav-item">
-                                <a href="https://blog.websoft9.com" target="_blank" class="nav-link">博客</a>
+                                <a href="https://blog.websoft9.com" target="_blank" class="nav-link">Blog</a>
                             </li>
 
                             <li class="nav-item">
-                                <a href="/cn/about" class="nav-link">关于</a>
+                                <a href="/cn/about" class="nav-link">Company</a>
                                 <ul class="dropdown_menu">
 
                                     <li class="nav-item">
@@ -129,7 +125,7 @@
 
                     <div class="others-option">
                         <a href="https://github.com/websoft9" target="_blank" class="btn btn-light">Github</a>
-                        <a href="/en" class="btn btn-primary">English</a>
+                        <a href="/cn" class="btn btn-primary">简体中文</a>
                     </div>
                 </nav>
             </div> 

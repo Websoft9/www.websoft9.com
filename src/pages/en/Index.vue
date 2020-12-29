@@ -5,13 +5,13 @@
 </template>
 
 <script>
-import ChineseLayout from '~/layouts/Chinese.vue'
-import Banner from '~/components/cn/Banner.vue'
+import ChineseLayout from '~/layouts/English.vue'
+import Banner from '~/components/en/Banner.vue'
 
 export default {
 
   metaInfo: {
-    title: '首页'
+    title: 'Cloud native application for Open source software'
   },
 
   components: {
