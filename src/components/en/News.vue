@@ -6,7 +6,7 @@
       <div class="d-table">
         <div class="d-table-cell">
             <div class="container">
-                <h2>公司新闻</h2>
+                <h2>Company News</h2>
             </div>
         </div>
       </div>

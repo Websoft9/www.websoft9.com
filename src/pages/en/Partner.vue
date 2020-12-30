@@ -1,29 +1,24 @@
 <template>
   <EnglishLayout>
-  <About></About>
-  <Office></Office> 
-  
-  <Clouds></Clouds> 
+    <Partner></Partner>
+    <Clouds></Clouds>
   </EnglishLayout>
 </template>
 
 <script>
-import BackToTop from 'vue-backtotop'
 import EnglishLayout from '~/layouts/English.vue'
-import Office from '~/components/en/Office.vue'
-import About from '~/components/en/About.vue'
+import Partner from '~/components/en/Partner.vue'
 import Clouds from '~/components/en/Clouds.vue'
 
 export default {
 
   metaInfo: {
-    title: 'About'
+    title: 'Partner'
   },
 
   components: {
     EnglishLayout,
-    About,
-    Office,
+    Partner,
     Clouds
   }
 }

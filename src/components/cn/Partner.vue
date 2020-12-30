@@ -21,7 +21,7 @@
 				</div>
 
 				<div class="row">
-                <img alt="Bootstrap Image Preview" src="../../assets/img/partner-img/partner-overview.png" class="rounded" />
+                <img alt="Bootstrap Image Preview" src="../../assets/img/partner/partner-overview.png" class="rounded" />
 				</div>
 			</div>
 		</section>

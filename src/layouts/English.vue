@@ -48,22 +48,18 @@
                             <li class="nav-item"><a href="/en/support" class="nav-link">Support</a>
                                 <ul class="dropdown_menu">
                                     <li class="nav-item">
-                                        <a href="https://support.websoft9.com/zh/alldocs.html" target="_blank" class="nav-link">文档</a>
+                                        <a href="https://support.websoft9.com/alldocs.html" target="_blank" class="nav-link">Documentation</a>
                                     </li>
 
                                     <li class="nav-item">
-                                        <a href="https://support.websoft9.com/docs/faq/zh" target="_blank" class="nav-link">FAQ</a>
+                                        <a href="https://support.websoft9.com/docs/faq/" target="_blank" class="nav-link">FAQ</a>
                                     </li>
                                     <li class="nav-item">
-                                        <router-link to="/cn/ticket" class="nav-link">7×24 工单</router-link>
-                                    </li>
-
-                                    <li class="nav-item">
-                                        <a href="https://support.websoft9.com/zh/contact.html" target="_blank" class="nav-link">人工支持</a>
+                                        <router-link to="/cn/ticket" class="nav-link">7×24 Ticket</router-link>
                                     </li>
 
                                     <li class="nav-item">
-                                        <a href="https://support.websoft9.com/zh/terms.html" target="_blank" class="nav-link">支持须知</a>
+                                        <a href="https://support.websoft9.com/contact.html" target="_blank" class="nav-link">Help Desk</a>
                                     </li>
 
                                 </ul>
@@ -71,51 +67,43 @@
 
 
                             <li class="nav-item">
-                                <router-link to="/cn/partner" class="nav-link">Partner</router-link>
+                                <router-link to="/en/partner" class="nav-link">Partner</router-link>
                             </li>
 
                             <li class="nav-item">
-                                <a href="https://blog.websoft9.com" target="_blank" class="nav-link">Blog</a>
-                            </li>
-
-                            <li class="nav-item">
-                                <a href="/cn/about" class="nav-link">Company</a>
+                                <a href="/en/about" class="nav-link">Company</a>
                                 <ul class="dropdown_menu">
 
                                     <li class="nav-item">
-                                        <router-link to="/cn/about" class="nav-link">公司介绍</router-link>
+                                        <router-link to="/en/about" class="nav-link">About Us</router-link>
                                     </li>
 
                                     <li class="nav-item">
-                                        <router-link to="/cn/cases" class="nav-link">客户案例</router-link>
+                                        <router-link to="/en/cases" class="nav-link">Success Stories</router-link>
                                     </li>
 
                                     <li class="nav-item">
-                                        <router-link to="/cn/partner" class="nav-link">合作伙伴</router-link>
+                                        <router-link to="/en/partner" class="nav-link">Partner</router-link>
                                     </li>
 
                                     <li class="nav-item">
-                                        <a href="https://blog.websoft9.com" target="_blank" class="nav-link">公司新闻</a>
+                                        <a href="/en/news" class="nav-link">News</a>
                                     </li>
                                     
                                     <li class="nav-item">
-                                        <a href="https://blog.websoft9.com" target="_blank" class="nav-link">博客</a>
+                                        <a href="https://blog.websoft9.com" target="_blank" class="nav-link">Blog</a>
                                     </li>
                                     
                                     <li class="nav-item">
-                                        <router-link to="/cn/job" class="nav-link">招聘</router-link>
+                                        <router-link to="/en/job" class="nav-link">Career</router-link>
                                     </li>
 
                                     <li class="nav-item">
-                                        <router-link to="/cn/trust" class="nav-link">社会责任</router-link>
-                                    </li>
-                                    
-                                    <li class="nav-item">
-                                        <a href="https://support.websoft9.com/docs/legal/zh/" target="_blank" class="nav-link">法律条款</a>
+                                        <a href="https://support.websoft9.com/docs/legal" target="_blank" class="nav-link">Legal</a>
                                     </li>
 
                                     <li class="nav-item">
-                                        <router-link to="/cn/contact" class="nav-link">联系我们</router-link>
+                                        <router-link to="/en/contact" class="nav-link">Contact</router-link>
                                     </li>
 
                                 </ul>

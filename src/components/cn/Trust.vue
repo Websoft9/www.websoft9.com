@@ -56,7 +56,7 @@
                 <div class="col-lg-2 col-sm-6 col-md-6">
                     <div class="single-ml-services-box">
                         <div class="image">
-                            <a href="https://shop658hlt17.market.aliyun.com/" target="_blank"><img src="../../assets/img/partner-img/budding-logo.png" alt="image"></a>
+                            <a href="https://shop658hlt17.market.aliyun.com/" target="_blank"><img src="../../assets/img/partner/budding-logo.png" alt="image"></a>
                         </div>
                     </div>
                 </div>

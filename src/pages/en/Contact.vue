@@ -11,7 +11,7 @@ import Contact from '~/components/en/Contact.vue'
 export default {
 
   metaInfo: {
-    title: 'Contact Websoft9'
+    title: 'Contact Us'
   },
 
   components: {

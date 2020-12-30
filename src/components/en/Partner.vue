@@ -5,7 +5,7 @@
             <div class="d-table">
                 <div class="d-table-cell">
                     <div class="container">
-                        <h2>合作伙伴</h2>
+                        <h2>Partner</h2>
                     </div>
                 </div>
 		</div>
@@ -15,13 +15,13 @@
 	<section class="pricing-area ptb-80 bg-f9f6f6">
 			<div class="container">
 				<div class="section-title">
-					<h3>我们的生态</h3>
+					<h3>Connection online world</h3>
 					<div class="bar"></div>
-					<p>通过整合开源软件和优质SaaS软件，广泛连接企业用户</p>
+					<p>Connection online enterprise user by integrated Open source and SaaS</p>
 				</div>
 
 				<div class="row">
-                <img alt="Bootstrap Image Preview" src="../../assets/img/partner-img/partner-overview.png" class="rounded" />
+                <img alt="Bootstrap Image Preview" src="../../assets/img/partner/partnership-wizard.jpg" class="rounded" />
 				</div>
 			</div>
 		</section>
@@ -31,9 +31,10 @@
     <div class="container">
 
     			<div class="section-title">
-					<h3>伙伴类型</h3>
+					<h3>Our Partner Program</h3>
 					<div class="bar"></div>
-					<p>我们携手合作，通过赋能或被集成，实现最大的连接价值</p>
+					<p>We want to be integrated to Partner's business</p>
+                    <p>Contact us: partner@websoft9.com</p>
 				</div>
 
                 <div class="row">
@@ -42,8 +43,8 @@
                             <div class="image">
                              <b-icon-journal-code font-scale="7.5"></b-icon-journal-code>
                             </div>
-                            <h3><a href="#">软件供应商</a></h3>
-                            <p>通过与 Websoft9 合作，将软件产品发布到全球主流的云市场，实现完全在线的软件交付与订阅商业模式。</p>
+                            <h3><a href="#">Websoft9 Supplier</a></h3>
+                            <p>Do you want to sell your software by global major Cloud MarketPlace, we will increase your subscription performance</p>
                         </div>
                     </div>
 
@@ -52,8 +53,8 @@
                             <div class="image">
                              <b-icon-app-indicator font-scale="7.5"></b-icon-app-indicator>
                             </div>
-                            <h3><a href="#">技术伙伴</a></h3>
-                            <p>即集成 Websoft9 产品/服务，向客户提供整体方案，如 系统集成商（SI） 或行业解决方案商；</p>
+                            <h3><a href="#">Websoft9 Integrators</a></h3>
+                            <p>Have a great solution that integrates with Websoft9? We will help you grow your client list.</p>
                         </div>
                     </div>
 
@@ -62,8 +63,8 @@
                             <div class="image">
                              <b-icon-minecart font-scale="7.5"></b-icon-minecart>
                             </div>
-                            <h3><a href="#">渠道伙伴</a></h3>
-                            <p>即通过直接或间接的转授 Websoft9 产品/服务，直接获取销售差价。与此同时，Websoft9 提供全面的渠道支持，包括：销售线索、方案等</p>
+                            <h3><a href="#">Websoft9 Reseller</a></h3>
+                            <p>Establish a recurring revenue stream by promoting, selling and supporting Websoft9 products and services.</p>
                         </div>
                     </div>
 
@@ -72,8 +73,8 @@
                             <div class="image">
                              <b-icon-people font-scale="7.5"></b-icon-people>
                             </div>
-                            <h3><a href="#">教育伙伴</a></h3>
-                            <p>通过与 Websoft9 合作，合作伙伴一方面可以使用我们提供的开源软件作为教学工具，也可以参与到我们的项目中，给学员实践机会。</p>
+                            <h3><a href="#">Cloud Platform</a></h3>
+                            <p>Do you want to increase catalog on your MarketPlace,  Websoft9 have 200+ product which can help you</p>
                         </div>
                     </div>
                 </div>

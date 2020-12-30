@@ -1,22 +1,22 @@
 <template>
   <EnglishLayout>
-    <Contact></Contact>
+  <Cases></Cases>
   </EnglishLayout>
 </template>
 
 <script>
 import EnglishLayout from '~/layouts/English.vue'
-import Contact from '~/components/en/Contact.vue'
+import Cases from '~/components/en/Cases.vue'
 
 export default {
 
   metaInfo: {
-    title: 'Contact Websoft9'
+    title: 'Customer success stories'
   },
 
   components: {
     EnglishLayout,
-    Contact
+    Cases
   }
 }
 </script>

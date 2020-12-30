@@ -5,7 +5,7 @@
         <div class="d-table">
             <div class="d-table-cell">
                 <div class="container">
-                    <h2>联系我们</h2>
+                    <h2>Contact Us</h2>
                 </div>
             </div>
         </div>

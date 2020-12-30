@@ -22,7 +22,7 @@
                 我们的分发平台和云端镜像模式无疑是一个可以预见的成功方案，欢迎优秀的软件通过我们进行分发。</p>
 
                 <p>帮助商业应用软件公司（ISV）在云端安装应用软件，并打包成镜像在云市场分发，给潜在客户提供试用版或开源社区版，通过免费方式获得潜在客户。</p>
-                <img class="rounded mx-auto d-block" alt="员工成长进阶" src="../../assets/img/partner-img/app-distribution.png" />
+                <img class="rounded mx-auto d-block" alt="员工成长进阶" src="../../assets/img/partner/app-distribution.png" />
             </div>
         </div>
     </div>

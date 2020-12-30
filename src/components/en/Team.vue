@@ -3,7 +3,7 @@
         <!-- Start Team Area -->
 		<section class="team-area ptb-80 bg-f9f6f6">
             <div class="section-title">
-              <h3>管理团队</h3>
+              <h3>Management Team</h3>
             </div>
 			<div class="container">
 				<div class="row">

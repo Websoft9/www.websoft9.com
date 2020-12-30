@@ -5,7 +5,7 @@
             <div class="d-table">
                 <div class="d-table-cell">
                     <div class="container">
-                        <h2>客户案例</h2>
+                        <h2>Customer success stories</h2>
                     </div>
                 </div>
 			</div>

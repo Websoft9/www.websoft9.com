@@ -50,16 +50,16 @@ export default {
         return {
         items: [
             {
-                src: require('../../assets/img/works-image/1.png'),
+                src: require('../../assets/img/works/1.png'),
             },
             {
-                src: require('../../assets/img/works-image/2.png'),
+                src: require('../../assets/img/works/2.png'),
             },
             {
-                src: require('../../assets/img/works-image/3.png'),
+                src: require('../../assets/img/works/3.png'),
             },
             {
-                src: require('../../assets/img/works-image/4.png'),
+                src: require('../../assets/img/works/4.png'),
             }
         ],
         index: null
