@@ -26,7 +26,7 @@
                     <div class="row">
                         <div class="col-md-3">
                         <b-icon-card-checklist font-scale="5"></b-icon-card-checklist>
-                        <h6><a href="http://ticket.websoft9.com" target="_blank">7×24 Ticket</a></h6>
+                        <h6><a href="https://share.hsforms.com/1YYp-zUNCRLuCA9X1au3v6A568t5" target="_blank">7×24 Ticket</a></h6>
                         </div>
                         <div class="col-md-3">
                         <b-icon-book font-scale="5"></b-icon-book>

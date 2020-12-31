@@ -4,7 +4,7 @@
       <div class="d-table">
         <div class="d-table-cell">
             <div class="container">
-                <h2>7×24 工单</h2>
+                <h2>7×24 Ticket</h2>
             </div>
         </div>
       </div>
@@ -13,14 +13,13 @@
 		<section class="pricing-area ptb-80 bg-f9f6f6">
 			<div class="container">
 				<div class="section-title">
-					<h3>提交工单</h3>
-					<div class="bar"></div>
-					<p>客服不在线？提交工单，获取专业的技术支持</p>
-          <br>
-          <a href="http://ticket.websoft9.com/" target="_blank">
-          <img class="rounded mx-auto d-block" alt="Bootstrap Image Preview" src="https://libs.websoft9.com/Websoft9/DocsPicture/zh/common/workorder-ui.png" />
-          </a>
+
 				</div>
+            <div class="contact-cta-box">
+                <h3>Submit support case to us?</h3>
+                <p>Don't hesitate to contact us</p>
+                <a href="https://share.hsforms.com/1YYp-zUNCRLuCA9X1au3v6A568t5" target="_blank" class="btn btn-primary">Create your ticket</a>
+            </div>
 
 				<div class="row" v-html="hbspt"></div>
 			</div>

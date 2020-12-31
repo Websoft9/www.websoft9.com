@@ -55,7 +55,7 @@
                                         <a href="https://support.websoft9.com/docs/faq/" target="_blank" class="nav-link">FAQ</a>
                                     </li>
                                     <li class="nav-item">
-                                        <router-link to="/cn/ticket" class="nav-link">7×24 Ticket</router-link>
+                                        <router-link to="/en/ticket" class="nav-link">7×24 Ticket</router-link>
                                     </li>
 
                                     <li class="nav-item">
@@ -134,32 +134,32 @@
                                 <img src="../assets/logo.png" alt="logo" />
                             </a>
                         </div>
-                        <p>网久软件（英文名称：Websoft9）是一家开源软件公司，优选和集成数百个热门的云原生应用。目前与全球主流云平台（Azure，AWS，阿里云，腾讯云，华为云等）合作，应用直达 3000 万云端企业客户。</p>
+                        <p>Websoft9 is an open source software company who classify and integrate 200+ cloud native applications. We have publish our solution 
+                        to major Cloud MarketPlace includes AWS, Azure, AlibabaCloud, HUAWEICLOUD, The application reaches 30 million cloud enterprise customers.</p>
                     </div>
                 </div>
 
                 <div class="col-lg-3 col-md-6 col-sm-6">
                     <div class="single-footer-widget pl-5">
-                        <h3>产品与服务</h3>
+                        <h3>Product</h3>
                         <ul class="list">
-                            <li><a href="/cn/services">应用</a></li>
-                            <li><a href="/cn/services">服务</a></li>
-                            <li><a href="/cn/services">解决方案</a></li>
-                            <li><a href="/cn/services">行业</a></li>
-                            <li><a href="/cn/services">特征</a></li>
+                            <li><a href="/en/services">Product</a></li>
+                            <li><a href="/en/services">Service</a></li>
+                            <li><a href="/en/services">Solution</a></li>
+                            <li><a href="/en/services">Industry</a></li>
+                            <li><a href="/en/services">Feature</a></li>
                         </ul>
                     </div>
                 </div>
 
                 <div class="col-lg-2 col-md-6 col-sm-6">
                     <div class="single-footer-widget">
-                        <h3>支持</h3>
+                        <h3>Support</h3>
                         <ul class="list">
-                            <li><a href="https://support.websoft9.com/zh/alldocs.html" target="_blank">文档</a></li>
-                            <li><a href="https://support.websoft9.com/docs/faq/zh" target="_blank">FAQ</a></li>
-                            <li><a href="/cn/ticket" target="_blank">工单</a></li>
-                            <li><a href="https://share.hsforms.com/1GJv3at4TRpOXm_YW_76OVg568t5" target="_blank">开具发票</a></li>
-                            <li><a href="/cn/contact" target="_blank">人工客服</a></li>
+                            <li><a href="https://support.websoft9.com/alldocs.html" target="_blank">Documentation</a></li>
+                            <li><a href="https://support.websoft9.com/docs/faq" target="_blank">FAQ</a></li>
+                            <li><a href="/en/ticket" target="_blank">7×24 Ticket</a></li>
+                            <li><a href="/en/contact" target="_blank">Help Desk</a></li>
 
                         </ul>
                     </div>
@@ -167,19 +167,13 @@
 
                 <div class="col-lg-2 col-md-6 col-sm-6">
                     <div class="single-footer-widget">
-                        <h3>资源</h3>
+                        <h3>Resource</h3>
                         <ul class="list">
-                            <li><a href="/cn/cases" target="_blank">客户案例</a></li>
-                            <li><a href="https://support.websoft9.com/docs/faq/zh/tech-tools.html" target="_blank">小工具</a></li>
+                            <li><a href="/en/cases" target="_blank">Success stories</a></li>
+                            <li><a href="https://support.websoft9.com/docs/faq/tech-tools.html" target="_blank">Tools</a></li>
                             <li><a href="https://github.com/websoft9" target="_blank">Github</a></li>
-                            <li><a href="#" target="_blank">视频学习</a></li>
-                            <li><a href="#" target="_blank">直播课堂</a></li>
-                            <li><a href="#" target="_blank">中小企业上云</a></li>
-                            <li><a href="#" target="_blank">开发者</a></li>
-                            <li><a href="https://blog.websoft9.com/1111-buy-20-off-all-in-websoft9/" target="_blank">优惠折扣</a></li>
-                            <li><a href="#" target="_blank">创客赋能</a></li>
-                            <li><a href="/cn/distribution">全球分发</a></li>
-                            <li><a href="/cn/donate">捐赠开源</a></li>
+                            <li><a href="#" target="_blank"></a>Develop</li>
+                            <li><a href="/en/donate">Donate</a></li>
 
                         </ul>
                     </div>
@@ -187,21 +181,21 @@
 
                                 <div class="col-lg-2 col-md-6 col-sm-6">
                     <div class="single-footer-widget">
-                        <h3>关于我们</h3>
+                        <h3>About</h3>
                         <ul class="list">
-                            <li><a href="/cn/about">公司介绍</a></li>
-                            <li><a href="https://blog.websoft9.com/" target="_blank">新闻博客</a></li>
-                            <li><a href="/cn/partner">合作伙伴</a></li>
-                            <li><a href="https://support.websoft9.com/docs/legal/zh/" target="_blank">法律条款</a></li>
-                            <li><a href="/cn/job">招聘</a></li>
-                            <li><a href="/cn/contact">联系我们</a></li>
+                            <li><a href="/en/about">Company</a></li>
+                            <li><a href="https://blog.websoft9.com/" target="_blank">Blog</a></li>
+                            <li><a href="/en/partner">Partner</a></li>
+                            <li><a href="https://support.websoft9.com/docs/legal" target="_blank">Legal</a></li>
+                            <li><a href="/en/job">Career</a></li>
+                            <li><a href="/en/contact">Contact Us</a></li>
                         </ul>
                     </div>
                 </div>
 
                 <div class="col-lg-12 col-md-12">
                     <div class="copyright-area">
-                        <p>©2014-2020 长沙网久软件有限公司 备案：<a href="http://beian.miit.gov.cn/" target="_blank">湘ICP备16009117号</a></p>
+                        <p>©2014-2020 Websoft9 Inc.</p>
                     </div>
                 </div>
             </div>
