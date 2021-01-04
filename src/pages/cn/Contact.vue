@@ -1,21 +1,21 @@
 <template>
-  <EnglishLayout>
+  <ChineseLayout>
     <Contact></Contact>
-  </EnglishLayout>
+  </ChineseLayout>
 </template>
 
 <script>
-import EnglishLayout from '~/layouts/English.vue'
-import Contact from '~/components/en/Contact.vue'
+import ChineseLayout from '~/layouts/Chinese.vue'
+import Contact from '~/components/cn/Contact.vue'
 
 export default {
 
   metaInfo: {
-    title: 'Contact Websoft9'
+    title: '联系我们'
   },
 
   components: {
-    EnglishLayout,
+    ChineseLayout,
     Contact
   }
 }
