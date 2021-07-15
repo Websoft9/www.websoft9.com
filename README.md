@@ -8,7 +8,7 @@
 * UI 框架： [bootstrap-vue](https://bootstrap-vue.org/)
 * 界面模板： [Pasona](https://www.pasona-vue.envytheme.com/machine-learning)
 * 图标： [Bootstrap Icons](https://icons.getbootstrap.com/), [Websoft9 Icons](https://github.com/Websoft9/icons)
-* 无头后端： [Ghost](https://ghost.org/), [Airtable](https://airtable.com/)
+* 无头后端： [Ghost](https://ghost.org/), [Airtable](https://airtable.com/), [Contentful](https://contentful.com/)
 
 其中 Gridsome 是基于 Vue.js 构建的 Jamstack 框架。
 
