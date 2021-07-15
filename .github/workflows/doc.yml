@@ -1,0 +1,27 @@
+name: Docs Build and Upload
+
+on: 
+  push:
+    paths: docs/**
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@master
+        
+    - name: Install gridsome and build
+      run: |
+       yarn global add @gridsome/cli
+       sudo gridsome build
+      env:
+        CI: true
+    
+    #  Upload to www server
+    - uses: bacongobbler/azure-blob-storage-upload@v1.2.0
+      with:
+        source_dir: docs/html
+        container_name: $web
+        connection_string: ${{ secrets.Azure_blob }}
+        extra_args: '--destination-path docs'
+        sync: false
