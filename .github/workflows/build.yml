@@ -23,7 +23,7 @@ jobs:
         host: www.websoft9.com 
         port: 22
         username: root
-        password: ${{ secrets.SERVER_PASSWORD }}
+        password: ${{ secrets.WWWSERVER }}
         scp_source: dist
         scp_target: /data/wwwroot/devops
         before_script: |
