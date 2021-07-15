@@ -18,6 +18,9 @@
 # 基于模板创建新网站项目
 gridsome create new-project
 
+# 安装依赖
+npm install
+
 # 测试网站
 gridsome develop
 
