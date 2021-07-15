@@ -10,9 +10,9 @@ jobs:
         
     - name: Install gridsome and build
       run: |
-       npm install
        yarn global add @gridsome/cli
-       sudo gridsome build
+       mkdir dist
+       echo "hello" > dist/testfile
       env:
         CI: true
     
