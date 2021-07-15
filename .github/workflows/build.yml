@@ -17,11 +17,16 @@ jobs:
       env:
         CI: true
     
-    #  Upload to www server
-    - uses: bacongobbler/azure-blob-storage-upload@v1.2.0
+    - name: SSH Server Deploy
+      uses: kostya-ten/ssh-server-deploy@v4
       with:
-        source_dir: docs/html
-        container_name: $web
-        connection_string: ${{ secrets.Azure_blob }}
-        extra_args: '--destination-path docs'
-        sync: false
+        host: www.websoft9.com 
+        port: 22
+        username: root
+        password: ${{ secrets.SERVER_PASSWORD }}
+        scp_source: dist
+        scp_target: /data/wwwroot/devops
+        before_script: |
+          df -h
+        after_script: |
+          whoami
