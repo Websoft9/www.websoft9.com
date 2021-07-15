@@ -10,6 +10,7 @@ jobs:
         
     - name: Install gridsome and build
       run: |
+       npm install
        yarn global add @gridsome/cli
        sudo gridsome build
       env:
