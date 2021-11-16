@@ -32,3 +32,36 @@
 参考：https://bootstrap-vue.org/docs/icons
 
 #### 集成外部表单后，不刷新，页面出不来
+
+#### 筛选条件分类
+
+首页自然分类：
+
+推荐(Featured)
+
+
+热门(Hot)
+
+-------------------------
+
+(Cloud)
+阿里云
+腾讯云
+。。。
+
+
+表现形式(Product Type)
+虚拟机镜像
+SaaS
+下载包
+编排方案
+
+操作系统(OS)
+Windows
+Linux
+
+(Price)
+免费
+订阅付费
+购买license
+
