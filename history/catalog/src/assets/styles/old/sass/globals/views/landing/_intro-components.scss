@@ -1,0 +1,43 @@
+.intro-components-Wrap {
+  background: url("~@/assets/images/landing/Bg/bg.jpeg") center center/cover
+    no-repeat;
+  padding: 180px 0px 80px;
+  color: #fff;
+  overflow: hidden;
+  position: relative;
+  z-index: 99;
+  .intro-components-RightSection {
+    position: relative;
+  }
+  .overlay {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 100%;
+    width: 100%;
+    z-index: -1;
+    opacity: 0.9;
+  }
+  // &:after {
+  //     content: '';
+  //     display: block;
+  //     height: 100%;
+  //     background: url('/../../assets/images/landing/Bg/Bg_03.png') bottom no-repeat;
+  //     background-size: cover;
+  //     position: absolute;
+  //     bottom: -8px;
+  //     left: 0;
+  //     right: 0;
+  //     z-index: -1;
+  // }
+}
+
+@media only screen and (max-width: 992px) {
+  .intro-three-Wrap {
+    .intro-three-LeftSection {
+      margin-bottom: 0px;
+    }
+  }
+}

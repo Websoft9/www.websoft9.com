@@ -1,0 +1,53 @@
+.rightRs {
+    position: relative;
+    right: -10px;
+    top: 40%;
+    overflow: hidden;
+}
+
+.leftRs {
+    position: relative;
+    left: 0px;
+    top: 40%;
+    overflow: hidden;
+}
+
+.ngu_control_button {
+    height: 60px;
+    width: 60px;
+    line-height: 70px;
+    padding: 0px;
+    overflow: hidden;
+    z-index:9;
+    /* color: #fff; */
+    font-size: 40px;
+}
+
+
+/* the slides */
+
+.slick-slide {
+    margin: 0 15px;
+}
+
+
+/* the parent */
+
+.slick-list {
+    margin: 0 -15px;
+}
+
+@media only screen and (max-width: 765px) {
+    .rightRs {
+        position: relative;
+        right: -3%;
+        top: 40%;
+        overflow: hidden;
+    }
+    .leftRs {
+        position: relative;
+        left: 0%;
+        top: 40%;
+        overflow: hidden;
+    }
+}

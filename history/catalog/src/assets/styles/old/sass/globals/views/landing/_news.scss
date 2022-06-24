@@ -1,0 +1,17 @@
+.news-wrap {
+    .card {
+        .card-img-overlay {
+            &:after {
+                background: linear-gradient(-29deg, rgba(193, 15, 65, 0.79) 0, #233b88ba 100%) !important;
+                background: -moz-linear-gradient(-29deg, rgba(193, 15, 65, 0.79) 0, #233b88ba 100%) !important;
+                background: -ms-linear-gradient(-29deg, rgba(193, 15, 65, 0.79) 0, #233b88ba 100%) !important;
+                background: -o-linear-gradient(-29deg, rgba(193, 15, 65, 0.79) 0, #233b88ba 100%) !important;
+                background: linear-gradient(-29deg, rgba(193, 15, 65, 0.79) 0, #233b88ba 100%) !important;
+            }
+        }
+        .eva {
+            color: #fff;
+            -webkit-text-fill-color: #fff;
+        }
+    }
+}

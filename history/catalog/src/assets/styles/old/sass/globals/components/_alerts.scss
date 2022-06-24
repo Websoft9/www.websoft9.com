@@ -1,0 +1,28 @@
+// BOOTSTRAP ALERT
+.alert {
+    // background: $background;
+    border-radius: 10px;
+    .close:focus {
+        outline: 0;
+    }
+}
+
+.alert-card {
+    border: none;
+    box-shadow: 0 4px 15px 0 rgba(0, 0, 0, .1), 0 1px 2px 0 rgba(0, 0, 0, .1), inset 0 2px 0 0 $gray-400;
+    &.alert-success {
+        box-shadow: 0 4px 15px 0 rgba(0, 0, 0, .1), 0 1px 2px 0 rgba(0, 0, 0, .1), inset 0 2px 0 0 $success;
+    }
+    &.alert-warning {
+        box-shadow: 0 4px 15px 0 rgba(0, 0, 0, .1), 0 1px 2px 0 rgba(0, 0, 0, .1), inset 0 2px 0 0 $warning;
+    }
+    &.alert-info {
+        box-shadow: 0 4px 15px 0 rgba(0, 0, 0, .1), 0 1px 2px 0 rgba(0, 0, 0, .1), inset 0 2px 0 0 $info;
+    }
+    &.alert-danger {
+        box-shadow: 0 4px 15px 0 rgba(0, 0, 0, .1), 0 1px 2px 0 rgba(0, 0, 0, .1), inset 0 2px 0 0 $danger;
+    }
+    &.alert-dark {
+        box-shadow: 0 4px 15px 0 rgba(0, 0, 0, .1), 0 1px 2px 0 rgba(0, 0, 0, .1), inset 0 2px 0 0 $gray-600;
+    }
+}

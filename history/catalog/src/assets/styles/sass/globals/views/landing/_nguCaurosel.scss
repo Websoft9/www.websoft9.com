@@ -1,0 +1,93 @@
+// .rightRs {
+//     position: relative;
+//     right: -10px;
+//     top: 40%;
+//     overflow: hidden;
+// }
+
+// .leftRs {
+//     position: relative;
+//     left: 0px;
+//     top: 40%;
+//     overflow: hidden;
+// }
+
+// .ngu_control_button {
+//     height: 60px;
+//     width: 60px;
+//     line-height: 70px;
+//     padding: 0px;
+//     overflow: hidden;
+//     z-index:9;
+//     /* color: #fff; */
+//     font-size: 40px;
+// }
+
+// /* the slides */
+
+// .slick-slide {
+//     margin: 0 15px;
+// }
+
+// /* the parent */
+
+// .slick-list {
+//     margin: 0 -15px;
+// }
+
+// @media only screen and (max-width: 765px) {
+//     .rightRs {
+//         position: relative;
+//         right: -3%;
+//         top: 40%;
+//         overflow: hidden;
+//     }
+//     .leftRs {
+//         position: relative;
+//         left: 0%;
+//         top: 40%;
+//         overflow: hidden;
+//     }
+// }
+.owl-theme .owl-nav [class*="owl-"] {
+  height: 60px;
+  width: 60px;
+  line-height: 60px;
+  padding: 0px !important;
+  overflow: hidden;
+  z-index: 9;
+  box-shadow: 0 3px 1px -2px rgba(0, 0, 0, 0.2), 0 2px 2px 0 rgba(0, 0, 0, 0.14),
+    0 1px 5px 0 rgba(0, 0, 0, 0.12);
+  font-size: 40px !important;
+  background-color: #fff;
+  margin-bottom: -15px;
+}
+.owl-theme .owl-nav {
+  margin-bottom: -15px;
+}
+
+.owl-theme .owl-nav [class*="owl-"]:hover {
+  background: #fff;
+
+  text-decoration: none;
+}
+.owl-nav .owl-next,
+.owl-prev {
+  /* eva */
+  display: inline-block;
+  -webkit-transform: translate(0, 0);
+  transform: translate(0, 0);
+  text-rendering: auto;
+  font: normal normal 400 14px/1 Eva-Icons;
+  font-size: inherit;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+
+  border-radius: 3px 15px !important;
+}
+.owl-nav .owl-prev::before {
+  content: "\EA6E";
+}
+.owl-nav .owl-next::before {
+  content: "\EA70";
+}

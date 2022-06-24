@@ -1,0 +1,58 @@
+.dexam-input {
+    min-width: 220px;
+    border: 1px solid #f3f4f6;
+    border-top-right-radius: 0px;
+    border-bottom-right-radius: 0px;
+}
+
+.dexam-input.rounded {
+    border-radius: 1000em;
+}
+
+.dexam-input:focus {
+    box-shadow: none;
+    border-color: #e7e3ec;
+}
+
+.h-55 {
+    height: 55px;
+}
+
+input.dexam-input {
+    font-size: 20px;
+}
+
+.dexam-input::placeholder {
+    font-size: 20px;
+}
+
+.subscribe-img-bg {
+    // background: url('../../../../../images/landing/Bg/wide-img.jpg') no-repeat;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    padding: 100px 0px;
+    background-position: center;
+    background-attachment: fixed;
+}
+
+.subscribe-img-bg-2 {
+    // background: linear-gradient( rgba(75, 73, 73, 0.7), rgba(155, 155, 155, 0.7)), url('../../../../../../assets/images/landing/Bg/wide-img.jpg') no-repeat;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    padding: 100px 0px;
+    background-position: center;
+    background-attachment: fixed;
+}
+
+.subscribe-input {
+    .btn {
+        border-top-left-radius: 0px;
+        border-bottom-left-radius: 0px;
+        padding-right: 20px;
+        padding-left: 20px;
+    }
+}
