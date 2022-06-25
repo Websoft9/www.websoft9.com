@@ -1,0 +1,27 @@
+    .services-caurosel-wrap {
+        padding: 80px 0px;
+        .section-header {
+            p {
+                max-width: 600px;
+            }
+        }
+        .service-wrap {
+            .card {
+                .card-header {
+                    border-color: transparent;
+                    height: 170px;
+                    img {
+                        object-fit: cover;
+                        height: 100%;
+                        width: 100%;
+                    }
+                }
+                .card-footer {
+                    background: transparent;
+                    a.text-dark {
+                        line-height: 10px;
+                    }
+                }
+            }
+        }
+    }

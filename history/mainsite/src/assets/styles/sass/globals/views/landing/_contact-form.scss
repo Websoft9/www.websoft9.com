@@ -1,0 +1,144 @@
+.contact-form-wrap {
+  padding-bottom: 120px;
+  position: relative;
+  z-index: 1;
+  i {
+    vertical-align: middle;
+  }
+  .social-wrap {
+    .social-btns-wrap {
+      .social-btn {
+        display: inline-block;
+        width: 50px;
+        height: 50px;
+        margin: 0 10px;
+        text-align: center;
+        position: relative;
+        overflow: hidden;
+        border-radius: 28%;
+        box-shadow: -1px 5px 15px -4px rgba(0, 0, 0, 0.1);
+        opacity: 0.99;
+        background: #fff;
+        transition: all 0.35s;
+        transition-timing-function: cubic-bezier(0.31, -0.105, 0.43, 1.59);
+      }
+      .social-btn:before {
+        content: "";
+        width: 120%;
+        height: 120%;
+        position: absolute;
+        -webkit-transform: rotate(45deg);
+        transform: rotate(45deg);
+        transition: all 0.35s;
+        transition-timing-function: cubic-bezier(0.31, -0.105, 0.43, 1.59);
+      }
+      .social-btn.facebook:before {
+        background-color: #3b5998;
+      }
+      .social-btn.twitter:before {
+        background-color: #3cf;
+      }
+      .social-btn.skype:before {
+        background-color: #00aff0;
+      }
+      .social-btn.dribbble:before {
+        background-color: #f26798;
+      }
+      .social-btn.google:before {
+        background-color: #dc4a38;
+      }
+      .social-btn:before {
+        top: 90%;
+        right: -110%;
+      }
+      .social-btn:focus:before,
+      .social-btn:hover:before {
+        top: -10%;
+        right: -10%;
+      }
+      .social-btn i {
+        transition: all 0.35s;
+        transition-timing-function: cubic-bezier(0.31, -0.105, 0.43, 1.59);
+        -webkit-transform: scale(0.8);
+        transform: scale(0.8);
+      }
+      .social-btn:focus,
+      .social-btn:hover i {
+        color: #fff;
+        -webkit-text-fill-color: #fff !important;
+        -webkit-transform: scale(1);
+        transform: scale(1);
+        border: none;
+      }
+      .facebook i {
+        color: #3b5998;
+        -webkit-text-fill-color: #3b5998 !important;
+      }
+      .twitter i {
+        color: #3cf;
+        -webkit-text-fill-color: #3cf !important;
+      }
+      .google i {
+        color: #dc4a38;
+        -webkit-text-fill-color: #dc4a38 !important;
+      }
+      .dribbble i {
+        color: #f26798;
+        -webkit-text-fill-color: #f26798 !important;
+      }
+      .skype i {
+        color: #00aff0;
+        -webkit-text-fill-color: #00aff0 !important;
+      }
+    }
+  }
+  .form-wrap {
+    form.form {
+      .form-group {
+        label {
+          position: absolute;
+          z-index: 999;
+          left: 40px;
+          top: 10px;
+          font-size: 16px;
+          color: #a6b0bd;
+          border-right: 1px solid #c6cdd5;
+          padding-right: 10px;
+          width: 30px;
+        }
+        .form-control {
+          padding: 24px 0px;
+          padding-left: 65px;
+          background: $background;
+          border-radius: 20px;
+        }
+        .form-control.ng-invalid.ng-touched {
+          box-shadow: 0px 2px 2px 1px rgba(193, 15, 65, 0.2);
+        }
+        textarea.form-control {
+          padding: 14px 0px 24px 0px;
+          padding-left: 65px;
+        }
+        .form-control:focus {
+          box-shadow: 4px 4px 15px 0 rgba(36, 37, 38, 0.08);
+        }
+      }
+      .form-submit-button {
+        padding: 10px 30px;
+      }
+    }
+  }
+  &:after {
+    content: "";
+    display: block;
+    height: 100%;
+    background: url("../../../../assets/images/landing/Bg/Bg_03.png") bottom
+      no-repeat;
+    position: absolute;
+    background-size: cover;
+    bottom: -8px;
+    left: 0;
+    right: 0;
+    z-index: -1;
+  }
+}

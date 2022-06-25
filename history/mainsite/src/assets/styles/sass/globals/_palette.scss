@@ -1,0 +1,97 @@
+@each $gcolor_name, $gcolor in $gradient-colors {
+  $start-color: map-get($gcolor, start-color);
+  $end-color: map-get($gcolor, end-color);
+  .landing-#{$gcolor_name} {
+    .header-fixed {
+      @include directional-gradient(-29deg, $start-color, $end-color);
+    }
+    .overlay {
+      @include directional-gradient(-29deg, $start-color, $end-color);
+    }
+    .eva {
+      @include directional-gradient-eva(-29deg, $start-color, $end-color);
+      // background: none;
+    }
+
+    .owl-nav .owl-next,
+    .owl-prev {
+      @include directional-gradient-eva(-29deg, $start-color, $end-color);
+    }
+    .bg-gradient {
+      @include directional-gradient(-29deg, $start-color, $end-color);
+    }
+    .btn-gradient {
+      @include directional-gradient(-29deg, $start-color, $end-color);
+      color: #fff;
+      border: 0px solid rgba(193, 15, 65, 0.8);
+      &:hover {
+        @include directional-gradient(-29deg, $start-color, $end-color);
+        color: #fff;
+        border: 0px solid $transparent-gradient;
+      }
+    }
+    nav ul li ul li {
+      @include directional-gradient(-29deg, $start-color, $end-color);
+    }
+  }
+  @media (max-width: 991px) {
+    .landing-#{$gcolor_name} {
+      .navbar-collapse {
+        @include directional-gradient(-29deg, $start-color, $end-color);
+      }
+    }
+  }
+  .#{$gcolor_name} {
+    @include directional-gradient(-29deg, $start-color, $end-color);
+  }
+  .btn.#{$gcolor_name} {
+    &:active,
+    &.active {
+      @include directional-gradient(-90deg, $start-color, $end-color);
+    }
+  }
+}
+
+@each $color_name, $color in $solid-colors {
+  .landing-#{$color_name} {
+    .header-fixed {
+      background: $color !important;
+    }
+    .overlay {
+      background: $color;
+    }
+    .eva {
+      background-image: linear-gradient(-29deg, $color, $color);
+    }
+    .owl-nav .owl-next,
+    .owl-prev {
+      background: $color !important;
+    }
+    .bg-gradient {
+      background: $color;
+    }
+    .btn-gradient {
+      background: $color;
+      color: #fff;
+      border: 0px solid rgba(193, 15, 65, 0.8);
+      &:hover {
+        background: $color;
+        color: #fff;
+        border: 0px solid $transparent-gradient;
+      }
+    }
+    nav ul li ul li {
+      background: $color;
+    }
+  }
+  @media (max-width: 995px) {
+    .landing-#{$color_name} {
+      .navbar-collapse {
+        background: $color;
+      }
+    }
+  }
+  .#{$color_name} {
+    background: $color;
+  }
+}

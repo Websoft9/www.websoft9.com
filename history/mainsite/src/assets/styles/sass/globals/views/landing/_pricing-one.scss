@@ -1,0 +1,21 @@
+.pricing-one-wrap {
+    .card {
+        .card-header,
+        .card-footer {
+            border: 0;
+        }
+        .card-body {
+            .offer-lists {
+                .list-group {
+                    .list-group-item {
+                        border: 0;
+                    }
+                }
+            }
+            .text-muted {
+                text-decoration: line-through;
+                text-decoration-color: #b745716b;
+            }
+        }
+    }
+}

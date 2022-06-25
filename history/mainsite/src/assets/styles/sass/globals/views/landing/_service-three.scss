@@ -1,0 +1,21 @@
+// .service-three img{
+//     width: 200px; 
+// }
+.service-three--hover {
+    height: 100%;
+}
+
+.service-three--hover {
+    height: 100%;
+    .card-header {
+        height: 250px;
+        img {
+            height: 100%;
+        }
+    }
+}
+
+.service-three--hover:hover {
+    transform: translateY(-20px);
+    transition: 0.3s ease-in;
+}

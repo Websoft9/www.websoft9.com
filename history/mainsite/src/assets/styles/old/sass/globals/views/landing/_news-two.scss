@@ -1,0 +1,26 @@
+.news-two-wrap {
+    .card {
+        position: relative;
+        display: flex;
+        flex-direction: row;
+        .card-img {
+            width: 100%;
+            border-radius: 0px;
+            height: 100%;
+            object-fit: fill;
+        }
+        .card_right_content {
+            h2 {
+                // font-size: 34px;
+                color: #474747;
+            }
+            h5 {
+                color: #d2d2d2;
+                letter-spacing: 0.2em;
+            }
+            p {
+                // color: #8d8d8d;
+            }
+        }
+    }
+}
