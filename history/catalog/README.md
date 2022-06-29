@@ -8,8 +8,8 @@
 ## Install
 
 ```
-git clone https://github.com/Websoft9test/mainsite.git
-cd mainsite
+git clone https://github.com/Websoft9/www.websoft9.com.git
+cd www.websoft9.com/history/catalog
 yarn global add @gridsome/cli
 yarn install
 gridsome develop
