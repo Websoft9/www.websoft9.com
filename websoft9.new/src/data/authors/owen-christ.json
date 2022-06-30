@@ -1,0 +1,33 @@
+{
+    "name": "Owen Christ",
+    "image": {
+        "src": "../images/author/owen.jpeg"
+    },
+    "socials": [
+        {
+            "id": 1,
+            "icon": "fab fa-facebook-f",
+            "link": "https://facebook.com",
+            "title": "Facebook"
+        },
+        {
+            "id": 2,
+            "icon": "fab fa-twitter",
+            "link": "https://twitter.com",
+            "title": "Twitter"
+        },
+        {
+            "id": 3,
+            "icon": "fab fa-instagram",
+            "link": "https://instagram.com",
+            "title": "Instagram"
+        },
+        {
+            "id": 4,
+            "icon": "fab fa-linkedin",
+            "link": "https://linkedin.com",
+            "title": "linkedin"
+        }
+    ],
+    "bio": "Owen Christ is an author, blogger, and designer living in a suburb of Washington, DC. When he’s not designing, blogging, or writing, Ferguson can be found with his head in a book or pinning like a madman."
+}

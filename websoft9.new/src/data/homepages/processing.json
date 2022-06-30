@@ -1,0 +1,381 @@
+{
+    "title": "processing",
+    "pageType": "frontpage",
+    "content": [
+        {
+            "id": "processing-hero-content",
+            "section": "hero-section",
+            "images": [
+                {
+                    "src": "../images/hero/slider-processing-slide-01-image-01.png"
+                }
+            ],
+            "headings": [
+                {
+                    "level": "h6",
+                    "content": "IT Software and design"
+                },
+                {
+                    "level": "h1",
+                    "content": "Virtual technology in a <span>Refined IT System</span>"
+                }
+            ],
+            "texts": [
+                {
+                    "content": "Set the trends for desktop & server virtualization technology"
+                }
+            ],
+            "buttons": [
+                {
+                    "id": 1,
+                    "path": "/homepages/processing",
+                    "color": "secondary",
+                    "content": "Free Sample"
+                }
+            ],
+            "video_button": {
+                "link": "https://www.youtube.com/watch?v=9No-FiEInLA",
+                "content": "How we work"
+            }
+        },
+        {
+            "id": "processing-about",
+            "section": "about-section",
+            "section_title": {
+                "title": "Share the joy of achieving <span>glorious moments</span> & climbed up the top.",
+                "subtitle": "OUR COMPANY"
+            },
+            "video_button": {
+                "link": "https://www.youtube.com/watch?v=9No-FiEInLA"
+            },
+            "items": [
+                {
+                    "id": 1,
+                    "title": "How can we help your business?",
+                    "description": "Through the collaboration with customers in discussing needs and demand, we're able to attain mutual understanding, gain customer trust to offer appropriate advice, and bring about suggestions on suitable technology to transform your business. "
+                },
+                {
+                    "id": 2,
+                    "title": "What are the advantages of Mitech?",
+                    "description": "Mitech takes into consideration every little detail to make sure the system run smoothly and responsively. Mitech employs a new technique called Minified Technology for securing customers' database & building up highly confidential firewalls."
+                },
+                {
+                    "id": 3,
+                    "title": "How working process is simplified?",
+                    "description": "We reduce redundant complex calculations and lengthy erroneous code texts with simpler ones to ensure Mitech would run seamlessly and the design is reserved in its best form when viewed from a wide range of mobile devices & browsers."
+                }
+            ],
+            "images": [
+                {
+                    "src": "../images/about-us/video-01-image-01-570x350.jpg"
+                },
+                {
+                    "src": "../images/about-us/home-processing-video-intro-slider-slide-01-image-02.jpg"
+                },
+                {
+                    "src": "../images/about-us/home-processing-video-intro-slider-slide-01-image-03.jpg"
+                },
+                {
+                    "src": "../images/about-us/home-processing-video-intro-slider-slide-01-image-04.jpg"
+                },
+                {
+                    "src": "../images/about-us/home-processing-video-intro-slider-slide-01-image-05.jpg"
+                }
+            ]
+        },
+        {
+            "id": "processing-feature",
+            "section": "feature-section",
+            "section_title": {
+                "title": "For your very specific industry, <br/> we have <span>highly-tailored IT solutions.</span>",
+                "subtitle": "FEATURED SERVICES"
+            },
+            "motto": {
+                "text": "Challenges are just opportunities in disguise.",
+                "linkText": "Take the challenge!",
+                "link": "/it-services"
+            }
+        },
+        {
+            "id": "processing-funfact",
+            "section": "funfact-section",
+            "headings": [
+                {
+                    "level": "h2",
+                    "content": "<mark>38</mark> YEARS’ EXPERIENCE IN IT"
+                },
+                {
+                    "level": "h3",
+                    "content": "Learn more about our <span>Success Stories</span>"
+                }
+            ],
+            "items": [
+                {
+                    "id": 1,
+                    "count": 1056,
+                    "title": "Happy Clients"
+                },
+                {
+                    "id": 2,
+                    "count": 491,
+                    "title": "FINISHED PROJECTS"
+                },
+                {
+                    "id": 3,
+                    "count": 491,
+                    "title": "SKILLED EXPERTS"
+                },
+                {
+                    "id": 4,
+                    "count": 491,
+                    "title": "MEDIA POSTS"
+                }
+            ]
+        },
+        {
+            "id": "processing-cta",
+            "section": "cta-section",
+            "headings": [
+                {
+                    "level": "h2",
+                    "content": "IT Security & Computing"
+                }
+            ],
+            "motto": {
+                "text": "Challenges are just opportunities in disguise.",
+                "linkText": "Learn more about how we work",
+                "link": "/it-services"
+            }
+        },
+        {
+            "id": "processing-service",
+            "section": "service-section",
+            "section_title": {
+                "title": "Preparing for your success, <br/> we provide <span>truly prominent IT solutions.</span>",
+                "subtitle": "OPTIMAL TECHNOLOGY SOLUTIONS"
+            },
+            "buttons": [
+                {
+                    "id": 1,
+                    "hoverStyle": "two",
+                    "path": "/it-services",
+                    "content": "Learn More"
+                },
+                {
+                    "id": 2,
+                    "variant": "outlined",
+                    "path": "/contact-us",
+                    "content": "Contact Us"
+                }
+            ]
+        },
+        {
+            "id": "processing-testimonial",
+            "section": "testimonial-section",
+            "section_title": {
+                "title": "What do people praise about <span> Mitech?</span>",
+                "subtitle": "Testimonials"
+            },
+            "items": [
+                {
+                    "id": 1,
+                    "name": "Abbie Ferguson",
+                    "designation": "Marketing",
+                    "images": [
+                        {
+                            "src": "../images/avatar/avatar-01-90x90.jpg"
+                        }
+                    ],
+                    "rating": 5,
+                    "subject": "The Mitech team works really hard to ensure high level of quality",
+                    "description": "I’ve been working with over 35 IT companies on more than 200 projects of our company, but @Mitech is one of the most impressive to me."
+                },
+                {
+                    "id": 2,
+                    "name": "Monica Blews",
+                    "designation": "Web designer",
+                    "images": [
+                        {
+                            "src": "../images/avatar/avatar-02-90x90.jpg"
+                        }
+                    ],
+                    "rating": 4,
+                    "subject": "The Mitech team works really hard to ensure high level of quality",
+                    "description": "I’ve been working with over 35 IT companies on more than 200 projects of our company, but @Mitech is one of the most impressive to me."
+                },
+                {
+                    "id": 3,
+                    "name": "Sansa Stark",
+                    "designation": "Web designer",
+                    "images": [
+                        {
+                            "src": "../images/avatar/avatar-03-90x90.jpg"
+                        }
+                    ],
+                    "rating": 5,
+                    "subject": "The Mitech team works really hard to ensure high level of quality",
+                    "description": "I’ve been working with over 35 IT companies on more than 200 projects of our company, but @Mitech is one of the most impressive to me."
+                },
+                {
+                    "id": 4,
+                    "name": "Rickon Stark",
+                    "designation": "Web developer",
+                    "images": [
+                        {
+                            "src": "../images/avatar/avatar-04-90x90.jpg"
+                        }
+                    ],
+                    "rating": 5,
+                    "subject": "The Mitech team works really hard to ensure high level of quality",
+                    "description": "I’ve been working with over 35 IT companies on more than 200 projects of our company, but @Mitech is one of the most impressive to me."
+                }
+            ]
+        },
+        {
+            "id": "processing-partner",
+            "section": "partner-section",
+            "items": [
+                {
+                    "id": 1,
+                    "images": [
+                        {
+                            "src": "../images/partners/mitech-client-logo-01.png"
+                        },
+                        {
+                            "src": "../images/partners/mitech-client-logo-01-hover.png"
+                        }
+                    ],
+                    "path": "/"
+                },
+                {
+                    "id": 2,
+                    "images": [
+                        {
+                            "src": "../images/partners/mitech-client-logo-02.png"
+                        },
+                        {
+                            "src": "../images/partners/mitech-client-logo-02-hover.png"
+                        }
+                    ],
+                    "path": "/"
+                },
+                {
+                    "id": 3,
+                    "images": [
+                        {
+                            "src": "../images/partners/mitech-client-logo-03.png"
+                        },
+                        {
+                            "src": "../images/partners/mitech-client-logo-03-hover.png"
+                        }
+                    ],
+                    "path": "/"
+                },
+                {
+                    "id": 4,
+                    "images": [
+                        {
+                            "src": "../images/partners/mitech-client-logo-04.png"
+                        },
+                        {
+                            "src": "../images/partners/mitech-client-logo-04-hover.png"
+                        }
+                    ],
+                    "path": "/"
+                },
+                {
+                    "id": 5,
+                    "images": [
+                        {
+                            "src": "../images/partners/mitech-client-logo-05.png"
+                        },
+                        {
+                            "src": "../images/partners/mitech-client-logo-05-hover.png"
+                        }
+                    ],
+                    "path": "/"
+                },
+                {
+                    "id": 6,
+                    "images": [
+                        {
+                            "src": "../images/partners/mitech-client-logo-06.png"
+                        },
+                        {
+                            "src": "../images/partners/mitech-client-logo-06-hover.png"
+                        }
+                    ],
+                    "path": "/"
+                },
+                {
+                    "id": 7,
+                    "images": [
+                        {
+                            "src": "../images/partners/mitech-client-logo-07.png"
+                        },
+                        {
+                            "src": "../images/partners/mitech-client-logo-07-hover.png"
+                        }
+                    ],
+                    "path": "/"
+                },
+                {
+                    "id": 8,
+                    "images": [
+                        {
+                            "src": "../images/partners/mitech-client-logo-08.png"
+                        },
+                        {
+                            "src": "../images/partners/mitech-client-logo-08-hover.png"
+                        }
+                    ],
+                    "path": "/"
+                },
+                {
+                    "id": 9,
+                    "images": [
+                        {
+                            "src": "../images/partners/mitech-client-logo-09.png"
+                        },
+                        {
+                            "src": "../images/partners/mitech-client-logo-09-hover.png"
+                        }
+                    ],
+                    "path": "/"
+                }
+            ]
+        },
+        {
+            "id": "processing-contact-content",
+            "section": "contact-section",
+            "headings": [
+                {
+                    "level": "h3",
+                    "content": "Obtaining further information by <span>make a contact</span> with our experienced IT staffs."
+                },
+                {
+                    "level": "h6",
+                    "content": "REACH OUT NOW!"
+                },
+                {
+                    "level": "h2",
+                    "content": "190068668"
+                }
+            ],
+            "texts": [
+                {
+                    "content": "We’re available for 8 hours a day! <br/> Contact to require a detailed analysis and assessment of your plan"
+                }
+            ],
+            "buttons": [
+                {
+                    "id": 1,
+                    "color": "light",
+                    "hoverStyle": "two",
+                    "path": "/contact-us",
+                    "content": "Contact Us"
+                }
+            ]
+        }
+    ]
+}

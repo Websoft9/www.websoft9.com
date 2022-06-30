@@ -1,0 +1,359 @@
+{
+    "title": "about-us",
+    "pageType": "innerpage",
+    "content": [
+        {
+            "id": "aboutus-page-header",
+            "section": "page-header-section",
+            "images": [
+                {
+                    "src": "../images/banner/banner-09.jpg",
+                    "alt": "page header"
+                }
+            ],
+            "headings": [
+                {
+                    "level": "h1",
+                    "content": "About Mitech"
+                }
+            ],
+            "texts": [
+                {
+                    "content": "Mitech specializes in technological and IT-related services such as product engineering, warranty management, building cloud, infrastructure, network, etc."
+                }
+            ]
+        },
+        {
+            "id": "aboutus-about",
+            "section": "about-section",
+            "section_title": {
+                "title": "We run all kinds of IT services that <br/> vow your <span>success</span>",
+                "subtitle": "OUR COMPANY"
+            },
+            "headings": [
+                {
+                    "level": "h2",
+                    "content": "<mark>38</mark> YEARS’ EXPERIENCE IN IT"
+                },
+                {
+                    "level": "h6",
+                    "content": "Learn more about our Success Stories"
+                }
+            ],
+            "texts": [
+                {
+                    "content": "Mitech specializes in technological and IT-related services such as product engineering, warranty management, building cloud, infrastructure, network, etc. We put a strong focus on the needs of your business to figure out solutions that best fits your demand and nail it."
+                }
+            ],
+            "buttons": [
+                {
+                    "id": 1,
+                    "variant": "texted",
+                    "color": "primary",
+                    "size": "medium",
+                    "shape": "rounded",
+                    "icon": "far fa-long-arrow-right",
+                    "icondistance": "8px",
+                    "iconposition": "right",
+                    "disableHover": false,
+                    "hoverStyle": "one",
+                    "fontWeight": 500,
+                    "path": "/about-us",
+                    "content": "Discover Now"
+                }
+            ]
+        },
+        {
+            "id": "aboutus-features",
+            "section": "feature-section",
+            "motto": {
+                "text": "Challenges are just opportunities in disguise",
+                "linkText": "Take the challenge!",
+                "link": "/it-services"
+            }
+        },
+        {
+            "id": "aboutus-cta",
+            "section": "cta-section",
+            "section_title": {
+                "title": "Get a copy of brochure on <span>Brand New IT Tech.</span>",
+                "subtitle": "Resources"
+            },
+            "buttons": [
+                {
+                    "id": 1,
+                    "path": "/about-us",
+                    "content": "Download now (3MB)"
+                }
+            ],
+            "images": [
+                {
+                    "src": "../images/box-image/book-cover.png"
+                }
+            ]
+        },
+        {
+            "id": "aboutus-solution",
+            "section": "solution-section",
+            "headings": [
+                {
+                    "content": "We excel in delivering <br/> optimal solutions."
+                }
+            ],
+            "items": [
+                {
+                    "id": 1,
+                    "title": "Warranty Management IT",
+                    "description": "Our service offerings enhance customer experience throughout secure & highly functional end-to-end warranty management."
+                },
+                {
+                    "id": 2,
+                    "title": "Product Engineering & Services",
+                    "description": "Develop and propose product improvements through periodical and accurate testing, repairing & refining every version."
+                },
+                {
+                    "id": 3,
+                    "title": "Quality Control System",
+                    "description": "It's more than a responsibility but a guarantee from us to gain customer trust with highly reliable quality control system."
+                },
+                {
+                    "id": 4,
+                    "title": "Infrastructure Integration Technology",
+                    "description": "At Mitech, we have a holistic and integrated approach towards core modernization to experience technological evolution."
+                },
+                {
+                    "id": 5,
+                    "title": "Highly Professional Staffs",
+                    "description": "Having obtained the official & formal training in IT technology and technical fields, our staffs know more than what they show."
+                },
+                {
+                    "id": 6,
+                    "title": "Information Security Management",
+                    "description": "Information security has been a rising issue lately due to a series of scandals from big companies, rest assured, we're here."
+                }
+            ]
+        },
+        {
+            "id": "aboutus-funfact",
+            "section": "funfact-section",
+            "items": [
+                {
+                    "id": 1,
+                    "count": 1056,
+                    "title": "Happy Clients"
+                },
+                {
+                    "id": 2,
+                    "count": 491,
+                    "title": "FINISHED PROJECTS"
+                },
+                {
+                    "id": 3,
+                    "count": 491,
+                    "title": "SKILLED EXPERTS"
+                },
+                {
+                    "id": 4,
+                    "count": 491,
+                    "title": "MEDIA POSTS"
+                }
+            ]
+        },
+        {
+            "id": "appointment-testimonial",
+            "section": "testimonial-section",
+            "section_title": {
+                "title": "What do people praise about <span> Mitech?</span>",
+                "subtitle": "Testimonials"
+            },
+            "items": [
+                {
+                    "id": 1,
+                    "name": "Abbie Ferguson",
+                    "designation": "Marketing",
+                    "images": [
+                        {
+                            "src": "../images/avatar/avatar-01-90x90.jpg"
+                        }
+                    ],
+                    "rating": 5,
+                    "subject": "The Mitech team works really hard to ensure high level of quality",
+                    "description": "I’ve been working with over 35 IT companies on more than 200 projects of our company, but @Mitech is one of the most impressive to me."
+                },
+                {
+                    "id": 2,
+                    "name": "Monica Blews",
+                    "designation": "Web designer",
+                    "images": [
+                        {
+                            "src": "../images/avatar/avatar-02-90x90.jpg"
+                        }
+                    ],
+                    "rating": 4,
+                    "subject": "The Mitech team works really hard to ensure high level of quality",
+                    "description": "I’ve been working with over 35 IT companies on more than 200 projects of our company, but @Mitech is one of the most impressive to me."
+                },
+                {
+                    "id": 3,
+                    "name": "Sansa Stark",
+                    "designation": "Web designer",
+                    "images": [
+                        {
+                            "src": "../images/avatar/avatar-03-90x90.jpg"
+                        }
+                    ],
+                    "rating": 5,
+                    "subject": "The Mitech team works really hard to ensure high level of quality",
+                    "description": "I’ve been working with over 35 IT companies on more than 200 projects of our company, but @Mitech is one of the most impressive to me."
+                },
+                {
+                    "id": 4,
+                    "name": "Rickon Stark",
+                    "designation": "Web developer",
+                    "images": [
+                        {
+                            "src": "../images/avatar/avatar-04-90x90.jpg"
+                        }
+                    ],
+                    "rating": 5,
+                    "subject": "The Mitech team works really hard to ensure high level of quality",
+                    "description": "I’ve been working with over 35 IT companies on more than 200 projects of our company, but @Mitech is one of the most impressive to me."
+                }
+            ]
+        },
+        {
+            "id": "processing-partner",
+            "section": "partner-section",
+            "items": [
+                {
+                    "id": 1,
+                    "images": [
+                        {
+                            "src": "../images/partners/mitech-client-logo-01.png"
+                        },
+                        {
+                            "src": "../images/partners/mitech-client-logo-01-hover.png"
+                        }
+                    ],
+                    "path": "/"
+                },
+                {
+                    "id": 2,
+                    "images": [
+                        {
+                            "src": "../images/partners/mitech-client-logo-02.png"
+                        },
+                        {
+                            "src": "../images/partners/mitech-client-logo-02-hover.png"
+                        }
+                    ],
+                    "path": "/"
+                },
+                {
+                    "id": 3,
+                    "images": [
+                        {
+                            "src": "../images/partners/mitech-client-logo-03.png"
+                        },
+                        {
+                            "src": "../images/partners/mitech-client-logo-03-hover.png"
+                        }
+                    ],
+                    "path": "/"
+                },
+                {
+                    "id": 4,
+                    "images": [
+                        {
+                            "src": "../images/partners/mitech-client-logo-04.png"
+                        },
+                        {
+                            "src": "../images/partners/mitech-client-logo-04-hover.png"
+                        }
+                    ],
+                    "path": "/"
+                },
+                {
+                    "id": 5,
+                    "images": [
+                        {
+                            "src": "../images/partners/mitech-client-logo-05.png"
+                        },
+                        {
+                            "src": "../images/partners/mitech-client-logo-05-hover.png"
+                        }
+                    ],
+                    "path": "/"
+                },
+                {
+                    "id": 6,
+                    "images": [
+                        {
+                            "src": "../images/partners/mitech-client-logo-06.png"
+                        },
+                        {
+                            "src": "../images/partners/mitech-client-logo-06-hover.png"
+                        }
+                    ],
+                    "path": "/"
+                },
+                {
+                    "id": 7,
+                    "images": [
+                        {
+                            "src": "../images/partners/mitech-client-logo-07.png"
+                        },
+                        {
+                            "src": "../images/partners/mitech-client-logo-07-hover.png"
+                        }
+                    ],
+                    "path": "/"
+                },
+                {
+                    "id": 8,
+                    "images": [
+                        {
+                            "src": "../images/partners/mitech-client-logo-08.png"
+                        },
+                        {
+                            "src": "../images/partners/mitech-client-logo-08-hover.png"
+                        }
+                    ],
+                    "path": "/"
+                },
+                {
+                    "id": 9,
+                    "images": [
+                        {
+                            "src": "../images/partners/mitech-client-logo-09.png"
+                        },
+                        {
+                            "src": "../images/partners/mitech-client-logo-09-hover.png"
+                        }
+                    ],
+                    "path": "/"
+                }
+            ]
+        },
+        {
+            "id": "cybersecurity-contact-info",
+            "section": "contact-section",
+            "headings": [
+                {
+                    "level": "h3",
+                    "content": "4.9/5.0"
+                }
+            ],
+            "texts": [
+                {
+                    "content": "by 700+ customers for 3200+ clients"
+                }
+            ],
+            "images": [
+                {
+                    "src": "../images/banner/contact-image.png"
+                }
+            ]
+        }
+    ]
+}

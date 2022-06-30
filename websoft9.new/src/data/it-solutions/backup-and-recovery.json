@@ -1,0 +1,172 @@
+{
+    "id": "backup-and-recovery",
+    "title": "Backup and recovery",
+    "tagline": "Reach out to the world’s most reliable IT services.",
+    "excerpt": "We provide the most responsive and functional IT design for companies and businesses worldwide.",
+    "icon": {
+        "svg": {
+            "src": "../images/icons/linea-basic-gear.svg"
+        },
+        "images": [
+            {
+                "src": "../images/icons/icon-13-80x83.png",
+                "alt": "Business Reform icon"
+            },
+            {
+                "src": "../images/icons/icon-01-100x98.png",
+                "alt": "Business Reform icon"
+            },
+            {
+                "src": "../images/icons/icon-01-hover-100x98.png",
+                "alt": "Business Reform icon"
+            }
+        ]
+    },
+    "is_featured": true,
+    "featured_image": {
+        "src": "../images/box-image/image-06-480x298.jpg",
+        "alt": "Business Reform"
+    },
+    "banner_image": {
+        "src": "../images/banner/banner-01.jpg",
+        "alt": "Business Reform"
+    },
+    "content": [
+        {
+            "id": "intro",
+            "section": "intro-section",
+            "headings": [
+                {
+                    "level": "h3",
+                    "content": "Learn More About Our <span> Success <br /> Stories</span>"
+                },
+                {
+                    "level": "h5",
+                    "content": "Mitech specializes in <span>technological and IT-related services</span> such as product engineering, warranty management, building cloud, infrastructure, network, etc."
+                }
+            ],
+            "texts": [
+                {
+                    "content": "We’re available for 8 hours a day! <br/>Contact to require a detailed analysis and assessment of your plan."
+                }
+            ]
+        },
+        {
+            "id": "faq",
+            "section": "faq-section",
+            "items": [
+                {
+                    "id": 1,
+                    "title": "New multiple site connectivity",
+                    "description": "We use a newly developed technology to connect sites that are based on different types of servers and networks, SiteConnect, which helps to reduce the misinterpretation of signals as well as the loss of data during transfering."
+                },
+                {
+                    "id": 2,
+                    "title": "IT Security & Software",
+                    "description": "To keep your systems, your devices, and network stay secure, we have developed a new program that limits the access of suspicious objects or people and authenticate all logins to the system."
+                },
+                {
+                    "id": 3,
+                    "title": "Weak hosted capability",
+                    "description": "Some hosts are unaware of the potential risks as well as security loopholes in their system. By detecting these errors and taking prompt actions on improving firewalls, we can upgrade the system security."
+                },
+                {
+                    "id": 4,
+                    "title": "Build internal network",
+                    "description": "The internal network is essential for all companies and corporations, especially for those working in IT sector. To avoid possible risks when sharing internal confidential files and documentation to an external receiver, internal network must be strong."
+                }
+            ],
+            "images": [
+                {
+                    "src": "../images/about-us/video-01-image-01-570x350.jpg",
+                    "alt": "Business Reform image"
+                }
+            ],
+            "video_button": {
+                "link": "https://www.youtube.com/watch?v=9No-FiEInLA"
+            }
+        },
+        {
+            "id": "features",
+            "section": "whats-new-section",
+            "section_title": {
+                "title": "Prominent IT Security Services"
+            },
+            "items": [
+                {
+                    "id": 1,
+                    "images": [
+                        {
+                            "src": "../images/icons/icon-07-60x60.png"
+                        }
+                    ],
+                    "title": "Mitech Management Systems",
+                    "description": "Our service offerings enhance customer experience throughout secure & highly functional end-to-end warranty management."
+                },
+                {
+                    "id": 2,
+                    "images": [
+                        {
+                            "src": "../images/icons/icon-08-60x60.png"
+                        }
+                    ],
+                    "title": "Reliable Multi-function Technology",
+                    "description": "Develop and propose product improvements through periodical and accurate testing, repairing & refining every version."
+                },
+                {
+                    "id": 3,
+                    "images": [
+                        {
+                            "src": "../images/icons/icon-09-60x60.png"
+                        }
+                    ],
+                    "title": "Highly Professional Staffs",
+                    "description": "Develop and propose product improvements through periodical and accurate testing, repairing & refining every version."
+                },
+                {
+                    "id": 4,
+                    "images": [
+                        {
+                            "src": "../images/icons/icon-10-60x60.png"
+                        }
+                    ],
+                    "title": "Infrastructure Integration Technology",
+                    "description": "At Mitech, we have a holistic and integrated approach towards core modernization to experience technological evolution."
+                }
+            ]
+        },
+        {
+            "id": "services-cta",
+            "section": "cta-section",
+            "headings": [
+                {
+                    "level": "h3",
+                    "content": "Assess your business potentials and find opportunities <span>for bigger success </span>"
+                }
+            ],
+            "buttons": [
+                {
+                    "id": 1,
+                    "path": "/contact-us",
+                    "color": "light",
+                    "icon": "far fa-comment-alt-dots",
+                    "iconposition": "left",
+                    "icondistance": "8px",
+                    "iconsize": "16px",
+                    "hoverStyle": "three",
+                    "content": "Let's talk"
+                },
+                {
+                    "id": 2,
+                    "path": "/contact-us",
+                    "color": "secondary",
+                    "icon": "far fa-info-circle",
+                    "iconposition": "left",
+                    "icondistance": "8px",
+                    "iconsize": "16px",
+                    "content": "Get Info"
+                }
+            ]
+        }
+    ]
+}

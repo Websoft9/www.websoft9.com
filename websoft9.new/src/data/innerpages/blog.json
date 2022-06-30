@@ -1,0 +1,37 @@
+{
+    "title": "blog",
+    "pageType": "innerpage",
+    "content": [
+        {
+            "id": "blog-recent-widget",
+            "section": "recent-widget-section",
+            "section_title": {
+                "title": "Recent Posts"
+            }
+        },
+        {
+            "id": "blog-ad-widget",
+            "section": "ad-section",
+            "path": "/blog",
+            "images": [
+                {
+                    "src": "../images/ad/blog-sidebar-ads.jpg"
+                }
+            ]
+        },
+        {
+            "id": "blog-tags-widget",
+            "section": "tag-section",
+            "section_title": {
+                "title": "Popular Tags"
+            }
+        },
+        {
+            "id": "blog-intro",
+            "section": "blog-section",
+            "section_title": {
+                "title": "Interesting articles <span>updated daily</span>"
+            }
+        }
+    ]
+}

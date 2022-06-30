@@ -1,0 +1,51 @@
+{
+    "title": "it-solutions",
+    "pageType": "innerpage",
+    "content": [
+        {
+            "id": "it-solutions-service",
+            "section": "service-section",
+            "section_title": {
+                "title": "For your very specific industry, <br/> we have <span>highly-tailored IT solutions.</span>",
+                "subtitle": "Our Services"
+            },
+            "motto": {
+                "text": "Challenges are just opportunities in disguise.",
+                "linkText": "Take the challenge!",
+                "link": "/it-solutions"
+            }
+        },
+        {
+            "id": "it-solutions-content",
+            "section": "contact-section",
+            "headings": [
+                {
+                    "level": "h3",
+                    "content": "Obtaining further information by <span>make a contact</span> with our experienced IT staffs."
+                },
+                {
+                    "level": "h6",
+                    "content": "REACH OUT NOW!"
+                },
+                {
+                    "level": "h2",
+                    "content": "190068668"
+                }
+            ],
+            "texts": [
+                {
+                    "content": "We’re available for 8 hours a day! <br/> Contact to require a detailed analysis and assessment of your plan"
+                }
+            ],
+            "buttons": [
+                {
+                    "id": 1,
+                    "color": "light",
+                    "hoverStyle": "two",
+                    "path": "/contact-us",
+                    "content": "Contact Us"
+                }
+            ]
+        }
+    ]
+}

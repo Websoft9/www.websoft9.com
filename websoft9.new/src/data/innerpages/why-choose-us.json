@@ -1,0 +1,74 @@
+{
+    "title": "why-choose-us",
+    "pageType": "innerpage",
+    "content": [
+        {
+            "id": "why-choose-us-about",
+            "section": "about-section",
+            "section_title": {
+                "title": "Preparing for your success, <br> we provide <span>truly prominent IT solutions.</span>",
+                "description": "The IT services that Mitech are running can be segmented by the type of skills employed to deliver the service (design, build, run). Technically, these fall into three main categories: business process services, application services, and infrastructure services."
+            },
+            "headings": [
+                {
+                    "level": "h2",
+                    "content": "<mark>38</mark> YEARS’ EXPERIENCE IN IT"
+                },
+                {
+                    "level": "h4",
+                    "content": "Learn More About Our <span>Success Stories</span>"
+                }
+            ],
+            "items": [
+                {
+                    "id": 1,
+                    "title": "UI/UX",
+                    "value": 90
+                },
+                {
+                    "id": 2,
+                    "title": "Ideas",
+                    "value": 70
+                },
+                {
+                    "id": 3,
+                    "title": "Marketing",
+                    "value": 95
+                },
+                {
+                    "id": 4,
+                    "title": "Consulting",
+                    "value": 80
+                }
+            ]
+        },
+        {
+            "id": "why-choose-us-service",
+            "section": "service-section",
+            "motto": {
+                "linkText": "Learn more about how we work",
+                "link": "/it-services"
+            }
+        },
+        {
+            "id": "why-choose-us-contact",
+            "section": "contact-section",
+            "headings": [
+                {
+                    "level": "h3",
+                    "content": "4.9/5.0"
+                }
+            ],
+            "texts": [
+                {
+                    "content": "by 700+ customers for 3200+ clients"
+                }
+            ],
+            "images": [
+                {
+                    "src": "../images/banner/contact-image.png"
+                }
+            ]
+        }
+    ]
+}

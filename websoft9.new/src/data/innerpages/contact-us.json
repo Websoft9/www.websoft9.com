@@ -1,0 +1,105 @@
+{
+    "title": "contact-us",
+    "pageType": "innerpage",
+    "content": [
+        {
+            "id": "contactus-contact",
+            "section": "contact-section",
+            "headings": [
+                {
+                    "level": "h3",
+                    "content": "To make requests for <br/> further information, <span>contact us</span> via our social channels."
+                }
+            ],
+            "texts": [
+                {
+                    "content": "We just need a couple of hours! No more than 2 working days since receiving your issue ticket"
+                }
+            ]
+        },
+        {
+            "id": "contactus-contactinfo",
+            "section": "contact-info-section",
+            "items": [
+                {
+                    "id": 1,
+                    "title": "San Francisco",
+                    "texts": [
+                        {
+                            "content": "58 Howard Street #2 San Francisco, CA 941"
+                        },
+                        {
+                            "content": "contact.sanfrancisco@mitech.com"
+                        },
+                        {
+                            "content": "(+68)1221 09876"
+                        }
+                    ]
+                },
+                {
+                    "id": 2,
+                    "title": "New York",
+                    "texts": [
+                        {
+                            "content": "58 Howard Street #14 New York"
+                        },
+                        {
+                            "content": "contact.newyork@mitech.com"
+                        },
+                        {
+                            "content": "(+68)1221 09878"
+                        }
+                    ]
+                },
+                {
+                    "id": 3,
+                    "title": "Russia",
+                    "texts": [
+                        {
+                            "content": "The Courtyard Building 11 Curtain Road, Russia"
+                        },
+                        {
+                            "content": "contact.russia@mitech.com"
+                        },
+                        {
+                            "content": "(+68)1221 09877"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "id": "contactus-cta",
+            "section": "cta-section",
+            "headings": [
+                {
+                    "level": "h3",
+                    "content": "Assess your business potentials and find opportunities <span>for bigger success </span>"
+                }
+            ],
+            "buttons": [
+                {
+                    "id": 1,
+                    "path": "/contact-us",
+                    "color": "light",
+                    "icon": "far fa-comment-alt-dots",
+                    "iconposition": "left",
+                    "icondistance": "8px",
+                    "iconsize": "16px",
+                    "hoverStyle": "three",
+                    "content": "Let's talk"
+                },
+                {
+                    "id": 2,
+                    "path": "/contact-us",
+                    "color": "secondary",
+                    "icon": "far fa-info-circle",
+                    "iconposition": "left",
+                    "icondistance": "8px",
+                    "iconsize": "16px",
+                    "content": "Get Info"
+                }
+            ]
+        }
+    ]
+}

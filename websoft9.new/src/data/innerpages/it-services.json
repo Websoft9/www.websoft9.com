@@ -1,0 +1,57 @@
+{
+    "title": "it-services",
+    "pageType": "innerpage",
+    "content": [
+        {
+            "id": "it-services-service",
+            "section": "service-section",
+            "section_title": {
+                "title": "For your very specific industry, <br/> we have <span>highly-tailored IT solutions.</span>",
+                "subtitle": "FEATURED SERVICES"
+            },
+            "buttons": [
+                {
+                    "id": 1,
+                    "variant": "contained",
+                    "color": "primary",
+                    "shape": "rounded",
+                    "size": "medium",
+                    "path": "/contact-us",
+                    "content": "Talk to a consultant",
+                    "disableHover": false,
+                    "hoverStyle": "one"
+                },
+                {
+                    "id": 2,
+                    "variant": "outlined",
+                    "color": "primary",
+                    "shape": "rounded",
+                    "size": "medium",
+                    "path": "/contact-us",
+                    "content": "Contact us now",
+                    "disableHover": false
+                }
+            ]
+        },
+        {
+            "id": "it-services-contact",
+            "section": "contact-section",
+            "headings": [
+                {
+                    "level": "h3",
+                    "content": "4.9/5.0"
+                }
+            ],
+            "texts": [
+                {
+                    "content": "by 700+ customers for 3200+ clients"
+                }
+            ],
+            "images": [
+                {
+                    "src": "../images/banner/contact-image.png"
+                }
+            ]
+        }
+    ]
+}

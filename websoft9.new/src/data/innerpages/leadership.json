@@ -1,0 +1,749 @@
+{
+    "title": "leadership",
+    "pageType": "innerpage",
+    "content": [
+        {
+            "id": "leadership-head",
+            "section": "head-section",
+            "section_title": {
+                "title": "We hire staffs who know more than what they show <br>of <span> IT services</span>"
+            },
+            "items": [
+                {
+                    "id": 1,
+                    "name": "Dollie Horton",
+                    "designation": "Chief People Officer",
+                    "images": [
+                        {
+                            "src": "../images/team/team-member-07-370x455.jpg"
+                        }
+                    ],
+                    "socials": [
+                        {
+                            "id": 1,
+                            "icon": "fab fa-facebook",
+                            "link": "https://www.twitter.com",
+                            "title": "Facebook"
+                        },
+                        {
+                            "id": 2,
+                            "icon": "fab fa-twitter",
+                            "link": "https://www.twitter.com",
+                            "title": "Twitter"
+                        },
+                        {
+                            "id": 3,
+                            "icon": "fab fa-instagram",
+                            "link": "https://www.instagram.com",
+                            "title": "Instagram"
+                        }
+                    ]
+                },
+                {
+                    "id": 2,
+                    "name": "Robert Amplilian",
+                    "designation": "Chief People Officer",
+                    "images": [
+                        {
+                            "src": "../images/team/team-member-01-370x455.jpg"
+                        }
+                    ],
+                    "socials": [
+                        {
+                            "id": 1,
+                            "icon": "fab fa-facebook",
+                            "link": "https://www.twitter.com",
+                            "title": "Facebook"
+                        },
+                        {
+                            "id": 2,
+                            "icon": "fab fa-twitter",
+                            "link": "https://www.twitter.com",
+                            "title": "Twitter"
+                        },
+                        {
+                            "id": 3,
+                            "icon": "fab fa-instagram",
+                            "link": "https://www.instagram.com",
+                            "title": "Instagram"
+                        }
+                    ]
+                },
+                {
+                    "id": 3,
+                    "name": "Stephen Mearsley",
+                    "designation": "President & CEO",
+                    "images": [
+                        {
+                            "src": "../images/team/team-member-06-370x455.jpg"
+                        }
+                    ],
+                    "socials": [
+                        {
+                            "id": 1,
+                            "icon": "fab fa-facebook",
+                            "link": "https://www.twitter.com",
+                            "title": "Facebook"
+                        },
+                        {
+                            "id": 2,
+                            "icon": "fab fa-twitter",
+                            "link": "https://www.twitter.com",
+                            "title": "Twitter"
+                        },
+                        {
+                            "id": 3,
+                            "icon": "fab fa-instagram",
+                            "link": "https://www.instagram.com",
+                            "title": "Instagram"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "id": "leadership-executive",
+            "section": "executive-section",
+            "items": [
+                {
+                    "id": 4,
+                    "name": "Daisy Hortron",
+                    "designation": "Financial Services",
+                    "images": [
+                        {
+                            "src": "../images/team/team-member-04-370x452.jpg"
+                        }
+                    ],
+                    "socials": [
+                        {
+                            "id": 1,
+                            "icon": "fab fa-facebook",
+                            "link": "https://www.twitter.com",
+                            "title": "Facebook"
+                        },
+                        {
+                            "id": 2,
+                            "icon": "fab fa-twitter",
+                            "link": "https://www.twitter.com",
+                            "title": "Twitter"
+                        },
+                        {
+                            "id": 3,
+                            "icon": "fab fa-instagram",
+                            "link": "https://www.instagram.com",
+                            "title": "Instagram"
+                        }
+                    ]
+                },
+                {
+                    "id": 5,
+                    "name": "Maggie Strickland",
+                    "designation": "HR executive",
+                    "images": [
+                        {
+                            "src": "../images/team/team-member-02-370x452.jpg"
+                        }
+                    ],
+                    "socials": [
+                        {
+                            "id": 1,
+                            "icon": "fab fa-facebook",
+                            "link": "https://www.twitter.com",
+                            "title": "Facebook"
+                        },
+                        {
+                            "id": 2,
+                            "icon": "fab fa-twitter",
+                            "link": "https://www.twitter.com",
+                            "title": "Twitter"
+                        },
+                        {
+                            "id": 3,
+                            "icon": "fab fa-instagram",
+                            "link": "https://www.instagram.com",
+                            "title": "Instagram"
+                        }
+                    ]
+                },
+                {
+                    "id": 6,
+                    "name": "Monica Blews",
+                    "designation": "Project manager",
+                    "images": [
+                        {
+                            "src": "../images/team/team-member-05-370x452.jpg"
+                        }
+                    ],
+                    "socials": [
+                        {
+                            "id": 1,
+                            "icon": "fab fa-facebook",
+                            "link": "https://www.twitter.com",
+                            "title": "Facebook"
+                        },
+                        {
+                            "id": 2,
+                            "icon": "fab fa-twitter",
+                            "link": "https://www.twitter.com",
+                            "title": "Twitter"
+                        },
+                        {
+                            "id": 3,
+                            "icon": "fab fa-instagram",
+                            "link": "https://www.instagram.com",
+                            "title": "Instagram"
+                        }
+                    ]
+                },
+                {
+                    "id": 7,
+                    "name": "Issac Blews",
+                    "designation": "Marketing Executive",
+                    "images": [
+                        {
+                            "src": "../images/team/team-member-03-370x452.jpg"
+                        }
+                    ],
+                    "socials": [
+                        {
+                            "id": 1,
+                            "icon": "fab fa-facebook",
+                            "link": "https://www.twitter.com",
+                            "title": "Facebook"
+                        },
+                        {
+                            "id": 2,
+                            "icon": "fab fa-twitter",
+                            "link": "https://www.twitter.com",
+                            "title": "Twitter"
+                        },
+                        {
+                            "id": 3,
+                            "icon": "fab fa-instagram",
+                            "link": "https://www.instagram.com",
+                            "title": "Instagram"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "id": "leadership-employee",
+            "section": "employee-section",
+            "items": [
+                {
+                    "id": 8,
+                    "name": "Gene Moreno",
+                    "designation": "developer",
+                    "images": [
+                        {
+                            "src": "../images/team/team-member-03-370x452.jpg"
+                        }
+                    ],
+                    "socials": [
+                        {
+                            "id": 1,
+                            "icon": "fab fa-facebook",
+                            "link": "https://www.twitter.com",
+                            "title": "Facebook"
+                        },
+                        {
+                            "id": 2,
+                            "icon": "fab fa-twitter",
+                            "link": "https://www.twitter.com",
+                            "title": "Twitter"
+                        },
+                        {
+                            "id": 3,
+                            "icon": "fab fa-instagram",
+                            "link": "https://www.instagram.com",
+                            "title": "Instagram"
+                        }
+                    ]
+                },
+                {
+                    "id": 9,
+                    "name": "Carrie Greer",
+                    "designation": "developer",
+                    "images": [
+                        {
+                            "src": "../images/team/team-member-05-370x452.jpg"
+                        }
+                    ],
+                    "socials": [
+                        {
+                            "id": 1,
+                            "icon": "fab fa-facebook",
+                            "link": "https://www.twitter.com",
+                            "title": "Facebook"
+                        },
+                        {
+                            "id": 2,
+                            "icon": "fab fa-twitter",
+                            "link": "https://www.twitter.com",
+                            "title": "Twitter"
+                        },
+                        {
+                            "id": 3,
+                            "icon": "fab fa-instagram",
+                            "link": "https://www.instagram.com",
+                            "title": "Instagram"
+                        }
+                    ]
+                },
+                {
+                    "id": 10,
+                    "name": "Brent Newman",
+                    "designation": "developer",
+                    "images": [
+                        {
+                            "src": "../images/team/team-member-02-370x452.jpg"
+                        }
+                    ],
+                    "socials": [
+                        {
+                            "id": 1,
+                            "icon": "fab fa-facebook",
+                            "link": "https://www.twitter.com",
+                            "title": "Facebook"
+                        },
+                        {
+                            "id": 2,
+                            "icon": "fab fa-twitter",
+                            "link": "https://www.twitter.com",
+                            "title": "Twitter"
+                        },
+                        {
+                            "id": 3,
+                            "icon": "fab fa-instagram",
+                            "link": "https://www.instagram.com",
+                            "title": "Instagram"
+                        }
+                    ]
+                },
+                {
+                    "id": 11,
+                    "name": "Craig Stevenson",
+                    "designation": "developer",
+                    "images": [
+                        {
+                            "src": "../images/team/team-member-04-370x452.jpg"
+                        }
+                    ],
+                    "socials": [
+                        {
+                            "id": 1,
+                            "icon": "fab fa-facebook",
+                            "link": "https://www.twitter.com",
+                            "title": "Facebook"
+                        },
+                        {
+                            "id": 2,
+                            "icon": "fab fa-twitter",
+                            "link": "https://www.twitter.com",
+                            "title": "Twitter"
+                        },
+                        {
+                            "id": 3,
+                            "icon": "fab fa-instagram",
+                            "link": "https://www.instagram.com",
+                            "title": "Instagram"
+                        }
+                    ]
+                },
+                {
+                    "id": 12,
+                    "name": "Albert Webster",
+                    "designation": "engineer",
+                    "images": [
+                        {
+                            "src": "../images/team/team-member-06-370x455.jpg"
+                        }
+                    ],
+                    "socials": [
+                        {
+                            "id": 1,
+                            "icon": "fab fa-facebook",
+                            "link": "https://www.twitter.com",
+                            "title": "Facebook"
+                        },
+                        {
+                            "id": 2,
+                            "icon": "fab fa-twitter",
+                            "link": "https://www.twitter.com",
+                            "title": "Twitter"
+                        },
+                        {
+                            "id": 3,
+                            "icon": "fab fa-instagram",
+                            "link": "https://www.instagram.com",
+                            "title": "Instagram"
+                        }
+                    ]
+                },
+                {
+                    "id": 13,
+                    "name": "Harry Castillo",
+                    "designation": "engineer",
+                    "images": [
+                        {
+                            "src": "../images/team/team-member-01-370x455.jpg"
+                        }
+                    ],
+                    "socials": [
+                        {
+                            "id": 1,
+                            "icon": "fab fa-facebook",
+                            "link": "https://www.twitter.com",
+                            "title": "Facebook"
+                        },
+                        {
+                            "id": 2,
+                            "icon": "fab fa-twitter",
+                            "link": "https://www.twitter.com",
+                            "title": "Twitter"
+                        },
+                        {
+                            "id": 3,
+                            "icon": "fab fa-instagram",
+                            "link": "https://www.instagram.com",
+                            "title": "Instagram"
+                        }
+                    ]
+                },
+                {
+                    "id": 14,
+                    "name": "Walter Reid",
+                    "designation": "engineer",
+                    "images": [
+                        {
+                            "src": "../images/team/team-member-07-370x455.jpg"
+                        }
+                    ],
+                    "socials": [
+                        {
+                            "id": 1,
+                            "icon": "fab fa-facebook",
+                            "link": "https://www.twitter.com",
+                            "title": "Facebook"
+                        },
+                        {
+                            "id": 2,
+                            "icon": "fab fa-twitter",
+                            "link": "https://www.twitter.com",
+                            "title": "Twitter"
+                        },
+                        {
+                            "id": 3,
+                            "icon": "fab fa-instagram",
+                            "link": "https://www.instagram.com",
+                            "title": "Instagram"
+                        }
+                    ]
+                },
+                {
+                    "id": 15,
+                    "name": "Gordon Baldwin",
+                    "designation": "engineer",
+                    "images": [
+                        {
+                            "src": "../images/team/team-member-05-370x452.jpg"
+                        }
+                    ],
+                    "socials": [
+                        {
+                            "id": 1,
+                            "icon": "fab fa-facebook",
+                            "link": "https://www.twitter.com",
+                            "title": "Facebook"
+                        },
+                        {
+                            "id": 2,
+                            "icon": "fab fa-twitter",
+                            "link": "https://www.twitter.com",
+                            "title": "Twitter"
+                        },
+                        {
+                            "id": 3,
+                            "icon": "fab fa-instagram",
+                            "link": "https://www.instagram.com",
+                            "title": "Instagram"
+                        }
+                    ]
+                },
+                {
+                    "id": 15,
+                    "name": "Gene Moreno",
+                    "designation": "staff",
+                    "images": [
+                        {
+                            "src": "../images/team/team-member-03-370x452.jpg"
+                        }
+                    ],
+                    "socials": [
+                        {
+                            "id": 1,
+                            "icon": "fab fa-facebook",
+                            "link": "https://www.twitter.com",
+                            "title": "Facebook"
+                        },
+                        {
+                            "id": 2,
+                            "icon": "fab fa-twitter",
+                            "link": "https://www.twitter.com",
+                            "title": "Twitter"
+                        },
+                        {
+                            "id": 3,
+                            "icon": "fab fa-instagram",
+                            "link": "https://www.instagram.com",
+                            "title": "Instagram"
+                        }
+                    ]
+                },
+                {
+                    "id": 16,
+                    "name": "Carrie Greer",
+                    "designation": "staff",
+                    "images": [
+                        {
+                            "src": "../images/team/team-member-03-370x452.jpg"
+                        }
+                    ],
+                    "socials": [
+                        {
+                            "id": 1,
+                            "icon": "fab fa-facebook",
+                            "link": "https://www.twitter.com",
+                            "title": "Facebook"
+                        },
+                        {
+                            "id": 2,
+                            "icon": "fab fa-twitter",
+                            "link": "https://www.twitter.com",
+                            "title": "Twitter"
+                        },
+                        {
+                            "id": 3,
+                            "icon": "fab fa-instagram",
+                            "link": "https://www.instagram.com",
+                            "title": "Instagram"
+                        }
+                    ]
+                },
+                {
+                    "id": 17,
+                    "name": "Brent Newman",
+                    "designation": "staff",
+                    "images": [
+                        {
+                            "src": "../images/team/team-member-05-370x452.jpg"
+                        }
+                    ],
+                    "socials": [
+                        {
+                            "id": 1,
+                            "icon": "fab fa-facebook",
+                            "link": "https://www.twitter.com",
+                            "title": "Facebook"
+                        },
+                        {
+                            "id": 2,
+                            "icon": "fab fa-twitter",
+                            "link": "https://www.twitter.com",
+                            "title": "Twitter"
+                        },
+                        {
+                            "id": 3,
+                            "icon": "fab fa-instagram",
+                            "link": "https://www.instagram.com",
+                            "title": "Instagram"
+                        }
+                    ]
+                },
+                {
+                    "id": 18,
+                    "name": "Craig Stevenson",
+                    "designation": "staff",
+                    "images": [
+                        {
+                            "src": "../images/team/team-member-02-370x452.jpg"
+                        }
+                    ],
+                    "socials": [
+                        {
+                            "id": 1,
+                            "icon": "fab fa-facebook",
+                            "link": "https://www.twitter.com",
+                            "title": "Facebook"
+                        },
+                        {
+                            "id": 2,
+                            "icon": "fab fa-twitter",
+                            "link": "https://www.twitter.com",
+                            "title": "Twitter"
+                        },
+                        {
+                            "id": 3,
+                            "icon": "fab fa-instagram",
+                            "link": "https://www.instagram.com",
+                            "title": "Instagram"
+                        }
+                    ]
+                },
+                {
+                    "id": 19,
+                    "name": "Charlotte Shaw",
+                    "designation": "designer",
+                    "images": [
+                        {
+                            "src": "../images/team/team-member-04-370x452.jpg"
+                        }
+                    ],
+                    "socials": [
+                        {
+                            "id": 1,
+                            "icon": "fab fa-facebook",
+                            "link": "https://www.twitter.com",
+                            "title": "Facebook"
+                        },
+                        {
+                            "id": 2,
+                            "icon": "fab fa-twitter",
+                            "link": "https://www.twitter.com",
+                            "title": "Twitter"
+                        },
+                        {
+                            "id": 3,
+                            "icon": "fab fa-instagram",
+                            "link": "https://www.instagram.com",
+                            "title": "Instagram"
+                        }
+                    ]
+                },
+                {
+                    "id": 20,
+                    "name": "Kate Wong",
+                    "designation": "designer",
+                    "images": [
+                        {
+                            "src": "../images/team/team-member-06-370x455.jpg"
+                        }
+                    ],
+                    "socials": [
+                        {
+                            "id": 1,
+                            "icon": "fab fa-facebook",
+                            "link": "https://www.twitter.com",
+                            "title": "Facebook"
+                        },
+                        {
+                            "id": 2,
+                            "icon": "fab fa-twitter",
+                            "link": "https://www.twitter.com",
+                            "title": "Twitter"
+                        },
+                        {
+                            "id": 3,
+                            "icon": "fab fa-instagram",
+                            "link": "https://www.instagram.com",
+                            "title": "Instagram"
+                        }
+                    ]
+                },
+                {
+                    "id": 21,
+                    "name": "Frederick Huff",
+                    "designation": "designer",
+                    "images": [
+                        {
+                            "src": "../images/team/team-member-01-370x455.jpg"
+                        }
+                    ],
+                    "socials": [
+                        {
+                            "id": 1,
+                            "icon": "fab fa-facebook",
+                            "link": "https://www.twitter.com",
+                            "title": "Facebook"
+                        },
+                        {
+                            "id": 2,
+                            "icon": "fab fa-twitter",
+                            "link": "https://www.twitter.com",
+                            "title": "Twitter"
+                        },
+                        {
+                            "id": 3,
+                            "icon": "fab fa-instagram",
+                            "link": "https://www.instagram.com",
+                            "title": "Instagram"
+                        }
+                    ]
+                },
+                {
+                    "id": 22,
+                    "name": "Ora Johnson",
+                    "designation": "designer",
+                    "images": [
+                        {
+                            "src": "../images/team/team-member-07-370x455.jpg"
+                        }
+                    ],
+                    "socials": [
+                        {
+                            "id": 1,
+                            "icon": "fab fa-facebook",
+                            "link": "https://www.twitter.com",
+                            "title": "Facebook"
+                        },
+                        {
+                            "id": 2,
+                            "icon": "fab fa-twitter",
+                            "link": "https://www.twitter.com",
+                            "title": "Twitter"
+                        },
+                        {
+                            "id": 3,
+                            "icon": "fab fa-instagram",
+                            "link": "https://www.instagram.com",
+                            "title": "Instagram"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "id": "leadership-contact-content",
+            "section": "contact-section",
+            "headings": [
+                {
+                    "level": "h3",
+                    "content": "Obtaining further information by <span>make a contact</span> with our experienced IT staffs."
+                },
+                {
+                    "level": "h6",
+                    "content": "REACH OUT NOW!"
+                },
+                {
+                    "level": "h2",
+                    "content": "190068668"
+                }
+            ],
+            "texts": [
+                {
+                    "content": "We’re available for 8 hours a day! <br/> Contact to require a detailed analysis and assessment of your plan"
+                }
+            ],
+            "buttons": [
+                {
+                    "id": 1,
+                    "color": "secondary",
+                    "hoverStyle": "three",
+                    "path": "/contact-us",
+                    "content": "Contact Us"
+                }
+            ]
+        }
+    ]
+}

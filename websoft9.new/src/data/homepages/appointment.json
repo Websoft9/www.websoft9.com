@@ -1,0 +1,571 @@
+{
+    "title": "appointment",
+    "pageType": "frontpage",
+    "content": [
+        {
+            "id": "appointment-hero-content",
+            "section": "hero-section",
+            "images": [
+                {
+                    "src": "../images/hero/home-appointment-hero-bg-image.jpg"
+                }
+            ],
+            "headings": [
+                {
+                    "level": "h6",
+                    "content": "Secure & IT Services"
+                },
+                {
+                    "level": "h1",
+                    "content": "Excellent IT services for your success"
+                }
+            ],
+            "video_button": {
+                "content": "How we work",
+                "link": "https://www.youtube.com/watch?v=9No-FiEInLA"
+            },
+            "show_form": true
+        },
+        {
+            "id": "appointment-services",
+            "section": "service-section",
+            "section_title": {
+                "title": "Services We Deliver <br/> we provide <span>truly prominent IT solutions.</span>",
+                "subtitle": "INDUSTRIES WE SERVE"
+            },
+            "buttons": [
+                {
+                    "id": 1,
+                    "variant": "contained",
+                    "color": "primary",
+                    "shape": "rounded",
+                    "size": "medium",
+                    "path": "/contact-us",
+                    "content": "Talk to a consultant",
+                    "disableHover": false,
+                    "hoverStyle": "one"
+                },
+                {
+                    "id": 2,
+                    "variant": "outlined",
+                    "color": "primary",
+                    "shape": "rounded",
+                    "size": "medium",
+                    "path": "/contact-us",
+                    "content": "Contact us now",
+                    "disableHover": false
+                }
+            ]
+        },
+        {
+            "id": "appointment-tab",
+            "section": "tab-section",
+            "section_title": {
+                "title": "We’ve been thriving in <span>38 years</span>",
+                "subtitle": "DISCOVER OUR COMPANY"
+            }
+        },
+        {
+            "id": "appointment-about",
+            "section": "about-section",
+            "title": "our mission",
+            "texts": [
+                {
+                    "content": "We’re available for 8 hours a day! <br/> Contact to require a detailed analysis and assessment of your plan."
+                }
+            ],
+            "list": [
+                "IT Consultancy",
+                "IT Design",
+                "Desktop Computing",
+                "Software Engineering"
+            ],
+            "video_button": {
+                "link": "https://www.youtube.com/watch?v=9No-FiEInLA"
+            },
+            "images": [
+                {
+                    "src": "../images/about-us/video-01-image-01-570x350.jpg"
+                }
+            ],
+            "buttons": [
+                {
+                    "id": 1,
+                    "variant": "texted",
+                    "color": "primary",
+                    "size": "small",
+                    "path": "/contact-us",
+                    "icon": "far fa-long-arrow-right",
+                    "icondistance": "5px",
+                    "iconposition": "right",
+                    "content": "Let's get started"
+                }
+            ]
+        },
+        {
+            "id": "appointment-feature",
+            "section": "feature-section",
+            "title": "our features"
+        },
+        {
+            "id": "appointment-partner",
+            "section": "partner-section",
+            "title": "technology partners",
+            "items": [
+                {
+                    "id": 1,
+                    "images": [
+                        {
+                            "src": "../images/partners/mitech-client-logo-01.png"
+                        },
+                        {
+                            "src": "../images/partners/mitech-client-logo-01-hover.png"
+                        }
+                    ],
+                    "path": "/"
+                },
+                {
+                    "id": 2,
+                    "images": [
+                        {
+                            "src": "../images/partners/mitech-client-logo-02.png"
+                        },
+                        {
+                            "src": "../images/partners/mitech-client-logo-02-hover.png"
+                        }
+                    ],
+                    "path": "/"
+                },
+                {
+                    "id": 3,
+                    "images": [
+                        {
+                            "src": "../images/partners/mitech-client-logo-03.png"
+                        },
+                        {
+                            "src": "../images/partners/mitech-client-logo-03-hover.png"
+                        }
+                    ],
+                    "path": "/"
+                },
+                {
+                    "id": 4,
+                    "images": [
+                        {
+                            "src": "../images/partners/mitech-client-logo-04.png"
+                        },
+                        {
+                            "src": "../images/partners/mitech-client-logo-04-hover.png"
+                        }
+                    ],
+                    "path": "/"
+                },
+                {
+                    "id": 5,
+                    "images": [
+                        {
+                            "src": "../images/partners/mitech-client-logo-05.png"
+                        },
+                        {
+                            "src": "../images/partners/mitech-client-logo-05-hover.png"
+                        }
+                    ],
+                    "path": "/"
+                },
+                {
+                    "id": 6,
+                    "images": [
+                        {
+                            "src": "../images/partners/mitech-client-logo-06.png"
+                        },
+                        {
+                            "src": "../images/partners/mitech-client-logo-06-hover.png"
+                        }
+                    ],
+                    "path": "/"
+                },
+                {
+                    "id": 7,
+                    "images": [
+                        {
+                            "src": "../images/partners/mitech-client-logo-07.png"
+                        },
+                        {
+                            "src": "../images/partners/mitech-client-logo-07-hover.png"
+                        }
+                    ],
+                    "path": "/"
+                },
+                {
+                    "id": 8,
+                    "images": [
+                        {
+                            "src": "../images/partners/mitech-client-logo-08.png"
+                        },
+                        {
+                            "src": "../images/partners/mitech-client-logo-08-hover.png"
+                        }
+                    ],
+                    "path": "/"
+                },
+                {
+                    "id": 9,
+                    "images": [
+                        {
+                            "src": "../images/partners/mitech-client-logo-09.png"
+                        },
+                        {
+                            "src": "../images/partners/mitech-client-logo-09-hover.png"
+                        }
+                    ],
+                    "path": "/"
+                }
+            ]
+        },
+        {
+            "id": "appointment-award",
+            "section": "award-section",
+            "title": "Our Awards",
+            "items": [
+                {
+                    "id": 1,
+                    "title": "Top Training Companies 2016",
+                    "description": "More than 40 years ago, our company’s namesake, LineThemes, pioneered a revolutionary sales training program for businesses of every size.",
+                    "images": [
+                        {
+                            "src": "../images/awards/mitech-company-award-01-161x110.jpg"
+                        }
+                    ]
+                },
+                {
+                    "id": 2,
+                    "title": "CIO Big Data 100",
+                    "description": "More than 40 years ago, our company’s namesake, LineThemes, pioneered a revolutionary sales training program for businesses of every size.",
+                    "images": [
+                        {
+                            "src": "../images/awards/mitech-company-award-02-161x116.jpg"
+                        }
+                    ]
+                },
+                {
+                    "id": 3,
+                    "title": "Top 20 Sales Training Companies 2015",
+                    "description": "More than 40 years ago, our company’s namesake, LineThemes, pioneered a revolutionary sales training program for businesses of every size.",
+                    "images": [
+                        {
+                            "src": "../images/awards/mitech-company-award-03-161x112.jpg"
+                        }
+                    ]
+                },
+                {
+                    "id": 4,
+                    "title": "Pharma Tech Outlook",
+                    "description": "More than 40 years ago, our company’s namesake, LineThemes, pioneered a revolutionary sales training program for businesses of every size.",
+                    "images": [
+                        {
+                            "src": "../images/awards/mitech-company-award-04-161x109.jpg"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "id": "appointment-team",
+            "section": "team-section",
+            "section_title": {
+                "title": "Our <span>experience<span> experts",
+                "description": "Mitech specializes in technological and IT-related services such as product engineering, warranty management, building cloud, infrastructure, network, etc."
+            },
+            "buttons": [
+                {
+                    "id": 1,
+                    "hoverStyle": "two",
+                    "path": "/contact-us",
+                    "content": "Join us now"
+                },
+                {
+                    "id": 2,
+                    "variant": "texted",
+                    "icon": "far fa-long-arrow-right",
+                    "icondistance": "5px",
+                    "hoverStyle": "two",
+                    "fontWeight": 800,
+                    "path": "/leadership",
+                    "content": "View all team"
+                }
+            ],
+            "items": [
+                {
+                    "id": 1,
+                    "name": "Dollie Horton",
+                    "designation": "Chief People Officer",
+                    "images": [
+                        {
+                            "src": "../images/team/team-member-07-370x250.jpg"
+                        }
+                    ],
+                    "socials": [
+                        {
+                            "id": 1,
+                            "icon": "fab fa-facebook",
+                            "link": "https://www.twitter.com",
+                            "title": "Facebook"
+                        },
+                        {
+                            "id": 2,
+                            "icon": "fab fa-twitter",
+                            "link": "https://www.twitter.com",
+                            "title": "Twitter"
+                        },
+                        {
+                            "id": 3,
+                            "icon": "fab fa-instagram",
+                            "link": "https://www.instagram.com",
+                            "title": "Instagram"
+                        }
+                    ]
+                },
+                {
+                    "id": 2,
+                    "name": "Stephen Mearsley",
+                    "designation": "President & CEO",
+                    "images": [
+                        { "src": "../images/team/team-member-06-370x250.jpg" }
+                    ],
+                    "socials": [
+                        {
+                            "id": 1,
+                            "icon": "fab fa-facebook",
+                            "link": "https://www.twitter.com",
+                            "title": "Facebook"
+                        },
+                        {
+                            "id": 2,
+                            "icon": "fab fa-twitter",
+                            "link": "https://www.twitter.com",
+                            "title": "Twitter"
+                        },
+                        {
+                            "id": 3,
+                            "icon": "fab fa-instagram",
+                            "link": "https://www.instagram.com",
+                            "title": "Instagram"
+                        }
+                    ]
+                },
+                {
+                    "id": 3,
+                    "name": "Maggie Strickland",
+                    "designation": "HR executive",
+                    "images": [
+                        { "src": "../images/team/team-member-02-370x250.jpg" }
+                    ],
+                    "socials": [
+                        {
+                            "id": 1,
+                            "icon": "fab fa-facebook",
+                            "link": "https://www.twitter.com",
+                            "title": "Facebook"
+                        },
+                        {
+                            "id": 2,
+                            "icon": "fab fa-twitter",
+                            "link": "https://www.twitter.com",
+                            "title": "Twitter"
+                        },
+                        {
+                            "id": 3,
+                            "icon": "fab fa-instagram",
+                            "link": "https://www.instagram.com",
+                            "title": "Instagram"
+                        }
+                    ]
+                },
+                {
+                    "id": 4,
+                    "name": "Monica Blews",
+                    "designation": "Project manager",
+                    "images": [
+                        { "src": "../images/team/team-member-05-370x250.jpg" }
+                    ],
+                    "socials": [
+                        {
+                            "id": 1,
+                            "icon": "fab fa-facebook",
+                            "link": "https://www.twitter.com",
+                            "title": "Facebook"
+                        },
+                        {
+                            "id": 2,
+                            "icon": "fab fa-twitter",
+                            "link": "https://www.twitter.com",
+                            "title": "Twitter"
+                        },
+                        {
+                            "id": 3,
+                            "icon": "fab fa-instagram",
+                            "link": "https://www.instagram.com",
+                            "title": "Instagram"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "id": "appointment-cta",
+            "section": "cta-section",
+            "headings": [
+                {
+                    "level": "h3",
+                    "content": "Assess your business potentials and find opportunities <span>for bigger success </span>"
+                }
+            ],
+            "buttons": [
+                {
+                    "id": 1,
+                    "path": "/contact-us",
+                    "icon": "far fa-comment-alt-dots",
+                    "iconposition": "left",
+                    "icondistance": "8px",
+                    "iconsize": "16px",
+                    "hoverStyle": "two",
+                    "content": "Let's talk"
+                },
+                {
+                    "id": 2,
+                    "path": "/contact-us",
+                    "color": "secondary",
+                    "icon": "far fa-info-circle",
+                    "iconposition": "left",
+                    "icondistance": "8px",
+                    "iconsize": "16px",
+                    "content": "Get Info"
+                }
+            ]
+        },
+        {
+            "id": "appointment-case-study",
+            "section": "case-study-section",
+            "section_title": {
+                "title": "Proud projects <span>make us excel</span>",
+                "subtitle": "CASE STUDIES"
+            },
+            "motto": {
+                "text": "Challenges are just opportunities in disguise.",
+                "linkText": "Take the challenge!",
+                "link": "/case-studies"
+            }
+        },
+        {
+            "id": "appointment-testimonial",
+            "section": "testimonial-section",
+            "section_title": {
+                "title": "What do people praise about <span> Mitech?</span>",
+                "subtitle": "Testimonials"
+            },
+            "items": [
+                {
+                    "id": 1,
+                    "name": "Abbie Ferguson",
+                    "designation": "Marketing",
+                    "images": [
+                        {
+                            "src": "../images/avatar/avatar-01-90x90.jpg"
+                        }
+                    ],
+                    "rating": 5,
+                    "subject": "The Mitech team works really hard to ensure high level of quality",
+                    "description": "I’ve been working with over 35 IT companies on more than 200 projects of our company, but @Mitech is one of the most impressive to me."
+                },
+                {
+                    "id": 2,
+                    "name": "Monica Blews",
+                    "designation": "Web designer",
+                    "images": [
+                        {
+                            "src": "../images/avatar/avatar-02-90x90.jpg"
+                        }
+                    ],
+                    "rating": 4,
+                    "subject": "The Mitech team works really hard to ensure high level of quality",
+                    "description": "I’ve been working with over 35 IT companies on more than 200 projects of our company, but @Mitech is one of the most impressive to me."
+                },
+                {
+                    "id": 3,
+                    "name": "Sansa Stark",
+                    "designation": "Web designer",
+                    "images": [
+                        {
+                            "src": "../images/avatar/avatar-03-90x90.jpg"
+                        }
+                    ],
+                    "rating": 5,
+                    "subject": "The Mitech team works really hard to ensure high level of quality",
+                    "description": "I’ve been working with over 35 IT companies on more than 200 projects of our company, but @Mitech is one of the most impressive to me."
+                },
+                {
+                    "id": 4,
+                    "name": "Rickon Stark",
+                    "designation": "Web developer",
+                    "images": [
+                        {
+                            "src": "../images/avatar/avatar-04-90x90.jpg"
+                        }
+                    ],
+                    "rating": 5,
+                    "subject": "The Mitech team works really hard to ensure high level of quality",
+                    "description": "I’ve been working with over 35 IT companies on more than 200 projects of our company, but @Mitech is one of the most impressive to me."
+                }
+            ]
+        },
+        {
+            "id": "appointment-funfact",
+            "section": "funfact-section",
+            "items": [
+                {
+                    "id": 1,
+                    "count": 1056,
+                    "title": "Happy Clients"
+                },
+                {
+                    "id": 2,
+                    "count": 491,
+                    "title": "FINISHED PROJECTS"
+                },
+                {
+                    "id": 3,
+                    "count": 491,
+                    "title": "SKILLED EXPERTS"
+                },
+                {
+                    "id": 4,
+                    "count": 491,
+                    "title": "MEDIA POSTS"
+                }
+            ]
+        },
+        {
+            "id": "appointment-contact",
+            "section": "contact-section",
+            "section_title": {
+                "title": "Need a hand?",
+                "subtitle": "Reach out to the world’s most reliable IT services."
+            },
+            "headings": [
+                {
+                    "level": "h6",
+                    "content": "REACH OUT NOW!"
+                },
+                {
+                    "level": "h3",
+                    "content": "(+00) 123 567990"
+                }
+            ],
+            "texts": [
+                {
+                    "content": "Start the collaboration with us while figuring out the best solution based on your needs."
+                }
+            ]
+        }
+    ]
+}
