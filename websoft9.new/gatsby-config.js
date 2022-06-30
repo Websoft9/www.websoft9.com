@@ -12,11 +12,10 @@ module.exports = {
     },
     pathPrefix: `/`,
     siteMetadata: {
-        title: "React Gatsby Technology & Blog Template",
+        title: "Websoft9",
         titleTemplate: `Mitech`,
         description: `Mitech is a Powerful & flexible Technology And Digital Software Gatsby Template. 06 Stunning Homepages are included in this template. You can use any template or mix content from different home pages for your website.`,
         author: `@HasThemes`,
-        twitterUsername: `@HasThemes`,
         image: "landing.png",
         siteUrl: "https://mitech.gatsbydemo.hasthemes.com/",
         canonical: "https://mitech.gatsbydemo.hasthemes.com/",
@@ -173,6 +172,13 @@ module.exports = {
                 useClassNames: true,
             },
         },
+        {
+            resolve: `gatsby-source-contentful`,
+            options: {
+              spaceId: `ffrhttfighww`,
+              accessToken: `BZz6LDz-PeMhqiWhd9zElh1lKz-TxZC5Gdk-oB1JdOA`,
+            },
+          },
         "gatsby-plugin-offline",
     ],
 };

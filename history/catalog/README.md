@@ -20,4 +20,4 @@ gridsome develop
 * 网站：http://IP:8081  
 * GraphQL: http://IP:8081/___explore
 
-如果出现node-sass提示报错，执行`npm rebuild node-sass --force`;如果还是报错，执行重装`npm unstall node-sass` `npm install node-sass`
+如果出现node-sass提示报错，执行`npm rebuild node-sass --force`;如果还是报错，执行重装`npm uninstall node-sass` `npm install node-sass`

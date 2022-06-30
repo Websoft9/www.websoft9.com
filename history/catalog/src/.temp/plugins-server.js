@@ -1,4 +1,4 @@
-import plugin_gridsome_plugin_i_18_n_7 from "/data/wwwroot/mainsite/node_modules/gridsome-plugin-i18n/gridsome.client.js"
+import plugin_gridsome_plugin_i_18_n_7 from "/data/wwwroot/www.websoft9.com/history/catalog/node_modules/gridsome-plugin-i18n/gridsome.client.js"
 
 export default [
   {
