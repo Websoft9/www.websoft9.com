@@ -269,7 +269,7 @@ export default {
   computed: {
     // 过滤器数据源二级数据
     sidebarFilterDataSourceLeve2() {
-      return this.$page.allContentfulCatalog.edges.filter((post) => {
+      return this.$page.allContentfulBaseCatalog.edges.filter((post) => {
         return (
           post.node.catalog.length > 0 && post.node.catalog[0].key == "product"
         );
@@ -369,17 +369,17 @@ export default {
           });
         }
         // 获取ContentfulDelivery
-        if (this.$page.allContentfulDelivery) {
+        if (this.$page.allContentfulBaseDelivery) {
           this.contentfulDelivery =
-            this.$page.allContentfulDelivery &&
-            this.$page.allContentfulDelivery.edges[0].node;
+            this.$page.allContentfulBaseDelivery &&
+            this.$page.allContentfulBaseDelivery.edges[0].node;
           this.contentfulDelivery.productType.map((item, index) => {
             this.deliveryOptions.push({ value: item, text: item });
           });
         }
         // 获取ContentfulPrice
-        if (this.$page.allContentfulPrice) {
-          this.contentfulPrice = this.$page.allContentfulPrice.edges[0].node;
+        if (this.$page.allContentfulBasePrice) {
+          this.contentfulPrice = this.$page.allContentfulBasePrice.edges[0].node;
           this.contentfulPrice.priceModel.map((item, index) => {
             this.priceOptions.push({ value: item, text: item });
           });
@@ -413,8 +413,8 @@ export default {
     // 查询cataLog 数据
     getCataLog(levelKey) {
       let resultList = [];
-      if (this.$page.allContentfulCatalog) {
-        resultList = this.$page.allContentfulCatalog.edges.filter((post) => {
+      if (this.$page.allContentfulBaseCatalog) {
+        resultList = this.$page.allContentfulBaseCatalog.edges.filter((post) => {
           return (
             post.node.catalog.length > 0 && post.node.catalog[0].key == levelKey
           );
@@ -593,8 +593,8 @@ export default {
 </style>
 
 <page-query>
-query{
-  allContentfulCatalog {
+query {
+  allContentfulBaseCatalog {
     edges {
       node {
         id
@@ -624,7 +624,7 @@ query{
       }
     }
   }
-  allContentfulDelivery {
+  allContentfulBaseDelivery {
     edges {
       node {
         id,
@@ -634,7 +634,7 @@ query{
       }
     }
   }
-  allContentfulPrice {
+  allContentfulBasePrice {
     edges {
       node {
         id,
