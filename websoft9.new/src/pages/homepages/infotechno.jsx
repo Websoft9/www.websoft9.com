@@ -19,6 +19,8 @@ import TestimonialArea from "@containers/testimonial/layout-01";
 import BlogArea from "@containers/blog/layout-01";
 import ContactArea from "@containers/contact/layout-01";
 
+import {Link, Trans, useTranslation} from 'gatsby-plugin-react-i18next';
+
 const InfotechnoPage = ({ location, data }) => {
     const content = normalizedData(data?.page.content || []);
     const globalContent = normalizedData(data?.allGeneral.nodes || []);
@@ -29,7 +31,8 @@ const InfotechnoPage = ({ location, data }) => {
             <Header
                 data={{
                     ...globalContent["header"],
-                    ...globalContent["menu"],
+                    // ...globalContent["menu"],
+                    menu:data.allContentfulBaseMenu.nodes
                 }}
             />
             <main className="site-wrapper-reveal">
@@ -74,7 +77,30 @@ const InfotechnoPage = ({ location, data }) => {
 };
 
 export const query = graphql`
-    query infotechnoPageQuery {
+    query infotechnoPageQuery($language:String!) {
+        locales: allLocale(filter: {language: {eq: $language}}) {
+            edges {
+                node {
+                    ns
+                    data
+                    language
+                }
+            }
+        }
+        allContentfulBaseMenu(
+            filter: {node_locale: {eq: $language}, isTop: {eq: true}}
+            sort: {fields: contentfulid, order: ASC}) {
+            nodes {
+                id: contentfulid
+                text
+                link
+                submenu {
+                    id: contentfulid
+                    text
+                    link
+                }
+            }
+        }
         allGeneral {
             nodes {
                 section

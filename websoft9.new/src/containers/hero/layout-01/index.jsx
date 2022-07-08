@@ -15,7 +15,11 @@ import {
     StyledSubtitle,
 } from "./style";
 
+import {Trans,useTranslation} from 'gatsby-plugin-react-i18next';
+
 const HeroArea = ({ data }) => {
+    const { t } = useTranslation();
+
     return (
         <HeroWrapper>
             <Container fluid>
@@ -24,19 +28,19 @@ const HeroArea = ({ data }) => {
                         <HeroTextBox>
                             {data?.headings?.[0] && (
                                 <StyledSubtitle as={data.headings[0].level}>
-                                    {data.headings[0].content}
+                                    <Trans>{data.headings[0].content}</Trans>
                                 </StyledSubtitle>
                             )}
-                            {data?.headings?.[1] && (
+                            {data?.headings?.[1] && (                           
                                 <StyledTitle
                                     as={data.headings[1].level}
                                     dangerouslySetInnerHTML={{
-                                        __html: data.headings[1].content,
+                                        __html:  t(data.headings[1].content) 
                                     }}
-                                />
+                                />                               
                             )}
                             {data?.texts?.[0] && (
-                                <Text>{data.texts[0].content}</Text>
+                                <Text><Trans>{data.texts[0].content}</Trans></Text>
                             )}
                             {data?.buttons?.map(
                                 ({ id, path, content, ...rest }) => (

@@ -1,5 +1,5 @@
 module.exports = {
-    defaultHome: "/infotechno",
+    defaultHome: "/appointment",
     deleteThisPages: ["/test"],
     mode: "demo", // production
 };

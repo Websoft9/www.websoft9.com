@@ -6,30 +6,27 @@ import DropdownItem from "@ui/dropdown/dropdown-item";
 import DropdownItemInner from "@ui/dropdown/dropdown-item-inner";
 import DropdownSubMenu from "@ui/dropdown/dropdown-submenu";
 import enFlag from "@assets/images/flags/en.png";
-import frFlag from "@assets/images/flags/fr.png";
-import deFlag from "@assets/images/flags/de.png";
+import zhFlag from "@assets/images/flags/zh.png";
 import { LanguageWrap } from "./style";
+import { useI18next } from 'gatsby-plugin-react-i18next';
+
 
 const Language = ({ className, ...props }) => {
+    const {languages, changeLanguage} = useI18next();
+
     const [language, setLanguage] = useState([
         {
-            id: 1,
+            id: "en-US",
             flag: enFlag,
             name: "English",
             isActive: true,
         },
         {
-            id: 2,
-            flag: frFlag,
-            name: "Français",
+            id: "zh-CN",
+            flag: zhFlag,
+            name: "简体中文",
             isActive: false,
-        },
-        {
-            id: 3,
-            flag: deFlag,
-            name: "Deutsch",
-            isActive: false,
-        },
+        }
     ]);
 
     let activeLanguage = language.filter((el) => {
@@ -40,9 +37,9 @@ const Language = ({ className, ...props }) => {
         return !el.isActive;
     });
 
-    const onClickHandler = (id) => {
+    const onClickHandler = (id) => {      
         const copiedState = [...language];
-        const languageArr = copiedState.map((lang) => {
+        const languageArr = copiedState.map((lang) => {           
             if (lang.id !== id) {
                 return {
                     ...lang,
@@ -53,8 +50,9 @@ const Language = ({ className, ...props }) => {
                 ...lang,
                 isActive: true,
             };
-        });
+        });     
         setLanguage(languageArr);
+        changeLanguage(id);
     };
 
     return (
@@ -70,11 +68,11 @@ const Language = ({ className, ...props }) => {
                     </DropdownItemInner>
                     <DropdownSubMenu>
                         {inActiveLanguage.map((lang) => {
-                            const { id, name, flag } = lang;
+                            const { id, name,flag } = lang;
                             return (
                                 <DropdownItem
                                     key={id}
-                                    onClick={() => onClickHandler(id)}
+                                    onClick={() => {onClickHandler(id);}}
                                 >
                                     <DropdownItemInner>
                                         <img src={flag} alt={name} />

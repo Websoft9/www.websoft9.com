@@ -7,3 +7,4 @@ dist
 .env
 .env.*
 websoft9.new/node_modules
+websoft9.new/.cache
