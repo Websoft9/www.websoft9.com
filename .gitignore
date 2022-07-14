@@ -8,3 +8,4 @@ dist
 .env.*
 websoft9.new/node_modules
 websoft9.new/.cache
+websoft9.new/public
