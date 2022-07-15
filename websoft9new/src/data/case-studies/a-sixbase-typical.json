@@ -1,0 +1,218 @@
+{
+    "id": "a-sixbase-typical-case-study",
+    "title": "A Sixbase typical case study",
+    "category": "Cyber Security",
+    "excerpt": "Their energy, drive, and enthusiasm laid the foundations for the development of a business, which has now become one of the UK’s leading retail chains with a unique …",
+    "tagline": "A vision for a smarter world An ARM case study",
+    "logo": {
+        "src": "../images/icons/case-study-04-logo-83x108.png"
+    },
+    "featured_image": {
+        "src": "../images/box-image/case-study-05-featured.jpg"
+    },
+    "slide_image": {
+        "src": "../images/box-image/case-study-slide-image-02.png"
+    },
+    "banner_image": {
+        "src": "../images/banner/banner-01.jpg"
+    },
+    "is_featured": false,
+    "content": [
+        {
+            "id": "case-overview",
+            "section": "intro-section",
+            "headings": [
+                {
+                    "level": "h3",
+                    "content": "Overview"
+                },
+                {
+                    "level": "h3",
+                    "content": "Inventions, literary works, music & design are all intangible assets. The legal right to these ‘creations of the mind’ is Intellectual Property (IP)."
+                }
+            ],
+            "texts": [
+                {
+                    "content": "The studio was keen to create an identity that would not interfere with any of the existing brands, settling on a helicoid system that can be easily adapted to “work with any colour system”. The studio consulted with the various brands throughout the process. (Source: https://designweek.co.uk)"
+                }
+            ],
+            "tags": ["basic"],
+            "client": {
+                "name": "Maggie Strickland",
+                "designation": "Group Chief Information",
+                "company": "Aqua Group"
+            }
+        },
+        {
+            "id": "problem_solution",
+            "section": "solution-section",
+            "headings": [
+                {
+                    "level": "h4",
+                    "content": "Requirements"
+                },
+                {
+                    "level": "h4",
+                    "content": "Our Solution"
+                }
+            ],
+            "items": [
+                {
+                    "id": 1,
+                    "title": "The communication between machines of different kinds sometimes cause troubles and inaccurate signal decoding results.",
+                    "description": "Advancements in technology – including machine-to-machine communications between smart sensors, referred to as ‘The Internet of Things’. For example, appliances in the home that can be monitored and controlled wirelessly by the homeowner wherever they are."
+                },
+                {
+                    "id": 2,
+                    "title": "The potential market for servers and networking equipment development is still unstable and shrinks every year.",
+                    "description": "Market development – increasing market share in new markets such as servers and networking equipment. ARM’s technology is well placed to provide lower power options to transport, distribute, analyse and store data across the internet."
+                },
+                {
+                    "id": 3,
+                    "title": "Demand for energy efficient technology – the market demands high performance products using low power technology.",
+                    "description": "This case study will demonstrate how ARM’s strategies contribute to the achievement of its business vision, aims and objectives using an integrated approach focusing on innovation, its people and its network of partners."
+                }
+            ]
+        },
+        {
+            "id": "results",
+            "section": "result-section",
+            "headings": [
+                {
+                    "level": "h2",
+                    "content": "Results"
+                }
+            ],
+            "texts": [
+                {
+                    "content": "ARM has an innovative business model. ARM does not manufacture the products in which its technology is used."
+                }
+            ]
+        },
+        {
+            "id": "faq",
+            "section": "faq-section",
+            "items": [
+                {
+                    "id": 1,
+                    "title": "New multiple site connectivity",
+                    "description": "We use a newly developed technology to connect sites that are based on different types of servers and networks, SiteConnect, which helps to reduce the misinterpretation of signals as well as the loss of data during transfering."
+                },
+                {
+                    "id": 2,
+                    "title": "IT Security & Software",
+                    "description": "To keep your systems, your devices, and network stay secure, we have developed a new program that limits the access of suspicious objects or people and authenticate all logins to the system."
+                },
+                {
+                    "id": 3,
+                    "title": "Weak hosted capability",
+                    "description": "Some hosts are unaware of the potential risks as well as security loopholes in their system. By detecting these errors and taking prompt actions on improving firewalls, we can upgrade the system security."
+                },
+                {
+                    "id": 4,
+                    "title": "Build internal network",
+                    "description": "The internal network is essential for all companies and corporations, especially for those working in IT sector. To avoid possible risks when sharing internal confidential files and documentation to an external receiver, internal network must be strong."
+                }
+            ],
+            "images": [
+                {
+                    "src": "../images/about-us/video-01-image-01-570x350.jpg"
+                }
+            ],
+            "video_button": {
+                "link": "https://www.youtube.com/watch?v=9No-FiEInLA"
+            }
+        },
+        {
+            "id": "case-study-testimonial",
+            "section": "testimonial-section",
+            "section_title": {
+                "title": "What do people praise about <span> Mitech?</span>",
+                "subtitle": "Testimonials"
+            },
+            "items": [
+                {
+                    "id": 1,
+                    "name": "Abbie Ferguson",
+                    "designation": "Marketing",
+                    "images": [
+                        {
+                            "src": "../images/avatar/avatar-01-90x90.jpg"
+                        }
+                    ],
+                    "rating": 5,
+                    "description": "I’ve been working with over 35 IT companies on more than 200 projects of our company, but @Mitech is one of the most impressive to me."
+                },
+                {
+                    "id": 2,
+                    "name": "Monica Blews",
+                    "designation": "Web designer",
+                    "images": [
+                        {
+                            "src": "../images/avatar/avatar-02-90x90.jpg"
+                        }
+                    ],
+                    "rating": 4,
+                    "description": "I’ve been working with over 35 IT companies on more than 200 projects of our company, but @Mitech is one of the most impressive to me."
+                },
+                {
+                    "id": 3,
+                    "name": "Sansa Stark",
+                    "designation": "Web designer",
+                    "images": [
+                        {
+                            "src": "../images/avatar/avatar-03-90x90.jpg"
+                        }
+                    ],
+                    "rating": 5,
+                    "description": "I’ve been working with over 35 IT companies on more than 200 projects of our company, but @Mitech is one of the most impressive to me."
+                },
+                {
+                    "id": 4,
+                    "name": "Rickon Stark",
+                    "designation": "Web developer",
+                    "images": [
+                        {
+                            "src": "../images/avatar/avatar-04-90x90.jpg"
+                        }
+                    ],
+                    "rating": 5,
+                    "description": "I’ve been working with over 35 IT companies on more than 200 projects of our company, but @Mitech is one of the most impressive to me."
+                }
+            ]
+        },
+        {
+            "id": "services-cta",
+            "section": "cta-section",
+            "headings": [
+                {
+                    "level": "h3",
+                    "content": "Assess your business potentials and find opportunities <span>for bigger success </span>"
+                }
+            ],
+            "buttons": [
+                {
+                    "id": 1,
+                    "path": "/contact-us",
+                    "color": "light",
+                    "icon": "far fa-comment-alt-dots",
+                    "iconposition": "left",
+                    "icondistance": "8px",
+                    "iconsize": "16px",
+                    "hoverStyle": "three",
+                    "content": "Let's talk"
+                },
+                {
+                    "id": 2,
+                    "path": "/contact-us",
+                    "color": "secondary",
+                    "icon": "far fa-info-circle",
+                    "iconposition": "left",
+                    "icondistance": "8px",
+                    "iconsize": "16px",
+                    "content": "Get Info"
+                }
+            ]
+        }
+    ]
+}

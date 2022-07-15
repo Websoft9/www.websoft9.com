@@ -1,0 +1,31 @@
+{
+    "id": "header-data",
+    "section": "header",
+    "contact_info": [
+        {
+            "id": 1,
+            "title": "219 Amara Fort Apt. 394",
+            "text": "New York, NY 941",
+            "icon": "fa fa-map-marker-alt"
+        },
+        {
+            "id": 2,
+            "title": "8:00AM - 6:00PM",
+            "text": "Monday to Saturday",
+            "icon": "fa fa-clock"
+        },
+        {
+            "id": 3,
+            "title": "Online 24/7",
+            "text": "+122 123 4567",
+            "icon": "fa fa-comment-alt-lines"
+        },
+        {
+            "id": 4,
+            "title": "0122 8899900",
+            "text": "Info@example.com",
+            "icon": "fa fa-phone"
+        }
+    ],
+    "slogan": "<span>Now Hiring:</span> Are you a driven and motivated 1st Line IT Support Engineer?"
+}

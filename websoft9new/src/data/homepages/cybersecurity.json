@@ -1,0 +1,336 @@
+{
+    "title": "cybersecurity",
+    "pageType": "frontpage",
+    "content": [
+        {
+            "id": "cybersecurity-hero-content",
+            "section": "hero-section",
+            "images": [
+                {
+                    "src": "../images/hero/slider-cybersecurity-slide-01-image-01.png"
+                }
+            ],
+            "headings": [
+                {
+                    "level": "h6",
+                    "content": "FIGURE PLANS OUT"
+                },
+                {
+                    "level": "h1",
+                    "content": "Get insights into the <span>mechanism</span> & <span>prospects</span> of cyber security technology"
+                }
+            ],
+            "buttons": [
+                {
+                    "id": 1,
+                    "path": "/about-us",
+                    "content": "Dig deeper now"
+                }
+            ]
+        },
+        {
+            "id": "cybersecurity-about",
+            "section": "about-section",
+            "section_title": {
+                "title": "We run all kinds of IT services that <br/> vow your <span>success</span>",
+                "subtitle": "OUR COMPANY"
+            },
+            "headings": [
+                {
+                    "level": "h2",
+                    "content": "<mark>38</mark> YEARS’ EXPERIENCE IN IT"
+                },
+                {
+                    "level": "h6",
+                    "content": "Learn more about our Success Stories"
+                }
+            ],
+            "texts": [
+                {
+                    "content": "Mitech specializes in technological and IT-related services such as product engineering, warranty management, building cloud, infrastructure, network, etc. We put a strong focus on the needs of your business to figure out solutions that best fits your demand and nail it."
+                }
+            ],
+            "buttons": [
+                {
+                    "id": 1,
+                    "variant": "texted",
+                    "color": "primary",
+                    "icon": "far fa-long-arrow-right",
+                    "icondistance": "8px",
+                    "fontWeight": 500,
+                    "path": "/about-us",
+                    "content": "Discover Now"
+                }
+            ]
+        },
+        {
+            "id": "cybersecurity-features",
+            "section": "feature-section",
+            "motto": {
+                "text": "Challenges are just opportunities in disguise",
+                "linkText": "Take the challenge!",
+                "link": "/it-services"
+            }
+        },
+        {
+            "id": "cybersecurity-services",
+            "section": "service-section",
+            "section_title": {
+                "title": "Reach out to the world’s most <br> <span>reliable IT services.</span>",
+                "subtitle": "OPTIMAL TECHNOLOGY SOLUTIONS"
+            }
+        },
+        {
+            "id": "cybersecurity-funfact",
+            "section": "funfact-section",
+            "items": [
+                {
+                    "id": 1,
+                    "count": 1056,
+                    "title": "Happy Clients"
+                },
+                {
+                    "id": 2,
+                    "count": 491,
+                    "title": "FINISHED PROJECTS"
+                },
+                {
+                    "id": 3,
+                    "count": 491,
+                    "title": "SKILLED EXPERTS"
+                },
+                {
+                    "id": 4,
+                    "count": 491,
+                    "title": "MEDIA POSTS"
+                }
+            ]
+        },
+        {
+            "id": "cybersecurity-case-study",
+            "section": "case-study-section",
+            "section_title": {
+                "title": "Proud projects that <span>make us stand out</span>",
+                "subtitle": "CASE STUDIES"
+            }
+        },
+        {
+            "id": "cybersecurity-pricing",
+            "section": "pricing-section",
+            "section_title": {
+                "title": "1 monthly fee for <span>all IT services.</span>",
+                "subtitle": "PRICING AND PLAN"
+            },
+            "items": [
+                {
+                    "id": 1,
+                    "title": "basic",
+                    "period": "monthly",
+                    "images": [
+                        {
+                            "src": "../images/icons/icon-29-90x90.png"
+                        }
+                    ],
+                    "price": 19,
+                    "path": "/contact-us",
+                    "list": [
+                        {
+                            "id": 1,
+                            "text": "03 projects"
+                        },
+                        {
+                            "id": 2,
+                            "text": "Quality & Customer Experience"
+                        },
+                        {
+                            "id": 3,
+                            "text": "Try for free, forever!"
+                        }
+                    ]
+                },
+                {
+                    "id": 2,
+                    "title": "proffessional",
+                    "period": "monthly",
+                    "images": [
+                        {
+                            "src": "../images/icons/icon-30-90x90.png"
+                        }
+                    ],
+                    "is_featured": true,
+                    "price": 59,
+                    "path": "/contact-us",
+                    "list": [
+                        {
+                            "id": 1,
+                            "text": "Unlimited project"
+                        },
+                        {
+                            "id": 2,
+                            "text": "Power And Predictive Dialing"
+                        },
+                        {
+                            "id": 3,
+                            "text": "Quality & Customer Experience"
+                        },
+                        {
+                            "id": 4,
+                            "text": "24/7 phone and email support"
+                        }
+                    ]
+                },
+                {
+                    "id": 3,
+                    "title": "business",
+                    "period": "monthly",
+                    "images": [
+                        {
+                            "src": "../images/icons/icon-29-90x90.png"
+                        }
+                    ],
+                    "price": 29,
+                    "path": "/contact-us",
+                    "list": [
+                        {
+                            "id": 1,
+                            "text": "10 projects"
+                        },
+                        {
+                            "id": 2,
+                            "text": "Power And Predictive Dialing"
+                        },
+                        {
+                            "id": 3,
+                            "text": "Quality & Customer Experience"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "id": "cybersecurity-blog",
+            "section": "blog-section",
+            "section_title": {
+                "title": "Interesting articles <span>updated daily</span>",
+                "subtitle": "BLOGS & NEWS"
+            }
+        },
+        {
+            "id": "cybersecurity-partner",
+            "section": "partner-section",
+            "section_title": {
+                "title": "Qualified methods <span>at its best</span>",
+                "description": "How IT services change people's life for the better"
+            },
+            "buttons": [
+                {
+                    "id": 1,
+                    "path": "/",
+                    "icon": "far fa-long-arrow-right",
+                    "icondistance": "4px",
+                    "content": "Download free proposal sample"
+                }
+            ],
+            "items": [
+                {
+                    "id": 1,
+                    "images": [
+                        {
+                            "src": "../images/partners/mitech-slider-client-logos-logo-02.png"
+                        }
+                    ],
+                    "path": "/"
+                },
+                {
+                    "id": 2,
+                    "images": [
+                        {
+                            "src": "../images/partners/mitech-slider-client-logos-logo-03.png"
+                        }
+                    ],
+                    "path": "/"
+                },
+                {
+                    "id": 3,
+                    "images": [
+                        {
+                            "src": "../images/partners/mitech-slider-client-logos-logo-04.png"
+                        }
+                    ],
+                    "path": "/"
+                },
+                {
+                    "id": 4,
+                    "images": [
+                        {
+                            "src": "../images/partners/mitech-slider-client-logos-logo-05.png"
+                        }
+                    ],
+                    "path": "/"
+                },
+                {
+                    "id": 5,
+                    "images": [
+                        {
+                            "src": "../images/partners/mitech-slider-client-logos-logo-01.png"
+                        }
+                    ],
+                    "path": "/"
+                },
+                {
+                    "id": 6,
+                    "images": [
+                        {
+                            "src": "../images/partners/mitech-slider-client-logos-logo-06.png"
+                        }
+                    ],
+                    "path": "/"
+                },
+                {
+                    "id": 7,
+                    "images": [
+                        {
+                            "src": "../images/partners/mitech-slider-client-logos-logo-07.png"
+                        }
+                    ],
+                    "path": "/"
+                }
+            ]
+        },
+        {
+            "id": "cybersecurity-contact",
+            "section": "contact-section",
+            "headings": [
+                {
+                    "level": "h3",
+                    "content": "To make requests for <br/> further information, <span>contact us</span> via our social channels."
+                }
+            ],
+            "texts": [
+                {
+                    "content": "We just need a couple of hours! No more than 2 working days since receiving your issue ticket"
+                }
+            ]
+        },
+        {
+            "id": "cybersecurity-contact-info",
+            "section": "contact-info-section",
+            "headings": [
+                {
+                    "level": "h3",
+                    "content": "4.9/5.0"
+                }
+            ],
+            "texts": [
+                {
+                    "content": "by 700+ customers for 3200+ clients"
+                }
+            ],
+            "images": [
+                {
+                    "src": "../images/banner/contact-image.png"
+                }
+            ]
+        }
+    ]
+}

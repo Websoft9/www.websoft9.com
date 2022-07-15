@@ -1,0 +1,419 @@
+{
+    "title": "services",
+    "pageType": "frontpage",
+    "content": [
+        {
+            "id": "services-hero-content",
+            "section": "hero-section",
+            "images": [
+                {
+                    "src": "../images/hero/home-services-hero-bg.jpg"
+                }
+            ],
+            "headings": [
+                {
+                    "level": "h3",
+                    "content": "Responsive Design"
+                },
+                {
+                    "level": "h1",
+                    "content": "for IT Services"
+                }
+            ],
+            "texts": [
+                {
+                    "content": "Highly Tailored IT Design, Management & Support Services."
+                }
+            ],
+            "buttons": [
+                {
+                    "id": 1,
+                    "size": "large",
+                    "path": "/it-services",
+                    "content": "IT Services"
+                }
+            ]
+        },
+        {
+            "id": "services-feature",
+            "section": "feature-section",
+            "section_title": {
+                "title": "For your very specific industry, <br/> we have <span>highly-tailored IT solutions.</span>",
+                "subtitle": "FEATURED SERVICES"
+            },
+            "motto": {
+                "text": "Challenges are just opportunities in disguise.",
+                "linkText": "Take the challenge!",
+                "link": "/it-services"
+            }
+        },
+        {
+            "id": "services-about",
+            "section": "about-section",
+            "section_title": {
+                "title": "We’ve been triumphing <br/> all these <span>38 years.</span> <br/> Sacrifices are made up <br/> with success.",
+                "subtitle": "OUR COMPANY",
+                "description": "Mitech takes into consideration every little detail to make sure the system run smoothly and responsively. Mitech employs a new technique called Minified Technology for securing customers’ database & building up highly confidential firewalls."
+            },
+            "buttons": [
+                {
+                    "id": 1,
+                    "path": "/about-us",
+                    "content": "Find Out More"
+                }
+            ],
+            "video_button": {
+                "link": "https://www.youtube.com/watch?v=9No-FiEInLA"
+            },
+            "images": [
+                {
+                    "src": "../images/about-us/video-01-image-01-570x350.jpg"
+                },
+                {
+                    "src": "../images/about-us/home-processing-video-intro-slider-slide-01-image-02.jpg"
+                },
+                {
+                    "src": "../images/about-us/home-processing-video-intro-slider-slide-01-image-03.jpg"
+                },
+                {
+                    "src": "../images/about-us/home-processing-video-intro-slider-slide-01-image-04.jpg"
+                },
+                {
+                    "src": "../images/about-us/home-processing-video-intro-slider-slide-01-image-05.jpg"
+                }
+            ]
+        },
+        {
+            "id": "services-service",
+            "section": "service-section",
+            "section_title": {
+                "title": "Services We Deliver <br/> we provide <span>truly prominent IT solutions.</span>",
+                "subtitle": "INDUSTRIES WE SERVE"
+            },
+            "buttons": [
+                {
+                    "id": 1,
+                    "path": "/contact-us",
+                    "content": "Talk to a consultant"
+                },
+                {
+                    "id": 2,
+                    "variant": "outlined",
+                    "path": "/contact-us",
+                    "content": "Contact us now "
+                }
+            ]
+        },
+        {
+            "id": "services-gradation",
+            "section": "gradation-section",
+            "headings": [
+                {
+                    "level": "h6",
+                    "content": "HOW WE WORKS"
+                },
+                {
+                    "level": "h4",
+                    "content": "How it helps <span>your <br/> business succeed</span>"
+                }
+            ],
+            "items": [
+                {
+                    "id": 1,
+                    "title": "Discussion",
+                    "description": "We meet customers in set place to discuss the details about needs and demands before proposing a plan.",
+                    "path": "/about-us"
+                },
+                {
+                    "id": 2,
+                    "title": "Concepts & Initatives",
+                    "description": "Our experts come up with all kinds of ideas and initiatives for delivering the best solutions for IT services chosen.",
+                    "path": "/about-us"
+                },
+                {
+                    "id": 3,
+                    "title": "Testing & Trying",
+                    "description": "After agreeing on the ideas and plans, we will conduct as scheduled and give comments on the results & adaptations.",
+                    "path": "/about-us"
+                },
+                {
+                    "id": 4,
+                    "title": "Execute & install",
+                    "description": "Once the final plan is approved, everything will be conducted according to the agreed contract.",
+                    "path": "/about-us"
+                }
+            ]
+        },
+        {
+            "id": "services-cta",
+            "section": "cta-section",
+            "headings": [
+                {
+                    "level": "h3",
+                    "content": "Assess your business potentials and find opportunities <span>for bigger success </span>"
+                }
+            ],
+            "buttons": [
+                {
+                    "id": 1,
+                    "path": "/contact-us",
+                    "color": "light",
+                    "icon": "far fa-comment-alt-dots",
+                    "iconposition": "left",
+                    "icondistance": "8px",
+                    "iconsize": "16px",
+                    "hoverStyle": "three",
+                    "content": "Let's talk"
+                },
+                {
+                    "id": 2,
+                    "path": "/contact-us",
+                    "color": "secondary",
+                    "icon": "far fa-info-circle",
+                    "iconposition": "left",
+                    "icondistance": "8px",
+                    "iconsize": "16px",
+                    "content": "Get Info"
+                }
+            ]
+        },
+        {
+            "id": "services-case-study",
+            "section": "case-study-section",
+            "section_title": {
+                "title": "Proud projects that <span>make us stand out</span>",
+                "subtitle": "CASE STUDIES"
+            }
+        },
+        {
+            "id": "services-pricing",
+            "section": "pricing-section",
+            "section_title": {
+                "title": "1 monthly fee for <span>all IT services.</span>",
+                "subtitle": "PRICING AND PLAN"
+            },
+            "items": [
+                {
+                    "id": 1,
+                    "title": "basic",
+                    "period": "monthly",
+                    "images": [
+                        {
+                            "src": "../images/icons/icon-29-90x90.png"
+                        }
+                    ],
+                    "price": 19,
+                    "path": "/contact-us",
+                    "list": [
+                        {
+                            "id": 1,
+                            "text": "03 projects"
+                        },
+                        {
+                            "id": 2,
+                            "text": "Quality & Customer Experience"
+                        },
+                        {
+                            "id": 3,
+                            "text": "Try for free, forever!"
+                        }
+                    ]
+                },
+                {
+                    "id": 2,
+                    "title": "proffessional",
+                    "period": "monthly",
+                    "images": [
+                        {
+                            "src": "../images/icons/icon-30-90x90.png"
+                        }
+                    ],
+                    "is_featured": true,
+                    "price": 59,
+                    "path": "/contact-us",
+                    "list": [
+                        {
+                            "id": 1,
+                            "text": "Unlimited project"
+                        },
+                        {
+                            "id": 2,
+                            "text": "Power And Predictive Dialing"
+                        },
+                        {
+                            "id": 3,
+                            "text": "Quality & Customer Experience"
+                        },
+                        {
+                            "id": 4,
+                            "text": "24/7 phone and email support"
+                        }
+                    ]
+                },
+                {
+                    "id": 3,
+                    "title": "business",
+                    "period": "monthly",
+                    "images": [
+                        {
+                            "src": "../images/icons/icon-29-90x90.png"
+                        }
+                    ],
+                    "price": 29,
+                    "path": "/contact-us",
+                    "list": [
+                        {
+                            "id": 1,
+                            "text": "10 projects"
+                        },
+                        {
+                            "id": 2,
+                            "text": "Power And Predictive Dialing"
+                        },
+                        {
+                            "id": 3,
+                            "text": "Quality & Customer Experience"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "id": "services-blog",
+            "section": "blog-section",
+            "section_title": {
+                "title": "Latest news are <span>on top all times</span>",
+                "subtitle": "LATEST NEWS"
+            }
+        },
+        {
+            "id": "services-contact",
+            "section": "contact-section",
+            "headings": [
+                {
+                    "level": "h3",
+                    "content": "4.9/5.0"
+                }
+            ],
+            "texts": [
+                {
+                    "content": "by 700+ customers for 3200+ clients"
+                }
+            ]
+        },
+        {
+            "id": "services-partner",
+            "section": "partner-section",
+            "items": [
+                {
+                    "id": 1,
+                    "images": [
+                        {
+                            "src": "../images/partners/mitech-client-logo-01.png"
+                        },
+                        {
+                            "src": "../images/partners/mitech-client-logo-01-hover.png"
+                        }
+                    ],
+                    "path": "/"
+                },
+                {
+                    "id": 2,
+                    "images": [
+                        {
+                            "src": "../images/partners/mitech-client-logo-02.png"
+                        },
+                        {
+                            "src": "../images/partners/mitech-client-logo-02-hover.png"
+                        }
+                    ],
+                    "path": "/"
+                },
+                {
+                    "id": 3,
+                    "images": [
+                        {
+                            "src": "../images/partners/mitech-client-logo-03.png"
+                        },
+                        {
+                            "src": "../images/partners/mitech-client-logo-03-hover.png"
+                        }
+                    ],
+                    "path": "/"
+                },
+                {
+                    "id": 4,
+                    "images": [
+                        {
+                            "src": "../images/partners/mitech-client-logo-04.png"
+                        },
+                        {
+                            "src": "../images/partners/mitech-client-logo-04-hover.png"
+                        }
+                    ],
+                    "path": "/"
+                },
+                {
+                    "id": 5,
+                    "images": [
+                        {
+                            "src": "../images/partners/mitech-client-logo-05.png"
+                        },
+                        {
+                            "src": "../images/partners/mitech-client-logo-05-hover.png"
+                        }
+                    ],
+                    "path": "/"
+                },
+                {
+                    "id": 6,
+                    "images": [
+                        {
+                            "src": "../images/partners/mitech-client-logo-06.png"
+                        },
+                        {
+                            "src": "../images/partners/mitech-client-logo-06-hover.png"
+                        }
+                    ],
+                    "path": "/"
+                },
+                {
+                    "id": 7,
+                    "images": [
+                        {
+                            "src": "../images/partners/mitech-client-logo-07.png"
+                        },
+                        {
+                            "src": "../images/partners/mitech-client-logo-07-hover.png"
+                        }
+                    ],
+                    "path": "/"
+                },
+                {
+                    "id": 8,
+                    "images": [
+                        {
+                            "src": "../images/partners/mitech-client-logo-08.png"
+                        },
+                        {
+                            "src": "../images/partners/mitech-client-logo-08-hover.png"
+                        }
+                    ],
+                    "path": "/"
+                },
+                {
+                    "id": 9,
+                    "images": [
+                        {
+                            "src": "../images/partners/mitech-client-logo-09.png"
+                        },
+                        {
+                            "src": "../images/partners/mitech-client-logo-09-hover.png"
+                        }
+                    ],
+                    "path": "/"
+                }
+            ]
+        }
+    ]
+}

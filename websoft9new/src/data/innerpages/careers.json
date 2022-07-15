@@ -1,0 +1,102 @@
+{
+    "title": "careers",
+    "pageType": "innerpage",
+    "content": [
+        {
+            "id": "careers-listing",
+            "section": "listing-section",
+            "section_title": {
+                "title": "Become a part of our big family to inspire and get inspired by <span>professional experts.</span>"
+            },
+            "items": [
+                {
+                    "id": 1,
+                    "title": "IT Operations Specialist",
+                    "type": "Full time",
+                    "description": "We are currently seeking a highly motivated individual to fill an I.T. This position will provide remote and onsite hands-on support to staff, vendors, and customers as well as, proactively identify issues."
+                },
+                {
+                    "id": 3,
+                    "title": "IT Desktop Support",
+                    "type": "Part time",
+                    "description": "The Mitech IT team believes in full transparency, being flexible, reliable and being great team players. We are problem solvers, always ready to help and support each other and the organization."
+                },
+                {
+                    "id": 4,
+                    "title": "IT Summer Intern",
+                    "type": "Internship",
+                    "description": "Mitech is looking for a summer intern to work in the Information & Technology Services area. This position is part of a team which supports Microsoft Server Operating Systems, storage systems, and Client device technologies."
+                },
+                {
+                    "id": 5,
+                    "title": "Software Engineer",
+                    "type": "Remote",
+                    "description": "In partnership with others on the team, you will create enhancements and/or new services and solutions based data acquisition and analytics. You will analyze, design, program, debug and modify software interface for our system."
+                }
+            ]
+        },
+        {
+            "id": "careers-gallery",
+            "section": "gallery-section",
+            "section_title": {
+                "title": "Pay a visit & have some coffee!"
+            },
+            "buttons": [
+                {
+                    "id": 1,
+                    "variant": "texted",
+                    "path": "/leadership",
+                    "icon": "far fa-long-arrow-right",
+                    "icondistance": "4px",
+                    "content": "View All Team"
+                }
+            ],
+            "images": [
+                {
+                    "src": "../images/box-image/office-1.jpg"
+                },
+                {
+                    "src": "../images/box-image/office-2.jpg"
+                },
+                {
+                    "src": "../images/box-image/office-3.jpg"
+                },
+                {
+                    "src": "../images/box-image/office-4.jpg"
+                }
+            ]
+        },
+        {
+            "id": "faq-contact-content",
+            "section": "contact-section",
+            "headings": [
+                {
+                    "level": "h3",
+                    "content": "Obtaining further information by <span>make a contact</span> with our experienced IT staffs."
+                },
+                {
+                    "level": "h6",
+                    "content": "REACH OUT NOW!"
+                },
+                {
+                    "level": "h2",
+                    "content": "190068668"
+                }
+            ],
+            "texts": [
+                {
+                    "content": "We’re available for 8 hours a day! <br/> Contact to require a detailed analysis and assessment of your plan"
+                }
+            ],
+            "buttons": [
+                {
+                    "id": 1,
+                    "color": "secondary",
+                    "hoverStyle": "three",
+                    "path": "/contact-us",
+                    "content": "Contact Us"
+                }
+            ]
+        }
+    ]
+}

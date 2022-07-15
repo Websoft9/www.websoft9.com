@@ -1,0 +1,69 @@
+{
+    "title": "our-history",
+    "pageType": "innerpage",
+    "content": [
+        {
+            "id": "our-history-timeline",
+            "section": "timeline-section",
+            "section_title": {
+                "title": "We create dreams <span>for the future.</span> <br/> We realize them sucessfully.",
+                "description": "You know that you found your dream when you have a desire to achieve a goal, have the gut to pursue it, have the courage to overcome any obstacles on your path and feel blessed when finally realizing it. Dream on, keep up and make it pay off."
+            },
+            "items": [
+                {
+                    "id": 1,
+                    "title": "The Foundation of Mitech",
+                    "description": "The beginning of Mitech Co. was laid by three men: Jackie Moodle, Alan Morray and Burrow Kills. Back in 1988, three passionate young pupils, whose major is Information Technology, had discussed with each other about starting a company to deliver technological & digital services in an old rented apartment.",
+                    "images": [
+                        {
+                            "src": "../images/box-image/timeline-image-01.jpg"
+                        }
+                    ],
+                    "year": "1998"
+                },
+                {
+                    "id": 2,
+                    "title": "Mitech’s Golden Age",
+                    "description": "Mitech had been operating for 5 years when it reached the golden age in the company’s history. They received two prestigious awards for Dedicated Services & Community Contribution (in 1990), plus three successive award nominations for Best IT Company of the year (respectively in 1991, 1992 & 1993).",
+                    "images": [
+                        {
+                            "src": "../images/box-image/timeline-image-02.jpg"
+                        }
+                    ],
+                    "year": "2002"
+                },
+                {
+                    "id": 2,
+                    "title": "Mitech’s Turning Point",
+                    "description": "The company has a turning point in 1995 when one of its founders left the board of the management and established a new company in Healthcare & Assurance – HealSoul. Later on, Mitech and HealSoul have successfully cooperated in several projects to integrate technology into taking care of people’s health.",
+                    "images": [
+                        {
+                            "src": "../images/box-image/timeline-image-03.jpg"
+                        }
+                    ],
+                    "year": "2005"
+                }
+            ]
+        },
+        {
+            "id": "our-history-contact",
+            "section": "contact-section",
+            "headings": [
+                {
+                    "level": "h3",
+                    "content": "4.9/5.0"
+                }
+            ],
+            "texts": [
+                {
+                    "content": "by 700+ customers for 3200+ clients"
+                }
+            ],
+            "images": [
+                {
+                    "src": "../images/banner/contact-image.png"
+                }
+            ]
+        }
+    ]
+}

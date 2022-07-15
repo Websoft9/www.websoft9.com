@@ -1,0 +1,202 @@
+{
+    "title": "pricing-plan",
+    "pageType": "innerpage",
+    "content": [
+        {
+            "id": "pricing-table",
+            "section": "pricing-section",
+            "section_title": {
+                "title": "Affordable price plans <span>for you!</span>",
+                "subtitle": "Price and Plans"
+            },
+            "items": [
+                {
+                    "id": 1,
+                    "title": "basic",
+                    "images": [
+                        {
+                            "src": "../images/icons/icon-29-90x90.png"
+                        }
+                    ],
+                    "price": 19,
+                    "period": "monthly",
+                    "path": "/contact-us",
+                    "list": [
+                        {
+                            "id": 1,
+                            "text": "03 projects"
+                        },
+                        {
+                            "id": 2,
+                            "text": "Quality & Customer Experience"
+                        },
+                        {
+                            "id": 3,
+                            "text": "Try for free, forever!"
+                        }
+                    ]
+                },
+                {
+                    "id": 2,
+                    "title": "proffessional",
+                    "images": [
+                        {
+                            "src": "../images/icons/icon-30-90x90.png"
+                        }
+                    ],
+                    "is_featured": true,
+                    "price": 59,
+                    "period": "monthly",
+                    "path": "/contact-us",
+                    "list": [
+                        {
+                            "id": 1,
+                            "text": "Unlimited project"
+                        },
+                        {
+                            "id": 2,
+                            "text": "Power And Predictive Dialing"
+                        },
+                        {
+                            "id": 3,
+                            "text": "Quality & Customer Experience"
+                        },
+                        {
+                            "id": 4,
+                            "text": "24/7 phone and email support"
+                        }
+                    ]
+                },
+                {
+                    "id": 3,
+                    "title": "business",
+                    "images": [
+                        {
+                            "src": "../images/icons/icon-29-90x90.png"
+                        }
+                    ],
+                    "price": 29,
+                    "period": "monthly",
+                    "path": "/contact-us",
+                    "list": [
+                        {
+                            "id": 1,
+                            "text": "10 projects"
+                        },
+                        {
+                            "id": 2,
+                            "text": "Power And Predictive Dialing"
+                        },
+                        {
+                            "id": 3,
+                            "text": "Quality & Customer Experience"
+                        }
+                    ]
+                },
+                {
+                    "id": 4,
+                    "title": "basic",
+                    "images": [
+                        {
+                            "src": "../images/icons/icon-29-90x90.png"
+                        }
+                    ],
+                    "price": 199,
+                    "period": "yearly",
+                    "path": "/contact-us",
+                    "list": [
+                        {
+                            "id": 1,
+                            "text": "03 projects"
+                        },
+                        {
+                            "id": 2,
+                            "text": "Quality & Customer Experience"
+                        },
+                        {
+                            "id": 3,
+                            "text": "Try for free, forever!"
+                        }
+                    ]
+                },
+                {
+                    "id": 5,
+                    "title": "proffessional",
+                    "images": [
+                        {
+                            "src": "../images/icons/icon-30-90x90.png"
+                        }
+                    ],
+                    "is_featured": true,
+                    "price": 599,
+                    "period": "yearly",
+                    "path": "/contact-us",
+                    "list": [
+                        {
+                            "id": 1,
+                            "text": "Unlimited project"
+                        },
+                        {
+                            "id": 2,
+                            "text": "Power And Predictive Dialing"
+                        },
+                        {
+                            "id": 3,
+                            "text": "Quality & Customer Experience"
+                        },
+                        {
+                            "id": 4,
+                            "text": "24/7 phone and email support"
+                        }
+                    ]
+                },
+                {
+                    "id": 6,
+                    "title": "business",
+                    "images": [
+                        {
+                            "src": "../images/icons/icon-29-90x90.png"
+                        }
+                    ],
+                    "price": 299,
+                    "period": "yearly",
+                    "path": "/contact-us",
+                    "list": [
+                        {
+                            "id": 1,
+                            "text": "10 projects"
+                        },
+                        {
+                            "id": 2,
+                            "text": "Power And Predictive Dialing"
+                        },
+                        {
+                            "id": 3,
+                            "text": "Quality & Customer Experience"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "id": "pricing-plan-contact",
+            "section": "contact-section",
+            "headings": [
+                {
+                    "level": "h3",
+                    "content": "4.9/5.0"
+                }
+            ],
+            "texts": [
+                {
+                    "content": "by 700+ customers for 3200+ clients"
+                }
+            ],
+            "images": [
+                {
+                    "src": "../images/banner/contact-image.png"
+                }
+            ]
+        }
+    ]
+}

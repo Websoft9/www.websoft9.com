@@ -1,0 +1,112 @@
+{
+    "title": "faq",
+    "pageType": "innerpage",
+    "content": [
+        {
+            "id": "faq-section-one",
+            "section": "faq-section-one",
+            "section_title": {
+                "title": "Frequently asked questions"
+            },
+            "items": [
+                {
+                    "id": 1,
+                    "title": "How can we help your business?",
+                    "description": "Mitech takes into consideration every little detail to make sure the system run smoothly and responsively. Mitech employs a new technique called Minified Technology for securing customers' database & building up highly confidential firewalls."
+                },
+                {
+                    "id": 2,
+                    "title": "What are the advantages of Mitech?",
+                    "description": "We reduce redundant complex calculations and lengthy erroneous code texts with simpler ones to ensure Mitech would run seamlessly and the design is reserved in its best form when viewed from a wide range of mobile devices & browsers."
+                },
+                {
+                    "id": 3,
+                    "title": "How working process is simplified?",
+                    "description": "Our service offerings to enhance customer experience throughout the product lifecycle includes – test and repair, service management, and end-to-end warranty management."
+                },
+                {
+                    "id": 4,
+                    "title": "Product Engineering & Services",
+                    "description": "Our service offerings to enhance customer experience throughout the product lifecycle includes – test and repair, service management, and end-to-end warranty management."
+                }
+            ],
+            "images": [
+                {
+                    "src": "../images/box-image/faqs-video-poster.jpg"
+                }
+            ],
+            "video_button": {
+                "link": "https://www.youtube.com/watch?v=9No-FiEInLA"
+            }
+        },
+        {
+            "id": "faq-section-two",
+            "section": "faq-section-two",
+            "section_title": {
+                "title": "Frequently asked questions"
+            },
+            "items": [
+                {
+                    "id": 1,
+                    "title": "How can we help your business?",
+                    "description": "Mitech takes into consideration every little detail to make sure the system run smoothly and responsively. Mitech employs a new technique called Minified Technology for securing customers' database & building up highly confidential firewalls."
+                },
+                {
+                    "id": 2,
+                    "title": "What are the advantages of Mitech?",
+                    "description": "We reduce redundant complex calculations and lengthy erroneous code texts with simpler ones to ensure Mitech would run seamlessly and the design is reserved in its best form when viewed from a wide range of mobile devices & browsers."
+                },
+                {
+                    "id": 3,
+                    "title": "How working process is simplified?",
+                    "description": "Our service offerings to enhance customer experience throughout the product lifecycle includes – test and repair, service management, and end-to-end warranty management."
+                },
+                {
+                    "id": 4,
+                    "title": "Product Engineering & Services",
+                    "description": "Our service offerings to enhance customer experience throughout the product lifecycle includes – test and repair, service management, and end-to-end warranty management."
+                }
+            ],
+            "images": [
+                {
+                    "src": "../images/box-image/faqs-video-poster.jpg"
+                }
+            ],
+            "video_button": {
+                "link": "https://www.youtube.com/watch?v=9No-FiEInLA"
+            }
+        },
+        {
+            "id": "faq-contact-content",
+            "section": "contact-section",
+            "headings": [
+                {
+                    "level": "h3",
+                    "content": "Obtaining further information by <span>make a contact</span> with our experienced IT staffs."
+                },
+                {
+                    "level": "h6",
+                    "content": "REACH OUT NOW!"
+                },
+                {
+                    "level": "h2",
+                    "content": "190068668"
+                }
+            ],
+            "texts": [
+                {
+                    "content": "We’re available for 8 hours a day! <br/> Contact to require a detailed analysis and assessment of your plan"
+                }
+            ],
+            "buttons": [
+                {
+                    "id": 1,
+                    "color": "secondary",
+                    "hoverStyle": "three",
+                    "path": "/contact-us",
+                    "content": "Contact Us"
+                }
+            ]
+        }
+    ]
+}

@@ -1,0 +1,394 @@
+{
+    "title": "modern-it-company",
+    "pageType": "frontpage",
+    "content": [
+        {
+            "id": "modern-it-company-hero-content",
+            "section": "hero-section",
+            "images": [
+                {
+                    "src": "../images/hero/home-reputable-success.png"
+                }
+            ],
+            "headings": [
+                {
+                    "level": "h1",
+                    "content": "Make your life easier with help from <mark>Mitech</mark>"
+                },
+                {
+                    "level": "h6",
+                    "content": "Team up with the best collaboration from the right expertises."
+                },
+                {
+                    "level": "h5",
+                    "content": "Booking is open today with profitable incentives for beginners."
+                }
+            ]
+        },
+        {
+            "id": "modern-it-company-partner",
+            "section": "partner-section",
+            "headings": [
+                {
+                    "level": "h5",
+                    "content": "Step forward to become one of <span>49,494</span> successful clients of Mitech and get in the front line for the most wonderful presentation."
+                }
+            ],
+            "items": [
+                {
+                    "id": 1,
+                    "images": [
+                        {
+                            "src": "../images/partners/mitech-client-logo-01.png"
+                        },
+                        {
+                            "src": "../images/partners/mitech-client-logo-01-hover.png"
+                        }
+                    ],
+                    "path": "/"
+                },
+                {
+                    "id": 2,
+                    "images": [
+                        {
+                            "src": "../images/partners/mitech-client-logo-02.png"
+                        },
+                        {
+                            "src": "../images/partners/mitech-client-logo-02-hover.png"
+                        }
+                    ],
+                    "path": "/"
+                },
+                {
+                    "id": 3,
+                    "images": [
+                        {
+                            "src": "../images/partners/mitech-client-logo-03.png"
+                        },
+                        {
+                            "src": "../images/partners/mitech-client-logo-03-hover.png"
+                        }
+                    ],
+                    "path": "/"
+                },
+                {
+                    "id": 4,
+                    "images": [
+                        {
+                            "src": "../images/partners/mitech-client-logo-04.png"
+                        },
+                        {
+                            "src": "../images/partners/mitech-client-logo-04-hover.png"
+                        }
+                    ],
+                    "path": "/"
+                },
+                {
+                    "id": 5,
+                    "images": [
+                        {
+                            "src": "../images/partners/mitech-client-logo-05.png"
+                        },
+                        {
+                            "src": "../images/partners/mitech-client-logo-05-hover.png"
+                        }
+                    ],
+                    "path": "/"
+                },
+                {
+                    "id": 6,
+                    "images": [
+                        {
+                            "src": "../images/partners/mitech-client-logo-06.png"
+                        },
+                        {
+                            "src": "../images/partners/mitech-client-logo-06-hover.png"
+                        }
+                    ],
+                    "path": "/"
+                },
+                {
+                    "id": 7,
+                    "images": [
+                        {
+                            "src": "../images/partners/mitech-client-logo-07.png"
+                        },
+                        {
+                            "src": "../images/partners/mitech-client-logo-07-hover.png"
+                        }
+                    ],
+                    "path": "/"
+                },
+                {
+                    "id": 8,
+                    "images": [
+                        {
+                            "src": "../images/partners/mitech-client-logo-08.png"
+                        },
+                        {
+                            "src": "../images/partners/mitech-client-logo-08-hover.png"
+                        }
+                    ],
+                    "path": "/"
+                },
+                {
+                    "id": 9,
+                    "images": [
+                        {
+                            "src": "../images/partners/mitech-client-logo-09.png"
+                        },
+                        {
+                            "src": "../images/partners/mitech-client-logo-09-hover.png"
+                        }
+                    ],
+                    "path": "/"
+                }
+            ]
+        },
+        {
+            "id": "modern-it-company-testimonial",
+            "section": "testimonial-section",
+            "images": [
+                {
+                    "src": "../images/testimonial/home-reputable-success-about-image.jpg"
+                }
+            ],
+            "headings": [
+                {
+                    "level": "h6",
+                    "content": "Luna Lovewoods"
+                }
+            ],
+            "texts": [
+                {
+                    "content": "You know you did right when all your effort started to pay off in an unexpected and impressive way. @Mitech brings clients and businesses together in a fair play field."
+                },
+                {
+                    "content": "Web design"
+                }
+            ]
+        },
+        {
+            "id": "modern-it-company-funfact",
+            "section": "funfact-section",
+            "items": [
+                {
+                    "id": 1,
+                    "count": 1790,
+                    "title": "Happy Clients",
+                    "iconClass": "fal fa-smile-beam"
+                },
+                {
+                    "id": 2,
+                    "count": 920,
+                    "title": "FINISHED PROJECTS",
+                    "iconClass": "fal fa-folders"
+                },
+                {
+                    "id": 3,
+                    "count": 245,
+                    "title": "EXPERIENCED EXPERTS",
+                    "iconClass": "fal fa-user-friends"
+                }
+            ]
+        },
+        {
+            "id": "modern-it-company-solutions",
+            "section": "solution-section",
+            "section_title": {
+                "title": "No shortage in resources & initiatives in <br/> <span> Technology Aid</span>"
+            },
+            "motto": {
+                "text": "Cheers to the work that comes from trusted service providers in time.",
+                "link": "/contact-us",
+                "linkText": "Let's talk"
+            }
+        },
+        {
+            "id": "modern-it-company-projects",
+            "section": "project-section",
+            "section_title": {
+                "title": "We stand out for some reasons."
+            },
+            "items": [
+                {
+                    "id": 1,
+                    "title": "Professional consulting with reasonable budgeting strategies.",
+                    "images": [
+                        {
+                            "src": "../images/projects/home-reputable-success-client-image-01-480x360.jpg"
+                        },
+                        {
+                            "src": "../images/partners/home-reputable-success-client-logo-01.jpg"
+                        }
+                    ]
+                },
+                {
+                    "id": 2,
+                    "title": "24/7 support center with fast response and prompt action",
+                    "images": [
+                        {
+                            "src": "../images/projects/home-reputable-success-client-image-02-480x360.jpg"
+                        },
+                        {
+                            "src": "../images/partners/home-reputable-success-client-logo-02.jpg"
+                        }
+                    ]
+                },
+                {
+                    "id": 3,
+                    "title": "Modern technology advancement and innovative incentives",
+                    "images": [
+                        {
+                            "src": "../images/projects/home-reputable-success-client-image-03-480x360.jpg"
+                        },
+                        {
+                            "src": "../images/partners/home-reputable-success-client-logo-03.jpg"
+                        }
+                    ]
+                },
+                {
+                    "id": 4,
+                    "title": "Intensive listening and discussion with customers to find the best plan",
+                    "images": [
+                        {
+                            "src": "../images/projects/home-reputable-success-client-image-04-480x360.jpg"
+                        },
+                        {
+                            "src": "../images/partners/home-reputable-success-client-logo-04.jpg"
+                        }
+                    ]
+                },
+                {
+                    "id": 5,
+                    "title": "Attentive and positive attitude builds great career environment",
+                    "images": [
+                        {
+                            "src": "../images/projects/home-reputable-success-client-image-05-480x360.jpg"
+                        },
+                        {
+                            "src": "../images/partners/home-reputable-success-client-logo-05.jpg"
+                        }
+                    ]
+                },
+                {
+                    "id": 6,
+                    "title": "Precise projection of risks and potentials via advanced tools",
+                    "images": [
+                        {
+                            "src": "../images/projects/home-reputable-success-client-image-06-480x360.jpg"
+                        },
+                        {
+                            "src": "../images/partners/home-reputable-success-client-logo-06.jpg"
+                        }
+                    ]
+                }
+            ],
+            "motto": {
+                "text": "Never underestimate your potentials.",
+                "linkText": "It all started here.",
+                "link": "/case-studies"
+            }
+        },
+        {
+            "id": "modern-it-company-contact",
+            "section": "contact-section",
+            "headings": [
+                {
+                    "level": "h3",
+                    "content": "To make your claim, contact us on given social platforms."
+                },
+                {
+                    "level": "h6",
+                    "content": "Call for advice now!"
+                },
+                {
+                    "level": "h2",
+                    "content": "190068668"
+                }
+            ],
+            "texts": [
+                {
+                    "content": "Timing is just right when you’re ready! <br/> Solutions won’t take more than 24 hours to be delivered and proceeded."
+                }
+            ],
+            "buttons": [
+                {
+                    "id": 1,
+                    "color": "light",
+                    "hoverStyle": "two",
+                    "path": "/contact-us",
+                    "content": "Contact Us"
+                }
+            ]
+        },
+        {
+            "id": "modern-it-company-claim",
+            "section": "claim-section",
+            "section_title": {
+                "title": "How we claim to excel?"
+            },
+            "items": [
+                {
+                    "id": 1,
+                    "title": "Prompt help",
+                    "iconClass": "fa fa-clock",
+                    "description": "We give prompt help desk answer right when receiving the request from customers.",
+                    "color": "#faf6f3"
+                },
+                {
+                    "id": 2,
+                    "title": "Sound advice",
+                    "iconClass": "fa fa-cubes",
+                    "description": "Knowledge come with age and time. Our experts make sure it works.",
+                    "color": "#edf2fe"
+                },
+                {
+                    "id": 3,
+                    "title": "Zero risk",
+                    "iconClass": "fa fa-globe",
+                    "description": "No risking factors are present and we have all kinds of measures to protect against losses.",
+                    "color": "#f0f5f4"
+                },
+                {
+                    "id": 4,
+                    "title": "Tech savvy",
+                    "iconClass": "fa fa-briefcase",
+                    "description": "Technological wise plans are made for addressing all kinds of requests and demands.",
+                    "color": "#fff5f6"
+                },
+                {
+                    "id": 5,
+                    "title": "Satisfied",
+                    "iconClass": "fa fa-lock",
+                    "description": "100% of our current and recurring customers feel satisfied with the final results.",
+                    "color": "#fcf7ee"
+                }
+            ]
+        },
+        {
+            "id": "modern-it-company-cta",
+            "section": "cta-section",
+            "headings": [
+                {
+                    "level": "h2",
+                    "content": "<span>49</span> YEARS IN THE FIELD"
+                },
+                {
+                    "level": "h4",
+                    "content": "Read further to <br> our Success <br> Stories"
+                }
+            ],
+            "buttons": [
+                {
+                    "id": 1,
+                    "path": "/contact-us",
+                    "content": "Let's talk",
+                    "icon": "far fa-comment-alt-dots",
+                    "iconposition": "left",
+                    "icondistance": "8px"
+                }
+            ]
+        }
+    ]
+}

@@ -1,0 +1,86 @@
+{
+    "id": "menu-data",
+    "section": "menu",
+    "menu": [
+        {
+            "id": "menu-1",
+            "text": "Home",
+            "link": "/"         
+        },
+        {
+            "id": "menu-2",
+            "text": "Services",
+            "link": "/services"
+        },
+        {
+            "id": "menu-3",
+            "text": "Products",
+            "link": "/products"
+        
+        },
+        {
+            "id": "menu-4",
+            "text": "Blog",
+            "link": "https://blog.websoft9.com/"
+        },
+        {
+            "id": "menu-5",
+            "text": "Support",
+            "link": "/support",
+            "submenu": [
+                {
+                    "id": "menu-51",
+                    "text": "Documentation",
+                    "link": "https://support.websoft9.com/en/"
+                },
+                {
+                    "id": "menu-52",
+                    "text": "FAQ",
+                    "link": "/faq"
+                },
+                {
+                    "id": "menu-53",
+                    "text": "7×24 Ticket",
+                    "link": "/ticket"
+                }
+            ]
+        },
+        {
+            "id": "menu-6",
+            "text": "Company",
+            "link": "/about-us",
+            "submenu": [
+                {
+                    "id": "menu-61",
+                    "text": "About Us",
+                    "link": "/about-us"
+                },
+                {
+                    "id": "menu-62",
+                    "text": "Success Stories",
+                    "link": "/success"
+                },
+                {
+                    "id": "menu-63",
+                    "text": "Partner",
+                    "link": "/partner"
+                },
+                {
+                    "id": "menu-64",
+                    "text": "News",
+                    "link": "/newss"
+                },
+                {
+                    "id": "menu-65",
+                    "text": "Careers",
+                    "link": "/careers"
+                },
+                {
+                    "id": "menu-66",
+                    "text": "Contact Us",
+                    "link": "/contact-us"
+                }
+            ]
+        }
+    ]
+}
