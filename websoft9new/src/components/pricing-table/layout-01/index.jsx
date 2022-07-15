@@ -16,6 +16,7 @@ import {
     PricingTableList,
     PricingTableFeatureMark,
 } from "./style";
+import {Trans, useTranslation} from 'gatsby-plugin-react-i18next';
 
 const PricingTable = ({
     title,
@@ -27,6 +28,7 @@ const PricingTable = ({
     features,
     className,
 }) => {
+    const {t} = useTranslation();
     return (
         <PricingTableWrap className={cn(className, "pricing-table")}>
             <PricingTableInner>
@@ -44,9 +46,9 @@ const PricingTable = ({
                     )}
                     {price && (
                         <PricingTablePrice>
-                            <sup>$</sup>
-                            <h6>{price}</h6>
-                            <sub>/{period === "monthly" ? "mo" : "y"}</sub>
+                            <sup>{t("$")}</sup>
+                            <h6>{t(price)}</h6>
+                            <sub>/<Trans>{period === "monthly" ? "mo" : "y"}</Trans></sub>
                         </PricingTablePrice>
                     )}
                 </PricingTableHead>
@@ -57,7 +59,7 @@ const PricingTable = ({
                                 variant={!isFeatured ? "outlined" : "contained"}
                                 path={path}
                             >
-                                Learn More
+                                {t("Learn More")}
                             </Button>
                         </PricingTableBtn>
                     )}
@@ -66,7 +68,7 @@ const PricingTable = ({
                             {features.map((feature) => (
                                 <li key={feature.id}>
                                     <i className="fa fa-check"></i>
-                                    <span>{feature.text}</span>
+                                    <span><Trans>{feature.text}</Trans></span>
                                 </li>
                             ))}
                         </PricingTableList>

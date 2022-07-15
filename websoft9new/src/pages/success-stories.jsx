@@ -7,36 +7,49 @@ import Layout from "@layout";
 import Header from "@layout/header/layout-01";
 import Footer from "@layout/footer/layout-01";
 import PageHeader from "@containers/page-header/layout-02";
-import ContactArea from "@containers/contact/layout-05";
-import ContactInfoArea from "@containers/contact/layout-07";
-import CtaArea from "@containers/cta/layout-04";
-import SectionTwo from "@containers/elements/box-image/section-02";
+import ITSolutionArea from "@containers/it-solution/layout-06";
+import ContactArea from "@containers/contact/layout-03";
+import Markdown from 'markdown-to-jsx';
+import Text from "@ui/text";
 
-const ContactPage = ({ pageContext, location, data }) => {
+const SuccessStoriesPage = ({ pageContext, location, data }) => {
     const content = normalizedData(data?.page?.content || []);
     const globalContent = normalizedData(data?.allGeneral.nodes || []);
-    
 
     return (
         <Layout location={location}>
-            <Seo title="Contact Us" />
+            <Seo title="Success Stories" />
             <Header
                 data={{
                     ...globalContent["header"],
                     ...globalContent["menu"],
-                    // menu:data.allContentfulBaseMenu.nodes,
                 }}
             />
             <main className="site-wrapper-reveal">
                 <PageHeader
                     pageContext={pageContext}
                     location={location}
-                    title="Contact Us"
+                    title="IT Solutions"
                 />
-                <SectionTwo />
+                <ITSolutionArea
+                    data={{
+                        ...content["service-section"],
+                        items: data.allItSolution.nodes,
+                    }}
+                    space={2}
+                />
+
+                {/* <Text
+                    fontSize="18px"
+                    mb="30px"
+                    dangerouslySetInnerHTML={{ __html: data.allContentfulCase.nodes[0].remark.childMarkdownRemark.html }}                 
+                /> */}
+
+                {/* <Markdown>
+                    { data.allContentfulCase.nodes[0].remark.childMarkdownRemark.html }
+                </Markdown> */}
+
                 {/* <ContactArea data={content["contact-section"]} /> */}
-                {/* <ContactInfoArea data={content["contact-info-section"]} /> */}
-                <CtaArea data={content["cta-section"]} />
             </main>
             <Footer data={{ ...data.site.siteMetadata }} />
         </Layout>
@@ -44,16 +57,7 @@ const ContactPage = ({ pageContext, location, data }) => {
 };
 
 export const query = graphql`
-    query ContactPageQuery($language: String!) {
-        locales: allLocale(filter: {language: {eq: $language}}) {
-            edges {
-                node {
-                    ns
-                    data
-                    language
-                }
-            }
-        }
+    query SuccessStoriesPageQuery {
         allGeneral {
             nodes {
                 section
@@ -63,15 +67,30 @@ export const query = graphql`
         site {
             ...Site
         }
-        page(title: { eq: "contact-us" }, pageType: { eq: "innerpage" }) {
+        page(title: { eq: "it-solutions" }, pageType: { eq: "innerpage" }) {
             content {
                 ...PageContent
+            }
+        }
+        allItSolution {
+            nodes {
+                ...ItSolutionThree
+            }
+        }
+        allContentfulCase(filter: {node_locale: {eq: "zh-CN"}}) {
+            nodes {
+                name
+                remark:challenges {
+                    childMarkdownRemark {
+                        html
+                    }
+                }
             }
         }
     }
 `;
 
-ContactPage.propTypes = {
+SuccessStoriesPage.propTypes = {
     pageContext: PropTypes.shape({}),
     location: PropTypes.shape({}),
     data: PropTypes.shape({
@@ -86,7 +105,10 @@ ContactPage.propTypes = {
         page: PropTypes.shape({
             content: PropTypes.arrayOf(PropTypes.shape({})),
         }),
+        allItSolution: PropTypes.shape({
+            nodes: PropTypes.arrayOf(PropTypes.shape({})),
+        }),
     }),
 };
 
-export default ContactPage;
+export default SuccessStoriesPage;

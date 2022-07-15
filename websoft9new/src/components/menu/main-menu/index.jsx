@@ -20,7 +20,8 @@ const MainMenu = ({
     alignment,
     ...props
 }) => {
-    return (
+    const { t } = useTranslation();
+    return (       
         <StyledMainMenu $alignment={alignment} {...props}>
             <StyledNavbar>
                 {menuData?.map((menu) => {
@@ -64,7 +65,7 @@ const MainMenu = ({
                                             >
                                                 <StyledNavlink
                                                     className="nav-link"
-                                                    path={subitem.link}
+                                                    path={t(subitem.link)}
                                                     $bottomLine={bottomLine}
                                                     $sublink
                                                 >

@@ -1,29 +1,65 @@
 export const data = {
-    title: "Accordion Style 01",
+    title: "About Pricing FAQ",
     items: [
         {
             id: 0,
-            title: "How can we help your business?",
+            title: "Do I still need to pay for technical support with the paid version?",
             description:
-                "Through the collaboration with customers in discussing needs and demand, we're able to attain mutual understanding, gain customer trust to offer appropriate advice, and bring about suggestions on suitable technology to transform your business.",
+                "You can get most of free support",
         },
         {
             id: 1,
-            title: "What are the advantages of Mitech?",
+            title: "How can I deploy free version?",
             description:
-                "Mitech takes into consideration every little detail to make sure the system run smoothly and responsively. Mitech employs a new technique called Minified Technology for securing customers' database & building up highly confidential firewalls.",
+                "Just need one command, get it from: https://github.com/websoft9",
         },
         {
             id: 2,
-            title: "How working process is simplified?",
+            title: "How to get manual support for the free version?",
             description:
-                "We reduce redundant complex calculations and lengthy erroneous code texts with simpler ones to ensure Mitech would run seamlessly and the design is reserved in its best form when viewed from a wide range of mobile devices & browsers.",
+                "Please contact our customer service staff to purchase on-demand technical support services",
         },
         {
             id: 3,
-            title: "Product Engineering & Services",
+            title: "How do you implement subscription fees?",
             description:
-                "Our service offerings to enhance customer experience throughout the product lifecycle includes – test and repair, service management, and end-to-end warranty management.",
+                "We publish the application to MarketPlace, and users can install it on their own Cloud Server.",
+        },
+        {
+            id: 4,
+            title: "Apart from monthly payment, are there other payment methods?",
+            description:
+                "Yes, you can use it by on Demand, by Month, By year",
+        },
+        {
+            id: 5,
+            title: "I do not want to use it, can I unsubscribe?",
+            description:
+                "Pay-as-you-go can unsubscribe at any time, and the annual subscription is negotiated and unsubscribed according to the actual situation.",
+        },
+        {
+            id: 6,
+            title: "Which clouds do you currently provide applications on?",
+            description:
+                "Azure, AWS, AlibabaCloud, HUAWEI CLOUD",
+        },
+        {
+            id: 7,
+            title: "Do you provide EULA and invoices?",
+            description:
+                "Yes, you can download them from Cloud Console",
+        },
+        {
+            id: 8,
+            title: "What are the payment methods?",
+            description:
+                "You can only pay on Cloud Platform",
+        },
+        {
+            id: 9,
+            title: "Do you provide servers?",
+            description:
+                "No, we do not provide server for you",
         },
     ],
 };

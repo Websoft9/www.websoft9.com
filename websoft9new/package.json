@@ -58,7 +58,8 @@
     "styled-system": "^5.1.5",
     "swiper": "^8.0.7",
     "tinycolor2": "^1.4.2",
-    "vivus": "^0.4.6"
+    "vivus": "^0.4.6",
+    "markdown-to-jsx":"^7.1.7"
   },
   "devDependencies": {
     "@babel/core": "7.13.15",

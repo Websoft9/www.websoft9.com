@@ -4,8 +4,10 @@ import PricingTable from "@components/pricing-table/layout-01";
 import SectionTitle from "@ui/section-title";
 import { data } from "./data";
 import { SectionWrap } from "./style";
+import {Trans, useTranslation} from 'gatsby-plugin-react-i18next';
 
 const PricingTableSection = () => {
+    const { t } = useTranslation();
     return (
         <SectionWrap>
             <Container>
@@ -13,8 +15,8 @@ const PricingTableSection = () => {
                     <Col lg={12}>
                         <SectionTitle
                             mb="45px"
-                            title="1 monthly fee for <span>all IT services.</span>"
-                            subtitle="PRICING AND PLAN"
+                            title={t("Payment on demand, free Enterprise Support for <br/><span>your business</span>")}
+                            subtitle={t("PRICING AND PLAN")}
                         />
                     </Col>
                 </Row>
@@ -22,7 +24,7 @@ const PricingTableSection = () => {
                     {data.map((pricing) => (
                         <Col lg={4} md={6} key={pricing.id}>
                             <PricingTable
-                                title={pricing.title}
+                                title={t(pricing.title)}
                                 image={pricing.image}
                                 price={pricing.price}
                                 path={pricing.path}
