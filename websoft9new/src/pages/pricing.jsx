@@ -33,7 +33,7 @@ const PricingPage = ({ pageContext, location,data }) => {
                 <FAQSection />
                 <CtaArea data={ctaData} />
             </main>
-            <Footer data={footerData} />
+            <Footer data={{ ...data.site.siteMetadata }} />
         </Layout>
     );
 };

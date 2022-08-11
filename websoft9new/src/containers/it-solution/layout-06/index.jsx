@@ -22,7 +22,7 @@ const ITSolutionArea = ({ data, space }) => {
                                 >
                                     <ITSolutionBox
                                         title={item.title}
-                                        desc={item.excerpt}
+                                        desc={item.excerpt} 
                                         image={item.featured_image}
                                         path={`/it-solution/${item.slug}`}
                                     />

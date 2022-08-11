@@ -1,0 +1,129 @@
+@charset "UTF-8";
+
+@font-face {
+    font-family: "CerebriSans";
+    font-display: swap;
+    src: url(/fonts/cerebrisans/CerebriSans-Regular.woff2);
+    src: local(""),
+        url(/fonts/cerebrisans/CerebriSans-Regular.woff2) format("woff2"),
+        url(/fonts/cerebrisans/CerebriSans-Regular.woff) format("woff");
+    font-weight: 400;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: "CerebriSans";
+    font-display: swap;
+    src: url(/fonts/cerebrisans/CerebriSans-Italic.woff2);
+    src: local(""),
+        url(/fonts/cerebrisans/CerebriSans-Italic.woff2) format("woff2"),
+        url(/fonts/cerebrisans/CerebriSans-Italic.woff) format("woff");
+    font-weight: 400;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: "CerebriSans";
+    font-display: swap;
+    src: url(/fonts/cerebrisans/CerebriSans-Light.woff2);
+    src: local(""),
+        url(/fonts/cerebrisans/CerebriSans-Light.woff2) format("woff2"),
+        url(/fonts/cerebrisans/CerebriSans-Light.woff) format("woff");
+    font-weight: 100;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: "CerebriSans";
+    font-display: swap;
+    src: url(/fonts/cerebrisans/CerebriSans-Medium.woff2);
+    src: local(""),
+        url(/fonts/cerebrisans/CerebriSans-Medium.woff2) format("woff2"),
+        url(/fonts/cerebrisans/CerebriSans-Medium.woff) format("woff");
+    font-weight: 500;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: "CerebriSans";
+    font-display: swap;
+    src: url(/fonts/cerebrisans/CerebriSans-SemiBold.woff2);
+    src: local(""),
+        url(/fonts/cerebrisans/CerebriSans-SemiBold.woff2) format("woff2"),
+        url(/fonts/cerebrisans/CerebriSans-SemiBold.woff) format("woff");
+    font-weight: 600;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: "CerebriSans";
+    font-display: swap;
+    src: url(/fonts/cerebrisans/CerebriSans-Bold.woff2);
+    src: local(""),
+        url(/fonts/cerebrisans/CerebriSans-Bold.woff2) format("woff2"),
+        url(/fonts/cerebrisans/CerebriSans-Bold.woff) format("woff");
+    font-weight: 700;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: "CerebriSans";
+    font-display: swap;
+    src: url(/fonts/cerebrisans/CerebriSans-ExtraBold.woff2);
+    src: local(""),
+        url(/fonts/cerebrisans/CerebriSans-ExtraBold.woff2) format("woff2"),
+        url(/fonts/cerebrisans/CerebriSans-ExtraBold.woff) format("woff");
+    font-weight: 800;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: "CerebriSans";
+    font-display: swap;
+    src: url(/fonts/cerebrisans/CerebriSans-Heavy.woff2);
+    src: local(""),
+        url(/fonts/cerebrisans/CerebriSans-Heavy.woff2) format("woff2"),
+        url(/fonts/cerebrisans/CerebriSans-Heavy.woff) format("woff");
+    font-weight: 900;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: "Font Awesome 5 Brands";
+    font-style: normal;
+    font-weight: normal;
+    font-display: swap;
+    src: url(/fonts/font-awesome/fa-brands-400.woff2);
+    src: local(""), url(/fonts/font-awesome/fa-brands-400.woff2) format("woff2"),
+        url(/fonts/font-awesome/fa-brands-400.woff) format("woff");
+}
+@font-face {
+    font-family: "Font Awesome 5 Pro";
+    font-style: normal;
+    font-weight: 300;
+    font-display: swap;
+    src: url(/fonts/font-awesome/fa-light-300.woff2);
+    src: local(""), url(/fonts/font-awesome/fa-light-300.woff2) format("woff2"),
+        url(/fonts/font-awesome/fa-light-300.woff) format("woff");
+}
+
+@font-face {
+    font-family: "Font Awesome 5 Pro";
+    font-style: normal;
+    font-weight: 400;
+    font-display: swap;
+    src: url(/fonts/font-awesome/fa-regular-400.woff2);
+    src: local(""),
+        url(/fonts/font-awesome/fa-regular-400.woff2) format("woff2"),
+        url(/fonts/font-awesome/fa-regular-400.woff) format("woff");
+}
+
+@font-face {
+    font-family: "Font Awesome 5 Pro";
+    font-style: normal;
+    font-weight: 900;
+    font-display: swap;
+    src: url(/fonts/font-awesome/fa-solid-900.woff2);
+    src: local(""), url(/fonts/font-awesome/fa-solid-900.woff2) format("woff2"),
+        url(/fonts/font-awesome/fa-solid-900.woff) format("woff");
+}

@@ -72,7 +72,7 @@ export const query = graphql`
             nodes {
                     id:key
                     image:logo {
-                        src:url
+                        src:imageurl
                     }
                     path:storeurl
                 }

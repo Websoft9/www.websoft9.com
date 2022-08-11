@@ -13,7 +13,7 @@ import Markdown from 'markdown-to-jsx';
 import Text from "@ui/text";
 
 const SuccessStoriesPage = ({ pageContext, location, data }) => {
-    const content = normalizedData(data?.page?.content || []);
+    // const content = normalizedData(data?.page?.content || []);
     const globalContent = normalizedData(data?.allGeneral.nodes || []);
 
     return (
@@ -29,12 +29,12 @@ const SuccessStoriesPage = ({ pageContext, location, data }) => {
                 <PageHeader
                     pageContext={pageContext}
                     location={location}
-                    title="IT Solutions"
+                    title="Success Stories"
                 />
                 <ITSolutionArea
                     data={{
-                        ...content["service-section"],
-                        items: data.allItSolution.nodes,
+                        // ...content["service-section"],
+                        items: data.allContentfulCase.nodes,
                     }}
                     space={2}
                 />
@@ -57,7 +57,7 @@ const SuccessStoriesPage = ({ pageContext, location, data }) => {
 };
 
 export const query = graphql`
-    query SuccessStoriesPageQuery {
+    query SuccessStoriesPageQuery($language: String!) {
         allGeneral {
             nodes {
                 section
@@ -67,24 +67,17 @@ export const query = graphql`
         site {
             ...Site
         }
-        page(title: { eq: "it-solutions" }, pageType: { eq: "innerpage" }) {
-            content {
-                ...PageContent
-            }
-        }
-        allItSolution {
-            nodes {
-                ...ItSolutionThree
-            }
-        }
-        allContentfulCase(filter: {node_locale: {eq: "zh-CN"}}) {
-            nodes {
-                name
-                remark:challenges {
-                    childMarkdownRemark {
-                        html
-                    }
+        # page(title: { eq: "it-solutions" }, pageType: { eq: "innerpage" }) {
+        #     content {
+        #         ...PageContent
+        #     }
+        # }
+        allContentfulCase(filter: {node_locale: {eq: $language}}) {
+            nodes {   
+                featured_image:featureImage {
+                    src:imageurl
                 }
+                title:name
             }
         }
     }
