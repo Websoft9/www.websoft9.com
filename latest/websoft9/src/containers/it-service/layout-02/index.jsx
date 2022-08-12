@@ -16,8 +16,8 @@ const ServiceArea = ({ data, ...rest }) => {
             <Container>
                 <SectionTitle
                         mb={["30px", null, "40px"]}
-                        subtitle={data.headings}
-                        title={data.texts}
+                        subtitle={data.texts}
+                        title={data.headings}
                 />
                 {data?.features && (
                     <Row>

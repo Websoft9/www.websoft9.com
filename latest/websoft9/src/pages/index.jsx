@@ -12,6 +12,8 @@ import PartnerArea from "@containers/partner/layout-01";
 import ContactArea from "@containers/contact/layout-01";
 import ITServicesArea from "@containers/it-service/layout-02";
 import TabArea from "@containers/tab/layout-01";
+import TabArea2 from "@containers/tab/layout-02";
+import CounterArea from "@containers/elements/counters/section-01";
 import {SectionWrap} from "@styled"
 import Heading from "@ui/heading";
 import SolutionArea from "@containers/elements/box-large-image/section-02";
@@ -38,12 +40,16 @@ const IndexPage = ({ location, data }) => {
                     }
                 </TabArea>
 
-                <SolutionArea data ={null} />
+                <SolutionArea data ={ data.allContentfulPage.nodes[0].content[2] } />
 
                 
                 <PartnerArea data={ data.allContentfulPage.nodes[0].content[3] } />  
 
                 <ITServicesArea data={ data.allContentfulPage.nodes[0].content[4] }/>
+
+                <TabArea2 data={ data.allContentfulPage.nodes[0].content[5] } />
+
+                <CounterArea data={data.allContentfulPage.nodes[0].content[6]} />
                               
                 {/* <ContactArea data={content["contact-section"]} /> */}
             </main>
@@ -95,18 +101,31 @@ export const query = graphql`
                 }
                 features {
                 ... on ContentfulBaseFeature {
-                        id
-                        title
-                        subtitle
-                        icon
-                        image
+                    id
+                    title
+                    subtitle
+                    icon
+                    image
+                    description {
+                        description
+                    }
                 }
                 ... on ContentfulBaseBrand {
                     id
-                        path:siteurl
-                        logo {
-                        src:imageurl
+                    path: siteurl
+                    logo {
+                    src: imageurl
                     }
+                }
+                ... on ContentfulResource {
+                    type {
+                        title
+                    }
+                    id
+                    title
+                    subTitle
+                    image:featureImage
+                    slug            
                 }
                 }
             }

@@ -14,26 +14,28 @@ const BoxSection = ({data}) => {
                 <Row>
                     <Col xl={12}>
                         <SectionTitle
-                            subtitle={data.title}
-                            title={data.subtitle}
+                            subtitle={data.texts}
+                            title={data.headings}
                         />
                     </Col>
                 </Row>
                 <Row>
-                    {data.map((item) => {
+                    {data.features && data.features.map((feature,i) => {
+                        var image = new Object();
+                        image.src = feature.image;
                         return (
                             <Col
                                 lg={4}
                                 md={6}
                                 className="box-item"
-                                key={item.id}
+                                key={feature.id+i}
                             >
                                 <BoxImage
-                                    image={item.image}
-                                    title={item.title}
-                                    category={item.category}
-                                    desc={item.description}
-                                    path={item.path}
+                                    image={image}
+                                    title={feature.title}
+                                    category={feature.type.title}
+                                    // desc={feature.subTitle}
+                                    path={feature.slug}
                                 />
                             </Col>
                         );

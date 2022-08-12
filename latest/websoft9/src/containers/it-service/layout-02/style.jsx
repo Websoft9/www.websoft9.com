@@ -1,8 +1,9 @@
-import styled, { device, color } from "@styled";
+import styled, { device, color,themeGet } from "@styled";
 
 export const ServicesWrapper = styled.section`
     padding-block-start: 60px;
     padding-block-end: 50px;
+    background-color: ${themeGet("colors.gray.100")};
     ${device.medium} {
         padding-block-start: 80px;
         padding-block-end: 70px;
