@@ -74,5 +74,13 @@ export const ButtonWrap = styled.div`
 `;
 
 export const Heading = styled.h5`
-    color: ${themeGet("colors.primary")};
+    font-weight: 400;
+    margin-block-start: 10px;
+    margin-block-end: 10px;
+    text-transform: uppercase;
+    font-size: 20px;
+    letter-spacing: 3px;
+    line-height: 2.43;
+    text-align:center;
+    color:#ababab;
 `;

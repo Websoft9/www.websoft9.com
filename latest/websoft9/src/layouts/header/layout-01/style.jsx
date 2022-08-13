@@ -1,6 +1,7 @@
 import styled, { css, themeGet, space, layout, border, device } from "@styled";
 import { allowedTags } from "@utils";
 import { fadeInDown } from "@assets/css/animations";
+import Anchor from "@ui/anchor";
 
 export const HeaderTop = styled.div`
     background: ${themeGet("colors.gray.100")};
@@ -168,5 +169,160 @@ export const StyledTopText = styled.p`
         !$transparent &&
         css`
             color: ${themeGet("colors.text")};
+        `}
+`;
+
+export const StyledNavitem = styled.li`
+    ${({ $space }) =>
+        $space === 1 &&
+        css`
+            margin: 0 10px;
+            ${device.xxlarge} {
+                margin: 0 20px;
+            }
+        `}
+
+    ${({ $space }) =>
+        $space === 2 &&
+        css`
+            margin: 0 20px;
+        `}
+
+    ${({ $alignment }) =>
+        $alignment === "right" &&
+        css`
+            &:last-of-type {
+                & > .submenu {
+                    ${device.large} {
+                        left: auto;
+                        right: 0;
+                    }
+                    ${device.xxlarge} {
+                        left: 0;
+                        right: auto;
+                    }
+                }
+            }
+        `}
+
+    ${({ $subitem }) =>
+        !$subitem &&
+        css`
+            &:first-of-type {
+                margin-left: 0;
+            }
+        `}
+    &:hover {
+        & > .submenu,
+        & > .megamenu {
+            transform: translateY(0);
+            visibility: visible;
+            opacity: 1;
+        }
+    }
+    ${({ $subitem }) =>
+        $subitem &&
+        css`
+            margin: 9px 30px;
+        `}
+    ${({ $megitem }) =>
+        $megitem &&
+        css`
+            margin: 9px 0;
+        `}
+    ${({ hasSubmenu }) =>
+        hasSubmenu &&
+        css`
+            position: relative;
+        `}
+`;
+
+export const StyledNavlink = styled(Anchor)`
+    display: block;
+    padding-inline: 2px;
+    padding-block: 29px;
+    position: relative;
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 1.18;
+    transition: all 0s ease-in-out;
+
+    ${({ $bottomLine }) =>
+        $bottomLine &&
+        css`
+            &:before {
+                content: "";
+                width: 0;
+                height: 3px;
+                bottom: 0;
+                position: absolute;
+                left: 0;
+                transition: all 0.3s ease-in-out;
+            }
+            &:hover {
+                &:before {
+                    width: 100%;
+                    left: 0;
+                }
+            }
+        `}
+    ${({ $color }) =>
+        $color === "light" &&
+        css`
+            color: rgba(255, 255, 255, 0.7);
+            &:before {
+                background-color: #ffffff;
+            }
+            &:hover {
+                color: #ffff;
+            }
+        `}
+    ${({ $color }) =>
+        $color === "white" &&
+        css`
+            color: #ffffff;
+            &:before {
+                background-color: #ffffff;
+            }
+            &:hover {
+                color: #ffffff;
+            }
+        `}
+    ${({ $color }) =>
+        $color === "dark" &&
+        css`
+            color: #000;
+            &:before {
+                background-color: ${themeGet("colors.primary")};
+            }
+            &:hover {
+                color: ${themeGet("colors.primary")};
+            }
+        `}
+    ${({ $vSpace }) =>
+        $vSpace === 2 &&
+        css`
+            padding-block: 21px;
+        `}
+    .icon {
+        font-size: 14px;
+        margin-left: 5px;
+    }
+    ${({ $sublink }) =>
+        $sublink &&
+        css`
+            display: inline-block;
+            padding: 0;
+            padding-bottom: 4px;
+            color: #ababab;
+            font-weight: 400;
+            transition: 0s;
+            &:before {
+                background-color: ${themeGet("colors.primary")};
+                height: 1px;
+            }
+            &:hover {
+                color: ${themeGet("colors.primary")};
+            }
         `}
 `;

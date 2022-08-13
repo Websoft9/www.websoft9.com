@@ -13,7 +13,8 @@ export const BoxLargeImgMedia = styled.div`
     position: relative;
     .gatsby-image-wrapper,
     img {
-        width: 100%;
+        width: 376px;
+        height: 234px;
     }
 `;
 

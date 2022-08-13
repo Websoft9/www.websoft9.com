@@ -113,7 +113,34 @@ const MainMenu = ({
                             )}
                             {megamenu && (
                                 <StyledMegamenu className="megamenu" >
-                                    {/* todo : 菜单左侧显示 */}                                  
+                                    {/* todo : 菜单左侧显示 */}        
+                                    <li key={"megamenu-1"} >
+                                        <StyledMegaTitle>   
+                                            {"OVERVIEW"}
+                                        </StyledMegaTitle>
+                                        <Line mt="20px" mb="20px" borderWidth="1px" />
+                                        <ul>
+                                        <StyledNavitem key={"megasubmenu-2"}  $megitem>
+                                            <StyledNavlink
+                                                path={
+                                                    "/"
+                                                }
+                                                $bottomLine={
+                                                    bottomLine
+                                                }
+                                                $sublink
+                                            >
+                                                <span className="icon">
+                                                    <i className="far" ></i>
+                                                </span>
+                                                <span > { "websoft9" } </span>
+                                            </StyledNavlink>
+                                        </StyledNavitem>
+                                        </ul>
+                                    </li>
+
+
+
                                     {megamenu.map((megaitem, i) => {
                                         const megaSubmenu = megaitem.submenu;
                                         return (

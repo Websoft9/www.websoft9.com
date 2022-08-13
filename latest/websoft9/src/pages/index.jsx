@@ -8,12 +8,15 @@ import Header from "@layout/header/layout-01";
 import Footer from "@layout/footer/layout-01";
 import HeroArea from "@containers/hero/layout-02";
 import HeroArea3 from "@containers/hero/layout-03";
-import PartnerArea from "@containers/partner/layout-01";
+import CustomerArea from "@containers/partner/layout-01";
+import PartnerArea from "@containers/partner/layout-02";
 import ContactArea from "@containers/contact/layout-01";
 import ITServicesArea from "@containers/it-service/layout-02";
 import TabArea from "@containers/tab/layout-01";
-import TabArea2 from "@containers/tab/layout-02";
+import VerticalTabArea from "@containers/tab/layout-02";
 import CounterArea from "@containers/elements/counters/section-01";
+import TestimonialArea from "@containers/elements/testimonials/section-01";
+import CtaArea from "@containers/cta/layout-04";
 import {SectionWrap} from "@styled"
 import Heading from "@ui/heading";
 import SolutionArea from "@containers/elements/box-large-image/section-02";
@@ -41,19 +44,25 @@ const IndexPage = ({ location, data }) => {
                 </TabArea>
 
                 <SolutionArea data ={ data.allContentfulPage.nodes[0].content[2] } />
-
                 
-                <PartnerArea data={ data.allContentfulPage.nodes[0].content[3] } />  
+                <CustomerArea data={ data.allContentfulPage.nodes[0].content[3] } />  
 
                 <ITServicesArea data={ data.allContentfulPage.nodes[0].content[4] }/>
 
-                <TabArea2 data={ data.allContentfulPage.nodes[0].content[5] } />
+                <VerticalTabArea data={ data.allContentfulPage.nodes[0].content[5] } />
 
                 <CounterArea data={data.allContentfulPage.nodes[0].content[6]} />
-                              
-                {/* <ContactArea data={content["contact-section"]} /> */}
+
+                <TestimonialArea data={data.allContentfulPage.nodes[0].content[7]} />
+
+                <SolutionArea data ={ data.allContentfulPage.nodes[0].content[8] } />
+
+                <PartnerArea data={ data.allContentfulPage.nodes[0].content[9] } />
+
+                <CtaArea data={ data.allContentfulPage.nodes[0].content[10] } />
+                            
             </main>
-            {/* <Footer data={{ ...data.site.siteMetadata }} /> */}
+            <Footer data={{ ...data.site.siteMetadata }} />
         </Layout>
     );
 };
@@ -68,6 +77,18 @@ export const query = graphql`
                     data
                     language
                 }
+            }
+        }
+        site {
+            siteMetadata {
+                copyright
+                contact {
+                    phone
+                    email
+                    address
+                    website
+                }
+                siteUrl
             }
         }
         # 查询菜单项
@@ -90,45 +111,52 @@ export const query = graphql`
         # 查询页面：index(首页)
         allContentfulPage(filter: {node_locale: {eq: $language}, key: {eq: "index"}}) {
             nodes {
-            content {
-                headings: title
-                texts: subTitle
-                media
-                buttons {
-                    id
-                    content: key
-                    path: value
-                }
-                features {
-                ... on ContentfulBaseFeature {
-                    id
-                    title
-                    subtitle
-                    icon
-                    image
-                    description {
-                        description
+                content {
+                    headings: title
+                    texts: subTitle
+                    media
+                    buttons {
+                        id
+                        content: key
+                        path: value
                     }
-                }
-                ... on ContentfulBaseBrand {
-                    id
-                    path: siteurl
-                    logo {
-                    src: imageurl
-                    }
-                }
-                ... on ContentfulResource {
-                    type {
+                    features {
+                    ... on ContentfulBaseFeature {
+                        id
                         title
+                        subtitle
+                        icon
+                        image
+                        description {
+                        description
+                        }
                     }
-                    id
-                    title
-                    subTitle
-                    image:featureImage
-                    slug            
+                    ... on ContentfulBaseBrand {
+                        id
+                        path: siteurl
+                        logo {
+                            src: imageurl
+                        }
+                    }
+                    ... on ContentfulResource {
+                        type {
+                            title
+                        }
+                        id
+                        title
+                        subTitle
+                        image: featureImage
+                        slug
+                    }
+                    ... on ContentfulBasePerson {
+                        id
+                        title
+                        fullName
+                        reviews
+                        image:pictureUrl
+                    }
+                    }
                 }
-                }
-            }
             }
         }
         # allContentfulBaseBrand(

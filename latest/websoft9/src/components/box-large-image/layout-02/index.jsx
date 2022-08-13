@@ -40,12 +40,13 @@ const BoxLargeImage = ({
                     </BoxLargeImgMedia>
                 )}
                 <BoxLargeImgContent $layout={layout}>
+                    {category && <CategoryWrap>{category}</CategoryWrap>}
                     {title && (
                         <HeadingWrap as="h5" $layout={layout}>
                             {title}
                         </HeadingWrap>
                     )}
-                    {category && <CategoryWrap>{category}</CategoryWrap>}
+                    
                     {desc && <TextWrap $layout={layout}>{desc}</TextWrap>}
                     {path && (
                         <BoxLargeImgBtnWrap>

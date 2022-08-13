@@ -16,9 +16,6 @@ module.exports = {
         address: "湖南省.长沙市.岳麓区.潇湘中路283号岳麓科创港 A2",
         email: "help@websoft9.com",
         website: "https://www.websoft9.com/",
-        rating: "4.9",
-        customers: "700",
-        clients: "3200",
     },
     },
     plugins: [{

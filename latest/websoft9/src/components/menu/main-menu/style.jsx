@@ -216,14 +216,16 @@ export const StyledMegamenu = styled.ul`
 
     min-width: 980px;
     width: 100%;
-    padding: 35px 20px 30px;
+    //padding: 35px 20px 30px;
     display: flex;
     justify-content: space-around;
 
     & > li {
-        flex-basis: 22%;
+        width:100%;
+        //flex-basis: 22%;
         padding-left: 15px;
         padding-right: 15px;
+        backgroup-color:red;
     }
 `;
 

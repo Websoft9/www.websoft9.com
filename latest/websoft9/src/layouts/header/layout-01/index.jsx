@@ -25,6 +25,9 @@ import {
     HeaderElement,
     HeaderInfoItem,
     StyledTopText,
+    StyledNavitem,
+    StyledNavlink,
+    bottomLine,
 } from "./style";
 
 const Header = ({ data, transparent }) => {
@@ -46,26 +49,35 @@ const Header = ({ data, transparent }) => {
                 isSticky={sticky}
                 $transparent={transparent}
             >               
-            {/* <HeaderTop $transparent={transparent}>
+            <HeaderTop $transparent={transparent}>
                     <Container>
                         <HeaderMain top>
                             <HeaderCol right>
-                                {data?.contact?.phone && (
-                                    <HeaderInfoItem>
-                                        <Anchor
-                                            path={`tel:${data.contact.phone}`}
-                                        >
-                                            <i className="info-icon fa fa-phone"></i>
-                                            <strong>
-                                                {data.contact.phone}
-                                            </strong>
-                                        </Anchor>
-                                    </HeaderInfoItem>
-                                )}
+
+                            <StyledNavitem
+                                // key={`submenu-${menu.id}-${i}-${j}`}
+                                $subitem
+                            >
+                                <StyledNavlink
+                                    // path={
+                                    //     subitemLevelTwo.link
+                                    // }
+                                    $sublink
+                                    // $bottomLine={
+                                    //     bottomLine
+                                    // }
+                                >
+                                    {
+                                        "Support"
+                                    }
+                                </StyledNavlink>
+                            </StyledNavitem>
+
                             </HeaderCol>
                         </HeaderMain>
                     </Container>
-                </HeaderTop> */}
+                </HeaderTop>
+
                 <HeaderBottom ref={fixedRef} isSticky={sticky}>
                     <Container>
                         <HeaderMain>
