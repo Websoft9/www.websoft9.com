@@ -1,22 +1,40 @@
 module.exports = {
     siteMetadata: {
-      title: `Websoft9.new`,
+      title: `Websoft9`,
       siteUrl: `https://www.websoft9.com`,
       author:`Websoft9`,
+      image: `landing.png`,
+      copyright:`Websoft9 Inc.`,
       titleTemplate: `Websoft9`,
-      image: "landing.png",
-      canonical:`Websoft9`,
-      twitterUsername:`Websoft9`,
       getform:`Websoft9`,
-      copyright:
-        "Websoft9 Inc.",
       siteLanguage: "en-US",
-      contact: {
-        phone: "0731-89572759、82183159",
-        address: "湖南省.长沙市.岳麓区.潇湘中路283号岳麓科创港 A2",
-        email: "help@websoft9.com",
-        website: "https://www.websoft9.com/",
-    },
+      description: `为用户提供简单的云原生应用，帮助软件开发商构建基于全球云计算的在线商业体系`,
+      socials: [
+        {
+            id: 1,
+            icon: "fab fa-facebook-f",
+            link: "https://www.facebook.com",
+            title: "Facebook",
+        },
+        {
+            id: 2,
+            icon: "fab fa-twitter",
+            link: "https://www.twitter.com",
+            title: "Twitter",
+        },
+        {
+            id: 3,
+            icon: "fab fa-instagram",
+            link: "https://www.instagram.com",
+            title: "Instagram",
+        },
+        {
+            id: 4,
+            icon: "fab fa-linkedin",
+            link: "https://www.linkedin.com",
+            title: "Linkedin",
+        },
+    ],
     },
     plugins: [{
       resolve: 'gatsby-source-contentful',

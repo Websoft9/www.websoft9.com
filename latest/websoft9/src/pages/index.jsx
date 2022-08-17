@@ -5,9 +5,9 @@ import { normalizedData } from "@utils";
 import Seo from "@components/seo";
 import Layout from "@layout";
 import Header from "@layout/header/layout-01";
-import Footer from "@layout/footer/layout-01";
+import Footer from "@layout/footer/layout-02";
 import HeroArea from "@containers/hero/layout-02";
-import HeroArea3 from "@containers/hero/layout-03";
+import SubHeroArea from "@containers/hero/layout-03";
 import CustomerArea from "@containers/partner/layout-01";
 import PartnerArea from "@containers/partner/layout-02";
 import ContactArea from "@containers/contact/layout-01";
@@ -22,13 +22,14 @@ import Heading from "@ui/heading";
 import SolutionArea from "@containers/elements/box-large-image/section-02";
 import {Trans, useTranslation,Link, useI18next} from 'gatsby-plugin-react-i18next';
 
+
 const IndexPage = ({ location, data }) => {
     const {language, languages, changeLanguage } = useI18next();
 
     return (
         <Layout location={location}>
             <Seo title="Home" />
-            <Header data={{ menu:data.allContentfulMenu.nodes, }} />
+            <Header shortcutMenuData= { data.shortcutMenu.nodes } topMenuData={ data.topMenu.nodes } />
 
             <main className="site-wrapper-reveal">
                 <HeroArea data={data.allContentfulPage.nodes[0].content[0]} />
@@ -37,7 +38,7 @@ const IndexPage = ({ location, data }) => {
                     {
                         data.allContentfulPage.nodes[0].content[1].features.map((item)=>{
                             return(
-                                <HeroArea3 key={item.id} data={ item }/>
+                                <SubHeroArea key={item.id} data={ item }/>
                             )
                         })
                     }
@@ -62,7 +63,7 @@ const IndexPage = ({ location, data }) => {
                 <CtaArea data={ data.allContentfulPage.nodes[0].content[10] } />
                             
             </main>
-            <Footer data={{ ...data.site.siteMetadata }} />
+            <Footer data={ data.BottomMenu.nodes } siteData={ data.site.siteMetadata } />
         </Layout>
     );
 };
@@ -81,35 +82,86 @@ export const query = graphql`
         }
         site {
             siteMetadata {
-                copyright
-                contact {
-                    phone
-                    email
-                    address
-                    website
-                }
-                siteUrl
+            copyright
+            description
+            socials {
+                icon
+                id
+                link
+                title
+            }
             }
         }
-        # 查询菜单项
-        allContentfulMenu(
-            filter: {node_locale: {eq: $language}, isTop: {eq: true}}
+        #查询顶部快捷菜单
+        shortcutMenu: allContentfulMenu(
+            filter: {type: {eq: "TopMenu"}, node_locale: {eq: $language}}
+        ) {
+            nodes {
+            id
+            title
+            link    
+            }
+        }
+        #查询导航菜单
+        topMenu: allContentfulMenu(
+            filter: {node_locale: {eq: $language}, type: {eq: "MainMenu"}}
             sort: {fields: title}
         ) {
             nodes {
-            id: menuName
-            text: title
-            megamenu: submenu {
-                title
+            id
+            text:title
+            link
+            megamenu:submenu {
+                ... on ContentfulMenu {
+                id
+                text:title
                 submenu {
-                id: menuName
-                text: title
+                    ... on ContentfulMenu {
+                    id
+                    text:title
+                    link
+                    }
+                ... on ContentfulProduct {
+                id
+                text:trademark
+                logo {
+                    imageurl
+                }
+                }
+                ... on ContentfulResource {
+                id
+                text:title
+                }
+            }
+            }
+        }
+        }
+        }
+        #查询底部菜单
+        BottomMenu: allContentfulMenu(
+            filter: {node_locale: {eq: $language}, type: {eq: "BottomMenu"}}
+            sort: {fields: title}
+        ) {
+            nodes {
+            id
+            menus: submenu {
+                ... on ContentfulMenu {
+                id
+                title
+                link
+                submenu {
+                    ... on ContentfulMenu {
+                    id
+                    title
+                    link
+                    }
+                }
                 }
             }
             }
         }
         # 查询页面：index(首页)
-        allContentfulPage(filter: {node_locale: {eq: $language}, key: {eq: "index"}}) {
+        allContentfulPage(filter: {node_locale: {eq: $language}, key: {eq: "Index"}}) {
             nodes {
                 content {
                     headings: title
@@ -159,17 +211,6 @@ export const query = graphql`
                 }
             }
         }
-        # allContentfulBaseBrand(
-        #     filter: {key: {in: ["alibabacloud", "aws", "tencentcloud", "huaweicloud", "azure"]}, node_locale: {eq: $language}}
-        #     ) {
-        #     nodes {
-        #             id:key
-        #             image:logo {
-        #                 src:imageurl
-        #             }
-        #             path:storeurl
-        #         }
-        # }
     }
 `;
 

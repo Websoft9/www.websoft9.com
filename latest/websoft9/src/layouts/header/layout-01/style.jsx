@@ -173,6 +173,7 @@ export const StyledTopText = styled.p`
 `;
 
 export const StyledNavitem = styled.li`
+    list-style-type: none;
     ${({ $space }) =>
         $space === 1 &&
         css`
@@ -246,6 +247,7 @@ export const StyledNavlink = styled(Anchor)`
     font-weight: 500;
     line-height: 1.18;
     transition: all 0s ease-in-out;
+    
 
     ${({ $bottomLine }) =>
         $bottomLine &&

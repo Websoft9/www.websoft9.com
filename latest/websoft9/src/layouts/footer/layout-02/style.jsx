@@ -2,7 +2,7 @@ import React from "react";
 import styled, { space, device, themeGet } from "@styled";
 
 export const FooterWrap = styled.footer`
-    background-color: #000;
+    // background-color: #000;
 `;
 
 export const FooterTop = styled.div`
@@ -27,7 +27,7 @@ export const FooterBottom = styled.div`
 export const FooterWidget = styled(
     ({ mt, mb, ml, mr, pt, pb, pl, pr, ...rest }) => <div {...rest} />
 )`
-    color: #fff;
+    // color: #fff;
     ${space};
 `;
 
@@ -44,7 +44,9 @@ export const FooterWidgetList = styled.ul`
 `;
 
 export const StyledWidgetTitle = styled.h6`
-    color: #fff;
+    // color: #fff;
     margin-bottom: 20px;
     margin-top: -3px;
 `;
+
+export const TextWidget = styled.div``;

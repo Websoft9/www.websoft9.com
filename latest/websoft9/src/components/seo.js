@@ -25,11 +25,9 @@ const SEO = ({
                         description
                         author
                         siteUrl
-                        canonical
                         siteLanguage
                         image
                         titleTemplate
-                        twitterUsername
                     }
                 }
             }

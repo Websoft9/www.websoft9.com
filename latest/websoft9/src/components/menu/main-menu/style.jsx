@@ -223,9 +223,12 @@ export const StyledMegamenu = styled.ul`
     & > li {
         width:100%;
         //flex-basis: 22%;
-        padding-left: 15px;
+        padding-top: 20px;
+        padding-left: 30px;
         padding-right: 15px;
-        backgroup-color:red;
+        &:first-child{
+            background-color: #f4efe9;
+        }
     }
 `;
 

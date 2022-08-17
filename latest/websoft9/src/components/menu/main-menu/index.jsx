@@ -47,7 +47,7 @@ const MainMenu = ({
                                 $vSpace={vSpace}
                                 $bottomLine={bottomLine}
                             >
-                                <span><Trans>{menu.text}</Trans></span>
+                                <span>{menu.text}</span>
                                 {(submenu || megamenu) && (
                                     <i className="icon fa fa-angle-down"></i>
                                 )}
@@ -66,11 +66,11 @@ const MainMenu = ({
                                             >
                                                 <StyledNavlink
                                                     className="nav-link"
-                                                    path={t(subitem.link)}
+                                                    path={subitem.link}
                                                     $bottomLine={bottomLine}
                                                     $sublink
                                                 >
-                                                    <span><Trans>{subitem.text}</Trans></span>
+                                                    <span>{subitem.text}</span>
                                                     {hasSubmenuLevelTwo && (
                                                         <i className="icon fa fa-angle-down"></i>
                                                     )}
@@ -113,7 +113,7 @@ const MainMenu = ({
                             )}
                             {megamenu && (
                                 <StyledMegamenu className="megamenu" >
-                                    {/* todo : 菜单左侧显示 */}        
+                                    {/* todo : 二级菜单第一列显示Block */}        
                                     <li key={"megamenu-1"} >
                                         <StyledMegaTitle>   
                                             {"OVERVIEW"}
@@ -138,17 +138,15 @@ const MainMenu = ({
                                         </StyledNavitem>
                                         </ul>
                                     </li>
-
-
-
+                                    {/*  二级菜单显示 */}
                                     {megamenu.map((megaitem, i) => {
                                         const megaSubmenu = megaitem.submenu;
                                         return (
                                             <li
-                                                key={`megamenu-${menu.id}-${i}`}
+                                                key={`megamenu-${megaitem.id}-${i}`}
                                             >
                                                 <StyledMegaTitle>   
-                                                    {megaitem.title}
+                                                    {megaitem.text}
                                                 </StyledMegaTitle>
                                                 <Line mt="20px" mb="20px" borderWidth="1px" />
                                                 {megaSubmenu && (

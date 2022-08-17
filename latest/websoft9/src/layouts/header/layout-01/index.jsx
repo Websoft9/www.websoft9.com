@@ -1,5 +1,6 @@
 import React, { Fragment, useState, useEffect, useRef } from "react";
 import PropTypes from "prop-types";
+import { StaticQuery ,graphql } from "gatsby";
 import { Container, Row, Col } from "@ui/wrapper";
 import Text from "@ui/text";
 import Anchor from "@ui/anchor";
@@ -30,7 +31,7 @@ import {
     bottomLine,
 } from "./style";
 
-const Header = ({ data, transparent }) => {
+const Header = ({shortcutMenuData,topMenuData,transparent}) => {
     const { sticky, headerRef, fixedRef } = useSticky();
     const [flyoutOpen, setFlyoutOpen] = useState(false);
     const [offCanvasOpen, setOffcanvasOpen] = useState(false);
@@ -52,28 +53,20 @@ const Header = ({ data, transparent }) => {
             <HeaderTop $transparent={transparent}>
                     <Container>
                         <HeaderMain top>
-                            <HeaderCol right>
-
-                            <StyledNavitem
-                                // key={`submenu-${menu.id}-${i}-${j}`}
-                                $subitem
-                            >
-                                <StyledNavlink
-                                    // path={
-                                    //     subitemLevelTwo.link
-                                    // }
-                                    $sublink
-                                    // $bottomLine={
-                                    //     bottomLine
-                                    // }
-                                >
-                                    {
-                                        "Support"
-                                    }
-                                </StyledNavlink>
-                            </StyledNavitem>
-
-                            </HeaderCol>
+                            {/* 顶部快捷菜单 */}
+                                <HeaderCol right>
+                                {
+                                    shortcutMenuData.map((shortcut)=>{
+                                    return (
+                                        <StyledNavitem key={`submenu-${shortcut.id}`} $subitem >
+                                            <StyledNavlink path={shortcut.link} $sublink $bottomLine={bottomLine}>
+                                                { shortcut.title }
+                                            </StyledNavlink>
+                                        </StyledNavitem>
+                                    );
+                                    })
+                                }
+                                </HeaderCol>
                         </HeaderMain>
                     </Container>
                 </HeaderTop>
@@ -91,23 +84,22 @@ const Header = ({ data, transparent }) => {
                                     }
                                 />
                             </HeaderCol>
-                            <HeaderCol right>
-                                {data?.menu && (
-                                    <HeaderNavigation>
-                                        <MainMenu
-                                            color={
-                                                transparent && !sticky
-                                                    ? "white"
-                                                    : "dark"
-                                            }
-                                            alignment="right"
-                                            menuData={data.menu}
-                                            space={2}
-                                            vSpace={2}
-                                            bottomLine={false}
-                                        />
-                                    </HeaderNavigation>
-                                )}
+                            {/* 顶部导航菜单 */}
+                            <HeaderCol right>                              
+                                <HeaderNavigation>
+                                    <MainMenu
+                                        color={
+                                            transparent && !sticky
+                                                ? "white"
+                                                : "dark"
+                                        }
+                                        alignment="right"
+                                        menuData={topMenuData}
+                                        space={2}
+                                        vSpace={2}
+                                        bottomLine={false}
+                                    />
+                                </HeaderNavigation>
                                  <HeaderElement pl="50px">
                                     <Language />
                                 </HeaderElement>
@@ -150,23 +142,11 @@ const Header = ({ data, transparent }) => {
                     <Logo darkLogo align={{ default: "flex-start" }} />
                 </OffCanvasHeader>
                 <OffCanvasBody>
-                    {data?.menu && <MobileMenu menuData={data.menu} />}
+                    <MobileMenu menuData={topMenuData} />
                 </OffCanvasBody>
             </OffCanvas>
         </Fragment>
     );
-};
-
-Header.propTypes = {
-    data: PropTypes.shape({
-        menu: PropTypes.arrayOf(PropTypes.shape({})),
-        slogan: PropTypes.string,
-        contact: PropTypes.shape({
-            phone: PropTypes.string,
-            address: PropTypes.string,
-        }),
-    }),
-    transparent: PropTypes.bool,
 };
 
 Header.defaultProps = {
