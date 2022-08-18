@@ -63,7 +63,7 @@ const IndexPage = ({ location, data }) => {
                 <CtaArea data={ data.allContentfulPage.nodes[0].content[10] } />
                             
             </main>
-            <Footer data={ data.BottomMenu.nodes } siteData={ data.site.siteMetadata } />
+            <Footer data={ data.BottomMenu.nodes } siteData={ data.site.siteMetadata } footerMenuData={data.FooterMenu.nodes} />
         </Layout>
     );
 };
@@ -102,40 +102,50 @@ export const query = graphql`
             link    
             }
         }
-        #查询导航菜单
+        #查询导航主菜单
         topMenu: allContentfulMenu(
             filter: {node_locale: {eq: $language}, type: {eq: "MainMenu"}}
             sort: {fields: title}
         ) {
             nodes {
             id
-            text:title
+            text: title
             link
-            megamenu:submenu {
+            megamenu: submenu {
                 ... on ContentfulMenu {
                 id
-                text:title
+                text: title
                 submenu {
                     ... on ContentfulMenu {
                     id
-                    text:title
+                    text: title
                     link
                     }
-                ... on ContentfulProduct {
-                id
-                text:trademark
-                logo {
-                    imageurl
+                    ... on ContentfulProduct {
+                    id
+                    text: trademark
+                    logo {
+                        imageurl
+                    }
+                    }
+                    ... on ContentfulResource {
+                    id
+                    text: title
+                    }
                 }
                 }
-                ... on ContentfulResource {
+                ... on ContentfulBaseFeature {
                 id
-                text:title
+                title
+                subtitle
+                image
+                buttons:link {
+                    key
+                    value
+                }
                 }
             }
             }
-        }
-        }
         }
         #查询底部菜单
         BottomMenu: allContentfulMenu(
@@ -156,6 +166,23 @@ export const query = graphql`
                     link
                     }
                 }
+                }
+            }
+            }
+        }      
+        #查询页脚菜单
+        FooterMenu: allContentfulMenu(
+            filter: {type: {eq: "FooterMenu"}, node_locale: {eq: $language}}
+        ) {
+            nodes {
+            id
+            title
+            link
+            submenu {
+                ... on ContentfulMenu {
+                id
+                title
+                link
                 }
             }
             }
@@ -213,12 +240,5 @@ export const query = graphql`
         }
     }
 `;
-
-IndexPage.propTypes = {
-    location: PropTypes.shape({}),
-    data: PropTypes.shape({
-        
-    }),
-};
 
 export default IndexPage;

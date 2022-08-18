@@ -221,13 +221,14 @@ export const StyledMegamenu = styled.ul`
     justify-content: space-around;
 
     & > li {
-        width:100%;
+        width:40%;
         //flex-basis: 22%;
         padding-top: 20px;
         padding-left: 30px;
         padding-right: 15px;
         &:first-child{
             background-color: #f4efe9;
+            width:100%;
         }
     }
 `;
@@ -236,4 +237,29 @@ export const StyledMegaTitle = styled.h2`
     font-size: 14px;
     margin-bottom: 20px;
     color: ${themeGet("colors.heading")};
+`;
+
+export const HeroTextBox = styled.div`
+    // max-width: 605px;
+    width: 100%;
+    padding-inline-start: 0;
+    margin-block-start: 50px;
+    margin-block-end: 20px;
+    margin-inline: auto;
+    text-align: center;
+
+    ${device.medium} {
+        padding-inline-start: 30px;
+        margin-inline-start: auto;
+        margin-inline-end: 0;
+        margin-block-start: 0;
+        margin-block-end: 0;
+        text-align: left;
+    }
+`;
+
+export const StyledSubtitle = styled.h5`
+    font-weight: 900;
+    color: ${themeGet("colors.primary")};
+    margin-block-end: 20px;
 `;

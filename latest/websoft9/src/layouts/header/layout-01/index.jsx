@@ -84,7 +84,7 @@ const Header = ({shortcutMenuData,topMenuData,transparent}) => {
                                     }
                                 />
                             </HeaderCol>
-                            {/* 顶部导航菜单 */}
+                            {/* 顶部导航主菜单 */}
                             <HeaderCol right>                              
                                 <HeaderNavigation>
                                     <MainMenu

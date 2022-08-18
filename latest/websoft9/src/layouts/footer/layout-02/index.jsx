@@ -37,11 +37,35 @@ const Footer = ({ data,siteData,footerMenuData }) => {
                                         height={48}
                                     />
                                 </LogoWidget>
-                                    <TextWidget>
-                                        <Text mb="10px">
-                                            {siteData.description}
-                                        </Text>
-                                    </TextWidget>
+                                <TextWidget>
+                                    <Text mb="10px">
+                                        {siteData.description}
+                                    </Text>
+                                </TextWidget>
+                                {siteData?.socials && (
+                                <Social
+                                    space="16px"
+                                    tooltip={true}
+                                    shape="rounded"
+                                    variant="outlined"
+                                    style={{marginTop:'20px'}}
+                                >
+                                    {siteData.socials.map((social) => (
+                                        <SocialLink
+                                            key={social.id}
+                                            path={social.link}
+                                            title={social.title}
+                                        >
+                                            <i
+                                                className={cn(
+                                                    social.icon,
+                                                    "link-icon"
+                                                )}
+                                            ></i>
+                                        </SocialLink>
+                                    ))}
+                                </Social>
+                            )}
                             </FooterWidget>
                         </Col>
                         {
@@ -85,46 +109,27 @@ const Footer = ({ data,siteData,footerMenuData }) => {
                                     }}
                                 />
                             </Text>
+                           
                         </Col>
-                        <Col md={6} textAlign={["center", null, "left"]}>
+                        <Col md={9} textAlign={["center", null, "right"]}>
                            {/* 页脚菜单 */}
+                           <FooterWidgetList>
                            {
-                                footerMenuData.map((item)=>{
+                                footerMenuData[0].submenu.map((item)=>{
                                     return (
-                                        <StyledNavitem key={`submenu-${item.id}`} $subitem >
-                                            <StyledNavlink path={item.link} $sublink $bottomLine={bottomLine}>
-                                                { item.title }
-                                            </StyledNavlink>
-                                        </StyledNavitem>
+                                            <Anchor path={item.link} $hover={{ layout: 2 }}>
+                                                {item.title}
+                                                <span>|</span>
+                                            </Anchor>
+                                            
                                     );
                                 })
                            }
+                           </FooterWidgetList>
                         </Col>
-                        <Col md={3} textAlign={["center", null, "right"]}>
-                            {siteData?.socials && (
-                                <Social
-                                    space="16px"
-                                    tooltip={true}
-                                    shape="rounded"
-                                    variant="outlined"
-                                >
-                                    {siteData.socials.map((social) => (
-                                        <SocialLink
-                                            key={social.id}
-                                            path={social.link}
-                                            title={social.title}
-                                        >
-                                            <i
-                                                className={cn(
-                                                    social.icon,
-                                                    "link-icon"
-                                                )}
-                                            ></i>
-                                        </SocialLink>
-                                    ))}
-                                </Social>
-                            )}
-                        </Col>
+                        {/* <Col md={3} textAlign={["center", null, "right"]}>
+                            
+                        </Col> */}
                     </Row>
                 </Container>
             </FooterBottom>

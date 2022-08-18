@@ -2,6 +2,11 @@ import React from "react";
 import PropTypes from "prop-types";
 import {Trans, useTranslation} from 'gatsby-plugin-react-i18next';
 import Line from "@ui/divider/line";
+import {Row, Col } from "@ui/wrapper";
+import Button from "@ui/button";
+import Image from "@ui/image";
+import Text from "@ui/text";
+import Anchor from "@ui/anchor";
 import {
     StyledMainMenu,
     StyledNavbar,
@@ -10,7 +15,10 @@ import {
     StyledSubmenu,
     StyledMegamenu,
     StyledMegaTitle,
+    HeroTextBox,
+    StyledSubtitle,
 } from "./style";
+// import { Col } from "react-bootstrap";
 
 const MainMenu = ({
     menuData,
@@ -52,94 +60,36 @@ const MainMenu = ({
                                     <i className="icon fa fa-angle-down"></i>
                                 )}
                             </StyledNavlink>
-                            {submenu && (
-                                <StyledSubmenu className="submenu">
-                                    {submenu.map((subitem, i) => {
-                                        const hasSubmenuLevelTwo =
-                                            subitem.isSubmenu;
-                                        const submenuLevelTwo = subitem.submenu;
-                                        return (
-                                            <StyledNavitem
-                                                className="nav-item"
-                                                key={`submenu-${menu.id}-${i}`}
-                                                $subitem
-                                            >
-                                                <StyledNavlink
-                                                    className="nav-link"
-                                                    path={subitem.link}
-                                                    $bottomLine={bottomLine}
-                                                    $sublink
-                                                >
-                                                    <span>{subitem.text}</span>
-                                                    {hasSubmenuLevelTwo && (
-                                                        <i className="icon fa fa-angle-down"></i>
-                                                    )}
-                                                </StyledNavlink>
-                                                {submenuLevelTwo && (
-                                                    <StyledSubmenu>
-                                                        {submenuLevelTwo.map(
-                                                            (
-                                                                subitemLevelTwo,
-                                                                j
-                                                            ) => {
-                                                                return (
-                                                                    <StyledNavitem
-                                                                        key={`submenu-${menu.id}-${i}-${j}`}
-                                                                        $subitem
-                                                                    >
-                                                                        <StyledNavlink
-                                                                            path={
-                                                                                subitemLevelTwo.link
-                                                                            }
-                                                                            $sublink
-                                                                            $bottomLine={
-                                                                                bottomLine
-                                                                            }
-                                                                        >
-                                                                            {
-                                                                                subitemLevelTwo.text
-                                                                            }
-                                                                        </StyledNavlink>
-                                                                    </StyledNavitem>
-                                                                );
-                                                            }
-                                                        )}
-                                                    </StyledSubmenu>
-                                                )}
-                                            </StyledNavitem>
-                                        );
-                                    })}
-                                </StyledSubmenu>
-                            )}
+                            
                             {megamenu && (
                                 <StyledMegamenu className="megamenu" >
-                                    {/* todo : 二级菜单第一列显示Block */}        
-                                    <li key={"megamenu-1"} >
-                                        <StyledMegaTitle>   
-                                            {"OVERVIEW"}
-                                        </StyledMegaTitle>
-                                        <Line mt="20px" mb="20px" borderWidth="1px" />
-                                        <ul>
-                                        <StyledNavitem key={"megasubmenu-2"}  $megitem>
-                                            <StyledNavlink
-                                                path={
-                                                    "/"
-                                                }
-                                                $bottomLine={
-                                                    bottomLine
-                                                }
-                                                $sublink
-                                            >
-                                                <span className="icon">
-                                                    <i className="far" ></i>
-                                                </span>
-                                                <span > { "websoft9" } </span>
-                                            </StyledNavlink>
-                                        </StyledNavitem>
-                                        </ul>
-                                    </li>
+                                    {/* todo : 二级菜单第一列显示Feature */}      
+                                    <li key={"megamenu-1"+megamenu[0].id} >
+                                        <Row>
+                                            <Col>
+                                                <Image src={megamenu[0].image} />
+                                            </Col>
+                                            <Col>
+                                            <HeroTextBox>
+                                                    <StyledSubtitle as="h5">
+                                                        {megamenu[0].title}
+                                                    </StyledSubtitle>
+
+                                                    <Text>{megamenu[0].subtitle}</Text>
+
+                                                    {/* <Anchor path={megamenu[0].buttons[0].value} $hover={{ layout: 2 }}>
+                                                        {megamenu[0].buttons[0].key}
+                                                    </Anchor> */}
+
+                                                    <Button key={megamenu[0].id}  m="10px" size="small" path={megamenu[0].buttons[0].value}>
+                                                        {megamenu[0].buttons[0].key}
+                                                    </Button>
+                                            </HeroTextBox>
+                                            </Col>
+                                        </Row>
+                                     </li>
                                     {/*  二级菜单显示 */}
-                                    {megamenu.map((megaitem, i) => {
+                                    {megamenu.slice(1).map((megaitem, i) => {
                                         const megaSubmenu = megaitem.submenu;
                                         return (
                                             <li

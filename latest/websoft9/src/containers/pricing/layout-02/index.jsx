@@ -33,6 +33,7 @@ const PricingArea = ({ data }) => {
                                 {
                                     var img = new Object();
                                     img.src = pricing.media;
+
                                     return (
                                         <Col lg={4} md={6} key={pricing.id}>
                                             <PricingTable
@@ -42,7 +43,7 @@ const PricingArea = ({ data }) => {
                                                 path={"/"}
                                                 features={pricing.features}
                                                 image={img}
-                                                isFeatured={pricing.subtitle=="true"?true:false}
+                                                isFeatured={pricing.subTitle=="true"?true:false}
                                             />
                                         </Col>   
                                     );

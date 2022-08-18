@@ -41,6 +41,15 @@ export const FooterWidgetList = styled.ul`
             margin-block-end: 10px;
         }
     }
+    a {
+        margin-right:20px;
+        span{
+            margin-left:20px;
+        }
+        &:last-child>span {
+            display:none;
+        }
+    }  
 `;
 
 export const StyledWidgetTitle = styled.h6`
