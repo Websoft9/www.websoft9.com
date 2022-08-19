@@ -9,10 +9,6 @@ import { SectionTitleType, ItemType } from "@utils/types";
 import { SectionWrap } from "./style";
 
 const PricingArea = ({ data }) => {
-
-    //let content = normalizedArray(data.features.buttons, "period");
-    //const keys = Object.keys(content);
-
     return (
         <SectionWrap>
             <Container>    

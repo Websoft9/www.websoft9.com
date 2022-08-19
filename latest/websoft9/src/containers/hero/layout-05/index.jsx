@@ -13,6 +13,7 @@ import {
     ImageBoxTwo,
     StyledTitle,
     StyledSubtitle,
+    ReadMoreBtn,
 } from "./style";
 import { Trans,useTranslation } from 'gatsby-plugin-react-i18next';
 
@@ -32,7 +33,7 @@ const HeroArea = ({ data }) => {
                             {data?.texts && (
                                 <Text>{data.texts}</Text>
                             )}
-                            {data?.buttons?.map(
+                            {/* {data?.buttons?.map(
                                 ({id, path, content, ...rest }) => (
                                     <Button
                                         key={id}
@@ -43,7 +44,18 @@ const HeroArea = ({ data }) => {
                                     {content}
                                 </Button>
                                 )
-                            )}
+                            )} */}
+                            <ReadMoreBtn>
+                                <Button
+                                    icon="far fa-long-arrow-right"
+                                    path={data.buttons[0].path}
+                                    variant="texted"
+                                    icondistance="4px"
+                                    fontWeight={500}
+                                >
+                                    {data.buttons[0].content}
+                                </Button>
+                            </ReadMoreBtn>
                         </HeroTextBox>
                     </Col>
                     <Col md={6}>

@@ -20,7 +20,7 @@ const AccordionWrap = ({
                 {data?.map((item) => (
                     <Accordion.Item key={item.id} eventKey={item.id}>
                         <Accordion.Header>{item.title}</Accordion.Header>
-                        <Accordion.Body>{item.description}</Accordion.Body>
+                        <Accordion.Body>{item.description.description}</Accordion.Body>
                     </Accordion.Item>
                 ))}
             </Accordion>

@@ -46,7 +46,9 @@ const IndexPage = ({ location, data }) => {
 
                 <SolutionArea data ={ data.allContentfulPage.nodes[0].content[2] } />
                 
-                <CustomerArea data={ data.allContentfulPage.nodes[0].content[3] } />  
+                {/* <CustomerArea data={ data.allContentfulPage.nodes[0].content[3] } />   */}
+
+                <PartnerArea data={ data.allContentfulPage.nodes[0].content[3] } />
 
                 <ITServicesArea data={ data.allContentfulPage.nodes[0].content[4] }/>
 

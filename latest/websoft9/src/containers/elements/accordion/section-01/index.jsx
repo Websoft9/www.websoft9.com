@@ -3,18 +3,19 @@ import Accordion from "@ui/accordion";
 import Heading from "@ui/heading";
 import { Container, Row, Col } from "@ui/wrapper";
 import { SectionWrap } from "./style";
+import { textAlign } from "styled-system";
 
 const AccordionArea = ({data}) => (
     <SectionWrap>
         <Container>
             <Row>
-                <Col lg={8} mx="auto">
-                    {data?.title && (
-                        <Heading as="h4" mb="37px">
-                            {data.title}
+                <Col lg={12} mx="auto">
+                    {data?.headings && (
+                        <Heading as="h4" mb="37px" textAlign="center">
+                            {data.headings}
                         </Heading>
                     )}
-                    {data?.items && <Accordion data={data.items} />}
+                    {data?.features && <Accordion data={data.features} />}
                 </Col>
             </Row>
         </Container>

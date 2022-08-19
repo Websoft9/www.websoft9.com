@@ -13,8 +13,9 @@ import {
     ImageBoxTwo,
     StyledTitle,
     StyledSubtitle,
+    ReadMoreBtn,
 } from "./style";
-import { Trans,useTranslation } from 'gatsby-plugin-react-i18next';
+import { Trans, useTranslation } from 'gatsby-plugin-react-i18next';
 
 const HeroArea = ({ data }) => {
     const { t } = useTranslation()
@@ -23,7 +24,16 @@ const HeroArea = ({ data }) => {
             <Container fluid>
                 <Row alignItems="center">
                     <Col md={6}>
-                    <HeroTextBox>
+                        <HeroTextBox>
+                            {data?.media && (
+                                <ImageBoxTwo>
+                                    <Image src={data.media} />
+                                </ImageBoxTwo>
+                            )}
+                        </HeroTextBox>
+                    </Col>
+                    <Col md={6}>
+                        <ImageBoxWrap>
                             {data?.headings && (
                                 <StyledSubtitle as="h3">
                                     {data.headings}
@@ -32,29 +42,20 @@ const HeroArea = ({ data }) => {
                             {data?.texts && (
                                 <Text>{data.texts}</Text>
                             )}
-                            {data?.buttons?.map(
-                                ({id, path, content, ...rest }) => (
-                                    <Button
-                                        key={id}
-                                        m="10px"
-                                        size="small"
-                                        path={path}
-                                    >
-                                    {content}
+                            <ReadMoreBtn>
+                                <Button
+                                    icon="far fa-long-arrow-right"
+                                    path={data.buttons[0].path}
+                                    variant="texted"
+                                    icondistance="4px"
+                                    fontWeight={500}
+                                >
+                                    {data.buttons[0].content}
                                 </Button>
-                                )
-                            )}
-                        </HeroTextBox>
-                    </Col>
-                    <Col md={6}>
-                        <ImageBoxWrap>
-                            {data?.media && (
-                                <ImageBoxTwo>
-                                    <Image src={data.media} />
-                                </ImageBoxTwo>
-                            )}
+                            </ReadMoreBtn>
                         </ImageBoxWrap>
                     </Col>
+
                 </Row>
             </Container>
         </HeroWrapper>

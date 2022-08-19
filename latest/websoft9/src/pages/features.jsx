@@ -4,12 +4,16 @@ import Seo from "@components/seo";
 import Layout from "@layout";
 import Header from "@layout/header/layout-01";
 import Footer from "@layout/footer/layout-02";
-import PricingArea from "@containers/pricing/layout-02";
-import CtaArea from "@containers/cta/layout-04";
 import { graphql } from "gatsby";
-import FAQArea from "@containers/elements/accordion/section-01";
+import HeroArea from "@containers/hero/layout-01";
+import HeroImageLeftArea from "@containers/hero/layout-04";
+import HeroImageRightArea from "@containers/hero/layout-05";
+import VerticalTabArea from "@containers/tab/layout-02";
+import ITServicesArea from "@containers/it-service/layout-02";
+import CtaArea from "@containers/cta/layout-04";
+import SolutionArea from "@containers/elements/box-large-image/section-02";
 
-const PricingPage = ({ pageContext, location, data }) => {
+const FeaturesPage = ({ pageContext, location, data }) => {
 
     return (
         <Layout location={location}>
@@ -18,11 +22,22 @@ const PricingPage = ({ pageContext, location, data }) => {
 
             <main className="site-wrapper-reveal">
                
-                 <PricingArea data={ data.allContentfulPage.nodes[0].content[0]} />
+                <HeroArea data={data.allContentfulPage.nodes[0].content[0]} />
+                <ITServicesArea data={ data.allContentfulPage.nodes[0].content[1] }/>
 
-                 <FAQArea data={data.allContentfulPage.nodes[0].content[1] }/>
+                <HeroImageRightArea data={ data.allContentfulPage.nodes[0].content[2] }/>
+                <HeroImageLeftArea data={ data.allContentfulPage.nodes[0].content[3] }/>
+                <HeroImageRightArea data={ data.allContentfulPage.nodes[0].content[4] }/>
+                <HeroImageLeftArea data={ data.allContentfulPage.nodes[0].content[5] }/>
+                <HeroImageRightArea data={ data.allContentfulPage.nodes[0].content[6] }/>
+                <HeroImageLeftArea data={ data.allContentfulPage.nodes[0].content[7] }/>
+                <HeroImageRightArea data={ data.allContentfulPage.nodes[0].content[8] }/>
+                <HeroImageLeftArea data={ data.allContentfulPage.nodes[0].content[9] }/>
+                <HeroImageRightArea data={ data.allContentfulPage.nodes[0].content[10] }/>
 
-                 <CtaArea data={ data.allContentfulPage.nodes[0].content[2] } />
+                <VerticalTabArea data={ data.allContentfulPage.nodes[0].content[11] }/>
+                <CtaArea data={ data.allContentfulPage.nodes[0].content[12] } />
+                <SolutionArea data ={ data.allContentfulPage.nodes[0].content[13] } />
             </main>
             <Footer data={ data.BottomMenu.nodes } siteData={ data.site.siteMetadata } footerMenuData={data.FooterMenu.nodes} />
         </Layout>
@@ -30,7 +45,7 @@ const PricingPage = ({ pageContext, location, data }) => {
 };
 
 export const query = graphql`
-    query PricingPageQuery($language: String!) {
+    query FeaturesPageQuery($language: String!) {
         #多语言
         locales: allLocale(filter: {language: {eq: $language}}) {
             edges {
@@ -50,6 +65,41 @@ export const query = graphql`
                 id
                 link
                 title
+            }
+            }
+        }
+        #查询当前页面(功能页面：Features)
+        allContentfulPage(filter: {node_locale: {eq: $language}, key: {eq: "Features"}}) {
+            nodes {
+            content {
+                id
+                headings:title
+                texts:subTitle
+                media
+                buttons {
+                    id
+                    content:key
+                    path:value
+                }
+                features {
+                ... on ContentfulBaseFeature {
+                    id
+                    title
+                    subtitle
+                    icon
+                    image
+                }
+                ... on ContentfulResource {
+                        type {
+                            title
+                        }
+                        id
+                        title
+                        subTitle
+                        image: featureImage
+                        slug
+                    }
+                }
             }
             }
         }
@@ -149,51 +199,8 @@ export const query = graphql`
             }
         }
         # 查询页面：Pricing(价格)
-        allContentfulPage(filter: {node_locale: {eq: $language}, key: {eq: "Pricing"}}) {
-            nodes {
-            content {
-                id
-                headings: title
-                texts: subTitle
-                media
-                buttons {
-                id
-                content:key
-                path:value
-                }
-                features {
-                ... on ContentfulBaseFeature {
-                    id
-                    title
-                    subtitle
-                    description {
-                        description
-                    }
-                }
-                ... on ContentfulBlock {
-                    id
-                    title
-                    subTitle
-                    media
-                    buttons {
-                    id
-                    period:key
-                    price:value
-                    }
-                    features {
-                    ... on ContentfulBaseFeature {
-                        id
-                        title
-
-                    }
-                    }
-
-                }
-                }
-            }
-            }
-        }
+        
     }
 `;
 
-export default PricingPage;
+export default FeaturesPage;
