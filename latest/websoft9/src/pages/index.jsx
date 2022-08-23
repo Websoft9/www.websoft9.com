@@ -17,7 +17,6 @@ import VerticalTabArea from "@containers/tab/layout-02";
 import CounterArea from "@containers/elements/counters/section-01";
 import TestimonialArea from "@containers/elements/testimonials/section-01";
 import CtaArea from "@containers/cta/layout-04";
-import {SectionWrap} from "@styled"
 import Heading from "@ui/heading";
 import SolutionArea from "@containers/elements/box-large-image/section-02";
 import {Trans, useTranslation,Link, useI18next} from 'gatsby-plugin-react-i18next';

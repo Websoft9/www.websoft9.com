@@ -47,4 +47,67 @@ exports.onCreateWebpackConfig = ({ getConfig, actions }) => {
 
 // exports.createResolvers = createResolvers;
 
-// exports.createPages = createPages;
+//  exports.createPages = createPages;
+
+exports.createPages = async ({ graphql, actions }) => {
+    const { createPage } = actions
+
+    const result = await graphql(`
+    {
+        allContentfulProduct(
+                sort: {fields: catalog___catalog___product___hot, order: DESC}
+            ) {
+                edges {
+                node {
+                    id
+                    title
+                    description: summary
+                    logo {
+                    imageurl
+                    }
+                }
+                }
+            }
+            allContentfulBaseCatalog(
+                filter: {top: {eq: false}}
+            ) {
+                nodes {
+                id
+                title
+                key
+                base_catalog {
+                    id
+                    key
+                    title
+                }
+                }
+            }
+    }
+    `);
+
+
+    const catalogs = result.data.allContentfulBaseCatalog.nodes
+
+    catalogs.forEach((catalog, index) => {
+        if(catalog.base_catalog !=null){
+            catalog.base_catalog.forEach((subCatalog)=>{
+                createPage({
+                    path: `app-center/${subCatalog.key}`,
+                    component: path.resolve('./src/templates/app-center/index.jsx'),
+                    context: {
+                        catalog: subCatalog.key,
+                    },
+                })
+            })
+        }
+        else{
+            createPage({
+                path: `app-center/${catalog.key}`,
+                component: path.resolve('./src/templates/app-center/index.jsx'),
+                context: {
+                    catalog: catalog.key,
+                },
+            })
+        }
+    })
+}
