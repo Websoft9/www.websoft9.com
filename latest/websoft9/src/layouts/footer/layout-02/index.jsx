@@ -71,7 +71,7 @@ const Footer = ({ data,siteData,footerMenuData }) => {
                         {
                             data[0].menus.map((item)=>{
                                 return (
-                                    <Col lg={2} md={6} sm={8}>
+                                    <Col key={"col"+item.id} lg={2} md={6} sm={8}>
                                     <FooterWidget>
                                         <StyledWidgetTitle>{item.title}</StyledWidgetTitle>
                                         <Line mt="20px" mb="20px" borderWidth="1px" />
@@ -79,7 +79,7 @@ const Footer = ({ data,siteData,footerMenuData }) => {
                                             {
                                                 item.submenu.map((smenu)=>{
                                                     return (
-                                                        <li>
+                                                        <li key={smenu.id}>
                                                             <Anchor path={smenu.link} $hover={{ layout: 2 }}>
                                                                 {smenu.title}
                                                             </Anchor>
@@ -117,7 +117,7 @@ const Footer = ({ data,siteData,footerMenuData }) => {
                            {
                                 footerMenuData[0].submenu.map((item)=>{
                                     return (
-                                            <Anchor path={item.link} $hover={{ layout: 2 }}>
+                                            <Anchor key={item.id} path={item.link} $hover={{ layout: 2 }}>
                                                 {item.title}
                                                 <span>|</span>
                                             </Anchor>

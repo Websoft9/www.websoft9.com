@@ -33,7 +33,7 @@ const AppCenterTemplate = ({ data }) => {
         <main className="site-wrapper-reveal">
         <HeroArea data={data.allContentfulPage.nodes[0].content[0]} />
             
-            <ListArea cataLogData={data.allContentfulBaseCatalog.nodes } productsData={data.allContentfulProduct.nodes} />
+            <ListArea cataLogData={data.allContentfulBaseCatalog.nodes } productsData={data.allContentfulProduct.nodes} marketplaceData={data.allContentfulBaseBrand.nodes} />
 
             <CtaArea data={ data.allContentfulPage.nodes[0].content[1] } />
         </main>
@@ -43,6 +43,7 @@ const AppCenterTemplate = ({ data }) => {
     );
 };
 
+// ,$limit:Int!,$skip:Int!
 
 export const query = graphql`
     query CenterPageQuery($language: String!, $catalog: String!) {
@@ -68,6 +69,14 @@ export const query = graphql`
             }
             }
         }
+        #查询云平台
+        allContentfulBaseBrand(filter: {node_locale: {eq: $language}, type: {eq: "Marketplace"}}) {
+            nodes {
+            id
+            key
+            name
+            }
+        }
         allContentfulBaseCatalog(
             filter: {node_locale: {eq: $language}, top: {eq: false}}
         ) {
@@ -79,21 +88,46 @@ export const query = graphql`
                 id
                 key
                 title
+                product {
+                    id
+                }
+            }
+            product {
+                id
             }
             }
+            
         }
         allContentfulProduct(
-            filter: {node_locale: {eq: $language}, catalog: {elemMatch: {key: {eq:$catalog}}}}
+            filter: {node_locale: {eq: $language}, catalog: {elemMatch: {key: {eq: $catalog}}}}
         ) {
             nodes {
             id
             title
+            trademark
             description: summary
             image: logo {
                 imageurl
             }
             }
         }
+        # allContentfulProduct(
+        #     filter: {node_locale: {eq: $language}, catalog: {elemMatch: {key: {eq: $catalog}}}}
+        #     limit: $limit
+        #     skip: $skip
+        #     sort: {fields: catalog___catalog___product___hot, order: DESC}
+        # ) {
+        #     edges {
+        #     node {
+        #         id
+        #         title
+        #         description: summary
+        #         image: logo {
+        #             imageurl
+        #         }
+        #     }
+        #     }
+        # }
         #查询当前页面(功能页面：Features)
         allContentfulPage(filter: {node_locale: {eq: $language}, key: {eq: "AppCenter"}}) {
             nodes {

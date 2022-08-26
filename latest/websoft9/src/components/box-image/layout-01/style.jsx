@@ -28,8 +28,10 @@ export const BoxImgWrap = styled.figure`
         margin-inline-start: auto;
         margin-inline-end: auto;
     }
-    width:234px;
-    height:148px;
+    &>img {
+        width:180px;
+        height:180px;
+    }
 `;
 
 export const BoxContentWrap = styled.div`
@@ -40,7 +42,7 @@ export const HeadingWrap = styled.h5`
     font-weight: 500;
     line-height: 1.25;
     margin-block-end: 12px;
-    height:50px;
+    // height:50px;
 `;
 
 export const TextWrap = styled.p`

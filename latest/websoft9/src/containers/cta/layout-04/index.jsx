@@ -56,12 +56,4 @@ const CTAArea = ({ data }) => {
         </StyledSection>
     );
 };
-
-CTAArea.propTypes = {
-    data: PropTypes.shape({
-        headings: PropTypes.arrayOf(PropTypes.shape(HeadingType)),
-        buttons: PropTypes.arrayOf(PropTypes.shape(ButtonType)),
-    }),
-};
-
 export default CTAArea;

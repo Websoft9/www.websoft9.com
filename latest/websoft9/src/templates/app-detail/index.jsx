@@ -1,47 +1,46 @@
 import React from "react";
+import { Container, Row, Col } from "react-bootstrap";
+import Heading from "@ui/heading";
+import { SectionWrap, ListGroupWrap } from "./style";
+import ProductArea from "@containers/elements/box-image/section-01";
+import List from '@mui/material/List';
+import ListItemButton from '@mui/material/ListItemButton';
+import ListItemText from '@mui/material/ListItemText';
+import Collapse from '@mui/material/Collapse';
+import InboxIcon from '@mui/icons-material/MoveToInbox';
+import ExpandLess from '@mui/icons-material/ExpandLess';
+import ExpandMore from '@mui/icons-material/ExpandMore';
+import { Link,graphql }  from  'gatsby';
+import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
+import ChevronRightIcon from '@mui/icons-material/ChevronRight';
+import BoxImage from "@components/box-image/layout-01";
 import PropTypes from "prop-types";
+import defaultImage from "@assets/images/default.png";
 import Seo from "@components/seo";
 import Layout from "@layout";
 import Header from "@layout/header/layout-01";
 import Footer from "@layout/footer/layout-02";
-import { graphql } from "gatsby";
-import ListArea from "@containers/elements/lists/section-01"
-import HeroImageRightArea from "@containers/hero/layout-05";
-import CtaArea from "@containers/cta/layout-04";
 import HeroArea from "@containers/hero/layout-01";
+import CtaArea from "@containers/cta/layout-03";
 
-const AppCenterPage = ({ pageContext, location, data }) => {
-
-    // const posts = data.allContentfulProduct.edges
-    // const { currentPage, numPages } = this.props.pageContext
-    // const isFirst = currentPage === 1
-    // const isLast = currentPage === numPages
-    // const prevPage = currentPage - 1 === 1 ? '/' : (currentPage - 1).toString()
-    // const nextPage = (currentPage + 1).toString()
-
+const AppDetailTemplate = ({ data }) => {
     return (
         <Layout location={location}>
-            <Seo title="App Center" />
+            <Seo title="App Detail" />
             <Header shortcutMenuData= { data.shortcutMenu.nodes } topMenuData={ data.topMenu.nodes } />
+        
+        <main className="site-wrapper-reveal">
+            {/* <HeroArea data={data.allContentfulPage.nodes[0].content[0]} /> */}
+            <CtaArea data={ data.allContentfulProduct.nodes[0] } />
 
-            <main className="site-wrapper-reveal">
-
-                {/* <HeroArea data={data.allContentfulPage.nodes[0].content[0]} /> */}
-
-                <ListArea cataLogData={data.allContentfulBaseCatalog.nodes } 
-                        productsData={data.allContentfulProduct.nodes} 
-                        marketplaceData={data.allContentfulBaseBrand.nodes} />
-                            
-                <CtaArea data={ data.allContentfulPage.nodes[0].content[1] } />
-
-            </main>
-            <Footer data={ data.BottomMenu.nodes } siteData={ data.site.siteMetadata } footerMenuData={data.FooterMenu.nodes} />
+        </main>      
+        <Footer data={ data.BottomMenu.nodes } siteData={ data.site.siteMetadata } footerMenuData={data.FooterMenu.nodes} />
         </Layout>
     );
 };
 
 export const query = graphql`
-    query AppCenterPageQuery($language: String!) {
+    query AppDetailQuery($language: String!,$slug:String!) {
         #多语言
         locales: allLocale(filter: {language: {eq: $language}}) {
             edges {
@@ -93,54 +92,24 @@ export const query = graphql`
             }
             
         }
-        allContentfulProduct(
-            filter: {node_locale: {eq: $language}}
-        ) {
+        allContentfulProduct(filter: {node_locale: {eq: $language}, key: {eq: $slug}}) {
             nodes {
-            id
-            key
-            trademark
-            review
-            title
-            description: summary
-            image: logo {
-                imageurl
-            }
-            }
-        }
-        #查询当前页面(功能页面：Features)
-        allContentfulPage(filter: {node_locale: {eq: $language}, key: {eq: "AppCenter"}}) {
-            nodes {
-            content {
                 id
-                headings:title
-                texts:subTitle
-                media
-                buttons {
-                    id
-                    content:key
-                    path:value
+                title
+                trademark
+                review
+                summary
+                image: logo {
+                    imageurl
                 }
-                features {
-                ... on ContentfulBaseFeature {
-                    id
+                type:catalog {
                     title
-                    subtitle
-                    icon
-                    image
                 }
-                ... on ContentfulResource {
-                        type {
-                            title
-                        }
-                        id
-                        title
-                        subTitle
-                        image: featureImage
-                        slug
-                    }
+                screenshots{
+                    value
                 }
-            }
+                os
+                supportLanguage
             }
         }
         #查询顶部快捷菜单
@@ -241,4 +210,4 @@ export const query = graphql`
     }
 `;
 
-export default AppCenterPage;
+export default AppDetailTemplate;

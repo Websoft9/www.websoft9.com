@@ -54,39 +54,71 @@ exports.createPages = async ({ graphql, actions }) => {
 
     const result = await graphql(`
     {
-        allContentfulProduct(
-                sort: {fields: catalog___catalog___product___hot, order: DESC}
-            ) {
-                edges {
-                node {
-                    id
-                    title
-                    description: summary
-                    logo {
-                    imageurl
-                    }
-                }
-                }
-            }
-            allContentfulBaseCatalog(
-                filter: {top: {eq: false}}
-            ) {
-                nodes {
+        # allContentfulProduct(
+        #         sort: {fields: catalog___catalog___product___hot, order: DESC}
+        #     ) {
+        #         edges {
+        #         node {
+        #             id
+        #             title
+        #             description: summary
+        #             logo {
+        #             imageurl
+        #             }
+        #         }
+        #         }
+        #     }
+        allContentfulProduct{
+            nodes {
                 id
-                title
                 key
-                base_catalog {
-                    id
-                    key
-                    title
-                }
-                }
             }
+        }
+        allContentfulBaseCatalog(
+            filter: {top: {eq: false}}
+        ) {
+            nodes {
+            id
+            title
+            key
+            base_catalog {
+                id
+                key
+                title
+            }
+            }
+        }
+
     }
     `);
 
+    const catalogs = result.data.allContentfulBaseCatalog.nodes;
+    const products = result.data.allContentfulProduct.nodes;
+    const postsPerPage = 9;
+    const numPages = Math.ceil(catalogs.length / postsPerPage);
 
-    const catalogs = result.data.allContentfulBaseCatalog.nodes
+    // Array.from({ length: numPages }).forEach((_, i) => {
+    //     createPage({
+    //       path: i === 0 ? `app-center` : `app-center/${i + 1}`,
+    //       component: path.resolve('./src/templates/app-center/index.jsx'),
+    //       context: {
+    //         limit: postsPerPage,
+    //         skip: i * postsPerPage,
+    //         numPages,
+    //         currentPage: i + 1
+    //       },
+    //     });
+    // });
+
+    products.forEach((product)=>{
+        createPage({
+            path:`app-center/${product.key}`,
+            component:path.resolve('./src/templates/app-detail/index.jsx'),
+            context:{
+                slug:product.key
+            }
+        })
+    })
 
     catalogs.forEach((catalog, index) => {
         if(catalog.base_catalog !=null){
