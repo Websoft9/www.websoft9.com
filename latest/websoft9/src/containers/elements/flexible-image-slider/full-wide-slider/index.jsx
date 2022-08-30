@@ -43,9 +43,9 @@ const FullWideSlider = ({data}) => {
                             paginationTop="80px"
                         >
                             {
-                                data.map((item)=>{
+                                data?.map && data.map((item)=>{
                                     return (
-                                        <SwiperSlide className="item">
+                                        <SwiperSlide key={item.key} className="item">
                                             <Image src={item.value} alt="Slider" />
                                         </SwiperSlide>
                                     );

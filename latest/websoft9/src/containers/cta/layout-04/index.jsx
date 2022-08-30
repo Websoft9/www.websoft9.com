@@ -44,7 +44,7 @@ const CTAArea = ({ data }) => {
                             )}
                         </HeroTextBox>
                     </Col>
-                    <Col xl={4} lg={5} className="text-center">
+                    <Col xl={4} lg={7} className="text-center">
                         {data?.buttons?.map(({ id, content, ...rest }) => (
                             <Button key={id} m="7px" {...rest}>
                                 {content}

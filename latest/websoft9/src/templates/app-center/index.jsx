@@ -103,6 +103,7 @@ export const query = graphql`
         ) {
             nodes {
             id
+            key
             title
             trademark
             description: summary

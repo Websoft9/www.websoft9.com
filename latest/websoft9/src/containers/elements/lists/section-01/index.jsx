@@ -30,7 +30,7 @@ const Section = ({ cataLogData,productsData,marketplaceData }) => {
     
     const handleListItemClick = (event, index) => {
       setSelectedIndex(index);
-      event.currentTarget.parentNode.parentNode.parentNode.parentNode.previousSibling.click()
+    //   event.currentTarget.parentNode.parentNode.parentNode.parentNode.previousSibling.click()
     };
 
     const [marketplace, setMarketplace] = React.useState('');
@@ -262,9 +262,7 @@ const Section = ({ cataLogData,productsData,marketplaceData }) => {
                                                 item.image==null ? {src: defaultImage} : {src: item.image.imageurl}
                                             }
                                             desc={item.description}
-                                            path={`/app-center/${item.key}`}
-                                            width="160px"
-                                            height="160px"
+                                            path={`/app-center/${item.key}`}                                            
                                         />
                                     </Col>
                                 );

@@ -21,7 +21,7 @@ import Layout from "@layout";
 import Header from "@layout/header/layout-01";
 import Footer from "@layout/footer/layout-02";
 import HeroArea from "@containers/hero/layout-01";
-import CtaArea from "@containers/cta/layout-03";
+import ProductDetailArea from "@containers/cta/layout-03";
 
 const AppDetailTemplate = ({ data }) => {
     return (
@@ -31,7 +31,7 @@ const AppDetailTemplate = ({ data }) => {
         
         <main className="site-wrapper-reveal">
             {/* <HeroArea data={data.allContentfulPage.nodes[0].content[0]} /> */}
-            <CtaArea data={ data.allContentfulProduct.nodes[0] } />
+            <ProductDetailArea data={ data.allContentfulProduct.nodes[0] } resourceData={data.allContentfulResource.nodes }  />
 
         </main>      
         <Footer data={ data.BottomMenu.nodes } siteData={ data.site.siteMetadata } footerMenuData={data.FooterMenu.nodes} />
@@ -61,6 +61,21 @@ export const query = graphql`
                 link
                 title
             }
+            }
+        }
+        #根据产品key查询相关学习资源
+        allContentfulResource(
+            filter: {node_locale: {eq: $language}, product: {elemMatch: {key: {eq: $slug}}}}
+        ) {
+            nodes {
+            type {
+                title
+            }
+            id
+            title
+            subTitle
+            image:featureImage
+            slug
             }
         }
         #查询云平台
@@ -102,14 +117,49 @@ export const query = graphql`
                 image: logo {
                     imageurl
                 }
-                type:catalog {
+                type: catalog {
+                    key
                     title
+                    product {
+                        id
+                        key
+                        trademark
+                        summary
+                        image:logo {
+                            imageurl
+                        }
+                    }
                 }
                 screenshots{
+                    key
                     value
                 }
                 os
                 supportLanguage
+                userType {
+                    title
+                }
+                solution {
+                    title
+                }
+                license {        
+                    key
+                }
+                websiteurl
+                overview {
+                    overview
+                }
+                highlights
+                description {
+                    childMarkdownRemark {
+                        html
+                    }
+                }
+                faq {
+                    key
+                    value
+                    id
+                }
             }
         }
         #查询顶部快捷菜单

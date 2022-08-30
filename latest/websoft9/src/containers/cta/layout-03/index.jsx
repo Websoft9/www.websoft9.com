@@ -12,8 +12,16 @@ import defaultImage from "@assets/images/default.png";
 import FullWideSlider from "@containers/elements/flexible-image-slider/full-wide-slider";
 import Line from "@ui/divider/line";
 import SectionFour from "@containers/elements/dividers/section-04";
+import { Link }  from  'gatsby';
+import FAQArea from "@containers/elements/accordion/section-02";
+import BoxImage from "@components/box-image/layout-01";
+import Heading from "@ui/heading";
+import LegendArea1 from "@containers/legend/layout-01";
+import LegendArea2 from "@containers/legend/layout-02";
+import LegendArea3 from "@containers/legend/layout-03";
+import TabArea from "@containers/elements/tabs/section-02";
 
-const CTAArea = ({ data }) => {
+const CTAArea = ({ data,resourceData }) => {
     const { t } = useTranslation();
 
     const ratingItems = [];
@@ -66,64 +74,158 @@ const CTAArea = ({ data }) => {
                         </HeroTextBox>
                     </Col>
                     <Col xl={2}  className="text-center">
-                        {/* {data?.buttons?.map(({ id, content, ...rest }) => (
-                            <Button key={id} m="7px" {...rest}>
-                                {content}
-                            </Button>
-                        ))} */}
-                        <Button  m="7px" >{t("立即安装")}</Button>
+                        <Button  m="7px" >{t("立即获取")}</Button>
                     </Col>                   
                 </Row>
                 <Line mt="40px" mb="40px" borderWidth="1px" style={{marginLeft:"30px"}} />
                 <Row>
                     <Col xl={10}>
-                        <FullWideSlider data={data.screenshots}/>
+                        <FullWideSlider data={ data.screenshots}/>
+
+                        {/* <Row>
+                            <TabArea dataOverview={data.overview?.overview} dataHighlights={data.highlights} dataDescription={data.description?.childMarkdownRemark.html}/>
+                        </Row> */}
+
+                        <LegendArea1 title={t("概述")} data={ data.overview?.overview }/>
+
+                        <LegendArea3 title={t("亮点")} data={ data.highlights }/>
+
+                        <LegendArea2 title={t("详情")} data={ data.description?.childMarkdownRemark.html }/>
+
+                        <Row>
+                            <FAQArea  data={ data.faq }/>
+                        </Row>
+                        <Row style={{paddingLeft:'30px'}}>                           
+                            <Heading as="h6" mb="37px" textAlign="left">
+                                {data!=null ? t("相关应用"):null}
+                            </Heading>    
+                            {
+                                data?.type[0]?.product && data.type[0].product.map((item) => {
+                                        return (                                   
+                                            <Col
+                                                lg={4}
+                                                md={6}
+                                                className="box-item"
+                                                key={item.id}
+                                            >
+                                                <BoxImage
+                                                    title={item.trademark}
+                                                    image=
+                                                    {                                         
+                                                        item.image==null ? {src: defaultImage} : {src: item.image.imageurl}
+                                                    }
+                                                    // desc={item.summary}
+                                                    path={`/app-center/${item.key}`}
+                                                />
+                                            </Col>   
+                                        );
+                            })}
+                        </Row>
+                        <Row style={{paddingLeft:'30px'}}>
+                            <Heading as="h6" mb="37px" textAlign="left">
+                                {data!=null ? t("学习资料"):null}
+                            </Heading>   
+                            {resourceData && resourceData.map((feature,i) => {
+                                var image = new Object();
+                                image.src = feature.image;
+                                return (
+                                    <Col
+                                        lg={4}
+                                        md={6}
+                                        className="box-item"
+                                        key={feature.id+i}
+                                    >
+                                        <BoxImage
+                                            image={image}
+                                            title={feature.title}
+                                            category={feature.type.title}
+                                            // desc={feature.subTitle}
+                                            path={feature.slug}
+                                        />
+                                    </Col>
+                                );
+                            })}
+                        </Row>
+
+
                     </Col>
                     <Col  xl={2}>
-                        <Row style={{marginInlineStart:'20px',marginBottom:"20px"}}>
+                        <Row style={{marginInlineStart:'20px',marginBottom:"20px",width:'200px'}}>
                             <Row>{t("分类")}</Row>
                             {
-                                data.type.map((item)=>{
+                                data?.type && data.type.map((item)=>{
+                                    return (
+                                        <Row style={{color:"dodgerblue"}}>                                           
+                                            <Link to={`/app-center/${item.key}`} style={{paddingLeft:'0px',marginLeft:'0px'}}>{item.title} </Link>
+                                        </Row>
+                                    );
+                                })
+                            }
+                        </Row>
+                        <Row style={{marginInlineStart:'20px',marginBottom:"20px",width:'200px'}}>
+                            <Row>{t("系统")}</Row>
+                            {
+                                 data?.os && data.os.map((item)=>{
+                                    return (
+                                        <Row style={{color:"dodgerblue"}}>{item}</Row>
+                                    );
+                                })
+                            }
+                        </Row>
+                        <Row style={{marginInlineStart:'20px',marginBottom:"20px",width:'200px'}}>
+                            <Row>{t("开源许可")}</Row>
+                            <Row style={{color:"dodgerblue"}}>{ data?.license && data.license.key}</Row>
+                        </Row>
+                        <Row style={{marginInlineStart:'20px',marginBottom:"20px",width:'200px'}}>
+                            <Row>{t("支持语言")}</Row>
+                            {
+                                data?.supportLanguage && data.supportLanguage.map((item)=>{
+                                    return (
+                                        <Row style={{color:"dodgerblue"}}>{item}</Row>
+                                    );
+                                })
+                            }
+                        </Row>
+                        <Row style={{marginInlineStart:'20px',marginBottom:"20px",width:'200px'}}>
+                            <Row>{t("场景方案")}</Row>
+                            {
+                                data?.solution && data.solution.map((item)=>{
                                     return (
                                         <Row style={{color:"dodgerblue"}}>{item.title}</Row>
                                     );
                                 })
                             }
                         </Row>
-                        <Row style={{marginInlineStart:'20px',marginBottom:"20px"}}>
-                            <Row>{t("系统")}</Row>
-                            {
-                                data.os.map((item)=>{
-                                    return (
-                                        <Row style={{color:"dodgerblue"}}>{item}</Row>
-                                    );
-                                })
-                            }
-                        </Row>
-                        <Row style={{marginInlineStart:'20px',marginBottom:"20px"}}>
-                            <Row>{t("开源许可")}</Row>
-                        </Row>
-                        <Row style={{marginInlineStart:'20px',marginBottom:"20px"}}>
-                            <Row>{t("支持语言")}</Row>
-                            {
-                                data.supportLanguage.map((item)=>{
-                                    return (
-                                        <Row style={{color:"dodgerblue"}}>{item}</Row>
-                                    );
-                                })
-                            }
-                        </Row>
-                        <Row style={{marginInlineStart:'20px',marginBottom:"20px"}}>
-                            <Row>{t("场景方案")}</Row>
-                        </Row>
-                        <Row style={{marginInlineStart:'20px',marginBottom:"20px"}}>
+                        <Row style={{marginInlineStart:'20px',marginBottom:"20px",width:'200px'}}>
                             <Row>{t("资源")}</Row>
+                            <Row style={{color:"dodgerblue"}}>                                
+                                <Link  to="https://support.websoft9.com/docs/" style={{paddingLeft:'0px',marginLeft:'0px'}}> {t("文档")} </Link>
+                            </Row>
+                            <Row style={{color:"dodgerblue"}}>                               
+                                <Link  to="https://github.com/websoft9" style={{paddingLeft:'0px',marginLeft:'0px'}}> {t("GitHub")} </Link>
+                            </Row>
+                            <Row style={{color:"dodgerblue"}}>
+                                <Link  to={data.websiteurl} style={{paddingLeft:'0px',marginLeft:'0px'}}> {t("官网")} </Link>
+                            </Row>
                         </Row>
-                        <Row style={{marginInlineStart:'20px',marginBottom:"20px"}}>
+                        <Row style={{marginInlineStart:'20px',marginBottom:"20px",width:'200px'}}>
                             <Row>{t("适用人员")}</Row>
+                            {
+                                data?.userType && data.userType.map((item)=>{
+                                    return (
+                                        <Row style={{color:"dodgerblue"}}>{item.title}</Row>
+                                    );
+                                })
+                            }
                         </Row>
-                        <Row style={{marginInlineStart:'20px',marginBottom:"20px"}}>
+                        <Row style={{marginInlineStart:'20px',marginBottom:"20px",width:'200px'}}>
                             <Row>{t("沟通反馈")}</Row>
+                            <Row style={{color:"dodgerblue"}}>
+                                <Link  to="/" style={{paddingLeft:'0px',marginLeft:'0px'}}> {t("提交此应用的建议")} </Link>
+                            </Row>
+                            <Row style={{color:"dodgerblue"}}>
+                                <Link  to="/" style={{paddingLeft:'0px',marginLeft:'0px'}}> {t("获取专业服务")} </Link> 
+                            </Row>
                         </Row>
                     </Col>
                 </Row>

@@ -6,21 +6,21 @@ import DropdownItem from "@ui/dropdown/dropdown-item";
 import DropdownItemInner from "@ui/dropdown/dropdown-item-inner";
 import DropdownSubMenu from "@ui/dropdown/dropdown-submenu";
 import { LanguageWrap } from "./style";
-import {Link, useI18next} from 'gatsby-plugin-react-i18next';
+import {useI18next} from 'gatsby-plugin-react-i18next';
 
 const Language = ({ className, ...props }) => {
-    const { changeLanguage } = useI18next();
+    const { defaultLanguage,language,changeLanguage } = useI18next();
 
     const [langs, setLanguage] = useState([
         {
             id: "en-US",
             name: "English",
-            isActive: true,
+            isActive: language=="en-US"?true:false,
         },
         {
             id: "zh-CN",
-            name: "中文",
-            isActive: false,
+            name: "简体中文",
+            isActive: language=="zh-CN"?true:false,
         }
     ]);
 
