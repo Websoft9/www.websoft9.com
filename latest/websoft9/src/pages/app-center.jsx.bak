@@ -1,58 +1,44 @@
 import React from "react";
-import { Container, Row, Col } from "react-bootstrap";
-import Heading from "@ui/heading";
-import { SectionWrap, ListGroupWrap } from "./style";
-import ProductArea from "@containers/elements/box-image/section-01";
-import List from '@mui/material/List';
-import ListItemButton from '@mui/material/ListItemButton';
-import ListItemText from '@mui/material/ListItemText';
-import Collapse from '@mui/material/Collapse';
-import InboxIcon from '@mui/icons-material/MoveToInbox';
-import ExpandLess from '@mui/icons-material/ExpandLess';
-import ExpandMore from '@mui/icons-material/ExpandMore';
-import {graphql }  from  'gatsby';
-import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
-import ChevronRightIcon from '@mui/icons-material/ChevronRight';
-import BoxImage from "@components/box-image/layout-01";
 import PropTypes from "prop-types";
-import defaultImage from "@assets/images/default.png";
 import Seo from "@components/seo";
 import Layout from "@layout";
 import Header from "@layout/header/layout-01";
 import Footer from "@layout/footer/layout-02";
-import CtaArea from "@containers/cta/layout-04";
+import { graphql } from "gatsby";
 import ListArea from "@containers/elements/lists/section-01"
+import HeroImageRightArea from "@containers/hero/layout-05";
+import CtaArea from "@containers/cta/layout-04";
 import HeroArea from "@containers/hero/layout-01";
 
-const AppCenterTemplate = ({pageContext,location,data }) => {
-    const { currentPage, numberOfPages } = pageContext;
+const AppCenterPage = ({location, data }) => {
+    // const { currentPage, numberOfPages } = pageContext;
 
     return (
         <Layout location={location}>
             <Seo title="App Center" />
-            <Header shortcutMenuData={data.shortcutMenu.nodes} topMenuData={data.topMenu.nodes} />
-        
-        <main className="site-wrapper-reveal">
-            <HeroArea data={data.allContentfulPage.nodes[0].content[0]} />
-            
-            <ListArea 
-                cataLogData={data.allContentfulBaseCatalog.nodes}
-                productsData={data.allContentfulProduct.nodes}
-                marketplaceData={data.allContentfulBaseBrand.nodes}
-                currentPage = {currentPage}
-                numberOfPages={numberOfPages}
-            />
+            <Header shortcutMenuData= { data.shortcutMenu.nodes } topMenuData={ data.topMenu.nodes } />
 
-            <CtaArea data={ data.allContentfulPage.nodes[0].content[1] } />
-        </main>
-        
-        <Footer data={ data.BottomMenu.nodes } siteData={ data.site.siteMetadata } footerMenuData={data.FooterMenu.nodes} />
+            <main className="site-wrapper-reveal">
+
+                {/* <HeroArea data={data.allContentfulPage.nodes[0].content[0]} /> */}
+
+                <ListArea cataLogData={ data.allContentfulBaseCatalog.nodes } 
+                        productsData={ data.allContentfulProduct.nodes } 
+                        marketplaceData={ data.allContentfulBaseBrand.nodes } 
+                        // currentPage = {currentPage}
+                        // numberOfPages={numberOfPages}
+                        />
+                            
+                <CtaArea data={ data.allContentfulPage.nodes[0].content[1] } />
+
+            </main>
+            <Footer data={ data.BottomMenu.nodes } siteData={ data.site.siteMetadata } footerMenuData={data.FooterMenu.nodes} />
         </Layout>
     );
 };
-// $catalog: String!,$limit:Int!,$skip:Int!
+//,$limit:Int!,$skip:Int!
 export const query = graphql`
-    query AppCenterTemplateQuery($language: String!,$limit:Int!,$skip:Int!) {
+    query AppCenterPageQuery($language: String!) {
         #多语言
         locales: allLocale(filter: {language: {eq: $language}}) {
             edges {
@@ -101,25 +87,25 @@ export const query = graphql`
             product {
                 id
             }
+            }          
+        }
+        allContentfulProduct(
+            filter: {node_locale: {eq: $language}}
+        ) {
+            nodes {
+            id
+            key
+            trademark
+            review
+            title
+            description: summary
+            image: logo {
+                imageurl
             }
-            
+            }
         }
         # allContentfulProduct(
-        #     filter: {node_locale: {eq: $language}, catalog: {elemMatch: {key: {eq: $catalog}}}}
-        # ) {
-        #     nodes {
-        #     id
-        #     key
-        #     title
-        #     trademark
-        #     description: summary
-        #     image: logo {
-        #         imageurl
-        #     }
-        #     }
-        # }
-        # allContentfulProduct(
-        #     filter: {node_locale: {eq: $language}, catalog: {elemMatch: {key: {eq: $catalog}}}}
+        #     filter: {node_locale: {eq: $language}}
         #     limit: $limit
         #     skip: $skip
         #     sort: {fields: catalog___catalog___product___hot, order: DESC}
@@ -133,23 +119,6 @@ export const query = graphql`
         #         }
         #     }
         # }
-        allContentfulProduct(
-            filter: {node_locale: {eq: $language}}
-            limit: $limit
-            skip: $skip
-            sort: {fields: catalog___catalog___product___hot, order: DESC}
-        ) {
-            nodes {
-                id
-                key
-                title
-                trademark
-                description: summary
-                image: logo {
-                    imageurl
-                }
-            }
-        }
         #查询当前页面(功能页面：Features)
         allContentfulPage(filter: {node_locale: {eq: $language}, key: {eq: "AppCenter"}}) {
             nodes {
@@ -283,4 +252,4 @@ export const query = graphql`
     }
 `;
 
-export default AppCenterTemplate;
+export default AppCenterPage;

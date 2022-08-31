@@ -22,8 +22,9 @@ import Box from '@mui/material/Box';
 import InputLabel from '@mui/material/InputLabel';
 import MenuItem from '@mui/material/MenuItem';
 import FormControl from '@mui/material/FormControl';
+import Pagination from "@components/pagination/layout-01";
 
-const Section = ({ cataLogData,productsData,marketplaceData }) => {
+const Section = ({ cataLogData,productsData,marketplaceData,currentPage,numberOfPages }) => {
     const selectValue = location.toString().split('/').pop();
 
     const [selectedIndex, setSelectedIndex] = React.useState(selectValue);
@@ -86,7 +87,7 @@ const Section = ({ cataLogData,productsData,marketplaceData }) => {
                                             const pnums = item.product!=null?item.product.length:0;
                                             return(
                                                 <ListItemButton  selected={selectedIndex === item.key} onClick={(event) => handleListItemClick(event, item.key)}>
-                                                    <Link  to={`/app-center/${item.key}`}> {item.title+"("+pnums+")"} </Link>
+                                                    <Link  to={`/app-catalog/${item.key}`}> {item.title+"("+pnums+")"} </Link>
                                                 </ListItemButton>
                                             );
                                         }
@@ -117,7 +118,7 @@ const Section = ({ cataLogData,productsData,marketplaceData }) => {
                                                                 return (
                                                                     <ListItemButton  sx={{ pl: 4 }} selected={selectedIndex === subitem.key}
                                                                     onClick={(event) => {handleListItemClick(event, subitem.key);setOpen(false)}}>
-                                                                        <Link  to={`/app-center/${subitem.key}`}> {subitem.title+"("+subpnums+")"} </Link>
+                                                                        <Link  to={`/app-catalog/${subitem.key}`}> {subitem.title+"("+subpnums+")"} </Link>
                                                                     </ListItemButton>
                                                                 )
                                                             })
@@ -262,11 +263,19 @@ const Section = ({ cataLogData,productsData,marketplaceData }) => {
                                                 item.image==null ? {src: defaultImage} : {src: item.image.imageurl}
                                             }
                                             desc={item.description}
-                                            path={`/app-center/${item.key}`}                                            
+                                            path={`/app-center/product/${item.key}`}
                                         />
                                     </Col>
                                 );
                             })}
+                        </Row>
+                        <Row>
+                            <Pagination
+                                mt="40px"
+                                rootPage="/app-center"
+                                currentPage={currentPage}
+                                numberOfPages={numberOfPages}
+                            />
                         </Row>
                     </Col>
                 </Row>               

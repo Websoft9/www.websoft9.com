@@ -81,38 +81,84 @@ exports.createPages = async ({ graphql, actions }) => {
             id
             title
             key
+            product {
+                key
+            }
             base_catalog {
                 id
                 key
                 title
+                product {
+                    key
+                }
             }
             }
         }
-
     }
     `);
 
     const catalogs = result.data.allContentfulBaseCatalog.nodes;
     const products = result.data.allContentfulProduct.nodes;
-    const postsPerPage = 9;
-    const numPages = Math.ceil(catalogs.length / postsPerPage);
+    const postsPerPage = 6;
+    const numberOfPages = Math.ceil(products.length / 2 / postsPerPage);
 
-    // Array.from({ length: numPages }).forEach((_, i) => {
-    //     createPage({
-    //       path: i === 0 ? `app-center` : `app-center/${i + 1}`,
-    //       component: path.resolve('./src/templates/app-center/index.jsx'),
-    //       context: {
-    //         limit: postsPerPage,
-    //         skip: i * postsPerPage,
-    //         numPages,
-    //         currentPage: i + 1
-    //       },
-    //     });
-    // });
+    catalogs.forEach((catalog, index) => {
+        const isFirstPage = index === 0;
+        const currentPage = index + 1;
 
+        if(catalog.base_catalog !=null){
+            catalog.base_catalog.forEach((subCatalog)=>{
+                const numberOfPages = catalog.base_catalog.product==null ? 0 : Math.ceil(catalog.base_catalog.product.length / 2 / postsPerPage);
+                createPage({
+                    path: isFirstPage ? `app-catalog/${subCatalog.key}`:`app-catalog/${subCatalog.key}/${currentPage}`,
+                    component: path.resolve('./src/templates/app-catalog/index.jsx'),
+                    context: {
+                        catalog: subCatalog.key,
+                        limit: postsPerPage,
+                        skip: index * postsPerPage,
+                        currentPage,
+                        numberOfPages,
+                    },
+                })
+            })
+        }
+        else{
+            const numberOfPages =catalog.product==null ? 0: Math.ceil(catalog.product.length / 2 / postsPerPage);
+            createPage({
+                path: isFirstPage ? `app-catalog/${catalog.key}`:`app-catalog/${catalog.key}/${currentPage}`,
+                component: path.resolve('./src/templates/app-catalog/index.jsx'),
+                context: {
+                    catalog: catalog.key,
+                    limit: postsPerPage,
+                    skip: index * postsPerPage,
+                    currentPage,
+                    numberOfPages,
+                },
+            })
+        }
+    })
+
+    //根据模板对全部产品进行分页
+    Array.from({ length: numberOfPages }).forEach((_, index) => {
+        const isFirstPage = index === 0;
+        const currentPage = index + 1;
+        //if (isFirstPage) return;
+        createPage({
+            path: isFirstPage ? "app-center" :`app-center/page/${currentPage}`,
+            component: path.resolve('./src/templates/app-center/index.jsx'),
+            context: {
+                limit: postsPerPage,
+                skip: index * postsPerPage,
+                currentPage,
+                numberOfPages,
+            },
+        });
+    });
+
+    // 根据模板创建产品详情页
     products.forEach((product)=>{
         createPage({
-            path:`app-center/${product.key}`,
+            path:`app-center/product/${product.key}`,
             component:path.resolve('./src/templates/app-detail/index.jsx'),
             context:{
                 slug:product.key
@@ -120,26 +166,5 @@ exports.createPages = async ({ graphql, actions }) => {
         })
     })
 
-    catalogs.forEach((catalog, index) => {
-        if(catalog.base_catalog !=null){
-            catalog.base_catalog.forEach((subCatalog)=>{
-                createPage({
-                    path: `app-center/${subCatalog.key}`,
-                    component: path.resolve('./src/templates/app-center/index.jsx'),
-                    context: {
-                        catalog: subCatalog.key,
-                    },
-                })
-            })
-        }
-        else{
-            createPage({
-                path: `app-center/${catalog.key}`,
-                component: path.resolve('./src/templates/app-center/index.jsx'),
-                context: {
-                    catalog: catalog.key,
-                },
-            })
-        }
-    })
+    
 }
