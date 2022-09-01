@@ -39,6 +39,7 @@ const AppCenterTemplate = ({pageContext,location,data }) => {
                 cataLogData={data.allContentfulBaseCatalog.nodes}
                 productsData={data.allContentfulProduct.nodes}
                 marketplaceData={data.allContentfulBaseBrand.nodes}
+                rootPage ="/app-center"
                 currentPage = {currentPage}
                 numberOfPages={numberOfPages}
             />
@@ -101,38 +102,8 @@ export const query = graphql`
             product {
                 id
             }
-            }
-            
+            }          
         }
-        # allContentfulProduct(
-        #     filter: {node_locale: {eq: $language}, catalog: {elemMatch: {key: {eq: $catalog}}}}
-        # ) {
-        #     nodes {
-        #     id
-        #     key
-        #     title
-        #     trademark
-        #     description: summary
-        #     image: logo {
-        #         imageurl
-        #     }
-        #     }
-        # }
-        # allContentfulProduct(
-        #     filter: {node_locale: {eq: $language}, catalog: {elemMatch: {key: {eq: $catalog}}}}
-        #     limit: $limit
-        #     skip: $skip
-        #     sort: {fields: catalog___catalog___product___hot, order: DESC}
-        # ) {
-        #     nodes {
-        #         id
-        #         title
-        #         description: summary
-        #         image: logo {
-        #             imageurl
-        #         }
-        #     }
-        # }
         allContentfulProduct(
             filter: {node_locale: {eq: $language}}
             limit: $limit

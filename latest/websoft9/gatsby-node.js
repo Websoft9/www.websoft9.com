@@ -54,20 +54,6 @@ exports.createPages = async ({ graphql, actions }) => {
 
     const result = await graphql(`
     {
-        # allContentfulProduct(
-        #         sort: {fields: catalog___catalog___product___hot, order: DESC}
-        #     ) {
-        #         edges {
-        #         node {
-        #             id
-        #             title
-        #             description: summary
-        #             logo {
-        #             imageurl
-        #             }
-        #         }
-        #         }
-        #     }
         allContentfulProduct{
             nodes {
                 id
@@ -79,64 +65,96 @@ exports.createPages = async ({ graphql, actions }) => {
         ) {
             nodes {
             id
-            title
             key
-            product {
-                key
-            }
+            title
             base_catalog {
                 id
                 key
                 title
                 product {
-                    key
+                    id
                 }
             }
+            product {
+                id
             }
+            }        
         }
     }
     `);
 
-    const catalogs = result.data.allContentfulBaseCatalog.nodes;
-    const products = result.data.allContentfulProduct.nodes;
-    const postsPerPage = 6;
-    const numberOfPages = Math.ceil(products.length / 2 / postsPerPage);
+    const catalogs = result.data.allContentfulBaseCatalog.nodes; //获取所有产品目录
+    const products = result.data.allContentfulProduct.nodes;     //获取所有产品
+    const postsPerPage = 6;  //每页记录条数
+    const numberOfPages = Math.ceil(products.length / 2 / postsPerPage); //计算所有产品总记录条数（由于有中英文两种数据，在计算时除2）
 
+    //根据产品目录检索产品并分页
     catalogs.forEach((catalog, index) => {
-        const isFirstPage = index === 0;
-        const currentPage = index + 1;
-
-        if(catalog.base_catalog !=null){
+        if(catalog.base_catalog !=null){        
             catalog.base_catalog.forEach((subCatalog)=>{
-                const numberOfPages = catalog.base_catalog.product==null ? 0 : Math.ceil(catalog.base_catalog.product.length / 2 / postsPerPage);
+                const nums  = subCatalog.product==null?0:subCatalog.product.length;
+                const numberOfPages = subCatalog.product==null ? 0 : Math.ceil(subCatalog.product.length / postsPerPage);
+
+                Array.from({ length: numberOfPages }).forEach((_, subCataLogIndex)=>{
+                    const isFirstPage = subCataLogIndex === 0;               
+                    const currentPage = subCataLogIndex + 1;
+                    const rootPage = `/app-catalog/${subCatalog.key}`;
+
+                    createPage({
+                        path: isFirstPage ? `app-catalog/${subCatalog.key}`:`app-catalog/${subCatalog.key}/${currentPage}`,
+                        component: path.resolve('./src/templates/app-catalog/index.jsx'),
+                        context: {
+                            catalog: subCatalog.key,
+                            limit: postsPerPage,
+                            skip: subCataLogIndex * postsPerPage,
+                            currentPage,
+                            numberOfPages,
+                            rootPage,
+                        },
+                    })
+                })
+            })
+        }
+        else{           
+            const numberOfPages =catalog.product==null ? 0: Math.ceil(catalog.product.length / postsPerPage);
+
+            if(numberOfPages==0){
+                const currentPage = 0
+                const rootPage =`app-catalog/${catalog.key}`;
                 createPage({
-                    path: isFirstPage ? `app-catalog/${subCatalog.key}`:`app-catalog/${subCatalog.key}/${currentPage}`,
+                    path:`app-catalog/${catalog.key}`,
                     component: path.resolve('./src/templates/app-catalog/index.jsx'),
                     context: {
-                        catalog: subCatalog.key,
-                        limit: postsPerPage,
-                        skip: index * postsPerPage,
+                        catalog: catalog.key,
+                        limit: 0,
+                        skip: 0,
                         currentPage,
                         numberOfPages,
+                        rootPage,
+                    },
+                })
+            }
+            
+            Array.from({ length: numberOfPages }).forEach((_, cataLogIndex)=>{
+                const isFirstPage = cataLogIndex === 0;
+                const currentPage = cataLogIndex + 1;
+                const rootPage = `/app-catalog/${catalog.key}`;
+                createPage({
+                    path: isFirstPage ? `app-catalog/${catalog.key}`:`app-catalog/${catalog.key}/${currentPage}`,
+                    component: path.resolve('./src/templates/app-catalog/index.jsx'),
+                    context: {
+                        catalog: catalog.key,
+                        limit: postsPerPage,
+                        skip: cataLogIndex * postsPerPage,
+                        currentPage,
+                        numberOfPages,
+                        rootPage,
                     },
                 })
             })
         }
-        else{
-            const numberOfPages =catalog.product==null ? 0: Math.ceil(catalog.product.length / 2 / postsPerPage);
-            createPage({
-                path: isFirstPage ? `app-catalog/${catalog.key}`:`app-catalog/${catalog.key}/${currentPage}`,
-                component: path.resolve('./src/templates/app-catalog/index.jsx'),
-                context: {
-                    catalog: catalog.key,
-                    limit: postsPerPage,
-                    skip: index * postsPerPage,
-                    currentPage,
-                    numberOfPages,
-                },
-            })
-        }
     })
+    
 
     //根据模板对全部产品进行分页
     Array.from({ length: numberOfPages }).forEach((_, index) => {

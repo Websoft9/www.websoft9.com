@@ -1,4 +1,8 @@
 {
     "Documentation":"Documentation",
-    "FAQ":"FAQ"
+    "FAQ":"FAQ",
+    "NEXT":"NEXT",
+    "PREV":"PREV",
+    "Product List":"Product List",
+    "ALL":"ALL"
 }

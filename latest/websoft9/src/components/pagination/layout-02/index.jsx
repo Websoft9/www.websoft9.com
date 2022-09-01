@@ -22,21 +22,21 @@ const Pagination = ({
     const previousPage =
         currentPage - 1 === 1
             ? rootPage
-            : "/app-center/page/" + (currentPage - 1).toString();
-    const nextPage = "/app-center/page/" + (currentPage + 1).toString();
+            : rootPage+"/" + (currentPage - 1).toString();
+    const nextPage = rootPage+"/" + (currentPage + 1).toString();
     return (
         <PaginationWrap className={cn(className, "pagination")} {...rest}>
             <PaginationList>
                 {isFirst ? (
                     <PaginationItem>
                         <PaginationLink disabled={true} path={previousPage}>
-                            {t("PREV")}
+                        {t("PREV")}
                         </PaginationLink>
                     </PaginationItem>
                 ) : (
                     <PaginationItem classname="prev">
                         <PaginationLink path={previousPage}>
-                            {t("PREV")}
+                        {t("PREV")}
                         </PaginationLink>
                     </PaginationItem>
                 )}
@@ -46,7 +46,7 @@ const Pagination = ({
                             <PaginationLink
                                 active="true"
                                 path={`${rootPage}/${
-                                    i === 0 ? "" : "page/" + (i + 1)
+                                    i === 0 ? "" : "/" + (i + 1)
                                 }`}
                             >
                                 {i + 1}
@@ -56,7 +56,7 @@ const Pagination = ({
                         <PaginationItem key={`page-number-${i + 1}`}>
                             <PaginationLink
                                 path={`${
-                                    i === 0 ? rootPage : "/app-center/page/" + (i + 1)
+                                    i === 0 ? rootPage : rootPage+"/" + (i + 1)
                                 }`}
                             >
                                 {i + 1}
@@ -67,7 +67,7 @@ const Pagination = ({
                 {isLast ? (
                     <PaginationItem>
                         <PaginationLink disabled={true} path={nextPage}>
-                            {t("NEXT")}
+                        {t("NEXT")}
                         </PaginationLink>
                     </PaginationItem>
                 ) : (

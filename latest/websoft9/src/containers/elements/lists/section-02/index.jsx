@@ -22,7 +22,7 @@ import Box from '@mui/material/Box';
 import InputLabel from '@mui/material/InputLabel';
 import MenuItem from '@mui/material/MenuItem';
 import FormControl from '@mui/material/FormControl';
-import Pagination from "@components/pagination/layout-01";
+import Pagination from "@components/pagination/layout-02";
 import {Trans, useTranslation } from 'gatsby-plugin-react-i18next';
 
 const Section = ({ cataLogData,productsData,marketplaceData,currentPage,numberOfPages,rootPage }) => {
@@ -273,13 +273,18 @@ const Section = ({ cataLogData,productsData,marketplaceData,currentPage,numberOf
                         </Row>
                         <Row>
                             {
-                                productsData==null?<></>:
-                                <Pagination
-                                mt="40px"
-                                rootPage={rootPage}
-                                currentPage={currentPage}
-                                numberOfPages={numberOfPages}
-                                />
+                                {
+                                    if(productsData!=null){
+                                        return (
+                                            <Pagination
+                                            mt="40px"
+                                            rootPage={rootPage}
+                                            currentPage={currentPage}
+                                            numberOfPages={numberOfPages}
+                                            />
+                                        )
+                                    }
+                                }
                             }
                         </Row>
                     </Col>

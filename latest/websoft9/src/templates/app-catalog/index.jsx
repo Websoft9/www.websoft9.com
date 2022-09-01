@@ -21,11 +21,11 @@ import Layout from "@layout";
 import Header from "@layout/header/layout-01";
 import Footer from "@layout/footer/layout-02";
 import CtaArea from "@containers/cta/layout-04";
-import ListArea from "@containers/elements/lists/section-01"
+import ListArea from "@containers/elements/lists/section-02"
 import HeroArea from "@containers/hero/layout-01";
 
 const AppCatalogTemplate = ({pageContext,location,data }) => {
-    const { currentPage, numberOfPages } = pageContext;
+    const { currentPage, numberOfPages,rootPage } = pageContext;
 
     return (
         <Layout location={location}>
@@ -39,6 +39,7 @@ const AppCatalogTemplate = ({pageContext,location,data }) => {
                 cataLogData={data.allContentfulBaseCatalog.nodes}
                 productsData={data.allContentfulProduct.nodes}
                 marketplaceData={data.allContentfulBaseBrand.nodes}
+                rootPage = {rootPage}
                 currentPage = {currentPage}
                 numberOfPages={numberOfPages}
             />
@@ -101,8 +102,7 @@ export const query = graphql`
             product {
                 id
             }
-            }
-            
+            }        
         }
         allContentfulProduct(
             filter: {node_locale: {eq: $language}, catalog: {elemMatch: {key: {eq: $catalog}}}}
