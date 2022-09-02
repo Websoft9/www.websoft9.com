@@ -136,7 +136,7 @@ const Section = ({ cataLogData,productsData,marketplaceData,currentPage,numberOf
                         </ListGroupWrap>
                     </Col>
                     <Col>
-                        <Row style={{marginBottom:"20px"}}>
+                        {/* <Row style={{marginBottom:"20px"}}>
                             <Col>
                             <Box sx={{ minWidth: 120 }}>
                                 <FormControl fullWidth>
@@ -247,9 +247,10 @@ const Section = ({ cataLogData,productsData,marketplaceData,currentPage,numberOf
                                 </FormControl>
                                 </Box>
                             </Col>
-                        </Row>
+                        </Row> */}
                         <Row>
                             {
+                            productsData.length <=0 ?  <Heading as="h5" mb={["20px", null, "30px"]} textAlign="center">{t("No relevant data found")}</Heading> :
                             productsData?.map((item) => {
                                 return (
                                     <Col
@@ -272,21 +273,16 @@ const Section = ({ cataLogData,productsData,marketplaceData,currentPage,numberOf
                             })}
                         </Row>
                         <Row>
-                            {
-                                {
-                                    if(productsData!=null){
-                                        return (
-                                            <Pagination
-                                            mt="40px"
-                                            rootPage={rootPage}
-                                            currentPage={currentPage}
-                                            numberOfPages={numberOfPages}
-                                            />
-                                        )
-                                    }
-                                }
-                            }
-                        </Row>
+                        {
+                            productsData.length > 0 && 
+                            <Pagination
+                                mt="40px"
+                                rootPage={rootPage}
+                                currentPage={currentPage}
+                                numberOfPages={numberOfPages}
+                                />
+                        }
+                       </Row>
                     </Col>
                 </Row>               
             </Container>

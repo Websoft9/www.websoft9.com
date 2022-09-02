@@ -187,6 +187,16 @@ const CTAArea = ({ data,resourceData }) => {
                             }
                         </Row>
                         <Row style={{marginInlineStart:'20px',marginBottom:"20px",width:'200px'}}>
+                            <Row>{t("编程语言")}</Row>
+                            {
+                                data?.program && data.program.map((item)=>{
+                                    return (
+                                        <Row style={{color:"dodgerblue"}}>{item.name}</Row>
+                                    );
+                                })
+                            }
+                        </Row>
+                        <Row style={{marginInlineStart:'20px',marginBottom:"20px",width:'200px'}}>
                             <Row>{t("场景方案")}</Row>
                             {
                                 data?.solution && data.solution.map((item)=>{

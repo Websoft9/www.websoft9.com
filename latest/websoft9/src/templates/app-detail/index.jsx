@@ -136,6 +136,9 @@ export const query = graphql`
                 }
                 os
                 supportLanguage
+                program {
+                    name
+                }
                 userType {
                     title
                 }

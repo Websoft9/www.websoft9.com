@@ -95,6 +95,23 @@ exports.createPages = async ({ graphql, actions }) => {
                 const nums  = subCatalog.product==null?0:subCatalog.product.length;
                 const numberOfPages = subCatalog.product==null ? 0 : Math.ceil(subCatalog.product.length / postsPerPage);
 
+                if(numberOfPages==0){
+                    const currentPage = 1
+                    const rootPage =`app-catalog/${subCatalog.key}`;
+                    createPage({
+                        path:`app-catalog/${subCatalog.key}`,
+                        component: path.resolve('./src/templates/app-catalog/index.jsx'),
+                        context: {
+                            catalog: subCatalog.key,
+                            limit: postsPerPage,
+                            skip: 0,
+                            currentPage,
+                            numberOfPages,
+                            rootPage,
+                        },
+                    })
+                }
+
                 Array.from({ length: numberOfPages }).forEach((_, subCataLogIndex)=>{
                     const isFirstPage = subCataLogIndex === 0;               
                     const currentPage = subCataLogIndex + 1;
@@ -119,14 +136,14 @@ exports.createPages = async ({ graphql, actions }) => {
             const numberOfPages =catalog.product==null ? 0: Math.ceil(catalog.product.length / postsPerPage);
 
             if(numberOfPages==0){
-                const currentPage = 0
+                const currentPage = 1
                 const rootPage =`app-catalog/${catalog.key}`;
                 createPage({
                     path:`app-catalog/${catalog.key}`,
                     component: path.resolve('./src/templates/app-catalog/index.jsx'),
                     context: {
                         catalog: catalog.key,
-                        limit: 0,
+                        limit: postsPerPage,
                         skip: 0,
                         currentPage,
                         numberOfPages,
