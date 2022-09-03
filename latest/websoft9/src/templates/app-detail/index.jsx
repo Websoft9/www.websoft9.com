@@ -23,7 +23,7 @@ import Footer from "@layout/footer/layout-02";
 import HeroArea from "@containers/hero/layout-01";
 import ProductDetailArea from "@containers/cta/layout-03";
 
-const AppDetailTemplate = ({ data }) => {
+const AppDetailTemplate = ({ location,data }) => {
     return (
         <Layout location={location}>
             <Seo title="App Detail" />

@@ -26,14 +26,14 @@ import Pagination from "@components/pagination/layout-02";
 import {Trans, useTranslation } from 'gatsby-plugin-react-i18next';
 
 // 用于根据产品目录生成产品页面
-const Section = ({ cataLogData,productsData,marketplaceData,currentPage,numberOfPages,rootPage }) => {
+const Section = ({ cataLogData,productsData,marketplaceData,currentPage,numberOfPages,rootPage,location }) => {
     const { t } = useTranslation();
-    const selectValue = location.toString().split('/').pop();
+    //const selectValue = location.toString().split('/').pop();
 
-    const [selectedIndex, setSelectedIndex] = React.useState(selectValue);
+    const [selectedIndex, setSelectedIndex] = React.useState(null);
     
     const handleListItemClick = (event, index) => {
-      setSelectedIndex(index);
+      //setSelectedIndex(index);
     //   event.currentTarget.parentNode.parentNode.parentNode.parentNode.previousSibling.click()
     };
 

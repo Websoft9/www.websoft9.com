@@ -28,23 +28,14 @@ import {Trans, useTranslation } from 'gatsby-plugin-react-i18next';
 // 用于所有资源目录
 const Section = ({ cataLogData,resourceData,currentPage,numberOfPages,rootPage }) => {
     const { t } = useTranslation();
-    const selectValue = location.toString().split('/').pop();
+    // const selectValue = location.toString().split('/').pop();
 
-    const [selectedIndex, setSelectedIndex] = React.useState(selectValue);
+    const [selectedIndex, setSelectedIndex] = React.useState(null);
     
     const handleListItemClick = (event, index) => {
-      setSelectedIndex(index);
+      //setSelectedIndex(index);
     //   event.currentTarget.parentNode.parentNode.parentNode.parentNode.previousSibling.click()
     };
-
-    const [marketplace, setMarketplace] = React.useState('');
-
-    const handleChange = (event) => {
-        setMarketplace(event.target.value);
-    };
-
-    var totalProductsNum = 0;
-
     return (
         <SectionWrap>
             <Container>
