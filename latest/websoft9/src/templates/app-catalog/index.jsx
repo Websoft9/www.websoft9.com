@@ -36,7 +36,7 @@ const AppCatalogTemplate = ({pageContext,location,data }) => {
             <HeroArea data={data.allContentfulPage.nodes[0].content[0]} />
             
             <ListArea 
-                cataLogData={data.allContentfulBaseCatalog.nodes}
+                cataLogData={data.allContentfulBaseCatalog.nodes[0].base_catalog}
                 productsData={data.allContentfulProduct.nodes}
                 marketplaceData={data.allContentfulBaseBrand.nodes}
                 rootPage = {rootPage}
@@ -85,24 +85,27 @@ export const query = graphql`
             }
         }
         allContentfulBaseCatalog(
-            filter: {node_locale: {eq: $language}, top: {eq: false}}
+            filter: {node_locale: {eq: $language}, key: {eq: "product"}}
+            sort: {fields: catalog___catalog___catalog___position, order: ASC}
         ) {
             nodes {
-            id
-            key
-            title
             base_catalog {
+                id
+                key
+                title
+                product {
+                id
+                }
+                base_catalog {
                 id
                 key
                 title
                 product {
                     id
                 }
+                }
             }
-            product {
-                id
             }
-            }        
         }
         allContentfulProduct(
             filter: {node_locale: {eq: $language}, catalog: {elemMatch: {key: {eq: $catalog}}}}

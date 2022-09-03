@@ -25,6 +25,7 @@ import FormControl from '@mui/material/FormControl';
 import Pagination from "@components/pagination/layout-02";
 import {Trans, useTranslation } from 'gatsby-plugin-react-i18next';
 
+// 用于根据产品目录生成产品页面
 const Section = ({ cataLogData,productsData,marketplaceData,currentPage,numberOfPages,rootPage }) => {
     const { t } = useTranslation();
     const selectValue = location.toString().split('/').pop();

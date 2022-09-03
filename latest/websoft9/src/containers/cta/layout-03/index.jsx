@@ -74,7 +74,7 @@ const CTAArea = ({ data,resourceData }) => {
                         </HeroTextBox>
                     </Col>
                     <Col xl={2}  className="text-center">
-                        <Button  m="7px" >{t("立即获取")}</Button>
+                        <Button  m="7px" >{t("Get it Now")}</Button>
                     </Col>                   
                 </Row>
                 <Line mt="40px" mb="40px" borderWidth="1px" style={{marginLeft:"30px"}} />
@@ -86,18 +86,18 @@ const CTAArea = ({ data,resourceData }) => {
                             <TabArea dataOverview={data.overview?.overview} dataHighlights={data.highlights} dataDescription={data.description?.childMarkdownRemark.html}/>
                         </Row> */}
 
-                        <LegendArea1 title={t("概述")} data={ data.overview?.overview }/>
+                        <LegendArea1 title={t("Overview")} data={ data.overview?.overview }/>
 
-                        <LegendArea3 title={t("亮点")} data={ data.highlights }/>
+                        <LegendArea3 title={t("Highlights")} data={ data.highlights }/>
 
-                        <LegendArea2 title={t("详情")} data={ data.description?.childMarkdownRemark.html }/>
+                        <LegendArea2 title={t("Description")} data={ data.description?.childMarkdownRemark.html }/>
 
                         <Row>
                             <FAQArea  data={ data.faq }/>
                         </Row>
                         <Row style={{paddingLeft:'30px'}}>                           
                             <Heading as="h6" mb="37px" textAlign="left">
-                                {data!=null ? t("相关应用"):null}
+                                {data!=null ? t("Related Applications"):null}
                             </Heading>    
                             {
                                 data?.type[0]?.product && data.type[0].product.map((item) => {
@@ -123,7 +123,7 @@ const CTAArea = ({ data,resourceData }) => {
                         </Row>
                         <Row style={{paddingLeft:'30px'}}>
                             <Heading as="h6" mb="37px" textAlign="left">
-                                {data!=null ? t("学习资料"):null}
+                                {data!=null ? t("Learning Materials"):null}
                             </Heading>   
                             {resourceData && resourceData.map((feature,i) => {
                                 var image = new Object();
@@ -151,7 +151,7 @@ const CTAArea = ({ data,resourceData }) => {
                     </Col>
                     <Col  xl={2}>
                         <Row style={{marginInlineStart:'20px',marginBottom:"20px",width:'200px'}}>
-                            <Row>{t("分类")}</Row>
+                            <Row>{t("Classification")}</Row>
                             {
                                 data?.type && data.type.map((item)=>{
                                     return (
@@ -163,7 +163,7 @@ const CTAArea = ({ data,resourceData }) => {
                             }
                         </Row>
                         <Row style={{marginInlineStart:'20px',marginBottom:"20px",width:'200px'}}>
-                            <Row>{t("系统")}</Row>
+                            <Row>{t("Os")}</Row>
                             {
                                  data?.os && data.os.map((item)=>{
                                     return (
@@ -173,11 +173,11 @@ const CTAArea = ({ data,resourceData }) => {
                             }
                         </Row>
                         <Row style={{marginInlineStart:'20px',marginBottom:"20px",width:'200px'}}>
-                            <Row>{t("开源许可")}</Row>
+                            <Row>{t("Open Source License")}</Row>
                             <Row style={{color:"dodgerblue"}}>{ data?.license && data.license.key}</Row>
                         </Row>
                         <Row style={{marginInlineStart:'20px',marginBottom:"20px",width:'200px'}}>
-                            <Row>{t("支持语言")}</Row>
+                            <Row>{t("Support Language")}</Row>
                             {
                                 data?.supportLanguage && data.supportLanguage.map((item)=>{
                                     return (
@@ -187,7 +187,7 @@ const CTAArea = ({ data,resourceData }) => {
                             }
                         </Row>
                         <Row style={{marginInlineStart:'20px',marginBottom:"20px",width:'200px'}}>
-                            <Row>{t("编程语言")}</Row>
+                            <Row>{t("Languages")}</Row>
                             {
                                 data?.program && data.program.map((item)=>{
                                     return (
@@ -197,7 +197,7 @@ const CTAArea = ({ data,resourceData }) => {
                             }
                         </Row>
                         <Row style={{marginInlineStart:'20px',marginBottom:"20px",width:'200px'}}>
-                            <Row>{t("场景方案")}</Row>
+                            <Row>{t("Solution")}</Row>
                             {
                                 data?.solution && data.solution.map((item)=>{
                                     return (
@@ -207,7 +207,7 @@ const CTAArea = ({ data,resourceData }) => {
                             }
                         </Row>
                         <Row style={{marginInlineStart:'20px',marginBottom:"20px",width:'200px'}}>
-                            <Row>{t("资源")}</Row>
+                            <Row>{t("Resource")}</Row>
                             <Row style={{color:"dodgerblue"}}>                                
                                 <Link  to="https://support.websoft9.com/docs/" style={{paddingLeft:'0px',marginLeft:'0px'}}> {t("文档")} </Link>
                             </Row>
@@ -219,7 +219,7 @@ const CTAArea = ({ data,resourceData }) => {
                             </Row>
                         </Row>
                         <Row style={{marginInlineStart:'20px',marginBottom:"20px",width:'200px'}}>
-                            <Row>{t("适用人员")}</Row>
+                            <Row>{t("Applicable Personnel")}</Row>
                             {
                                 data?.userType && data.userType.map((item)=>{
                                     return (

@@ -54,36 +54,49 @@ exports.createPages = async ({ graphql, actions }) => {
 
     const result = await graphql(`
     {
+        # 查询所有产品
         allContentfulProduct{
             nodes {
                 id
                 key
             }
         }
+        # 查询产品目录
         allContentfulBaseCatalog(
-            filter: {top: {eq: false}}
+            filter: {key: {eq: "product"}}
+            sort: {fields: catalog___catalog___catalog___position, order: ASC}
         ) {
             nodes {
-            id
-            key
-            title
             base_catalog {
+                id
+                key
+                title
+                product {
+                id
+                }
+                base_catalog {
                 id
                 key
                 title
                 product {
                     id
                 }
+                }
             }
-            product {
-                id
             }
-            }        
+        }
+        # 查询资源类别
+        allContentfulAboutContent{
+            nodes {
+            id
+            key
+            title
+            }
         }
     }
     `);
 
-    const catalogs = result.data.allContentfulBaseCatalog.nodes; //获取所有产品目录
+    const catalogs = result.data.allContentfulBaseCatalog.nodes[0].base_catalog; //获取所有产品目录
     const products = result.data.allContentfulProduct.nodes;     //获取所有产品
     const postsPerPage = 6;  //每页记录条数
     const numberOfPages = Math.ceil(products.length / 2 / postsPerPage); //计算所有产品总记录条数（由于有中英文两种数据，在计算时除2）
@@ -189,6 +202,26 @@ exports.createPages = async ({ graphql, actions }) => {
             },
         });
     });
+
+    const resourceTypes = result.data.allContentfulAboutContent.nodes;     //获取所有资源类别
+    const resourceTypesNumberOfPages = Math.ceil(resourceTypes.length / 2 / postsPerPage); //计算所有资源总记录条数（由于有中英文两种数据，在计算时除2） 
+
+    //根据模板对全部资源进行分页
+    Array.from({ length: resourceTypesNumberOfPages }).forEach((_, index) => {
+        const isFirstPage = index === 0;
+        const currentPage = index + 1;
+        createPage({
+            path: isFirstPage ? "resource-center" :`resource-center/page/${currentPage}`,
+            component: path.resolve('./src/templates/resource-center/index.jsx'),
+            context: {
+                limit: postsPerPage,
+                skip: index * postsPerPage,
+                currentPage,
+                numberOfPages,
+            },
+        });
+    });
+
 
     // 根据模板创建产品详情页
     products.forEach((product)=>{

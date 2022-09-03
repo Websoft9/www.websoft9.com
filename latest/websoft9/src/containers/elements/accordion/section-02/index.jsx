@@ -25,7 +25,10 @@ const AccordionArea = ({ data }) => {
                                 {data?.map((item) => (
                                     <Accordion.Item key={item.id} eventKey={item.id}>
                                         <Accordion.Header>{item.key}</Accordion.Header>
-                                        <Accordion.Body>{item.value}</Accordion.Body>
+                                        <Accordion.Body>
+                                            <pre dangerouslySetInnerHTML={{ __html: item.value }} 
+                                            style={{fontFamily:'CerebriSans',fontSize:'15px',whiteSpace:'pre-wrap',wordWrap:"break-word"}}></pre>
+                                        </Accordion.Body>
                                     </Accordion.Item>
                                 ))}
                             </Accordion>

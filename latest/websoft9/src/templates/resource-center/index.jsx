@@ -21,10 +21,10 @@ import Layout from "@layout";
 import Header from "@layout/header/layout-01";
 import Footer from "@layout/footer/layout-02";
 import CtaArea from "@containers/cta/layout-04";
-import ListArea from "@containers/elements/lists/section-01"
+import ListArea from "@containers/elements/lists/section-03"
 import HeroArea from "@containers/hero/layout-01";
 
-const AppCenterTemplate = ({pageContext,location,data }) => {
+const ResourceCenterTemplate = ({pageContext,location,data }) => {
     const { currentPage, numberOfPages } = pageContext;
 
     return (
@@ -36,10 +36,9 @@ const AppCenterTemplate = ({pageContext,location,data }) => {
             <HeroArea data={data.allContentfulPage.nodes[0].content[0]} />
             
             <ListArea 
-                cataLogData={data.allContentfulBaseCatalog.nodes[0].base_catalog}
-                productsData={data.allContentfulProduct.nodes}
-                marketplaceData={data.allContentfulBaseBrand.nodes}
-                rootPage ="/app-center"
+                cataLogData={data.allContentfulAboutContent.nodes}
+                resourceData={data.allContentfulResource.nodes}
+                rootPage ="/resource-center"
                 currentPage = {currentPage}
                 numberOfPages={numberOfPages}
             />
@@ -51,9 +50,9 @@ const AppCenterTemplate = ({pageContext,location,data }) => {
         </Layout>
     );
 };
-// $catalog: String!,$limit:Int!,$skip:Int!
+//
 export const query = graphql`
-    query AppCenterTemplateQuery($language: String!,$limit:Int!,$skip:Int!) {
+    query ResourceCenterTemplateQuery($language: String!,$limit:Int!,$skip:Int!) {
         #多语言
         locales: allLocale(filter: {language: {eq: $language}}) {
             edges {
@@ -76,56 +75,35 @@ export const query = graphql`
             }
             }
         }
-        #查询云平台
-        allContentfulBaseBrand(filter: {node_locale: {eq: $language}, type: {eq: "Marketplace"}}) {
+        #查询资源目录
+        allContentfulAboutContent(filter: {node_locale: {eq: $language}}) {
             nodes {
             id
             key
-            name
+            title
             }
         }
-        allContentfulBaseCatalog(
-            filter: {node_locale: {eq: $language}, key: {eq: "product"}}
-            sort: {fields: catalog___catalog___catalog___position, order: ASC}
-        ) {
-            nodes {
-            base_catalog {
-                id
-                key
-                title
-                product {
-                id
-                }
-                base_catalog {
-                id
-                key
-                title
-                product {
-                    id
-                }
-                }
-            }
-            }
-        }
-        allContentfulProduct(
+        #查询所有资源
+        allContentfulResource(
             filter: {node_locale: {eq: $language}}
             limit: $limit
             skip: $skip
-            sort: {fields: catalog___catalog___product___hot, order: DESC}
         ) {
             nodes {
+            id
+            slug
+            title
+            image:featureImage
+            type {
                 id
                 key
                 title
-                trademark
-                description: summary
-                image: logo {
-                    imageurl
-                }
+            }
             }
         }
+
         #查询当前页面(功能页面：Features)
-        allContentfulPage(filter: {node_locale: {eq: $language}, key: {eq: "AppCenter"}}) {
+        allContentfulPage(filter: {node_locale: {eq: $language}, key: {eq: "ResourceCenter"}}) {
             nodes {
             content {
                 id
@@ -257,4 +235,4 @@ export const query = graphql`
     }
 `;
 
-export default AppCenterTemplate;
+export default ResourceCenterTemplate;

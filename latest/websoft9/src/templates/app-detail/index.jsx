@@ -78,35 +78,7 @@ export const query = graphql`
             slug
             }
         }
-        #查询云平台
-        allContentfulBaseBrand(filter: {node_locale: {eq: $language}, type: {eq: "Marketplace"}}) {
-            nodes {
-            id
-            key
-            name
-            }
-        }
-        allContentfulBaseCatalog(
-            filter: {node_locale: {eq: $language}, top: {eq: false}}
-        ) {
-            nodes {
-            id
-            key
-            title
-            base_catalog {
-                id
-                key
-                title
-                product {
-                    id
-                }
-            }
-            product {
-                id
-            }
-            }
-            
-        }
+
         allContentfulProduct(filter: {node_locale: {eq: $language}, key: {eq: $slug}}) {
             nodes {
                 id
