@@ -90,7 +90,7 @@ const Section = ({ cataLogData,resourceData,currentPage,numberOfPages,rootPage }
                                             title={item.title}
                                             image=
                                             {                                         
-                                                item.image==null ? {src: defaultImage} : {src: item.image.imageurl}
+                                                item.image==null ? {src: defaultImage} : {src: item.image}
                                             }
                                             desc={item.description}
                                             path={`/resource-center/resource/${item.slug}`}

@@ -29,7 +29,7 @@ const ResourceCenterTemplate = ({pageContext,location,data }) => {
 
     return (
         <Layout location={location}>
-            <Seo title="App Center" />
+            <Seo title="Resource Center" />
             <Header shortcutMenuData={data.shortcutMenu.nodes} topMenuData={data.topMenu.nodes} />
         
         <main className="site-wrapper-reveal">

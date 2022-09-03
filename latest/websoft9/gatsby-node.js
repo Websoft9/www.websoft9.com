@@ -93,6 +93,13 @@ exports.createPages = async ({ graphql, actions }) => {
             title
             }
         }
+        #查询所有资源
+        allContentfulResource {
+            nodes {
+            id
+            slug
+            }
+        }
     }
     `);
 
@@ -204,7 +211,8 @@ exports.createPages = async ({ graphql, actions }) => {
     });
 
     const resourceTypes = result.data.allContentfulAboutContent.nodes;     //获取所有资源类别
-    const resourceTypesNumberOfPages = Math.ceil(resourceTypes.length / 2 / postsPerPage); //计算所有资源总记录条数（由于有中英文两种数据，在计算时除2） 
+    const resourceData  = result.data.allContentfulResource.nodes; //获取所有资源
+    const resourceTypesNumberOfPages = Math.ceil(resourceData.length / 2 / postsPerPage); //计算所有资源总记录条数（由于有中英文两种数据，在计算时除2） 
 
     //根据模板对全部资源进行分页
     Array.from({ length: resourceTypesNumberOfPages }).forEach((_, index) => {
@@ -217,7 +225,7 @@ exports.createPages = async ({ graphql, actions }) => {
                 limit: postsPerPage,
                 skip: index * postsPerPage,
                 currentPage,
-                numberOfPages,
+                resourceTypesNumberOfPages,
             },
         });
     });
