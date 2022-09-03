@@ -21,7 +21,7 @@ const AccordionArea = ({ data }) => {
                         </Heading>                
 
                         <StyledAccordion layout={1}>
-                            <Accordion defaultActiveKey={data!=null ? data[0].id:null}>
+                            <Accordion defaultActiveKey={data!=null ? data[0]?.id:null}>
                                 {data?.map((item) => (
                                     <Accordion.Item key={item.id} eventKey={item.id}>
                                         <Accordion.Header>{item.key}</Accordion.Header>
