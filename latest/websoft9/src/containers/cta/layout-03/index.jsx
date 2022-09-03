@@ -90,7 +90,7 @@ const CTAArea = ({ data,resourceData }) => {
 
                         <LegendArea3 title={t("Highlights")} data={ data.highlights }/>
 
-                        <LegendArea2 title={t("Description")} data={ data.description?.childMarkdownRemark.html }/>
+                        <LegendArea2 title={t("Description")} data={ data.description?.childMarkdownRemark?.html }/>
 
                         <Row>
                             <FAQArea  data={ data.faq }/>
