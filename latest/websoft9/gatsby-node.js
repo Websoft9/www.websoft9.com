@@ -152,44 +152,44 @@ exports.createPages = async ({ graphql, actions }) => {
                 })
             })
         }
-        else{           
-            const numberOfPages =catalog.product==null ? 0: Math.ceil(catalog.product.length / postsPerPage);
+        // else{           
+        //     const numberOfPages =catalog.product==null ? 0: Math.ceil(catalog.product.length / postsPerPage);
 
-            if(numberOfPages==0){
-                const currentPage = 1
-                const rootPage =`app-catalog/${catalog.key}`;
-                createPage({
-                    path:`app-catalog/${catalog.key}`,
-                    component: path.resolve('./src/templates/app-catalog/index.jsx'),
-                    context: {
-                        catalog: catalog.key,
-                        limit: postsPerPage,
-                        skip: 0,
-                        currentPage,
-                        numberOfPages,
-                        rootPage,
-                    },
-                })
-            }
+        //     if(numberOfPages==0){
+        //         const currentPage = 1
+        //         const rootPage =`app-catalog/${catalog.key}`;
+        //         createPage({
+        //             path:`app-catalog/${catalog.key}`,
+        //             component: path.resolve('./src/templates/app-catalog/index.jsx'),
+        //             context: {
+        //                 catalog: catalog.key,
+        //                 limit: postsPerPage,
+        //                 skip: 0,
+        //                 currentPage,
+        //                 numberOfPages,
+        //                 rootPage,
+        //             },
+        //         })
+        //     }
             
-            Array.from({ length: numberOfPages }).forEach((_, cataLogIndex)=>{
-                const isFirstPage = cataLogIndex === 0;
-                const currentPage = cataLogIndex + 1;
-                const rootPage = `/app-catalog/${catalog.key}`;
-                createPage({
-                    path: isFirstPage ? `app-catalog/${catalog.key}`:`app-catalog/${catalog.key}/${currentPage}`,
-                    component: path.resolve('./src/templates/app-catalog/index.jsx'),
-                    context: {
-                        catalog: catalog.key,
-                        limit: postsPerPage,
-                        skip: cataLogIndex * postsPerPage,
-                        currentPage,
-                        numberOfPages,
-                        rootPage,
-                    },
-                })
-            })
-        }
+        //     Array.from({ length: numberOfPages }).forEach((_, cataLogIndex)=>{
+        //         const isFirstPage = cataLogIndex === 0;
+        //         const currentPage = cataLogIndex + 1;
+        //         const rootPage = `/app-catalog/${catalog.key}`;
+        //         createPage({
+        //             path: isFirstPage ? `app-catalog/${catalog.key}`:`app-catalog/${catalog.key}/${currentPage}`,
+        //             component: path.resolve('./src/templates/app-catalog/index.jsx'),
+        //             context: {
+        //                 catalog: catalog.key,
+        //                 limit: postsPerPage,
+        //                 skip: cataLogIndex * postsPerPage,
+        //                 currentPage,
+        //                 numberOfPages,
+        //                 rootPage,
+        //             },
+        //         })
+        //     })
+        // }
     })
     
 

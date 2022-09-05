@@ -22,10 +22,10 @@ import Box from '@mui/material/Box';
 import InputLabel from '@mui/material/InputLabel';
 import MenuItem from '@mui/material/MenuItem';
 import FormControl from '@mui/material/FormControl';
-import Pagination from "@components/pagination/layout-02";
+import Pagination from "@components/pagination/layout-01";
 import {Trans, useTranslation } from 'gatsby-plugin-react-i18next';
 
-// 用于所有资源目录
+// 用于显示所有资源目录
 const Section = ({ cataLogData,resourceData,currentPage,numberOfPages,rootPage }) => {
     const { t } = useTranslation();
     // const selectValue = location.toString().split('/').pop();

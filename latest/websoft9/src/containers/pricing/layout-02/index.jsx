@@ -9,6 +9,8 @@ import { SectionTitleType, ItemType } from "@utils/types";
 import { SectionWrap } from "./style";
 
 const PricingArea = ({ data }) => {
+    const keys = Object.keys(data.buttons);
+
     return (
         <SectionWrap>
             <Container>    
@@ -17,12 +19,12 @@ const PricingArea = ({ data }) => {
                     title = { data.headings }
                     subtitle = { data.texts }
                 />
-                <Tabs defaultActiveKey={data.buttons[0].id} layout={2}>
+                <Tabs defaultActiveKey={keys[0].id} layout={2}>
                     {data.buttons.map((key,i) => (
                         <Tab
                             key={key.id}
                             eventKey={key.id}
-                            title={key.content}          
+                            title={key.content}
                         >
                             <Row mt="50px">
                                 {data.features.map((pricing) =>
@@ -41,7 +43,7 @@ const PricingArea = ({ data }) => {
                                                 image={img}
                                                 isFeatured={pricing.subTitle=="true"?true:false}
                                             />
-                                        </Col>   
+                                        </Col>
                                     );
                                 }
                                 )}

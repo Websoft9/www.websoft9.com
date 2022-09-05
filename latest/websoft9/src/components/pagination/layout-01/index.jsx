@@ -22,8 +22,8 @@ const Pagination = ({
     const previousPage =
         currentPage - 1 === 1
             ? rootPage
-            : "/app-center/page/" + (currentPage - 1).toString();
-    const nextPage = "/app-center/page/" + (currentPage + 1).toString();
+            : rootPage+"/page/" + (currentPage - 1).toString();
+    const nextPage = rootPage+"/page/" + (currentPage + 1).toString();
     return (
         <PaginationWrap className={cn(className, "pagination")} {...rest}>
             <PaginationList>
@@ -56,7 +56,7 @@ const Pagination = ({
                         <PaginationItem key={`page-number-${i + 1}`}>
                             <PaginationLink
                                 path={`${
-                                    i === 0 ? rootPage : "/app-center/page/" + (i + 1)
+                                    i === 0 ? rootPage : rootPage+"/page/" + (i + 1)
                                 }`}
                             >
                                 {i + 1}

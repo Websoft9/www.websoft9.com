@@ -97,11 +97,11 @@ const CTAArea = ({ data,resourceData }) => {
                         </Row>
                         <Row style={{paddingLeft:'30px'}}>                           
                             <Heading as="h6" mb="37px" textAlign="left">
-                                {data!=null ? t("Related Applications"):null}
+                                {data?.type[0]?.product.length >0 ? t("Related Applications"):null}
                             </Heading>    
                             {
                                 data?.type[0]?.product && data.type[0].product.map((item) => {
-                                        return (                                   
+                                        return (
                                             <Col
                                                 lg={4}
                                                 md={6}
@@ -122,9 +122,11 @@ const CTAArea = ({ data,resourceData }) => {
                             })}
                         </Row>
                         <Row style={{paddingLeft:'30px'}}>
-                            <Heading as="h6" mb="37px" textAlign="left">
-                                {data!=null ? t("Learning Materials"):null}
-                            </Heading>   
+                            { resourceData && 
+                                <Heading as="h6" mb="37px" textAlign="left">
+                                   {t("Learning Materials")}
+                                </Heading>   
+                            }
                             {resourceData && resourceData.map((feature,i) => {
                                 var image = new Object();
                                 image.src = feature.image;
@@ -209,13 +211,13 @@ const CTAArea = ({ data,resourceData }) => {
                         <Row style={{marginInlineStart:'20px',marginBottom:"20px",width:'200px'}}>
                             <Row>{t("Resource")}</Row>
                             <Row style={{color:"dodgerblue"}}>                                
-                                <Link  to="https://support.websoft9.com/docs/" style={{paddingLeft:'0px',marginLeft:'0px'}}> {t("文档")} </Link>
+                                <Link  to="https://support.websoft9.com/docs/" style={{paddingLeft:'0px',marginLeft:'0px'}}> {t("Documentation")} </Link>
                             </Row>
                             <Row style={{color:"dodgerblue"}}>                               
                                 <Link  to="https://github.com/websoft9" style={{paddingLeft:'0px',marginLeft:'0px'}}> {t("GitHub")} </Link>
                             </Row>
                             <Row style={{color:"dodgerblue"}}>
-                                <Link  to={data.websiteurl} style={{paddingLeft:'0px',marginLeft:'0px'}}> {t("官网")} </Link>
+                                <Link  to={data.websiteurl} style={{paddingLeft:'0px',marginLeft:'0px'}}> {t("Official Website")} </Link>
                             </Row>
                         </Row>
                         <Row style={{marginInlineStart:'20px',marginBottom:"20px",width:'200px'}}>
@@ -229,12 +231,12 @@ const CTAArea = ({ data,resourceData }) => {
                             }
                         </Row>
                         <Row style={{marginInlineStart:'20px',marginBottom:"20px",width:'200px'}}>
-                            <Row>{t("沟通反馈")}</Row>
+                            <Row>{t("Feedback")}</Row>
                             <Row style={{color:"dodgerblue"}}>
-                                <Link  to="/" style={{paddingLeft:'0px',marginLeft:'0px'}}> {t("提交此应用的建议")} </Link>
+                                <Link  to="/" style={{paddingLeft:'0px',marginLeft:'0px'}}> {t("Submit A Suggestion")} </Link>
                             </Row>
                             <Row style={{color:"dodgerblue"}}>
-                                <Link  to="/" style={{paddingLeft:'0px',marginLeft:'0px'}}> {t("获取专业服务")} </Link> 
+                                <Link  to="/" style={{paddingLeft:'0px',marginLeft:'0px'}}> {t("Get Professional Services")} </Link> 
                             </Row>
                         </Row>
                     </Col>

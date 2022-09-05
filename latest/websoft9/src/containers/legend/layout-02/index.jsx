@@ -9,7 +9,6 @@ import Text from "@ui/text";
 import Markdown from "markdown-to-jsx";
 
 const LegendArea = ({ title,data }) => {
-    console.log("数据："+data)
     return(
         <SectionWrap>
             <Container>

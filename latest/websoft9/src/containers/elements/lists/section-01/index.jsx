@@ -90,7 +90,8 @@ const Section = ({ cataLogData,productsData,marketplaceData,currentPage,numberOf
                                             const pnums = item.product!=null?item.product.length:0;
                                             return(
                                                 <ListItemButton  selected={selectedIndex === item.key} onClick={(event) => handleListItemClick(event, item.key)}>
-                                                    <Link  to={`/app-catalog/${item.key}`}> {item.title+"("+pnums+")"} </Link>
+                                                    {/* <Link  to={`/app-catalog/${item.key}`}> {item.title+"("+pnums+")"} </Link> */}
+                                                    <Link> {item.title+"("+pnums+")"} </Link>
                                                 </ListItemButton>
                                             );
                                         }
