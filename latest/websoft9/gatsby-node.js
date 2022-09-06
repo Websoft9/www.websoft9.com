@@ -86,11 +86,14 @@ exports.createPages = async ({ graphql, actions }) => {
             }
         }
         # 查询资源类别
-        allContentfulAboutContent{
+        allContentfulAboutContent {
             nodes {
             id
             key
             title
+            resource {
+                id
+            }
             }
         }
         #查询所有资源
@@ -214,6 +217,51 @@ exports.createPages = async ({ graphql, actions }) => {
     const resourceData  = result.data.allContentfulResource.nodes; //获取所有资源
     const resourceTypesNumberOfPages = Math.ceil(resourceData.length / 2 / postsPerPage); //计算所有资源总记录条数（由于有中英文两种数据，在计算时除2） 
 
+
+    //根据资源分类检索资源并分类
+    resourceTypes.forEach((type,index)=>{
+            const nums  = type.resource == null ? 0 : type.resource.length;  //计算每个类别下的资源数
+            const numberOfPages = Math.ceil(nums / postsPerPage);  //计算总页数
+
+            if(numberOfPages==0){
+                const currentPage = 1
+                const rootPage =`resource-type/${type.key}`;
+                createPage({
+                    path:`resource-type/${type.key}`,
+                    component: path.resolve('./src/templates/resource-type/index.jsx'),
+                    context: {
+                        resourceType: type.key,
+                        limit: postsPerPage,
+                        skip: 0,
+                        currentPage,
+                        numberOfPages,
+                        rootPage,
+                    },
+                })
+            }
+
+            Array.from({ length: numberOfPages }).forEach((_, subIndex)=>{
+                const isFirstPage = subIndex === 0;               
+                const currentPage = subIndex + 1;
+                const rootPage = `/resource-type/${type.key}`;
+    
+                createPage({
+                    path: isFirstPage ? `resource-type/${type.key}`:`resource-type/${type.key}/${currentPage}`,
+                    component: path.resolve('./src/templates/resource-type/index.jsx'),
+                    context: {
+                        resourceType: type.key,
+                        limit: postsPerPage,
+                        skip: subIndex * postsPerPage,
+                        currentPage,
+                        numberOfPages,
+                        rootPage,
+                    },
+                })
+            })
+
+        })
+
+
     //根据模板对全部资源进行分页
     Array.from({ length: resourceTypesNumberOfPages }).forEach((_, index) => {
         const isFirstPage = index === 0;
@@ -231,6 +279,9 @@ exports.createPages = async ({ graphql, actions }) => {
     });
 
 
+    
+
+
     // 根据模板创建产品详情页
     products.forEach((product)=>{
         createPage({
@@ -242,5 +293,14 @@ exports.createPages = async ({ graphql, actions }) => {
         })
     })
 
-    
+    // 根据模板创建资源详情页
+    resourceData.forEach((resource)=>{
+        createPage({
+            path:`resource-center/resource/${resource.slug}`,
+            component:path.resolve('./src/templates/resource-detail/index.jsx'),
+            context:{
+                slug:resource.slug
+            }
+        })
+    })
 }

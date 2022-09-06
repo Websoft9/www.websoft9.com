@@ -22,7 +22,8 @@ import Box from '@mui/material/Box';
 import InputLabel from '@mui/material/InputLabel';
 import MenuItem from '@mui/material/MenuItem';
 import FormControl from '@mui/material/FormControl';
-import Pagination from "@components/pagination/layout-01";
+import Pagination1 from "@components/pagination/layout-01";
+import Pagination2 from "@components/pagination/layout-02";
 import {Trans, useTranslation } from 'gatsby-plugin-react-i18next';
 
 // 用于所有产品页面
@@ -89,9 +90,9 @@ const Section = ({ cataLogData,productsData,marketplaceData,currentPage,numberOf
                                         if(item.base_catalog == null){
                                             const pnums = item.product!=null?item.product.length:0;
                                             return(
-                                                <ListItemButton  selected={selectedIndex === item.key} onClick={(event) => handleListItemClick(event, item.key)}>
-                                                    {/* <Link  to={`/app-catalog/${item.key}`}> {item.title+"("+pnums+")"} </Link> */}
-                                                    <Link> {item.title+"("+pnums+")"} </Link>
+                                                <ListItemButton key={"catalog"+item.id}  selected={selectedIndex === item.key} onClick={(event) => handleListItemClick(event, item.key)}>
+                                                    <Link  to={`/app-catalog/${item.id}`}> {item.title+"("+pnums+")"} </Link>
+                                                    {/* <Link> {item.title+"("+pnums+")"} </Link> */}
                                                 </ListItemButton>
                                             );
                                         }
@@ -109,18 +110,18 @@ const Section = ({ cataLogData,productsData,marketplaceData,currentPage,numberOf
                                                 })
                                             return(
                                                 <>
-                                                    <ListItemButton id={item.key}  onClick={handleClick}>
+                                                    <ListItemButton key={"base_catalog"+item.id}  onClick={handleClick}>
                                                         <ListItemText primary={item.title+"("+subTotal+")"} />
                                                         {open ? <ExpandLess /> : <ExpandMore />}
                                                         {/* {open[item.key] ? <ExpandLess /> : <ExpandMore />} */}
                                                     </ListItemButton>
-                                                    <Collapse in={open} timeout="auto" unmountOnExit>
-                                                        <List  component="div" disablePadding>
+                                                    <Collapse key={"Collapse"+item.id} in={open} timeout="auto" unmountOnExit>
+                                                        <List key={"List"+item.id}  component="div" disablePadding>
                                                         {                                                                                                                    
                                                             item.base_catalog.map((subitem,j)=>{
                                                                 const subpnums = subitem.product!=null?subitem.product.length:0;
                                                                 return (
-                                                                    <ListItemButton  sx={{ pl: 4 }} selected={selectedIndex === subitem.key}
+                                                                    <ListItemButton key={subitem.id+j}  sx={{ pl: 4 }} selected={selectedIndex === subitem.key}
                                                                     onClick={(event) => {handleListItemClick(event, subitem.key);setOpen(false)}}>
                                                                         <Link  to={`/app-catalog/${subitem.key}`}> {subitem.title+"("+subpnums+")"} </Link>
                                                                     </ListItemButton>
@@ -259,7 +260,7 @@ const Section = ({ cataLogData,productsData,marketplaceData,currentPage,numberOf
                                         lg={4}
                                         md={4}
                                         className="box-item"
-                                        key={item.id}
+                                        key={item.key}
                                     >
                                         <BoxImage
                                             title={item.trademark}
@@ -275,7 +276,7 @@ const Section = ({ cataLogData,productsData,marketplaceData,currentPage,numberOf
                             })}
                         </Row>
                         <Row>
-                            {
+                            {/* {
                                 productsData.length > 0 && 
                                 <Pagination
                                     mt="40px"
@@ -283,7 +284,23 @@ const Section = ({ cataLogData,productsData,marketplaceData,currentPage,numberOf
                                     currentPage={currentPage}
                                     numberOfPages={numberOfPages}
                                 />
-                            }
+                            } */}
+                        {                         
+                            productsData.length > 0 && (rootPage == "/app-center" ?
+                            <Pagination1
+                                mt="40px"
+                                rootPage={rootPage}
+                                currentPage={currentPage}
+                                numberOfPages={numberOfPages}
+                            /> 
+                            :
+                            <Pagination2
+                            mt="40px"
+                            rootPage={rootPage}
+                            currentPage={currentPage}
+                            numberOfPages={numberOfPages}
+                            />)
+                        }
                        </Row>
                     </Col>
                 </Row>               

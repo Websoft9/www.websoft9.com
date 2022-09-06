@@ -21,7 +21,7 @@ const LegendArea = ({ title,data }) => {
                             {
                                 data?.map((item)=>{
                                     return (
-                                        <li>{item}</li>
+                                        <li key={item}>{item}</li>
                                     );
                                 })
                             }

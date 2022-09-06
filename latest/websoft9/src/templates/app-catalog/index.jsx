@@ -13,7 +13,7 @@ import ExpandMore from '@mui/icons-material/ExpandMore';
 import {graphql }  from  'gatsby';
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
 import ChevronRightIcon from '@mui/icons-material/ChevronRight';
-import BoxImage from "@components/box-image/layout-01";
+import BoxImage from "@components/box-large-image/layout-02";
 import PropTypes from "prop-types";
 import defaultImage from "@assets/images/default.png";
 import Seo from "@components/seo";
@@ -21,7 +21,7 @@ import Layout from "@layout";
 import Header from "@layout/header/layout-01";
 import Footer from "@layout/footer/layout-02";
 import CtaArea from "@containers/cta/layout-04";
-import ListArea from "@containers/elements/lists/section-02"
+import ListArea from "@containers/elements/lists/section-01"
 import HeroArea from "@containers/hero/layout-01";
 
 const AppCatalogTemplate = ({pageContext,location,data }) => {

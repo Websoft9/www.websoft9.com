@@ -1,8 +1,8 @@
 {
-  "name": "websoft9.new",
+  "name": "websoft9",
   "version": "1.0.0",
   "private": true,
-  "description": "websoft9.new",
+  "description": "websoft9",
   "author": "websoft9",
   "keywords": [
     "gatsby"
@@ -65,7 +65,9 @@
     "swiper": "^8.0.7",
     "tinycolor2": "^1.4.2",
     "video-react": "^0.15.0",
-    "vivus": "^0.4.6"
+    "vivus": "^0.4.6",
+    "markdown-navbar":"^1.4.3",
+    "react-markdown":"^8.0.3"
   },
   "devDependencies": {
     "@babel/core": "7.13.15",

@@ -24,8 +24,8 @@ import CtaArea from "@containers/cta/layout-04";
 import ResourceArea from "@containers/elements/lists/section-03"
 import HeroArea from "@containers/hero/layout-01";
 
-const ResourceCenterTemplate = ({pageContext,location,data }) => {
-    const { currentPage, resourceTypesNumberOfPages } = pageContext;
+const ResourceTypeTemplate = ({pageContext,location,data }) => {
+    const { currentPage, numberOfPages,rootPage } = pageContext;
 
     return (
         <Layout location={location}>
@@ -35,12 +35,12 @@ const ResourceCenterTemplate = ({pageContext,location,data }) => {
         <main className="site-wrapper-reveal">
             <HeroArea data={data.allContentfulPage.nodes[0].content[0]} />
             
-            <ResourceArea 
+            <ResourceArea
                 cataLogData={data.allContentfulAboutContent.nodes}
                 resourceData={data.allContentfulResource.nodes}
-                rootPage ="/resource-center"
+                rootPage = {rootPage}
                 currentPage = {currentPage}
-                numberOfPages={resourceTypesNumberOfPages}
+                numberOfPages={numberOfPages}
             />
 
             <CtaArea data={ data.allContentfulPage.nodes[0].content[1] } />
@@ -52,7 +52,7 @@ const ResourceCenterTemplate = ({pageContext,location,data }) => {
 };
 //
 export const query = graphql`
-    query ResourceCenterTemplateQuery($language: String!,$limit:Int!,$skip:Int!) {
+    query ResourceTypeTemplateQuery($language: String!,$limit:Int!,$skip:Int!,$resourceType:String! ) {
         #多语言
         locales: allLocale(filter: {language: {eq: $language}}) {
             edges {
@@ -85,7 +85,7 @@ export const query = graphql`
         }
         #查询所有资源
         allContentfulResource(
-            filter: {node_locale: {eq: $language}}
+            filter: {node_locale: {eq: $language}, type: {key: {eq: $resourceType}}}
             limit: $limit
             skip: $skip
         ) {
@@ -93,7 +93,7 @@ export const query = graphql`
             id
             slug
             title
-            image:featureImage
+            image: featureImage
             type {
                 id
                 key
@@ -235,4 +235,4 @@ export const query = graphql`
     }
 `;
 
-export default ResourceCenterTemplate;
+export default ResourceTypeTemplate;

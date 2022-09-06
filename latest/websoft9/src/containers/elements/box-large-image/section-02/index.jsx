@@ -5,6 +5,7 @@ import { Container, Row, Col } from "@ui/wrapper";
 import BoxImage from "@components/box-large-image/layout-02";
 import { SectionWrap } from "./style";
 import {Trans, useTranslation} from 'gatsby-plugin-react-i18next';
+import defaultImage from "@assets/images/default.png";
 
 const BoxSection = ({data}) => {
     const { t } = useTranslation();
@@ -31,7 +32,11 @@ const BoxSection = ({data}) => {
                                 key={feature.id+i}
                             >
                                 <BoxImage
-                                    image={image}
+                                    // image={image}
+                                    image=
+                                    {                                         
+                                        feature.image==null ? {src: defaultImage} : {src: image}
+                                    }
                                     title={feature.title}
                                     category={feature.type.title}
                                     // desc={feature.subTitle}

@@ -19,7 +19,6 @@ import Heading from "@ui/heading";
 import LegendArea1 from "@containers/legend/layout-01";
 import LegendArea2 from "@containers/legend/layout-02";
 import LegendArea3 from "@containers/legend/layout-03";
-import TabArea from "@containers/elements/tabs/section-02";
 
 const CTAArea = ({ data,resourceData }) => {
     const { t } = useTranslation();
@@ -50,17 +49,18 @@ const CTAArea = ({ data,resourceData }) => {
                 <Row
                     alignItems="center"
                     textAlign={["center", null, null, "left"]}
+                    key="row-1"
                 >
                     <Col xl={3}>
-                        <HeroTextBox>                           
+                        <HeroTextBox>
                                 <ImageBoxTwo>
                                     <Image src={data.image==null?defaultImage:data.image.imageurl} onError={(e)=>{e.target.onerror=null;e.target.src={defaultImage}}} />
                                 </ImageBoxTwo>
                         </HeroTextBox>
                     </Col>
                     <Col xl={7}>
-                        <HeroTextBox style={ {paddingLeft:'0px',marginLeft:'0px',}}>                          
-                            <StyledSubtitle as="h3">
+                        <HeroTextBox style={ {paddingLeft:'0px',marginLeft:'0px',}}>
+                            <StyledSubtitle as="h5">
                                 {data.trademark}
                             </StyledSubtitle>
                                                     
@@ -75,13 +75,13 @@ const CTAArea = ({ data,resourceData }) => {
                     </Col>
                     <Col xl={2}  className="text-center">
                         <Button  m="7px" >{t("Get it Now")}</Button>
-                    </Col>                   
+                    </Col>
                 </Row>
                 <Line mt="40px" mb="40px" borderWidth="1px" style={{marginLeft:"30px"}} />
-                <Row>
+                <Row key="row-2">
                     <Col xl={10}>
-                        <FullWideSlider data={ data.screenshots}/>
-
+                        { data?.screenshots && <FullWideSlider data={ data.screenshots}/> }
+                        
                         {/* <Row>
                             <TabArea dataOverview={data.overview?.overview} dataHighlights={data.highlights} dataDescription={data.description?.childMarkdownRemark.html}/>
                         </Row> */}
@@ -92,13 +92,15 @@ const CTAArea = ({ data,resourceData }) => {
 
                         <LegendArea2 title={t("Description")} data={ data.description?.childMarkdownRemark?.html }/>
 
-                        <Row>
+                        <Row key="row-1-1">
                             <FAQArea  data={ data.faq }/>
                         </Row>
-                        <Row style={{paddingLeft:'30px'}}>                           
-                            <Heading as="h6" mb="37px" textAlign="left">
-                                {data?.type[0]?.product.length >0 ? t("Related Applications"):null}
-                            </Heading>    
+                        <Row style={{paddingLeft:'30px'}} key="row-1-2">     
+                            {data?.type[0]?.product.length >0 && 
+                                <Heading as="h6" mb="37px" textAlign="left">
+                                    {t("Related Applications")}
+                                </Heading>
+                            }
                             {
                                 data?.type[0]?.product && data.type[0].product.map((item) => {
                                         return (
@@ -121,10 +123,11 @@ const CTAArea = ({ data,resourceData }) => {
                                         );
                             })}
                         </Row>
-                        <Row style={{paddingLeft:'30px'}}>
-                            { resourceData && 
+                        <Row style={{paddingLeft:'30px'}} key="row-1-3">
+                            {
+                                resourceData.length >0 && 
                                 <Heading as="h6" mb="37px" textAlign="left">
-                                   {t("Learning Materials")}
+                                    {t("Learning Materials")}
                                 </Heading>   
                             }
                             {resourceData && resourceData.map((feature,i) => {
@@ -157,7 +160,7 @@ const CTAArea = ({ data,resourceData }) => {
                             {
                                 data?.type && data.type.map((item)=>{
                                     return (
-                                        <Row style={{color:"dodgerblue"}}>                                           
+                                        <Row style={{color:"dodgerblue"}} key={item.id}>                                           
                                             <Link to={`/app-center/${item.key}`} style={{paddingLeft:'0px',marginLeft:'0px'}}>{item.title} </Link>
                                         </Row>
                                     );
@@ -169,7 +172,7 @@ const CTAArea = ({ data,resourceData }) => {
                             {
                                  data?.os && data.os.map((item)=>{
                                     return (
-                                        <Row style={{color:"dodgerblue"}}>{item}</Row>
+                                        <Row style={{color:"dodgerblue"}} key={item} >{item}</Row>
                                     );
                                 })
                             }
@@ -183,7 +186,7 @@ const CTAArea = ({ data,resourceData }) => {
                             {
                                 data?.supportLanguage && data.supportLanguage.map((item)=>{
                                     return (
-                                        <Row style={{color:"dodgerblue"}}>{item}</Row>
+                                        <Row style={{color:"dodgerblue"}} key={item}>{item}</Row>
                                     );
                                 })
                             }
@@ -193,7 +196,7 @@ const CTAArea = ({ data,resourceData }) => {
                             {
                                 data?.program && data.program.map((item)=>{
                                     return (
-                                        <Row style={{color:"dodgerblue"}}>{item.name}</Row>
+                                        <Row style={{color:"dodgerblue"}} key={item}>{item.name}</Row>
                                     );
                                 })
                             }
@@ -203,7 +206,7 @@ const CTAArea = ({ data,resourceData }) => {
                             {
                                 data?.solution && data.solution.map((item)=>{
                                     return (
-                                        <Row style={{color:"dodgerblue"}}>{item.title}</Row>
+                                        <Row style={{color:"dodgerblue"}} key={item.id}>{item.title}</Row>
                                     );
                                 })
                             }
@@ -225,7 +228,7 @@ const CTAArea = ({ data,resourceData }) => {
                             {
                                 data?.userType && data.userType.map((item)=>{
                                     return (
-                                        <Row style={{color:"dodgerblue"}}>{item.title}</Row>
+                                        <Row style={{color:"dodgerblue"}} key={item.id}>{item.title}</Row>
                                     );
                                 })
                             }

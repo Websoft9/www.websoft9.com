@@ -21,7 +21,7 @@ import Layout from "@layout";
 import Header from "@layout/header/layout-01";
 import Footer from "@layout/footer/layout-02";
 import HeroArea from "@containers/hero/layout-01";
-import ProductDetailArea from "@containers/cta/layout-03";
+import ResourceDetailArea from "@containers/cta/layout-05";
 
 const ResourceDetailTemplate = ({ location,data }) => {
     return (
@@ -30,17 +30,16 @@ const ResourceDetailTemplate = ({ location,data }) => {
             <Header shortcutMenuData= { data.shortcutMenu.nodes } topMenuData={ data.topMenu.nodes } />
         
         <main className="site-wrapper-reveal">
-            {/* <HeroArea data={data.allContentfulPage.nodes[0].content[0]} /> */}
-            {/* <ProductDetailArea data={ data.allContentfulProduct.nodes[0] } resourceData={data.allContentfulResource.nodes }  /> */}
+             <ResourceDetailArea data={ data.allContentfulResource.nodes[0] } /> 
 
-        </main>      
+        </main>
         <Footer data={ data.BottomMenu.nodes } siteData={ data.site.siteMetadata } footerMenuData={data.FooterMenu.nodes} />
         </Layout>
     );
 };
 
 export const query = graphql`
-    query ResourceDetailQuery($language: String!) {
+    query ResourceDetailQuery($language: String!,$slug:String!) {
         #多语言
         locales: allLocale(filter: {language: {eq: $language}}) {
             edges {
@@ -63,7 +62,63 @@ export const query = graphql`
             }
             }
         }
-
+        #查询资源详情
+        allContentfulResource(filter: {node_locale: {eq: $language}, slug: {eq: $slug}}) {
+            nodes {
+            id
+            slug
+            title
+            image: featureImage
+            type {
+                id
+                key
+                title
+            }
+            author {
+                title
+                fullName
+                pictureUrl
+            }
+            content {
+                id
+                content
+                childMarkdownRemark {
+                    html
+                }
+            }
+            persons {
+                id
+                title
+                reviews
+                pictureUrl
+                fullName
+            }
+            customers {
+                id
+                name
+                siteurl
+                logo {
+                imageurl
+                }
+            }
+            products {
+                id
+                key
+                trademark
+            }
+            solutions {
+                id
+                title
+                slug
+            }
+            tags {
+                id
+                name
+                keyword
+            }
+            
+            }
+        }
 
         #查询顶部快捷菜单
         shortcutMenu: allContentfulMenu(

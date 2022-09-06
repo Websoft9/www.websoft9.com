@@ -90,6 +90,7 @@ export const query = graphql`
                     imageurl
                 }
                 type: catalog {
+                    id
                     key
                     title
                     product {
@@ -103,21 +104,26 @@ export const query = graphql`
                     }
                 }
                 screenshots{
+                    id
                     key
                     value
                 }
                 os
                 supportLanguage
                 program {
+                    id
                     name
                 }
                 userType {
+                    id
                     title
                 }
                 solution {
+                    id
                     title
                 }
-                license {        
+                license {   
+                    id     
                     key
                 }
                 websiteurl

@@ -14,15 +14,15 @@ import ExpandMore from '@mui/icons-material/ExpandMore';
 import { Link,graphql }  from  'gatsby';
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
 import ChevronRightIcon from '@mui/icons-material/ChevronRight';
-import BoxImage from "@components/box-image/layout-01";
-import PropTypes from "prop-types";
+import BoxImage from "@components/box-large-image/layout-02";
 import defaultImage from "@assets/images/default.png";
 import Select from '@mui/material/Select';
 import Box from '@mui/material/Box';
 import InputLabel from '@mui/material/InputLabel';
 import MenuItem from '@mui/material/MenuItem';
 import FormControl from '@mui/material/FormControl';
-import Pagination from "@components/pagination/layout-01";
+import Pagination1 from "@components/pagination/layout-01";
+import Pagination2 from "@components/pagination/layout-02";
 import {Trans, useTranslation } from 'gatsby-plugin-react-i18next';
 
 // 用于显示所有资源目录
@@ -34,7 +34,6 @@ const Section = ({ cataLogData,resourceData,currentPage,numberOfPages,rootPage }
     
     const handleListItemClick = (event, index) => {
       //setSelectedIndex(index);
-    //   event.currentTarget.parentNode.parentNode.parentNode.parentNode.previousSibling.click()
     };
     return (
         <SectionWrap>
@@ -50,16 +49,16 @@ const Section = ({ cataLogData,resourceData,currentPage,numberOfPages,rootPage }
                                 component="nav"
                                 aria-labelledby="nested-list-subheader"
                                 >
-                                <ListItemButton key="allproduct" selected={selectedIndex === null} onClick={(event) => handleListItemClick(event, null)}>                                   
-                                    <Link to={`/app-resource`}>{t("ALL")}</Link>
+                                <ListItemButton key="allResource" selected={selectedIndex === null} onClick={(event) => handleListItemClick(event, null)}>                                   
+                                    <Link to={`/resource-center`}>{t("ALL")}</Link>
                                 </ListItemButton>
                                 {                                    
                                     cataLogData.map((item,i)=>{
                                         return(
                                             <ListItemButton  selected={selectedIndex === item.key} onClick={(event) => handleListItemClick(event, item.key)}>
-                                                <Link  to={`/resource-center/${item.key}`}> {item.title} </Link>
+                                                <Link  to={`/resource-type/${item.key}`}> {item.title} </Link>
                                             </ListItemButton>
-                                        );                                   
+                                        );
                                     })
                                 }
                             </List>
@@ -73,9 +72,10 @@ const Section = ({ cataLogData,resourceData,currentPage,numberOfPages,rootPage }
                                 return (
                                     <Col
                                         lg={4}
-                                        md={4}
+                                        md={6}
                                         className="box-item"
                                         key={item.id}
+                                        style={{marginBlockEnd:"20px",marginBlockStart:"20px"}}
                                     >
                                         <BoxImage
                                             title={item.title}
@@ -83,7 +83,7 @@ const Section = ({ cataLogData,resourceData,currentPage,numberOfPages,rootPage }
                                             {                                         
                                                 item.image==null ? {src: defaultImage} : {src: item.image}
                                             }
-                                            desc={item.description}
+                                            category={item.type.title}
                                             path={`/resource-center/resource/${item.slug}`}
                                         />
                                     </Col>
@@ -91,14 +91,21 @@ const Section = ({ cataLogData,resourceData,currentPage,numberOfPages,rootPage }
                             })}
                         </Row>
                         <Row>
-                        {
-                            resourceData.length > 0 && 
-                            <Pagination
+                        {                         
+                            resourceData.length > 0 && (rootPage == "/resource-center" ?
+                            <Pagination1
                                 mt="40px"
                                 rootPage={rootPage}
                                 currentPage={currentPage}
                                 numberOfPages={numberOfPages}
-                                />
+                            /> 
+                            :
+                            <Pagination2
+                            mt="40px"
+                            rootPage={rootPage}
+                            currentPage={currentPage}
+                            numberOfPages={numberOfPages}
+                            />)
                         }
                        </Row>
                     </Col>
