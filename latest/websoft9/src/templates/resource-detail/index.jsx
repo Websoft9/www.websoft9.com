@@ -24,13 +24,16 @@ import HeroArea from "@containers/hero/layout-01";
 import ResourceDetailArea from "@containers/cta/layout-05";
 
 const ResourceDetailTemplate = ({ location,data }) => {
+
+    const resourceType = data.allContentfulResource.nodes[0].type.key;
+
     return (
         <Layout location={location}>
             <Seo title="App Detail" />
             <Header shortcutMenuData= { data.shortcutMenu.nodes } topMenuData={ data.topMenu.nodes } />
         
         <main className="site-wrapper-reveal">
-             <ResourceDetailArea data={ data.allContentfulResource.nodes[0] } /> 
+             <ResourceDetailArea data={ data.allContentfulResource.nodes[0]} relatedReading={data.RelatedReading.nodes} /> 
 
         </main>
         <Footer data={ data.BottomMenu.nodes } siteData={ data.site.siteMetadata } footerMenuData={data.FooterMenu.nodes} />
@@ -58,6 +61,24 @@ export const query = graphql`
                 icon
                 id
                 link
+                title
+            }
+            }
+        }
+        #查询相关阅读
+        RelatedReading:allContentfulResource(
+            filter: {node_locale: {eq: $language}}
+            limit: 4
+            sort: {fields: time, order: DESC}
+        ) {
+            nodes {
+            id
+            slug
+            title
+            image:featureImage
+            type {
+                id
+                key
                 title
             }
             }
@@ -90,7 +111,7 @@ export const query = graphql`
                 id
                 title
                 reviews
-                pictureUrl
+                image:pictureUrl
                 fullName
             }
             customers {
@@ -116,7 +137,7 @@ export const query = graphql`
                 name
                 keyword
             }
-            
+            time
             }
         }
 

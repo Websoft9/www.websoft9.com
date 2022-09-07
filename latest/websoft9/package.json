@@ -67,7 +67,8 @@
     "video-react": "^0.15.0",
     "vivus": "^0.4.6",
     "markdown-navbar":"^1.4.3",
-    "react-markdown":"^8.0.3"
+    "react-markdown":"^8.0.3",
+    "remark-gfm":"^3.0.1"
   },
   "devDependencies": {
     "@babel/core": "7.13.15",

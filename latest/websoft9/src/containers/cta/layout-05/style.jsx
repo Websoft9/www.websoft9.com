@@ -66,6 +66,15 @@ export const ImageBoxTwo = styled.div`
     z-index: 1;
 `;
 
+export const ImageBoxOne = styled.div`
+    position: relative;
+    z-index: 1;
+    img{
+        width:360px;
+        height:280px;
+    }
+`;
+
 export const TestimonialRating = styled.div`
     margin-block-end: 10px;
     text-align: start;
@@ -131,3 +140,31 @@ export const AuthorRole = styled.span`
         padding: 0 5px;
     }
 `;
+
+export const NavContainer = styled.div`
+    position:fixed;
+    z-index:999;
+    background-color: #fff;
+    border-radius: 5px;
+    border: 1px solid #eee;
+    box-shadow: 0 0 8px 0 rgba(0, 0, 0, 0.1);
+    transform: translate(0, 0);
+    transition: transform 500ms ease;
+    font-size:15px;
+`
+
+export const MarkdownStyle = styled.div`
+    h1 {font-size:34px};
+    h2 {font-size:24px};
+    h3 {font-size:18px};
+    ul {
+        list-style-type:disc;
+        list-style-position:inside;
+    }
+    table{
+        border:solid #000 1px; 
+        td {
+            border:solid #000 1px;
+        }
+    }
+`
