@@ -101,6 +101,9 @@ exports.createPages = async ({ graphql, actions }) => {
             nodes {
             id
             slug
+            type {
+                key
+            }
             }
         }
     }
@@ -155,44 +158,6 @@ exports.createPages = async ({ graphql, actions }) => {
                 })
             })
         }
-        // else{           
-        //     const numberOfPages =catalog.product==null ? 0: Math.ceil(catalog.product.length / postsPerPage);
-
-        //     if(numberOfPages==0){
-        //         const currentPage = 1
-        //         const rootPage =`app-catalog/${catalog.key}`;
-        //         createPage({
-        //             path:`app-catalog/${catalog.key}`,
-        //             component: path.resolve('./src/templates/app-catalog/index.jsx'),
-        //             context: {
-        //                 catalog: catalog.key,
-        //                 limit: postsPerPage,
-        //                 skip: 0,
-        //                 currentPage,
-        //                 numberOfPages,
-        //                 rootPage,
-        //             },
-        //         })
-        //     }
-            
-        //     Array.from({ length: numberOfPages }).forEach((_, cataLogIndex)=>{
-        //         const isFirstPage = cataLogIndex === 0;
-        //         const currentPage = cataLogIndex + 1;
-        //         const rootPage = `/app-catalog/${catalog.key}`;
-        //         createPage({
-        //             path: isFirstPage ? `app-catalog/${catalog.key}`:`app-catalog/${catalog.key}/${currentPage}`,
-        //             component: path.resolve('./src/templates/app-catalog/index.jsx'),
-        //             context: {
-        //                 catalog: catalog.key,
-        //                 limit: postsPerPage,
-        //                 skip: cataLogIndex * postsPerPage,
-        //                 currentPage,
-        //                 numberOfPages,
-        //                 rootPage,
-        //             },
-        //         })
-        //     })
-        // }
     })
     
 
@@ -214,11 +179,8 @@ exports.createPages = async ({ graphql, actions }) => {
     });
 
     const resourceTypes = result.data.allContentfulAboutContent.nodes;     //获取所有资源类别
-    const resourceData  = result.data.allContentfulResource.nodes; //获取所有资源
-    const resourceTypesNumberOfPages = Math.ceil(resourceData.length / 2 / postsPerPage); //计算所有资源总记录条数（由于有中英文两种数据，在计算时除2） 
 
-
-    //根据资源分类检索资源并分类
+    //根据资源分类检索资源并分页
     resourceTypes.forEach((type,index)=>{
             const nums  = type.resource == null ? 0 : type.resource.length;  //计算每个类别下的资源数
             const numberOfPages = Math.ceil(nums / postsPerPage);  //计算总页数
@@ -262,6 +224,21 @@ exports.createPages = async ({ graphql, actions }) => {
         })
 
 
+
+    // 根据模板创建产品详情页
+    products.forEach((product)=>{
+        createPage({
+            path:`app-center/product/${product.key}`,
+            component:path.resolve('./src/templates/app-detail/index.jsx'),
+            context:{
+                slug:product.key
+            }
+        })
+    })
+
+    const resourceData  = result.data.allContentfulResource.nodes; //获取所有资源
+    const resourceTypesNumberOfPages = Math.ceil(resourceData.length / 2 / postsPerPage); //计算所有资源总记录条数（由于有中英文两种数据，在计算时除2） 
+
     //根据模板对全部资源进行分页
     Array.from({ length: resourceTypesNumberOfPages }).forEach((_, index) => {
         const isFirstPage = index === 0;
@@ -278,29 +255,39 @@ exports.createPages = async ({ graphql, actions }) => {
         });
     });
 
-
-    
-
-
-    // 根据模板创建产品详情页
-    products.forEach((product)=>{
-        createPage({
-            path:`app-center/product/${product.key}`,
-            component:path.resolve('./src/templates/app-detail/index.jsx'),
-            context:{
-                slug:product.key
-            }
-        })
-    })
-
     // 根据模板创建资源详情页
     resourceData.forEach((resource)=>{
-        createPage({
-            path:`resource-center/resource/${resource.slug}`,
-            component:path.resolve('./src/templates/resource-detail/index.jsx'),
-            context:{
-                slug:resource.slug
-            }
-        })
+        if(resource.type.key == "solution"){
+            createPage({
+                path:`resource-center/resource/${resource.slug}`,
+                component:path.resolve('./src/templates/solution-detail/index.jsx'),
+                context:{
+                    slug:resource.slug
+                }
+            })
+        }
+        else
+        {
+            createPage({
+                path:`resource-center/resource/${resource.slug}`,
+                component:path.resolve('./src/templates/resource-detail/index.jsx'),
+                context:{
+                    slug:resource.slug
+                }
+            })
+        }
     })
+
+    let soluationData  = result.data.allContentfulResource.nodes.filter(data=>data.type.key == "solution" ); //获取所有解决方案
+    //根据模板创建解决方案详情页
+    soluationData.forEach((soluation)=>{
+        // createPage({
+        //     path:`resource-center/resource/${resource.slug}`,
+        //     component:path.resolve('./src/templates/resource-detail/index.jsx'),
+        //     context:{
+        //         slug:resource.slug
+        //     }
+        // })
+    })
+
 }

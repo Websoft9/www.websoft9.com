@@ -150,6 +150,12 @@ module.exports = {
       }
     },
     {
+      resolve: `gatsby-transformer-remark`,
+      options: {
+        plugins: [`gatsby-remark-responsive-iframe`],
+      },
+    },
+    {
       resolve: `gatsby-plugin-react-i18next`,
       options: {
         localeJsonSourceName: `locale`,
@@ -164,15 +170,15 @@ module.exports = {
           nsSeparator: false
         },
         pages: [
-          {
-            matchPath: '/:lang?/blog/:uid',
-            getLanguageFromPath: true,
-            excludeLanguages: ['es']
-          },
-          {
-            matchPath: '/preview',
-            languages: ['en']
-          }
+          // {
+          //   matchPath: '/:lang?/blog/:uid',
+          //   getLanguageFromPath: true,
+          //   excludeLanguages: ['es']
+          // },
+          // {
+          //   matchPath: '/preview',
+          //   languages: ['en']
+          // }
         ]
       }
     },

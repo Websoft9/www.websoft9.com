@@ -33,29 +33,20 @@ const HeroArea = ({ data }) => {
                             {data?.texts && (
                                 <Text>{data.texts}</Text>
                             )}
-                            {/* {data?.buttons?.map(
-                                ({id, path, content, ...rest }) => (
+                            {
+                                data.buttons &&                            
+                                <ReadMoreBtn>
                                     <Button
-                                        key={id}
-                                        m="10px"
-                                        size="small"
-                                        path={path}
+                                        icon="far fa-long-arrow-right"
+                                        path={data.buttons[0].path}
+                                        variant="texted"
+                                        icondistance="4px"
+                                        fontWeight={500}
                                     >
-                                    {content}
-                                </Button>
-                                )
-                            )} */}
-                            <ReadMoreBtn>
-                                <Button
-                                    icon="far fa-long-arrow-right"
-                                    path={data.buttons[0].path}
-                                    variant="texted"
-                                    icondistance="4px"
-                                    fontWeight={500}
-                                >
-                                    {data.buttons[0].content}
-                                </Button>
-                            </ReadMoreBtn>
+                                        {data.buttons[0].content}
+                                    </Button>
+                                </ReadMoreBtn>
+                            }
                         </HeroTextBox>
                     </Col>
                     <Col md={6}>

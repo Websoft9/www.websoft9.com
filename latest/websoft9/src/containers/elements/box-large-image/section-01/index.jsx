@@ -7,7 +7,7 @@ import { SectionWrap } from "./style";
 import {Trans, useTranslation} from 'gatsby-plugin-react-i18next';
 import defaultImage from "@assets/images/default.png";
 
-const BoxSection = ({data}) => {
+const BoxSection = ({dataTitle,data}) => {
     const { t } = useTranslation();
     return (
         <SectionWrap>
@@ -15,15 +15,15 @@ const BoxSection = ({data}) => {
                 <Row>
                     <Col xl={12}>
                         <SectionTitle
-                            subtitle={data.texts}
-                            title={data.headings}
+                            subtitle={dataTitle.texts}
+                            title={dataTitle.headings}
                         />
                     </Col>
                 </Row>
                 <Row>
-                    {data.features && data.features.map((feature,i) => {
+                    {data && data.map((feature,i) => {
                         var image = new Object();
-                        image.src = feature.image;
+                        image.src = feature.featureImage;
                         return (
                             <Col
                                 lg={4}
@@ -33,14 +33,9 @@ const BoxSection = ({data}) => {
                             >
                                 <BoxImage
                                     image={image}
-                                    // image=
-                                    // {                                         
-                                    //     feature.image==null ? {src: defaultImage} : {src: image}
-                                    // }
                                     title={feature.title}
-                                    category={feature.type.title}
-                                    // desc={feature.subTitle}
-                                    path={feature.slug}
+                                    desc={feature.subTitle}
+                                    path={"resource-center/resource/"+feature.slug}
                                 />
                             </Col>
                         );

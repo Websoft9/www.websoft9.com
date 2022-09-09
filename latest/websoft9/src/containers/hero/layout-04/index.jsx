@@ -42,17 +42,20 @@ const HeroArea = ({ data }) => {
                             {data?.texts && (
                                 <Text>{data.texts}</Text>
                             )}
-                            <ReadMoreBtn>
-                                <Button
-                                    icon="far fa-long-arrow-right"
-                                    path={data.buttons[0].path}
-                                    variant="texted"
-                                    icondistance="4px"
-                                    fontWeight={500}
-                                >
-                                    {data.buttons[0].content}
-                                </Button>
-                            </ReadMoreBtn>
+                            {
+                                data?.buttons && 
+                                <ReadMoreBtn>
+                                    <Button
+                                        icon="far fa-long-arrow-right"
+                                        path={data.buttons[0].path}
+                                        variant="texted"
+                                        icondistance="4px"
+                                        fontWeight={500}
+                                    >
+                                        {data.buttons[0].content}
+                                    </Button>
+                                </ReadMoreBtn>
+                            }
                         </ImageBoxWrap>
                     </Col>
 

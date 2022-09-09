@@ -68,7 +68,8 @@
     "vivus": "^0.4.6",
     "markdown-navbar":"^1.4.3",
     "react-markdown":"^8.0.3",
-    "remark-gfm":"^3.0.1"
+    "remark-gfm":"^3.0.1",
+    "gatsby-remark-responsive-iframe":"^5.22.0"
   },
   "devDependencies": {
     "@babel/core": "7.13.15",

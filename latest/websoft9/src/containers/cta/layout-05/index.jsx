@@ -32,6 +32,7 @@ import "markdown-navbar/dist/navbar.css";
 import remarkGfm from 'remark-gfm'
 import TestimonialArea from "@containers/elements/testimonials/section-02";
 
+//用于显示资源详情页
 const CTAArea = ({ data,relatedReading }) => {
     const { t } = useTranslation();
 
@@ -165,8 +166,8 @@ const CTAArea = ({ data,relatedReading }) => {
                     {
                         data.persons!=null && 
                         <>
-                        <TestimonialArea data={data.persons[0]}  />
-                        <Line mt="40px" mb="40px" borderWidth="1px" />
+                            <TestimonialArea data={data.persons[0]}  />
+                            <Line mt="40px" mb="40px" borderWidth="1px" />
                         </>
                     }                         
                 </Row>

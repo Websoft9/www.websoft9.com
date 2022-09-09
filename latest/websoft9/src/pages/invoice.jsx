@@ -1,49 +1,27 @@
 import React from "react";
-import { Container, Row, Col } from "react-bootstrap";
-import Heading from "@ui/heading";
-import { SectionWrap, ListGroupWrap } from "./style";
-import ProductArea from "@containers/elements/box-image/section-01";
-import List from '@mui/material/List';
-import ListItemButton from '@mui/material/ListItemButton';
-import ListItemText from '@mui/material/ListItemText';
-import Collapse from '@mui/material/Collapse';
-import InboxIcon from '@mui/icons-material/MoveToInbox';
-import ExpandLess from '@mui/icons-material/ExpandLess';
-import ExpandMore from '@mui/icons-material/ExpandMore';
 import {graphql }  from  'gatsby';
-import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
-import ChevronRightIcon from '@mui/icons-material/ChevronRight';
-import BoxImage from "@components/box-image/layout-01";
-import PropTypes from "prop-types";
-import defaultImage from "@assets/images/default.png";
 import Seo from "@components/seo";
 import Layout from "@layout";
 import Header from "@layout/header/layout-01";
 import Footer from "@layout/footer/layout-02";
 import CtaArea from "@containers/cta/layout-04";
-import ListArea from "@containers/elements/lists/section-01"
+import ResourceArea from "@containers/elements/lists/section-03"
 import HeroArea from "@containers/hero/layout-01";
+import PageHeader from "@containers/page-header/layout-02";
+import IframeArea from "@containers/iframe"
 
-const AppCenterTemplate = ({pageContext,location,data }) => {
-    const { currentPage, numberOfPages } = pageContext;
+const InvoicePage = ({pageContext,location,data }) => {
+    const { currentPage, resourceTypesNumberOfPages } = pageContext;
 
     return (
         <Layout location={location}>
-            <Seo title="App Center" />
+            <Seo title="Invoice" />
             <Header shortcutMenuData={data.shortcutMenu.nodes} topMenuData={data.topMenu.nodes} />
         
         <main className="site-wrapper-reveal">
-            <HeroArea data={data.allContentfulPage.nodes[0].content[0]} />
-
+            <PageHeader pageContext={pageContext} location={location} title="开具发票" />
             
-            <ListArea 
-                cataLogData={data.allContentfulBaseCatalog.nodes[0].base_catalog}
-                productsData={data.allContentfulProduct.nodes}
-                marketplaceData={data.allContentfulBaseBrand.nodes}
-                rootPage ="/app-center"
-                currentPage = {currentPage}
-                numberOfPages={numberOfPages}
-            />
+            <IframeArea data={ data.allContentfulPage.nodes[0].content[0]?.link?.[0].value } width="1200px" height="1000px" />
 
             <CtaArea data={ data.allContentfulPage.nodes[0].content[1] } />
         </main>
@@ -52,9 +30,9 @@ const AppCenterTemplate = ({pageContext,location,data }) => {
         </Layout>
     );
 };
-// $catalog: String!,$limit:Int!,$skip:Int!
+//
 export const query = graphql`
-    query AppCenterTemplateQuery($language: String!,$limit:Int!,$skip:Int!) {
+    query InvoicePageQuery($language: String!) {
         #多语言
         locales: allLocale(filter: {language: {eq: $language}}) {
             edges {
@@ -77,100 +55,32 @@ export const query = graphql`
             }
             }
         }
-        #查询云平台
-        allContentfulBaseBrand(filter: {node_locale: {eq: $language}, type: {eq: "Marketplace"}}) {
+        #查询资源目录
+        allContentfulAboutContent(filter: {node_locale: {eq: $language}}) {
             nodes {
             id
             key
-            name
-            }
-        }
-        allContentfulBaseCatalog(
-            filter: {node_locale: {eq: $language}, key: {eq: "product"}}
-            sort: {fields: catalog___catalog___catalog___position, order: ASC}
-        ) {
-            nodes {
-            base_catalog {
-                id
-                key
-                title
-                product {
-                id
-                }
-                base_catalog {
-                id
-                key
-                title
-                product {
-                    id
-                }
-                }
-            }
-            }
-        }
-        products:allContentfulProduct(
-            filter: {node_locale: {eq: $language}}
-        ) {
-            nodes {
-                id
-                key
-                title
-                trademark
-                description: summary
-                image: logo {
-                    imageurl
-                }
+            title
             }
         }
 
-        allContentfulProduct(
-            filter: {node_locale: {eq: $language}}
-            limit: $limit
-            skip: $skip
-            sort: {fields: catalog___catalog___product___hot, order: DESC}
-        ) {
-            nodes {
-                id
-                key
-                title
-                trademark
-                description: summary
-                image: logo {
-                    imageurl
-                }
-            }
-        }
         #查询当前页面(功能页面：Features)
-        allContentfulPage(filter: {node_locale: {eq: $language}, key: {eq: "AppCenter"}}) {
+        allContentfulPage(filter: {node_locale: {eq: $language}, key: {eq: "Invoice"}}) {
             nodes {
             content {
                 id
-                headings:title
-                texts:subTitle
+                headings: title
+                texts: subTitle
                 media
                 buttons {
-                    id
-                    content:key
-                    path:value
+                id
+                content: key
+                path: value
                 }
-                features {
-                ... on ContentfulBaseFeature {
-                    id
-                    title
-                    subtitle
-                    icon
-                    image
-                }
-                ... on ContentfulResource {
-                        type {
-                            title
-                        }
-                        id
-                        title
-                        subTitle
-                        image: featureImage
-                        slug
-                    }
+                link {
+                id
+                key
+                value
                 }
             }
             }
@@ -273,4 +183,4 @@ export const query = graphql`
     }
 `;
 
-export default AppCenterTemplate;
+export default InvoicePage;
