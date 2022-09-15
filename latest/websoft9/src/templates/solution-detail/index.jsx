@@ -31,11 +31,11 @@ const SolutionDetailTemplate = ({pageContext,location,data }) => {
             <Seo title="Resource Center" />
             <Header shortcutMenuData={data.shortcutMenu.nodes} topMenuData={data.topMenu.nodes} />
         
-        <main className="site-wrapper-reveal">
+            <main className="site-wrapper-reveal">
 
-            <ResourceDetailArea data={ data.contentfulResource}/> 
-            
-        </main>
+                <ResourceDetailArea data={ data.contentfulResource} relatedReading={data.allContentfulResource.nodes} /> 
+                
+            </main>
         
         <Footer data={ data.BottomMenu.nodes } siteData={ data.site.siteMetadata } footerMenuData={data.FooterMenu.nodes} />
         </Layout>
@@ -103,9 +103,26 @@ export const query = graphql`
             customers {
             id
             logo {
-                imageurl
+                src:imageurl
                 id
                 slug
+                title
+            }
+            }
+        }
+        #查询“更多方案”
+        allContentfulResource(
+            filter: {node_locale: {eq: $language}, type: {key: {eq: "solution"}}, slug: {ne: $slug}}
+            limit: 4
+        ) {
+            nodes {
+            id
+            slug
+            title
+            featureImage
+            type {
+                id
+                key
                 title
             }
             }

@@ -31,11 +31,11 @@ const Section = ({data}) => {
                     title={data.headings}
                 />
                 <SwiperSlider options={sliderSettings} paginationTop="80px">
-                    {data.features.map((feature) => {
+                    {data.features.map((feature,i) => {
                         var img = new Object();
                         img.src = feature.image;
                         return (
-                            <SwiperSlide key={feature.id}> 
+                            <SwiperSlide key={feature.id+i}> 
                                 <Testimonial
                                     authorName={feature.fullName}
                                     authroRole={feature.title}

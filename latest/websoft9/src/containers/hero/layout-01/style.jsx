@@ -57,8 +57,8 @@ export const ImageBoxTwo = styled.div`
 `;
 
 export const StyledSubtitle = styled.h6`
-    font-weight: 500;
-    color: ${themeGet("colors.primary")};
+    // font-weight: 500;
+    // color: ${themeGet("colors.primary")};
     margin-block-end: 20px;
 `;
 

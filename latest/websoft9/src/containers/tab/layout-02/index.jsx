@@ -29,9 +29,9 @@ const TabArea = ({data}) => {
                         <Col sm={5}>
                             <Tab.Content>
                             {
-                                data.features.map((feature)=>{
+                                data.features.map((feature,i)=>{
                                     return (
-                                        <Tab.Pane eventKey={feature.id}>
+                                        <Tab.Pane key={feature.id+i} eventKey={feature.id}>
                                             <Image src={feature.image}/>
                                         </Tab.Pane>   
                                     );                                                         
@@ -44,7 +44,7 @@ const TabArea = ({data}) => {
                             {
                                 data.features.map((feature)=>{
                                     return (
-                                        <Nav.Item>
+                                        <Nav.Item key={feature.id}>
                                             <Nav.Link eventKey={feature.id}>
                                                 <Heading>{feature.title}</Heading>
                                                 <Text>{feature.subtitle}</Text>

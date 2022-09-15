@@ -38,6 +38,7 @@ const ResourceTypeTemplate = ({pageContext,location,data }) => {
             <ResourceArea
                 cataLogData={data.allContentfulAboutContent.nodes}
                 resourceData={data.allContentfulResource.nodes}
+                solutionData={data.allSolution.nodes}
                 rootPage = {rootPage}
                 currentPage = {currentPage}
                 numberOfPages={numberOfPages}
@@ -81,6 +82,18 @@ export const query = graphql`
             id
             key
             title
+            }
+        }
+        #查询所有解决方案
+        allSolution:allContentfulResource(
+            filter: {node_locale: {eq: $language}, type: {key: {eq: "solution"}}}
+        ) {
+            nodes {
+            id            
+            slug
+            title
+            subTitle
+            featureImage
             }
         }
         #查询所有资源

@@ -50,7 +50,7 @@ const Header = ({shortcutMenuData,topMenuData,transparent}) => {
                 isSticky={sticky}
                 $transparent={transparent}
             >               
-            <HeaderTop $transparent={transparent}>
+            <HeaderTop borderBottom $transparent={transparent}>
                     <Container>
                         <HeaderMain top>
                             {/* 顶部快捷菜单 */}

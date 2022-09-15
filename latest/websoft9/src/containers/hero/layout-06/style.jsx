@@ -1,7 +1,9 @@
 import styled, { themeGet, device } from "@styled";
 
 export const HeroWrapper = styled.section`
-    background-color: #f4efe9;
+    //background-color: #f4efe9;
+    //padding-block-start:100px;
+    padding-block-end:90px;
 `;
 
 export const HeroTextBox = styled.div`
@@ -14,7 +16,7 @@ export const HeroTextBox = styled.div`
     text-align: center;
 
     ${device.medium} {
-        padding-inline-start: 30px;
+        //padding-inline-start: 30px;
         margin-inline-start: auto;
         margin-inline-end: 0;
         margin-block-start: 0;
@@ -57,7 +59,7 @@ export const ImageBoxTwo = styled.div`
 `;
 
 export const StyledSubtitle = styled.h6`
-    //font-weight: 500;
+    // font-weight: 500;
     // color: ${themeGet("colors.primary")};
     margin-block-end: 20px;
 `;
@@ -67,8 +69,9 @@ export const StyledTitle = styled.h1`
     margin-block-end: 15px;
 `;
 
-export const ButtonWrap = styled.div`
-    display: flex;
-    align-items: center;
-    flex-wrap: wrap;
+export const ReadMoreBtn = styled.div`
+    margin-block-start: 13px;
+    .mt-btn {
+        border-bottom: 1px solid ${themeGet("colors.border")};
+    }
 `;

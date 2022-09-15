@@ -71,12 +71,12 @@ const Testimonial = ({
     );
 };
 
-Testimonial.propTypes = {
-    authorImg: PropTypes.shape(ImageType),
-    rating: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
-    authorName: PropTypes.string,
-    authroRole: PropTypes.string,
-    review: PropTypes.string,
-};
+// Testimonial.propTypes = {
+//     authorImg: PropTypes.shape(ImageType),
+//     rating: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
+//     authorName: PropTypes.string,
+//     authroRole: PropTypes.string,
+//     review: PropTypes.string,
+// };
 
 export default Testimonial;

@@ -32,11 +32,11 @@ const HeroArea = ({ data }) => {
                         <HeroTextBox>
                             {data?.headings && (
                                 <StyledSubtitle as="h3">
-                                    <Trans>{data.headings}</Trans>
+                                    {data.headings}
                                 </StyledSubtitle>
                             )}
                             {data?.texts && (
-                                <Text><Trans>{data.texts}</Trans></Text>
+                                <Text>{data.texts}</Text>
                             )}
                             {data?.buttons?.map(
                                 ({id, path, content, ...rest }) => (
@@ -47,7 +47,7 @@ const HeroArea = ({ data }) => {
                                         path={path}
                                         // {...rest}
                                     >
-                                        <Trans>{content}</Trans>
+                                        {content}
                                 </Button>
                                 )
                             )}

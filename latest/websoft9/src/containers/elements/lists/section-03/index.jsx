@@ -11,7 +11,7 @@ import Collapse from '@mui/material/Collapse';
 import InboxIcon from '@mui/icons-material/MoveToInbox';
 import ExpandLess from '@mui/icons-material/ExpandLess';
 import ExpandMore from '@mui/icons-material/ExpandMore';
-import { Link,graphql }  from  'gatsby';
+import { Link,graphql,navigate  }  from  'gatsby';
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
 import ChevronRightIcon from '@mui/icons-material/ChevronRight';
 import BoxImage from "@components/box-large-image/layout-02";
@@ -26,20 +26,21 @@ import Pagination2 from "@components/pagination/layout-02";
 import {Trans, useTranslation } from 'gatsby-plugin-react-i18next';
 
 // 用于显示所有资源目录
-const Section = ({ cataLogData,resourceData,currentPage,numberOfPages,rootPage }) => {
+const Section = ({resourceData,location }) => {
     const { t } = useTranslation();
     // const selectValue = location.toString().split('/').pop();
 
-    const [selectedIndex, setSelectedIndex] = React.useState(null);
+    // const [selectedIndex, setSelectedIndex] = React.useState(null);
     
-    const handleListItemClick = (event, index) => {
-      //setSelectedIndex(index);
-    };
+    // const handleListItemClick = (event, index) => {
+    //   //setSelectedIndex(index);
+    // };
+
     return (
         <SectionWrap>
             <Container>
                 <Row>
-                    <Col key="col1" lg={2} md={6}>
+                    {/* <Col key="col1" lg={2} md={6}>
                         <ListGroupWrap>
                             <Heading as="h5" mb={["20px", null, "30px"]}>
                                 {t("Resource List")}
@@ -63,11 +64,11 @@ const Section = ({ cataLogData,resourceData,currentPage,numberOfPages,rootPage }
                                 }
                             </List>
                         </ListGroupWrap>
-                    </Col>
-                    <Col>                    
+                    </Col> */}
+                    <Col>                      
                         <Row>
                             {
-                            resourceData.length <=0 ?  <Heading as="h5" mb={["20px", null, "30px"]} textAlign="center">{t("No relevant data found")}</Heading> :
+                            resourceData == null ?  <Heading as="h5" mb={["20px", null, "30px"]} textAlign="center">{t("No relevant data found")}</Heading> :
                             resourceData?.map((item) => {
                                 return (
                                     <Col
@@ -90,7 +91,7 @@ const Section = ({ cataLogData,resourceData,currentPage,numberOfPages,rootPage }
                                 );
                             })}
                         </Row>
-                        <Row>
+                        {/* <Row>
                         {                         
                             resourceData.length > 0 && (rootPage == "/resource-center" ?
                             <Pagination1
@@ -107,7 +108,7 @@ const Section = ({ cataLogData,resourceData,currentPage,numberOfPages,rootPage }
                             numberOfPages={numberOfPages}
                             />)
                         }
-                       </Row>
+                       </Row> */}
                     </Col>
                 </Row>               
             </Container>

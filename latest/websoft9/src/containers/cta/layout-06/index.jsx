@@ -11,9 +11,11 @@ import ReactMarkdown from "react-markdown";
 import "markdown-navbar/dist/navbar.css";
 import remarkGfm from 'remark-gfm'
 import HeroArea from "@containers/hero/layout-01";
-import BoxImage from "@components/box-image/layout-01";
+import BoxImage from "@components/box-image/layout-02";
 import HeroImageLeftArea from "@containers/hero/layout-04";
 import HeroImageRightArea from "@containers/hero/layout-05";
+import HeroImageArea from "@containers/hero/layout-06";
+import PartnerArea from "@containers/elements/client-logo/section-03";
 
 //用于显示场景方案详情页
 const CTAArea = ({ data,relatedReading }) => {
@@ -37,22 +39,29 @@ const CTAArea = ({ data,relatedReading }) => {
 
     return (
         <StyledSection>
-            <Container>
-                <HeroArea data={heroData} />
-
-                <StyledContent>
-                    <Heading as="h5" mb="20px" textAlign="left">{t("Challengeg")}</Heading>
-                    <Text>{data.description.description}</Text>
-
-                    <Heading as="h5" mb="20px" textAlign="left">{t("How do we solve it?")}</Heading>
-                    <ReactMarkdown remarkPlugins={[remarkGfm]}>
-                        {data.content.content}
-                    </ReactMarkdown>
-
-                    <Row>
+            <HeroArea data={heroData} />
+            <Container>              
+                {/* <StyledContent> */}
+                <Row>
+                    <Col lg={12} md={6} >
+                        <Heading as="h5" mb="20px" textAlign="left">{t("Challengeg")}</Heading>
+                        <ReactMarkdown remarkPlugins={[remarkGfm]}>
+                            {data.description.description}
+                        </ReactMarkdown>
+                    </Col>
+                </Row>
+                <Row>
+                    <Col lg={12} md={6} >
+                        <Heading as="h5" mb="20px" textAlign="left">{t("How do we solve it?")}</Heading>
+                        <ReactMarkdown remarkPlugins={[remarkGfm]}>
+                            {data.content.content}
+                        </ReactMarkdown>
+                    </Col>
+                </Row>
+                <Row>
                     {
                         data.resource && 
-                        data.resource.map((item) => {
+                        data.resource.filter((rs)=>rs.type.key != "news").slice(0,4).map((item) => {
                             return (
                                 <Col
                                     lg={3}
@@ -64,7 +73,7 @@ const CTAArea = ({ data,relatedReading }) => {
                                     <BoxImage
                                         title={item.title}
                                         image=
-                                        {                                         
+                                        {
                                             item.featureImage==null ? {src: defaultImage} : {src: item.featureImage}
                                         }
                                         category={item.type.title}
@@ -74,24 +83,53 @@ const CTAArea = ({ data,relatedReading }) => {
                             );
                         })}
                     </Row>
-                    {
-                        data.features && data.features.map((feature,i)=>{
-                            if(i%2==0){
+                    <Row>
+                        {
+                            data.features && data.features.map((feature,i)=>{
+                                if(i%2==0){
+                                    return (
+                                        <HeroImageArea  key={feature.id} data={feature} />
+                                    );
+                                }
+                                else{
+                                    return (
+                                        <HeroImageArea  key={feature.id} data={feature} imageAlign="left" />
+                                    );
+                                }
+                            })
+                        }
+                    </Row>
+                    <Row>
+                        <Heading as="h5" mb="20px" textAlign="left">{t("为全球品牌提供")+data.title}</Heading>
+                        <PartnerArea data={data.customers} />
+                    </Row>  
+                    <Row>
+                        <Heading as="h5" mb="20px" textAlign="left">{t("More solution")}</Heading>
+                        {
+                            relatedReading && 
+                            relatedReading.map((item) => {
                                 return (
-                                    <HeroImageRightArea key={feature.id} data={feature} />
+                                    <Col
+                                        lg={3}
+                                        md={6}
+                                        className="box-item"
+                                        key={item.id}
+                                        style={{marginBlockEnd:"20px",marginBlockStart:"20px"}}
+                                    >
+                                        <BoxImage
+                                            title={item.title}
+                                            image=
+                                            {
+                                                item.featureImage==null ? {src: defaultImage} : {src: item.featureImage}
+                                            }
+                                            category={item.type.title}
+                                            path={`/resource-center/resource/${item.slug}`}
+                                        />
+                                    </Col>
                                 );
-                            }
-                            else{
-                                return (
-                                    <HeroImageLeftArea key={feature.id} data={feature} />
-                                );
-                            }                 
-                        })
-                    }
-
-                </StyledContent>
-
-
+                            })}
+                        </Row>
+                {/* </StyledContent> */}
             </Container>
         </StyledSection>
     );

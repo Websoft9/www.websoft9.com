@@ -4,11 +4,16 @@ import { fadeInDown } from "@assets/css/animations";
 import Anchor from "@ui/anchor";
 
 export const HeaderTop = styled.div`
-    background: ${themeGet("colors.gray.100")};
+    //background: ${themeGet("colors.gray.100")};
     display: none;
     ${device.large} {
         display: block;
     }
+    ${(props) =>
+        props.borderBottom &&
+        css`
+            border-bottom: 1px solid ${themeGet("colors.border")};
+        `}
 `;
 
 export const HeaderBottom = styled.div`

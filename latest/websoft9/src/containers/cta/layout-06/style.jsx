@@ -11,7 +11,11 @@ export const StyledSection = styled.section`
     // ${device.large} {
     //     padding-block: 80px;
     // }
+    & >div > div {
+        margin-block-start:30px
+    }
 `;
+
 
 export const StyledContent = styled.div`
     // background-color: #f4efe9;
