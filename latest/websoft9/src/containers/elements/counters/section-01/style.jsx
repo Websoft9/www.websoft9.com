@@ -3,7 +3,7 @@ import styled, { device, themeGet } from "@styled";
 export const SectionWrap = styled.section`
     background-color: ${themeGet("colors.gray.100")};
     padding-block-start:100px;
-    padding-block-end:90px;
+    //padding-block-end:90px;
 `;
 
 export const FunFactGridWrap = styled.div`

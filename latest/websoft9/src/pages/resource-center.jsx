@@ -23,20 +23,6 @@ const ResourceCenterPage = ({location,data }) => {
     const cataLogData = data.allContentfulAboutContent.nodes.filter((item)=>item.key != "solution").filter((item)=>item.key != "news"); //所有资源目录(排除解决方案和新闻)
     const solutionData = data.allSolution.nodes; //所有解决方案
     const allData = data.allContentfulResource.nodes.filter((item)=>item.type.key != "news").filter((item)=>item.type.key != "solution"); //所有资源(排除新闻)
-    // var allSolutionSubResource = [];
-    
-    // //遍历所有资源取出所有关联资源
-    // allData?.map((item)=>{
-    //     if(item.solutions != null){
-    //         item.solutions.map((subItem)=>{
-    //             if(subItem.type.key != "news"){
-    //                 allSolutionSubResource.push(subItem);
-    //             }
-    //         })
-    //     }
-    // })
-
-    // const allResourceData = allSolutionSubResource;
 
     const [solutionType, setSolutionType] =  React.useState('ALL');
     const [contentType, setContentType] =  React.useState('ALL');
@@ -73,8 +59,8 @@ const ResourceCenterPage = ({location,data }) => {
                                 values.push(item);
                             }
                         })
-                }               
-            })            
+                }
+            })
             setResourceData(values.filter((item)=>item.type.key == contentType));
         }
         setSolutionType(type);
@@ -97,7 +83,7 @@ const ResourceCenterPage = ({location,data }) => {
                                 values.push(item);
                             }
                         })
-                }               
+                }
             })   
             setResourceData(values);
         }
@@ -182,14 +168,7 @@ const ResourceCenterPage = ({location,data }) => {
                 </Container>
             </div>
            
-            <ResourceArea
-                // cataLogData={data.allContentfulAboutContent.nodes}
-                resourceData={resourceData}
-                // solutionData={solutionData}
-                // rootPage ="/resource-center"
-                // currentPage = {currentPage}
-                // numberOfPages={resourceTypesNumberOfPages}
-            />
+            <ResourceArea resourceData={resourceData} />
 
             <CtaArea data={ data.allContentfulPage.nodes[0].content[1] } />
         </main>

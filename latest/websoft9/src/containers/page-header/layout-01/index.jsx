@@ -4,29 +4,25 @@ import Image from "@ui/image";
 import { Container, Row, Col } from "@ui/wrapper";
 import { HeadingType, TextType, ImageType } from "@utils/types";
 import { PageHeaderWrap, StyledTitle, StyledDesc, StyledBG } from "./style";
-import { Trans, useTranslation } from 'gatsby-plugin-react-i18next';
 
 const PageHeader = ({ data }) => {
     return (
         <PageHeaderWrap>
-            {data.images?.[0]?.src && (
+            {data?.image && (
                 <StyledBG>
-                    <Image
-                        src={data.images?.[0]?.src}
-                        alt={data.images[0]?.alt || "Page Header"}
-                    />
+                    <Image src={data.image} />
                 </StyledBG>
             )}
             <Container>
                 <Row textAlign="center">
                     <Col lg={8} mx="auto">
-                        {data?.headings?.[0] && (
-                            <StyledTitle as={data.headings[0]?.level}>
-                                <Trans>{data.headings[0]?.content}</Trans>
+                        {data?.headings && (
+                            <StyledTitle as="h1">
+                                {data.headings}
                             </StyledTitle>
                         )}
-                        {data?.texts?.[0] && (
-                            <StyledDesc><Trans>{data.texts[0]?.content}</Trans></StyledDesc>
+                        {data?.texts && (
+                            <StyledDesc>{data.texts}</StyledDesc>
                         )}
                     </Col>
                 </Row>
@@ -35,12 +31,5 @@ const PageHeader = ({ data }) => {
     );
 };
 
-PageHeader.propTypes = {
-    data: PropTypes.shape({
-        headings: PropTypes.arrayOf(PropTypes.shape(HeadingType)),
-        texts: PropTypes.arrayOf(PropTypes.shape(TextType)),
-        images: PropTypes.arrayOf(PropTypes.shape(ImageType)),
-    }),
-};
 
 export default PageHeader;

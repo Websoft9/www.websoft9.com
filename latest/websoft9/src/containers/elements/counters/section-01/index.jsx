@@ -15,18 +15,18 @@ const Section = ({data}) => {
                 />
                 <FunFactGridWrap>
                     {
-                        data.features.map((feature)=>{
+                        data.features?.map((feature)=>{
                             return (
                                 <FunFactGrid key={feature.id}>
                                     <Counter
-                                        title={feature.subtitle}
-                                        countTo={feature.title}
-                                        text={feature.description.description}
+                                        title={feature.title}
+                                        countTo={feature.description.description}
+                                        text={feature.subtitle}
                                     />
                                 </FunFactGrid>
                             );
                         })
-                    }             
+                    }
                 </FunFactGridWrap>
             </Container>
         </SectionWrap>

@@ -21,14 +21,12 @@ const Counter = ({ title, countTo, text, className, layout, ...restProps }) => {
             $layout={layout}
             {...restProps}
         >
+            {countTo && (
+                <FunFactMiddle dangerouslySetInnerHTML={{ __html: countTo }} />
+            )}   
             {title && (
                 <FunFactTitle dangerouslySetInnerHTML={{ __html: title }} />
-            )}
-            {/* <StyledMarkHeading> */}
-                 {/* <mark> { countTo } </mark>  */}
-                 <FunFactMiddle dangerouslySetInnerHTML={{ __html: countTo }} />
-            {/* </StyledMarkHeading> */}
-               
+            )}   
             {text && (
                 <FunFactText
                     $layout={layout}

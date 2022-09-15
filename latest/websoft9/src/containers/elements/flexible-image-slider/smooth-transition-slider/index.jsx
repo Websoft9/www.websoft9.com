@@ -1,13 +1,9 @@
 import React from "react";
 import { Container, Row, Col } from "@ui/wrapper";
-import Heading from "@ui/heading";
 import SwiperSlider, { SwiperSlide } from "@ui/swiper";
 import Image from "@ui/image";
-import ImageOne from "@data/images/blog/blog-02-900x678.jpg";
-import ImageTwo from "@data/images/blog/blog-03-900x678.jpg";
-import ImageThree from "@data/images/blog/blog-04-900x678.jpg";
-import ImageFour from "@data/images/blog/blog-05-900x678.jpg";
 import { SectionWrap } from "./style";
+import SectionTitle from "@ui/section-title";
 
 const sliderSettings = {
     slidesPerView: "auto",
@@ -18,32 +14,30 @@ const sliderSettings = {
     speed: 7000,
 };
 
-const SmoothTransitionSlider = () => {
+const SmoothTransitionSlider = ({data}) => {
     return (
         <SectionWrap>
             <Container>
                 <Row>
                     <Col lg={12}>
-                        <Heading as="h3" mb="60px" textAlign="center">
+                        {/* <Heading as="h3" mb="60px" textAlign="center">
                             Free Mode &amp; Smooth Transition
-                        </Heading>
+                        </Heading> */}
+                        <SectionTitle mb={["47px", null, "60px"]} subtitle={data.texts} title={data.headings} />
                     </Col>
                 </Row>
                 <Row>
                     <Col lg={12}>
                         <SwiperSlider settings={sliderSettings}>
-                            <SwiperSlide className="item">
-                                <Image src={ImageOne} alt="Slider" />
-                            </SwiperSlide>
-                            <SwiperSlide className="item">
-                                <Image src={ImageTwo} alt="Slider" />
-                            </SwiperSlide>
-                            <SwiperSlide className="item">
-                                <Image src={ImageThree} alt="Slider" />
-                            </SwiperSlide>
-                            <SwiperSlide className="item">
-                                <Image src={ImageFour} alt="Slider" />
-                            </SwiperSlide>
+                            {
+                                data?.features.map((item)=>{
+                                    return (
+                                        <SwiperSlide key={item.id} className="item">
+                                            <Image src={item.image} alt="Slider" />
+                                        </SwiperSlide>
+                                    )
+                                })
+                            }
                         </SwiperSlider>
                     </Col>
                 </Row>
