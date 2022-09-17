@@ -1,34 +1,33 @@
 import React from "react";
 import SectionTitle from "@ui/section-title";
+import BoxImage from "@components/box-image/layout-04";
 import { Container, Row, Col } from "@ui/wrapper";
-import BoxImage from "@components/box-image/layout-03";
 import { SectionWrap } from "./style";
-import { graphql } from "gatsby";
-import defaultImage from "@assets/images/default.png";
 
-
-const BoxSection = ({data,lgSize=4}) => {
+const BoxSection = ({data,lgSize}) => {
+    const svgDir = require.context('@material-design-icons/svg/two-tone/');
     return (
         <SectionWrap>
             <Container>
-                <SectionTitle mb={["47px", null, "60px"]} subtitle={data.texts} title={data.headings} />
                 <Row>
-                    {
-                    data.features?.map((item) => {
+                    <Col xl={12}>
+                        <SectionTitle mb={["47px", null, "60px"]} subtitle={data.texts} title={data.headings} />
+                    </Col>
+                </Row>
+                <Row>
+                    {data?.features?.map((item) => {
+                        const svgFile = svgDir("./"+item.icon+".svg").default;
                         return (
                             <Col
                                 lg={lgSize}
-                                md={3}
+                                md={6}
                                 className="box-item"
                                 key={item.id}
                             >
                                 <BoxImage
                                     title={item.title}
-                                    image=
-                                    {
-                                         item.image==null ? {src: defaultImage} : {src: item.image}
-                                    }
                                     desc={item.subtitle}
+                                    image={svgFile}
                                 />
                             </Col>
                         );

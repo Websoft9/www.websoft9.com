@@ -69,7 +69,7 @@ const CTAArea = ({ data,resourceData }) => {
                             <TestimonialRating>
                                 {ratingItems}
                                 {disableRating}
-                                {" "} | {" "} {data.type[0].title}
+                                {" "} | {" "} {data.type?.[0].title}
                             </TestimonialRating>
                         </HeroTextBox>
                     </Col>
@@ -96,13 +96,13 @@ const CTAArea = ({ data,resourceData }) => {
                             <FAQArea  data={ data.faq }/>
                         </Row>
                         <Row style={{paddingLeft:'30px'}} key="row-1-2">     
-                            {data?.type[0]?.product.length >0 && 
+                            {data?.type?.[0]?.product.length >0 && 
                                 <Heading as="h6" mb="37px" textAlign="left">
                                     {t("Related Applications")}
                                 </Heading>
                             }
                             {
-                                data?.type[0]?.product && data.type[0].product.map((item) => {
+                                data?.type?.[0]?.product && data.type?.[0].product.map((item) => {
                                         return (
                                             <Col
                                                 lg={4}

@@ -125,12 +125,14 @@ export const query = graphql`
                     ... on ContentfulProduct {
                     id
                     text: trademark
+                    key
                     logo {
                         imageurl
                     }
                     }
                     ... on ContentfulResource {
                     id
+                    slug
                     text: title
                     }
                 }

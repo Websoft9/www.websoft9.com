@@ -106,15 +106,23 @@ const MainMenu = ({
                                                                 megaSubitem,
                                                                 j
                                                             ) => {
+                                                                var path = "/";
+                                                                if(megaSubitem.key !== undefined ){
+                                                                    path = "/app-center/product/"+megaSubitem.key
+                                                                }
+                                                                else if(megaSubitem.slug !== undefined){
+                                                                    path = "resource-center/resource/"+megaSubitem.slug;
+                                                                }
+                                                                else{
+                                                                    path = megaSubitem.link;
+                                                                }
                                                                 return (
                                                                     <StyledNavitem
                                                                         key={`megasubmenu-${i}-${j}`}
                                                                         $megitem
                                                                     >
                                                                         <StyledNavlink
-                                                                            path={
-                                                                                megaSubitem.link
-                                                                            }
+                                                                            path={path}
                                                                             $bottomLine={
                                                                                 bottomLine
                                                                             }

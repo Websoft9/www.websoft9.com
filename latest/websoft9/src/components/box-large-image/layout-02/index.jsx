@@ -71,7 +71,6 @@ const BoxLargeImage = ({
 
 BoxLargeImage.propTypes = {
     title: PropTypes.string,
-    image: PropTypes.shape(ImageType),
     desc: PropTypes.string,
     path: PropTypes.string,
     category: PropTypes.string,
