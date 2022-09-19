@@ -187,9 +187,9 @@ exports.createPages = async ({ graphql, actions }) => {
 
             if(numberOfPages==0){
                 const currentPage = 1
-                const rootPage =`resource-type/${type.key}`;
+                const rootPage =`/${type.key}`;
                 createPage({
-                    path:`resource-type/${type.key}`,
+                    path:`${type.key}`,
                     component: path.resolve('./src/templates/resource-type/index.jsx'),
                     context: {
                         resourceType: type.key,
@@ -205,10 +205,10 @@ exports.createPages = async ({ graphql, actions }) => {
             Array.from({ length: numberOfPages }).forEach((_, subIndex)=>{
                 const isFirstPage = subIndex === 0;               
                 const currentPage = subIndex + 1;
-                const rootPage = `/resource-type/${type.key}`;
+                const rootPage = `/${type.key}`;
     
                 createPage({
-                    path: isFirstPage ? `resource-type/${type.key}`:`resource-type/${type.key}/${currentPage}`,
+                    path: isFirstPage ? `${type.key}`:`${type.key}/${currentPage}`,
                     component: path.resolve('./src/templates/resource-type/index.jsx'),
                     context: {
                         resourceType: type.key,
@@ -220,7 +220,6 @@ exports.createPages = async ({ graphql, actions }) => {
                     },
                 })
             })
-
         })
 
 
@@ -259,7 +258,7 @@ exports.createPages = async ({ graphql, actions }) => {
     resourceData.forEach((resource)=>{
         if(resource.type.key == "solution"){
             createPage({
-                path:`resource-center/resource/${resource.slug}`,
+                path:`${resource.type.key}/${resource.slug}`,
                 component:path.resolve('./src/templates/solution-detail/index.jsx'),
                 context:{
                     slug:resource.slug
@@ -269,7 +268,7 @@ exports.createPages = async ({ graphql, actions }) => {
         else
         {
             createPage({
-                path:`resource-center/resource/${resource.slug}`,
+                path:`${resource.type.key}/${resource.slug}`,
                 component:path.resolve('./src/templates/resource-detail/index.jsx'),
                 context:{
                     slug:resource.slug

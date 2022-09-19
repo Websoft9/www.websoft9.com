@@ -79,6 +79,11 @@ export const query = graphql`
             title
             subTitle
             featureImage
+            type {
+                id
+                key
+                title
+            }
             }
         }
         #查询顶部快捷菜单

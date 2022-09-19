@@ -39,7 +39,6 @@ const AppCenterTemplate = ({pageContext,location,data }) => {
             <ListArea 
                 cataLogData={data.allContentfulBaseCatalog.nodes[0].base_catalog}
                 productsData={data.allContentfulProduct.nodes}
-                marketplaceData={data.allContentfulBaseBrand.nodes}
                 rootPage ="/app-center"
                 currentPage = {currentPage}
                 numberOfPages={numberOfPages}
@@ -75,14 +74,6 @@ export const query = graphql`
                 link
                 title
             }
-            }
-        }
-        #查询云平台
-        allContentfulBaseBrand(filter: {node_locale: {eq: $language}, type: {eq: "Marketplace"}}) {
-            nodes {
-            id
-            key
-            name
             }
         }
         allContentfulBaseCatalog(

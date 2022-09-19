@@ -26,9 +26,8 @@ import Pagination2 from "@components/pagination/layout-02";
 import {Trans, useTranslation } from 'gatsby-plugin-react-i18next';
 
 // 用于显示所有资源目录
-const Section = ({resourceData,location }) => {
+const Section = ({resourceData,currentPage,numberOfPages,rootPage,location }) => {
     const { t } = useTranslation();
-    // const selectValue = location.toString().split('/').pop();
 
     // const [selectedIndex, setSelectedIndex] = React.useState(null);
     
@@ -85,30 +84,23 @@ const Section = ({resourceData,location }) => {
                                                 item.image==null ? {src: defaultImage} : {src: item.image}
                                             }
                                             category={item.type.title}
-                                            path={`/resource-center/resource/${item.slug}`}
+                                            path={`/${item.type.key}/${item.slug}`}
                                         />
                                     </Col>
                                 );
                             })}
                         </Row>
-                        {/* <Row>
-                        {                         
-                            resourceData.length > 0 && (rootPage == "/resource-center" ?
-                            <Pagination1
+                        <Row>
+                        {   
+                            resourceData.length > 0 && rootPage &&
+                            <Pagination2
                                 mt="40px"
                                 rootPage={rootPage}
                                 currentPage={currentPage}
                                 numberOfPages={numberOfPages}
-                            /> 
-                            :
-                            <Pagination2
-                            mt="40px"
-                            rootPage={rootPage}
-                            currentPage={currentPage}
-                            numberOfPages={numberOfPages}
-                            />)
+                            />      
                         }
-                       </Row> */}
+                       </Row>
                     </Col>
                 </Row>               
             </Container>

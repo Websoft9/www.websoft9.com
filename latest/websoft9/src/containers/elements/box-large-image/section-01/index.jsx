@@ -35,7 +35,7 @@ const BoxSection = ({dataTitle,data}) => {
                                     image={image}
                                     title={feature.title}
                                     desc={feature.subTitle}
-                                    path={"resource-center/resource/"+feature.slug}
+                                    path={`resource-center/${feature.type.key}/${feature.slug}`}
                                 />
                             </Col>
                         );

@@ -38,10 +38,10 @@ const ResourceTypeTemplate = ({pageContext,location,data }) => {
             <ResourceArea
                 cataLogData={data.allContentfulAboutContent.nodes}
                 resourceData={data.allContentfulResource.nodes}
-                solutionData={data.allSolution.nodes}
                 rootPage = {rootPage}
                 currentPage = {currentPage}
                 numberOfPages={numberOfPages}
+                location={location}
             />
 
             <CtaArea data={ data.allContentfulPage.nodes[0].content[1] } />
