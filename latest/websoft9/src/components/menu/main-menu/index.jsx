@@ -111,7 +111,7 @@ const MainMenu = ({
                                                                     path = "/app-center/product/"+megaSubitem.key
                                                                 }
                                                                 else if(megaSubitem.slug !== undefined){
-                                                                    path = "resource-center/resource/"+megaSubitem.slug;
+                                                                    path = "/solution/"+megaSubitem.slug;
                                                                 }
                                                                 else{
                                                                     path = megaSubitem.link;

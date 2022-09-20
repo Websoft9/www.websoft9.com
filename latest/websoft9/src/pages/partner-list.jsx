@@ -13,10 +13,8 @@ import Header from "@layout/header/layout-01";
 import Footer from "@layout/footer/layout-02";
 import CtaArea from "@containers/cta/layout-04";
 import HeroArea from "@containers/hero/layout-01";
-import PartnerArea from "@containers/elements/box-large-image/section-02";
 import {Trans, useTranslation } from 'gatsby-plugin-react-i18next';
-import ResourceArea from "@containers/elements/lists/section-03"
-
+import CultureArea from "@containers/elements/box-image/section-06";
 
 const PartnerDirectoryPage = ({location,data }) => {
     const { t } = useTranslation();
@@ -73,12 +71,12 @@ const PartnerDirectoryPage = ({location,data }) => {
                                     </Select>
                                 </FormControl>
                             </Box>
-                        </Col>                   
+                        </Col>
                     </Row>                   
                     </Container>
                 </div>
-           
-                <ResourceArea resourceData={ partnerceData }/>
+
+                <CultureArea data={partnerceData} lgSize={3}/>
 
                 <CtaArea data={ data.allContentfulPage.nodes[0].content[1] } />
 
@@ -131,6 +129,7 @@ export const query = graphql`
                 id
                 key
                 name
+                description
                 siteurl
                 type {
                     id
@@ -190,6 +189,7 @@ export const query = graphql`
                     }
                     ... on ContentfulProduct {
                     id
+                    key
                     text: trademark
                     logo {
                         imageurl
@@ -197,6 +197,7 @@ export const query = graphql`
                     }
                     ... on ContentfulResource {
                     id
+                    slug
                     text: title
                     }
                 }

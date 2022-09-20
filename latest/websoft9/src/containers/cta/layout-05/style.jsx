@@ -26,13 +26,6 @@ export const StyledHeading = styled.h3`
     }
 `;
 
-export const StyledBG = styled.div`
-    position: absolute;
-    right: -68px;
-    top: 0;
-    z-index: -1;
-`;
-
 export const HeroTextBox = styled.div`
     //max-width: 605px;
     width: 100%;
@@ -142,7 +135,7 @@ export const AuthorRole = styled.span`
 `;
 
 export const NavContainer = styled.div`
-    position:fixed;
+    //position:fixed;
     z-index:999;
     background-color: #fff;
     border-radius: 5px;
@@ -151,6 +144,19 @@ export const NavContainer = styled.div`
     transform: translate(0, 0);
     transition: transform 500ms ease;
     font-size:15px;
+
+    // .markdown-navigation .title-level3 {
+    //     display:none;
+    // }
+    // .markdown-navigation .title-level4 {
+    //     display:none;
+    // }
+    // .markdown-navigation .title-level5 {
+    //     display:none;
+    // }
+    // .markdown-navigation .title-level6 {
+    //     display:none;
+    // }
 `
 
 export const MarkdownStyle = styled.div`

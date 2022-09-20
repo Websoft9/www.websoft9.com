@@ -1,48 +1,32 @@
 import React from "react";
-import { Container, Row, Col } from "react-bootstrap";
-import Heading from "@ui/heading";
-import { SectionWrap, ListGroupWrap } from "./style";
-import ProductArea from "@containers/elements/box-image/section-01";
-import List from '@mui/material/List';
-import ListItemButton from '@mui/material/ListItemButton';
-import ListItemText from '@mui/material/ListItemText';
-import Collapse from '@mui/material/Collapse';
-import InboxIcon from '@mui/icons-material/MoveToInbox';
-import ExpandLess from '@mui/icons-material/ExpandLess';
-import ExpandMore from '@mui/icons-material/ExpandMore';
-import { Link,graphql }  from  'gatsby';
-import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
-import ChevronRightIcon from '@mui/icons-material/ChevronRight';
-import BoxImage from "@components/box-image/layout-01";
-import PropTypes from "prop-types";
-import defaultImage from "@assets/images/default.png";
+import {graphql }  from  'gatsby';
 import Seo from "@components/seo";
 import Layout from "@layout";
 import Header from "@layout/header/layout-01";
 import Footer from "@layout/footer/layout-02";
+import CtaArea from "@containers/cta/layout-04";
+import ResourceArea from "@containers/elements/lists/section-03"
 import HeroArea from "@containers/hero/layout-01";
-import ResourceDetailArea from "@containers/cta/layout-05";
+import PageHeader from "@containers/page-header/layout-02";
+import IframeArea from "@containers/iframe"
 
-const ResourceDetailTemplate = ({ location,data }) => {
-
-    const resourceType = data.allContentfulResource.nodes[0].type.key;
-
+const DownloadPage = ({pageContext,location,data }) => {
     return (
         <Layout location={location}>
-            <Seo title="App Detail" />
-            <Header shortcutMenuData= { data.shortcutMenu.nodes } topMenuData={ data.topMenu.nodes } />
+            <Seo title="Download" />
+            <Header shortcutMenuData={data.shortcutMenu.nodes} topMenuData={data.topMenu.nodes} />
         
-        <main className="site-wrapper-reveal">
-             <ResourceDetailArea data={ data.allContentfulResource.nodes[0]} relatedReading={data.RelatedReading.nodes} siteData={ data.site.siteMetadata }/> 
-
-        </main>
-        <Footer data={ data.BottomMenu.nodes } siteData={ data.site.siteMetadata } footerMenuData={data.FooterMenu.nodes} />
+            <main className="site-wrapper-reveal">
+                <PageHeader pageContext={pageContext} location={location} title="资料下载" />               
+            </main>
+        
+            <Footer data={ data.BottomMenu.nodes } siteData={ data.site.siteMetadata } footerMenuData={data.FooterMenu.nodes} />
         </Layout>
     );
 };
-
+//
 export const query = graphql`
-    query ResourceDetailQuery($language: String!,$slug:String!) {
+    query DownloadPageQuery($language: String!) {
         #多语言
         locales: allLocale(filter: {language: {eq: $language}}) {
             edges {
@@ -65,88 +49,28 @@ export const query = graphql`
             }
             }
         }
-        #查询相关阅读
-        RelatedReading:allContentfulResource(
-            filter: {node_locale: {eq: $language}}
-            limit: 4
-            sort: {fields: time, order: DESC}
-        ) {
+
+        #查询当前页面(功能页面：Features)
+        allContentfulPage(filter: {node_locale: {eq: $language}, key: {eq: "Ticket"}}) {
             nodes {
-            id
-            slug
-            title
-            image:featureImage
-            type {
-                id
-                key
-                title
-            }
-            }
-        }
-        #查询资源详情
-        allContentfulResource(filter: {node_locale: {eq: $language}, slug: {eq: $slug}}) {
-            nodes {
-            id
-            slug
-            title
-            image: featureImage
-            type {
-                id
-                key
-                title
-            }
-            author {
-                title
-                fullName
-                pictureUrl
-            }
             content {
                 id
-                content
-                childMarkdownRemark {
-                    html
-                }
-            }
-            persons {
+                headings: title
+                texts: subTitle
+                media
+                buttons {
                 id
-                title
-                reviews
-                image:pictureUrl
-                fullName
-            }
-            customers {
-                id
-                name
-                siteurl
-                logo {
-                imageurl
+                content: key
+                path: value
                 }
-            }
-            products {
+                link {
                 id
                 key
-                trademark
-            }
-            solutions {
-                id
-                title
-                slug
-                type{
-                    id
-                    key
-                    title
+                value
                 }
             }
-            tags {
-                id
-                name
-                keyword
-            }
-            time(formatString: "YYYY-MM-DD")
-            downloadUrl
             }
         }
-
         #查询顶部快捷菜单
         shortcutMenu: allContentfulMenu(
             filter: {type: {eq: "TopMenu"}, node_locale: {eq: $language}}
@@ -247,4 +171,4 @@ export const query = graphql`
     }
 `;
 
-export default ResourceDetailTemplate;
+export default DownloadPage;

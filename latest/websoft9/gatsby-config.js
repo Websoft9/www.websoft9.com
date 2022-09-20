@@ -12,28 +12,34 @@ module.exports = {
       socials: [
         {
             id: 1,
-            icon: "fab fa-facebook-f",
+            icon: "fab fa-facebook social-link-icon",
             link: "https://www.facebook.com",
             title: "Facebook",
         },
         {
             id: 2,
-            icon: "fab fa-twitter",
+            icon: "fab fa-twitter social-link-icon",
             link: "https://www.twitter.com",
             title: "Twitter",
         },
         {
             id: 3,
-            icon: "fab fa-instagram",
+            icon: "fab fa-instagram social-link-icon",
             link: "https://www.instagram.com",
             title: "Instagram",
         },
         {
             id: 4,
-            icon: "fab fa-linkedin",
+            icon: "fab fa-linkedin social-link-icon",
             link: "https://www.linkedin.com",
             title: "Linkedin",
         },
+        {
+          id: 5,
+          icon: "fab fa-pinterest social-link-icon",
+          link: "https://pinterest.com",
+          title: "Pinterest",
+      },
     ],
     },
     plugins: [{

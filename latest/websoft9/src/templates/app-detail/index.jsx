@@ -174,6 +174,7 @@ export const query = graphql`
                     }
                     ... on ContentfulProduct {
                     id
+                    key
                     text: trademark
                     logo {
                         imageurl
@@ -181,6 +182,7 @@ export const query = graphql`
                     }
                     ... on ContentfulResource {
                     id
+                    slug
                     text: title
                     }
                 }

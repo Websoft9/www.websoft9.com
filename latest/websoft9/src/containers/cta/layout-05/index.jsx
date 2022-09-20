@@ -5,7 +5,7 @@ import { Container, Row, Col } from "@ui/wrapper";
 import Button from "@ui/button";
 import { HeadingType, ButtonType } from "@utils/types";
 import { 
-    StyledSection, StyledHeading, StyledBG,HeroTextBox,StyledSubtitle,
+    StyledSection, StyledHeading,HeroTextBox,StyledSubtitle,
     TestimonialRating,AuthorInfo,AuthorName,ImageBoxTwo,
     TestimonialInfo,TestimonialMedia,TestimonialAuthor,
     AuthorRole,NavContainer,MarkdownStyle,ImageBoxOne } from "./style";
@@ -13,27 +13,23 @@ import Text from "@ui/text";
 import {Trans, useTranslation } from 'gatsby-plugin-react-i18next';
 import Image from "@ui/image";
 import defaultImage from "@assets/images/default.png";
-import FullWideSlider from "@containers/elements/flexible-image-slider/full-wide-slider";
 import Line from "@ui/divider/line";
-import SectionFour from "@containers/elements/dividers/section-04";
 import { Link }  from  'gatsby';
-import FAQArea from "@containers/elements/accordion/section-02";
-import BoxImage from "@components/box-image/layout-01";
+// import BoxImage from "@components/box-image/layout-01";
+import BoxImage from "@components/box-large-image/layout-02";
 import Heading from "@ui/heading";
-import LegendArea1 from "@containers/legend/layout-01";
-import LegendArea2 from "@containers/legend/layout-02";
-import LegendArea3 from "@containers/legend/layout-03";
 import { SwiperSlide } from "@ui/swiper";
-import Testimonial from "@components/testimonial/layout-02";
 import ReactMarkdown from "react-markdown";
 import MarkNav from 'markdown-navbar';
 import Markdown from "markdown-to-jsx";
 import "markdown-navbar/dist/navbar.css";
 import remarkGfm from 'remark-gfm'
 import TestimonialArea from "@containers/elements/testimonials/section-02";
+import Social, { SocialLink } from "@ui/social";
+import cn from "clsx";
 
 //用于显示资源详情页
-const CTAArea = ({ data,relatedReading }) => {
+const CTAArea = ({ data,relatedReading,siteData }) => {
     const { t } = useTranslation();
 
     return (
@@ -59,7 +55,7 @@ const CTAArea = ({ data,relatedReading }) => {
                                    {t("Solution")}:
                                     {data.solutions && data.solutions.map((solution)=>{
                                         return (
-                                            <Link key={solution.id} to={`/app-center/product/${solution.key}`} style={{color:"dodgerblue"}}>{solution.title}{' '}</Link>
+                                            <Link key={solution.id} to={`/${solution.type.key}/${solution.slug}`} style={{color:"dodgerblue"}}>{solution.title}{' '}</Link>
                                         );
                                     })}
                                     </nobr>
@@ -157,7 +153,32 @@ const CTAArea = ({ data,relatedReading }) => {
                     <Col xl={3}>
                         <NavContainer>
                             <Text style={{fontWeight:"bold",paddingLeft:'10px'}}>内容目录</Text>
-                            <MarkNav source={data.content.content} headingTopOffset={80} ordered="false" />
+                            <MarkNav source={data.content.content}  ordered={false} />
+                            <div style={{textAlign:"center"}}>
+                                <Social
+                                        tooltip={true}
+                                        shape="rounded"
+                                        //variant="outlined"
+                                        size="small"
+                                    >
+                                        {siteData.socials.map((social) => (
+                                            <SocialLink
+                                                key={social.id}
+                                                path={social.link}
+                                                title={social.title}
+                                            >
+                                                <i className={cn(social.icon,"social-link-icon")}></i>
+                                            </SocialLink>
+                                        ))}
+                                    </Social>
+                                {
+                                    data.downloadUrl &&                             
+                                    <Button m="10px" size="small" path={data.downloadUrl} style={{marginBlockStart:"20px",height:"40px"}}>
+                                        {"下载"}
+                                    </Button>
+                                }
+                            </div>
+
                         </NavContainer>
                     </Col>
                 </Row>
@@ -197,7 +218,7 @@ const CTAArea = ({ data,relatedReading }) => {
                                         item.image==null ? {src: defaultImage} : {src: item.image}
                                     }
                                     category={item.type.title}
-                                    path={`/resource-center/resource/${item.slug}`}
+                                    path={`/${item.type.key}/${item.slug}`}
                                 />
                             </Col>
                         );
