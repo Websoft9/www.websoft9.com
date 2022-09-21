@@ -33,9 +33,9 @@ const HeroArea = ({ data }) => {
                     <Col md={9}>
                         <HeroTextBox>                            
                             {/* <SectionTitle mb={["20px", null, null,"20px"]}  subtitle={data.subtitle} /> */}
-                            <Heading>{data.subtitle}</Heading>
+                            { data?.subtitle && <Heading>{data.subtitle}</Heading> }
                             {/* <Text>{data.subtitle}</Text> */}
-                            <Image src={data.image} /> 
+                            { data?.image && <Image src={data.image} /> }
                         </HeroTextBox>
                     </Col>
                 </Row>

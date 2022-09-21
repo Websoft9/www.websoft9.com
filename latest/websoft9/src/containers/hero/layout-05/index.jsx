@@ -1,5 +1,4 @@
 import React from "react";
-import PropTypes from "prop-types";
 import { Container, Row, Col } from "@ui/wrapper";
 import Text from "@ui/text";
 import Button from "@ui/button";
@@ -62,15 +61,6 @@ const HeroArea = ({ data }) => {
             </Container>
         </HeroWrapper>
     );
-};
-
-HeroArea.propTypes = {
-    data: PropTypes.shape({
-        headings: PropTypes.arrayOf(PropTypes.shape(HeadingType)),
-        texts: PropTypes.arrayOf(PropTypes.shape(TextType)),
-        buttons: PropTypes.arrayOf(PropTypes.shape(ButtonType)),
-        images: PropTypes.arrayOf(PropTypes.shape(ImageType)),
-    }),
 };
 
 export default HeroArea;

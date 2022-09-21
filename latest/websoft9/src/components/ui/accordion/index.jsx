@@ -28,18 +28,18 @@ const AccordionWrap = ({
     );
 };
 
-AccordionWrap.propTypes = {
-    layout: PropTypes.oneOf([1, 2]),
-    defaultActiveKey: PropTypes.number,
-    data: PropTypes.arrayOf(
-        PropTypes.shape({
-            id: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
-            title: PropTypes.string,
-            description: PropTypes.string,
-        })
-    ).isRequired,
-    disableDefaultActive: PropTypes.bool,
-};
+// AccordionWrap.propTypes = {
+//     layout: PropTypes.oneOf([1, 2]),
+//     defaultActiveKey: PropTypes.number,
+//     data: PropTypes.arrayOf(
+//         PropTypes.shape({
+//             id: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
+//             title: PropTypes.string,
+//             description: PropTypes.string,
+//         })
+//     ).isRequired,
+//     disableDefaultActive: PropTypes.bool,
+// };
 
 AccordionWrap.defaultProps = {
     layout: 1,

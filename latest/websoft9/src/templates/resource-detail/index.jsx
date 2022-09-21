@@ -96,6 +96,7 @@ export const query = graphql`
                 title
             }
             author {
+                id
                 title
                 fullName
                 pictureUrl

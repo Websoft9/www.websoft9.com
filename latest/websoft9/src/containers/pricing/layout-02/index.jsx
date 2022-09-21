@@ -19,7 +19,7 @@ const PricingArea = ({ data }) => {
                     title = { data.headings }
                     subtitle = { data.texts }
                 />
-                <Tabs defaultActiveKey={keys[0].id} layout={2}>
+                <Tabs defaultActiveKey={data.buttons[0].id} layout={2}>
                     {data.buttons.map((key,i) => (
                         <Tab
                             key={key.id}

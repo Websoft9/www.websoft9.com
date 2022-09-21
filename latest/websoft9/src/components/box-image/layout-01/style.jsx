@@ -46,8 +46,13 @@ export const HeadingWrap = styled.h5`
 `;
 
 export const TextWrap = styled.p`
-    height:100px;
-    text-align: left;
+    height:80px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    word-break: break-all; /*允许在单词内换行,防止有字母时候出问题*/
+    display: -webkit-box; /*将对象作为弹性伸缩盒子模型显示*/
+    -webkit-line-clamp: 4; /*多行在这里修改数字即可*/
+    -webkit-box-orient: vertical; /*从上到下垂直排列子元素*/
 `;
 
 export const BoxCircleBtnWrap = styled.div`

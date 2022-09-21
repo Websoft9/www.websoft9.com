@@ -15,7 +15,6 @@ import { Link,graphql }  from  'gatsby';
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
 import ChevronRightIcon from '@mui/icons-material/ChevronRight';
 import BoxImage from "@components/box-image/layout-01";
-import PropTypes from "prop-types";
 import defaultImage from "@assets/images/default.png";
 import Select from '@mui/material/Select';
 import Box from '@mui/material/Box';
@@ -29,7 +28,6 @@ import {Trans, useTranslation } from 'gatsby-plugin-react-i18next';
 // 用于所有产品页面
 const Section = ({ cataLogData,productsData,marketplaceData,currentPage,numberOfPages,rootPage }) => {
     const { t } = useTranslation();
-    //const selectValue = location.toString().split('/').pop();
 
     const [selectedIndex, setSelectedIndex] = React.useState(null);
     
@@ -45,6 +43,17 @@ const Section = ({ cataLogData,productsData,marketplaceData,currentPage,numberOf
     };
 
     var totalProductsNum = 0;
+    // 统计所有产品数量
+    cataLogData.map((item)=>{
+        var itemNums = item.product!=null?item.product.length:0;
+        totalProductsNum += itemNums
+        if(item.base_catalog!=null){
+            item.base_catalog.map((subitem)=>{
+                var subpNums = subitem.product!=null?subitem.product.length:0;
+                totalProductsNum += subpNums;
+            })
+        }
+    })
 
     // const [open, setOpen] = React.useState([]);
     // const handleClick = (event) => {
@@ -59,7 +68,7 @@ const Section = ({ cataLogData,productsData,marketplaceData,currentPage,numberOf
         <SectionWrap>
             <Container>
                 <Row>
-                    <Col key="col1" lg={2} md={6}>
+                    <Col lg={2} md={6}>
                         <ListGroupWrap>
                             <Heading as="h5" mb={["20px", null, "30px"]}>
                                 {t("Product List")}
@@ -70,19 +79,6 @@ const Section = ({ cataLogData,productsData,marketplaceData,currentPage,numberOf
                                 aria-labelledby="nested-list-subheader"
                                 >
                                 <ListItemButton key="allproduct" selected={selectedIndex === null} onClick={(event) => handleListItemClick(event, null)}>
-                                    {
-                                        // 统计所有产品数量
-                                        cataLogData.map((item)=>{
-                                            var itemNums = item.product!=null?item.product.length:0;
-                                            totalProductsNum += itemNums
-                                            if(item.base_catalog!=null){
-                                                item.base_catalog.map((subitem)=>{
-                                                    var subpNums = subitem.product!=null?subitem.product.length:0;
-                                                    totalProductsNum += subpNums;
-                                                })
-                                            }
-                                        })
-                                    }
                                     <Link to={`/app-center`}>{t("ALL")+"("+totalProductsNum+")"}</Link>
                                 </ListItemButton>
                                 {                                    
@@ -90,9 +86,8 @@ const Section = ({ cataLogData,productsData,marketplaceData,currentPage,numberOf
                                         if(item.base_catalog == null){
                                             const pnums = item.product!=null?item.product.length:0;
                                             return(
-                                                <ListItemButton key={"catalog"+item.id}  selected={selectedIndex === item.key} onClick={(event) => handleListItemClick(event, item.key)}>
-                                                    <Link  to={`/app-catalog/${item.id}`}> {item.title+"("+pnums+")"} </Link>
-                                                    {/* <Link> {item.title+"("+pnums+")"} </Link> */}
+                                                <ListItemButton key={item.id}  selected={selectedIndex === item.key} onClick={(event) => handleListItemClick(event, item.key)}>
+                                                    <Link to={`/app-catalog/${item.id}`}> {item.title+"("+pnums+")"} </Link>
                                                 </ListItemButton>
                                             );
                                         }
@@ -109,11 +104,10 @@ const Section = ({ cataLogData,productsData,marketplaceData,currentPage,numberOf
                                                     subTotal += subpnums;
                                                 })
                                             return(
-                                                <>
+                                                <React.Fragment key={item.id}>
                                                     <ListItemButton key={"base_catalog"+item.id}  onClick={handleClick}>
                                                         <ListItemText primary={item.title+"("+subTotal+")"} />
                                                         {open ? <ExpandLess /> : <ExpandMore />}
-                                                        {/* {open[item.key] ? <ExpandLess /> : <ExpandMore />} */}
                                                     </ListItemButton>
                                                     <Collapse key={"Collapse"+item.id} in={open} timeout="auto" unmountOnExit>
                                                         <List key={"List"+item.id}  component="div" disablePadding>
@@ -130,7 +124,7 @@ const Section = ({ cataLogData,productsData,marketplaceData,currentPage,numberOf
                                                         }
                                                         </List>
                                                     </Collapse>
-                                                </>
+                                                </React.Fragment>
                                             );
                                         }
                                     })
@@ -138,119 +132,7 @@ const Section = ({ cataLogData,productsData,marketplaceData,currentPage,numberOf
                             </List>
                         </ListGroupWrap>
                     </Col>
-                    <Col>
-                        {/* <Row style={{marginBottom:"20px"}}>
-                            <Col>
-                            <Box sx={{ minWidth: 120 }}>
-                                <FormControl fullWidth>
-                                    <InputLabel id="demo-simple-select-label">试用</InputLabel>
-                                    <Select
-                                    labelId="demo-simple-select-label"
-                                    id="demo-simple-select"
-                                    value={marketplace}
-                                    label="试用"
-                                    onChange={handleChange}
-                                    >
-                                        {
-                                            marketplaceData.map((item)=>{
-                                                return(
-                                                    <MenuItem value={item.key}>{item.name}</MenuItem>
-                                                ); 
-                                            })
-                                        }
-                                    </Select>
-                                </FormControl>
-                                </Box>
-                            </Col>
-                            <Col>
-                            <Box sx={{ minWidth: 120 }}>
-                                <FormControl fullWidth>
-                                    <InputLabel id="demo-simple-select-label">操作系统</InputLabel>
-                                    <Select
-                                    labelId="demo-simple-select-label"
-                                    id="demo-simple-select"
-                                    value={marketplace}
-                                    label="操作系统"
-                                    onChange={handleChange}
-                                    >
-                                        {
-                                            marketplaceData.map((item)=>{
-                                                return(
-                                                    <MenuItem value={item.key}>{item.name}</MenuItem>
-                                                ); 
-                                            })
-                                        }
-                                    </Select>
-                                </FormControl>
-                                </Box>
-                            </Col>
-                            <Col>
-                            <Box sx={{ minWidth: 120 }}>
-                                <FormControl fullWidth>
-                                    <InputLabel id="demo-simple-select-label">云平台</InputLabel>
-                                    <Select
-                                    labelId="demo-simple-select-label"
-                                    id="demo-simple-select"
-                                    value={marketplace}
-                                    label="云平台"
-                                    onChange={handleChange}
-                                    >
-                                        {
-                                            marketplaceData.map((item)=>{
-                                                return(
-                                                    <MenuItem value={item.key}>{item.name}</MenuItem>
-                                                ); 
-                                            })
-                                        }
-                                    </Select>
-                                </FormControl>
-                                </Box>
-                            </Col>
-                            <Col>
-                            <Box sx={{ minWidth: 120 }}>
-                                <FormControl fullWidth>
-                                    <InputLabel id="demo-simple-select-label">计价模型</InputLabel>
-                                    <Select
-                                    labelId="demo-simple-select-label"
-                                    id="demo-simple-select"
-                                    value={marketplace}
-                                    label="计价模型"
-                                    onChange={handleChange}
-                                    >
-                                        {
-                                            marketplaceData.map((item)=>{
-                                                return(
-                                                    <MenuItem value={item.key}>{item.name}</MenuItem>
-                                                ); 
-                                            })
-                                        }
-                                    </Select>
-                                </FormControl>
-                                </Box>
-                            </Col>
-                            <Col>
-                            <Box sx={{ minWidth: 120 }}>
-                                <FormControl fullWidth>
-                                    <InputLabel id="demo-simple-select-label">产品类型</InputLabel>
-                                    <Select
-                                    labelId="demo-simple-select-label"
-                                    id="demo-simple-select"
-                                    value={marketplace}
-                                    label="产品类型"
-                                    onChange={handleChange}
-                                    >
-                                        {
-                                            marketplaceData.map((item)=>{
-                                                return(
-                                                    <MenuItem value={item.key}>{item.name}</MenuItem>
-                                                ); 
-                                            })
-                                        }
-                                    </Select>
-                                </FormControl>
-                                </Box>
-                            </Col>
-                        </Row> */}
+                    <Col>                      
                         <Row>
                             {
                             productsData.length <=0 ?  <Heading as="h5" mb={["20px", null, "30px"]} textAlign="center">{t("No relevant data found")}</Heading> :
@@ -258,7 +140,7 @@ const Section = ({ cataLogData,productsData,marketplaceData,currentPage,numberOf
                                 return (
                                     <Col
                                         lg={4}
-                                        md={4}
+                                        md={6}
                                         className="box-item"
                                         key={item.key}
                                     >
@@ -276,15 +158,6 @@ const Section = ({ cataLogData,productsData,marketplaceData,currentPage,numberOf
                             })}
                         </Row>
                         <Row>
-                            {/* {
-                                productsData.length > 0 && 
-                                <Pagination
-                                    mt="40px"
-                                    rootPage={rootPage}
-                                    currentPage={currentPage}
-                                    numberOfPages={numberOfPages}
-                                />
-                            } */}
                         {                         
                             productsData.length > 0 && (rootPage == "/app-center" ?
                             <Pagination1

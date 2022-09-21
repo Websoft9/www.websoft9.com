@@ -35,11 +35,4 @@ const TabArea = ({ data, children }) => {
     );
 };
 
-TabArea.propTypes = {
-    data: PropTypes.shape({
-        section_title: PropTypes.shape(SectionTitleType),
-    }),
-    children: PropTypes.node.isRequired,
-};
-
 export default TabArea;

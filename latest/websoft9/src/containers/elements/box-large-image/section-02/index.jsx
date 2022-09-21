@@ -12,13 +12,12 @@ const BoxSection = ({data}) => {
     return (
         <SectionWrap>
             <Container>
-                <Row>
-                    <Col xl={12}>
-                        {
-                            data?.texts && <SectionTitle subtitle={data.texts} title={data.headings} />
-                        }
-                    </Col>
-                </Row>
+                {
+                    data?.texts && 
+                    <Row>
+                       <SectionTitle subtitle={data.texts} title={data.headings} />
+                    </Row>
+                }
                 <Row>
                     {data?.features && data.features.map((feature,i) => {
                         var image = new Object();
@@ -35,7 +34,7 @@ const BoxSection = ({data}) => {
                                     title={feature.title}
                                     category={feature.type.title}
                                     // desc={feature.subTitle}
-                                    path={feature.slug}
+                                    path={`/${feature.type.key}/${feature.slug}`}
                                 />
                             </Col>
                         );

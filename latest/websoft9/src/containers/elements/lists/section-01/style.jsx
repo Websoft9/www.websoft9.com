@@ -11,6 +11,9 @@ export const SectionWrap = styled.div`
         padding-block-start: 94px;
         padding-block-end: 86px;
     }
+    .box-item {
+        margin-block-end: 40px;
+    }
 `;
 
 export const ListGroupWrap = styled.div`

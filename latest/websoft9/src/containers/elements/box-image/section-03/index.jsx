@@ -14,13 +14,13 @@ const BoxSection = ({data,lgSize=4}) => {
                 <SectionTitle mb={["47px", null, "60px"]} subtitle={data.texts} title={data.headings} />
                 <Row>
                     {
-                    data.features?.map((item) => {
+                    data.features?.map((item,i) => {
                         return (
                             <Col
                                 lg={lgSize}
                                 md={3}
                                 className="box-item"
-                                key={item.id}
+                                key={item.id+i}
                             >
                                 <BoxImage
                                     title={item.title}

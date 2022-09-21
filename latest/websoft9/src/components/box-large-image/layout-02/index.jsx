@@ -69,16 +69,6 @@ const BoxLargeImage = ({
     );
 };
 
-BoxLargeImage.propTypes = {
-    title: PropTypes.string,
-    desc: PropTypes.string,
-    path: PropTypes.string,
-    category: PropTypes.string,
-    btnText: PropTypes.string,
-    className: PropTypes.string,
-    layout: PropTypes.number,
-};
-
 BoxLargeImage.defaultProps = {
     btnText: "Discover Now",
 };

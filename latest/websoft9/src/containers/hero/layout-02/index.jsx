@@ -1,5 +1,4 @@
 import React from "react";
-import PropTypes from "prop-types";
 import { Container, Row, Col } from "@ui/wrapper";
 import Text from "@ui/text";
 import Button from "@ui/button";
@@ -7,7 +6,6 @@ import Image from "@ui/image";
 import { Player,ControlBar } from "video-react";
 import { HeadingType, TextType, ButtonType, ImageType } from "@utils/types";
 import { ButtonWrap } from "./style";
-
 import "/node_modules/video-react/dist/video-react.css";
 import {
     HeroWrapper,

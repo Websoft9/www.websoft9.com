@@ -65,13 +65,4 @@ const HeroArea = ({ data }) => {
     );
 };
 
-HeroArea.propTypes = {
-    data: PropTypes.shape({
-        headings: PropTypes.arrayOf(PropTypes.shape(HeadingType)),
-        texts: PropTypes.arrayOf(PropTypes.shape(TextType)),
-        buttons: PropTypes.arrayOf(PropTypes.shape(ButtonType)),
-        images: PropTypes.arrayOf(PropTypes.shape(ImageType)),
-    }),
-};
-
 export default HeroArea;

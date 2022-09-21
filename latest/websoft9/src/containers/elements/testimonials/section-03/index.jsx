@@ -55,7 +55,7 @@ const Section = ({data}) => {
                                             authorImg={img}
                                             // rating={testimonial.rating}
                                             //review={testimonial.reviews?.[0]}
-                                            subject={testimonial.reviews[0]}
+                                            subject={testimonial.reviews?.[0]}
                                         />
                                     </SwiperSlide>
                                 );

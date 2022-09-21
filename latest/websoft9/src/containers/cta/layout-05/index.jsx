@@ -63,9 +63,9 @@ const CTAArea = ({ data,relatedReading,siteData }) => {
                                 <Row style={{marginTop:'10px'}}>
                                 <nobr>
                                     {t("Related Applications")}:
-                                    {data.products && data.products.map((product)=>{
+                                    {data.products && data.products.map((product,i)=>{
                                         return (
-                                            <Link key={product.id} to={`/app-center/product/${product.key}`} style={{color:"dodgerblue"}}>{product.trademark}{' '}</Link>
+                                            <Link key={product.id+i} to={`/app-center/product/${product.key}`} style={{color:"dodgerblue"}}>{product.trademark}{' '}</Link>
                                         );
                                     })}
                                 </nobr>
@@ -75,7 +75,9 @@ const CTAArea = ({ data,relatedReading,siteData }) => {
                                     {t("Tags")}:
                                     {data.tags && data.tags.map((tag)=>{
                                         return (
-                                            <><font color="dodgerblue">{tag.name}</font>{' '}</>
+                                            <React.Fragment key={tag.id}>
+                                                <font key={tag.id} color="dodgerblue">{tag.name}</font>{' '}
+                                            </React.Fragment>
                                         );
                                     })}
                                 </nobr>
@@ -212,6 +214,7 @@ const CTAArea = ({ data,relatedReading,siteData }) => {
                                 style={{marginBlockEnd:"20px",marginBlockStart:"20px"}}
                             >
                                 <BoxImage
+                                    key = {item.id}
                                     title={item.title}
                                     image=
                                     {                                         

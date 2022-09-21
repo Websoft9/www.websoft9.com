@@ -15,6 +15,7 @@ import SectionFour from "@containers/elements/dividers/section-04";
 import { Link }  from  'gatsby';
 import FAQArea from "@containers/elements/accordion/section-02";
 import BoxImage from "@components/box-image/layout-01";
+import BoxImage2 from "@components/box-large-image/layout-02";
 import Heading from "@ui/heading";
 import LegendArea1 from "@containers/legend/layout-01";
 import LegendArea2 from "@containers/legend/layout-02";
@@ -49,7 +50,6 @@ const CTAArea = ({ data,resourceData }) => {
                 <Row
                     alignItems="center"
                     textAlign={["center", null, null, "left"]}
-                    key="row-1"
                 >
                     <Col xl={3}>
                         <HeroTextBox>
@@ -77,8 +77,10 @@ const CTAArea = ({ data,resourceData }) => {
                         <Button  m="7px" >{t("Get it Now")}</Button>
                     </Col>
                 </Row>
-                <Line mt="40px" mb="40px" borderWidth="1px" style={{marginLeft:"30px"}} />
-                <Row key="row-2">
+                <Row>
+                    <Line mt="40px" mb="40px" borderWidth="1px" style={{marginLeft:"30px"}} />
+                </Row>           
+                <Row>
                     <Col xl={10}>
                         { data?.screenshots && <FullWideSlider data={ data.screenshots}/> }
                         
@@ -92,9 +94,13 @@ const CTAArea = ({ data,resourceData }) => {
 
                         <LegendArea2 title={t("Description")} data={ data.description?.childMarkdownRemark?.html }/>
 
-                        <Row key="row-1-1">
-                            <FAQArea  data={ data.faq }/>
-                        </Row>
+                        {
+                            data?.faq && 
+                            <Row >
+                                <FAQArea  data={ data.faq }/>
+                            </Row>
+                        }
+
                         <Row style={{paddingLeft:'30px'}} key="row-1-2">     
                             {data?.type?.[0]?.product.length >0 && 
                                 <Heading as="h6" mb="37px" textAlign="left">
@@ -116,7 +122,7 @@ const CTAArea = ({ data,resourceData }) => {
                                                     {                                         
                                                         item.image==null ? {src: defaultImage} : {src: item.image.imageurl}
                                                     }
-                                                    // desc={item.summary}
+                                                    desc={item.summary}
                                                     path={`/app-center/${item.key}`}
                                                 />
                                             </Col>   
@@ -140,7 +146,7 @@ const CTAArea = ({ data,resourceData }) => {
                                         className="box-item"
                                         key={feature.id+i}
                                     >
-                                        <BoxImage
+                                        <BoxImage2
                                             image={image}
                                             title={feature.title}
                                             category={feature.type.title}
@@ -151,8 +157,6 @@ const CTAArea = ({ data,resourceData }) => {
                                 );
                             })}
                         </Row>
-
-
                     </Col>
                     <Col  xl={2}>
                         <Row style={{marginInlineStart:'20px',marginBottom:"20px",width:'200px'}}>
@@ -161,7 +165,7 @@ const CTAArea = ({ data,resourceData }) => {
                                 data?.type && data.type.map((item)=>{
                                     return (
                                         <Row style={{color:"dodgerblue"}} key={item.id}>                                           
-                                            <Link to={`/app-center/${item.key}`} style={{paddingLeft:'0px',marginLeft:'0px'}}>{item.title} </Link>
+                                            <Link to={`/app-catalog/${item.key}`} style={{paddingLeft:'0px',marginLeft:'0px'}}>{item.title} </Link>
                                         </Row>
                                     );
                                 })
@@ -206,7 +210,9 @@ const CTAArea = ({ data,resourceData }) => {
                             {
                                 data?.solution && data.solution.map((item)=>{
                                     return (
-                                        <Row style={{color:"dodgerblue"}} key={item.id}>{item.title}</Row>
+                                        <Row style={{color:"dodgerblue"}} key={item.id}>
+                                            <Link to={`/${item.type.key}/${item.slug}`} style={{paddingLeft:'0px',marginLeft:'0px'}}>{item.title} </Link>
+                                        </Row>
                                     );
                                 })
                             }
@@ -219,9 +225,13 @@ const CTAArea = ({ data,resourceData }) => {
                             <Row style={{color:"dodgerblue"}}>                               
                                 <Link  to="https://github.com/websoft9" style={{paddingLeft:'0px',marginLeft:'0px'}}> {t("GitHub")} </Link>
                             </Row>
-                            <Row style={{color:"dodgerblue"}}>
-                                <Link  to={data.websiteurl} style={{paddingLeft:'0px',marginLeft:'0px'}}> {t("Official Website")} </Link>
-                            </Row>
+                            {
+                                data?.websiteurl &&                             
+                                <Row style={{color:"dodgerblue"}}>
+                                    <Link  to={data.websiteurl} style={{paddingLeft:'0px',marginLeft:'0px'}}> {t("Official Website")} </Link>
+                                </Row>
+                            }
+
                         </Row>
                         <Row style={{marginInlineStart:'20px',marginBottom:"20px",width:'200px'}}>
                             <Row>{t("Applicable Personnel")}</Row>
@@ -239,7 +249,7 @@ const CTAArea = ({ data,resourceData }) => {
                                 <Link  to="/" style={{paddingLeft:'0px',marginLeft:'0px'}}> {t("Submit A Suggestion")} </Link>
                             </Row>
                             <Row style={{color:"dodgerblue"}}>
-                                <Link  to="/" style={{paddingLeft:'0px',marginLeft:'0px'}}> {t("Get Professional Services")} </Link> 
+                                <Link  to="/services" style={{paddingLeft:'0px',marginLeft:'0px'}}> {t("Get Professional Services")} </Link>
                             </Row>
                         </Row>
                     </Col>

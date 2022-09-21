@@ -15,7 +15,7 @@ const LegendArea = ({ title,data }) => {
                 <Row>
                     <Col lg={12} mx="auto">
                         <Heading as="h6" mb="37px" textAlign="left">
-                            {data!=null ? title:null}
+                            {data!=null ? title:""}
                         </Heading>
 
                        {/* {data!=null && <Markdown> {data} </Markdown>} */}

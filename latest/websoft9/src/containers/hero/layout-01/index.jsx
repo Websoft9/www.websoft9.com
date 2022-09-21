@@ -23,11 +23,15 @@ const HeroArea = ({ data }) => {
             <Container fluid>
                 <Row alignItems="center">
                     <Col md={6}>
-                    <HeroTextBox>                           
-                            <StyledSubtitle as="h3">
-                                {data.headings}
-                            </StyledSubtitle>                         
-                            <Text>{data.texts}</Text>
+                    <HeroTextBox>                            
+                            {data?.headings && (
+                                <StyledSubtitle as="h3">
+                                    {data.headings}
+                                </StyledSubtitle>
+                            )}                   
+                            {data?.texts && (
+                                <Text>{data.texts}</Text>
+                            )}
                             {data?.buttons?.map(
                                 ({id, path, content, ...rest }) => (
                                     <Button
@@ -56,6 +60,5 @@ const HeroArea = ({ data }) => {
         </HeroWrapper>
     );
 };
-
 
 export default HeroArea;

@@ -1,5 +1,4 @@
 import React from "react";
-import PropTypes from "prop-types";
 import Seo from "@components/seo";
 import Layout from "@layout";
 import Header from "@layout/header/layout-01";
@@ -12,12 +11,13 @@ import VerticalTabArea from "@containers/tab/layout-02";
 import ITServicesArea from "@containers/it-service/layout-02";
 import CtaArea from "@containers/cta/layout-04";
 import SolutionArea from "@containers/elements/box-large-image/section-02";
+import HeroImageArea from "@containers/hero/layout-06";
 
 const FeaturesPage = ({ pageContext, location, data }) => {
 
     return (
         <Layout location={location}>
-            <Seo title="Pricing Plan" />
+            <Seo title="Features" />
             <Header shortcutMenuData= { data.shortcutMenu.nodes } topMenuData={ data.topMenu.nodes } />
 
             <main className="site-wrapper-reveal">

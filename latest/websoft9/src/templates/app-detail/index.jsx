@@ -121,6 +121,12 @@ export const query = graphql`
                 solution {
                     id
                     title
+                    slug
+                    type {
+                    id
+                    key
+                    title
+                    }
                 }
                 license {   
                     id     

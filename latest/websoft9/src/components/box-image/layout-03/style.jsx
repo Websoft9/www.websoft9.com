@@ -47,7 +47,7 @@ export const HeadingWrap = styled.h6`
 
 export const TextWrap = styled.p`
     height:100px;
-    text-align: left;
+    //text-align: left;
 `;
 
 export const BoxCircleBtnWrap = styled.div`

@@ -44,19 +44,19 @@ const PricingTable = ({
                             <Image src={image.src} alt={image?.alt || title} />
                         </PricingTableImage>
                     )}
-                    {/* {price && (
+                    {price && (
                         <PricingTablePrice>
                             <sup>{"$"}</sup>
                             <h6>{price}</h6>
                             <sub>/{period === "monthly" ? "mo" : "y"}</sub>
                         </PricingTablePrice>
-                    )} */}
+                    )}
                     
-                    <PricingTablePrice>
+                    {/* <PricingTablePrice>
                         <sup>{"$"}</sup>
                         <h6>{price}</h6>
                         <sub>/{period === "monthly" ? "mo" : "y"}</sub>
-                    </PricingTablePrice>
+                    </PricingTablePrice> */}
                     
                 </PricingTableHead>
                 <PricingTableBody>
@@ -86,15 +86,5 @@ const PricingTable = ({
     );
 };
 
-PricingTable.propTypes = {
-    title: PropTypes.string,
-    period: PropTypes.string,
-    image: PropTypes.shape(ImageType),
-    price: PropTypes.number,
-    isFeatured: PropTypes.bool,
-    path: PropTypes.string,
-    features: PropTypes.array,
-    className: PropTypes.string,
-};
 
 export default PricingTable;

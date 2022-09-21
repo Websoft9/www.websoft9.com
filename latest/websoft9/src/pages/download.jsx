@@ -5,26 +5,31 @@ import Layout from "@layout";
 import Header from "@layout/header/layout-01";
 import Footer from "@layout/footer/layout-02";
 import CtaArea from "@containers/cta/layout-04";
-import ResourceArea from "@containers/elements/lists/section-03"
 import HeroArea from "@containers/hero/layout-01";
 import PageHeader from "@containers/page-header/layout-02";
-import IframeArea from "@containers/iframe"
+import ResourceArea from "@containers/elements/lists/section-03"
+import {Trans, useTranslation } from 'gatsby-plugin-react-i18next';
 
 const DownloadPage = ({pageContext,location,data }) => {
+    const { t } = useTranslation();
+
     return (
         <Layout location={location}>
             <Seo title="Download" />
             <Header shortcutMenuData={data.shortcutMenu.nodes} topMenuData={data.topMenu.nodes} />
         
             <main className="site-wrapper-reveal">
-                <PageHeader pageContext={pageContext} location={location} title="资料下载" />               
+                <PageHeader pageContext={pageContext} location={location} title={t("Resource Download")} />
+
+                <ResourceArea resourceData={ data.allContentfulResource.nodes } />
+
             </main>
         
             <Footer data={ data.BottomMenu.nodes } siteData={ data.site.siteMetadata } footerMenuData={data.FooterMenu.nodes} />
         </Layout>
     );
 };
-//
+
 export const query = graphql`
     query DownloadPageQuery($language: String!) {
         #多语言
@@ -50,25 +55,22 @@ export const query = graphql`
             }
         }
 
-        #查询当前页面(功能页面：Features)
-        allContentfulPage(filter: {node_locale: {eq: $language}, key: {eq: "Ticket"}}) {
+        #查询有下载附件的资源
+        allContentfulResource(
+            filter: {node_locale: {eq: $language}, downloadUrl: {ne: null}}
+            ) {
             nodes {
-            content {
                 id
-                headings: title
-                texts: subTitle
-                media
-                buttons {
-                id
-                content: key
-                path: value
+                slug
+                title
+                subTitle
+                downloadUrl
+                image:featureImage
+                type {
+                    id
+                    key
+                    title
                 }
-                link {
-                id
-                key
-                value
-                }
-            }
             }
         }
         #查询顶部快捷菜单
