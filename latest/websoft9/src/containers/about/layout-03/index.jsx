@@ -95,16 +95,16 @@ const AboutArea = ({ data, gridLine }) => {
     );
 };
 
-AboutArea.propTypes = {
-    data: PropTypes.shape({
-        section_title: PropTypes.shape(SectionTitleType),
-        buttons: PropTypes.arrayOf(PropTypes.shape(ButtonType)),
-        video_button: PropTypes.shape(VideoButtonType),
-        images: PropTypes.arrayOf(PropTypes.shape(ImageType)),
-        items: PropTypes.arrayOf(PropTypes.shape(ItemType)),
-    }),
-    gridLine: PropTypes.bool,
-};
+// AboutArea.propTypes = {
+//     data: PropTypes.shape({
+//         section_title: PropTypes.shape(SectionTitleType),
+//         buttons: PropTypes.arrayOf(PropTypes.shape(ButtonType)),
+//         video_button: PropTypes.shape(VideoButtonType),
+//         images: PropTypes.arrayOf(PropTypes.shape(ImageType)),
+//         items: PropTypes.arrayOf(PropTypes.shape(ItemType)),
+//     }),
+//     gridLine: PropTypes.bool,
+// };
 
 AboutArea.defaultProps = {
     gridLine: false,

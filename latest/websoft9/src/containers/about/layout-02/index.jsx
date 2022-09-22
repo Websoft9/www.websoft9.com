@@ -78,15 +78,15 @@ const AboutArea = ({ data }) => {
     );
 };
 
-AboutArea.propTypes = {
-    data: PropTypes.shape({
-        title: PropTypes.string,
-        images: PropTypes.arrayOf(PropTypes.shape(ImageType)),
-        video_button: PropTypes.shape(VideoButtonType),
-        texts: PropTypes.arrayOf(PropTypes.shape(TextType)),
-        list: PropTypes.arrayOf(PropTypes.string),
-        buttons: PropTypes.arrayOf(PropTypes.shape(ButtonType)),
-    }),
-};
+// AboutArea.propTypes = {
+//     data: PropTypes.shape({
+//         title: PropTypes.string,
+//         images: PropTypes.arrayOf(PropTypes.shape(ImageType)),
+//         video_button: PropTypes.shape(VideoButtonType),
+//         texts: PropTypes.arrayOf(PropTypes.shape(TextType)),
+//         list: PropTypes.arrayOf(PropTypes.string),
+//         buttons: PropTypes.arrayOf(PropTypes.shape(ButtonType)),
+//     }),
+// };
 
 export default AboutArea;

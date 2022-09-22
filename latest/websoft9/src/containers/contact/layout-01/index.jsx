@@ -85,12 +85,12 @@ const ContactArea = ({ data }) => {
     );
 };
 
-ContactArea.propTypes = {
-    data: PropTypes.shape({
-        headings: PropTypes.arrayOf(PropTypes.shape(HeadingType)),
-        texts: PropTypes.arrayOf(PropTypes.shape(TextType)),
-        buttons: PropTypes.arrayOf(PropTypes.shape(ButtonType)),
-    }),
-};
+// ContactArea.propTypes = {
+//     data: PropTypes.shape({
+//         headings: PropTypes.arrayOf(PropTypes.shape(HeadingType)),
+//         texts: PropTypes.arrayOf(PropTypes.shape(TextType)),
+//         buttons: PropTypes.arrayOf(PropTypes.shape(ButtonType)),
+//     }),
+// };
 
 export default ContactArea;

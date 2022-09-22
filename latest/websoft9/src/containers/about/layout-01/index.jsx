@@ -54,12 +54,12 @@ const AboutArea = ({ data }) => {
     );
 };
 
-AboutArea.propTypes = {
-    data: PropTypes.shape({
-        section_title: PropTypes.shape(SectionTitleType),
-        items: PropTypes.arrayOf(PropTypes.shape(ItemType)),
-        buttons: PropTypes.arrayOf(PropTypes.shape(ButtonType)),
-    }),
-};
+// AboutArea.propTypes = {
+//     data: PropTypes.shape({
+//         section_title: PropTypes.shape(SectionTitleType),
+//         items: PropTypes.arrayOf(PropTypes.shape(ItemType)),
+//         buttons: PropTypes.arrayOf(PropTypes.shape(ButtonType)),
+//     }),
+// };
 
 export default AboutArea;
