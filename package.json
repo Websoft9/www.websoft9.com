@@ -8,6 +8,7 @@
     "gatsby"
   ],
   "scripts": {
+    "deploy" : "gatsby build --prefix-paths && gh-pages -d public",
     "develop": "gatsby develop",
     "start": "gatsby develop",
     "build": "gatsby build",
@@ -95,5 +96,6 @@
   },
   "bugs": {
     "url": "https://github.com/gatsbyjs/gatsby/issues"
-  }
+  },
+  "homepage": "https://websoft9.github.io/www.websoft9.com"
 }
