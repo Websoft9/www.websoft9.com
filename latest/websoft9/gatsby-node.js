@@ -5,16 +5,16 @@ const path = require("path");
 // const createPages = require("./src/gatsby-utils/createPages");
 
 exports.onCreateWebpackConfig = ({ getConfig, actions }) => {
-    const oldConfig = getConfig();
-    const config = {
-        ...oldConfig,
-        output: {
-            ...oldConfig.output,
-            globalObject: "this",
-        },
-    };
+    // const oldConfig = getConfig();
+    // const config = {
+    //     ...oldConfig,
+    //     output: {
+    //         ...oldConfig.output,
+    //         globalObject: "this",
+    //     },
+    // };
 
-    actions.replaceWebpackConfig(config);
+    // actions.replaceWebpackConfig(config);
     actions.setWebpackConfig({
         resolve: {
             alias: {

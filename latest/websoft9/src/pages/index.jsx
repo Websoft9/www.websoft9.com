@@ -206,7 +206,7 @@ export const query = graphql`
                         icon
                         image
                         description {
-                        description
+                            description
                         }
                     }
                     ... on ContentfulBaseBrand {
@@ -218,6 +218,8 @@ export const query = graphql`
                     }
                     ... on ContentfulResource {
                         type {
+                            id
+                            key
                             title
                         }
                         id

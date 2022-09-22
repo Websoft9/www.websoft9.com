@@ -1,4 +1,10 @@
 module.exports = {
+    // flags: {
+    //     QUERY_ON_DEMAND: true,
+    //     LMDB_STORE: false,
+    //     PARALLEL_QUERY_RUNNING: false,
+    // },
+    pathPrefix: `/`,
     siteMetadata: {
       title: `Websoft9`,
       siteUrl: `https://www.websoft9.com`,
@@ -188,6 +194,14 @@ module.exports = {
         ]
       }
     },
-    "gatsby-plugin-offline",
+    // "gatsby-plugin-offline",
+    {
+      resolve: `gatsby-plugin-offline`,
+      options: {
+        workboxConfig: {
+          maximumFileSizeToCacheInBytes: 10000000
+        },
+      },
+    },
     ]
   };

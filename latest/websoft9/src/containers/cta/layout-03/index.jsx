@@ -123,7 +123,7 @@ const CTAArea = ({ data,resourceData }) => {
                                                         item.image==null ? {src: defaultImage} : {src: item.image.imageurl}
                                                     }
                                                     desc={item.summary}
-                                                    path={`/app-center/${item.key}`}
+                                                    path={`/app-center/product/${item.key}`}
                                                 />
                                             </Col>   
                                         );
@@ -151,7 +151,7 @@ const CTAArea = ({ data,resourceData }) => {
                                             title={feature.title}
                                             category={feature.type.title}
                                             // desc={feature.subTitle}
-                                            path={feature.slug}
+                                            path={`/${feature.type.key}/${feature.slug}`}
                                         />
                                     </Col>
                                 );
