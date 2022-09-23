@@ -15,13 +15,13 @@ const Logo = ({ className, variant, ...restProps }) => {
                     width={160}
                     height={48}
                 />
-                <StaticImage
+                {/* <StaticImage
                     src="../../assets/images/logo/w9.png"
                     className="img-fluid static-img dark-logo"
                     alt="logo"
                     width={160}
                     height={48}
-                />
+                /> */}
             </Link>
         </LogoWrapper>
     );

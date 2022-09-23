@@ -78,7 +78,7 @@ const CTAArea = ({ data,relatedReading }) => {
                                             item.featureImage==null ? {src: defaultImage} : {src: item.featureImage}
                                         }
                                         category={item.type.title}
-                                        path={`/resource-center/resource/${item.slug}`}
+                                        path={`/${item.type.key}/${item.slug}`}
                                     />
                                 </Col>
                             );
@@ -124,7 +124,7 @@ const CTAArea = ({ data,relatedReading }) => {
                                                 item.featureImage==null ? {src: defaultImage} : {src: item.featureImage}
                                             }
                                             category={item.type.title}
-                                            path={`/resource-center/resource/${item.slug}`}
+                                            path={`/${item.type.key}/${item.slug}`}
                                         />
                                     </Col>
                                 );

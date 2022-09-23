@@ -14,6 +14,7 @@ import {
     TextWrap,
     BoxLargeImgBtnWrap,
 } from "./style";
+import {Trans, useTranslation } from 'gatsby-plugin-react-i18next';
 
 const BoxLargeImage = ({
     image,
@@ -27,6 +28,7 @@ const BoxLargeImage = ({
     ...restProps
 }) => {
     return (
+
         <BoxLargeImgWrap className={className} {...restProps}>
             <BoxLargeImgInner>
                 {image?.src && (
@@ -59,7 +61,7 @@ const BoxLargeImage = ({
                                 variant="texted"
                                 disableHover={true}
                             >
-                                {btnText}
+                                <Trans>{btnText}</Trans>
                             </Button>
                         </BoxLargeImgBtnWrap>
                     )}
