@@ -30,7 +30,7 @@ const AppDetailTemplate = ({ location,data }) => {
             <Header shortcutMenuData= { data.shortcutMenu.nodes } topMenuData={ data.topMenu.nodes } />
         
         <main className="site-wrapper-reveal">
-            {/* <HeroArea data={data.allContentfulPage.nodes[0].content[0]} /> */}
+
             <ProductDetailArea data={ data.allContentfulProduct.nodes[0] } resourceData={data.allContentfulResource.nodes }  />
 
         </main>      
@@ -66,9 +66,12 @@ export const query = graphql`
         #根据产品key查询相关学习资源
         allContentfulResource(
             filter: {node_locale: {eq: $language}, product: {elemMatch: {key: {eq: $slug}}}}
+            limit: 4
         ) {
             nodes {
             type {
+                id
+                key
                 title
             }
             id
@@ -78,7 +81,7 @@ export const query = graphql`
             slug
             }
         }
-
+        #查询产品详情
         allContentfulProduct(filter: {node_locale: {eq: $language}, key: {eq: $slug}}) {
             nodes {
                 id
@@ -123,9 +126,9 @@ export const query = graphql`
                     title
                     slug
                     type {
-                    id
-                    key
-                    title
+                        id
+                        key
+                        title
                     }
                 }
                 license {   

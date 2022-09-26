@@ -57,7 +57,7 @@ export const FunFactText = styled.h6`
     font-size: 14px;
     font-weight: 700;
     text-transform: uppercase;
-    letter-spacing: 2px;
+    // letter-spacing: 2px;
     ${(props) =>
         props.$layout !== 2 &&
         css`

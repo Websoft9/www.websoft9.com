@@ -1,21 +1,5 @@
 import React from "react";
-import { Container, Row, Col } from "react-bootstrap";
-import Heading from "@ui/heading";
-import { SectionWrap, ListGroupWrap } from "./style";
-import ProductArea from "@containers/elements/box-image/section-01";
-import List from '@mui/material/List';
-import ListItemButton from '@mui/material/ListItemButton';
-import ListItemText from '@mui/material/ListItemText';
-import Collapse from '@mui/material/Collapse';
-import InboxIcon from '@mui/icons-material/MoveToInbox';
-import ExpandLess from '@mui/icons-material/ExpandLess';
-import ExpandMore from '@mui/icons-material/ExpandMore';
 import {graphql }  from  'gatsby';
-import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
-import ChevronRightIcon from '@mui/icons-material/ChevronRight';
-import BoxImage from "@components/box-image/layout-01";
-import PropTypes from "prop-types";
-import defaultImage from "@assets/images/default.png";
 import Seo from "@components/seo";
 import Layout from "@layout";
 import Header from "@layout/header/layout-01";
@@ -34,8 +18,7 @@ const AppCenterTemplate = ({pageContext,location,data }) => {
         
         <main className="site-wrapper-reveal">
             <HeroArea data={data.allContentfulPage.nodes[0].content[0]} />
-
-            
+      
             <ListArea 
                 cataLogData={data.allContentfulBaseCatalog.nodes[0].base_catalog}
                 productsData={data.allContentfulProduct.nodes}
@@ -51,7 +34,7 @@ const AppCenterTemplate = ({pageContext,location,data }) => {
         </Layout>
     );
 };
-// $catalog: String!,$limit:Int!,$skip:Int!
+
 export const query = graphql`
     query AppCenterTemplateQuery($language: String!,$limit:Int!,$skip:Int!) {
         #多语言
@@ -97,20 +80,6 @@ export const query = graphql`
                 }
                 }
             }
-            }
-        }
-        products:allContentfulProduct(
-            filter: {node_locale: {eq: $language}}
-        ) {
-            nodes {
-                id
-                key
-                title
-                trademark
-                description: summary
-                image: logo {
-                    imageurl
-                }
             }
         }
 

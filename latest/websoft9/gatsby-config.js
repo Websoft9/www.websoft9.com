@@ -10,7 +10,7 @@ module.exports = {
       siteUrl: `https://www.websoft9.com`,
       author:`Websoft9`,
       image: `landing.png`,
-      copyright:`Websoft9 Inc.`,
+      copyright:`备案：湘ICP备16009117号`,
       titleTemplate: `Websoft9`,
       getform:`Websoft9`,
       siteLanguage: "en-US",

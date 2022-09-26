@@ -74,7 +74,7 @@ const Footer = ({ data,siteData,footerMenuData }) => {
                                     <Col key={"col"+item.id} lg={2} md={6} sm={8}>
                                     <FooterWidget>
                                         <StyledWidgetTitle>{item.title}</StyledWidgetTitle>
-                                        <Line mt="20px" mb="20px" borderWidth="1px" />
+                                        <Line mt="10px" mb="10px" borderWidth="1px" />
                                         <FooterWidgetList>
                                             {
                                                 item.submenu.map((smenu)=>{

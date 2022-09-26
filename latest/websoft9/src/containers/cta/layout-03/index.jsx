@@ -69,7 +69,15 @@ const CTAArea = ({ data,resourceData }) => {
                             <TestimonialRating>
                                 {ratingItems}
                                 {disableRating}
-                                {" "} | {" "} {data.type?.[0].title}
+                                {" "} | {" "} 
+                                {/* {
+                                    data?.type.map((item)=>{
+                                        return (
+                                            <React.Fragment key={item.id}>{item.title}{" |"}</React.Fragment>
+                                        );
+                                    })
+                                } */}
+                                {data.type?.[0].title}
                             </TestimonialRating>
                         </HeroTextBox>
                     </Col>
@@ -108,7 +116,7 @@ const CTAArea = ({ data,resourceData }) => {
                                 </Heading>
                             }
                             {
-                                data?.type?.[0]?.product && data.type?.[0].product.map((item) => {
+                                data?.type?.[0]?.product && data.type?.[0].product.filter((item)=>item.trademark != data.trademark).slice(0,4).map((item) => {
                                         return (
                                             <Col
                                                 lg={4}
@@ -127,7 +135,8 @@ const CTAArea = ({ data,resourceData }) => {
                                                 />
                                             </Col>   
                                         );
-                            })}
+                                })
+                            }
                         </Row>
                         <Row style={{paddingLeft:'30px'}} key="row-1-3">
                             {

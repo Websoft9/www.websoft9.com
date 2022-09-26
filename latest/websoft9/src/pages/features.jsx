@@ -91,6 +91,8 @@ export const query = graphql`
                 }
                 ... on ContentfulResource {
                         type {
+                            id
+                            key
                             title
                         }
                         id

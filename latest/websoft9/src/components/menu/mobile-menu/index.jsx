@@ -82,77 +82,10 @@ const MobileMenu = ({ menuData }) => {
                                     <i className="icon fa fa-angle-down"></i>
                                 </StyledButton>
                             )}
-
-                            {submenu && (
-                                <StyledSubmenu className="submenu">
-                                    {submenu.map((subitem, j) => {
-                                        const submenuLevelTwo = subitem.submenu;
-                                        const submenuIndex = j;
-                                        return (
-                                            <StyledNavitem
-                                                key={`submenu-${menu.id}-${submenuIndex}`}
-                                                className="menu-item"
-                                                id={`submenu-item-${menuIndex}${submenuIndex}`}
-                                                $inSubmenu={true}
-                                            >
-                                                <StyledNavlink
-                                                    path={subitem.link}
-                                                    $inSubmenu={true}
-                                                >
-                                                    {subitem.text}
-                                                </StyledNavlink>
-                                                {submenuLevelTwo && (
-                                                    <StyledButton
-                                                        className="menu-expand"
-                                                        $inSubmenu={true}
-                                                        onClick={(e) =>
-                                                            onClickHandler(
-                                                                e,
-                                                                `#submenu-item-${menuIndex}${submenuIndex}`
-                                                            )
-                                                        }
-                                                    >
-                                                        <i className="icon fa fa-angle-down"></i>
-                                                    </StyledButton>
-                                                )}
-                                                {submenuLevelTwo && (
-                                                    <StyledSubmenu>
-                                                        {submenuLevelTwo.map(
-                                                            (
-                                                                subitemLevelTwo,
-                                                                k
-                                                            ) => {
-                                                                const subsubmenuIndex =
-                                                                    k;
-                                                                return (
-                                                                    <StyledNavitem
-                                                                        key={`submenu-${menu.id}-${submenuIndex}-${subsubmenuIndex}`}
-                                                                        className="menu-item"
-                                                                        id={`submenu-item-${menuIndex}${submenuIndex}${subsubmenuIndex}`}
-                                                                    >
-                                                                        <StyledNavlink
-                                                                            path={
-                                                                                subitemLevelTwo.link
-                                                                            }
-                                                                        >
-                                                                            {
-                                                                                subitemLevelTwo.text
-                                                                            }
-                                                                        </StyledNavlink>
-                                                                    </StyledNavitem>
-                                                                );
-                                                            }
-                                                        )}
-                                                    </StyledSubmenu>
-                                                )}
-                                            </StyledNavitem>
-                                        );
-                                    })}
-                                </StyledSubmenu>
-                            )}
+                            
                             {megamenu && (
                                 <StyledMegamenu className="megamenu">
-                                    {megamenu.map((megaitem, i) => {
+                                    {megamenu.slice(1).map((megaitem, i) => {
                                         const megaSubmenu = megaitem.submenu;
                                         const megaIndex = i;
                                         return (
@@ -163,7 +96,7 @@ const MobileMenu = ({ menuData }) => {
                                             >
                                                 <StyledMegatitle>
                                                     <span>
-                                                        {megaitem.title}
+                                                        {megaitem.text}
                                                     </span>
                                                     <StyledButton
                                                         className="menu-expand"
@@ -185,6 +118,16 @@ const MobileMenu = ({ menuData }) => {
                                                                 megaSubitem,
                                                                 i
                                                             ) => {
+                                                                var path = "/";
+                                                                if(megaSubitem.key !== undefined ){
+                                                                    path = "/app-center/product/"+megaSubitem.key
+                                                                }
+                                                                else if(megaSubitem.slug !== undefined){
+                                                                    path = "/solution/"+megaSubitem.slug;
+                                                                }
+                                                                else{
+                                                                    path = megaSubitem.link;
+                                                                }
                                                                 return (
                                                                     <StyledNavitem
                                                                         key={`megasubmenu-${megaIndex}-${i}`}
@@ -197,7 +140,7 @@ const MobileMenu = ({ menuData }) => {
                                                                                 true
                                                                             }
                                                                             path={
-                                                                                megaSubitem.link
+                                                                                path
                                                                             }
                                                                         >
                                                                             <span>

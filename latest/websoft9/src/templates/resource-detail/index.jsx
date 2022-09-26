@@ -67,7 +67,7 @@ export const query = graphql`
         }
         #查询相关阅读
         RelatedReading:allContentfulResource(
-            filter: {node_locale: {eq: $language}}
+            filter: {node_locale: {eq: $language},slug: {ne: $slug}}
             limit: 4
             sort: {fields: time, order: DESC}
         ) {
