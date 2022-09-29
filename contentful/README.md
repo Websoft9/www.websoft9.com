@@ -1,20 +1,43 @@
-# About
+# Importing and exporting content with the Contentful CLI
 
-## 架构
+## Requirements
+- A (free) Contentful account.
+- Locally installed contentful-cli.
+- Authenticated with contentful-cli.
 
-采用 Headless CMS + Gatsby 的数据与交互彻底分离的方案：
+## Installing the Contentful CLI
+- Using npm: `npm install -g contentful-cli`
+- Using yarn: `yarn global add contentful-cli`
+- Usage : `contentful --help`
 
-* Web framework: [Gatsby](https://www.gatsbyjs.com/)
-* Headless CMS: [Contentful](https://www.contentful.com/)
-* Theme: [Mitech](https://themeforest.net/item/mitech-it-solutions-and-services-company-react-gatsby-template/25766950)
-* 图床：支持任何类型的对象存储
+## Authentication with the Contentful CLI
+- `contentful login`
+![image](https://user-images.githubusercontent.com/7624828/192952643-b95bb64b-3ac2-42ae-bb7b-06a5075670fb.png)
+- If you have no browser available on your machine you can generate the management token manually and pass it directly to the login command.[Login](https://be.contentful.com/login) and create a management token at Settings > API keys > Content management tokens > Generate personal token.
 
-## 部署
+- Remember the Access Token 
 
+## Exporting content
+- After you have the CLI tool installed and at the command line, run `contentful space export [options]`.
+  All of these options can be put in an external config.json file. You can find a [reference config file here](https://github.com/Websoft9/www.websoft9.com/blob/main/contentful/export-config.json).
+- Next, run your export.
+`contentful space export --config export-config.json`
+The exported JSON file has the following structure:
+```
+{
+  "contentTypes": [],
+  "entries": [],
+  "assets": [],
+  "locales": [],
+  "webhooks": [],
+  "roles": [],
+  "editorInterfaces": []
+}
+```
 
-
-## 开发
-
-## 维护内容
-
-#### 如何获取 icon 名称？
+## Importing content
+- After you have the import CLI tool installed and at the command line, run `contentful space import [options]` from your command line.
+- Similar to the export tool, these settings can be stored in an external json file. Find a [reference config file here](https://github.com/Websoft9/www.websoft9.com/blob/main/contentful/import-config.json).
+  Note that you also need to reference a JSON file that contains the exported content. The expected format is the same as the export format from the export tool above.
+- Next, run your import.
+  `contentful space import --config import-config.json`
