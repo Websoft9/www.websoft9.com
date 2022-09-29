@@ -2,6 +2,7 @@ import React from "react";
 import PropTypes from "prop-types";
 import { Container, Row, Col } from "@ui/wrapper";
 import Text from "@ui/text";
+import cn from "clsx";
 import Button from "@ui/button";
 import Image from "@ui/image";
 import { HeadingType, TextType, ButtonType, ImageType } from "@utils/types";
@@ -16,7 +17,7 @@ import {
 } from "./style";
 import { Trans,useTranslation } from 'gatsby-plugin-react-i18next';
 
-const HeroArea = ({ data }) => {
+const HeroArea = ({ data,className }) => {
     const { t } = useTranslation()
     return (
         <HeroWrapper>
@@ -46,12 +47,12 @@ const HeroArea = ({ data }) => {
                             )}
                         </HeroTextBox>
                     </Col>
-                    <Col md={6}>
-                        <ImageBoxWrap>
+                    <Col md={5}>
+                        <ImageBoxWrap className={cn(className, "popup-video")}>
                             {data?.media && (
-                                <ImageBoxTwo>
+                                // <ImageBoxTwo>
                                     <Image src={data.media} />
-                                </ImageBoxTwo>
+                                // </ImageBoxTwo>
                             )}
                         </ImageBoxWrap>
                     </Col>

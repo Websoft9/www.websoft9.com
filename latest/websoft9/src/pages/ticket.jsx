@@ -2,29 +2,29 @@ import React from "react";
 import {graphql }  from  'gatsby';
 import Seo from "@components/seo";
 import Layout from "@layout";
-import Header from "@layout/header/layout-01";
+import Header from "@layout/header/layout-02";
 import Footer from "@layout/footer/layout-02";
 import CtaArea from "@containers/cta/layout-04";
 import ResourceArea from "@containers/elements/lists/section-03"
 import HeroArea from "@containers/hero/layout-01";
-import PageHeader from "@containers/page-header/layout-02";
+import PageHeader from "@containers/page-header/layout-01";
 import IframeArea from "@containers/iframe"
 
 const TicketPage = ({pageContext,location,data }) => {
     return (
         <Layout location={location}>
-            <Seo title="Ticket" />
-            <Header shortcutMenuData={data.shortcutMenu.nodes} topMenuData={data.topMenu.nodes} />
+            <Seo title={data.allContentfulPage.nodes[0].title} />
+            <Header />
         
             <main className="site-wrapper-reveal">
-                <PageHeader pageContext={pageContext} location={location} title="7×24工单" />
+                <PageHeader data={data.allContentfulPage.nodes[0].content[0]} />
                 
-                <IframeArea data={ data.allContentfulPage.nodes[0].content[0]?.link?.[0].value } width="1200px" height="1000px" />
+                <IframeArea data={ data.allContentfulPage.nodes[0].content[1]?.link?.[0].value }  width="1200px" height="1000px" />
 
-                <CtaArea data={ data.allContentfulPage.nodes[0].content[1] } />
+                <CtaArea data={ data.allContentfulPage.nodes[0].content[2] } />
             </main>
         
-            <Footer data={ data.BottomMenu.nodes } siteData={ data.site.siteMetadata } footerMenuData={data.FooterMenu.nodes} />
+            <Footer/>
         </Layout>
     );
 };
@@ -41,18 +41,6 @@ export const query = graphql`
                 }
             }
         }
-        site {
-            siteMetadata {
-            copyright
-            description
-            socials {
-                icon
-                id
-                link
-                title
-            }
-            }
-        }
         #查询资源目录
         allContentfulAboutContent(filter: {node_locale: {eq: $language}}) {
             nodes {
@@ -65,117 +53,22 @@ export const query = graphql`
         #查询当前页面(功能页面：Features)
         allContentfulPage(filter: {node_locale: {eq: $language}, key: {eq: "Ticket"}}) {
             nodes {
+            title
             content {
                 id
                 headings: title
                 texts: subTitle
+                image: backgourdImage
                 media
                 buttons {
-                id
-                content: key
-                path: value
+                    id
+                    content: key
+                    path: value
                 }
                 link {
                 id
                 key
                 value
-                }
-            }
-            }
-        }
-        #查询顶部快捷菜单
-        shortcutMenu: allContentfulMenu(
-            filter: {type: {eq: "TopMenu"}, node_locale: {eq: $language}}
-        ) {
-            nodes {
-            id
-            title
-            link    
-            }
-        }
-        #查询导航主菜单
-        topMenu: allContentfulMenu(
-            filter: {node_locale: {eq: $language}, type: {eq: "MainMenu"}}
-            sort: {fields: title}
-        ) {
-            nodes {
-            id
-            text: title
-            link
-            megamenu: submenu {
-                ... on ContentfulMenu {
-                id
-                text: title
-                submenu {
-                    ... on ContentfulMenu {
-                    id
-                    text: title
-                    link
-                    }
-                    ... on ContentfulProduct {
-                    id
-                    key
-                    text: trademark
-                    logo {
-                        imageurl
-                    }
-                    }
-                    ... on ContentfulResource {
-                    id
-                    slug
-                    text: title
-                    }
-                }
-                }
-                ... on ContentfulBaseFeature {
-                id
-                title
-                subtitle
-                image
-                buttons:link {
-                    key
-                    value
-                }
-                }
-            }
-            }
-        }
-        #查询底部菜单
-        BottomMenu: allContentfulMenu(
-            filter: {node_locale: {eq: $language}, type: {eq: "BottomMenu"}}
-            sort: {fields: title}
-        ) {
-            nodes {
-            id
-            menus: submenu {
-                ... on ContentfulMenu {
-                id
-                title
-                link
-                submenu {
-                    ... on ContentfulMenu {
-                    id
-                    title
-                    link
-                    }
-                }
-                }
-            }
-            }
-        }      
-        #查询页脚菜单
-        FooterMenu: allContentfulMenu(
-            filter: {type: {eq: "FooterMenu"}, node_locale: {eq: $language}}
-        ) {
-            nodes {
-            id
-            title
-            link
-            submenu {
-                ... on ContentfulMenu {
-                id
-                title
-                link
                 }
             }
             }

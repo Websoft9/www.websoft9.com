@@ -24,18 +24,28 @@ export const HeroTextBox = styled.div`
 `;
 
 export const ImageBoxWrap = styled.div`
-    position: relative;
-    margin-inline: auto;
-    max-width: 370px;
+    // position: relative;
+    // margin-inline: auto;
+    // max-width: 370px;
 
-    ${device.medium} {
-        padding-block-start: 160px;
-        max-width: 100%;
-        margin-inline: 0;
+    // ${device.medium} {
+    //     padding-block-start: 160px;
+    //     max-width: 100%;
+    //     margin-inline: 0;
+    // }
+    // ${device.large} {
+    //     margin-block-start: 20px;
+    //     padding-block-start: 0;
+    // }
+    
+    position: relative;
+    .gatsby-image-wrapper {
+        width: 100% !important;
     }
-    ${device.large} {
-        margin-block-start: 20px;
-        padding-block-start: 0;
+    img {
+        border-radius: ${themeGet("radii.md")};
+        width: 100% !important;
+        height:429px;
     }
 `;
 

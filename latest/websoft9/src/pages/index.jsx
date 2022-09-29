@@ -14,15 +14,12 @@ import CounterArea from "@containers/elements/counters/section-01";
 import TestimonialArea from "@containers/elements/testimonials/section-01";
 import CtaArea from "@containers/cta/layout-04";
 import SolutionArea from "@containers/elements/box-large-image/section-02";
-import {Trans, useTranslation,Link, useI18next} from 'gatsby-plugin-react-i18next';
 
 const IndexPage = ({ location, data }) => {
-    const {language, languages, changeLanguage } = useI18next();
-
     return (
         <Layout location={location}>
-            <Seo title="Home" />
-            <Header shortcutMenuData= { data.shortcutMenu.nodes } topMenuData={ data.topMenu.nodes } />
+            <Seo title={data.allContentfulPage.nodes[0].title} description={data.allContentfulPage.nodes[0].description.description} keywords={data.allContentfulPage.nodes[0].tags}/>
+            <Header />
 
             <main className="site-wrapper-reveal">
                 <HeroArea data={data.allContentfulPage.nodes[0].content[0]} />
@@ -56,7 +53,7 @@ const IndexPage = ({ location, data }) => {
                 <CtaArea data={ data.allContentfulPage.nodes[0].content[10] } />
                             
             </main>
-            <Footer data={ data.BottomMenu.nodes } siteData={ data.site.siteMetadata } footerMenuData={data.FooterMenu.nodes} />
+            <Footer />
         </Layout>
     );
 };
@@ -73,121 +70,21 @@ export const query = graphql`
                 }
             }
         }
-        site {
-            siteMetadata {
-            copyright
-            description
-            socials {
-                icon
-                id
-                link
-                title
-            }
-            }
-        }
-        #查询顶部快捷菜单
-        shortcutMenu: allContentfulMenu(
-            filter: {type: {eq: "TopMenu"}, node_locale: {eq: $language}}
-        ) {
-            nodes {
-            id
-            title
-            link
-            }
-        }
-        #查询导航主菜单
-        topMenu: allContentfulMenu(
-            filter: {node_locale: {eq: $language}, type: {eq: "MainMenu"}}
-            sort: {fields: title}
-        ) {
-            nodes {
-            id
-            text: title
-            link
-            megamenu: submenu {
-                ... on ContentfulMenu {
-                id
-                text: title
-                submenu {
-                    ... on ContentfulMenu {
-                    id
-                    text: title
-                    link
-                    }
-                    ... on ContentfulProduct {
-                    id
-                    text: trademark
-                    key
-                    logo {
-                        imageurl
-                    }
-                    }
-                    ... on ContentfulResource {
-                    id
-                    slug
-                    text: title
-                    }
-                }
-                }
-                ... on ContentfulBaseFeature {
-                id
-                title
-                subtitle
-                image
-                buttons:link {
-                    key
-                    value
-                }
-                }
-            }
-            }
-        }
-        #查询底部菜单
-        BottomMenu: allContentfulMenu(
-            filter: {node_locale: {eq: $language}, type: {eq: "BottomMenu"}}
-            sort: {fields: title}
-        ) {
-            nodes {
-            id
-            menus: submenu {
-                ... on ContentfulMenu {
-                id
-                title
-                link
-                submenu {
-                    ... on ContentfulMenu {
-                    id
-                    title
-                    link
-                    }
-                }
-                }
-            }
-            }
-        }      
-        #查询页脚菜单
-        FooterMenu: allContentfulMenu(
-            filter: {type: {eq: "FooterMenu"}, node_locale: {eq: $language}}
-        ) {
-            nodes {
-            id
-            title
-            link
-            submenu {
-                ... on ContentfulMenu {
-                id
-                title
-                link
-                }
-            }
-            }
-        }
         # 查询页面：index(首页)
         allContentfulPage(filter: {node_locale: {eq: $language}, key: {eq: "Index"}}) {
             nodes {
+                title
+                description {
+                    description
+                }
+                tags {
+                    id
+                    name
+                }
                 content {
                     headings: title
                     texts: subTitle
+                    backgourdImage
                     media
                     buttons {
                         id

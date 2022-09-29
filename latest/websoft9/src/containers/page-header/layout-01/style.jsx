@@ -23,6 +23,11 @@ export const StyledBG = styled.div`
         height: 100%;
         width: 100%;
     }
+    & >img {
+        width:1920px;
+        height:507px;
+        object-fit:cover;
+    }
 `;
 
 export const StyledTitle = styled.h1`

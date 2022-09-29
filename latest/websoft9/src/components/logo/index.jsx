@@ -9,18 +9,18 @@ const Logo = ({ className, variant, ...restProps }) => {
         <LogoWrapper className={className} $variant={variant} {...restProps}>
             <Link to="/">
                 <StaticImage
-                    src="../../assets/images/logo/w9.png"
+                    src="../../assets/images/logo/w9.svg"
                     className="img-fluid static-img light-logo"
                     alt="logo"
-                    width={160}
-                    height={48}
+                    // width={200}
+                    // height={48}
                 />
                 <StaticImage
-                    src="../../assets/images/logo/w9.png"
+                    src="../../assets/images/logo/w9.svg"
                     className="img-fluid static-img dark-logo"
                     alt="logo"
-                    width={160}
-                    height={48}
+                    // width={200}
+                    // height={48}
                 />
             </Link>
         </LogoWrapper>

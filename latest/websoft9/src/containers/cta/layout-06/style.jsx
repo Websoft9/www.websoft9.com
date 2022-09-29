@@ -1,7 +1,7 @@
 import styled, { themeGet, device } from "@styled";
 
 export const StyledSection = styled.section`
-    padding-block: 40px;
+    //padding-block: 40px;
     position: relative;
     isolation: isolate;
     overflow: hidden;
@@ -13,6 +13,11 @@ export const StyledSection = styled.section`
     // }
     & >div > div {
         margin-block-start:30px
+    }
+
+    div ul {
+        list-style-type:disc;
+        list-style-position:inside;
     }
 `;
 

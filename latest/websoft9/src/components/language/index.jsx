@@ -55,7 +55,7 @@ const Language = ({ className, ...props }) => {
             <Dropdown>
                 <DropdownItem active>
                     <DropdownItemInner active>
-                        <span>{activeLanguage[0].name}</span>
+                        <span style={{color:"#000000"}}>{activeLanguage[0].name}</span>
                     </DropdownItemInner>
                     <DropdownSubMenu>
                         {inActiveLanguage.map((lang) => {

@@ -4,6 +4,7 @@ import { Helmet } from "react-helmet";
 import { useStaticQuery, graphql } from "gatsby";
 
 const SEO = ({
+    keywords,
     description,
     lang,
     image: metaImage,
@@ -34,6 +35,15 @@ const SEO = ({
         `
     );
 
+    let keywordsString = "";
+    keywords && keywords.map((key)=>{
+        keywordsString += key.name+",";
+    })
+    if(keywordsString.length>0){
+        keywordsString = keywordsString.substring(0,keywordsString.length-1);
+    }
+
+    const metakeywords = keywordsString || site.siteMetadata.keywords;
     const metaTitle = title || site.siteMetadata.title;
     const template = titleTemplate || site.siteMetadata.titleTemplate;
     const metaDescription = description || site.siteMetadata.description;
@@ -98,6 +108,7 @@ const SEO = ({
             {/* General tags */}
             <title>{siteTitle}</title>
             <meta name="description" content={metaDescription} />
+            <meta name="keywords" content={keywordsString} />
             <meta name="image" content={bannerImage} />
             <link rel="canonical" href={canonicalLink} />
             <meta

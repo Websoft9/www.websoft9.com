@@ -82,18 +82,18 @@ export const HeaderLeft = styled.div`
     ${device.xlarge} {
         flex-basis: 15%;
     }
-    ${device.xxlarge} {
-        flex-basis: 23%;
-    }
-    ${device.xxxlarge} {
-        flex-basis: 25%;
-    }
+    // ${device.xxlarge} {
+    //     flex-basis: 23%;
+    // }
+    // ${device.xxxlarge} {
+    //     flex-basis: 25%;
+    // }
 `;
 
 export const HeaderMiddle = styled.div`
     flex-grow: 1;
     display: flex;
-    justify-content: center;
+    justify-content: left;
     align-items: center;
 `;
 export const HeaderRight = styled.div`
@@ -103,16 +103,16 @@ export const HeaderRight = styled.div`
     justify-content: flex-end;
     align-items: center;
     ${device.medium} {
-        flex-basis: 60%;
+        flex-basis: 80%;
     }
     ${device.xlarge} {
-        flex-basis: 29%;
+        flex-basis: 70%;
     }
     ${device.xxlarge} {
-        flex-basis: 26%;
+        flex-basis: 60%;
     }
     ${device.xxxlarge} {
-        flex-basis: 25%;
+        flex-basis: 50%;
     }
 `;
 
@@ -161,6 +161,7 @@ export const HeaderElement = styled("div").withConfig({
     height: 100%;
     display: flex;
     align-items: center;
+    font-size:16px;
     ${space};
     ${layout};
     ${border};
@@ -245,10 +246,10 @@ export const StyledNavlink = styled(Anchor)`
     position: relative;
     font-size: 16px;
     font-weight: 500;
-    line-height: 1.18;
+    color:#000000;
+    //line-height: 1.18;
     transition: all 0s ease-in-out;
     
-
     ${({ $bottomLine }) =>
         $bottomLine &&
         css`
@@ -316,8 +317,8 @@ export const StyledNavlink = styled(Anchor)`
             display: inline-block;
             padding: 0;
             padding-bottom: 4px;
-            color: #ababab;
-            font-weight: 400;
+            // color: #ababab;
+            font-weight: 500;
             transition: 0s;
             &:before {
                 background-color: ${themeGet("colors.primary")};

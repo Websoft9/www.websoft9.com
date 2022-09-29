@@ -18,6 +18,7 @@ import {
 } from "./style";
 import { Trans,useTranslation } from 'gatsby-plugin-react-i18next';
 import { NoBackpackSharp } from "@mui/icons-material";
+import PopupVideoTwo from "@ui/popup-video/layout-02";
 
 const HeroArea = ({ data }) => {
     const { t } = useTranslation()
@@ -52,10 +53,16 @@ const HeroArea = ({ data }) => {
                         </HeroTextBox>
                     </Col>
                     <Col md={5} >
-                        <Player playsInline autoPlay={true} preload="auto" loop={true} >
+                        {/* <Player playsInline autoPlay={true} preload="auto" loop={true} >
                             <ControlBar autoHide={true} />
                             <source src={data.media} type="video/mp4" />
-                        </Player>
+                        </Player> */}
+                         <PopupVideoTwo
+                            image={{ src: data.backgourdImage }}
+                            video_button={{
+                                link: data.media,
+                            }}
+                        />
                     </Col>
                 </Row>
             </Container>
