@@ -1,4 +1,4 @@
-# Importing and exporting content with the Contentful CLI
+# [Importing and exporting content with the Contentful CLI](https://www.contentful.com/developers/docs/tutorials/cli/installation/)
 
 ## Requirements
 - A (free) Contentful account.
