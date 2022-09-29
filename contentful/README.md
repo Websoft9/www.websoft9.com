@@ -41,13 +41,14 @@
   "maxAllowedLimit": 1000,
   "errorLogFile": "<Full path to the error log file>",
   "useVerboseRenderer": false
-}
+  }
   ```
-- Next, run your export.
-`contentful space export --config export-config.json`
-The exported JSON file has the following structure:
-```
-{
+ 
+- Next, run your export:
+ `contentful space export --config export-config.json`
+  The exported JSON file has the following structure:
+  ```
+  {
   "contentTypes": [],
   "entries": [],
   "assets": [],
@@ -55,19 +56,19 @@ The exported JSON file has the following structure:
   "webhooks": [],
   "roles": [],
   "editorInterfaces": []
-}
-```
+  }
+  ```
 
 ## Importing content
 - After you have the import CLI tool installed and at the command line, run `contentful space import [options]` from your command line.
 - Similar to the export tool, these settings can be stored in an external json file. Find a [reference config file here](https://github.com/Websoft9/www.websoft9.com/blob/main/contentful/import-config.json).
-```
-{
+  ```
+  {
   "spaceId": "<ID of the destination space>",
   "managementToken": "<Contentful management API token>",
   "contentFile": "<JSON file that contains data to be import to your space>"
-}
-```
+  }
+  ```
   Note that you also need to reference a JSON file that contains the exported content. The expected format is the same as the export format from the export tool above.
 - Next, run your import.
   `contentful space import --config import-config.json`
