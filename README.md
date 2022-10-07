@@ -8,6 +8,7 @@
 * Headless CMS: [Contentful](https://www.contentful.com/)
 * Theme: [Mitech](https://themeforest.net/item/mitech-it-solutions-and-services-company-react-gatsby-template/25766950)
 * 图床：支持任何类型的对象存储
+* 原型设计：[softr](https://www.softr.io/)、墨刀
 
 ## 部署
 
