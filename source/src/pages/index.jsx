@@ -18,7 +18,7 @@ import SolutionArea from "@containers/elements/box-large-image/section-02";
 const IndexPage = ({ location, data }) => {
     return (
         <Layout location={location}>
-            <Seo title={data.allContentfulPage.nodes[0].title} description={data.allContentfulPage.nodes[0].description.description} keywords={data.allContentfulPage.nodes[0].tags}/>
+            <Seo title={data.allContentfulPage.nodes[0].title} description={data.allContentfulPage.nodes[0]?.description?.description} keywords={data.allContentfulPage.nodes[0]?.tags}/>
             <Header />
 
             <main className="site-wrapper-reveal">

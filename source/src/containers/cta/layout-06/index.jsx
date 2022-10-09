@@ -13,8 +13,6 @@ import remarkGfm from 'remark-gfm'
 import HeroArea from "@containers/hero/layout-01";
 // import BoxImage from "@components/box-image/layout-02";
 import BoxImage from "@components/box-large-image/layout-02";
-import HeroImageLeftArea from "@containers/hero/layout-04";
-import HeroImageRightArea from "@containers/hero/layout-05";
 import HeroImageArea from "@containers/hero/layout-06";
 import PartnerArea from "@containers/elements/client-logo/section-03";
 

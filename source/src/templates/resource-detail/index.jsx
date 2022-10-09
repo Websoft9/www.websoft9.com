@@ -9,7 +9,7 @@ import ResourceDetailArea from "@containers/cta/layout-05";
 const ResourceDetailTemplate = ({ location, data }) => {
     return (
         <Layout location={location}>
-            <Seo title={data.allContentfulResource.nodes[0].title} />
+            <Seo title={data.allContentfulResource.nodes[0].title} description={data.allContentfulResource.nodes[0]?.description?.description} keywords={data.allContentfulResource.nodes[0]?.tags}/>
             <Header />
 
             <main className="site-wrapper-reveal">
@@ -69,6 +69,9 @@ export const query = graphql`
             id
             slug
             title
+            description {
+                    description
+                }
             image: featureImage
             type {
                 id

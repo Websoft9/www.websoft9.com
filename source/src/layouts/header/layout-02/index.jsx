@@ -46,30 +46,30 @@ const Header = () => {
         <StaticQuery
         query={graphql`
           {
-            #查询顶部快捷菜单(中文)
-            zhShortCutMenu: allContentfulMenu(
-              filter: {type: {eq: "TopMenu"}, node_locale: {eq: "zh-CN"}}
-            ) {
-              nodes {
-                id
-                title
-                link
-              }
+            #查询右侧快捷菜单(中文)
+            zhShortCutMenu:contentfulMenu(type: {eq: "RightMenu"}, node_locale: {eq: "zh-CN"}) {
+                submenu {
+                ... on ContentfulMenu {
+                    id
+                    title
+                    link
+                }
+                }
             }
-            #查询顶部快捷菜单(英文)
-            enShortCutMenu: allContentfulMenu(
-              filter: {type: {eq: "TopMenu"}, node_locale: {eq: "en-US"}}
-            ) {
-              nodes {
-                id
-                title
-                link
-              }
+            #查询右侧快捷菜单(英文)
+            enShortCutMenu: contentfulMenu(type: {eq: "RightMenu"}, node_locale: {eq: "en-US"}) {
+                submenu {
+                ... on ContentfulMenu {
+                    id
+                    title
+                    link
+                }
+                }
             }
             #查询顶部主菜单(中文)
             zhMainMenu: allContentfulMenu(
                 filter: {node_locale: {eq: "zh-CN"}, type: {eq: "MainMenu"}}
-                sort: {fields: title}
+                sort: {fields: sort, order: ASC}
             ) {
                 nodes {
                 id
@@ -116,7 +116,7 @@ const Header = () => {
             #查询顶部主菜单(英文)
             enMainMenu: allContentfulMenu(
                 filter: {node_locale: {eq: "en-US"}, type: {eq: "MainMenu"}}
-                sort: {fields: title}
+                sort: {fields: sort, order: ASC}
             ) {
                 nodes {
                 id
@@ -199,8 +199,8 @@ const Header = () => {
                                 >
                                     <Language />
                                 </HeaderElement>                               
-                                    {
-                                        (language == "zh-CN" ? data.zhShortCutMenu.nodes : data.enShortCutMenu.nodes).map((shortcut)=>{
+                                    {                                     
+                                        (language == "zh-CN" ? data.zhShortCutMenu.submenu : data.enShortCutMenu.submenu).map((shortcut)=>{
                                         return (
                                             <HeaderElement key={`submenu-${shortcut.id}`}
                                                 pr={[

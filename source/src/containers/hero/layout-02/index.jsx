@@ -52,17 +52,20 @@ const HeroArea = ({ data }) => {
                             )}
                         </HeroTextBox>
                     </Col>
-                    <Col md={5} >
+                    <Col md={6} >
                         {/* <Player playsInline autoPlay={true} preload="auto" loop={true} >
                             <ControlBar autoHide={true} />
                             <source src={data.media} type="video/mp4" />
                         </Player> */}
-                         <PopupVideoTwo
-                            image={{ src: data.backgourdImage }}
-                            video_button={{
-                                link: data.media,
-                            }}
-                        />
+                        <div style={{maxWidth: '600px',width:'100%'}}>
+                            <PopupVideoTwo
+                                image={{ src: data.backgourdImage }}
+                                video_button={{
+                                    link: data.media,
+                                }}
+                            />
+                        </div>
+
                     </Col>
                 </Row>
             </Container>

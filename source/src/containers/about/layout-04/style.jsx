@@ -11,6 +11,9 @@ export const SectionWrap = styled.section`
         padding-block-start: 100px;
         //padding-block-end: 92px;
     }
+    p {
+        font-size:18px;
+    }
 `;
 export const StyledLeftHeading = styled.h4`
     font-size: 24px;

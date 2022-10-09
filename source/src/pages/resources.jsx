@@ -20,7 +20,7 @@ import styled from "@styled";
 const ResourceCenterPage = ({location,data }) => {
     const { t } = useTranslation();
     
-    const cataLogData = data.allContentfulAboutContent.nodes.filter((item)=>item.key != "solution").filter((item)=>item.key != "news"); //所有资源目录(排除解决方案和新闻)
+    const cataLogData = data.allContentfulAboutContent.nodes.filter((item)=>item.key != "solution").filter((item)=>item.key != "news").filter((item)=>item.key != "promotion"); //所有资源目录(排除解决方案和新闻)
     const solutionData = data.allSolution.nodes; //所有解决方案
     const allData = data.allContentfulResource.nodes.filter((item)=>item.type.key != "news").filter((item)=>item.type.key != "solution"); //所有资源(排除新闻)
 
@@ -105,13 +105,13 @@ const ResourceCenterPage = ({location,data }) => {
 
     return (
         <Layout location={location}>
-            <Seo title={data.allContentfulPage.nodes[0].title} />
+            <Seo title={data.allContentfulPage.nodes[0].title} description={data.allContentfulPage.nodes[0]?.description?.description} keywords={data.allContentfulPage.nodes[0]?.tags}/>
             <Header />
         
         <main className="site-wrapper-reveal">
             <HeroArea data={data.allContentfulPage.nodes[0].content[0]} />
 
-            <div style={{paddingBlockStart: "55px",paddingBlockEnd: "17px"}}>
+            <div style={{paddingBlockStart: "55px"}}>
                 <Container>
                     <Row>
                     <Col>
@@ -168,7 +168,7 @@ const ResourceCenterPage = ({location,data }) => {
                 </Container>
             </div>
            
-            <ResourceArea resourceData={resourceData} />
+            <ResourceArea resourceData={resourceData} location={location} />
 
             <CtaArea data={ data.allContentfulPage.nodes[0].content[1] } />
         </main>
@@ -203,6 +203,7 @@ export const query = graphql`
             id
             slug
             title
+            time(formatString: "YYYY-MM-DD")
             image: featureImage
             type {
                 id
@@ -244,6 +245,13 @@ export const query = graphql`
         allContentfulPage(filter: {node_locale: {eq: $language}, key: {eq: "ResourceCenter"}}) {
             nodes {
             title
+            description {
+                description
+            }
+            tags {
+                id
+                name
+            }
             content {
                 id
                 headings:title

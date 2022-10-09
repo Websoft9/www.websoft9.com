@@ -6,15 +6,15 @@ import Layout from "@layout";
 import Header from "@layout/header/layout-02";
 import Footer from "@layout/footer/layout-02";
 import PageHeader from "@containers/page-header/layout-01";
-import SmoothTransitionSlider from "@containers/elements/flexible-image-slider/smooth-transition-slider";
 import IdeaArea from "@containers/elements/box-image/section-04";
 import TestimonialArea from "@containers/elements/testimonials/section-03";
 import CtaArea from "@containers/cta/layout-04";
+import FullWideSlider from "@containers/elements/flexible-image-slider/full-wide-slider2";
 
 const CareersPage = ({ location, data }) => {
     return (
         <Layout location={location}>
-            <Seo title={data.allContentfulPage.nodes[0].title} />
+            <Seo title={data.allContentfulPage.nodes[0].title} description={data.allContentfulPage.nodes[0]?.description?.description} keywords={data.allContentfulPage.nodes[0]?.tags}/>
             <Header />
 
             <main className="site-wrapper-reveal">
@@ -22,7 +22,7 @@ const CareersPage = ({ location, data }) => {
 
                 <IdeaArea data={data.allContentfulPage.nodes[0].content[1]} lgSize={6}/>
 
-                <SmoothTransitionSlider data={data.allContentfulPage.nodes[0].content[2]}/> 
+                <FullWideSlider data={data.allContentfulPage.nodes[0].content[2]}/> 
 
                 <TestimonialArea data={data.allContentfulPage.nodes[0].content[3]}/>
                 
@@ -52,6 +52,13 @@ export const query = graphql`
         allContentfulPage(filter: {node_locale: {eq: $language}, key: {eq: "Careers"}}) {
             nodes {
             title
+            description {
+                description
+            }
+            tags {
+                id
+                name
+            }
             content {
                 id
                 headings: title

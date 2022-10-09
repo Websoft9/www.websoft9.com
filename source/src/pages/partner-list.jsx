@@ -15,6 +15,7 @@ import CtaArea from "@containers/cta/layout-04";
 import HeroArea from "@containers/hero/layout-01";
 import {Trans, useTranslation } from 'gatsby-plugin-react-i18next';
 import CultureArea from "@containers/elements/box-image/section-06";
+import Text from "@ui/text";
 
 const PartnerDirectoryPage = ({location,data }) => {
     const { t } = useTranslation();
@@ -38,7 +39,7 @@ const PartnerDirectoryPage = ({location,data }) => {
 
     return (
         <Layout location={location}>
-            <Seo title={data.allContentfulPage.nodes[0].title} />
+            <Seo title={data.allContentfulPage.nodes[0].title} description={data.allContentfulPage.nodes[0]?.description?.description} keywords={data.allContentfulPage.nodes[0]?.tags}/>
             <Header />
         
             <main className="site-wrapper-reveal">
@@ -47,6 +48,9 @@ const PartnerDirectoryPage = ({location,data }) => {
                 <div style={{paddingBlockStart: "55px",paddingBlockEnd: "17px"}}>
                     <Container>
                         <Row>
+                        <Col lg={6}>
+                            <Text fontSize="30px" fontWeight="bold">{t("BROWSE ALL")}</Text>
+                        </Col>
                         <Col lg={6}>
                             <Box sx={{ minWidth: 120 }}>
                                 <FormControl fullWidth>
@@ -135,6 +139,13 @@ export const query = graphql`
         allContentfulPage(filter: {node_locale: {eq: $language}, key: {eq: "PartnerList"}}) {
             nodes {
             title
+            description {
+                description
+            }
+            tags {
+                id
+                name
+            }
             content {
                 id
                 headings: title

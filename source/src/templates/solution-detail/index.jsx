@@ -12,7 +12,7 @@ const SolutionDetailTemplate = ({pageContext,location,data }) => {
 
     return (
         <Layout location={location}>
-            <Seo title={data.contentfulResource.title} />
+            <Seo title={data.contentfulResource.title} description={data.contentfulResource.description?.description} keywords={data.contentfulResource.tags}/>
             <Header />
         
             <main className="site-wrapper-reveal">
@@ -41,6 +41,10 @@ export const query = graphql`
         #查询解决方案详情
         contentfulResource(node_locale: {eq: $language}, slug: {eq: $slug}) {
             id
+            tags {
+                    id
+                    name
+                }
             title
             subTitle
             featureImage
@@ -50,7 +54,7 @@ export const query = graphql`
             value
             }
             description {
-            description
+                description
             }
             content {
             content

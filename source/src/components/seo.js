@@ -29,6 +29,7 @@ const SEO = ({
                         siteLanguage
                         image
                         titleTemplate
+                        keywords
                     }
                 }
             }
@@ -37,10 +38,19 @@ const SEO = ({
 
     let keywordsString = "";
     keywords && keywords.map((key)=>{
-        keywordsString += key.name+",";
+        if(typeof(key.name) == "undefined"){
+            keywordsString += key +",";
+        }
+        else{
+            keywordsString += key.name +",";
+        }
+        
     })
     if(keywordsString.length>0){
         keywordsString = keywordsString.substring(0,keywordsString.length-1);
+    }
+    else{
+        keywordsString = keywords;
     }
 
     const metakeywords = keywordsString || site.siteMetadata.keywords;
@@ -108,7 +118,7 @@ const SEO = ({
             {/* General tags */}
             <title>{siteTitle}</title>
             <meta name="description" content={metaDescription} />
-            <meta name="keywords" content={keywordsString} />
+            <meta name="keywords" content={metakeywords} />
             <meta name="image" content={bannerImage} />
             <link rel="canonical" href={canonicalLink} />
             <meta
@@ -125,6 +135,7 @@ const SEO = ({
             <meta property="og:url" content={canonicalLink} />
             <meta property="og:title" content={siteTitle} />
             <meta property="og:description" content={metaDescription} />
+            <meta property="og:keywords" content={metakeywords} />
             <meta property="og:image" content={bannerImage} />
             <meta property="og:image:secure_url" content={bannerImage} />
             <meta property="og:image:width" content={`${imgWidth}px`} />
@@ -140,6 +151,7 @@ const SEO = ({
             />
             <meta name="twitter:title" content={siteTitle} />
             <meta name="twitter:description" content={metaDescription} />
+            <meta name="twitter:keywords" content={metakeywords} />
             <meta name="twitter:image" content={bannerImage} />
 
             <script type="application/ld+json">

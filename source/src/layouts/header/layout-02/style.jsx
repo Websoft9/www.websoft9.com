@@ -77,17 +77,17 @@ export const HeaderLeft = styled.div`
     justify-content: center;
     padding: 14px 0;
     ${device.medium} {
-        flex-basis: 40%;
+        flex-basis: 10%;
     }
     ${device.xlarge} {
         flex-basis: 15%;
     }
-    // ${device.xxlarge} {
-    //     flex-basis: 23%;
-    // }
-    // ${device.xxxlarge} {
-    //     flex-basis: 25%;
-    // }
+    ${device.xxlarge} {
+        flex-basis: 23%;
+    }
+    ${device.xxxlarge} {
+        flex-basis: 25%;
+    }
 `;
 
 export const HeaderMiddle = styled.div`

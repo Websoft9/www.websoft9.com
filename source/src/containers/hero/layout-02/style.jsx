@@ -5,7 +5,7 @@ export const HeroWrapper = styled.section`
 `;
 
 export const HeroTextBox = styled.div`
-    max-width: 605px;
+    max-width: 600px;
     width: 100%;
     padding-inline-start: 0;
     margin-block-start: 50px;

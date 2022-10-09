@@ -37,7 +37,7 @@ const PricingArea = ({ data }) => {
                                             <PricingTable
                                                 period={pricing.buttons[i].period}
                                                 title={pricing.title}
-                                                price={parseInt(pricing.buttons[i].price)}
+                                                price={pricing.buttons[i].price}
                                                 path={"/"}
                                                 features={pricing.features}
                                                 image={img}

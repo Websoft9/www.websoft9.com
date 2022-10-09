@@ -17,27 +17,28 @@ const FeaturesPage = ({ pageContext, location, data }) => {
 
     return (
         <Layout location={location}>
-            <Seo title={data.allContentfulPage.nodes[0].title} />
+            <Seo title={data.allContentfulPage.nodes[0].title} description={data.allContentfulPage.nodes[0]?.description?.description} keywords={data.allContentfulPage.nodes[0]?.tags}/>
             <Header />
 
             <main className="site-wrapper-reveal">
-               
+            
                 <HeroArea data={data.allContentfulPage.nodes[0].content[0]} />
                 <ITServicesArea data={ data.allContentfulPage.nodes[0].content[1] }/>
 
-                <HeroImageRightArea data={ data.allContentfulPage.nodes[0].content[2] }/>
-                <HeroImageLeftArea data={ data.allContentfulPage.nodes[0].content[3] }/>
-                <HeroImageRightArea data={ data.allContentfulPage.nodes[0].content[4] }/>
-                <HeroImageLeftArea data={ data.allContentfulPage.nodes[0].content[5] }/>
-                <HeroImageRightArea data={ data.allContentfulPage.nodes[0].content[6] }/>
-                <HeroImageLeftArea data={ data.allContentfulPage.nodes[0].content[7] }/>
-                <HeroImageRightArea data={ data.allContentfulPage.nodes[0].content[8] }/>
-                <HeroImageLeftArea data={ data.allContentfulPage.nodes[0].content[9] }/>
-                <HeroImageRightArea data={ data.allContentfulPage.nodes[0].content[10] }/>
+                {
+                    data.allContentfulPage.nodes[0].content[2].features.map((feature,i)=>{                       
+                        if(i%2==0){
+                            return (<HeroImageRightArea key={feature.id} data={feature}/>)
+                        }
+                        else{
+                            return (<HeroImageLeftArea key={feature.id} data={feature}/>)
+                        }
+                    })
+                }
 
-                <VerticalTabArea data={ data.allContentfulPage.nodes[0].content[11] }/>
-                <CtaArea data={ data.allContentfulPage.nodes[0].content[12] } />
-                <SolutionArea data ={ data.allContentfulPage.nodes[0].content[13] } />
+                <VerticalTabArea data={ data.allContentfulPage.nodes[0].content[3] }/>
+                <CtaArea data={ data.allContentfulPage.nodes[0].content[4] } />
+                <SolutionArea data ={ data.allContentfulPage.nodes[0].content[5] } />
             </main>
             <Footer />
         </Layout>
@@ -60,6 +61,13 @@ export const query = graphql`
         allContentfulPage(filter: {node_locale: {eq: $language}, key: {eq: "Features"}}) {
             nodes {
             title
+            description {
+                description
+            }
+            tags {
+                id
+                name
+            }
             content {
                 id
                 headings:title
@@ -77,6 +85,11 @@ export const query = graphql`
                     subtitle
                     icon
                     image
+                    link {
+                        id
+                        key
+                        value
+                        }
                 }
                 ... on ContentfulResource {
                         type {

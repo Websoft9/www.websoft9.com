@@ -1,7 +1,7 @@
 import styled, { themeGet, device } from "@styled";
 
 export const SectionWrap = styled.section`
-    //padding-block-start: 50px;
+    padding-block-start: 100px;
     // padding-block-end: 60px;
     // border-block-end: 1px solid ${themeGet("colors.border")};
     ${device.medium} {

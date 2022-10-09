@@ -5,7 +5,6 @@ import Layout from "@layout";
 import Header from "@layout/header/layout-02";
 import Footer from "@layout/footer/layout-02";
 import CtaArea from "@containers/cta/layout-04";
-import ResourceArea from "@containers/elements/lists/section-03"
 import HeroArea from "@containers/hero/layout-01";
 import PageHeader from "@containers/page-header/layout-01";
 import IframeArea from "@containers/iframe"
@@ -13,7 +12,7 @@ import IframeArea from "@containers/iframe"
 const InvoicePage = ({pageContext,location,data }) => {
     return (
         <Layout location={location}>
-            <Seo title={data.allContentfulPage.nodes[0].title} />
+            <Seo title={data.allContentfulPage.nodes[0].title} description={data.allContentfulPage.nodes[0]?.description?.description} keywords={data.allContentfulPage.nodes[0]?.tags} />
             <Header />
         
         <main className="site-wrapper-reveal">
@@ -54,6 +53,13 @@ export const query = graphql`
         allContentfulPage(filter: {node_locale: {eq: $language}, key: {eq: "Invoice"}}) {
             nodes {
             title
+            description {
+                description
+            }
+            tags {
+                id
+                name
+            }
             content {
                 id
                 headings: title

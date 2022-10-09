@@ -24,41 +24,40 @@ const HeroArea = ({ data }) => {
             <Container fluid>
                 <Row alignItems="center">
                     <Col md={6}>
-                        <HeroTextBox>
-                            {data?.media && (
+                        <ImageBoxWrap>
+                            {data?.image && (
                                 <ImageBoxTwo>
-                                    <Image src={data.media} />
+                                    <Image src={data.image} />
                                 </ImageBoxTwo>
                             )}
-                        </HeroTextBox>
+                        </ImageBoxWrap>
                     </Col>
-                    <Col md={6}>
-                        <ImageBoxWrap>
-                            {data?.headings && (
+                    <Col md={5}>
+                        <HeroTextBox>
+                            {data?.title && (
                                 <StyledSubtitle as="h3">
-                                    {data.headings}
+                                    {data.title}
                                 </StyledSubtitle>
                             )}
-                            {data?.texts && (
-                                <Text>{data.texts}</Text>
+                            {data?.subtitle && (
+                                <Text>{data.subtitle}</Text>
                             )}
                             {
-                                data?.buttons && 
+                                data?.link && 
                                 <ReadMoreBtn>
                                     <Button
                                         icon="far fa-long-arrow-right"
-                                        path={data.buttons[0].path}
+                                        path={data.link[0].value}
                                         variant="texted"
                                         icondistance="4px"
                                         fontWeight={500}
                                     >
-                                        {data.buttons[0].content}
+                                        {data.link[0].key}
                                     </Button>
                                 </ReadMoreBtn>
                             }
-                        </ImageBoxWrap>
+                        </HeroTextBox>
                     </Col>
-
                 </Row>
             </Container>
         </HeroWrapper>

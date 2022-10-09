@@ -85,8 +85,8 @@ exports.createPages = async ({ graphql, actions }) => {
             }
             }
         }
-        # 查询资源类别
-        allContentfulAboutContent {
+        # 查询资源类别（排除solution）
+        allContentfulAboutContent(filter: {key: {ne: "solution"}}) {
             nodes {
             id
             key
@@ -102,6 +102,7 @@ exports.createPages = async ({ graphql, actions }) => {
             id
             slug
             type {
+                title
                 key
             }
             }
@@ -139,7 +140,7 @@ exports.createPages = async ({ graphql, actions }) => {
                 }
 
                 Array.from({ length: numberOfPages }).forEach((_, subCataLogIndex)=>{
-                    const isFirstPage = subCataLogIndex === 0;               
+                    const isFirstPage = subCataLogIndex === 0;
                     const currentPage = subCataLogIndex + 1;
                     const rootPage = `/app-catalog/${subCatalog.key}`;
 
@@ -167,7 +168,7 @@ exports.createPages = async ({ graphql, actions }) => {
         const currentPage = index + 1;
         //if (isFirstPage) return;
         createPage({
-            path: isFirstPage ? "app-center" :`app-center/page/${currentPage}`,
+            path: isFirstPage ? "apps" :`apps/page/${currentPage}`,
             component: path.resolve('./src/templates/app-center/index.jsx'),
             context: {
                 limit: postsPerPage,
@@ -178,7 +179,7 @@ exports.createPages = async ({ graphql, actions }) => {
         });
     });
 
-    const resourceTypes = result.data.allContentfulAboutContent.nodes;     //获取所有资源类别
+    const resourceTypes = result.data.allContentfulAboutContent.nodes;     //获取所有资源类别（排除了solution,解决方案用单独页面，不用模板生成）
 
     //根据资源分类检索资源并分页
     resourceTypes.forEach((type,index)=>{
@@ -235,7 +236,7 @@ exports.createPages = async ({ graphql, actions }) => {
         })
     })
 
-    const resourceData  = result.data.allContentfulResource.nodes; //获取所有资源
+    const resourceData  = result.data.allContentfulResource.nodes; //获取所有资源(排除solution)
     const resourceTypesNumberOfPages = Math.ceil(resourceData.length / 2 / postsPerPage); //计算所有资源总记录条数（由于有中英文两种数据，在计算时除2） 
 
     //根据模板对全部资源进行分页
@@ -277,16 +278,16 @@ exports.createPages = async ({ graphql, actions }) => {
         }
     })
 
-    let soluationData  = result.data.allContentfulResource.nodes.filter(data=>data.type.key == "solution" ); //获取所有解决方案
-    //根据模板创建解决方案详情页
-    soluationData.forEach((soluation)=>{
-        // createPage({
-        //     path:`resource-center/resource/${resource.slug}`,
-        //     component:path.resolve('./src/templates/resource-detail/index.jsx'),
-        //     context:{
-        //         slug:resource.slug
-        //     }
-        // })
-    })
+    // let soluationData  = result.data.allContentfulResource.nodes.filter(data=>data.type.key == "solution" ); //获取所有解决方案
+    // //根据模板创建解决方案详情页
+    // soluationData.forEach((soluation)=>{
+    //     createPage({
+    //         path:`resource-center/resource/${resource.slug}`,
+    //         component:path.resolve('./src/templates/resource-detail/index.jsx'),
+    //         context:{
+    //             slug:resource.slug
+    //         }
+    //     })
+    // })
 
 }

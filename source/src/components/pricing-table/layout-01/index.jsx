@@ -46,8 +46,9 @@ const PricingTable = ({
                     )}
                     {price && (
                         <PricingTablePrice>
-                            <sup>{"$"}</sup>
-                            <h6>{price}</h6>
+                            {/* <sup>{"$"}</sup> */}
+                            <sup>{price.substring(0,1)}</sup>
+                            <h6>{price.substring(1)}</h6>
                             <sub>/{period === "monthly" ? "mo" : "y"}</sub>
                         </PricingTablePrice>
                     )}

@@ -12,11 +12,12 @@ import AboutArea from "@containers/about/layout-04";
 import CultureArea from "@containers/elements/box-image/section-03";
 import CounterArea from "@containers/elements/counters/section-01";
 import FullWideSlider from "@containers/elements/flexible-image-slider/full-wide-slider2";
+import SectionTwo from "@containers/elements/box-large-image/section-04";
 
 const AboutUsPage = ({ location, data }) => {
     return (
         <Layout location={location}>
-            <Seo title={data.allContentfulPage.nodes[0].title} />
+            <Seo title={data.allContentfulPage.nodes[0].title} description={data.allContentfulPage.nodes[0]?.description?.description} keywords={data.allContentfulPage.nodes[0]?.tags}/>
             <Header />
 
             <main className="site-wrapper-reveal">
@@ -26,17 +27,15 @@ const AboutUsPage = ({ location, data }) => {
 
                 <TimelineArea data={data.allContentfulPage.nodes[0].content[2]} />  
 
-                {/* <SmoothTransitionSlider data={data.allContentfulPage.nodes[0].content[3]}/> */}
-
                 <FullWideSlider data={data.allContentfulPage.nodes[0].content[3]} />
 
                 <CultureArea data={data.allContentfulPage.nodes[0].content[4]} />
 
                 <CounterArea data={data.allContentfulPage.nodes[0].content[5]} />
 
-                <CultureArea data={data.allContentfulPage.nodes[0].content[6]} />
+                <SectionTwo data={data.allContentfulPage.nodes[0].content[6]} />
 
-                <CultureArea data={data.allContentfulPage.nodes[0].content[7]} />
+                <SectionTwo data={data.allContentfulPage.nodes[0].content[7]} />
 
             </main>
             <Footer />
@@ -61,6 +60,13 @@ export const query = graphql`
         allContentfulPage(filter: {node_locale: {eq: $language}, key: {eq: "AboutUs"}}) {
             nodes {
             title
+            description {
+                description
+            }
+            tags {
+                id
+                name
+            }
             content {
                 id
                 headings: title

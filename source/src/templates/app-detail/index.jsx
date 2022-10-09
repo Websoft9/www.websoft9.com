@@ -10,14 +10,14 @@ import ProductDetailArea from "@containers/cta/layout-03";
 const AppDetailTemplate = ({ location,data }) => {
     return (
         <Layout location={location}>
-            <Seo title={data.allContentfulProduct.nodes[0].trademark} />
+            <Seo title={data.allContentfulProduct.nodes[0]?.trademark} description={data.allContentfulProduct.nodes[0]?.summary} keywords={data.allContentfulProduct.nodes[0]?.keywords}/>
             <Header />
         
         <main className="site-wrapper-reveal">
 
             <ProductDetailArea data={ data.allContentfulProduct.nodes[0] } resourceData={data.allContentfulResource.nodes }  />
 
-        </main>      
+        </main>
         <Footer />
         </Layout>
     );
@@ -61,6 +61,7 @@ export const query = graphql`
                 trademark
                 review
                 summary
+                keywords
                 image: logo {
                     imageurl
                 }

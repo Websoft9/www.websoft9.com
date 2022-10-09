@@ -14,13 +14,13 @@ const DownloadPage = ({pageContext,location,data }) => {
     const { t } = useTranslation();
     return (
         <Layout location={location}>
-            <Seo title={data.allContentfulPage.nodes[0].title} />
+            <Seo title={data.allContentfulPage.nodes[0].title} description={data.allContentfulPage.nodes[0]?.description?.description} keywords={data.allContentfulPage.nodes[0]?.tags}/>
             <Header />
         
             <main className="site-wrapper-reveal">
                 <PageHeader data={data.allContentfulPage.nodes[0].content[0]} />
 
-                <ResourceArea resourceData={ data.allContentfulResource.nodes } />
+                <ResourceArea resourceData={ data.allContentfulResource.nodes} location={location}/>
 
             </main>
         
@@ -65,6 +65,13 @@ export const query = graphql`
          allContentfulPage(filter: {node_locale: {eq: $language}, key: {eq: "Download"}}) {
             nodes {
             title
+            description {
+                    description
+                }
+                tags {
+                    id
+                    name
+                }
             content {
                 id
                 headings: title

@@ -17,4 +17,11 @@
 
 ## 维护内容
 
+### 设计规范
+
+* Brand logo 尺寸：
+* 资质荣誉图尺寸：
+* Resource Feature 图尺寸：
+* Hero Feature 插画尺寸：
+
 #### 如何获取 icon 名称？

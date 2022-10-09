@@ -13,9 +13,9 @@ export const BoxLargeImgMedia = styled.div`
     position: relative;
     .gatsby-image-wrapper,
     img {
-        //width: 376px;
+        // width: 380px;
         width: 100%;
-        height: 211.5px;
+        height: 234px;
         object-fit:cover;
     }
 `;
@@ -25,7 +25,7 @@ export const BoxLargeImgContent = styled.div`
         props.$layout !== 2 &&
         css`
             padding-block-start: 32px;
-            padding-block-end: 88px;
+            padding-block-end: 32px;
             padding-inline-start: 30px;
             padding-inline-end: 30px;
             text-align: center;
@@ -34,7 +34,7 @@ export const BoxLargeImgContent = styled.div`
         props.$layout === 2 &&
         css`
             padding-block-start: 25px;
-            padding-block-end: 88px;
+            padding-block-end: 25px;
             padding-inline-start: 26px;
             padding-inline-end: 26px;
             text-align: start;

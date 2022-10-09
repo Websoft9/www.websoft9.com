@@ -15,6 +15,7 @@ module.exports = {
       getform:`Websoft9`,
       siteLanguage: "en-US",
       description: `为用户提供简单的云原生应用，帮助软件开发商构建基于全球云计算的在线商业体系`,
+      keywords:`websoft9`,
       socials: [
         {
             id: 1,

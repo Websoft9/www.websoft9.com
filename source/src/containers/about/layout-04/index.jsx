@@ -13,6 +13,9 @@ import {
 } from "@utils/types";
 import { SectionWrap,StyledLeftHeading } from "./style";
 import Image from "@ui/image";
+import remarkGfm from 'remark-gfm';
+import ReactMarkdown from "react-markdown";
+import "markdown-navbar/dist/navbar.css";
 
 const AboutArea = ({ data }) => {
     return (
@@ -27,9 +30,12 @@ const AboutArea = ({ data }) => {
                         <Image src={data.features?.[0].image} />
                     </Col>
                     <Col lg={{ span: 5, offset: 1 }}>                     
-                            <Text fontSize="18px" mb="20px">
+                            {/* <Text fontSize="18px" mb="20px">
                                 {data.features?.[0].description.description}
-                            </Text>
+                            </Text> */}
+                        <ReactMarkdown remarkPlugins={[remarkGfm]}>
+                            {data.features?.[0].description.description}
+                        </ReactMarkdown>
                     </Col>
                 </Row>
             </Container>

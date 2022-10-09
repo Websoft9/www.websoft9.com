@@ -46,6 +46,7 @@ export const ImageBoxWrap = styled.div`
         border-radius: ${themeGet("radii.md")};
         width: 100% !important;
         height:429px;
+        object-fit:cover;
     }
 `;
 

@@ -10,8 +10,9 @@ import defaultImage from "@assets/images/default.png";
 const BoxSection = ({data,lgSize=4}) => {
     return (
         <SectionWrap>
-            <Container>
+            <Container>             
                 <SectionTitle mb={["47px", null, "60px"]} subtitle={data.texts} title={data.headings} />
+
                 <Row>
                     {
                     data.features?.map((item,i) => {
@@ -28,7 +29,7 @@ const BoxSection = ({data,lgSize=4}) => {
                                     {
                                          item.image==null ? {src: defaultImage} : {src: item.image}
                                     }
-                                    desc={item.subtitle}
+                                    desc={item.subtitle==null?" ":item.subtitle}
                                 />
                             </Col>
                         );
