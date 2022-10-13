@@ -46,23 +46,53 @@ const Header = () => {
         <StaticQuery
         query={graphql`
           {
-            #查询右侧快捷菜单(中文)
-            zhShortCutMenu:contentfulMenu(type: {eq: "RightMenu"}, node_locale: {eq: "zh-CN"}) {
+            zhShortCutMenu: contentfulMenu(
+                type: {eq: "RightMenu"}
+                node_locale: {eq: "zh-CN"}
+            ) {
                 submenu {
                 ... on ContentfulMenu {
                     id
-                    title
+                    text: title
                     link
+                    megamenu: submenu {
+                    ... on ContentfulMenu {
+                        id
+                        text: title
+                        submenu {
+                        ... on ContentfulMenu {
+                            id
+                            text: title
+                            link
+                        }
+                        }
+                    }
+                    }
                 }
                 }
             }
-            #查询右侧快捷菜单(英文)
-            enShortCutMenu: contentfulMenu(type: {eq: "RightMenu"}, node_locale: {eq: "en-US"}) {
+            enShortCutMenu: contentfulMenu(
+                type: {eq: "RightMenu"}
+                node_locale: {eq: "en-US"}
+            ) {
                 submenu {
                 ... on ContentfulMenu {
                     id
-                    title
+                    text: title
                     link
+                    megamenu: submenu {
+                    ... on ContentfulMenu {
+                        id
+                        text: title
+                        submenu {
+                        ... on ContentfulMenu {
+                            id
+                            text: title
+                            link
+                        }
+                        }
+                    }
+                    }
                 }
                 }
             }
@@ -89,14 +119,18 @@ const Header = () => {
                         id
                         text: trademark
                         key
-                        logo {
-                            imageurl
-                        }
+                        os
                         }
                         ... on ContentfulResource {
                         id
                         slug
                         text: title
+                        }
+                        ... on ContentfulBaseCatalog {
+                        id
+                        key
+                        text:title
+                        position
                         }
                     }
                     }
@@ -104,6 +138,9 @@ const Header = () => {
                     id
                     title
                     subtitle
+                    description {
+                        description
+                    }
                     image
                     buttons:link {
                         key
@@ -136,14 +173,18 @@ const Header = () => {
                         id
                         text: trademark
                         key
-                        logo {
-                            imageurl
-                        }
+                        os
                         }
                         ... on ContentfulResource {
                         id
                         slug
                         text: title
+                        }
+                        ... on ContentfulBaseCatalog {
+                        id
+                        key
+                        text:title
+                        position
                         }
                     }
                     }
@@ -151,6 +192,9 @@ const Header = () => {
                     id
                     title
                     subtitle
+                    description {
+                        description
+                    }
                     image
                     buttons:link {
                         key
@@ -160,7 +204,6 @@ const Header = () => {
                 }
                 }
             }
-
           }
         `}
         render={data => (
@@ -185,7 +228,6 @@ const Header = () => {
                                 >
                                     <HeaderForm />
                                 </HeaderElement>
-
                                 <HeaderElement
                                     pr={[
                                         "25px",
@@ -198,30 +240,33 @@ const Header = () => {
                                     ]}
                                 >
                                     <Language />
-                                </HeaderElement>                               
-                                    {                                     
+                                </HeaderElement>
+                                                               
+                                    {
                                         (language == "zh-CN" ? data.zhShortCutMenu.submenu : data.enShortCutMenu.submenu).map((shortcut)=>{
-                                        return (
-                                            <HeaderElement key={`submenu-${shortcut.id}`}
-                                                pr={[
-                                                    "25px",
-                                                    "10px",
-                                                    0,
-                                                    0,
-                                                    "10px",
-                                                    null,
-                                                    "25px",
-                                                ]}
-                                            >
-                                                <StyledNavlink  path={shortcut.link} $sublink $bottomLine={bottomLine}>
-                                                    { shortcut.title }
-                                                </StyledNavlink>
-                                            </HeaderElement>
-                                        );
+                                            return (
+                                                    <StyledNavitem
+                                                        className="nav-item"
+                                                        key={`mainmenu-${shortcut.id}`}
+                                                        hasSubmenu={false}
+                                                        hasMegamenu={false}
+                                                        $space={1}
+                                                        $alignment={"center"}
+                                                    >
+                                                        <StyledNavlink
+                                                            className="nav-link"
+                                                            path={shortcut.link}
+                                                            hassubmenu={false}
+                                                            $color={"dark"}
+                                                            $vSpace={1}
+                                                            $bottomLine={true}
+                                                        >
+                                                            <span>{shortcut.text}</span>
+                                                        </StyledNavlink>
+                                                    </StyledNavitem>
+                                            );
                                         })
                                     }
-                                
-                              
                             </HeaderRightInner>
                             <HeaderElement
                                 pl="20px"
@@ -229,6 +274,7 @@ const Header = () => {
                             >
                                 <BurgerButton onClick={offCanvasHandler} />
                             </HeaderElement>
+
                             <HeaderElement
                                 pl="15px"
                                 display={["flex", null, "none"]}
@@ -254,7 +300,7 @@ const Header = () => {
                     <Logo darkLogo align={{ default: "flex-start" }} />
                 </OffCanvasHeader>
                 <OffCanvasBody>
-                    <MobileMenu menuData={language == "zh-CN" ? data.zhMainMenu.nodes : data.enMainMenu.nodes} />
+                    <MobileMenu menuData={language == "zh-CN" ? data.zhMainMenu.nodes.concat(data.zhShortCutMenu.submenu) : data.enMainMenu.nodes.concat(data.zhShortCutMenu.submenu)} />
                 </OffCanvasBody>
             </OffCanvas>
         </Fragment>

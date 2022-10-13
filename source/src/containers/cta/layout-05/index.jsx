@@ -21,7 +21,6 @@ import Heading from "@ui/heading";
 import { SwiperSlide } from "@ui/swiper";
 import ReactMarkdown from "react-markdown";
 import MarkNav from 'markdown-navbar';
-import Markdown from "markdown-to-jsx";
 import "markdown-navbar/dist/navbar.css";
 import remarkGfm from 'remark-gfm'
 import TestimonialArea from "@containers/elements/testimonials/section-02";
@@ -55,7 +54,11 @@ const CTAArea = ({ data,relatedReading,siteData }) => {
                                    {t("Solution")}:
                                     {data.solutions && data.solutions.map((solution)=>{
                                         return (
-                                            <Link key={solution.id} to={`/${solution.type.key}/${solution.slug}`} style={{color:"dodgerblue"}}>{solution.title}{' '}</Link>
+                                            <React.Fragment key={solution.id}>
+                                                <Link key={solution.id} to={`/${solution.type.key}/${solution.slug}`} style={{color:"dodgerblue"}}>{solution.title}</Link>
+                                                {'  '}
+                                            </React.Fragment>
+                                            
                                         );
                                     })}
                                     </nobr>
@@ -154,7 +157,7 @@ const CTAArea = ({ data,relatedReading,siteData }) => {
                     </Col>
                     <Col xl={3}>
                         <NavContainer>
-                            <Text style={{fontWeight:"bold",paddingLeft:'10px'}}>内容目录</Text>
+                            <Text style={{fontWeight:"bold",paddingLeft:'10px'}}>{t("Content directory")}</Text>
                             <MarkNav source={data.content.content}  ordered={false} />
                             <div style={{textAlign:"center"}}>
                                 <Social

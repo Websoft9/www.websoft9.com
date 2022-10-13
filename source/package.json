@@ -69,7 +69,9 @@
     "swiper": "^8.0.7",
     "tinycolor2": "^1.4.2",
     "video-react": "^0.15.0",
-    "vivus": "^0.4.6"
+    "vivus": "^0.4.6",
+    "gatsby-plugin-baidu-analytics":"^2.2.0",
+    "gatsby-plugin-anchor-links":"^1.2.1"
   },
   "devDependencies": {
     "@babel/core": "7.13.15",

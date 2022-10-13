@@ -49,7 +49,7 @@ const PricingTable = ({
                             {/* <sup>{"$"}</sup> */}
                             <sup>{price.substring(0,1)}</sup>
                             <h6>{price.substring(1)}</h6>
-                            <sub>/{period === "monthly" ? "mo" : "y"}</sub>
+                            <sub>/{period === "monthly" ? t("mo") : t("y")}</sub>
                         </PricingTablePrice>
                     )}
                     
@@ -65,9 +65,10 @@ const PricingTable = ({
                         <PricingTableBtn>
                             <Button
                                 variant={!isFeatured ? "outlined" : "contained"}
-                                path={path}
+                                path={path.value}
                             >
-                                {t("Learn More")}
+                                {path.key}
+                                {/* {t("Learn More")} */}
                             </Button>
                         </PricingTableBtn>
                     )}

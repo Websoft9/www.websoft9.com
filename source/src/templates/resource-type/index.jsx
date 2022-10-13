@@ -123,6 +123,7 @@ export const query = graphql`
             filter: {node_locale: {eq: $language}, type: {key: {eq: $resourceType}}}
             limit: $limit
             skip: $skip
+            sort: {fields: time, order: DESC}
         ) {
             nodes {
             id

@@ -17,8 +17,11 @@ import {
     StyledMegaTitle,
     HeroTextBox,
     StyledSubtitle,
+    MarkdownStyle,
 } from "./style";
 // import { Col } from "react-bootstrap";
+import ReactMarkdown from "react-markdown";
+import remarkGfm from 'remark-gfm'
 
 const MainMenu = ({
     menuData,
@@ -77,11 +80,13 @@ const MainMenu = ({
 
                                                     <Text>{megamenu[0].subtitle}</Text>
 
-                                                    {/* <Anchor path={megamenu[0].buttons[0].value} $hover={{ layout: 2 }}>
-                                                        {megamenu[0].buttons[0].key}
-                                                    </Anchor> */}
+                                                    <MarkdownStyle>
+                                                        <ReactMarkdown remarkPlugins={[remarkGfm]}>
+                                                            {megamenu[0]?.description?.description}
+                                                        </ReactMarkdown>
+                                                    </MarkdownStyle>
 
-                                                    <Button key={megamenu[0].id}  m="10px" size="small" path={megamenu[0].buttons[0].value}>
+                                                    <Button key={megamenu[0].id}  m="10px 10px 10px 0px" size="small" path={megamenu[0].buttons[0].value}>
                                                         {megamenu[0].buttons[0].key}
                                                     </Button>
                                             </HeroTextBox>
@@ -91,6 +96,7 @@ const MainMenu = ({
                                     {/*  二级菜单显示 */}
                                     {megamenu.slice(1).map((megaitem, i) => {
                                         const megaSubmenu = megaitem.submenu;
+                                    
                                         return (
                                             <li
                                                 key={`megamenu-${megaitem.id}-${i}`}
@@ -106,12 +112,15 @@ const MainMenu = ({
                                                                 megaSubitem,
                                                                 j
                                                             ) => {
-                                                                var path = "/";
-                                                                if(megaSubitem.key !== undefined ){
-                                                                    path = "/app-center/product/"+megaSubitem.key
+                                                                var path = "/";                                                                                                                           
+                                                                if(megaSubitem.os !== undefined ){
+                                                                    path = "/apps/product/"+megaSubitem.key
                                                                 }
                                                                 else if(megaSubitem.slug !== undefined){
                                                                     path = "/solution/"+megaSubitem.slug;
+                                                                }
+                                                                else if(megaSubitem.position !== undefined){
+                                                                    path = "/services#"+megaSubitem.key;
                                                                 }
                                                                 else{
                                                                     path = megaSubitem.link;

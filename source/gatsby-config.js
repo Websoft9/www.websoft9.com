@@ -49,6 +49,7 @@ module.exports = {
       },
     ],
     },
+
     plugins: [{
       resolve: 'gatsby-source-contentful',
       options: {
@@ -204,6 +205,20 @@ module.exports = {
           maximumFileSizeToCacheInBytes: 10000000
         },
       },
+    },
+    //百度统计插件
+    {
+      resolve: `gatsby-plugin-baidu-analytics`,
+      options: {
+        siteId: "06194a6cbe9e4d30ddef701a33dfdd95",
+      },
+    },
+    //内页锚点导航
+    {
+      resolve: "gatsby-plugin-anchor-links",
+      options: {
+        offset: -120
+      }
     },
     ]
   };

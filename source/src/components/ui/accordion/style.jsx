@@ -151,3 +151,29 @@ export const StyledAccordion = styled.div`
             }
         `}
 `;
+
+export const StyledSubtitle = styled.h5`
+    font-weight: 900;
+    color: ${themeGet("colors.primary")};
+    margin-block-end: 20px;
+`;
+
+export const MarkdownStyle = styled.div`
+    h1 {font-size:34px};
+    h2 {font-size:24px};
+    h3 {font-size:18px};
+    ul {
+        list-style-type:disc;
+        list-style-position:inside;
+    }
+    table{
+        border:solid #000 1px; 
+        td {
+            border:solid #000 1px;
+        }
+    }
+    a{
+        color : dodgerblue;
+        text-decoration : underline;
+    }
+`;

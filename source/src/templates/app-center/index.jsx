@@ -11,6 +11,14 @@ import HeroArea from "@containers/hero/layout-01";
 const AppCenterTemplate = ({pageContext,location,data }) => {
     const { currentPage, numberOfPages } = pageContext;
 
+    var cataLogs  = data.allContentfulBaseCatalog.nodes[0].base_catalog;
+
+    cataLogs.map((item)=>{
+        item.base_catalog.sort(function(a,b){return a.position-b.position}) //对子目录根据position进行排序
+    })
+
+    cataLogs.sort(function(a,b){return a.position-b.position}) //对目录根据position进行排序
+
     return (
         <Layout location={location}>
             <Seo title={data.allContentfulPage.nodes[0].title} description={data.allContentfulPage.nodes[0]?.description?.description} keywords={data.allContentfulPage.nodes[0]?.tags}/>
@@ -20,9 +28,9 @@ const AppCenterTemplate = ({pageContext,location,data }) => {
             <HeroArea data={data.allContentfulPage.nodes[0].content[0]} />
       
             <ListArea 
-                cataLogData={data.allContentfulBaseCatalog.nodes[0].base_catalog}
+                cataLogData={cataLogs}
                 productsData={data.allContentfulProduct.nodes}
-                rootPage ="/app-center"
+                rootPage ="/apps"
                 currentPage = {currentPage}
                 numberOfPages={numberOfPages}
             />
@@ -49,13 +57,13 @@ export const query = graphql`
         }
         allContentfulBaseCatalog(
             filter: {node_locale: {eq: $language}, key: {eq: "product"}}
-            sort: {fields: catalog___catalog___catalog___position, order: ASC}
         ) {
             nodes {
             base_catalog {
                 id
                 key
                 title
+                position
                 product {
                 id
                 }
@@ -63,6 +71,7 @@ export const query = graphql`
                 id
                 key
                 title
+                position
                 product {
                     id
                 }
@@ -75,7 +84,7 @@ export const query = graphql`
             filter: {node_locale: {eq: $language}}
             limit: $limit
             skip: $skip
-            sort: {fields: catalog___catalog___product___hot, order: DESC}
+            sort: {fields: [hot,trademark], order: DESC}
         ) {
             nodes {
                 id

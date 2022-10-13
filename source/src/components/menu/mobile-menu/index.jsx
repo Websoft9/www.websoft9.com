@@ -120,7 +120,7 @@ const MobileMenu = ({ menuData }) => {
                                                             ) => {
                                                                 var path = "/";
                                                                 if(megaSubitem.key !== undefined ){
-                                                                    path = "/app-center/product/"+megaSubitem.key
+                                                                    path = "/apps/product/"+megaSubitem.key
                                                                 }
                                                                 else if(megaSubitem.slug !== undefined){
                                                                     path = "/solution/"+megaSubitem.slug;

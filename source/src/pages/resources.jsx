@@ -37,7 +37,7 @@ const ResourceCenterPage = ({location,data }) => {
         else if(contentType == "ALL"){//根据某一个解决方案查询所有相关资源
             let values = [];
             allData.map((item)=>{
-                if(item!=null){               
+                if(item!=null){
                         item.solutions?.map((sub)=>{
                             if(sub.slug == type){
                                 values.push(item);

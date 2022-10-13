@@ -116,7 +116,7 @@ const CTAArea = ({ data,resourceData }) => {
                                 </Heading>
                             }
                             {
-                                data?.type?.[0]?.product && data.type?.[0].product.filter((item)=>item.trademark != data.trademark).slice(0,4).map((item) => {
+                                data?.type?.[0]?.product && data.type?.[0].product.filter((item)=>item.trademark != data.trademark).slice(0,3).map((item) => {
                                         return (
                                             <Col
                                                 lg={4}
@@ -131,7 +131,7 @@ const CTAArea = ({ data,resourceData }) => {
                                                         item.image==null ? {src: defaultImage} : {src: item.image.imageurl}
                                                     }
                                                     desc={item.summary}
-                                                    path={`/app-center/product/${item.key}`}
+                                                    path={`/apps/product/${item.key}`}
                                                 />
                                             </Col>   
                                         );

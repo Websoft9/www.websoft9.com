@@ -38,7 +38,7 @@ export const query = graphql`
         #根据产品key查询相关学习资源
         allContentfulResource(
             filter: {node_locale: {eq: $language}, product: {elemMatch: {key: {eq: $slug}}}}
-            limit: 4
+            limit: 3
         ) {
             nodes {
             type {

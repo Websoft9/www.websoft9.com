@@ -77,16 +77,16 @@ export const HeaderLeft = styled.div`
     justify-content: center;
     padding: 14px 0;
     ${device.medium} {
-        flex-basis: 10%;
+        flex-basis: 50%;
     }
     ${device.xlarge} {
         flex-basis: 15%;
     }
     ${device.xxlarge} {
-        flex-basis: 23%;
+        flex-basis: 15%;
     }
     ${device.xxxlarge} {
-        flex-basis: 25%;
+        flex-basis: 19%;
     }
 `;
 
@@ -102,18 +102,18 @@ export const HeaderRight = styled.div`
     display: flex;
     justify-content: flex-end;
     align-items: center;
-    ${device.medium} {
-        flex-basis: 80%;
-    }
-    ${device.xlarge} {
-        flex-basis: 70%;
-    }
-    ${device.xxlarge} {
-        flex-basis: 60%;
-    }
-    ${device.xxxlarge} {
-        flex-basis: 50%;
-    }
+    // ${device.medium} {
+    //     flex-basis: 80%;
+    // }
+    // ${device.xlarge} {
+    //     flex-basis: 70%;
+    // }
+    // ${device.xxlarge} {
+    //     flex-basis: 60%;
+    // }
+    // ${device.xxxlarge} {
+    //     flex-basis: 50%;
+    // }
 `;
 
 export const HeaderNavigation = styled.div`
@@ -127,7 +127,7 @@ export const HeaderRightInner = styled.div`
     align-items: center;
     justify-content: flex-end;
     height: 100%;
-    @media only screen and (max-width: 767px) {
+    @media only screen and (max-width: 1200px) {
         position: absolute;
         top: 100%;
         left: 0;

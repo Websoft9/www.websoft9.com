@@ -1,7 +1,9 @@
 import React from "react";
 import PropTypes from "prop-types";
 import Accordion from "react-bootstrap/Accordion";
-import { StyledAccordion } from "./style";
+import { StyledAccordion,MarkdownStyle } from "./style";
+import ReactMarkdown from "react-markdown";
+import remarkGfm from 'remark-gfm'
 
 const AccordionWrap = ({
     defaultActiveKey,
@@ -20,7 +22,13 @@ const AccordionWrap = ({
                 {data?.map((item) => (
                     <Accordion.Item key={item.id} eventKey={item.id}>
                         <Accordion.Header>{item.title}</Accordion.Header>
-                        <Accordion.Body>{item.description.description}</Accordion.Body>
+                        <Accordion.Body>
+                        <MarkdownStyle>
+                            <ReactMarkdown remarkPlugins={[remarkGfm]}>
+                                {item.description.description}
+                                </ReactMarkdown>
+                            </MarkdownStyle>                           
+                        </Accordion.Body>
                     </Accordion.Item>
                 ))}
             </Accordion>

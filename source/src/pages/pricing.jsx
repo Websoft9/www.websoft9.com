@@ -76,6 +76,10 @@ export const query = graphql`
                     title
                     subTitle
                     media
+                    link{
+                        key
+                        value
+                    }
                     buttons {
                     id
                     period:key

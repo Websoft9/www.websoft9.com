@@ -8,9 +8,10 @@ import PricingTable from "@components/pricing-table/layout-01";
 import { SectionTitleType, ItemType } from "@utils/types";
 import { SectionWrap } from "./style";
 
+
 const PricingArea = ({ data }) => {
     const keys = Object.keys(data.buttons);
-
+    
     return (
         <SectionWrap>
             <Container>    
@@ -38,7 +39,7 @@ const PricingArea = ({ data }) => {
                                                 period={pricing.buttons[i].period}
                                                 title={pricing.title}
                                                 price={pricing.buttons[i].price}
-                                                path={"/"}
+                                                path={pricing.link[0]}
                                                 features={pricing.features}
                                                 image={img}
                                                 isFeatured={pricing.subTitle=="true"?true:false}

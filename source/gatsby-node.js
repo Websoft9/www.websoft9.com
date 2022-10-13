@@ -64,7 +64,6 @@ exports.createPages = async ({ graphql, actions }) => {
         # 查询产品目录
         allContentfulBaseCatalog(
             filter: {key: {eq: "product"}}
-            sort: {fields: catalog___catalog___catalog___position, order: ASC}
         ) {
             nodes {
             base_catalog {
@@ -82,6 +81,16 @@ exports.createPages = async ({ graphql, actions }) => {
                     id
                 }
                 }
+            }
+            }
+        }
+        #查询所有服务
+        allContentfulService {
+            nodes {
+            id
+            key
+            catalog {
+                key
             }
             }
         }
@@ -228,7 +237,7 @@ exports.createPages = async ({ graphql, actions }) => {
     // 根据模板创建产品详情页
     products.forEach((product)=>{
         createPage({
-            path:`app-center/product/${product.key}`,
+            path:`apps/product/${product.key}`,
             component:path.resolve('./src/templates/app-detail/index.jsx'),
             context:{
                 slug:product.key
@@ -277,6 +286,20 @@ exports.createPages = async ({ graphql, actions }) => {
             })
         }
     })
+
+    //根据模板创建服务详情页
+    let servicesData = result.data.allContentfulService.nodes; //获取所有服务
+
+    servicesData.forEach((service)=>{
+        createPage({
+            path:`/services/${service.catalog[0].key}/${service.key}`,
+            component:path.resolve('./src/templates/service-detail/index.jsx'),
+            context:{
+                slug:service.key
+            }
+        })
+    })
+
 
     // let soluationData  = result.data.allContentfulResource.nodes.filter(data=>data.type.key == "solution" ); //获取所有解决方案
     // //根据模板创建解决方案详情页

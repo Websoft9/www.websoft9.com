@@ -7,6 +7,7 @@ import Footer from "@layout/footer/layout-02";
 import HeroArea from "@containers/hero/layout-01";
 import CultureArea from "@containers/elements/box-image/section-03";
 import SolutionArea from "@containers/elements/box-large-image/section-02";
+import ListArea from "@containers/elements/lists/section-04"
 
 const ServicesPage = ({ location, data }) => {
 
@@ -19,7 +20,11 @@ const ServicesPage = ({ location, data }) => {
 
                 <HeroArea data={data.allContentfulPage.nodes[0].content[0]} />
 
-                <CultureArea data={data.allContentfulPage.nodes[0].content[1]} lgSize={3}/>
+                <ListArea serviceTypeData={data.allContentfulBaseCatalog.nodes?.[0].base_catalog} 
+                            brandTypeData={data.allContentfulAboutBrandType.nodes}
+                            servicesData={data.allContentfulBaseCatalog.nodes?.[0].base_catalog}/>
+
+                {/* <CultureArea data={data.allContentfulPage.nodes[0].content[1]} lgSize={3}/> */}
 
                 <SolutionArea data={data.allContentfulPage.nodes[0].content[2]} />
 
@@ -41,6 +46,57 @@ export const query = graphql`
                 }
             }
         }
+        #查询所有服务
+        allContentfulBaseCatalog(
+            filter: {node_locale: {eq: $language}, key: {eq: "service"}}
+        ) {
+            nodes {
+            base_catalog {
+                id
+                key
+                title
+                position
+                overview
+                service {
+                    id
+                    key
+                    texts:title
+                    headings:summary
+                    image:featureImage
+                    customerType {
+                        key
+                        title
+                    }
+                    catalog {
+                        id
+                        key
+                        title
+                    }
+                }
+            }
+            }
+        }
+        #查询所有服务对象
+        allContentfulAboutBrandType(filter: {node_locale: {eq: $language}}) {
+            nodes {
+            id
+            key
+            title
+            }
+        }
+        #查询所有服务类别
+        # allContentfulBaseCatalog(
+        #     filter: {node_locale: {eq: $language}, key: {eq: "service"}}
+        # ) {
+        #     nodes {
+        #     base_catalog {
+        #         id
+        #         key
+        #         title
+        #         position
+        #     }
+        #     }
+        # }
         #查询当前页面数据
         allContentfulPage(filter: {node_locale: {eq: $language}, key: {eq: "Services"}}) {
             nodes {

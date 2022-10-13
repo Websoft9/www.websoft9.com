@@ -23,11 +23,12 @@ import MenuItem from '@mui/material/MenuItem';
 import FormControl from '@mui/material/FormControl';
 import Pagination1 from "@components/pagination/layout-01";
 import Pagination2 from "@components/pagination/layout-02";
-import {Trans, useTranslation } from 'gatsby-plugin-react-i18next';
+import {Trans, useTranslation,useI18next } from 'gatsby-plugin-react-i18next';
 
 // 用于所有产品页面
 const Section = ({ cataLogData,productsData,marketplaceData,currentPage,numberOfPages,rootPage }) => {
     const { t } = useTranslation();
+    const {language, languages, changeLanguage } = useI18next();
 
     const [selectedIndex, setSelectedIndex] = React.useState(null);
     
@@ -64,11 +65,13 @@ const Section = ({ cataLogData,productsData,marketplaceData,currentPage,numberOf
     //     this.setState({ [e]: !this.state[e] });
     // };
 
+    // let size = language == "zh-CN" ? 2 : 3
+
     return (
         <SectionWrap>
             <Container>
                 <Row>
-                    <Col lg={2} md={6}>
+                    <Col lg={3} md={6}>
                         <ListGroupWrap>
                             <Heading as="h5" mb={["20px", null, "30px"]}>
                                 {t("Product List")}
@@ -79,7 +82,7 @@ const Section = ({ cataLogData,productsData,marketplaceData,currentPage,numberOf
                                 aria-labelledby="nested-list-subheader"
                                 >
                                 <ListItemButton key="allproduct" selected={selectedIndex === null} onClick={(event) => handleListItemClick(event, null)}>
-                                    <Link to={`/app-center`}>{t("ALL")+"("+totalProductsNum+")"}</Link>
+                                    <Link to={`/apps`}>{t("ALL")+"("+totalProductsNum+")"}</Link>
                                 </ListItemButton>
                                 {                                    
                                     cataLogData.map((item,i)=>{
@@ -151,7 +154,7 @@ const Section = ({ cataLogData,productsData,marketplaceData,currentPage,numberOf
                                                 item.image==null ? {src: defaultImage} : {src: item.image.imageurl}
                                             }
                                             desc={item.description}
-                                            path={`/app-center/product/${item.key}`}
+                                            path={`/apps/product/${item.key}`}
                                         />
                                     </Col>
                                 );
@@ -159,7 +162,7 @@ const Section = ({ cataLogData,productsData,marketplaceData,currentPage,numberOf
                         </Row>
                         <Row>
                         {                         
-                            productsData.length > 0 && (rootPage == "/app-center" ?
+                            productsData.length > 0 && (rootPage == "/apps" ?
                             <Pagination1
                                 mt="40px"
                                 rootPage={rootPage}

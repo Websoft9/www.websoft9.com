@@ -41,7 +41,7 @@ const HeroArea = ({ data }) => {
                                 ({id, path, content, ...rest }) => (
                                     <Button
                                         key={id}
-                                        m="10px"
+                                        m="10px 10px 10px 0px"
                                         size="small"
                                         path={path}
                                         // {...rest}
@@ -57,7 +57,7 @@ const HeroArea = ({ data }) => {
                             <ControlBar autoHide={true} />
                             <source src={data.media} type="video/mp4" />
                         </Player> */}
-                        <div style={{maxWidth: '600px',width:'100%'}}>
+                        <div style={{maxWidth: '600px',height:'100%'}}>
                             <PopupVideoTwo
                                 image={{ src: data.backgourdImage }}
                                 video_button={{
