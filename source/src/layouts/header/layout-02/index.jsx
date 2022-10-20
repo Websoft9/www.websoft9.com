@@ -29,7 +29,7 @@ import {
 import { useTranslation,useI18next} from 'gatsby-plugin-react-i18next';
 
 const Header = () => {
-    const {language, languages, changeLanguage } = useI18next();
+    const {language } = useI18next();
 
     const { sticky, headerRef, fixedRef } = useSticky();
     const [offCanvasOpen, setOffcanvasOpen] = useState(false);
@@ -241,7 +241,6 @@ const Header = () => {
                                 >
                                     <Language />
                                 </HeaderElement>
-                                                               
                                     {
                                         (language == "zh-CN" ? data.zhShortCutMenu.submenu : data.enShortCutMenu.submenu).map((shortcut)=>{
                                             return (

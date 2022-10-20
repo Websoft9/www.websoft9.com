@@ -14,8 +14,11 @@ import {
     StyledTitle,
     StyledSubtitle,
     ReadMoreBtn,
+    MarkdownStyle,
 } from "./style";
 import { Trans, useTranslation } from 'gatsby-plugin-react-i18next';
+import ReactMarkdown from "react-markdown";
+import remarkGfm from 'remark-gfm'
 
 const HeroArea = ({ data }) => {
     const { t } = useTranslation()
@@ -23,7 +26,7 @@ const HeroArea = ({ data }) => {
         <HeroWrapper>
             <Container fluid>
                 <Row alignItems="center">
-                    <Col md={6}>
+                    <Col md={5}>
                         <ImageBoxWrap>
                             {data?.image && (
                                 <ImageBoxTwo>
@@ -32,7 +35,7 @@ const HeroArea = ({ data }) => {
                             )}
                         </ImageBoxWrap>
                     </Col>
-                    <Col md={5}>
+                    <Col md={6}>
                         <HeroTextBox>
                             {data?.title && (
                                 <StyledSubtitle as="h3">
@@ -41,6 +44,14 @@ const HeroArea = ({ data }) => {
                             )}
                             {data?.subtitle && (
                                 <Text>{data.subtitle}</Text>
+                            )}
+                            {
+                                data?.description && (
+                                <MarkdownStyle>
+                                    <ReactMarkdown remarkPlugins={[remarkGfm]}>
+                                        {data.description?.description}
+                                    </ReactMarkdown>
+                                </MarkdownStyle>
                             )}
                             {
                                 data?.link && 

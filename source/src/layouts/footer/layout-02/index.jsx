@@ -143,7 +143,7 @@ const Footer = () => {
                                                 <Trans>{data.site.siteMetadata.description}</Trans>
                                             </Text>
                                         </TextWidget>
-                                        {data.siteMetadata?.socials && (
+                                        {data.site.siteMetadata?.socials && (
                                             <Social
                                                 space="16px"
                                                 tooltip={true}

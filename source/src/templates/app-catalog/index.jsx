@@ -50,7 +50,6 @@ export const query = graphql`
         }
         allContentfulBaseCatalog(
             filter: {node_locale: {eq: $language}, key: {eq: "product"}}
-            sort: {fields: catalog___catalog___catalog___position, order: ASC}
         ) {
             nodes {
             base_catalog {

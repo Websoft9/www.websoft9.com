@@ -73,8 +73,11 @@ export const HeaderCol = styled.div`
 `;
 
 export const HeaderLeft = styled.div`
+    display:flex;
     flex-basis: 50%;
-    justify-content: center;
+    justify-content: flex-start;
+    align-items:center;
+    align-content:center;
     padding: 14px 0;
     ${device.medium} {
         flex-basis: 50%;

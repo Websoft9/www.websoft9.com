@@ -39,7 +39,7 @@ export const StyledSubtitle = styled.h6`
         css`
             margin-block-start: -5px;
             margin-block-end: 10px;
-            text-transform: uppercase;
+            // text-transform: uppercase;
             font-size: 20px;
             letter-spacing: 3px;
             line-height: 2.43;

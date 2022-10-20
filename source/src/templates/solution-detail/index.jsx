@@ -17,7 +17,7 @@ const SolutionDetailTemplate = ({pageContext,location,data }) => {
         
             <main className="site-wrapper-reveal">
 
-                <ResourceDetailArea data={ data.contentfulResource} relatedReading={data.allContentfulResource.nodes} /> 
+                <ResourceDetailArea data={ data.contentfulResource} relatedReading={data.allContentfulResource.nodes} location={location}/> 
                 
             </main>
         
@@ -56,34 +56,64 @@ export const query = graphql`
             description {
                 description
             }
-            content {
-            content
-            }
-            resource {
-            id
-            slug
-            title
-            featureImage
-            type {
+            features_List {
                 id
                 key
-                title
+                value
             }
+            content {
+                content
             }
-            features {
-            id
-            headings:title
-            texts:subtitle
-            media:image
-            }
-            customers {
-            id
-            logo {
-                src:imageurl
+            resources {
                 id
                 slug
                 title
+                featureImage
+                type {
+                    id
+                    key
+                    title
+                }
             }
+            features {
+                id
+                title
+                subtitle
+                image
+                description {
+                    description
+                }
+            }
+            customers {
+                id
+                logo {
+                    src:imageurl
+                    id
+                    slug
+                    title
+                }           
+            }
+            products {
+                id
+                key
+                title
+                trademark
+                description: summary
+                image: logo {
+                    imageurl
+                }
+            }
+            services{
+                id
+                key
+                title
+                summary
+                featureImage
+                catalog {
+                    id
+                    key
+                    title
+                }
             }
         }
         #查询“更多方案”

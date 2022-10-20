@@ -13,8 +13,11 @@ import {
     StyledTitle,
     StyledSubtitle,
     ReadMoreBtn,
+    MarkdownStyle,
 } from "./style";
 import { Trans,useTranslation } from 'gatsby-plugin-react-i18next';
+import ReactMarkdown from "react-markdown";
+import remarkGfm from 'remark-gfm'
 
 const HeroArea = ({ data }) => {
     const { t } = useTranslation()
@@ -31,6 +34,14 @@ const HeroArea = ({ data }) => {
                             )}
                             {data?.subtitle && (
                                 <Text>{data.subtitle}</Text>
+                            )}
+                            {
+                                data?.description && (
+                                <MarkdownStyle>
+                                    <ReactMarkdown remarkPlugins={[remarkGfm]}>
+                                        {data.description?.description}
+                                    </ReactMarkdown>
+                                </MarkdownStyle>
                             )}
                             {
                                 data.link &&                            

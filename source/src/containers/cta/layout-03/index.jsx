@@ -204,6 +204,7 @@ const CTAArea = ({ data,resourceData }) => {
                                 })
                             }
                         </Row>
+
                         <Row style={{marginInlineStart:'20px',marginBottom:"20px",width:'200px'}}>
                             <Row>{t("Languages")}</Row>
                             {
@@ -214,6 +215,20 @@ const CTAArea = ({ data,resourceData }) => {
                                 })
                             }
                         </Row>
+
+                        <Row style={{marginInlineStart:'20px',marginBottom:"20px",width:'200px'}}>
+                            <Row>{t("Components")}</Row>
+                            {
+                                data?.component && data.component.map((item)=>{
+                                    return (
+                                        <Row style={{color:"dodgerblue"}} key={item}>
+                                            <Link to={`/apps/product/${item.key}`} style={{paddingLeft:'0px',marginLeft:'0px'}}>{item.trademark} </Link>
+                                        </Row>
+                                    );
+                                })
+                            }
+                        </Row>
+
                         <Row style={{marginInlineStart:'20px',marginBottom:"20px",width:'200px'}}>
                             <Row>{t("Solution")}</Row>
                             {

@@ -139,7 +139,7 @@ export const query = graphql`
                     description
                 }
             }
-            solutions {
+            solutions:resources {
                 id
                 slug
                 title

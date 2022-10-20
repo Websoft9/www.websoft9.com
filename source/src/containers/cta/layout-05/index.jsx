@@ -210,7 +210,7 @@ const CTAArea = ({ data,relatedReading,siteData }) => {
                     relatedReading?.map((item) => {
                         return (
                             <Col
-                                lg={3}
+                                lg={4}
                                 md={6}
                                 className="box-item"
                                 key={item.id}

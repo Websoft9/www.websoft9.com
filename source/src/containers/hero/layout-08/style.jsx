@@ -1,7 +1,7 @@
 import styled, { themeGet, device } from "@styled";
 
 export const HeroWrapper = styled.section`
-    // background-color: #f4efe9;
+    background-color: #f4efe9;
 `;
 
 export const HeroTextBox = styled.div`
@@ -37,6 +37,7 @@ export const ImageBoxWrap = styled.div`
     //     margin-block-start: 20px;
     //     padding-block-start: 0;
     // }
+    
     position: relative;
     .gatsby-image-wrapper {
         width: 100% !important;
@@ -67,35 +68,12 @@ export const ImageBoxTwo = styled.div`
 `;
 
 export const StyledSubtitle = styled.h6`
-    font-weight: 500;
-    color: ${themeGet("colors.primary")};
+    // font-weight: 500;
+    // color: ${themeGet("colors.primary")};
     margin-block-end: 20px;
 `;
 
 export const StyledTitle = styled.h1`
     font-weight: 500;
     margin-block-end: 15px;
-`;
-
-export const ReadMoreBtn = styled.div`
-    margin-block-start: 13px;
-    .mt-btn {
-        border-bottom: 1px solid ${themeGet("colors.border")};
-    }
-`;
-
-export const MarkdownStyle = styled.div`
-    h1 {font-size:34px};
-    h2 {font-size:24px};
-    h3 {font-size:18px};
-    ul {
-        list-style-type:disc;
-        list-style-position:inside;
-    }
-    table{
-        border:solid #000 1px; 
-        td {
-            border:solid #000 1px;
-        }
-    }
 `;

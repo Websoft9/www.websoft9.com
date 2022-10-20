@@ -17,7 +17,7 @@ const ServiceDetailTemplate = ({pageContext,location,data }) => {
         
             <main className="site-wrapper-reveal">
 
-                {/* <ResourceDetailArea data={ data.contentfulResource} relatedReading={data.allContentfulResource.nodes} />  */}
+                <ServiceDetailArea data={data.allContentfulService.nodes[0]} location={location}/>
                 
             </main>
         
@@ -39,24 +39,74 @@ export const query = graphql`
             }
         }
         #查询专业服务详情
-        
-        #查询“更多方案”
-        allContentfulResource(
-            filter: {node_locale: {eq: $language}, type: {key: {eq: "solution"}}, slug: {ne: $slug}}
-            limit: 4
-        ) {
+        allContentfulService(filter: {node_locale: {eq: $language}, key: {eq: $slug}}) {
             nodes {
             id
-            slug
+            key
             title
             featureImage
-            type {
+            summary
+            overview {
+                overview
+            }
+            images
+            task {
                 id
+                key
+                value
+            }
+            values {
+                id
+                key
+                value
+            }
+            cases {
+                id
+                title
+                slug
+                featureImage
+                type {
+                    key
+                    title
+                }
+            }
+            priceModel {
+                id
+                key
+                name
+            }
+            BuyRemark {
+                BuyRemark
+            }
+            pricing
+            services{
+                id
+                key
+                title
+                summary
+                featureImage
+                catalog {
+                    id
+                    key
+                    title
+                }
+            }
+            products {
+                id
+                key
+                image:logo{
+					imageurl
+                }
+                trademark
+                summary
+            }
+            catalog {
                 key
                 title
             }
             }
         }
+
     }
 `;
 

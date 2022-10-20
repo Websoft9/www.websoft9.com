@@ -123,6 +123,10 @@ export const query = graphql`
                     value
                     id
                 }
+                component {
+                    trademark
+                    key
+                }
             }
         }
     }

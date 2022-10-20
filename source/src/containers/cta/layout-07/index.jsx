@@ -1,125 +1,130 @@
 import React from "react";
 import { StaticImage } from "gatsby-plugin-image";
 import { Container, Row, Col } from "@ui/wrapper";
-import { StyledSection,StyledContent} from "./style";
+import { StyledSection, StyledContent } from "./style";
 import Text from "@ui/text";
-import {Trans, useTranslation } from 'gatsby-plugin-react-i18next';
-import Line from "@ui/divider/line";
-import { Link }  from  'gatsby';
+import { Trans, useTranslation, useI18next } from 'gatsby-plugin-react-i18next';
 import Heading from "@ui/heading";
 import ReactMarkdown from "react-markdown";
 import "markdown-navbar/dist/navbar.css";
 import remarkGfm from 'remark-gfm'
-import HeroArea from "@containers/hero/layout-01";
-// import BoxImage from "@components/box-image/layout-02";
+import HeroArea from "@containers/hero/layout-07";
+import List from '@mui/material/List';
+import ListItemButton from '@mui/material/ListItemButton';
+import { AnchorLink } from "gatsby-plugin-anchor-links";
+import FullWideSlider from "@containers/elements/flexible-image-slider/full-wide-slider3";
+import ValuesArea from "@containers/it-service/layout-01";
+import defaultImage from "@assets/images/default.png";
 import BoxImage from "@components/box-large-image/layout-02";
-import HeroImageArea from "@containers/hero/layout-06";
-import PartnerArea from "@containers/elements/client-logo/section-03";
+import BoxImage2 from "@components/box-image/layout-01";
+import Button from "@ui/button";
 
 //用于显示专业服务详情页
-const CTAArea = ({ data,relatedReading }) => {
+const CTAArea = ({ data, location }) => {
     const { t } = useTranslation();
+    const { language } = useI18next();
+
+    //console.log("location:"+location.pathname)
+
+    const pathName = location.pathname;
 
     const heroData = {
-        headings:data.title,
-        texts:data.subTitle,
-        media:data.featureImage,
-        buttons:[]
+        catalogTitle: data.catalog[0].title,
+        headings: data.title,
+        texts: data.summary,
+        media: data.featureImage,
     };
+    const catalogs = [
+        { id: "id-anchorpoint-1", value: t("Overview") },
+        { id: "id-anchorpoint-2", value: t("Benefit") },
+        { id: "id-anchorpoint-3", value: t("What do we do") },
+        { id: "id-anchorpoint-4", value: t("Cases") },
+        { id: "id-anchorpoint-5", value: t("Purchase and price") },
+        { id: "id-anchorpoint-6", value: t("Service portfolio") },
+        { id: "id-anchorpoint-7", value: t("Related Applications") }
+    ];
 
-    data.action.map((ac)=>{
-        const button  = {
-            id:ac.id,
-            content:ac.key,
-            path:ac.value
-        }
-        heroData.buttons.push(button);
-    })
+    const [selectedIndex, setSelectedIndex] = React.useState(null);
+
+    const handleListItemClick = (event, index) => {
+        setSelectedIndex(index);
+    };
 
     return (
         <StyledSection>
             <HeroArea data={heroData} />
-            <Container>              
-                {/* <StyledContent> */}
-                <Row>
-                    <Col lg={12} md={6} >
-                        <Heading as="h5" mb="20px" textAlign="left">{t("Challengeg")}</Heading>
-                        <ReactMarkdown remarkPlugins={[remarkGfm]}>
-                            {data.description.description}
-                        </ReactMarkdown>
-                    </Col>
-                </Row>
-                <Row>
-                    <Col lg={12} md={6} >
-                        <Heading as="h5" mb="20px" textAlign="left">{t("How do we solve it?")}</Heading>
-                        <ReactMarkdown remarkPlugins={[remarkGfm]}>
-                            {data.content.content}
-                        </ReactMarkdown>
-                    </Col>
-                </Row>
-                <Row>
+            <Row style={{ backgroundColor: "rgba(25, 118, 210, 0.12)", marginTop: "0px" }}>
+                <List
+                    component="nav"
+                    aria-labelledby="nested-list-subheader"
+                    disablePadding={true}
+                    style={{ display: 'flex', flexDirection: 'row', margin: "0 auto", maxWidth: "1200px", fontSize: '20px', fontWeight: "bold" }}
+                >
                     {
-                        data.resource && 
-                        data.resource.filter((rs)=>rs.type.key != "news").slice(0,4).map((item) => {
+                        catalogs && catalogs.map((item, index) => {
                             return (
-                                <Col
-                                    lg={3}
-                                    md={6}
-                                    className="box-item"
-                                    key={item.id}
-                                    style={{marginBlockEnd:"20px",marginBlockStart:"20px"}}
-                                >
-                                    <BoxImage
-                                        title={item.title}
-                                        image=
-                                        {
-                                            item.featureImage==null ? {src: defaultImage} : {src: item.featureImage}
-                                        }
-                                        category={item.type.title}
-                                        path={`/${item.type.key}/${item.slug}`}
-                                    />
-                                </Col>
+                                <ListItemButton key={item + index} selected={selectedIndex === item.value} /*onClick={(event) => handleListItemClick(event, item.value)}*/>
+                                    <AnchorLink to={pathName + "#" + item.id} title={item.value} />
+                                </ListItemButton>
                             );
-                        })}
+                        })
+                    }
+                </List>
+            </Row>
+            <Container>
+                <Row id="id-anchorpoint-1" mb="40px">
+                    <Row>
+                        <Heading as="h4" mb="40px" textAlign="left">{t("Overview")}</Heading>
+                    </Row>
+                    <Row>
+                        <Col lg={5}>
+                            <ReactMarkdown remarkPlugins={[remarkGfm]}>
+                                {data.overview?.overview}
+                            </ReactMarkdown>
+                        </Col>
+                        <Col lg={7}>
+                            {data?.images && <FullWideSlider data={data.images} />}
+                        </Col>
+                    </Row>
+                </Row>
+
+                <Row id="id-anchorpoint-2" mb="90px">
+                    <Row>
+                        <Heading as="h4" mb="40px" textAlign="left">{t("Benefit")}</Heading>
+                    </Row>
+                    <Row>
+                        <ValuesArea data={data.values} />
+                    </Row>
+                </Row>
+
+                <Row id="id-anchorpoint-3" mb="90px">
+                    <Row>
+                        <Heading as="h4" mb="40px" textAlign="left">{t("What do we do")}</Heading>
+                    </Row>
+                    <Row>
+                        <ValuesArea data={data.task} />
+                    </Row>
+                </Row>
+
+                <Row id="id-anchorpoint-4" mb="90px">
+                    <Row>
+                        <Heading as="h4" mb="40px" textAlign="left">{t("Cases")}</Heading>
                     </Row>
                     <Row>
                         {
-                            data.features && data.features.map((feature,i)=>{
-                                if(i%2==0){
-                                    return (
-                                        <HeroImageArea  key={feature.id} data={feature} />
-                                    );
-                                }
-                                else{
-                                    return (
-                                        <HeroImageArea  key={feature.id} data={feature} imageAlign="left" />
-                                    );
-                                }
-                            })
-                        }
-                    </Row>
-                    <Row>
-                        <Heading as="h5" mb="20px" textAlign="left">{t("为全球品牌提供")+data.title}</Heading>
-                        <PartnerArea data={data.customers} />
-                    </Row>  
-                    <Row>
-                        <Heading as="h5" mb="20px" textAlign="left">{t("More solution")}</Heading>
-                        {
-                            relatedReading && 
-                            relatedReading.map((item) => {
+                            data.cases?.map((item) => {
                                 return (
                                     <Col
-                                        lg={3}
+                                        lg={4}
                                         md={6}
                                         className="box-item"
                                         key={item.id}
-                                        style={{marginBlockEnd:"20px",marginBlockStart:"20px"}}
                                     >
                                         <BoxImage
                                             title={item.title}
                                             image=
                                             {
-                                                item.featureImage==null ? {src: defaultImage} : {src: item.featureImage}
+                                                item.featureImage == null ? { src: defaultImage } : { src: item.featureImage }
                                             }
                                             category={item.type.title}
                                             path={`/${item.type.key}/${item.slug}`}
@@ -127,8 +132,90 @@ const CTAArea = ({ data,relatedReading }) => {
                                     </Col>
                                 );
                             })}
-                        </Row>
-                {/* </StyledContent> */}
+                    </Row>
+                </Row>
+
+                <Row id="id-anchorpoint-5" mb="90px">
+                    <Row>
+                        <Heading as="h4" mb="40px" textAlign="left">{t("Purchase and price")}</Heading>
+                    </Row>
+                    <Row alignItems="center"
+                        textAlign={["center", null, null, "left"]}
+                        style={{ backgroundColor: "rgb(255 255 250)" }}>
+                        <Col lg={9}>
+                            <ReactMarkdown remarkPlugins={[remarkGfm]}>
+                                {data.BuyRemark?.BuyRemark}
+                            </ReactMarkdown>
+                        </Col>
+                        <Col lg={3} className="text-center">
+                            <Text>{data.priceModel?.[0].name}</Text>
+                            <Text fontSize="30px" fontWeight="bold">
+                                {language == "zh-CN" ? "$" : "¥"}
+                                {data.pricing}
+                            </Text>
+                            <Button m="7px" >{t("Get it Now")}</Button>
+                        </Col>
+                    </Row>
+                </Row>
+
+                <Row id="id-anchorpoint-6" mb="90px">
+                    <Row>
+                        <Heading as="h4" mb="40px" textAlign="left">{t("Service portfolio")}</Heading>
+                    </Row>
+                    <Row>
+                        {data.services && data.services.slice(0, 3).map((feature, i) => {
+                            var image = new Object();
+                            image.src = feature.featureImage == null ? defaultImage : feature.featureImage;
+                            return (
+                                <Col
+                                    lg={4}
+                                    md={6}
+                                    className="box-item"
+                                    key={feature.id}
+                                >
+                                    <BoxImage
+                                        image={image}
+                                        title={feature.title}
+                                        //category={feature.catalog[0].title}
+                                        desc={feature.summary}
+                                        path={`/services/${feature.catalog[0].key}/${feature.key}`}
+                                    />
+                                </Col>
+                            );
+                        })}
+                    </Row>
+                </Row>
+
+                <Row id="id-anchorpoint-7" mb="30px">
+                    <Row>
+                        <Heading as="h4" mb="40px" textAlign="left">{t("Related Applications")}</Heading>
+                    </Row>
+                    <Row>
+                        {
+                            data?.products && data.products?.slice(0, 3).map((item) => {
+                                return (
+                                    <Col
+                                        lg={4}
+                                        md={6}
+                                        className="box-item"
+                                        key={item.id}
+                                    >
+                                        <BoxImage2
+                                            title={item.trademark}
+                                            image=
+                                            {
+                                                item.image == null ? { src: defaultImage } : { src: item.image.imageurl }
+                                            }
+                                            desc={item.summary}
+                                            path={`/apps/product/${item.key}`}
+                                        />
+                                    </Col>
+                                );
+                            })
+                        }
+                    </Row>
+                </Row>
+
             </Container>
         </StyledSection>
     );

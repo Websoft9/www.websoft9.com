@@ -28,10 +28,12 @@ const FeaturesPage = ({ pageContext, location, data }) => {
                 {
                     data.allContentfulPage.nodes[0].content[2].features.map((feature,i)=>{                       
                         if(i%2==0){
-                            return (<HeroImageRightArea key={feature.id} data={feature}/>)
+                            // return (<HeroImageRightArea key={feature.id} data={feature}/>)
+                            return ( <HeroImageArea  key={feature.id} data={feature} />)
                         }
                         else{
-                            return (<HeroImageLeftArea key={feature.id} data={feature}/>)
+                            // return (<HeroImageLeftArea key={feature.id} data={feature}/>)
+                            return (<HeroImageArea  key={feature.id} data={feature} imageAlign="left" />)
                         }
                     })
                 }
@@ -85,11 +87,21 @@ export const query = graphql`
                     subtitle
                     icon
                     image
+                    description {
+                        description
+                    }
                     link {
                         id
                         key
                         value
-                        }
+                    }
+                    # id
+                    # headings:title
+                    # texts:subtitle
+                    # media:image
+                    # description {
+                    #     description
+                    # }
                 }
                 ... on ContentfulResource {
                         type {

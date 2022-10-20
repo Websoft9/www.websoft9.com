@@ -118,12 +118,15 @@ const MobileMenu = ({ menuData }) => {
                                                                 megaSubitem,
                                                                 i
                                                             ) => {
-                                                                var path = "/";
-                                                                if(megaSubitem.key !== undefined ){
+                                                                var path = "/";                                                                                                                           
+                                                                if(megaSubitem.os !== undefined ){
                                                                     path = "/apps/product/"+megaSubitem.key
                                                                 }
                                                                 else if(megaSubitem.slug !== undefined){
                                                                     path = "/solution/"+megaSubitem.slug;
+                                                                }
+                                                                else if(megaSubitem.position !== undefined){
+                                                                    path = "/services#"+megaSubitem.key;
                                                                 }
                                                                 else{
                                                                     path = megaSubitem.link;

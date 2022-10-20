@@ -29,6 +29,7 @@ const slider = {
     },
 };
 
+
 const Section = ({data}) => {
     return (
         <SectionWrap>
@@ -41,7 +42,7 @@ const Section = ({data}) => {
                                     <SwiperSlide key={i} className="item">
                                         <ClientLogo
                                             image={slide.logo}
-                                            layout={3}
+                                            layout={4}
                                         />
                                     </SwiperSlide>
                                 );

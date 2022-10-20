@@ -16,6 +16,33 @@ import {
     StyledSubtitle,
 } from "./style";
 import { Trans,useTranslation } from 'gatsby-plugin-react-i18next';
+import SwiperSlider, { SwiperSlide } from "@ui/swiper";
+import ClientLogo from "@ui/client-logo";
+
+const slider = {
+    slidesPerView: 6,
+    loop: false,
+    speed: 1000,
+    spaceBetween: 30,
+    autoplay: false,
+    breakpoints: {
+        320: {
+            slidesPerView: 2,
+        },
+        575: {
+            slidesPerView: 3,
+        },
+        767: {
+            slidesPerView: 4,
+        },
+        991: {
+            slidesPerView: 5,
+        },
+        1499: {
+            slidesPerView: 6,
+        },
+    },
+};
 
 const HeroArea = ({ data,className }) => {
     const { t } = useTranslation()
@@ -45,16 +72,29 @@ const HeroArea = ({ data,className }) => {
                                 </Button>
                                 )
                             )}
+                            {/* {
+                                data?.customers && (
+                                <SwiperSlider options={slider} vAlign="center">
+                                {data.customers.map((slide, i) => {
+                                    return (
+                                        <SwiperSlide key={i} className="item">
+                                            <ClientLogo
+                                                image={slide.logo}
+                                                layout={3}
+                                            />
+                                        </SwiperSlide>
+                                    );
+                                })}
+                                </SwiperSlider>
+                            )} */}
                         </HeroTextBox>
                     </Col>
-                    <Col md={6}>
-                        <div style={{maxWidth: '600px',height:'100%'}}>
-                            <ImageBoxWrap className={cn(className, "popup-video")}>
-                                {data?.media && (
+                    <Col md={5}>
+                        <ImageBoxWrap className={cn(className, "popup-video")}>
+                            {data?.media && (
                                     <Image src={data.media} />
-                                )}
-                            </ImageBoxWrap>
-                        </div>
+                            )}
+                        </ImageBoxWrap>
                     </Col>
                 </Row>
             </Container>

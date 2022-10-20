@@ -210,7 +210,7 @@ export const query = graphql`
                 key
                 title
             }
-            solutions {
+            solutions:resources {
                 id
                 slug
                 title

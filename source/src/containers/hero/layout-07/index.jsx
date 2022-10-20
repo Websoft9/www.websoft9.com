@@ -16,6 +16,7 @@ import {
     StyledSubtitle,
 } from "./style";
 import { Trans,useTranslation } from 'gatsby-plugin-react-i18next';
+import { color } from "@mui/system";
 
 const HeroArea = ({ data,className }) => {
     const { t } = useTranslation()
@@ -24,7 +25,10 @@ const HeroArea = ({ data,className }) => {
             <Container fluid>
                 <Row alignItems="center">
                     <Col md={6}>
-                    <HeroTextBox>                            
+                    <HeroTextBox>
+                            {data?.catalogTitle && (
+                                <Text style={{color:"dodgerblue"}}>{data.catalogTitle}</Text>
+                            )}
                             {data?.headings && (
                                 <StyledSubtitle as="h3">
                                     {data.headings}
@@ -32,29 +36,15 @@ const HeroArea = ({ data,className }) => {
                             )}                   
                             {data?.texts && (
                                 <Text>{data.texts}</Text>
-                            )}
-                            {data?.buttons?.map(
-                                ({id, path, content, ...rest }) => (
-                                    <Button
-                                        key={id}
-                                        m="10px"
-                                        size="small"
-                                        path={path}
-                                    >
-                                    {content}
-                                </Button>
-                                )
-                            )}
-                        </HeroTextBox>
+                            )}                          
+                    </HeroTextBox>
                     </Col>
-                    <Col md={6}>
-                        <div style={{maxWidth: '600px',height:'100%'}}>
-                            <ImageBoxWrap className={cn(className, "popup-video")}>
-                                {data?.media && (
-                                    <Image src={data.media} />
-                                )}
-                            </ImageBoxWrap>
-                        </div>
+                    <Col md={5}>
+                        <ImageBoxWrap className={cn(className, "popup-video")}>
+                            {data?.media && (
+                                <Image src={data.media} />
+                            )}
+                        </ImageBoxWrap>
                     </Col>
                 </Row>
             </Container>

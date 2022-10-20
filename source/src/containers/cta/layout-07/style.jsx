@@ -19,6 +19,12 @@ export const StyledSection = styled.section`
         list-style-type:disc;
         list-style-position:inside;
     }
+
+    #id-anchorpoint-3  {
+        svg  {
+            fill:blue;
+        }
+    }
 `;
 
 

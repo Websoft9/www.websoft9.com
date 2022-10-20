@@ -4,6 +4,10 @@ export const HeroWrapper = styled.section`
     //background-color: #f4efe9;
     //padding-block-start:100px;
     padding-block-end:90px;
+    & > div {
+        padding-left:0px;
+        padding-right:0px;
+    }
 `;
 
 export const HeroTextBox = styled.div`
@@ -73,5 +77,21 @@ export const ReadMoreBtn = styled.div`
     margin-block-start: 13px;
     .mt-btn {
         border-bottom: 1px solid ${themeGet("colors.border")};
+    }
+`;
+
+export const MarkdownStyle = styled.div`
+    h1 {font-size:34px};
+    h2 {font-size:24px};
+    h3 {font-size:18px};
+    ul {
+        list-style-type:disc;
+        list-style-position:inside;
+    }
+    table{
+        border:solid #000 1px; 
+        td {
+            border:solid #000 1px;
+        }
     }
 `;

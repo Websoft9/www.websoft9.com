@@ -4,14 +4,13 @@ import Heading from "@ui/heading";
 // import List, { ListItem } from "@ui/list";
 import { SectionWrap, BoxWrap } from "./style";
 import ProductArea from "@containers/elements/box-image/section-01";
-import { Link,graphql }  from  'gatsby';
+import { Link,graphql,StaticQuery }  from  'gatsby';
 import List from '@mui/material/List';
 import ListItemButton from '@mui/material/ListItemButton';
 import BoxImage from "@components/box-image/layout-01";
+import BoxImage2 from "@components/box-large-image/layout-02";
 import defaultImage from "@assets/images/default.png";
-import Pagination1 from "@components/pagination/layout-01";
-import Pagination2 from "@components/pagination/layout-02";
-import {Trans, useTranslation } from 'gatsby-plugin-react-i18next';
+import {Trans, useTranslation,useI18next } from 'gatsby-plugin-react-i18next';
 import Box from '@mui/material/Box';
 import FormLabel from '@mui/material/FormLabel';
 import FormControl from '@mui/material/FormControl';
@@ -20,50 +19,13 @@ import FormControlLabel from '@mui/material/FormControlLabel';
 import Checkbox from '@mui/material/Checkbox';
 import ServiceArea from "@containers/elements/box-large-image/section-05";
 import { AnchorLink } from "gatsby-plugin-anchor-links";
+import { useEffect } from "react";
+import SectionTitle from "@ui/section-title";
 
 // 用于所有产品页面
-const Section = ({ serviceTypeData,brandTypeData,servicesData,currentPage,numberOfPages,rootPage }) => {
+const Section = () => {
     const { t } = useTranslation();
-    
-    serviceTypeData.sort(function(a,b){return a.position-b.position}) //对服务类别根据position进行排序
-    servicesData.sort(function(a,b){return a.catalog?.[0].position-b.catalog?.[0].position}) //对服务类别根据position进行排序
-
-    const [cpServicesData,setCpServicesData] = React.useState(servicesData);
-
-    const [allServicesData,setAllServicesData] = React.useState(cpServicesData);
-
-    const [checkedState, setCheckedState] = React.useState(
-        new Array(brandTypeData.length).fill(false)
-    );
-
-    const handleChange = (position) => {
-        const updatedCheckedState = checkedState.map((item, index) =>
-            index === position ? !item : item
-        );
-        setCheckedState(updatedCheckedState);
-        let filterServicesData = cpServicesData;
-
-        //根据选择的服务对象对服务进行过滤
-        updatedCheckedState.map((currentState,index)=>{
-            if(currentState == true){
-                let filterTypeServiceData = [];
-                filterServicesData.map((data)=>{
-                    console.log("data:"+data.service?.length)
-                    let newServiceArr = [];
-                    data?.service?.map((subData)=>{
-                        subData?.customerType.map((ele)=>{
-                            if(ele.key == brandTypeData[index].key){                
-                                newServiceArr.push(subData);
-                            }
-                        })
-                    })
-                    data.service = newServiceArr;
-                    filterTypeServiceData.push(data);
-                })
-                setAllServicesData(filterTypeServiceData);
-            }
-        })
-    };
+    const {language } = useI18next();
 
     const [selectedIndex, setSelectedIndex] = React.useState(null);
     
@@ -71,12 +33,135 @@ const Section = ({ serviceTypeData,brandTypeData,servicesData,currentPage,number
         setSelectedIndex(index);
     };
 
-
     return (
-        <SectionWrap>
+        <StaticQuery
+        query={graphql`
+        {
+            zhServicesData:allContentfulBaseCatalog(
+                filter: {node_locale: {eq: "zh-CN"}, key: {eq: "service"}}
+            ) {
+                nodes {
+                base_catalog {
+                    id
+                    key
+                    title
+                    position
+                    overview
+                    service {
+                        id
+                        key
+                        texts:title
+                        headings:summary
+                        image:featureImage
+                        customerType {
+                            key
+                            title
+                        }
+                        catalog {
+                            id
+                            key
+                            title
+                        }
+                    }
+                }
+                }
+            }
+
+            enServicesData:allContentfulBaseCatalog(
+                filter: {node_locale: {eq: "en-US"}, key: {eq: "service"}}
+            ) {
+                nodes {
+                base_catalog {
+                    id
+                    key
+                    title
+                    position
+                    overview
+                    service {
+                        id
+                        key
+                        texts:title
+                        headings:summary
+                        image:featureImage
+                        customerType {
+                            key
+                            title
+                        }
+                        catalog {
+                            id
+                            key
+                            title
+                        }
+                    }
+                }
+                }
+            }
+
+            #查询所有服务对象
+            zhBrandType:allContentfulAboutBrandType(filter: {node_locale: {eq: "zh-CN"}}) {
+                nodes {
+                id
+                key
+                title
+                }
+            }
+
+            enBrandType:allContentfulAboutBrandType(filter: {node_locale: {eq: "en-US"}}) {
+                nodes {
+                id
+                key
+                title
+                }
+            }
+        }
+    `}
+    render = {data =>{
+        const allBrandType = language=="zh-CN" ? data.zhBrandType.nodes : data.enBrandType.nodes;
+        const allServicesData = language=="zh-CN" ? data.zhServicesData.nodes?.[0].base_catalog : data.enServicesData.nodes?.[0].base_catalog;
+
+        const [checkedState, setCheckedState] = React.useState(-2);
+        const [filterServicesData,setFilterServicesData] = React.useState(allServicesData);
+
+        //const [allData,setAllData] = React.useState(undefined);
+
+        let allData = null;
+
+        useEffect(()=>{
+            window.localStorage.setItem("AllData",JSON.stringify(allServicesData));
+        },[])
+
+        typeof window !== 'undefined' && (allData =JSON.parse(window.localStorage.getItem("AllData")));
+
+        const handleChange = (e,index) => {
+            const value = e.target.value;
+
+            if(index === -1){           
+                setFilterServicesData(allData);
+            }
+            else{
+                let filterData = [];
+                allData.map((item)=>{
+                    let newServiceArr = [];
+                    item?.service?.map((subData)=>{
+                        subData?.customerType.map((ele)=>{
+                            if(ele.key == value){
+                                newServiceArr.push(subData);
+                            }
+                        })
+                    })
+                    item.service = newServiceArr;
+                    filterData.push(item);
+                })
+                setFilterServicesData(filterData);
+            }
+            setCheckedState(index);           
+        };
+
+        return (
+            <SectionWrap>
             <Container>
                 <Row>
-                    <Col lg={2} md={6} style={{position: "sticky",top: "120px",height: "100%"}}>
+                    <Col lg={2} md={6} /*style={{position: "sticky",top: "120px",height: "100%"}}*/>
                             <BoxWrap>
                             <Heading as="h5">
                                 {t("Service Type")}
@@ -87,7 +172,7 @@ const Section = ({ serviceTypeData,brandTypeData,servicesData,currentPage,number
                                 aria-labelledby="nested-list-subheader"
                                 >
                                     {
-                                        serviceTypeData && serviceTypeData.map((item)=>{
+                                        allServicesData && allServicesData.map((item)=>{
                                             return (
                                                 <ListItemButton key={item.id} selected={selectedIndex === item.key} onClick={(event) => handleListItemClick(event, item.key)}>
                                                     <AnchorLink to={"/services#"+item.key} title={item.title}/>
@@ -101,16 +186,20 @@ const Section = ({ serviceTypeData,brandTypeData,servicesData,currentPage,number
                                 <Box sx={{ display: 'flex' }}>
                                     <FormControl  sx={{ m: 0 }} component="fieldset" variant="standard">
                                         <FormLabel component="legend" style={{fontSize: '20px',fontWeight: 'bold'}}>{t("Service Object")}</FormLabel>
-                                        <FormGroup>
-                                        {
-                                            brandTypeData && brandTypeData.map((type,index)=>{
-                                                return (
-                                                    <FormControlLabel key={type.id}
-                                                        control={<Checkbox checked={checkedState[index]} onChange={() => handleChange(index)} name={type.title} value={type.key} />}
-                                                        label={type.title}
-                                                    />
-                                                );
-                                            })
+                                        <FormGroup>                                        
+                                            <FormControlLabel
+                                                control={<Checkbox checked={checkedState === -1} onChange={(event) => handleChange(event,-1)} name={t("ALL")} value={t("ALL")} />}
+                                                label={t("ALL")}
+                                            />
+                                            {
+                                                allBrandType && allBrandType.map((type,index)=>{
+                                                    return (
+                                                        <FormControlLabel key={type.id}
+                                                            control={<Checkbox checked={checkedState === index} onChange={(event) => handleChange(event,index)} name={type.title} value={type.key} />}
+                                                            label={type.title}
+                                                        />
+                                                    );
+                                                })
                                         }
                                         </FormGroup>
                                     </FormControl>
@@ -118,22 +207,16 @@ const Section = ({ serviceTypeData,brandTypeData,servicesData,currentPage,number
                             </BoxWrap>
                     </Col>
                     <Col lg={10}>
-                        {/* {
-                            allServicesData?.map((item)=>{
-                                return (
-                                    <Row id={item.key} key={item.id} >
-                                        <ServiceArea data={item}/>
-                                    </Row> 
-                                );
-                            })
-                        } */}
                         <Row>
-                            <ServiceArea alldata={allServicesData}/>
+                            <ServiceArea alldata={filterServicesData}/>
                         </Row>
                     </Col>
                 </Row>               
             </Container>
         </SectionWrap>
+    )}
+    }
+    ></StaticQuery>
     );
 };
 

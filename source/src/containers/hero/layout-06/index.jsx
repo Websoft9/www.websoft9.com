@@ -14,8 +14,11 @@ import {
     StyledTitle,
     StyledSubtitle,
     ReadMoreBtn,
+    MarkdownStyle,
 } from "./style";
 import { Trans,useTranslation } from 'gatsby-plugin-react-i18next';
+import ReactMarkdown from "react-markdown";
+import remarkGfm from 'remark-gfm'
 
 const HeroArea = ({ data,imageAlign }) => {
     return (
@@ -27,34 +30,42 @@ const HeroArea = ({ data,imageAlign }) => {
                         <>
                             <Col md={6}>
                                 <HeroTextBox>
-                                    {data?.media && (
+                                    {data?.image && (
                                         <ImageBoxTwo>
-                                            <Image src={data.media} />
+                                            <Image src={data.image} />
                                         </ImageBoxTwo>
                                     )}
                                 </HeroTextBox>
                             </Col>
                             <Col md={6}>
                                 <ImageBoxWrap>
-                                    {data?.headings && (
+                                    {data?.title && (
                                         <StyledSubtitle as="h5">
-                                            {data.headings}
+                                            {data.title}
                                         </StyledSubtitle>
                                     )}
-                                    {data?.texts && (
-                                        <Text>{data.texts}</Text>
+                                    {data?.subtitle && (
+                                        <Text style={{fontSize:'18px'}}>{data.subtitle}</Text>
                                     )}
                                     {
-                                        data?.buttons && 
+                                        data?.description && (
+                                        <MarkdownStyle>
+                                            <ReactMarkdown remarkPlugins={[remarkGfm]}>
+                                                {data.description?.description}
+                                            </ReactMarkdown>
+                                        </MarkdownStyle>
+                                    )}
+                                    {
+                                        data?.link && 
                                         <ReadMoreBtn>
                                             <Button
                                                 icon="far fa-long-arrow-right"
-                                                path={data.buttons[0].path}
+                                                path={data.link[0].value}
                                                 variant="texted"
                                                 icondistance="4px"
                                                 fontWeight={500}
                                             >
-                                                {data.buttons[0].content}
+                                                {data.link[0].key}
                                             </Button>
                                         </ReadMoreBtn>
                                     }
@@ -65,25 +76,33 @@ const HeroArea = ({ data,imageAlign }) => {
                        <>
                             <Col md={6}>
                             <HeroTextBox>
-                                    {data?.headings && (
+                                    {data?.title && (
                                         <StyledSubtitle as="h5">
-                                            {data.headings}
+                                            {data.title}
                                         </StyledSubtitle>
                                     )}
-                                    {data?.texts && (
-                                        <Text>{data.texts}</Text>
+                                    {data?.subtitle && (
+                                        <Text style={{fontSize:'18px'}}>{data.subtitle}</Text>
                                     )}
                                     {
-                                        data.buttons &&                            
+                                        data?.description && (
+                                        <MarkdownStyle>
+                                            <ReactMarkdown remarkPlugins={[remarkGfm]}>
+                                                {data.description?.description}
+                                            </ReactMarkdown>
+                                        </MarkdownStyle>
+                                    )}
+                                    {
+                                        data.link &&                            
                                         <ReadMoreBtn>
                                             <Button
                                                 icon="far fa-long-arrow-right"
-                                                path={data.buttons[0].path}
+                                                path={data.link[0].value}
                                                 variant="texted"
                                                 icondistance="4px"
                                                 fontWeight={500}
                                             >
-                                                {data.buttons[0].content}
+                                                {data.link[0].key}
                                             </Button>
                                         </ReadMoreBtn>
                                     }
@@ -91,9 +110,9 @@ const HeroArea = ({ data,imageAlign }) => {
                             </Col>
                             <Col md={6}>
                                 <ImageBoxWrap>
-                                    {data?.media && (
+                                    {data?.image && (
                                         <ImageBoxTwo>
-                                            <Image src={data.media} />
+                                            <Image src={data.image} />
                                         </ImageBoxTwo>
                                     )}
                                 </ImageBoxWrap>

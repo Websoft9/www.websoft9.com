@@ -48,7 +48,7 @@ export const query = graphql`
         #查询相关阅读
         RelatedReading:allContentfulResource(
             filter: {node_locale: {eq: $language},slug: {ne: $slug}}
-            limit: 4
+            limit: 3
             sort: {fields: time, order: DESC}
         ) {
             nodes {
@@ -111,7 +111,7 @@ export const query = graphql`
                 key
                 trademark
             }
-            solutions {
+            solutions:resources {
                 id
                 title
                 slug
