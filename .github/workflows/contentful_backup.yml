@@ -16,7 +16,7 @@ jobs:
         run: |
           export_date=`date +%Y-%m-%d_%H:%M:%S`
           contentful space export --config contentful/export-config.json --content-file "export_${export_date}.json"
-      - name: commit data
+#       - name: commit data
       - uses: stefanzweifel/git-auto-commit-action@v4
         with:
           commit_message: "push the contenful backup file"
