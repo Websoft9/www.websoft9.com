@@ -1,9 +1,9 @@
-import React from "react";
-import { Container, Row, Col } from "@ui/wrapper";
-import SwiperSlider, { SwiperSlide } from "@ui/swiper";
 import Image from "@ui/image";
-import { SectionWrap } from "./style";
 import SectionTitle from "@ui/section-title";
+import SwiperSlider, { SwiperSlide } from "@ui/swiper";
+import { Col, Container, Row } from "@ui/wrapper";
+import React from "react";
+import { SectionWrap } from "./style";
 
 const sliderSettings = {
     slidesPerView: "auto",

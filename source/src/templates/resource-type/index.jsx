@@ -6,7 +6,6 @@ import Header from "@layout/header/layout-02";
 import Footer from "@layout/footer/layout-02";
 import CtaArea from "@containers/cta/layout-04";
 import ResourceArea from "@containers/elements/lists/section-03"
-import HeroArea from "@containers/hero/layout-01";
 import { Container, Row, Col } from "react-bootstrap";
 import Box from '@mui/material/Box';
 import MenuItem from '@mui/material/MenuItem';
@@ -53,7 +52,6 @@ const ResourceTypeTemplate = ({pageContext,location,data }) => {
             <Header />
         
         <main className="site-wrapper-reveal">
-            {/* <HeroArea data={data.allContentfulPage.nodes[0].content[0]} /> */}
 
             <div style={{paddingBlockStart: "55px"}}>
                 <Container>

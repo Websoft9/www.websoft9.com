@@ -1,34 +1,18 @@
-import React, { Fragment, useState, useEffect, useRef } from "react";
-import PropTypes from "prop-types";
-import { StaticQuery ,graphql } from "gatsby";
-import { Container, Row, Col } from "@ui/wrapper";
-import Text from "@ui/text";
-import Anchor from "@ui/anchor";
-import Logo from "@components/logo";
-import Clickable from "@ui/clickable";
-import { MainMenu, MobileMenu } from "@components/menu";
-import Flyout, { FlyoutHeader, FlyoutBody } from "@ui/flyout";
-import OffCanvas, { OffCanvasHeader, OffCanvasBody } from "@ui/off-canvas";
 import SearchForm from "@components/forms/search-form/layout-03";
-import CloseButton from "@ui/close-button";
-import BurgerButton from "@ui/burger-button";
-import { useSticky } from "@hooks";
 import Language from "@components/language";
+import Logo from "@components/logo";
+import { MainMenu, MobileMenu } from "@components/menu";
+import { useSticky } from "@hooks";
+import BurgerButton from "@ui/burger-button";
+import Clickable from "@ui/clickable";
+import CloseButton from "@ui/close-button";
+import Flyout, { FlyoutBody, FlyoutHeader } from "@ui/flyout";
+import OffCanvas, { OffCanvasBody, OffCanvasHeader } from "@ui/off-canvas";
+import { Container } from "@ui/wrapper";
+import React, { Fragment, useState } from "react";
 import {
-    HeaderWrap,
-    HeaderTop,
-    HeaderBottom,
-    FixedHeader,
-    FixedHeaderHeight,
-    HeaderMain,
-    HeaderCol,
-    HeaderNavigation,
-    HeaderElement,
-    HeaderInfoItem,
-    StyledTopText,
-    StyledNavitem,
-    StyledNavlink,
-    bottomLine,
+    bottomLine, HeaderBottom, HeaderCol, HeaderElement, HeaderMain, HeaderNavigation, HeaderTop, HeaderWrap, StyledNavitem,
+    StyledNavlink
 } from "./style";
 
 const Header = ({shortcutMenuData,topMenuData,transparent}) => {

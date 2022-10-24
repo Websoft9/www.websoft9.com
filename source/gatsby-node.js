@@ -1,20 +1,6 @@
 const path = require("path");
-//const createSchemaCustomization = require("./src/gatsby-utils/createSchemaCustomization");
-// const onCreateNode = require("./src/gatsby-utils/onCreateNode");
-// const createResolvers = require("./src/gatsby-utils/createResolvers");
-// const createPages = require("./src/gatsby-utils/createPages");
 
 exports.onCreateWebpackConfig = ({ getConfig, actions }) => {
-    // const oldConfig = getConfig();
-    // const config = {
-    //     ...oldConfig,
-    //     output: {
-    //         ...oldConfig.output,
-    //         globalObject: "this",
-    //     },
-    // };
-
-    // actions.replaceWebpackConfig(config);
     actions.setWebpackConfig({
         resolve: {
             alias: {
@@ -40,14 +26,6 @@ exports.onCreateWebpackConfig = ({ getConfig, actions }) => {
         },
     });
 };
-
-//exports.createSchemaCustomization = createSchemaCustomization;
-
-// exports.onCreateNode = onCreateNode;
-
-// exports.createResolvers = createResolvers;
-
-//  exports.createPages = createPages;
 
 exports.createPages = async ({ graphql, actions }) => {
     const { createPage } = actions
@@ -121,7 +99,7 @@ exports.createPages = async ({ graphql, actions }) => {
 
     const catalogs = result.data.allContentfulBaseCatalog.nodes[0].base_catalog; //获取所有产品目录
     const products = result.data.allContentfulProduct.nodes;     //获取所有产品
-    const postsPerPage = 6;  //每页记录条数
+    const postsPerPage = 9;  //每页记录条数
     const numberOfPages = Math.ceil(products.length / 2 / postsPerPage); //计算所有产品总记录条数（由于有中英文两种数据，在计算时除2）
 
     //根据产品目录检索产品并分页

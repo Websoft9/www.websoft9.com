@@ -1,4 +1,4 @@
-import BoxImage from "@components/box-image/layout-07";
+import BoxImage from "@components/box-image/layout-08";
 import { Col, Container, Row } from "@ui/wrapper";
 import React from "react";
 import { ServicesWrapper } from "./style";
@@ -12,15 +12,13 @@ const ServiceArea = ({ data, ...rest }) => {
                 {data && (
                     <Row>
                         {data?.map((feature,index) => {
-                            const tmp = feature.key.split('/');
-                            const svgFile = tmp[0] == ""? svgDir("./help.svg").default:svgDir("./"+tmp[0]+".svg").default;
                             return (
                                 <Col lg={4} key={'col-item-'+index}>
                                     <BoxImage
-                                        id={feature.id}
-                                        icon={svgFile}
-                                        title={tmp[1]}
-                                        desc={feature.value}
+                                        title={feature.trademark}
+                                        image={{src: feature.image.imageurl}}
+                                        desc={feature.description}
+                                        path={`/apps/product/${feature.key}`}
                                     />
                                 </Col>
                             );
@@ -32,12 +30,5 @@ const ServiceArea = ({ data, ...rest }) => {
     );
 };
 
-// ServiceArea.propTypes = {
-//     data: PropTypes.shape({
-//         section_title: PropTypes.shape(SectionTitleType),
-//         buttons: PropTypes.arrayOf(PropTypes.shape(ButtonType)),
-//         items: PropTypes.arrayOf(PropTypes.shape(ItemType)),
-//     }),
-// };
 
 export default ServiceArea;

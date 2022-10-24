@@ -1,9 +1,7 @@
-import React, { Children } from "react";
-import PropTypes from "prop-types";
-import { Container } from "@ui/wrapper";
 import SectionTitle from "@ui/section-title";
 import Tabs, { Tab } from "@ui/tabs";
-import { SectionTitleType } from "@utils/types";
+import { Container } from "@ui/wrapper";
+import React, { Children } from "react";
 import { StyledTab } from "./style";
 
 const TabArea = ({ data, children }) => {

@@ -1,4 +1,4 @@
-import styled, { themeGet, device } from "@styled";
+import styled, { device, themeGet } from "@styled";
 
 export const HeroWrapper = styled.section`
     background-color: #f4efe9;
@@ -77,7 +77,7 @@ export const Heading = styled.h5`
     font-weight: 400;
     margin-block-start: 10px;
     margin-block-end: 10px;
-    text-transform: uppercase;
+    // text-transform: uppercase;
     font-size: 20px;
     letter-spacing: 3px;
     line-height: 2.43;

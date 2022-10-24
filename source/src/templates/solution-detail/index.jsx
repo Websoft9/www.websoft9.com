@@ -1,11 +1,10 @@
-import React from "react";
-import {graphql }  from  'gatsby';
 import Seo from "@components/seo";
+import SolutionDetailArea from "@containers/cta/layout-06";
 import Layout from "@layout";
-import Header from "@layout/header/layout-02";
 import Footer from "@layout/footer/layout-02";
-import CtaArea from "@containers/cta/layout-04";
-import ResourceDetailArea from "@containers/cta/layout-06";
+import Header from "@layout/header/layout-02";
+import { graphql } from 'gatsby';
+import React from "react";
 
 const SolutionDetailTemplate = ({pageContext,location,data }) => {
     const { currentPage, numberOfPages,rootPage } = pageContext;
@@ -17,7 +16,7 @@ const SolutionDetailTemplate = ({pageContext,location,data }) => {
         
             <main className="site-wrapper-reveal">
 
-                <ResourceDetailArea data={ data.contentfulResource} relatedReading={data.allContentfulResource.nodes} location={location}/> 
+                <SolutionDetailArea data={ data.contentfulResource} relatedReading={data.allContentfulResource.nodes} location={location}/> 
                 
             </main>
         

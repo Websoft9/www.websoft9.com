@@ -1,7 +1,7 @@
-import React from "react";
-import PropTypes from "prop-types";
 import Anchor from "@ui/anchor";
 import classnames from "clsx";
+import PropTypes from "prop-types";
+import React from "react";
 import { StyledMotto } from "./style";
 
 const Motto = ({ text, linkText, path, className, ...rest }) => {

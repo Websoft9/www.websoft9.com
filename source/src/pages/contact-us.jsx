@@ -1,16 +1,16 @@
-import * as React from "react";
-import { graphql } from "gatsby";
 import Seo from "@components/seo";
-import Layout from "@layout";
-import Header from "@layout/header/layout-02";
-import Footer from "@layout/footer/layout-02";
-import PageHeader from "@containers/page-header/layout-01";
 import CtaArea from "@containers/cta/layout-04";
-import ContactArea from "@containers/elements/box-large-image/section-03";
-import ContactInformationArea from "@containers/elements/box-image/section-05";
 import CultureArea from "@containers/elements/box-image/section-03";
+import ContactInformationArea from "@containers/elements/box-image/section-05";
+import ContactArea from "@containers/elements/box-large-image/section-03";
+import PageHeader from "@containers/page-header/layout-01";
+import Layout from "@layout";
+import Footer from "@layout/footer/layout-02";
+import Header from "@layout/header/layout-02";
+import { graphql } from "gatsby";
+import * as React from "react";
 
-const ContactUsPage = ({ location, data }) => {
+const ContactUsPage = ({ location, data }) => { 
     return (
         <Layout location={location}>
             <Seo title={data.allContentfulPage.nodes[0].title} description={data.allContentfulPage.nodes[0]?.description?.description} keywords={data.allContentfulPage.nodes[0]?.tags}/>

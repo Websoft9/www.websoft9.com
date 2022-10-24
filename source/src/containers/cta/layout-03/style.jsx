@@ -1,4 +1,5 @@
-import styled, { themeGet, device } from "@styled";
+import styled, { device, themeGet } from "@styled";
+import Anchor from "@ui/anchor";
 
 export const StyledSection = styled.section`
     // background-color: #454545;
@@ -14,6 +15,10 @@ export const StyledSection = styled.section`
     //     padding-block: 80px;
     // }
 `;
+
+export const StyledAnchor = styled(Anchor)`
+    padding-block: 40px;
+`
 
 export const StyledHeading = styled.h3`
     margin-block-end: 10px;

@@ -1,10 +1,9 @@
-import React from "react";
-import PropTypes from "prop-types";
 import ClientLogo from "@ui/client-logo";
-import { Container } from "@ui/wrapper";
-import SwiperSlider, { SwiperSlide } from "@ui/swiper";
-import { ItemType } from "@utils/types";
 import SectionTitle from "@ui/section-title";
+import SwiperSlider, { SwiperSlide } from "@ui/swiper";
+import { Container } from "@ui/wrapper";
+import PropTypes from "prop-types";
+import React from "react";
 import { SectionWrap } from "./style";
 
 const slider = {

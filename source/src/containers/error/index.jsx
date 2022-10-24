@@ -1,6 +1,6 @@
-import React from "react";
-import { Container, Row, Col } from "@ui/wrapper";
 import Button from "@ui/button";
+import { Col, Container, Row } from "@ui/wrapper";
+import React from "react";
 import { ErrorWrap } from "./style";
 
 const ErroArea = () => {

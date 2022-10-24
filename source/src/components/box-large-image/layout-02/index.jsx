@@ -1,20 +1,10 @@
-import React from "react";
-import PropTypes from "prop-types";
 import Button from "@ui/button";
 import Image from "@ui/image";
-import { ImageType } from "@utils/types";
+import { Trans } from 'gatsby-plugin-react-i18next';
+import React from "react";
 import {
-    BoxLargeImgWrap,
-    BoxLargeImgInner,
-    BoxLargeImgMedia,
-    BoxLargeImgLink,
-    BoxLargeImgContent,
-    HeadingWrap,
-    CategoryWrap,
-    TextWrap,
-    BoxLargeImgBtnWrap,
+    BoxLargeImgBtnWrap, BoxLargeImgContent, BoxLargeImgInner, BoxLargeImgLink, BoxLargeImgMedia, BoxLargeImgWrap, CategoryWrap, HeadingWrap, TextWrap
 } from "./style";
-import {Trans, useTranslation } from 'gatsby-plugin-react-i18next';
 
 const BoxLargeImage = ({
     image,

@@ -1,17 +1,14 @@
-import React from "react";
-import {graphql }  from  'gatsby';
 import Seo from "@components/seo";
-import Layout from "@layout";
-import Header from "@layout/header/layout-02";
-import Footer from "@layout/footer/layout-02";
 import CtaArea from "@containers/cta/layout-04";
-import HeroArea from "@containers/hero/layout-01";
+import IframeArea from "@containers/iframe";
 import PageHeader from "@containers/page-header/layout-01";
-import IframeArea from "@containers/iframe"
-import { Trans, useTranslation } from 'gatsby-plugin-react-i18next';
+import Layout from "@layout";
+import Footer from "@layout/footer/layout-02";
+import Header from "@layout/header/layout-02";
+import { graphql } from 'gatsby';
+import React from "react";
 
 const BecomePartnerPage = ({pageContext,location,data }) => {
-    const { t } = useTranslation();
     return (
         <Layout location={location}>
             <Seo title={data.allContentfulPage.nodes[0].title} description={data.allContentfulPage.nodes[0]?.description?.description} keywords={data.allContentfulPage.nodes[0]?.tags}/>

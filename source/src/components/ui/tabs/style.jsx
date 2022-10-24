@@ -1,4 +1,4 @@
-import styled, { css, themeGet, device } from "@styled";
+import styled, { css, device, themeGet } from "@styled";
 import Tabs from "react-bootstrap/Tabs";
 
 export const StyledTabs = styled(Tabs)`
@@ -24,7 +24,7 @@ export const StyledTabs = styled(Tabs)`
                     font-size: 14px;
                     font-weight: 500;
                     line-height: 1.3;
-                    text-transform: uppercase;
+                    //text-transform: uppercase;
                     letter-spacing: 1px;
                     border: 1px solid ${themeGet("colors.border")}; !important;
                     color: ${themeGet("colors.text")}; !important;

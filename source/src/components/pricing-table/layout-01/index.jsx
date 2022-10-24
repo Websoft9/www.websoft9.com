@@ -1,22 +1,12 @@
-import React from "react";
-import PropTypes from "prop-types";
-import cn from "clsx";
-import Image from "@ui/image";
 import Button from "@ui/button";
-import { ImageType } from "@utils/types";
+import Image from "@ui/image";
+import cn from "clsx";
+import { useTranslation } from 'gatsby-plugin-react-i18next';
+import React from "react";
 import {
-    PricingTableWrap,
-    PricingTableInner,
-    PricingTableHead,
-    PricingTableTitle,
-    PricingTableImage,
-    PricingTablePrice,
     PricingTableBody,
-    PricingTableBtn,
-    PricingTableList,
-    PricingTableFeatureMark,
+    PricingTableBtn, PricingTableFeatureMark, PricingTableHead, PricingTableImage, PricingTableInner, PricingTableList, PricingTablePrice, PricingTableTitle, PricingTableWrap
 } from "./style";
-import {Trans, useTranslation} from 'gatsby-plugin-react-i18next';
 
 const PricingTable = ({
     title,

@@ -1,6 +1,5 @@
 import React from "react";
 import { Link,graphql }  from  'gatsby';
-import PropTypes from "prop-types";
 import Seo from "@components/seo";
 import Layout from "@layout";
 import Header from "@layout/header/layout-02";

@@ -1,13 +1,12 @@
-import React from "react";
-import {graphql }  from  'gatsby';
 import Seo from "@components/seo";
-import Layout from "@layout";
-import Header from "@layout/header/layout-02";
-import Footer from "@layout/footer/layout-02";
 import CtaArea from "@containers/cta/layout-04";
-import HeroArea from "@containers/hero/layout-01";
+import IframeArea from "@containers/iframe";
 import PageHeader from "@containers/page-header/layout-01";
-import IframeArea from "@containers/iframe"
+import Layout from "@layout";
+import Footer from "@layout/footer/layout-02";
+import Header from "@layout/header/layout-02";
+import { graphql } from 'gatsby';
+import React from "react";
 
 const TicketPage = ({pageContext,location,data }) => {
     return (
@@ -21,6 +20,7 @@ const TicketPage = ({pageContext,location,data }) => {
                 <IframeArea data={ data.allContentfulPage.nodes[0].content[1]?.link?.[0].value }  width="1200px" height="1000px" />
 
                 <CtaArea data={ data.allContentfulPage.nodes[0].content[2] } />
+
             </main>
         
             <Footer/>

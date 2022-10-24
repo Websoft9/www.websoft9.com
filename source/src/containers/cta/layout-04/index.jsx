@@ -1,12 +1,10 @@
-import React from "react";
-import { StaticImage } from "gatsby-plugin-image";
-import PropTypes from "prop-types";
-import { Container, Row, Col } from "@ui/wrapper";
 import Button from "@ui/button";
-import { HeadingType, ButtonType } from "@utils/types";
-import { StyledSection, StyledHeading, StyledBG,HeroTextBox,StyledSubtitle } from "./style";
 import Text from "@ui/text";
-import {Trans, useTranslation } from 'gatsby-plugin-react-i18next';
+import { Col, Container, Row } from "@ui/wrapper";
+import { StaticImage } from "gatsby-plugin-image";
+import { useTranslation } from 'gatsby-plugin-react-i18next';
+import React from "react";
+import { HeroTextBox, StyledBG, StyledSection, StyledSubtitle } from "./style";
 
 const CTAArea = ({ data }) => {
     const { t } = useTranslation();

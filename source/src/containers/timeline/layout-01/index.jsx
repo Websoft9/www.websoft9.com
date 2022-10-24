@@ -1,9 +1,9 @@
-import React from "react";
-import PropTypes from "prop-types";
-import { Container } from "@ui/wrapper";
-import Timeline from "@ui/timeline";
 import SectionTitle from "@ui/section-title";
-import { SectionTitleType, ItemType } from "@utils/types";
+import Timeline from "@ui/timeline";
+import { Container } from "@ui/wrapper";
+import { ItemType, SectionTitleType } from "@utils/types";
+import PropTypes from "prop-types";
+import React from "react";
 import { SectionWrap } from "./style";
 
 const TimelineArea = ({ data }) => {

@@ -1,21 +1,19 @@
-import React from "react";
-import { Container, Row, Col } from "react-bootstrap";
-import {graphql }  from  'gatsby';
-import defaultImage from "@assets/images/default.png";
 import Seo from "@components/seo";
-import Layout from "@layout";
-import Header from "@layout/header/layout-02";
-import Footer from "@layout/footer/layout-02";
 import CtaArea from "@containers/cta/layout-04";
-import ResourceArea from "@containers/elements/lists/section-03"
+import ResourceArea from "@containers/elements/lists/section-03";
 import HeroArea from "@containers/hero/layout-01";
+import Layout from "@layout";
+import Footer from "@layout/footer/layout-02";
+import Header from "@layout/header/layout-02";
 import Box from '@mui/material/Box';
-import MenuItem from '@mui/material/MenuItem';
 import FormControl from '@mui/material/FormControl';
-import Select from '@mui/material/Select';
 import InputLabel from '@mui/material/InputLabel';
-import {Trans, useTranslation } from 'gatsby-plugin-react-i18next';
-import styled from "@styled";
+import MenuItem from '@mui/material/MenuItem';
+import Select from '@mui/material/Select';
+import { graphql } from 'gatsby';
+import { useTranslation } from 'gatsby-plugin-react-i18next';
+import React from "react";
+import { Col, Container, Row } from "react-bootstrap";
 
 const ResourceCenterPage = ({location,data }) => {
     const { t } = useTranslation();

@@ -1,21 +1,20 @@
-import React from "react";
-import {graphql }  from  'gatsby';
-import { Container, Row, Col } from "react-bootstrap";
+import Seo from "@components/seo";
+import CtaArea from "@containers/cta/layout-04";
+import CultureArea from "@containers/elements/box-image/section-06";
+import HeroArea from "@containers/hero/layout-01";
+import Layout from "@layout";
+import Footer from "@layout/footer/layout-02";
+import Header from "@layout/header/layout-02";
 import Box from '@mui/material/Box';
 import FormControl from '@mui/material/FormControl';
+import InputLabel from '@mui/material/InputLabel';
 import MenuItem from '@mui/material/MenuItem';
 import Select from '@mui/material/Select';
-import InputLabel from '@mui/material/InputLabel';
-import defaultImage from "@assets/images/default.png";
-import Seo from "@components/seo";
-import Layout from "@layout";
-import Header from "@layout/header/layout-02";
-import Footer from "@layout/footer/layout-02";
-import CtaArea from "@containers/cta/layout-04";
-import HeroArea from "@containers/hero/layout-01";
-import {Trans, useTranslation } from 'gatsby-plugin-react-i18next';
-import CultureArea from "@containers/elements/box-image/section-06";
 import Text from "@ui/text";
+import { graphql } from 'gatsby';
+import { useTranslation } from 'gatsby-plugin-react-i18next';
+import React from "react";
+import { Col, Container, Row } from "react-bootstrap";
 
 const PartnerDirectoryPage = ({location,data }) => {
     const { t } = useTranslation();

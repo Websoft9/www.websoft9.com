@@ -1,18 +1,12 @@
-import React from "react";
-import PropTypes from "prop-types";
-import { Row, Col } from "@ui/wrapper";
-import VideoButton from "@ui/video-button";
-import Image from "@ui/image";
-import Text from "@ui/text";
 import Button from "@ui/button";
+import Image from "@ui/image";
 import List, { ListItem } from "@ui/list";
-import { ImageType, VideoButtonType, TextType, ButtonType } from "@utils/types";
+import Text from "@ui/text";
+import VideoButton from "@ui/video-button";
+import { Col, Row } from "@ui/wrapper";
+import React from "react";
 import {
-    OurMissionWrap,
-    OurMissionImageWrap,
-    MissionContentWrap,
-    VideoBtnWrap,
-    ButtonWrap,
+    ButtonWrap, MissionContentWrap, OurMissionImageWrap, OurMissionWrap, VideoBtnWrap
 } from "./style";
 
 const AboutArea = ({ data }) => {

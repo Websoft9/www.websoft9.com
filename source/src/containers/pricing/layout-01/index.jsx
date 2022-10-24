@@ -1,9 +1,9 @@
-import React from "react";
-import PropTypes from "prop-types";
-import { Container, Row, Col } from "@ui/wrapper";
-import SectionTitle from "@ui/section-title";
 import PricingTable from "@components/pricing-table/layout-01";
-import { SectionTitleType, ItemType } from "@utils/types";
+import SectionTitle from "@ui/section-title";
+import { Col, Container, Row } from "@ui/wrapper";
+import { ItemType, SectionTitleType } from "@utils/types";
+import PropTypes from "prop-types";
+import React from "react";
 import { SectionWrap } from "./style";
 
 const PricingArea = ({ data }) => {

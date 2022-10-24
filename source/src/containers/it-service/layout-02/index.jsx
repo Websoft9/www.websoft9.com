@@ -1,11 +1,8 @@
-import React from "react";
-import PropTypes from "prop-types";
-import { Container, Row, Col } from "@ui/wrapper";
-import SectionTitle from "@ui/section-title";
-import Button from "@ui/button";
 import BoxIcon from "@components/box-icon/layout-02";
-import { SectionTitleType, ButtonType, ItemType } from "@utils/types";
-import { ServicesWrapper, SectionBottom } from "./style";
+import SectionTitle from "@ui/section-title";
+import { Col, Container, Row } from "@ui/wrapper";
+import React from "react";
+import { ServicesWrapper } from "./style";
 //import EventSvg from '@material-design-icons/svg/two-tone/event.svg'
 
 const ServiceArea = ({ data, ...rest }) => {

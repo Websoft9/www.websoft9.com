@@ -1,4 +1,4 @@
-import styled, { css, themeGet, space, device } from "@styled";
+import styled, { css, device, space, themeGet } from "@styled";
 
 export const FunFactTitle = styled.h5`
     color: ${themeGet("colors.heading")};
@@ -56,7 +56,7 @@ export const FunFactCount = styled.div`
 export const FunFactText = styled.h6`
     font-size: 14px;
     font-weight: 700;
-    text-transform: uppercase;
+    //text-transform: uppercase;
     // letter-spacing: 2px;
     ${(props) =>
         props.$layout !== 2 &&

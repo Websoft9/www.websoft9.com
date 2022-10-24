@@ -1,31 +1,23 @@
-import React from "react";
-import { StaticImage } from "gatsby-plugin-image";
-import PropTypes from "prop-types";
-import { Container, Row, Col } from "@ui/wrapper";
-import Button from "@ui/button";
-import { HeadingType, ButtonType } from "@utils/types";
-import { 
-    StyledSection, StyledHeading,HeroTextBox,StyledSubtitle,
-    TestimonialRating,AuthorInfo,AuthorName,ImageBoxTwo,
-    TestimonialInfo,TestimonialMedia,TestimonialAuthor,
-    AuthorRole,NavContainer,MarkdownStyle,ImageBoxOne } from "./style";
-import Text from "@ui/text";
-import {Trans, useTranslation } from 'gatsby-plugin-react-i18next';
-import Image from "@ui/image";
 import defaultImage from "@assets/images/default.png";
-import Line from "@ui/divider/line";
-import { Link }  from  'gatsby';
-// import BoxImage from "@components/box-image/layout-01";
 import BoxImage from "@components/box-large-image/layout-02";
+import TestimonialArea from "@containers/elements/testimonials/section-02";
+import Button from "@ui/button";
+import Line from "@ui/divider/line";
 import Heading from "@ui/heading";
+import Image from "@ui/image";
+import Social, { SocialLink } from "@ui/social";
 import { SwiperSlide } from "@ui/swiper";
-import ReactMarkdown from "react-markdown";
+import Text from "@ui/text";
+import { Col, Container, Row } from "@ui/wrapper";
+import cn from "clsx";
+import { Link } from 'gatsby';
+import { useTranslation } from 'gatsby-plugin-react-i18next';
 import MarkNav from 'markdown-navbar';
 import "markdown-navbar/dist/navbar.css";
-import remarkGfm from 'remark-gfm'
-import TestimonialArea from "@containers/elements/testimonials/section-02";
-import Social, { SocialLink } from "@ui/social";
-import cn from "clsx";
+import React from "react";
+import ReactMarkdown from "react-markdown";
+import remarkGfm from 'remark-gfm';
+import { AuthorInfo, AuthorName, AuthorRole, HeroTextBox, ImageBoxOne, ImageBoxTwo, MarkdownStyle, NavContainer, StyledSection, StyledSubtitle, TestimonialAuthor, TestimonialInfo, TestimonialMedia } from "./style";
 
 //用于显示资源详情页
 const CTAArea = ({ data,relatedReading,siteData }) => {
@@ -88,15 +80,16 @@ const CTAArea = ({ data,relatedReading,siteData }) => {
                             </Col>
                             <Col>
                                 <Row>{t("Author")}</Row>
-                                <Row>
+                                <Row id="row-author">
                                     { 
                                         data.author!=null &&                                   
                                         <SwiperSlide style={{paddingLeft:'0px'}}>
                                         <TestimonialInfo>
                                             {data.author[0]?.pictureUrl && (
                                                 <TestimonialMedia>
-                                                    <Image
+                                                    <Image 
                                                         src={data.author[0].pictureUrl}
+                                                        alt=""
                                                     />
                                                 </TestimonialMedia>
                                             )}
@@ -118,7 +111,7 @@ const CTAArea = ({ data,relatedReading,siteData }) => {
                                     data.customers != null ? 
                                     <HeroTextBox style={{ width:"100px",height:"100px"}} >
                                         <ImageBoxTwo>
-                                            <Image src={data.customers[0].logo==null?defaultImage:data.customers[0].logo.imageurl} />
+                                            <Image src={data.customers[0].logo==null?defaultImage:data.customers[0].logo.imageurl} alt="" />
                                         </ImageBoxTwo>
                                     </HeroTextBox>
                                     :
@@ -142,7 +135,7 @@ const CTAArea = ({ data,relatedReading,siteData }) => {
                     </Col>
                     <Col xl={4}>
                         <ImageBoxOne >
-                            <Image src={data.image==null?defaultImage:data.image}  />
+                            <Image src={data.image==null?defaultImage:data.image}  alt=""/>
                         </ImageBoxOne>
                     </Col>
                 </Row>

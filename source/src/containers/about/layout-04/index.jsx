@@ -1,21 +1,11 @@
-import React from "react";
-import PropTypes from "prop-types";
-import { Container, Row, Col } from "@ui/wrapper";
-import Heading from "@ui/heading";
-import Text from "@ui/text";
-import Button from "@ui/button";
-import SectionTitle from "@ui/section-title";
-import {
-    SectionTitleType,
-    ButtonType,
-    TextType,
-    HeadingType,
-} from "@utils/types";
-import { SectionWrap,StyledLeftHeading } from "./style";
 import Image from "@ui/image";
-import remarkGfm from 'remark-gfm';
-import ReactMarkdown from "react-markdown";
+import SectionTitle from "@ui/section-title";
+import { Col, Container, Row } from "@ui/wrapper";
 import "markdown-navbar/dist/navbar.css";
+import React from "react";
+import ReactMarkdown from "react-markdown";
+import remarkGfm from 'remark-gfm';
+import { SectionWrap } from "./style";
 
 const AboutArea = ({ data }) => {
     return (
@@ -27,7 +17,7 @@ const AboutArea = ({ data }) => {
                         lg={{ span: 4, offset: 1 }}
                         mb={["10px", null, null, 0]}
                     >
-                        <Image src={data.features?.[0].image} />
+                        <Image src={data.features?.[0].image} alt=""/>
                     </Col>
                     <Col lg={{ span: 5, offset: 1 }}>                     
                             {/* <Text fontSize="18px" mb="20px">

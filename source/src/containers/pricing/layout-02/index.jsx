@@ -1,11 +1,8 @@
-import React from "react";
-import PropTypes from "prop-types";
-import { Container, Row, Col } from "@ui/wrapper";
-import { normalizedArray } from "@utils";
+import PricingTable from "@components/pricing-table/layout-01";
 import SectionTitle from "@ui/section-title";
 import Tabs, { Tab } from "@ui/tabs";
-import PricingTable from "@components/pricing-table/layout-01";
-import { SectionTitleType, ItemType } from "@utils/types";
+import { Col, Container, Row } from "@ui/wrapper";
+import React from "react";
 import { SectionWrap } from "./style";
 
 

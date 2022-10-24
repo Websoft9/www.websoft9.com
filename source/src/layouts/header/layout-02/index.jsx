@@ -1,32 +1,20 @@
-import React, { Fragment, useState } from "react";
-import PropTypes from "prop-types";
+import HeaderForm from "@components/forms/search-form/layout-01";
+import Language from "@components/language";
 import Logo from "@components/logo";
 import { MainMenu, MobileMenu } from "@components/menu";
-import Language from "@components/language";
-import HeaderForm from "@components/forms/search-form/layout-01";
-import BurgerButton from "@ui/burger-button";
-import OffCanvas, { OffCanvasHeader, OffCanvasBody } from "@ui/off-canvas";
-import Clickable from "@ui/clickable";
 import { useSticky } from "@hooks";
-import { StaticQuery, graphql } from "gatsby"
+import BurgerButton from "@ui/burger-button";
+import Clickable from "@ui/clickable";
+import OffCanvas, { OffCanvasBody, OffCanvasHeader } from "@ui/off-canvas";
+import { graphql, StaticQuery } from "gatsby";
+import { useI18next } from 'gatsby-plugin-react-i18next';
+import PropTypes from "prop-types";
+import React, { Fragment, useState } from "react";
 import {
-    HeaderWrap,
-    HeaderTop,
-    HeaderBottom,
-    HeaderMain,
-    HeaderLeft,
-    HeaderMiddle,
-    HeaderRight,
-    HeaderRightInner,
-    HeaderNavigation,
-    HeaderElement,
-    StyledTopText,
-    StyledNavitem,
-    StyledNavlink,
-    bottomLine,
-    HeaderCol,
+    HeaderBottom, HeaderElement, HeaderLeft, HeaderMain, HeaderMiddle, HeaderNavigation, HeaderRight,
+    HeaderRightInner, HeaderWrap, StyledNavitem,
+    StyledNavlink
 } from "./style";
-import { useTranslation,useI18next} from 'gatsby-plugin-react-i18next';
 
 const Header = () => {
     const {language } = useI18next();
@@ -241,31 +229,7 @@ const Header = () => {
                                 >
                                     <Language />
                                 </HeaderElement>
-                                    {
-                                        (language == "zh-CN" ? data.zhShortCutMenu.submenu : data.enShortCutMenu.submenu).map((shortcut)=>{
-                                            return (
-                                                    <StyledNavitem
-                                                        className="nav-item"
-                                                        key={`mainmenu-${shortcut.id}`}
-                                                        hasSubmenu={false}
-                                                        hasMegamenu={false}
-                                                        $space={1}
-                                                        $alignment={"center"}
-                                                    >
-                                                        <StyledNavlink
-                                                            className="nav-link"
-                                                            path={shortcut.link}
-                                                            hassubmenu={false}
-                                                            $color={"dark"}
-                                                            $vSpace={1}
-                                                            $bottomLine={true}
-                                                        >
-                                                            <span>{shortcut.text}</span>
-                                                        </StyledNavlink>
-                                                    </StyledNavitem>
-                                            );
-                                        })
-                                    }
+                                    
                             </HeaderRightInner>
                             <HeaderElement
                                 pl="20px"
@@ -286,6 +250,35 @@ const Header = () => {
                                     <i className="far fa-ellipsis-h-alt"></i>
                                 </Clickable>
                             </HeaderElement>
+                        </HeaderRight>
+                        <HeaderRight>
+                            <HeaderRightInner>
+                                {
+                                    (language == "zh-CN" ? data.zhShortCutMenu.submenu : data.enShortCutMenu.submenu).map((shortcut)=>{
+                                        return (
+                                                <StyledNavitem
+                                                    className="nav-item"
+                                                    key={`mainmenu-${shortcut.id}`}
+                                                    hasSubmenu={false}
+                                                    hasMegamenu={false}
+                                                    $space={1}
+                                                    $alignment={"center"}
+                                                >
+                                                    <StyledNavlink
+                                                        className="nav-link"
+                                                        path={shortcut.link}
+                                                        hassubmenu={false}
+                                                        $color={"dark"}
+                                                        $vSpace={1}
+                                                        $bottomLine={true}
+                                                    >
+                                                        <span>{shortcut.text}</span>
+                                                    </StyledNavlink>
+                                                </StyledNavitem>
+                                        );
+                                    })
+                                }
+                            </HeaderRightInner>
                         </HeaderRight>
                     </HeaderMain>
                 </HeaderBottom>

@@ -1,15 +1,14 @@
-import React from "react";
-import PropTypes from "prop-types";
 import Seo from "@components/seo";
-import Layout from "@layout";
-import Header from "@layout/header/layout-02";
-import Footer from "@layout/footer/layout-02";
-import PricingArea from "@containers/pricing/layout-02";
 import CtaArea from "@containers/cta/layout-04";
-import { graphql } from "gatsby";
 import FAQArea from "@containers/elements/accordion/section-01";
+import PricingArea from "@containers/pricing/layout-02";
+import Layout from "@layout";
+import Footer from "@layout/footer/layout-02";
+import Header from "@layout/header/layout-02";
+import { graphql } from "gatsby";
+import React from "react";
 
-const PricingPage = ({ pageContext, location, data }) => {
+const PricingPage = ({ pageContext, location, data }) => { 
 
     return (
         <Layout location={location}>

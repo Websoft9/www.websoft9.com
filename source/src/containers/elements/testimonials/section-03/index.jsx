@@ -1,8 +1,8 @@
-import React from "react";
-import { Container, Row, Col } from "react-bootstrap";
+import Testimonial from "@components/testimonial/layout-01";
 import SectionTitle from "@ui/section-title";
 import SwiperSlider, { SwiperSlide } from "@ui/swiper";
-import Testimonial from "@components/testimonial/layout-01";
+import React from "react";
+import { Col, Container, Row } from "react-bootstrap";
 import { SectionWrap } from "./style";
 
 const slider = {

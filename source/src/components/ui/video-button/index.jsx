@@ -1,14 +1,12 @@
-import React, { useState } from "react";
-import PropTypes from "prop-types";
-import cn from "clsx";
 import ModalVideo from "@ui/modal-video";
+import cn from "clsx";
+import PropTypes from "prop-types";
+import React, { useState } from "react";
 import {
-    VideoButtonWrap,
-    VideoButtonInner,
-    VideoMark,
+    VideoButtonInner, VideoButtonWrap, VideoMark,
     VideoPlay,
     VideoPlayIcon,
-    VideoText,
+    VideoText
 } from "./style";
 
 const VideoButton = ({
@@ -35,6 +33,7 @@ const VideoButton = ({
     return (
         <>
             <VideoButtonWrap
+                title="Play"
                 onClick={modalVideoOpen}
                 className={cn(className, "video-btn")}
                 $color={color}

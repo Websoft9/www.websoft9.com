@@ -1,24 +1,13 @@
-import React from "react";
-import { Container, Row, Col } from "@ui/wrapper";
-import Text from "@ui/text";
 import Button from "@ui/button";
-import Image from "@ui/image";
-import { Player,ControlBar } from "video-react";
-import { HeadingType, TextType, ButtonType, ImageType } from "@utils/types";
-import { ButtonWrap } from "./style";
-import "/node_modules/video-react/dist/video-react.css";
-import {
-    HeroWrapper,
-    HeroTextBox,
-    ImageBoxWrap,
-    ImageBoxOne,
-    ImageBoxTwo,
-    StyledTitle,
-    StyledSubtitle,
-} from "./style";
-import { Trans,useTranslation } from 'gatsby-plugin-react-i18next';
-import { NoBackpackSharp } from "@mui/icons-material";
 import PopupVideoTwo from "@ui/popup-video/layout-02";
+import Text from "@ui/text";
+import { Col, Container, Row } from "@ui/wrapper";
+import { useTranslation } from 'gatsby-plugin-react-i18next';
+import React from "react";
+import {
+    HeroTextBox, HeroWrapper, StyledSubtitle
+} from "./style";
+import "/node_modules/video-react/dist/video-react.css";
 
 const HeroArea = ({ data }) => {
     const { t } = useTranslation()

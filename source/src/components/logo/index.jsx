@@ -1,7 +1,7 @@
-import React from "react";
-import PropTypes from "prop-types";
 import { Link } from "gatsby";
 import { StaticImage } from "gatsby-plugin-image";
+import PropTypes from "prop-types";
+import React from "react";
 import { LogoWrapper } from "./style";
 
 const Logo = ({ className, variant, ...restProps }) => {

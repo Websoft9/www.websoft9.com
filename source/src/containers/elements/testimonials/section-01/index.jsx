@@ -1,9 +1,8 @@
-import React from "react";
-import { Container } from "@ui/wrapper";
+import Testimonial from "@components/testimonial/layout-02";
 import SectionTitle from "@ui/section-title";
 import SwiperSlider, { SwiperSlide } from "@ui/swiper";
-import Testimonial from "@components/testimonial/layout-02";
-
+import { Container } from "@ui/wrapper";
+import React from "react";
 import { TestimonialWrapper } from "./style";
 
 const sliderSettings = {

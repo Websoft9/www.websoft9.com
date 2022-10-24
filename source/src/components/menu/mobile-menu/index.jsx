@@ -1,5 +1,5 @@
-import React from "react";
 import PropTypes from "prop-types";
+import React from "react";
 // import NavBar, {
 //     NavItem,
 //     NavLink,
@@ -10,14 +10,11 @@ import PropTypes from "prop-types";
 // import Heading from "@ui/heading";
 import { getClosest, getSiblings } from "@utils";
 import {
-    StyledMobileMenu,
+    StyledButton, StyledMegamenu,
+    StyledMegatitle, StyledMobileMenu,
     StyledNavbar,
     StyledNavitem,
-    StyledNavlink,
-    StyledButton,
-    StyledSubmenu,
-    StyledMegamenu,
-    StyledMegatitle,
+    StyledNavlink, StyledSubmenu
 } from "./style";
 
 const MobileMenu = ({ menuData }) => {

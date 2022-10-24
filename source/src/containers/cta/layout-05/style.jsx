@@ -1,4 +1,4 @@
-import styled, { themeGet, device } from "@styled";
+import styled, { device, themeGet } from "@styled";
 
 export const StyledSection = styled.section`
     // background-color: #454545;
@@ -13,6 +13,13 @@ export const StyledSection = styled.section`
     // ${device.large} {
     //     padding-block: 80px;
     // }
+
+    #row-author{
+        img {
+            width:64px;
+            height:64px;
+        }
+    }
 `;
 
 export const StyledHeading = styled.h3`

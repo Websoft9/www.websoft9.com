@@ -1,26 +1,19 @@
-import React from "react";
-import { Container, Row, Col } from "react-bootstrap";
-import Heading from "@ui/heading";
-// import List, { ListItem } from "@ui/list";
-import { SectionWrap, BoxWrap } from "./style";
-import ProductArea from "@containers/elements/box-image/section-01";
-import { Link,graphql,StaticQuery }  from  'gatsby';
+import ServiceArea from "@containers/elements/box-large-image/section-05";
+import Box from '@mui/material/Box';
+import Checkbox from '@mui/material/Checkbox';
+import FormControl from '@mui/material/FormControl';
+import FormControlLabel from '@mui/material/FormControlLabel';
+import FormGroup from '@mui/material/FormGroup';
+import FormLabel from '@mui/material/FormLabel';
 import List from '@mui/material/List';
 import ListItemButton from '@mui/material/ListItemButton';
-import BoxImage from "@components/box-image/layout-01";
-import BoxImage2 from "@components/box-large-image/layout-02";
-import defaultImage from "@assets/images/default.png";
-import {Trans, useTranslation,useI18next } from 'gatsby-plugin-react-i18next';
-import Box from '@mui/material/Box';
-import FormLabel from '@mui/material/FormLabel';
-import FormControl from '@mui/material/FormControl';
-import FormGroup from '@mui/material/FormGroup';
-import FormControlLabel from '@mui/material/FormControlLabel';
-import Checkbox from '@mui/material/Checkbox';
-import ServiceArea from "@containers/elements/box-large-image/section-05";
+import Heading from "@ui/heading";
+import { graphql, StaticQuery } from 'gatsby';
 import { AnchorLink } from "gatsby-plugin-anchor-links";
-import { useEffect } from "react";
-import SectionTitle from "@ui/section-title";
+import { useI18next, useTranslation } from 'gatsby-plugin-react-i18next';
+import React, { useEffect } from "react";
+import { Col, Container, Row } from "react-bootstrap";
+import { BoxWrap, SectionWrap } from "./style";
 
 // 用于所有产品页面
 const Section = () => {

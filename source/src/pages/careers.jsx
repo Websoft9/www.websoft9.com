@@ -1,15 +1,14 @@
-import * as React from "react";
-import PropTypes from "prop-types";
-import { graphql } from "gatsby";
 import Seo from "@components/seo";
-import Layout from "@layout";
-import Header from "@layout/header/layout-02";
-import Footer from "@layout/footer/layout-02";
-import PageHeader from "@containers/page-header/layout-01";
-import IdeaArea from "@containers/elements/box-image/section-04";
-import TestimonialArea from "@containers/elements/testimonials/section-03";
 import CtaArea from "@containers/cta/layout-04";
+import IdeaArea from "@containers/elements/box-image/section-04";
 import FullWideSlider from "@containers/elements/flexible-image-slider/full-wide-slider2";
+import TestimonialArea from "@containers/elements/testimonials/section-03";
+import PageHeader from "@containers/page-header/layout-01";
+import Layout from "@layout";
+import Footer from "@layout/footer/layout-02";
+import Header from "@layout/header/layout-02";
+import { graphql } from "gatsby";
+import * as React from "react";
 
 const CareersPage = ({ location, data }) => {
     return (

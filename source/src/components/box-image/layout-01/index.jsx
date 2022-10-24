@@ -1,17 +1,11 @@
-import React from "react";
-import PropTypes from "prop-types";
 import Image from "@ui/image";
 import { ImageType } from "@utils/types";
+import PropTypes from "prop-types";
+import React from "react";
 import {
-    BoxImgWrapper,
-    BoxImgInner,
-    BoxImgWrap,
-    BoxContentWrap,
-    BoxCircleBtnWrap,
-    BoxCircleBtnInner,
-    HeadingWrap,
-    TextWrap,
-    BoxCircleBtn,
+    BoxCircleBtn, BoxCircleBtnInner, BoxCircleBtnWrap, BoxContentWrap, BoxImgInner,
+    BoxImgWrap, BoxImgWrapper, HeadingWrap,
+    TextWrap
 } from "./style";
 
 const BoxImage = ({ title, image, desc, path, className, ...restProps }) => {

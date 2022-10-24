@@ -1,46 +1,54 @@
-import React from "react";
-import { Container, Row, Col } from "react-bootstrap";
-import Heading from "@ui/heading";
-// import List, { ListItem } from "@ui/list";
-import { SectionWrap, ListGroupWrap } from "./style";
-import ProductArea from "@containers/elements/box-image/section-01";
+import Pagination1 from "@components/pagination/layout-01";
+import Pagination2 from "@components/pagination/layout-02";
+import ValuesArea from "@containers/it-service/layout-03";
+import ExpandLess from '@mui/icons-material/ExpandLess';
+import ExpandMore from '@mui/icons-material/ExpandMore';
+import Collapse from '@mui/material/Collapse';
 import List from '@mui/material/List';
 import ListItemButton from '@mui/material/ListItemButton';
 import ListItemText from '@mui/material/ListItemText';
-import Collapse from '@mui/material/Collapse';
-import InboxIcon from '@mui/icons-material/MoveToInbox';
-import ExpandLess from '@mui/icons-material/ExpandLess';
-import ExpandMore from '@mui/icons-material/ExpandMore';
-import { Link,graphql }  from  'gatsby';
-import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
-import ChevronRightIcon from '@mui/icons-material/ChevronRight';
-import BoxImage from "@components/box-image/layout-01";
-import defaultImage from "@assets/images/default.png";
-import Select from '@mui/material/Select';
-import Box from '@mui/material/Box';
-import InputLabel from '@mui/material/InputLabel';
-import MenuItem from '@mui/material/MenuItem';
-import FormControl from '@mui/material/FormControl';
-import Pagination1 from "@components/pagination/layout-01";
-import Pagination2 from "@components/pagination/layout-02";
-import {Trans, useTranslation,useI18next } from 'gatsby-plugin-react-i18next';
+import Heading from "@ui/heading";
+import { Link } from 'gatsby';
+import { useI18next, useTranslation } from 'gatsby-plugin-react-i18next';
+import React, { useEffect, useState } from "react";
+import { Col, Container, Row } from "react-bootstrap";
+import { ListGroupWrap, SectionWrap } from "./style";
 
-// 用于所有产品页面
-const Section = ({ cataLogData,productsData,marketplaceData,currentPage,numberOfPages,rootPage }) => {
+// 用于显示所有产品页面
+const Section = ({ cataLogData,productsData,currentPage,numberOfPages,rootPage }) => {
     const { t } = useTranslation();
     const {language, languages, changeLanguage } = useI18next();
 
-    const [selectedIndex, setSelectedIndex] = React.useState(null);
-    
-    const handleListItemClick = (event, index) => {
-      //setSelectedIndex(index);
-    //   event.currentTarget.parentNode.parentNode.parentNode.parentNode.previousSibling.click()
+    const [open, setOpen] = useState(new Array(cataLogData.length).fill(false));
+
+    useEffect(()=>{
+        if(typeof window !== 'undefined'){
+            if(window.sessionStorage.getItem("openIndex") != null){
+                var tmp = window.sessionStorage.getItem("openIndex");
+                const updatedOpen = open.map((item, index) =>
+                    tmp == index ? !item : item
+                );
+                setOpen(updatedOpen);
+            }
+        }
+    },[]);
+
+    var tmpIndex = typeof window !== 'undefined' && (window.sessionStorage.getItem("selectedIndex") == null ? "all" : window.sessionStorage.getItem("selectedIndex"));
+    const [selectedIndex, setSelectedIndex] = useState(tmpIndex);
+
+    const handleListItemClick = (event, index, openIndex) => {
+        window.sessionStorage.setItem("selectedIndex",index);
+        window.sessionStorage.setItem("openIndex",openIndex);
+        
+        setSelectedIndex(index);
     };
 
-    const [marketplace, setMarketplace] = React.useState('');
 
-    const handleChange = (event) => {
-        setMarketplace(event.target.value);
+    const handleClick = (position) => {
+        const updatedOpen = open.map((item, index) =>
+            position == index ? !item : item
+        );
+        setOpen(updatedOpen);
     };
 
     var totalProductsNum = 0;
@@ -56,17 +64,6 @@ const Section = ({ cataLogData,productsData,marketplaceData,currentPage,numberOf
         }
     })
 
-    // const [open, setOpen] = React.useState([]);
-    // const handleClick = (event) => {
-    //     setOpen();
-    // };
-    
-    // const handleClick = (e) => {
-    //     this.setState({ [e]: !this.state[e] });
-    // };
-
-    // let size = language == "zh-CN" ? 2 : 3
-
     return (
         <SectionWrap>
             <Container>
@@ -81,10 +78,10 @@ const Section = ({ cataLogData,productsData,marketplaceData,currentPage,numberOf
                                 component="nav"
                                 aria-labelledby="nested-list-subheader"
                                 >
-                                <ListItemButton key="allproduct" selected={selectedIndex === null} onClick={(event) => handleListItemClick(event, null)}>
+                                <ListItemButton key="allproduct" selected={selectedIndex === "all"} onClick={(event) => handleListItemClick(event, "all")} >
                                     <Link to={`/apps`}>{t("ALL")+"("+totalProductsNum+")"}</Link>
                                 </ListItemButton>
-                                {                                    
+                                {
                                     cataLogData.map((item,i)=>{
                                         if(item.base_catalog == null){
                                             const pnums = item.product!=null?item.product.length:0;
@@ -95,10 +92,12 @@ const Section = ({ cataLogData,productsData,marketplaceData,currentPage,numberOf
                                             );
                                         }
                                         else{                                            
-                                                const [open, setOpen] = React.useState(false);
-                                                const handleClick = () => {
-                                                    setOpen(!open);
-                                                };
+                                                // const [open, setOpen] = React.useState(false);
+                                                // const handleClick = () => {
+                                                //     setOpen(!open);
+                                                // };
+
+
 
                                                 // 统计子目录下面的产品数量
                                                 var subTotal = 0;
@@ -108,18 +107,20 @@ const Section = ({ cataLogData,productsData,marketplaceData,currentPage,numberOf
                                                 })
                                             return(
                                                 <React.Fragment key={item.id}>
-                                                    <ListItemButton key={"base_catalog"+item.id}  onClick={handleClick}>
+                                                    <ListItemButton key={"base_catalog"+item.id}  onClick={()=>handleClick(i)}>
                                                         <ListItemText primary={item.title+"("+subTotal+")"} />
-                                                        {open ? <ExpandLess /> : <ExpandMore />}
+                                                        {open[i] ? <ExpandLess /> : <ExpandMore />}
                                                     </ListItemButton>
-                                                    <Collapse key={"Collapse"+item.id} in={open} timeout="auto" unmountOnExit>
+                                                    <Collapse key={"Collapse"+item.id} in={open[i]} timeout="auto" unmountOnExit>
                                                         <List key={"List"+item.id}  component="div" disablePadding>
-                                                        {                                                                                                                    
+                                                        {
                                                             item.base_catalog.map((subitem,j)=>{
                                                                 const subpnums = subitem.product!=null?subitem.product.length:0;
                                                                 return (
-                                                                    <ListItemButton key={subitem.id+j}  sx={{ pl: 4 }} selected={selectedIndex === subitem.key}
-                                                                    onClick={(event) => {handleListItemClick(event, subitem.key);setOpen(false)}}>
+                                                                    <ListItemButton key={subitem.id+j}  sx={{ pl: 4 }} 
+                                                                        selected={selectedIndex === subitem.key}
+                                                                        onClick={(event) => handleListItemClick(event, subitem.key,i)}>
+                                                                            
                                                                         <Link  to={`/app-catalog/${subitem.key}`}> {subitem.title+"("+subpnums+")"} </Link>
                                                                     </ListItemButton>
                                                                 )
@@ -136,7 +137,7 @@ const Section = ({ cataLogData,productsData,marketplaceData,currentPage,numberOf
                         </ListGroupWrap>
                     </Col>
                     <Col>                      
-                        <Row>
+                        {/* <Row>
                             {
                             productsData.length <=0 ?  <Heading as="h5" mb={["20px", null, "30px"]} textAlign="center">{t("No relevant data found")}</Heading> :
                             productsData?.map((item) => {
@@ -159,6 +160,13 @@ const Section = ({ cataLogData,productsData,marketplaceData,currentPage,numberOf
                                     </Col>
                                 );
                             })}
+                        </Row> */}
+                        <Row>
+                            {
+                                productsData.length <=0 ?  <Heading as="h5" mb={["20px", null, "30px"]} textAlign="center">{t("No relevant data found")}</Heading> :
+                                <ValuesArea data={productsData} />
+                            }
+
                         </Row>
                         <Row>
                         {                         
@@ -171,15 +179,15 @@ const Section = ({ cataLogData,productsData,marketplaceData,currentPage,numberOf
                             /> 
                             :
                             <Pagination2
-                            mt="40px"
-                            rootPage={rootPage}
-                            currentPage={currentPage}
-                            numberOfPages={numberOfPages}
+                                mt="40px"
+                                rootPage={rootPage}
+                                currentPage={currentPage}
+                                numberOfPages={numberOfPages}
                             />)
                         }
                        </Row>
                     </Col>
-                </Row>               
+                </Row>
             </Container>
         </SectionWrap>
     );

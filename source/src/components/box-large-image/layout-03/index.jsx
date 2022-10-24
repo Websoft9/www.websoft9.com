@@ -1,17 +1,11 @@
-import React from "react";
-import PropTypes from "prop-types";
 import Button from "@ui/button";
 import Image from "@ui/image";
 import { ImageType } from "@utils/types";
+import PropTypes from "prop-types";
+import React from "react";
 import {
-    BoxLargeImgWrap,
-    BoxLargeImgInner,
-    BoxLargeImgMedia,
-    BoxLargeImgLink,
-    BoxLargeImgContent,
-    HeadingWrap,
-    TextWrap,
-    BoxLargeImgBtnWrap,
+    BoxLargeImgBtnWrap, BoxLargeImgContent, BoxLargeImgInner, BoxLargeImgLink, BoxLargeImgMedia, BoxLargeImgWrap, HeadingWrap,
+    TextWrap
 } from "./style";
 
 const BoxLargeImage = ({

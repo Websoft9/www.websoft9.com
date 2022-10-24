@@ -1,18 +1,17 @@
-import React from "react";
-import {graphql }  from  'gatsby';
 import Seo from "@components/seo";
-import Layout from "@layout";
-import Header from "@layout/header/layout-02";
-import Footer from "@layout/footer/layout-02";
-import CtaArea from "@containers/cta/layout-04";
 import ServiceDetailArea from "@containers/cta/layout-07";
+import Layout from "@layout";
+import Footer from "@layout/footer/layout-02";
+import Header from "@layout/header/layout-02";
+import { graphql } from 'gatsby';
+import React from "react";
 
 const ServiceDetailTemplate = ({pageContext,location,data }) => {
     const { currentPage, numberOfPages,rootPage } = pageContext;
 
     return (
         <Layout location={location}>
-            {/* <Seo title={data.contentfulResource.title} description={data.contentfulResource.description?.description} keywords={data.contentfulResource.tags}/> */}
+            <Seo title={data.allContentfulService.title} description={data.allContentfulService.summary} /*keywords={data.allContentfulService.tags}*/ />
             <Header />
         
             <main className="site-wrapper-reveal">
@@ -25,7 +24,7 @@ const ServiceDetailTemplate = ({pageContext,location,data }) => {
         </Layout>
     );
 };
-//
+
 export const query = graphql`
     query ServiceDetaiTemplateQuery($language: String!,$slug:String!) {
         #多语言
@@ -103,6 +102,17 @@ export const query = graphql`
             catalog {
                 key
                 title
+            }
+            resources {
+                id
+                slug
+                title
+                featureImage
+                type {
+                id
+                key
+                title
+                }
             }
             }
         }

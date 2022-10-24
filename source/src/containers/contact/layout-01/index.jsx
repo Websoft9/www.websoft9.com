@@ -1,19 +1,13 @@
-import React from "react";
-import PropTypes from "prop-types";
-import { StaticImage } from "gatsby-plugin-image";
-import { Container, Row, Col } from "@ui/wrapper";
 import Anchor from "@ui/anchor";
 import Button from "@ui/button";
-import { HeadingType, TextType, ButtonType } from "@utils/types";
+import { Col, Container, Row } from "@ui/wrapper";
+import { StaticImage } from "gatsby-plugin-image";
+import { Trans, useTranslation } from 'gatsby-plugin-react-i18next';
+import React from "react";
 import {
     ConatactWrapper,
-    ContactInfoBox,
-    StyledHeading,
-    StyledText,
-    StyledInfoTitle,
-    StyledBG,
+    ContactInfoBox, StyledBG, StyledHeading, StyledInfoTitle, StyledText
 } from "./style";
-import { Trans, useTranslation } from 'gatsby-plugin-react-i18next';
 
 const ContactArea = ({ data }) => {
     const { t } = useTranslation();

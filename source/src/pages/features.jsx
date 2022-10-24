@@ -5,8 +5,6 @@ import Header from "@layout/header/layout-02";
 import Footer from "@layout/footer/layout-02";
 import { graphql } from "gatsby";
 import HeroArea from "@containers/hero/layout-01";
-import HeroImageLeftArea from "@containers/hero/layout-04";
-import HeroImageRightArea from "@containers/hero/layout-05";
 import VerticalTabArea from "@containers/tab/layout-02";
 import ITServicesArea from "@containers/it-service/layout-02";
 import CtaArea from "@containers/cta/layout-04";
@@ -95,13 +93,6 @@ export const query = graphql`
                         key
                         value
                     }
-                    # id
-                    # headings:title
-                    # texts:subtitle
-                    # media:image
-                    # description {
-                    #     description
-                    # }
                 }
                 ... on ContentfulResource {
                         type {

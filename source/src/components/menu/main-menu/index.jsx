@@ -1,27 +1,20 @@
-import React from "react";
-import PropTypes from "prop-types";
-import {Trans, useTranslation} from 'gatsby-plugin-react-i18next';
-import Line from "@ui/divider/line";
-import {Row, Col } from "@ui/wrapper";
 import Button from "@ui/button";
+import Line from "@ui/divider/line";
 import Image from "@ui/image";
 import Text from "@ui/text";
-import Anchor from "@ui/anchor";
+import { Col, Row } from "@ui/wrapper";
+import { useTranslation } from 'gatsby-plugin-react-i18next';
+import PropTypes from "prop-types";
+import React from "react";
 import {
-    StyledMainMenu,
-    StyledNavbar,
+    HeroTextBox, MarkdownStyle, StyledMainMenu, StyledMegamenu,
+    StyledMegaTitle, StyledNavbar,
     StyledNavitem,
-    StyledNavlink,
-    StyledSubmenu,
-    StyledMegamenu,
-    StyledMegaTitle,
-    HeroTextBox,
-    StyledSubtitle,
-    MarkdownStyle,
+    StyledNavlink, StyledSubtitle
 } from "./style";
 // import { Col } from "react-bootstrap";
 import ReactMarkdown from "react-markdown";
-import remarkGfm from 'remark-gfm'
+import remarkGfm from 'remark-gfm';
 
 const MainMenu = ({
     menuData,
@@ -70,7 +63,7 @@ const MainMenu = ({
                                     <li key={"megamenu-1"+megamenu[0].id} >
                                         <Row>
                                             <Col>
-                                                <Image src={megamenu[0].image} />
+                                                <Image src={megamenu[0].image} alt=""/>
                                             </Col>
                                             <Col>
                                             <HeroTextBox>

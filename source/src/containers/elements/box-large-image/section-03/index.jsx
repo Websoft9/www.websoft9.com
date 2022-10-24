@@ -1,11 +1,9 @@
-import React from "react";
-import Button from "@ui/button";
-import SectionTitle from "@ui/section-title";
-import { Container, Row, Col } from "@ui/wrapper";
-import BoxImage from "@components/box-large-image/layout-02";
-import { SectionWrap } from "./style";
-import {Trans, useTranslation} from 'gatsby-plugin-react-i18next';
 import defaultImage from "@assets/images/default.png";
+import BoxImage from "@components/box-large-image/layout-02";
+import { Col, Container, Row } from "@ui/wrapper";
+import { useTranslation } from 'gatsby-plugin-react-i18next';
+import React from "react";
+import { SectionWrap } from "./style";
 
 const BoxSection = ({data}) => {
     const { t } = useTranslation();

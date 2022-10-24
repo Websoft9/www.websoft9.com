@@ -1,15 +1,8 @@
-import React from "react";
 import PropTypes from "prop-types";
+import React from "react";
 import ReactVivus from "react-vivus";
-import Button from "@ui/button";
 import {
-    BoxIconWrap,
-    BoxIconInner,
-    BoxIconImg,
-    BoxIconContent,
-    BoxIcontitle,
-    BoxIconText,
-    BoxIconBtn,
+    BoxIconContent, BoxIconImg, BoxIconInner, BoxIconText, BoxIcontitle, BoxIconWrap
 } from "./style";
 
 const BoxIcon = ({ id, icon, title, desc, path, className, ...restProps }) => {

@@ -101,7 +101,7 @@ export const HeaderMiddle = styled.div`
 `;
 export const HeaderRight = styled.div`
     flex-shrink: 0;
-    flex-basis: 50%;
+    // flex-basis: 30%;
     display: flex;
     justify-content: flex-end;
     align-items: center;
@@ -130,7 +130,7 @@ export const HeaderRightInner = styled.div`
     align-items: center;
     justify-content: flex-end;
     height: 100%;
-    @media only screen and (max-width: 1200px) {
+    @media only screen and (max-width: 1199px) {
         position: absolute;
         top: 100%;
         left: 0;

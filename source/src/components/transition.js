@@ -1,8 +1,7 @@
-import React from "react";
 import PropTypes from "prop-types";
+import React from "react";
 import {
-    TransitionGroup,
-    Transition as ReactTransition,
+    Transition as ReactTransition, TransitionGroup
 } from "react-transition-group";
 
 const timeout = 500;

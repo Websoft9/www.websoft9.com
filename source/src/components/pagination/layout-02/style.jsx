@@ -1,6 +1,6 @@
-import React from "react";
-import styled, { css, themeGet, space } from "@styled";
+import styled, { css, space, themeGet } from "@styled";
 import Anchor from "@ui/anchor";
+import React from "react";
 
 export const PaginationWrap = styled(({ mb, mt, ...rest }) => (
     <nav {...rest} />
@@ -29,7 +29,7 @@ export const PaginationLink = styled(Anchor)`
     line-height: 41px;
     min-width: 41px;
     height: 41px;
-    text-transform: uppercase;
+    //text-transform: uppercase;
     color: ${themeGet("colors.silver")};
     letter-spacing: 2px;
     border-radius: ${themeGet("radii.md")};

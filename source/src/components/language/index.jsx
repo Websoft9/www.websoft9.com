@@ -1,12 +1,12 @@
-import React, { useState } from "react";
-import PropTypes from "prop-types";
-import cn from "clsx";
 import Dropdown from "@ui/dropdown";
 import DropdownItem from "@ui/dropdown/dropdown-item";
 import DropdownItemInner from "@ui/dropdown/dropdown-item-inner";
 import DropdownSubMenu from "@ui/dropdown/dropdown-submenu";
+import cn from "clsx";
+import { useI18next } from 'gatsby-plugin-react-i18next';
+import PropTypes from "prop-types";
+import React, { useState } from "react";
 import { LanguageWrap } from "./style";
-import {useI18next} from 'gatsby-plugin-react-i18next';
 
 const Language = ({ className, ...props }) => {
     const { defaultLanguage,language,changeLanguage } = useI18next();

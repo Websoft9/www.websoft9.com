@@ -1,10 +1,8 @@
-import React from "react";
-import PropTypes from "prop-types";
-import ProgressBar from "@ui/progress-bar/layout-01";
-import { Container, Row, Col } from "@ui/wrapper";
 import MarkHeading from "@components/mark-heading";
+import ProgressBar from "@ui/progress-bar/layout-01";
 import SectionTitle from "@ui/section-title";
-import { SectionTitleType, ItemType, HeadingType } from "@utils/types";
+import { Col, Container, Row } from "@ui/wrapper";
+import React from "react";
 import { SectionWrap, StyledLeftHeading } from "./style";
 
 const AboutArea = ({ data }) => {

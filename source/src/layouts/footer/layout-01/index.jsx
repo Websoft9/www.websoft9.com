@@ -1,24 +1,20 @@
-import React from "react";
-import PropTypes from "prop-types";
-import { StaticImage } from "gatsby-plugin-image";
-import cn from "clsx";
-import { Container, Row, Col } from "@ui/wrapper";
-import Text from "@ui/text";
 import Anchor from "@ui/anchor";
 import Button from "@ui/button";
 import Heading from "@ui/heading";
 import Social, { SocialLink } from "@ui/social";
+import Text from "@ui/text";
+import { Col, Container, Row } from "@ui/wrapper";
 import { SocialType } from "@utils/types";
-import {
-    FooterWrap,
-    FooterTop,
-    FooterWidget,
-    LogoWidget,
-    TextWidget,
-    FooterWidgetList,
-    FooterBottom,
-} from "./style";
+import cn from "clsx";
+import { StaticImage } from "gatsby-plugin-image";
 import { useTranslation } from 'gatsby-plugin-react-i18next';
+import PropTypes from "prop-types";
+import React from "react";
+import {
+    FooterBottom, FooterTop,
+    FooterWidget, FooterWidgetList, FooterWrap, LogoWidget,
+    TextWidget
+} from "./style";
 
 const Footer = ({ data }) => {
     const { t } = useTranslation();

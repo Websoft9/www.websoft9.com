@@ -1,16 +1,14 @@
-import React from "react";
-import PropTypes from "prop-types";
 import Image from "@ui/image";
-import { Container, Row, Col } from "@ui/wrapper";
-import { HeadingType, TextType, ImageType } from "@utils/types";
-import { PageHeaderWrap, StyledTitle, StyledDesc, StyledBG } from "./style";
+import { Col, Container, Row } from "@ui/wrapper";
+import React from "react";
+import { PageHeaderWrap, StyledBG, StyledDesc, StyledTitle } from "./style";
 
 const PageHeader = ({ data }) => {
     return (
         <PageHeaderWrap>
             {data?.image && (
                 <StyledBG>
-                    <Image src={data.image} />
+                    <Image src={data.image} alt=""/>
                 </StyledBG>
             )}
             <Container>

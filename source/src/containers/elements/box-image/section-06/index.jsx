@@ -1,10 +1,8 @@
-import React from "react";
-import SectionTitle from "@ui/section-title";
-import { Container, Row, Col } from "@ui/wrapper";
-import BoxImage from "@components/box-image/layout-06";
-import { SectionWrap } from "./style";
-import { graphql } from "gatsby";
 import defaultImage from "@assets/images/default.png";
+import BoxImage from "@components/box-image/layout-06";
+import { Col, Container, Row } from "@ui/wrapper";
+import React from "react";
+import { SectionWrap } from "./style";
 
 
 const BoxSection = ({data,lgSize=4}) => {

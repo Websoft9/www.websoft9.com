@@ -1,24 +1,13 @@
-import React from "react";
-import PropTypes from "prop-types";
-import { Container, Row, Col } from "@ui/wrapper";
-import Text from "@ui/text";
 import Button from "@ui/button";
 import Image from "@ui/image";
-import { HeadingType, TextType, ButtonType, ImageType } from "@utils/types";
-import {
-    HeroWrapper,
-    HeroTextBox,
-    ImageBoxWrap,
-    ImageBoxOne,
-    ImageBoxTwo,
-    StyledTitle,
-    StyledSubtitle,
-    ReadMoreBtn,
-    MarkdownStyle,
-} from "./style";
-import { Trans,useTranslation } from 'gatsby-plugin-react-i18next';
+import Text from "@ui/text";
+import { Col, Container, Row } from "@ui/wrapper";
+import React from "react";
 import ReactMarkdown from "react-markdown";
-import remarkGfm from 'remark-gfm'
+import remarkGfm from 'remark-gfm';
+import {
+    HeroTextBox, HeroWrapper, ImageBoxTwo, ImageBoxWrap, MarkdownStyle, ReadMoreBtn, StyledSubtitle
+} from "./style";
 
 const HeroArea = ({ data,imageAlign }) => {
     return (
@@ -32,7 +21,7 @@ const HeroArea = ({ data,imageAlign }) => {
                                 <HeroTextBox>
                                     {data?.image && (
                                         <ImageBoxTwo>
-                                            <Image src={data.image} />
+                                            <Image src={data.image} alt=""/>
                                         </ImageBoxTwo>
                                     )}
                                 </HeroTextBox>
@@ -112,7 +101,7 @@ const HeroArea = ({ data,imageAlign }) => {
                                 <ImageBoxWrap>
                                     {data?.image && (
                                         <ImageBoxTwo>
-                                            <Image src={data.image} />
+                                            <Image src={data.image} alt=""/>
                                         </ImageBoxTwo>
                                     )}
                                 </ImageBoxWrap>

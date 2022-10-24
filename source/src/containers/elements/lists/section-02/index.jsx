@@ -1,29 +1,19 @@
-import React from "react";
-import { Container, Row, Col } from "react-bootstrap";
 import Heading from "@ui/heading";
+import React from "react";
+import { Col, Container, Row } from "react-bootstrap";
 // import List, { ListItem } from "@ui/list";
-import { SectionWrap, ListGroupWrap } from "./style";
-import ProductArea from "@containers/elements/box-image/section-01";
+import defaultImage from "@assets/images/default.png";
+import BoxImage from "@components/box-image/layout-01";
+import Pagination from "@components/pagination/layout-02";
+import ExpandLess from '@mui/icons-material/ExpandLess';
+import ExpandMore from '@mui/icons-material/ExpandMore';
+import Collapse from '@mui/material/Collapse';
 import List from '@mui/material/List';
 import ListItemButton from '@mui/material/ListItemButton';
 import ListItemText from '@mui/material/ListItemText';
-import Collapse from '@mui/material/Collapse';
-import InboxIcon from '@mui/icons-material/MoveToInbox';
-import ExpandLess from '@mui/icons-material/ExpandLess';
-import ExpandMore from '@mui/icons-material/ExpandMore';
-import { Link,graphql }  from  'gatsby';
-import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
-import ChevronRightIcon from '@mui/icons-material/ChevronRight';
-import BoxImage from "@components/box-image/layout-01";
-import PropTypes from "prop-types";
-import defaultImage from "@assets/images/default.png";
-import Select from '@mui/material/Select';
-import Box from '@mui/material/Box';
-import InputLabel from '@mui/material/InputLabel';
-import MenuItem from '@mui/material/MenuItem';
-import FormControl from '@mui/material/FormControl';
-import Pagination from "@components/pagination/layout-02";
-import {Trans, useTranslation } from 'gatsby-plugin-react-i18next';
+import { Link } from 'gatsby';
+import { useTranslation } from 'gatsby-plugin-react-i18next';
+import { ListGroupWrap, SectionWrap } from "./style";
 
 // 用于根据产品目录生成产品页面
 const Section = ({ cataLogData,productsData,marketplaceData,currentPage,numberOfPages,rootPage,location }) => {

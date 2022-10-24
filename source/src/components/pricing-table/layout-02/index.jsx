@@ -1,17 +1,10 @@
-import React from "react";
-import PropTypes from "prop-types";
-import cn from "clsx";
 import Button from "@ui/button";
+import cn from "clsx";
+import PropTypes from "prop-types";
+import React from "react";
 import {
-    PricingTableWrap,
-    PricingTableInner,
-    PricingTableHeader,
-    PricingTableTitle,
-    PricingTablePrice,
-    PricingTableBody,
-    PricingTableList,
-    PricingTableFeatureMark,
-    PricingTableFooter,
+    PricingTableBody, PricingTableFeatureMark,
+    PricingTableFooter, PricingTableHeader, PricingTableInner, PricingTableList, PricingTablePrice, PricingTableTitle, PricingTableWrap
 } from "./style";
 
 const PricingTable = ({

@@ -1,22 +1,12 @@
-import React from "react";
-import PropTypes from "prop-types";
 import Image from "@ui/image";
+import PropTypes from "prop-types";
+import React from "react";
 import {
-    TimelineWrap,
-    TimelineList,
-    Line,
-    Item,
-    Dots,
-    TimelineRow,
-    TimelineFeature,
+    DateWrap, Description, Dots, Item, Line, Photo,
+    TimelineContent, TimelineFeature,
     TimelineFeatureInner,
     TimelineInfo,
-    TimelineInfoInner,
-    DateWrap,
-    Photo,
-    TimelineContent,
-    Title,
-    Description,
+    TimelineInfoInner, TimelineList, TimelineRow, TimelineWrap, Title
 } from "./style";
 
 const Timeline = ({ items }) => {
@@ -36,6 +26,7 @@ const Timeline = ({ items }) => {
                                             <Photo>
                                                 <Image
                                                     src={image}
+                                                    alt=""
                                                 />
                                             </Photo>
                                         )}

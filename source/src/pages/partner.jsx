@@ -1,15 +1,14 @@
-import * as React from "react";
-import { graphql } from "gatsby";
 import Seo from "@components/seo";
-import Layout from "@layout";
-import Header from "@layout/header/layout-02";
-import Footer from "@layout/footer/layout-02";
-import HeroArea from "@containers/hero/layout-01";
-import SolutionArea from "@containers/elements/box-large-image/section-02";
-import CultureArea from "@containers/elements/box-image/section-03";
-import PartnerArea from "@containers/partner/layout-02";
-import PartnerTypeArea from "@containers/elements/box-large-image/section-02";
 import CtaArea from "@containers/cta/layout-04";
+import CultureArea from "@containers/elements/box-image/section-03";
+import PartnerTypeArea from "@containers/elements/box-large-image/section-02";
+import HeroArea from "@containers/hero/layout-01";
+import PartnerArea from "@containers/partner/layout-02";
+import Layout from "@layout";
+import Footer from "@layout/footer/layout-02";
+import Header from "@layout/header/layout-02";
+import { graphql } from "gatsby";
+import * as React from "react";
 
 const PartnerPage = ({ location, data }) => {
 

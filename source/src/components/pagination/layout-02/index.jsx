@@ -1,12 +1,10 @@
-import React from "react";
-import PropTypes from "prop-types";
-import {Trans, useTranslation } from 'gatsby-plugin-react-i18next';
 import cn from "clsx";
+import { useTranslation } from 'gatsby-plugin-react-i18next';
+import PropTypes from "prop-types";
+import React from "react";
 import {
-    PaginationWrap,
-    PaginationList,
     PaginationItem,
-    PaginationLink,
+    PaginationLink, PaginationList, PaginationWrap
 } from "./style";
 
 const Pagination = ({

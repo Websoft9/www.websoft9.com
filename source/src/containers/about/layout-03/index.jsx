@@ -1,25 +1,14 @@
-import React from "react";
-import PropTypes from "prop-types";
-import { Container, Row, Col } from "@ui/wrapper";
-import SectionTitle from "@ui/section-title";
-import Accordion from "@ui/accordion";
-import VideoButton from "@ui/video-button";
-import Image from "@ui/image";
 import GridLine from "@components/grid-line";
+import Accordion from "@ui/accordion";
 import Button from "@ui/button";
+import Image from "@ui/image";
+import SectionTitle from "@ui/section-title";
+import VideoButton from "@ui/video-button";
+import { Col, Container, Row } from "@ui/wrapper";
+import React from "react";
 import {
-    SectionTitleType,
-    ButtonType,
-    VideoButtonType,
-    ImageType,
-    ItemType,
-} from "@utils/types";
-import {
-    AboutAreaWrap,
-    AboutTextBox,
-    AboutImageBox,
-    MainImageBox,
-    VideoBtnWrap,
+    AboutAreaWrap, AboutImageBox, AboutTextBox, MainImageBox,
+    VideoBtnWrap
 } from "./style";
 
 const AboutArea = ({ data, gridLine }) => {

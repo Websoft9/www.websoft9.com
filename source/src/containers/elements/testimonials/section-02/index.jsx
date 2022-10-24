@@ -1,8 +1,7 @@
-import React from "react";
-import { Container } from "@ui/wrapper";
-import SectionTitle from "@ui/section-title";
-import SwiperSlider, { SwiperSlide } from "@ui/swiper";
 import Testimonial from "@components/testimonial/layout-02";
+import SwiperSlider, { SwiperSlide } from "@ui/swiper";
+import { Container } from "@ui/wrapper";
+import React from "react";
 
 import { TestimonialWrapper } from "./style";
 

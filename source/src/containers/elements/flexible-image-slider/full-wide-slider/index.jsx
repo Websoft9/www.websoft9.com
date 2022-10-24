@@ -1,8 +1,7 @@
-import React from "react";
-import { Container, Row, Col } from "@ui/wrapper";
-import Heading from "@ui/heading";
-import SwiperSlider, { SwiperSlide } from "@ui/swiper";
 import Image from "@ui/image";
+import SwiperSlider, { SwiperSlide } from "@ui/swiper";
+import { Col, Container, Row } from "@ui/wrapper";
+import React from "react";
 import { SectionWrap } from "./style";
 
 const sliderSettings = {

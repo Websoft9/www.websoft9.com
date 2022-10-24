@@ -1,13 +1,12 @@
-import * as React from "react";
-import { graphql } from "gatsby";
 import Seo from "@components/seo";
-import Layout from "@layout";
-import Header from "@layout/header/layout-02";
-import Footer from "@layout/footer/layout-02";
-import HeroArea from "@containers/hero/layout-01";
-import CultureArea from "@containers/elements/box-image/section-03";
 import SolutionArea from "@containers/elements/box-large-image/section-02";
-import ListArea from "@containers/elements/lists/section-04"
+import ListArea from "@containers/elements/lists/section-04";
+import HeroArea from "@containers/hero/layout-01";
+import Layout from "@layout";
+import Footer from "@layout/footer/layout-02";
+import Header from "@layout/header/layout-02";
+import { graphql } from "gatsby";
+import * as React from "react";
 
 const ServicesPage = ({ location, data }) => {
 

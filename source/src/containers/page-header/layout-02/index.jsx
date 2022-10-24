@@ -1,9 +1,9 @@
-import React from "react";
-import PropTypes from "prop-types";
 import { Breadcrumb } from "gatsby-plugin-breadcrumb";
 import { StaticImage } from "gatsby-plugin-image";
+import { useTranslation } from 'gatsby-plugin-react-i18next';
+import PropTypes from "prop-types";
+import React from "react";
 import { PageHeaderWrap, StyledBG } from "./style";
-import {Trans, useTranslation } from 'gatsby-plugin-react-i18next';
 
 
 const PageHeader = ({ pageContext, location, title }) => {

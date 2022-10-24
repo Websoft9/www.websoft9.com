@@ -1,16 +1,23 @@
-import React from "react";
-import {graphql }  from  'gatsby';
-import PropTypes from "prop-types";
 import Seo from "@components/seo";
-import Layout from "@layout";
-import Header from "@layout/header/layout-02";
-import Footer from "@layout/footer/layout-02";
 import CtaArea from "@containers/cta/layout-04";
-import ListArea from "@containers/elements/lists/section-01"
+import ListArea from "@containers/elements/lists/section-01";
 import HeroArea from "@containers/hero/layout-01";
+import Layout from "@layout";
+import Footer from "@layout/footer/layout-02";
+import Header from "@layout/header/layout-02";
+import { graphql } from 'gatsby';
+import React from "react";
 
 const AppCatalogTemplate = ({pageContext,location,data }) => {
     const { currentPage, numberOfPages,rootPage } = pageContext;
+
+    var cataLogs  = data.allContentfulBaseCatalog.nodes[0].base_catalog;
+
+    cataLogs.map((item)=>{
+        item.base_catalog.sort(function(a,b){return a.position-b.position}) //对子目录根据position进行排序
+    })
+
+    cataLogs.sort(function(a,b){return a.position-b.position}) //对目录根据position进行排序
 
     return (
         <Layout location={location}>
@@ -21,7 +28,7 @@ const AppCatalogTemplate = ({pageContext,location,data }) => {
             <HeroArea data={data.allContentfulPage.nodes[0].content[0]} />
             
             <ListArea 
-                cataLogData={data.allContentfulBaseCatalog.nodes[0].base_catalog}
+                cataLogData={cataLogs}
                 productsData={data.allContentfulProduct.nodes}
                 rootPage = {rootPage}
                 currentPage = {currentPage}
@@ -32,6 +39,7 @@ const AppCatalogTemplate = ({pageContext,location,data }) => {
         </main>
         
         <Footer/>
+        
         </Layout>
     );
 };
@@ -56,6 +64,7 @@ export const query = graphql`
                 id
                 key
                 title
+                position
                 product {
                 id
                 }
@@ -63,6 +72,7 @@ export const query = graphql`
                 id
                 key
                 title
+                position
                 product {
                     id
                 }
@@ -70,6 +80,7 @@ export const query = graphql`
             }
             }
         }
+        
         allContentfulProduct(
             filter: {node_locale: {eq: $language}, catalog: {elemMatch: {key: {eq: $catalog}}}}
             limit: $limit

@@ -19,9 +19,9 @@ module.exports = {
       socials: [
         {
             id: 1,
-            icon: "fab fa-facebook social-link-icon",
-            link: "https://www.facebook.com",
-            title: "Facebook",
+            icon: "fab fa-github social-link-icon",
+            link: "https://github.com/",
+            title: "github",
         },
         {
             id: 2,

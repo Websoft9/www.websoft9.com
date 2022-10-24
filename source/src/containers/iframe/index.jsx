@@ -1,5 +1,5 @@
+import { Container } from "@ui/wrapper";
 import React from "react";
-import { Container} from "@ui/wrapper";
 import { SectionWrap } from "./style";
 
 const IframeArea = ({ data, width,height}) => {

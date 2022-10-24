@@ -1,22 +1,12 @@
-import React from "react";
-import PropTypes from "prop-types";
-import { Container, Row, Col } from "@ui/wrapper";
-import Text from "@ui/text";
-import cn from "clsx";
-import Button from "@ui/button";
 import Image from "@ui/image";
-import { HeadingType, TextType, ButtonType, ImageType } from "@utils/types";
+import Text from "@ui/text";
+import { Col, Container, Row } from "@ui/wrapper";
+import cn from "clsx";
+import { useTranslation } from 'gatsby-plugin-react-i18next';
+import React from "react";
 import {
-    HeroWrapper,
-    HeroTextBox,
-    ImageBoxWrap,
-    ImageBoxOne,
-    ImageBoxTwo,
-    StyledTitle,
-    StyledSubtitle,
+    HeroTextBox, HeroWrapper, ImageBoxWrap, StyledSubtitle
 } from "./style";
-import { Trans,useTranslation } from 'gatsby-plugin-react-i18next';
-import { color } from "@mui/system";
 
 const HeroArea = ({ data,className }) => {
     const { t } = useTranslation()
@@ -42,7 +32,7 @@ const HeroArea = ({ data,className }) => {
                     <Col md={5}>
                         <ImageBoxWrap className={cn(className, "popup-video")}>
                             {data?.media && (
-                                <Image src={data.media} />
+                                <Image src={data.media} alt=""/>
                             )}
                         </ImageBoxWrap>
                     </Col>

@@ -1,4 +1,4 @@
-import styled, { themeGet, space, border, color } from "@styled";
+import styled, { border, color, space, themeGet } from "@styled";
 
 export const TestimonialWrap = styled.div`
     background: #fff;
@@ -32,6 +32,8 @@ export const AuthorMedia = styled.div`
     margin-inline-end: 30px;
     img {
         border-radius: ${themeGet("radii.round")};
+        width:64px;
+        height:64px;
     }
 `;
 

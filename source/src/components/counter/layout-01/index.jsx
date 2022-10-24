@@ -1,9 +1,7 @@
-import React, { useState } from "react";
-import PropTypes from "prop-types";
 import cn from "clsx";
-import CountUp from "react-countup";
-import VisibilitySensor from "react-visibility-sensor";
-import { FunFactWrap, FunFactTitle, FunFactCount, FunFactText,StyledMarkHeading,FunFactMiddle } from "./style";
+import PropTypes from "prop-types";
+import React, { useState } from "react";
+import { FunFactMiddle, FunFactText, FunFactTitle, FunFactWrap } from "./style";
 
 const Counter = ({ title, countTo, text, className, layout, ...restProps }) => {
     const [focus, setFocus] = useState(false);

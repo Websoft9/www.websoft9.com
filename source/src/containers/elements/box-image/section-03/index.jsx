@@ -1,10 +1,9 @@
-import React from "react";
-import SectionTitle from "@ui/section-title";
-import { Container, Row, Col } from "@ui/wrapper";
-import BoxImage from "@components/box-image/layout-03";
-import { SectionWrap } from "./style";
-import { graphql } from "gatsby";
 import defaultImage from "@assets/images/default.png";
+import BoxImage from "@components/box-image/layout-03";
+import SectionTitle from "@ui/section-title";
+import { Col, Container, Row } from "@ui/wrapper";
+import React from "react";
+import { SectionWrap } from "./style";
 
 
 const BoxSection = ({data,lgSize=4}) => {
@@ -12,7 +11,6 @@ const BoxSection = ({data,lgSize=4}) => {
         <SectionWrap>
             <Container>             
                 <SectionTitle mb={["47px", null, "60px"]} subtitle={data.texts} title={data.headings} />
-
                 <Row>
                     {
                     data.features?.map((item,i) => {

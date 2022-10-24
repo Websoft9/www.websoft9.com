@@ -1,14 +1,7 @@
-import React from "react";
-import PropTypes from "prop-types";
 import Image from "@ui/image";
-import { ImageType } from "@utils/types";
+import React from "react";
 import {
-    BoxImgWrapper,
-    BoxImgInner,
-    BoxImgMedia,
-    BoxImgContent,
-    HeadingWrap,
-    BoxImgLink,
+    BoxImgContent, BoxImgInner, BoxImgLink, BoxImgMedia, BoxImgWrapper, HeadingWrap
 } from "./style";
 
 const BoxImage = ({ image, title, path, className, ...restProps }) => {
@@ -17,7 +10,7 @@ const BoxImage = ({ image, title, path, className, ...restProps }) => {
             <BoxImgInner>
                 {image && (
                     <BoxImgMedia>
-                        <Image src={image} />
+                        <Image src={image} alt="" />
                     </BoxImgMedia>
                 )}
                 <BoxImgContent>

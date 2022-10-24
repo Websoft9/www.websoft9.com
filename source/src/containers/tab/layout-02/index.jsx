@@ -1,17 +1,13 @@
-import React, { Children } from "react";
-import PropTypes from "prop-types";
-import { Container } from "@ui/wrapper";
-import SectionTitle from "@ui/section-title";
-import Tabs, { Tab } from "@ui/tabs";
-import { SectionTitleType } from "@utils/types";
-import { StyledTab,Heading,Text,ImageBoxOne } from "./style";
 import Image from "@ui/image";
+import SectionTitle from "@ui/section-title";
+import { Tab } from "@ui/tabs";
+import { Container } from "@ui/wrapper";
+import React from "react";
+import { Heading, StyledTab, Text } from "./style";
 
 import Col from 'react-bootstrap/Col';
 import Nav from 'react-bootstrap/Nav';
 import Row from 'react-bootstrap/Row';
-import { width } from "styled-system";
-import { FeaturedPlayList } from "@mui/icons-material";
 
 const TabArea = ({data}) => {
     //const childArr = Children.toArray(children);
@@ -32,7 +28,7 @@ const TabArea = ({data}) => {
                                 data.features.map((feature,i)=>{
                                     return (
                                         <Tab.Pane key={feature.id+i} eventKey={feature.id}>
-                                            <Image src={feature.image}/>
+                                            <Image src={feature.image} alt=""/>
                                         </Tab.Pane>   
                                     );                                                         
                                 })

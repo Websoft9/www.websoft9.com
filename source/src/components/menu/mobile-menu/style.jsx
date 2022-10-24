@@ -123,6 +123,6 @@ export const StyledMegatitle = styled.h2`
     line-height: 2;
     color: rgb(255, 255, 255);
     font-size: 14px;
-    text-transform: uppercase;
+    //text-transform: uppercase;
     margin-bottom: 0px;
 `;

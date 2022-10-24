@@ -1,7 +1,7 @@
-import React from "react";
-import SectionTitle from "@ui/section-title";
-import { Container, Row, Col } from "@ui/wrapper";
 import BoxImage from "@components/box-image/layout-05";
+import SectionTitle from "@ui/section-title";
+import { Col, Container, Row } from "@ui/wrapper";
+import React from "react";
 import { SectionWrap } from "./style";
 
 const BoxSection = ({data}) => {

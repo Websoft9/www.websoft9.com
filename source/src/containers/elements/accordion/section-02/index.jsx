@@ -1,12 +1,11 @@
+import Heading from "@ui/heading";
+import { Col, Container, Row } from "@ui/wrapper";
+import { useTranslation } from 'gatsby-plugin-react-i18next';
 import React from "react";
 import Accordion from "react-bootstrap/Accordion";
-import Heading from "@ui/heading";
-import { Container, Row, Col } from "@ui/wrapper";
-import { SectionWrap,StyledAccordion,MarkdownStyle } from "./style";
-import { textAlign } from "styled-system";
-import {Trans, useTranslation } from 'gatsby-plugin-react-i18next';
 import ReactMarkdown from "react-markdown";
-import remarkGfm from 'remark-gfm'
+import remarkGfm from 'remark-gfm';
+import { MarkdownStyle, SectionWrap, StyledAccordion } from "./style";
 
 // const { t } = useTranslation();
 

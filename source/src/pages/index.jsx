@@ -1,19 +1,19 @@
-import * as React from "react";
-import { graphql } from "gatsby";
 import Seo from "@components/seo";
-import Layout from "@layout";
-import Header from "@layout/header/layout-02";
-import Footer from "@layout/footer/layout-02";
-import HeroArea from "@containers/hero/layout-02";
-import SubHeroArea from "@containers/hero/layout-03";
-import PartnerArea from "@containers/partner/layout-02";
-import ITServicesArea from "@containers/it-service/layout-02";
-import TabArea from "@containers/tab/layout-01";
-import VerticalTabArea from "@containers/tab/layout-02";
-import CounterArea from "@containers/elements/counters/section-01";
-import TestimonialArea from "@containers/elements/testimonials/section-01";
 import CtaArea from "@containers/cta/layout-04";
 import SolutionArea from "@containers/elements/box-large-image/section-02";
+import CounterArea from "@containers/elements/counters/section-01";
+import TestimonialArea from "@containers/elements/testimonials/section-01";
+import HeroArea from "@containers/hero/layout-02";
+import SubHeroArea from "@containers/hero/layout-03";
+import ITServicesArea from "@containers/it-service/layout-02";
+import PartnerArea from "@containers/partner/layout-02";
+import TabArea from "@containers/tab/layout-01";
+import VerticalTabArea from "@containers/tab/layout-02";
+import Layout from "@layout";
+import Footer from "@layout/footer/layout-02";
+import Header from "@layout/header/layout-02";
+import { graphql } from "gatsby";
+import * as React from "react";
 
 const IndexPage = ({ location, data }) => {
     return (
@@ -34,7 +34,7 @@ const IndexPage = ({ location, data }) => {
                     }
                 </TabArea>
 
-                <SolutionArea data ={ data.allContentfulPage.nodes[0].content[2] } />           
+                <SolutionArea data ={ data.allContentfulPage.nodes[0].content[2] } />
 
                 <PartnerArea data={ data.allContentfulPage.nodes[0].content[3] } />
 
@@ -46,7 +46,7 @@ const IndexPage = ({ location, data }) => {
 
                 <TestimonialArea data={data.allContentfulPage.nodes[0].content[7]} />
 
-                <SolutionArea data ={ data.allContentfulPage.nodes[0].content[8] } /> 
+                <SolutionArea data ={ data.allContentfulPage.nodes[0].content[8] } />
 
                 <PartnerArea data={ data.allContentfulPage.nodes[0].content[9] } />
 

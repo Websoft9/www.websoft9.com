@@ -1,11 +1,9 @@
-import React from "react";
-import PropTypes from "prop-types";
 import Button from "@ui/button";
-import { Container, Row, Col } from "@ui/wrapper";
-import SectionTitle from "@ui/section-title";
 import NumberedList, { NumberedListItem } from "@ui/numbered-list";
-import { SectionTitleType, ItemType, ButtonType } from "@utils/types";
-import { SectionWrap, LeftBox } from "./style";
+import SectionTitle from "@ui/section-title";
+import { Col, Container, Row } from "@ui/wrapper";
+import React from "react";
+import { LeftBox, SectionWrap } from "./style";
 
 const AboutArea = ({ data }) => {
     return (

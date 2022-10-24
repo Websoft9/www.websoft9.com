@@ -1,9 +1,8 @@
 import React from "react";
-import PropTypes from "prop-types";
 import Accordion from "react-bootstrap/Accordion";
-import { StyledAccordion,MarkdownStyle } from "./style";
 import ReactMarkdown from "react-markdown";
-import remarkGfm from 'remark-gfm'
+import remarkGfm from 'remark-gfm';
+import { MarkdownStyle, StyledAccordion } from "./style";
 
 const AccordionWrap = ({
     defaultActiveKey,

@@ -1,17 +1,11 @@
-import React from "react";
-import PropTypes from "prop-types";
 import Image from "@ui/image";
-import { ImageType } from "@utils/types";
+import React from "react";
 import {
-    TestimonialWrap,
-    TestimonialInfo,
-    TestimonialMedia,
-    TestimonialAuthor,
-    TestimonialRating,
     AuthorInfo,
     AuthorName,
     AuthorRole,
-    Review,
+    Review, TestimonialAuthor, TestimonialInfo,
+    TestimonialMedia, TestimonialRating, TestimonialWrap
 } from "./style";
 
 const Testimonial = ({

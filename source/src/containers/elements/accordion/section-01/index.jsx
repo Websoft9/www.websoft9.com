@@ -1,9 +1,8 @@
-import React from "react";
 import Accordion from "@ui/accordion";
 import Heading from "@ui/heading";
-import { Container, Row, Col } from "@ui/wrapper";
+import { Col, Container, Row } from "@ui/wrapper";
+import React from "react";
 import { SectionWrap } from "./style";
-import { textAlign } from "styled-system";
 
 const AccordionArea = ({data}) => (
     <SectionWrap>

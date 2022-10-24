@@ -1,7 +1,7 @@
-import React, { useState } from "react";
-import { navigate } from "gatsby";
 import Button from "@ui/button";
-import { HeaderFormWrap, ButtonWrap, StyledInput } from "./style";
+import { navigate } from "gatsby";
+import React, { useState } from "react";
+import { ButtonWrap, HeaderFormWrap, StyledInput } from "./style";
 
 const HeaderForm = () => {
     const [value, setValue] = useState();
@@ -37,6 +37,7 @@ const HeaderForm = () => {
                         disableHover={true}
                         variant="texted"
                         size="large"
+                        title="Search"
                     >
                         <i className="fa fa-search"></i>
                     </Button>

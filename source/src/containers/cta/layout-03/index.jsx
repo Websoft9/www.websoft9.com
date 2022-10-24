@@ -1,25 +1,21 @@
-import React from "react";
-import { StaticImage } from "gatsby-plugin-image";
-import PropTypes from "prop-types";
-import { Container, Row, Col } from "@ui/wrapper";
-import Button from "@ui/button";
-import { HeadingType, ButtonType } from "@utils/types";
-import { StyledSection, StyledHeading, StyledBG,HeroTextBox,StyledSubtitle,ImageBoxTwo,TestimonialRating } from "./style";
-import Text from "@ui/text";
-import {Trans, useTranslation } from 'gatsby-plugin-react-i18next';
-import Image from "@ui/image";
 import defaultImage from "@assets/images/default.png";
-import FullWideSlider from "@containers/elements/flexible-image-slider/full-wide-slider";
-import Line from "@ui/divider/line";
-import SectionFour from "@containers/elements/dividers/section-04";
-import { Link }  from  'gatsby';
-import FAQArea from "@containers/elements/accordion/section-02";
 import BoxImage from "@components/box-image/layout-01";
 import BoxImage2 from "@components/box-large-image/layout-02";
-import Heading from "@ui/heading";
+import FAQArea from "@containers/elements/accordion/section-02";
+import FullWideSlider from "@containers/elements/flexible-image-slider/full-wide-slider";
 import LegendArea1 from "@containers/legend/layout-01";
 import LegendArea2 from "@containers/legend/layout-02";
 import LegendArea3 from "@containers/legend/layout-03";
+import Button from "@ui/button";
+import Line from "@ui/divider/line";
+import Heading from "@ui/heading";
+import Image from "@ui/image";
+import Text from "@ui/text";
+import { Col, Container, Row } from "@ui/wrapper";
+import { Link, navigate } from 'gatsby';
+import { useTranslation } from 'gatsby-plugin-react-i18next';
+import React from "react";
+import { HeroTextBox, ImageBoxTwo, StyledAnchor, StyledSection, StyledSubtitle, TestimonialRating } from "./style";
 
 const CTAArea = ({ data,resourceData }) => {
     const { t } = useTranslation();
@@ -45,7 +41,13 @@ const CTAArea = ({ data,resourceData }) => {
     }
 
     return (
-        <StyledSection>
+        <React.Fragment>
+            <div style={{float:"left",paddingLeft:"20px"}}>
+                <StyledAnchor onClick={() => navigate(-1)}>
+                    <i className="icon far fa-angle-left"></i>
+                </StyledAnchor>
+            </div>
+            <StyledSection>
             <Container>
                 <Row
                     alignItems="center"
@@ -54,7 +56,7 @@ const CTAArea = ({ data,resourceData }) => {
                     <Col xl={3}>
                         <HeroTextBox>
                                 <ImageBoxTwo>
-                                    <Image src={data.image==null?defaultImage:data.image.imageurl} onError={(e)=>{e.target.onerror=null;e.target.src={defaultImage}}} />
+                                    <Image src={data.image==null?defaultImage:data.image.imageurl} onError={(e)=>{e.target.onerror=null;e.target.src={defaultImage}}} alt=""/>
                                 </ImageBoxTwo>
                         </HeroTextBox>
                     </Col>
@@ -280,6 +282,7 @@ const CTAArea = ({ data,resourceData }) => {
                 </Row>
             </Container>
         </StyledSection>
+        </React.Fragment>
     );
 };
 export default CTAArea;

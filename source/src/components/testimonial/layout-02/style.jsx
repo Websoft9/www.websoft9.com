@@ -1,4 +1,4 @@
-import styled, { themeGet, device } from "@styled";
+import styled, { device, themeGet } from "@styled";
 
 export const TestimonialWrap = styled.div`
     position: relative;
@@ -31,6 +31,8 @@ export const TestimonialMedia = styled.div`
     margin-block-end: 20px;
     img {
         border-radius: ${themeGet("radii.round")};
+        width:64px;
+        height:64px;
     }
     ${device.small} {
         margin-inline-end: 30px;

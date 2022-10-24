@@ -7,7 +7,7 @@ import { graphql } from "gatsby";
 import HeroArea from "@containers/hero/layout-01";
 import ResourceArea from "@containers/elements/lists/section-03"
 
-const SolutionsPage = ({ pageContext, location, data }) => {
+const SolutionsPage = ({ pageContext, location, data }) => { 
 
     return (
         <Layout location={location}>

@@ -1,6 +1,6 @@
-import React from "react";
 import PropTypes from "prop-types";
-import { StyledLink, StyledAnchor } from "./style";
+import React from "react";
+import { StyledAnchor, StyledLink } from "./style";
 
 const Anchor = ({ path, children, className, hover, layout, ...props }) => {
     const internal = /^\/(?!\/)/.test(path);

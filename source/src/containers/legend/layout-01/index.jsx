@@ -1,12 +1,9 @@
-import React from "react";
-import Accordion from "react-bootstrap/Accordion";
 import Heading from "@ui/heading";
-import { Container, Row, Col } from "@ui/wrapper";
-import { SectionWrap } from "./style";
-import { textAlign } from "styled-system";
-import {Trans, useTranslation } from 'gatsby-plugin-react-i18next';
 import Text from "@ui/text";
-import Markdown from "markdown-to-jsx";
+import { Col, Container, Row } from "@ui/wrapper";
+import { useTranslation } from 'gatsby-plugin-react-i18next';
+import React from "react";
+import { SectionWrap } from "./style";
 
 const LegendArea = ({ title,data }) => {
     const { t } = useTranslation();

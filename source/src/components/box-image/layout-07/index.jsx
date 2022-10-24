@@ -1,16 +1,9 @@
-import React from "react";
 import PropTypes from "prop-types";
-import Image from "@ui/image";
-import { ImageType } from "@utils/types";
+import React from "react";
 import ReactVivus from "react-vivus";
 import {
-    BoxImgWrapper,
-    BoxImgInner,
-    BoxImgMediaWrap,
-    BoxImgContent,
-    HeadingWrap,
-    TextWrap,
-    BoxIconImg,
+    BoxIconImg, BoxImgContent, BoxImgInner, BoxImgWrapper, HeadingWrap,
+    TextWrap
 } from "./style";
 
 const BoxImage = ({ id,icon, title, desc,className, ...restProps }) => {

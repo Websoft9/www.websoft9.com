@@ -1,9 +1,9 @@
-import React from "react";
-import SwiperSlider, { SwiperSlide } from "@ui/swiper";
 import ClientLogo from "@ui/client-logo";
-import { Container, Row, Col } from "@ui/wrapper";
-import { SectionWrap } from "./style";
 import SectionTitle from "@ui/section-title";
+import SwiperSlider, { SwiperSlide } from "@ui/swiper";
+import { Col, Container, Row } from "@ui/wrapper";
+import React from "react";
+import { SectionWrap } from "./style";
 
 const slider = {
     slidesPerView: 5,

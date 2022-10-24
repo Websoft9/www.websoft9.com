@@ -1,18 +1,16 @@
-import * as React from "react";
-import PropTypes from "prop-types";
-import { graphql } from "gatsby";
 import Seo from "@components/seo";
-import Layout from "@layout";
-import Header from "@layout/header/layout-02";
-import Footer from "@layout/footer/layout-02";
-import PageHeader from "@containers/page-header/layout-01";
-import TimelineArea from "@containers/timeline/layout-01";
-import SmoothTransitionSlider from "@containers/elements/flexible-image-slider/smooth-transition-slider";
 import AboutArea from "@containers/about/layout-04";
 import CultureArea from "@containers/elements/box-image/section-03";
+import SectionTwo from "@containers/elements/box-large-image/section-04";
 import CounterArea from "@containers/elements/counters/section-01";
 import FullWideSlider from "@containers/elements/flexible-image-slider/full-wide-slider2";
-import SectionTwo from "@containers/elements/box-large-image/section-04";
+import PageHeader from "@containers/page-header/layout-01";
+import TimelineArea from "@containers/timeline/layout-01";
+import Layout from "@layout";
+import Footer from "@layout/footer/layout-02";
+import Header from "@layout/header/layout-02";
+import { graphql } from "gatsby";
+import * as React from "react";
 
 const AboutUsPage = ({ location, data }) => {
     return (
