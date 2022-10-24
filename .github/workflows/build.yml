@@ -1,7 +1,9 @@
 name: Site Build and Upload
 
-on: [push]
-
+on:
+  # Runs on pushes targeting the default branch
+  push:
+    branches: ["dev"]
 jobs:
   build:
     runs-on: ubuntu-latest
