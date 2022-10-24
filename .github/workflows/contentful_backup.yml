@@ -1,0 +1,32 @@
+name: contentful automic backup
+on: 
+  # schedule:
+  # - cron: "0 12 * * 5"
+  workflow_dispatch
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - name: Setup Node.js environment
+        uses: actions/setup-node@v3.5.1
+      - name: install contentful cli
+        run: npm install -g contentful-cli
+      - name: export contentful data
+        run: |
+          export_date=`date +%Y-%m-%d_%H:%M:%S`
+          contentful space export --config contentful/export-config.json --content-file "export_${export_date}.json"
+      - name: commit data
+        run: |
+          git config --global user.email zhaojing_cathay@163.com
+          git config --global user.name zhaojing1987
+          git add .
+          git commit -m "push the contenful backup file" -a
+
+      - name: Push changes
+        uses: ad-m/github-push-action@master
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          
+          
+          
