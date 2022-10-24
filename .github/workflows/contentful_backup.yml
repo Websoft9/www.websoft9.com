@@ -18,8 +18,8 @@ jobs:
           contentful space export --config contentful/export-config.json --content-file "export_${export_date}.json"
       - name: commit data
         run: |
-          git config --global user.email zhaojing_cathay@163.com
-          git config --global user.name zhaojing1987
+          git config --global user.email "zhaojing_cathay@163.com"
+          git config --global user.name "zhaojing1987"
           git add .
           git commit -m "push the contenful backup file" -a
 
@@ -27,6 +27,6 @@ jobs:
         uses: ad-m/github-push-action@master
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
-          
+          branch: ${{ github.ref }}
           
           
