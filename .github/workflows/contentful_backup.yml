@@ -2,7 +2,10 @@ name: contentful automic backup
 on: 
   # schedule:
   # - cron: "0 12 * * 5"
-  workflow_dispatch
+  # workflow_dispatch
+  push:
+    branches:
+      - main
 jobs:
   build:
     runs-on: ubuntu-latest
