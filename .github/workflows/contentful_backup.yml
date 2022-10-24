@@ -17,15 +17,20 @@ jobs:
           export_date=`date +%Y-%m-%d_%H:%M:%S`
           contentful space export --config contentful/export-config.json --content-file "export_${export_date}.json"
       - name: commit data
-        run: |
-          git config --global user.email "zhaojing_cathay@163.com"
-          git config --global user.name "zhaojing1987"
-          git add .
-          git commit -m "push the contenful backup file" -a
-
-      - name: Push changes
-        uses: ad-m/github-push-action@master
+      - uses: stefanzweifel/git-auto-commit-action@v4
         with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
+          commit_message: "push the contenful backup file"
+          
+#         run: |
+#           git config --global user.email "zhaojing_cathay@163.com"
+#           git config --global user.name "zhaojing1987"
+#           git add .
+#           git commit -m "push the contenful backup file" -a
+
+#       - name: Push changes
+#         uses: ad-m/github-push-action@master
+#         with:
+#           github_token: ${{ secrets.GITHUB_TOKEN }}
+
           
           
