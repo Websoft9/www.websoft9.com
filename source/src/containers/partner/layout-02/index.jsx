@@ -48,6 +48,7 @@ const Section = ({data}) => {
                                         <ClientLogo
                                             image={slide.logo}
                                             layout={4}
+                                            path={slide.path}
                                         />
                                     </SwiperSlide>
                                 );
