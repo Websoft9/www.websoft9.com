@@ -1,38 +1,60 @@
 name: contentful automic backup
+
 on: 
+  workflow_dispatch
   # schedule:
   # - cron: "0 12 * * 5"
-  workflow_dispatch
+
 jobs:
-  build:
+  export:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v2
+      - uses: actions/checkout@master
+      
       - name: Setup Node.js environment
         uses: actions/setup-node@v3.5.1
-      - name: install contentful cli
+        
+      - name: install contentful-cli
         run: npm install -g contentful-cli
+        
       - name: export contentful data
         run: |
           export_date=`date +%Y-%m-%d_%H:%M:%S`
-          contentful space export --config contentful/export-config.json --content-file "export_${export_date}.json"
-          pwd
-          ls
-      - name: commit data
-#       - uses: stefanzweifel/git-auto-commit-action@v4
-#         with:
-#           commit_message: "push the contenful backup file"
-          
-        run: |
-          git config --global user.email "zhaojing_cathay@163.com"
-          git config --global user.name "zhaojing1987"
-          git add .
-          git commit -m "push the contenful backup file" -a
-
-      - name: Push changes
-        uses: ad-m/github-push-action@master
+          contentful space export --config contentful/export-config.json --content-file "export_${export_date}.json" --error-log-file contentful/error_${export_date}.json
+          echo "export_date=$export_date" >> $GITHUB_ENV
+          [ -f contentful/error_${export_date}.json ] && echo "isError=yes" >> $GITHUB_ENV || echo "isError=no" >> $GITHUB_ENV
+    
+      # add Actions secrets:Settings->Secret->Actions->New repository secret
+      #
+      # MAIL_PASSWORD: mail SMTP code
+      - name: Send error inform mail
+        uses: dawidd6/action-send-mail@master
+        if: contains(env.isError, 'yes')
         with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
+          server_address: smtp.163.com
+          # 25：smtp.163.com,465:smpt.qq.com
+          server_port: 25 
+          username: ${{ secrets.MAIL_USERNAME }}
+          password: ${{ secrets.MAIL_PASSWORD }}
+          subject: Contentful backup error inform
+          body: file://contentful/error_${{ env.export_date }}.json
+          to: jing.zhao@websoft9.com
+          from: GitHub Actions
+          
+      - name: Send inform mail
+        uses: dawidd6/action-send-mail@master
+        with:
+          server_address: smtp.163.com
+          # 25：smtp.163.com,465:smpt.qq.com
+          server_port: 25 
+          username: ${{ secrets.MAIL_USERNAME }}
+          password: ${{ secrets.MAIL_PASSWORD }}
+          subject: Contentful backup success
+          body: file://contentful/export_${{ env.export_date }}.json
+          to: jing.zhao@websoft9.com
+          from: GitHub Actions
 
-          
-          
+      - uses: stefanzweifel/git-auto-commit-action@v4
+        with:
+          commit_message: "push the contenful backup file"
+      
