@@ -69,6 +69,7 @@ jobs:
         with:
           path: |
             public
+            static
             .cache
           key: ${{ runner.os }}-gatsby-build-${{ hashFiles('public') }}
           restore-keys: |
