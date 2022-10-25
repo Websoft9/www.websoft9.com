@@ -4,7 +4,8 @@ module.exports = {
     //     LMDB_STORE: false,
     //     PARALLEL_QUERY_RUNNING: false,
     // },
-    pathPrefix: `/`,
+    # pathPrefix: `/`,
+    pathPrefix: `/www.websoft9.com`
     siteMetadata: {
       title: `Websoft9`,
       siteUrl: `https://www.websoft9.com`,
