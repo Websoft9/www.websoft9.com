@@ -5,7 +5,7 @@ module.exports = {
     //     PARALLEL_QUERY_RUNNING: false,
     // },
 //     pathPrefix: `/`,
-    pathPrefix: `/www.websoft9.com`,
+//     pathPrefix: `/www.websoft9.com`,
     siteMetadata: {
       title: `Websoft9`,
       siteUrl: `https://www.websoft9.com`,
