@@ -1,61 +1,93 @@
 name: contentful automic backup
 
 on: 
-  workflow_dispatch
+   workflow_dispatch
   # schedule:
   # - cron: "0 12 * * 5"
 
 jobs:
   export:
     runs-on: ubuntu-latest
+    
     steps:
       - uses: actions/checkout@master
-      
-      - name: Setup Node.js environment
+ 
+      - id: setup
         uses: actions/setup-node@v3.5.1
-        
-      - name: install contentful-cli
+      
+      - id: install
         run: npm install -g contentful-cli
-        
-      - name: export contentful data
+           
+      - id: export
         run: |
-          export_date=`date +%Y-%m-%d_%H:%M:%S`
-          contentful space export --config contentful/export-config.json --content-file "export_${export_date}.json" --error-log-file contentful/error_${export_date}.json
-          echo "export_date=$export_date" >> $GITHUB_ENV
-          [ -f contentful/error_${export_date}.json ] && echo "isError=yes" >> $GITHUB_ENV || echo "isError=no" >> $GITHUB_ENV
-    
-      # add Actions secrets:Settings->Secret->Actions->New repository secret
-      #
-      # MAIL_PASSWORD: mail SMTP code
-      - name: Send error inform mail
-        uses: dawidd6/action-send-mail@master
-        if: contains(env.isError, 'yes')
-        with:
-          server_address: smtp.163.com
-          # 25：smtp.163.com,465:smpt.qq.com
-          server_port: 25 
-          username: ${{ secrets.MAIL_USERNAME }}
-          password: ${{ secrets.MAIL_PASSWORD }}
-          subject: Contentful backup error inform
-          body: file://contentful/error_${{ env.export_date }}.json
-          to: jing.zhao@websoft9.com
-          from: GitHub Actions
-          
-      - name: Send inform mail
-        uses: dawidd6/action-send-mail@master
-        with:
-          server_address: smtp.163.com
-          # 25：smtp.163.com,465:smpt.qq.com
-          server_port: 25 
-          username: ${{ secrets.MAIL_USERNAME }}
-          password: ${{ secrets.MAIL_PASSWORD }}
-          subject: Contentful backup success
-          body: file://contentful/export_${{ env.export_date }}.json
-          to: jing.zhao@websoft9.com
-          from: GitHub Actions
-
-      - uses: stefanzweifel/git-auto-commit-action@v4
+          export_date=`date +%Y-%m-%d`
+          echo "export_date=${export_date}" >> $GITHUB_ENV
+          mkdir contentful/${export_date}
+          contentful space export --config contentful/export-config.json --export-dir contentful/${export_date}/ --error-log-file contentful/${export_date}/error.json --mt ${{ secrets.Contentful_Export_Token }}
+                       
+      - id: push
+        uses: stefanzweifel/git-auto-commit-action@v4
         with:
           commit_message: "push the contenful backup file"
-          branch: main
+          
+      - id: conclusion
+        if: ${{ always() }}
+        run: |
+         echo "setup=${{steps.setup.conclusion}}" >> $GITHUB_ENV
+         echo "install=${{steps.install.conclusion}}" >> $GITHUB_ENV
+         echo "export=${{steps.export.conclusion}}" >> $GITHUB_ENV
+         echo "push=${{steps.push.conclusion}}" >> $GITHUB_ENV
+         [ -f contentful/${{env.export_date}}/error.json ]  && echo "backup=failure" >> $GITHUB_ENV || echo "backup=success" >> $GITHUB_ENV      
       
+      - name: edit the email content out of the export job output
+        if: ${{ always() }}
+        run: |
+         echo ${{env.export}}
+         if [ ${{env.setup}} == faliure  ];then 
+          echo "email_subject=[FAIL]Contentful backup inform" >> $GITHUB_ENV
+          echo "email_body=setup node.js environment failure" >> $GITHUB_ENV
+          
+         elif [ ${{env.install}} == faliure ];then 
+          echo "email_subject=[FAIL]Contentful backup inform" >> $GITHUB_ENV
+          echo "email_body=install contentful cli fail" >> $GITHUB_ENV
+          
+         elif [ ${{env.export}} == faliure ];then 
+          echo "email_subject=[FAIL]Contentful backup inform" >> $GITHUB_ENV
+          echo "email_body=export data fail" >> $GITHUB_ENV
+
+          
+         elif [ ${{env.push}} == faliure];then 
+          echo "email_subject=[FAIL]Contentful backup inform" >> $GITHUB_ENV
+          echo "email_body=push data fail" >> $GITHUB_ENV
+
+          
+         elif [ ${{env.backup}} == faliure ];then 
+          echo "email_subject=[FAIL]Contentful backup inform" >> $GITHUB_ENV
+          echo "email_body=contentful data backup fail,here is the log attached" >> $GITHUB_ENV
+          echo "email_attachments=contentful/${env.export_date}/error.json" >> $GITHUB_ENV 
+          
+         else
+          echo "email_subject=[SUCCESS]Contentful backup inform" >> $GITHUB_ENV
+          echo "email_body=successfully backup the contentful data!here is the data attached" >> $GITHUB_ENV
+          echo "email_attachments=contentful/${{env.export_date}}/export.json" >> $GITHUB_ENV 
+          
+         fi 
+         
+        
+      - name: Send inform mail
+        if: ${{ always() }}
+        uses: dawidd6/action-send-mail@master
+        with:
+          server_address: smtp.163.com
+          server_port: 25
+          username: ${{ secrets.MAIL_USERNAME }}
+          password: ${{ secrets.MAIL_PASSWORD }}
+          subject: ${{env.email_subject}}
+          to: jing.zhao@websoft9.com
+          from: GitHub Actions
+          body: ${{env.email_body}}
+          attachments: ${{env.email_attachments}}        
+        
+        
+        
+        
