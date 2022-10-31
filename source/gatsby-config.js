@@ -4,18 +4,17 @@ module.exports = {
     //     LMDB_STORE: false,
     //     PARALLEL_QUERY_RUNNING: false,
     // },
-//     pathPrefix: `/`,
-    pathPrefix: `/www.websoft9.com`,
+    pathPrefix: `/`,
     siteMetadata: {
       title: `Websoft9`,
       siteUrl: `https://www.websoft9.com`,
       author:`Websoft9`,
       image: `landing.png`,
-      copyright:`备案：湘ICP备16009117号`,
+      copyright:`Copyright`,
       titleTemplate: `Websoft9`,
       getform:`Websoft9`,
       siteLanguage: "en-US",
-      description: `为用户提供简单的云原生应用，帮助软件开发商构建基于全球云计算的在线商业体系`,
+      description: `Company summary`,
       keywords:`websoft9`,
       socials: [
         {
@@ -68,48 +67,6 @@ module.exports = {
         scope: "/",
         start_url: "/",
         icon: "src/assets/images/favicon.png",
-        // icons: [
-        //     {
-        //         src: "/icons/icon-72x72.png",
-        //         sizes: "72x72",
-        //         type: "image/png",
-        //     },
-        //     {
-        //         src: "/icons/icon-96x96.png",
-        //         sizes: "96x96",
-        //         type: "image/png",
-        //     },
-        //     {
-        //         src: "/icons/icon-128x128.png",
-        //         sizes: "128x128",
-        //         type: "image/png",
-        //     },
-        //     {
-        //         src: "/icons/icon-144x144.png",
-        //         sizes: "144x144",
-        //         type: "image/png",
-        //     },
-        //     {
-        //         src: "/icons/icon-152x152.png",
-        //         sizes: "152x152",
-        //         type: "image/png",
-        //     },
-        //     {
-        //         src: "/icons/icon-192x192.png",
-        //         sizes: "192x192",
-        //         type: "image/png",
-        //     },
-        //     {
-        //         src: "/icons/icon-384x384.png",
-        //         sizes: "384x384",
-        //         type: "image/png",
-        //     },
-        //     {
-        //         src: "/icons/icon-512x512.png",
-        //         sizes: "512x512",
-        //         type: "image/png",
-        //     },
-        // ],
       }
     },
     `gatsby-plugin-react-helmet`,
