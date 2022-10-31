@@ -17,7 +17,7 @@ const TicketPage = ({pageContext,location,data }) => {
             <main className="site-wrapper-reveal">
                 <PageHeader data={data.allContentfulPage.nodes[0].content[0]} />
                 
-                <IframeArea data={ data.allContentfulPage.nodes[0].content[1]?.link?.[0].value }  width="1200px" height="1000px" />
+                <IframeArea data={ data.allContentfulPage.nodes[0].content[1]?.link?.[0].value }  width="100%" height="1000px" />
 
                 <CtaArea data={ data.allContentfulPage.nodes[0].content[2] } />
 

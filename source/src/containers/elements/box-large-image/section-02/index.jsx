@@ -33,6 +33,7 @@ const BoxSection = ({data}) => {
                                     title={feature.title}
                                     category={feature.type.title}
                                     // desc={feature.subTitle}
+                                    desc={feature.type.key == "blog" || feature.type.key == "news" ?feature.time:null }
                                     path={`/${feature.type.key}/${feature.slug}`}
                                 />
                             </Col>

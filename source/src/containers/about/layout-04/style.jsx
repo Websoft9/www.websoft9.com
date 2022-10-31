@@ -1,4 +1,4 @@
-import styled, { device,themeGet } from "@styled";
+import styled, { device, themeGet } from "@styled";
 
 export const SectionWrap = styled.section`
     padding-block-start: 60px;
@@ -15,6 +15,8 @@ export const SectionWrap = styled.section`
         font-size:18px;
     }
 `;
+
+
 export const StyledLeftHeading = styled.h4`
     font-size: 24px;
     span {

@@ -122,12 +122,22 @@ const Footer = () => {
                                 <Col lg={4} sm={6}>
                                     <FooterWidget mb={["31px", null, null, 0]}>
                                         <LogoWidget>
-                                            <StaticImage
-                                                src="../../../assets/images/logo/w9.svg"
-                                                alt="logo"
-                                                width={165}
-                                                height={42}
-                                            />
+                                            {
+                                                language == "zh-CN" ? 
+                                                <StaticImage
+                                                    src="../../../assets/images/logo/源生云.svg"
+                                                    alt="logo"
+                                                    // width={180}
+                                                    height={50}
+                                                />
+                                                :
+                                                <StaticImage
+                                                    src="../../../assets/images/logo/w9.svg"
+                                                    alt="logo"
+                                                    // width={180}
+                                                    height={50}
+                                                />
+                                            }
                                         </LogoWidget>
                                         <TextWidget>
                                             <Text mb="10px">
@@ -163,7 +173,7 @@ const Footer = () => {
                                 {
                                     (language == "zh-CN" ? data.zhBottomMenu.nodes?.[0].menus : data.enBottomMenu.nodes?.[0].menus).map((item) => {
                                         return (
-                                            <Col key={"col" + item.id} lg={2} md={6} sm={8}>
+                                            <Col key={"col" + item.id} lg={2} md={6} sm={8} style={{marginBlockEnd:"20px"}}>
                                                 <FooterWidget>
                                                     <StyledWidgetTitle>{item.title}</StyledWidgetTitle>
                                                     <Line mt="10px" mb="10px" borderWidth="1px" />
@@ -192,18 +202,17 @@ const Footer = () => {
                     <FooterBottom>
                         <Container>
                             <Row alignItems="center">
-                                <Col md={3} textAlign={["center", null, "left"]}>
-                                    <Text pb={["15px", 0]}>
-                                        &copy; {new Date().getFullYear()}{" "}
+                                <Col md={6} textAlign={["center", null, "left"]}>
+                                    <Text pb={["15px", 0]}>                                        
                                         <span
                                             dangerouslySetInnerHTML={{
-                                                __html: data.site.siteMetadata.copyright,
+                                                __html: t(data.site.siteMetadata.copyright),
                                             }}
                                         />
                                     </Text>
 
                                 </Col>
-                                <Col md={9} textAlign={["center", null, "right"]}>
+                                <Col md={6} textAlign={["center", null, "right"]}>
                                     {/* 页脚菜单 */}
                                     <FooterWidgetList>
                                         {

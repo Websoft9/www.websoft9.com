@@ -13,6 +13,7 @@ export const PageHeaderWrap = styled.div`
         padding-block-start: 192px;
         padding-block-end: 165px;
     }
+
 `;
 
 export const StyledBG = styled.div`
@@ -23,10 +24,38 @@ export const StyledBG = styled.div`
         height: 100%;
         width: 100%;
     }
-    & >img {
-        width:1920px;
-        height:507px;
+    img {
+        width:100%;
+        height:220px;
         object-fit:cover;
+    }
+    @media screen and (min-width:576px) {
+        img {
+            width:100%;
+            height:220px;
+            object-fit:cover;
+        }
+    }
+    @media screen and (min-width:768px) {
+        img {
+            width:100%;
+            height:320px;
+            object-fit:cover;
+        }
+    }
+    @media screen and (min-width:992px) {
+        img {
+            width:100%;
+            height:450px;
+            object-fit:cover;
+        }
+    }
+    @media screen and (min-width:1200px) {
+        img {
+            width:100%;
+            height:507px;
+            object-fit:cover;
+        }
     }
 `;
 

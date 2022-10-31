@@ -167,7 +167,7 @@ export const SocialLinkWrap = styled.a`
                     visibility: visible;
                     opacity: 1;
                     transform: translateX(-50%) translateY(-8px);
-                }
+                }                
             }
 
             ${(props) =>

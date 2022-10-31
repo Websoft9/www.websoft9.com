@@ -44,7 +44,8 @@ const CTAArea = ({ data,resourceData }) => {
         <React.Fragment>
             <div style={{float:"left",paddingLeft:"20px"}}>
                 <StyledAnchor onClick={() => navigate(-1)}>
-                    <i className="icon far fa-angle-left"></i>
+                    {/* <i className="icon far fa-angle-left"></i> */}
+                    <svg t="1667186289168" class="icon" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="2811" width="48" height="48"><path d="M512 64C264.8 64 64 264.8 64 512s200.8 448 448 448 448-200.8 448-448S759.2 64 512 64z m0 832c-212 0-384-172-384-384s172-384 384-384 384 172 384 384-172 384-384 384z m158.4-610.4L444 512l226.4 226.4-44.8 45.6-272-272 272-272 44.8 45.6z" p-id="2812"></path></svg>
                 </StyledAnchor>
             </div>
             <StyledSection>

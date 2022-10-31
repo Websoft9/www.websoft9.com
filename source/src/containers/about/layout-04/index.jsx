@@ -19,10 +19,7 @@ const AboutArea = ({ data }) => {
                     >
                         <Image src={data.features?.[0].image} alt=""/>
                     </Col>
-                    <Col lg={{ span: 5, offset: 1 }}>                     
-                            {/* <Text fontSize="18px" mb="20px">
-                                {data.features?.[0].description.description}
-                            </Text> */}
+                    <Col lg={{ span: 5, offset: 1 }}>
                         <ReactMarkdown remarkPlugins={[remarkGfm]}>
                             {data.features?.[0].description.description}
                         </ReactMarkdown>

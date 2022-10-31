@@ -8,7 +8,7 @@ const PageHeader = ({ data }) => {
         <PageHeaderWrap>
             {data?.image && (
                 <StyledBG>
-                    <Image src={data.image} alt=""/>
+                    <Image src={data.image} alt="" />
                 </StyledBG>
             )}
             <Container>

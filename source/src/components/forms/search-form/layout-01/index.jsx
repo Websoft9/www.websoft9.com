@@ -1,5 +1,4 @@
 import Button from "@ui/button";
-import { navigate } from "gatsby";
 import React, { useState } from "react";
 import { ButtonWrap, HeaderFormWrap, StyledInput } from "./style";
 
@@ -8,15 +7,15 @@ const HeaderForm = () => {
     const handleInput = (e) => setValue(e.target.value);
 
     const handlSubmit = (e) => {
-        e.preventDefault();
+         e.preventDefault();
 
-        const query = value
-            .toLowerCase()
-            .trim()
-            .replace(/[^\w ]/g, "");
-        // .replace(/\&+/g, '-')
+        // const query = value
+        //     .toLowerCase()
+        //     .trim()
+        //     .replace(/[^\w ]/g, "");
+        // // .replace(/\&+/g, '-')
 
-        navigate(`/search?query=${query}`, { state: { query } });
+        // navigate(`/search?query=${query}`, { state: { query } });
     };
 
     return (

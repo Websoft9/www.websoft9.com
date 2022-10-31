@@ -1,7 +1,7 @@
 import Seo from "@components/seo";
 import CtaArea from "@containers/cta/layout-04";
 import CultureArea from "@containers/elements/box-image/section-03";
-import PartnerTypeArea from "@containers/elements/box-large-image/section-02";
+import PartnerStoreArea from "@containers/elements/box-large-image/section-02";
 import HeroArea from "@containers/hero/layout-01";
 import PartnerArea from "@containers/partner/layout-02";
 import Layout from "@layout";
@@ -26,7 +26,7 @@ const PartnerPage = ({ location, data }) => {
 
                 <CultureArea data={data.allContentfulPage.nodes[0].content[3]} lgSize={4}/>
 
-                <PartnerTypeArea data={data.allContentfulPage.nodes[0].content[4]} />
+                <PartnerStoreArea data={data.allContentfulPage.nodes[0].content[4]} />
 
                 <CtaArea data={ data.allContentfulPage.nodes[0].content[5] } />
 
@@ -90,6 +90,7 @@ export const query = graphql`
                     }
                     ... on ContentfulResource {
                         type {
+                            key
                             title
                         }
                         id

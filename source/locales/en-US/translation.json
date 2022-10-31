@@ -3,7 +3,7 @@
     "FAQ":"FAQ",
     "NEXT":"NEXT",
     "PREV":"PREV",
-    "Product List":"Product List",
+    "Product List":"Applications",
     "ALL":"ALL",
     "No relevant data found":"No relevant data found",
     "Get it Now":"Get it Now",
@@ -53,5 +53,9 @@
     "Service portfolio":"Service portfolio",
     "Related Services":"Related Services",
     "Business insight":"Business insight",
-    "Components":"Components"
+    "Components":"Components",
+    "Copyright":"© 2022 Websoft9. All Rights Reserved.",
+    "Company summary":"Provide users with simple serial applications to help software operators create global cloud-based online business commerce",
+    "Applications":"Applications",
+    "SHARE":"SHARE"
 }

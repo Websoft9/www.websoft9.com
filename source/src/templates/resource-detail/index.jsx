@@ -1,10 +1,10 @@
-import React from "react";
-import { Link, graphql } from 'gatsby';
 import Seo from "@components/seo";
-import Layout from "@layout";
-import Header from "@layout/header/layout-02";
-import Footer from "@layout/footer/layout-02";
 import ResourceDetailArea from "@containers/cta/layout-05";
+import Layout from "@layout";
+import Footer from "@layout/footer/layout-02";
+import Header from "@layout/header/layout-02";
+import { graphql } from 'gatsby';
+import React from "react";
 
 const ResourceDetailTemplate = ({ location, data }) => {
     return (
@@ -33,17 +33,18 @@ export const query = graphql`
                 }
             }
         }
-        site {
-                    siteMetadata {
-                    copyright
-                    description
-                    socials {
-                        icon
-                        id
-                        link
-                        title
-                    }
-                    }
+            site {
+                siteMetadata {
+                copyright
+                description
+                siteUrl
+                socials {
+                    icon
+                    id
+                    link
+                    title
+                }
+                }
                 }
         #查询相关阅读
         RelatedReading:allContentfulResource(
@@ -55,6 +56,7 @@ export const query = graphql`
             id
             slug
             title
+            time(formatString: "YYYY-MM-DD")
             image:featureImage
             type {
                 id
@@ -83,6 +85,9 @@ export const query = graphql`
                 title
                 fullName
                 pictureUrl
+                customer {
+                    name
+                }
             }
             content {
                 id
@@ -114,6 +119,7 @@ export const query = graphql`
             solutions:resources {
                 id
                 title
+                time(formatString: "YYYY-MM-DD")
                 slug
                 type{
                     id

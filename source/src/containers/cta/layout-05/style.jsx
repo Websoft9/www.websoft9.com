@@ -1,4 +1,4 @@
-import styled, { device, themeGet } from "@styled";
+import styled, { css, device, themeGet } from "@styled";
 
 export const StyledSection = styled.section`
     // background-color: #454545;
@@ -7,9 +7,11 @@ export const StyledSection = styled.section`
     position: relative;
     isolation: isolate;
     overflow: hidden;
-    // ${device.medium} {
-    //     padding-block: 60px;
-    // }
+    @media screen and (max-width:768px) {
+        #markdowndir{
+            display : none;
+        }
+    }
     // ${device.large} {
     //     padding-block: 80px;
     // }
@@ -20,6 +22,14 @@ export const StyledSection = styled.section`
             height:64px;
         }
     }
+
+    #markdowndir{
+        div {
+            border:none;
+            box-shadow:0 0 ;
+        }
+    }
+
 `;
 
 export const StyledHeading = styled.h3`
@@ -71,7 +81,8 @@ export const ImageBoxOne = styled.div`
     z-index: 1;
     img{
         width:360px;
-        height:280px;
+        height:270px;
+        object-fit:cover
     }
 `;
 
@@ -111,6 +122,7 @@ export const TestimonialMedia = styled.div`
 `;
 
 export const TestimonialAuthor = styled.div`
+    max-width:290px;
     flex-grow: 1;
     text-align: center;
     @media ${device.small} {
@@ -167,9 +179,10 @@ export const NavContainer = styled.div`
 `
 
 export const MarkdownStyle = styled.div`
-    h1 {font-size:34px};
-    h2 {font-size:24px};
-    h3 {font-size:18px};
+    h1 {font-size:34px;padding-bottom:20px;padding-top:20px};
+    h2 {font-size:24px;padding-bottom:20px;padding-top:20px};
+    h3 {font-size:18px;padding-bottom:20px;padding-top:20px};
+    h4 {font-size:15px;padding-bottom:20px;padding-top:20px};
     ul {
         list-style-type:disc;
         list-style-position:inside;
@@ -181,3 +194,45 @@ export const MarkdownStyle = styled.div`
         }
     }
 `
+
+export const FloatingSocialBox = styled.div`
+    position: absolute;
+    bottom: 100%;
+    right: 0%;
+    transform: translate(0%, -1px);
+    width: auto;
+    white-space: nowrap;
+    padding-inline: 4px;
+    text-align: center;
+    background: #fff;
+    border-radius: ${themeGet("radii.md")};
+    box-shadow: 0 2px 20px rgba(0, 0, 0, 0.06);
+    user-select: none;
+    filter: drop-shadow(0 2px 20px rgba(0, 0, 0, 0.06));
+    z-index: 999;
+    padding-block: 10px;
+    padding-inline: 15px;
+    visibility: hidden;
+    opacity: 0;
+    transition: ${themeGet("transition")};
+    ${(props) =>
+        props.isOpen &&
+        css`
+            transform: translate(0%, -12px);
+            visibility: visible;
+            opacity: 1;
+        `}
+    @media ${device.small} {
+        right: 10%;
+    }
+    &:before {
+        position: absolute;
+        top: 100%;
+        left: 50%;
+        transform: translateX(100%);
+        content: "";
+        border-block-start: 8px solid #fff;
+        border-inline-start: 9px solid transparent;
+        border-inline-end: 9px solid transparent;
+    }
+`;

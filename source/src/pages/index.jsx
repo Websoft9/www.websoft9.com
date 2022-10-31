@@ -116,6 +116,7 @@ export const query = graphql`
                             title
                         }
                         id
+                        time(formatString: "YYYY-MM-DD")
                         title
                         subTitle
                         image: featureImage
