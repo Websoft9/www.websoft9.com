@@ -8,7 +8,6 @@
     "gatsby"
   ],
   "scripts": {
-    "deploy": "gatsby build --prefix-paths",
     "develop": "gatsby develop",
     "start": "gatsby develop",
     "build": "gatsby build",
@@ -72,7 +71,12 @@
     "video-react": "^0.15.0",
     "vivus": "^0.4.6",
     "gatsby-plugin-baidu-analytics":"^2.2.0",
-    "gatsby-plugin-anchor-links":"^1.2.1"
+    "gatsby-plugin-anchor-links":"^1.2.1",
+    "gatsby-plugin-typesense":"^0.3.1",
+    "typesense-instantsearch-adapter":"^2.4.2",
+    "react-instantsearch-dom":"^6.37.0",
+    "@babel/runtime":"^7.19.4",
+    "qrcode.react":"^3.0.2"
   },
   "devDependencies": {
     "@babel/core": "7.13.15",
