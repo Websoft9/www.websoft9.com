@@ -1,9 +1,9 @@
 name: contentful automic backup
 
 on: 
-  # workflow_dispatch
-  schedule:
-  - cron: "0 8 * * 6"
+   workflow_dispatch
+#   schedule:
+#   - cron: "0 8 * * 6"
 
 jobs:
   export:
