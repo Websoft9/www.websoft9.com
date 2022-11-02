@@ -1,8 +1,6 @@
 {
   "spaceId": "ffrhttfighww",
   "environmentId": "master",
-  "managementToken": "CFPAT-0RGNkyHYOKRutNYYBsjS3qfIMRWH7vQahyZRvH7baKw",
-  "exportDir": "./contentful/",
   "saveFile": true,
   "contentFile": "export.json",
   "includeDrafts": false,
@@ -16,6 +14,5 @@
   "host": "api.contentful.com",
   "rawProxy": false,
   "maxAllowedLimit": 1000,
-  "errorLogFile": "./contentful/error.log",
   "useVerboseRenderer": false
 }
