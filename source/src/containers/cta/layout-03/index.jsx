@@ -1,5 +1,5 @@
 import defaultImage from "@assets/images/default.png";
-import BoxImage from "@components/box-image/layout-01";
+import BoxImage from "@components/box-image/layout-08";
 import BoxImage2 from "@components/box-large-image/layout-02";
 import FAQArea from "@containers/elements/accordion/section-02";
 import FullWideSlider from "@containers/elements/flexible-image-slider/full-wide-slider";
@@ -45,7 +45,7 @@ const CTAArea = ({ data,resourceData }) => {
             <div style={{float:"left",paddingLeft:"20px"}}>
                 <StyledAnchor onClick={() => navigate(-1)}>
                     {/* <i className="icon far fa-angle-left"></i> */}
-                    <svg t="1667186289168" class="icon" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="2811" width="48" height="48"><path d="M512 64C264.8 64 64 264.8 64 512s200.8 448 448 448 448-200.8 448-448S759.2 64 512 64z m0 832c-212 0-384-172-384-384s172-384 384-384 384 172 384 384-172 384-384 384z m158.4-610.4L444 512l226.4 226.4-44.8 45.6-272-272 272-272 44.8 45.6z" p-id="2812"></path></svg>
+                    <svg t="1667186289168" className="icon"  viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="2811" width="48" height="48"><path d="M512 64C264.8 64 64 264.8 64 512s200.8 448 448 448 448-200.8 448-448S759.2 64 512 64z m0 832c-212 0-384-172-384-384s172-384 384-384 384 172 384 384-172 384-384 384z m158.4-610.4L444 512l226.4 226.4-44.8 45.6-272-272 272-272 44.8 45.6z" p-id="2812"></path></svg>
                 </StyledAnchor>
             </div>
             <StyledSection>
@@ -119,24 +119,32 @@ const CTAArea = ({ data,resourceData }) => {
                                 </Heading>
                             }
                             {
-                                data?.type?.[0]?.product && data.type?.[0].product.filter((item)=>item.trademark != data.trademark).slice(0,3).map((item) => {
+                                data?.type?.[0]?.product && data.type?.[0].product.filter((item)=>item.trademark != data.trademark).slice(0,3).map((item,i) => {
                                         return (
-                                            <Col
-                                                lg={4}
-                                                md={6}
-                                                className="box-item"
-                                                key={item.id}
-                                            >
+                                            <Col lg={4} key={'col-item-'+i}>
                                                 <BoxImage
                                                     title={item.trademark}
-                                                    image=
-                                                    {                                         
-                                                        item.image==null ? {src: defaultImage} : {src: item.image.imageurl}
-                                                    }
+                                                    image={{src: item.image.imageurl}}
                                                     desc={item.summary}
                                                     path={`/apps/product/${item.key}`}
                                                 />
-                                            </Col>   
+                                            </Col>
+                                            // <Col
+                                            //     lg={4}
+                                            //     md={6}
+                                            //     className="box-item"
+                                            //     key={item.id}
+                                            // >
+                                            //     <BoxImage
+                                            //         title={item.trademark}
+                                            //         image=
+                                            //         {                                         
+                                            //             item.image==null ? {src: defaultImage} : {src: item.image.imageurl}
+                                            //         }
+                                            //         desc={item.summary}
+                                            //         path={`/apps/product/${item.key}`}
+                                            //     />
+                                            // </Col>   
                                         );
                                 })
                             }
@@ -247,7 +255,7 @@ const CTAArea = ({ data,resourceData }) => {
                         <Row style={{marginInlineStart:'20px',marginBottom:"20px",width:'200px'}}>
                             <Row>{t("Resource")}</Row>
                             <Row style={{color:"dodgerblue"}}>                                
-                                <Link  to="https://support.websoft9.com/docs/" style={{paddingLeft:'0px',marginLeft:'0px'}}> {t("Documentation")} </Link>
+                                <Link  to={`https://support.websoft9.com/docs/${data.key}`} style={{paddingLeft:'0px',marginLeft:'0px'}}> {t("Documentation")} </Link>
                             </Row>
                             <Row style={{color:"dodgerblue"}}>                               
                                 <Link  to="https://github.com/websoft9" style={{paddingLeft:'0px',marginLeft:'0px'}}> {t("GitHub")} </Link>

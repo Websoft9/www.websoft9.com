@@ -24,7 +24,7 @@ const HeroArea = ({ data }) => {
                                 </StyledSubtitle>
                             )}
                             {data?.texts && (
-                                <Text>{data.texts}</Text>
+                                <Text style={{fontSize:"20px"}}>{data.texts}</Text>
                             )}
                             {data?.buttons?.map(
                                 ({id, path, content, ...rest }) => (

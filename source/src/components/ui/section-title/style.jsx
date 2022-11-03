@@ -1,10 +1,7 @@
 import styled, {
     css,
-    device,
-    typography,
-    space,
-    themeGet,
-    layout,
+    device, layout, space,
+    themeGet, typography
 } from "@styled";
 import { allowedTags } from "@utils";
 
@@ -32,7 +29,8 @@ export const StyledTitle = styled.h2`
 `;
 
 export const StyledSubtitle = styled.h6`
-    color: ${themeGet("colors.silver")};
+    //color: ${themeGet("colors.silver")};
+    color:#696969;
     font-weight: 400;
     ${({ $layout }) =>
         $layout === 1 &&

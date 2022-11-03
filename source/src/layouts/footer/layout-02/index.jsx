@@ -5,9 +5,10 @@ import Text from "@ui/text";
 import { Col, Container, Row } from "@ui/wrapper";
 import cn from "clsx";
 import { graphql, StaticQuery } from "gatsby";
-import { StaticImage } from "gatsby-plugin-image";
 import { Trans, useI18next } from 'gatsby-plugin-react-i18next';
 import React from "react";
+import Logo1 from "../../../assets/images/logo/w9.svg";
+import Logo2 from "../../../assets/images/logo/源生云.svg";
 import {
     FooterBottom, FooterTop,
     FooterWidget, FooterWidgetList, FooterWrap, LogoWidget, StyledWidgetTitle,
@@ -124,17 +125,27 @@ const Footer = () => {
                                         <LogoWidget>
                                             {
                                                 language == "zh-CN" ? 
-                                                <StaticImage
-                                                    src="../../../assets/images/logo/源生云.svg"
-                                                    alt="logo"
-                                                    // width={180}
+                                                // <StaticImage
+                                                //     src="../../../assets/images/logo/源生云.svg"
+                                                //     alt="logo"
+                                                //     // width={180}
+                                                //     height={50}
+                                                // />
+                                                <img
+                                                    src={Logo2}
+                                                    alt="websoft9"
                                                     height={50}
                                                 />
                                                 :
-                                                <StaticImage
-                                                    src="../../../assets/images/logo/w9.svg"
-                                                    alt="logo"
-                                                    // width={180}
+                                                // <StaticImage
+                                                //     src="../../../assets/images/logo/w9.svg"
+                                                //     alt="logo"
+                                                //     // width={180}
+                                                //     height={50}
+                                                // />
+                                                <img
+                                                    src={Logo1}
+                                                    alt="源生云"
                                                     height={50}
                                                 />
                                             }

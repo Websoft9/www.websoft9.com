@@ -10,8 +10,6 @@ import Nav from 'react-bootstrap/Nav';
 import Row from 'react-bootstrap/Row';
 
 const TabArea = ({data}) => {
-    //const childArr = Children.toArray(children);
-
     return (
         <StyledTab>
             <Container>

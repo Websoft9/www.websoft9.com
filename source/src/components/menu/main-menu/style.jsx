@@ -1,4 +1,4 @@
-import styled, { css, themeGet, device } from "@styled";
+import styled, { css, device, themeGet } from "@styled";
 import Anchor from "@ui/anchor";
 
 export const StyledMainMenu = styled.nav`
@@ -227,7 +227,7 @@ export const StyledMegamenu = styled.ul`
         padding-left: 30px;
         padding-right: 15px;
         &:first-child{
-            background-color: #f4efe9;
+            background-color: #F8F8F8;
             width:100%;
         }
     }

@@ -1,7 +1,8 @@
 import styled, { device, themeGet } from "@styled";
 
 export const HeroWrapper = styled.section`
-    background-color: #f4efe9;
+    // background-color: #f4efe9;
+    background-color: #F8F8F8;
 `;
 
 export const HeroTextBox = styled.div`
@@ -78,9 +79,9 @@ export const Heading = styled.h5`
     margin-block-start: 10px;
     margin-block-end: 10px;
     // text-transform: uppercase;
-    font-size: 20px;
+    font-size: 18px;
     letter-spacing: 3px;
     line-height: 2.43;
     text-align:center;
-    color:#ababab;
+    color:#696969;
 `;

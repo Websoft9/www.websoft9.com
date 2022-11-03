@@ -1,10 +1,10 @@
-import React from "react";
-import { Link,graphql }  from  'gatsby';
 import Seo from "@components/seo";
-import Layout from "@layout";
-import Header from "@layout/header/layout-02";
-import Footer from "@layout/footer/layout-02";
 import ProductDetailArea from "@containers/cta/layout-03";
+import Layout from "@layout";
+import Footer from "@layout/footer/layout-02";
+import Header from "@layout/header/layout-02";
+import { graphql } from 'gatsby';
+import React from "react";
 
 const AppDetailTemplate = ({ location,data }) => {
     return (
@@ -56,6 +56,7 @@ export const query = graphql`
         allContentfulProduct(filter: {node_locale: {eq: $language}, key: {eq: $slug}}) {
             nodes {
                 id
+                key
                 title
                 trademark
                 review

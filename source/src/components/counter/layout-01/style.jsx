@@ -7,7 +7,8 @@ export const FunFactTitle = styled.h5`
 `;
 
 export const FunFactMiddle = styled.h2`
-    color: #2977C9;
+    //color: #2977C9;
+    color:#086AD8;
     font-size: 64px;
     line-height: 1.2;
     //margin-block-end: 10px;

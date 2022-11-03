@@ -42,7 +42,7 @@ const IndexPage = ({ location, data }) => {
 
                 <VerticalTabArea data={ data.allContentfulPage.nodes[0].content[5] } />
 
-                <CounterArea data={data.allContentfulPage.nodes[0].content[6]} />
+                <CounterArea data={data.allContentfulPage.nodes[0].content[6]} style={{ backgroundColor:'#F8F8F8'}}/>
 
                 <TestimonialArea data={data.allContentfulPage.nodes[0].content[7]} />
 

@@ -1,9 +1,9 @@
-import styled, { themeGet, device } from "@styled";
+import styled, { device, themeGet } from "@styled";
 
 export const HeroWrapper = styled.section`
     //background-color: #f4efe9;
     //padding-block-start:100px;
-    padding-block-end:90px;
+    //padding-block-end:90px;
     & > div {
         padding-left:0px;
         padding-right:0px;

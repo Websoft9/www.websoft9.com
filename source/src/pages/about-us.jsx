@@ -29,7 +29,7 @@ const AboutUsPage = ({ location, data }) => {
 
                 <CultureArea data={data.allContentfulPage.nodes[0].content[4]} />
 
-                <CounterArea data={data.allContentfulPage.nodes[0].content[5]} />
+                <CounterArea data={data.allContentfulPage.nodes[0].content[5]} style={{ backgroundColor:"white"}}/>
 
                 <SectionTwo data={data.allContentfulPage.nodes[0].content[6]} />
 

@@ -2,6 +2,7 @@ import Image from "@ui/image";
 import Text from "@ui/text";
 import { Col, Container, Row } from "@ui/wrapper";
 import cn from "clsx";
+import { Link } from 'gatsby';
 import { useTranslation } from 'gatsby-plugin-react-i18next';
 import React from "react";
 import {
@@ -17,7 +18,8 @@ const HeroArea = ({ data,className }) => {
                     <Col md={6}>
                     <HeroTextBox>
                             {data?.catalogTitle && (
-                                <Text style={{color:"dodgerblue"}}>{data.catalogTitle}</Text>
+                                // <Text style={{color:"dodgerblue"}}>{data.catalogTitle}</Text>
+                                <Link to={`/services#${data.catalogKey}`} style={{color:"dodgerblue"}}>{data.catalogTitle}</Link>
                             )}
                             {data?.headings && (
                                 <StyledSubtitle as="h3">

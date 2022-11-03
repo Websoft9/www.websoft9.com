@@ -9,7 +9,7 @@ import remarkGfm from 'remark-gfm';
 import { StyledSection } from "./style";
 // import BoxImage from "@components/box-image/layout-02";
 import defaultImage from "@assets/images/default.png";
-import BoxImage2 from "@components/box-image/layout-01";
+import BoxImage2 from "@components/box-image/layout-08";
 import BoxImage from "@components/box-large-image/layout-02";
 import PartnerArea from "@containers/elements/client-logo/section-03";
 import HeroImageArea from "@containers/hero/layout-06";
@@ -150,24 +150,32 @@ const CTAArea = ({ data,relatedReading,location }) => {
                 <Row id="id-anchorpoint-4" mb="90px">
                     <Heading as="h4" mb="40px" textAlign="left">{t("Related Applications")}</Heading>
                     {
-                        data?.products && data?.products.slice(0,4).map((item) => {
+                        data?.products && data?.products.slice(0,4).map((item,i) => {
                             return (
-                                <Col
-                                    lg={3}
-                                    md={6}
-                                    className="box-item"
-                                    key={item.id}
-                                >
-                                    <BoxImage2
-                                        title={item.trademark}
-                                        image=
-                                        {                                         
-                                            item.image==null ? {src: defaultImage} : {src: item.image.imageurl}
-                                        }
-                                        desc={item.description}
-                                        path={`/apps/product/${item.key}`}
-                                    />
-                                </Col>   
+                                <Col lg={3} key={'col-item-'+i}>
+                                <BoxImage2
+                                    title={item.trademark}
+                                    image={{src: item.image.imageurl}}
+                                    desc={item.description}
+                                    path={`/apps/product/${item.key}`}
+                                />
+                                </Col>
+                                // <Col
+                                //     lg={3}
+                                //     md={6}
+                                //     className="box-item"
+                                //     key={item.id}
+                                // >
+                                //     <BoxImage2
+                                //         title={item.trademark}
+                                //         image=
+                                //         {                                         
+                                //             item.image==null ? {src: defaultImage} : {src: item.image.imageurl}
+                                //         }
+                                //         desc={item.description}
+                                //         path={`/apps/product/${item.key}`}
+                                //     />
+                                // </Col>   
                             );
                         })
                     }

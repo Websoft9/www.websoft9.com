@@ -120,10 +120,10 @@ const Section = () => {
         let allData = null;
 
         useEffect(()=>{
-            window.localStorage.setItem("AllData",JSON.stringify(allServicesData));
+            window.sessionStorage.setItem("AllData",JSON.stringify(allServicesData));
         },[])
 
-        typeof window !== 'undefined' && (allData =JSON.parse(window.localStorage.getItem("AllData")));
+        typeof window !== 'undefined' && (allData =JSON.parse(window.sessionStorage.getItem("AllData")));
 
         const handleChange = (e,index) => {
             const value = e.target.value;

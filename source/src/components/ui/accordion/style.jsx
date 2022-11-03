@@ -1,4 +1,4 @@
-import styled, { css, device, themeGet, space } from "@styled";
+import styled, { css, device, space, themeGet } from "@styled";
 
 export const StyledAccordion = styled.div`
     ${space};
@@ -22,7 +22,8 @@ export const StyledAccordion = styled.div`
                 }
                 &-button {
                     color: ${themeGet("colors.white")};
-                    background: ${themeGet("colors.secondary")};
+                    //background: ${themeGet("colors.secondary")};
+                    background: #086AD8;
                     border-top-left-radius: 5px;
                     border-top-right-radius: 5px;
                     border: none;
@@ -100,6 +101,7 @@ export const StyledAccordion = styled.div`
                     width: 100%;
                     text-align: left;
                     color: ${themeGet("colors.primary")};
+                    //color:#086AD8;
 
                     padding: 20px 25px;
                     position: relative;

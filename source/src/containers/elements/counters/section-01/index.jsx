@@ -4,9 +4,9 @@ import React from "react";
 import { Container } from "react-bootstrap";
 import { FunFactGrid, FunFactGridWrap, SectionWrap } from "./style";
 
-const Section = ({data}) => {
+const Section = ({data,...rest}) => {
     return (
-        <SectionWrap>
+        <SectionWrap {...rest}>
             <Container>
                 <SectionTitle
                     mb={["50px", null, null, "60px"]}

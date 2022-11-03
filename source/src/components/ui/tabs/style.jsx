@@ -21,7 +21,7 @@ export const StyledTabs = styled(Tabs)`
                     flex: 1 0 auto;
                 }
                 &-link {
-                    font-size: 14px;
+                    font-size: 18px;
                     font-weight: 500;
                     line-height: 1.3;
                     //text-transform: uppercase;

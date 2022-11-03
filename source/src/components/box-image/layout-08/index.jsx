@@ -11,7 +11,7 @@ const BoxImage = ({ image, title, desc, path,className, ...restProps }) => {
     return (
         <BoxImgWrapper className={className} {...restProps}>          
                 <BoxImgInner>
-                    <Anchor path={path} style={{display:'block'}}>
+                    <Anchor  path={path} style={{display:'block'}}>
                         {image?.src && (
                             <BoxImgMediaWrap>
                                 <Image src={image.src} alt={image?.alt || title} />

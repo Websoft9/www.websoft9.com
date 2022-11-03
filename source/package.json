@@ -15,6 +15,7 @@
     "clean": "gatsby clean"
   },
   "dependencies": {
+    "@babel/runtime": "^7.19.4",
     "@emotion/react": "^11.10.0",
     "@emotion/styled": "^11.10.0",
     "@material-design-icons/svg": "^0.11.9",
@@ -26,6 +27,8 @@
     "clsx": "^1.1.1",
     "disqus-react": "^1.1.2",
     "gatsby": "^4.11.1",
+    "gatsby-plugin-anchor-links": "^1.2.1",
+    "gatsby-plugin-baidu-analytics": "^2.2.0",
     "gatsby-plugin-breadcrumb": "^12.3.1",
     "gatsby-plugin-image": "^2.18.0",
     "gatsby-plugin-manifest": "^4.11.1",
@@ -47,6 +50,7 @@
     "lodash.get": "^4.4.2",
     "markdown-navbar": "^1.4.3",
     "markdown-to-jsx": "^7.1.7",
+    "qrcode.react": "^3.0.2",
     "react": "^17.0.2",
     "react-bootstrap": "^2.2.2",
     "react-circular-progressbar": "^2.0.4",
@@ -69,14 +73,7 @@
     "swiper": "^8.0.7",
     "tinycolor2": "^1.4.2",
     "video-react": "^0.15.0",
-    "vivus": "^0.4.6",
-    "gatsby-plugin-baidu-analytics":"^2.2.0",
-    "gatsby-plugin-anchor-links":"^1.2.1",
-    "gatsby-plugin-typesense":"^0.3.1",
-    "typesense-instantsearch-adapter":"^2.4.2",
-    "react-instantsearch-dom":"^6.37.0",
-    "@babel/runtime":"^7.19.4",
-    "qrcode.react":"^3.0.2"
+    "vivus": "^0.4.6"
   },
   "devDependencies": {
     "@babel/core": "7.13.15",

@@ -1,7 +1,7 @@
-import styled, { themeGet, device } from "@styled";
+import styled, { device, themeGet } from "@styled";
 
 export const HeroWrapper = styled.section`
-    background-color: #f4efe9;
+    background-color: #F8F8F8;
 `;
 
 export const HeroTextBox = styled.div`

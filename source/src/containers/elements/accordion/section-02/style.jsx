@@ -1,4 +1,4 @@
-import styled, { device,css, themeGet, space} from "@styled";
+import styled, { css, device, space, themeGet } from "@styled";
 
 export const SectionWrap = styled.section`
     padding-block-start: 44px;
@@ -35,7 +35,8 @@ export const StyledAccordion = styled.div`
                 }
                 &-button {
                     color: ${themeGet("colors.white")};
-                    background: ${themeGet("colors.secondary")};
+                    //background: ${themeGet("colors.secondary")};
+                    background: #086AD8;
                     border-top-left-radius: 5px;
                     border-top-right-radius: 5px;
                     border: none;

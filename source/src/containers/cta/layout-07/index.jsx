@@ -1,5 +1,5 @@
 import defaultImage from "@assets/images/default.png";
-import BoxImage2 from "@components/box-image/layout-01";
+import BoxImage2 from "@components/box-image/layout-08";
 import BoxImage from "@components/box-large-image/layout-02";
 import FullWideSlider from "@containers/elements/flexible-image-slider/full-wide-slider3";
 import HeroArea from "@containers/hero/layout-07";
@@ -26,6 +26,7 @@ const CTAArea = ({ data, location }) => {
     const pathName = location.pathname;
 
     const heroData = {
+        catalogKey:data.catalog[0].key,
         catalogTitle: data.catalog[0].title,
         headings: data.title,
         texts: data.summary,
@@ -139,7 +140,7 @@ const CTAArea = ({ data, location }) => {
                     </Row>
                     <Row alignItems="center"
                         textAlign={["center", null, null, "left"]}
-                        style={{ backgroundColor: "rgb(255 255 250)" }}>
+                        style={{ backgroundColor: "#F8F8F8" }}>
                         <Col lg={9}>
                             <ReactMarkdown remarkPlugins={[remarkGfm]}>
                                 {data.BuyRemark?.BuyRemark}
@@ -190,24 +191,32 @@ const CTAArea = ({ data, location }) => {
                     </Row>
                     <Row>
                         {
-                            data?.products && data.products?.slice(0, 3).map((item) => {
+                            data?.products && data.products?.slice(0, 4).map((item,i) => {
                                 return (
-                                    <Col
-                                        lg={4}
-                                        md={6}
-                                        className="box-item"
-                                        key={item.id}
-                                    >
-                                        <BoxImage2
-                                            title={item.trademark}
-                                            image=
-                                            {
-                                                item.image == null ? { src: defaultImage } : { src: item.image.imageurl }
-                                            }
-                                            desc={item.summary}
-                                            path={`/apps/product/${item.key}`}
-                                        />
+                                    <Col lg={3} key={'col-item-'+i}>
+                                    <BoxImage2
+                                        title={item.trademark}
+                                        image={{src: item.image.imageurl}}
+                                        desc={item.summary}
+                                        path={`/apps/product/${item.key}`}
+                                    />
                                     </Col>
+                                    // <Col
+                                    //     lg={4}
+                                    //     md={6}
+                                    //     className="box-item"
+                                    //     key={item.id}
+                                    // >
+                                    //     <BoxImage2
+                                    //         title={item.trademark}
+                                    //         image=
+                                    //         {
+                                    //             item.image == null ? { src: defaultImage } : { src: item.image.imageurl }
+                                    //         }
+                                    //         desc={item.summary}
+                                    //         path={`/apps/product/${item.key}`}
+                                    //     />
+                                    // </Col>
                                 );
                             })
                         }
