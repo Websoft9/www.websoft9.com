@@ -8,7 +8,7 @@ export const PopupVideoWrap = styled.div`
     img {
         border-radius: ${themeGet("radii.md")};
         width: 100% !important;
-        height:429px;
+        height:450px;
         object-fit:cover;
     }
 `;

@@ -24,6 +24,8 @@ const IndexPage = ({ location, data }) => {
             <main className="site-wrapper-reveal">
                 <HeroArea data={data.allContentfulPage.nodes[0].content[0]} />
 
+                <PartnerArea data={ data.allContentfulPage.nodes[0].content[3] } />
+
                 <TabArea data={data.allContentfulPage.nodes[0].content[1]}>
                     {
                         data.allContentfulPage.nodes[0].content[1].features.map((item)=>{
@@ -35,9 +37,7 @@ const IndexPage = ({ location, data }) => {
                 </TabArea>
 
                 <SolutionArea data ={ data.allContentfulPage.nodes[0].content[2] } />
-
-                <PartnerArea data={ data.allContentfulPage.nodes[0].content[3] } />
-
+                
                 <ITServicesArea data={ data.allContentfulPage.nodes[0].content[4] }/>
 
                 <VerticalTabArea data={ data.allContentfulPage.nodes[0].content[5] } />
