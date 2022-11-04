@@ -36,7 +36,7 @@ const IndexPage = ({ location, data }) => {
                     }
                 </TabArea>
 
-                <SolutionArea data ={ data.allContentfulPage.nodes[0].content[2] } />
+                <SolutionArea data ={ data.allContentfulPage.nodes[0].content[2] } style={{ backgroundColor:'#ffffff'}}/>
                 
                 <ITServicesArea data={ data.allContentfulPage.nodes[0].content[4] }/>
 

@@ -10,7 +10,7 @@ import ListItemText from '@mui/material/ListItemText';
 import Heading from "@ui/heading";
 import { Link } from 'gatsby';
 import { useI18next, useTranslation } from 'gatsby-plugin-react-i18next';
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import { Col, Container, Row } from "react-bootstrap";
 import { ListGroupWrap, SectionWrap } from "./style";
 
@@ -18,20 +18,30 @@ import { ListGroupWrap, SectionWrap } from "./style";
 const Section = ({ cataLogData,productsData,currentPage,numberOfPages,rootPage }) => {
     const { t } = useTranslation();
     const {language, languages, changeLanguage } = useI18next();
+    var catalogArray  = {};
+    // cataLogData.map((item)=>{
+    //     catalogArray[item.key] = false;
+    // })
+    var openIndex = typeof window !== 'undefined' && (window.sessionStorage.getItem("openIndex") == null ? "all" : window.sessionStorage.getItem("openIndex"));
+    //alert(openIndex)
+    cataLogData.map((item)=>{
+        catalogArray[item.key] = openIndex == item.key ? true: false;
+    })
+    
+    const [open, setOpen] = useState(catalogArray);
 
-    const [open, setOpen] = useState(new Array(cataLogData.length).fill(false));
-
-    useEffect(()=>{
-        if(typeof window !== 'undefined'){
-            if(window.sessionStorage.getItem("openIndex") != null){
-                var tmp = window.sessionStorage.getItem("openIndex");
-                const updatedOpen = open.map((item, index) =>
-                    tmp == index ? !item : item
-                );
-                setOpen(updatedOpen);
-            }
-        }
-    },[]);
+    //  useEffect(()=>{
+    //     if(typeof window !== 'undefined'){
+    //         if(window.sessionStorage.getItem("openIndex") != null){
+    //             var tmp = window.sessionStorage.getItem("openIndex");
+    //             var updatedOpen = {};
+    //             for(var key in open){
+    //                 updatedOpen[key] = tmp == key ? !open[key] :open[key];                  
+    //             }
+    //             setOpen(updatedOpen);
+    //         }
+    //     }
+    //  },[]);
 
     var tmpIndex = typeof window !== 'undefined' && (window.sessionStorage.getItem("selectedIndex") == null ? "all" : window.sessionStorage.getItem("selectedIndex"));
     const [selectedIndex, setSelectedIndex] = useState(tmpIndex);
@@ -45,9 +55,10 @@ const Section = ({ cataLogData,productsData,currentPage,numberOfPages,rootPage }
 
 
     const handleClick = (position) => {
-        const updatedOpen = open.map((item, index) =>
-            position == index ? !item : item
-        );
+        var updatedOpen = {};
+        for(var key in open){
+            updatedOpen[key] = position == key ? !open[key] :open[key];           
+        }
         setOpen(updatedOpen);
     };
 
@@ -83,54 +94,37 @@ const Section = ({ cataLogData,productsData,currentPage,numberOfPages,rootPage }
                                 </ListItemButton>
                                 {
                                     cataLogData.map((item,i)=>{
-                                        if(item.base_catalog == null){
-                                            const pnums = item.product!=null?item.product.length:0;
-                                            return(
-                                                <ListItemButton key={item.id}  selected={selectedIndex === item.key} onClick={(event) => handleListItemClick(event, item.key)}>
-                                                    <Link to={`/app-catalog/${item.id}`}> {item.title+"("+pnums+")"} </Link>
+                                        // 统计子目录下面的产品数量
+                                        var subTotal = 0;
+                                        item.base_catalog.map((subitem)=>{
+                                            const subpnums = subitem.product!=null?subitem.product.length:0;
+                                            subTotal += subpnums;
+                                        })
+                                        return(
+                                            <React.Fragment key={item.id}>
+                                                <ListItemButton key={"base_catalog"+item.id}  onClick={()=>handleClick(item.key)}>
+                                                    <ListItemText primary={item.title+"("+subTotal+")"} />
+                                                    { open[item.key] ? <ExpandLess /> : <ExpandMore />}
                                                 </ListItemButton>
-                                            );
-                                        }
-                                        else{                                            
-                                                // const [open, setOpen] = React.useState(false);
-                                                // const handleClick = () => {
-                                                //     setOpen(!open);
-                                                // };
-
-
-
-                                                // 统计子目录下面的产品数量
-                                                var subTotal = 0;
-                                                item.base_catalog.map((subitem)=>{
-                                                    const subpnums = subitem.product!=null?subitem.product.length:0;
-                                                    subTotal += subpnums;
-                                                })
-                                            return(
-                                                <React.Fragment key={item.id}>
-                                                    <ListItemButton key={"base_catalog"+item.id}  onClick={()=>handleClick(i)}>
-                                                        <ListItemText primary={item.title+"("+subTotal+")"} />
-                                                        {open[i] ? <ExpandLess /> : <ExpandMore />}
-                                                    </ListItemButton>
-                                                    <Collapse key={"Collapse"+item.id} in={open[i]} timeout="auto" unmountOnExit>
-                                                        <List key={"List"+item.id}  component="div" disablePadding>
-                                                        {
-                                                            item.base_catalog.map((subitem,j)=>{
-                                                                const subpnums = subitem.product!=null?subitem.product.length:0;
-                                                                return (
-                                                                    <ListItemButton key={subitem.id+j}  sx={{ pl: 4 }} 
-                                                                        selected={selectedIndex === subitem.key}
-                                                                        onClick={(event) => handleListItemClick(event, subitem.key,i)}>
-                                                                            
-                                                                        <Link  to={`/app-catalog/${subitem.key}`}> {subitem.title+"("+subpnums+")"} </Link>
-                                                                    </ListItemButton>
-                                                                )
-                                                            })
-                                                        }
-                                                        </List>
-                                                    </Collapse>
-                                                </React.Fragment>
-                                            );
-                                        }
+                                                <Collapse key={"Collapse"+item.id} in={ open[item.key] } timeout="auto" unmountOnExit>
+                                                    <List key={"List"+item.id}  component="div" disablePadding>
+                                                    {
+                                                        item.base_catalog.map((subitem,j)=>{
+                                                            const subpnums = subitem.product!=null?subitem.product.length:0;
+                                                            return (
+                                                                <ListItemButton key={subitem.id+j}  sx={{ pl: 4 }} 
+                                                                    selected={selectedIndex === subitem.key}
+                                                                    onClick={(event) => handleListItemClick(event, subitem.key,item.key)}>
+                                                                        
+                                                                    <Link  to={`/app-catalog/${subitem.key}`}> {subitem.title+"("+subpnums+")"} </Link>
+                                                                </ListItemButton>
+                                                            )
+                                                        })
+                                                    }
+                                                    </List>
+                                                </Collapse>
+                                            </React.Fragment>
+                                        );
                                     })
                                 }
                             </List>

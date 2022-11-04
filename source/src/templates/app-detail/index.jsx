@@ -78,6 +78,9 @@ export const query = graphql`
                             imageurl
                         }
                     }
+                    catalog {
+                        key
+                    }
                 }
                 screenshots{
                     id

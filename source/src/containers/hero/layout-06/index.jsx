@@ -63,7 +63,7 @@ const HeroArea = ({ data,imageAlign }) => {
                         </>
                        :
                        <>
-                            <Col md={6}>
+                        <Col md={6}>
                             <HeroTextBox>
                                     {data?.title && (
                                         <StyledSubtitle as="h5">
@@ -105,7 +105,7 @@ const HeroArea = ({ data,imageAlign }) => {
                                         </ImageBoxTwo>
                                     )}
                                 </ImageBoxWrap>
-                            </Col>
+                        </Col>
                         </>
                     }
                 </Row>

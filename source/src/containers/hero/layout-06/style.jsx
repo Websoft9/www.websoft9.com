@@ -12,7 +12,7 @@ export const HeroWrapper = styled.section`
 
 export const HeroTextBox = styled.div`
     max-width: 605px;
-    width: 100%;
+    //width: 100%;
     padding-inline-start: 0;
     margin-block-start: 50px;
     margin-block-end: 20px;
@@ -32,28 +32,18 @@ export const HeroTextBox = styled.div`
 export const ImageBoxWrap = styled.div`
     position: relative;
     margin-inline: auto;
-    max-width: 370px;
+    max-width: 605px;
+    text-align: center;
 
     ${device.medium} {
         padding-block-start: 160px;
-        max-width: 100%;
+        //max-width: 100%;
         margin-inline: 0;
+        text-align: left;
     }
     ${device.large} {
         margin-block-start: 20px;
         padding-block-start: 0;
-    }
-`;
-
-export const ImageBoxOne = styled.div`
-    position: absolute;
-    top: 10px;
-    width: 100%;
-    max-width: 260px;
-    margin-inline: auto;
-    ${device.medium} {
-        max-width: 100%;
-        margin-inline: 0;
     }
 `;
 

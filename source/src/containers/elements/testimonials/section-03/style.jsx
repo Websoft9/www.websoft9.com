@@ -1,7 +1,7 @@
 import styled, { device } from "@styled";
 
 export const SectionWrap = styled.div`
-    background-color: #f6f2ed;
+    background-color: #F8F8F8;
     padding-block: 60px;
     padding-inline: 15px;
     ${device.medium} {

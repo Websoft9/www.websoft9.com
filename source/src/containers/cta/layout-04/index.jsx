@@ -6,7 +6,7 @@ import { useTranslation } from 'gatsby-plugin-react-i18next';
 import React from "react";
 import { HeroTextBox, StyledBG, StyledSection, StyledSubtitle } from "./style";
 
-const CTAArea = ({ data }) => {
+const CTAArea = ({ data}) => {
     const { t } = useTranslation();
 
     return (

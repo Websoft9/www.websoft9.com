@@ -1,9 +1,9 @@
-import styled, { device, themeGet } from "@styled";
+import styled, { device } from "@styled";
 
 export const StyledTab = styled.section`
     padding-block-start: 60px;
     padding-block-end: 55px;
-    // background-color: ${themeGet("colors.gray.100")};
+    background-color:#F8F8F8;
     ${device.medium} {
         padding-block-start: 80px;
         padding-block-end: 76px;

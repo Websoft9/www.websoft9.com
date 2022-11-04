@@ -20,6 +20,11 @@ import { HeroTextBox, ImageBoxTwo, StyledAnchor, StyledSection, StyledSubtitle, 
 const CTAArea = ({ data,resourceData }) => {
     const { t } = useTranslation();
 
+    const handleClick = (subkey,key) => {
+        window.sessionStorage.setItem("openIndex",key);
+        window.sessionStorage.setItem("selectedIndex",subkey);
+    };
+
     const ratingItems = [];
     const disableRating = [];
     for (let i = 1; i <= data.review; i++) {
@@ -185,7 +190,7 @@ const CTAArea = ({ data,resourceData }) => {
                                 data?.type && data.type.map((item)=>{
                                     return (
                                         <Row style={{color:"dodgerblue"}} key={item.id}>                                           
-                                            <Link to={`/app-catalog/${item.key}`} style={{paddingLeft:'0px',marginLeft:'0px'}}>{item.title} </Link>
+                                            <Link to={`/app-catalog/${item.key}`} onClick={()=>handleClick(item.key,item.catalog[0].key)} style={{paddingLeft:'0px',marginLeft:'0px'}}>{item.title} </Link>
                                         </Row>
                                     );
                                 })

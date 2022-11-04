@@ -27,7 +27,7 @@ const CareersPage = ({ location, data }) => {
                 
                 <IdeaArea data={data.allContentfulPage.nodes[0].content[4]} lgSize={4}/>
 
-                <CtaArea data={data.allContentfulPage.nodes[0].content[5]}  /> 
+                <CtaArea data={data.allContentfulPage.nodes[0].content[5]} /> 
             </main>
 
             <Footer />

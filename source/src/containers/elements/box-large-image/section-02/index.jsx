@@ -6,10 +6,10 @@ import { useTranslation } from 'gatsby-plugin-react-i18next';
 import React from "react";
 import { SectionWrap } from "./style";
 
-const BoxSection = ({data}) => {
+const BoxSection = ({data,...rest}) => {
     const { t } = useTranslation();
     return (
-        <SectionWrap>
+        <SectionWrap {...rest}>
             <Container>
                 {
                     data?.texts && 
