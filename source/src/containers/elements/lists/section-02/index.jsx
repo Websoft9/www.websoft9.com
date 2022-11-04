@@ -80,7 +80,7 @@ const Section = ({ cataLogData,productsData,marketplaceData,currentPage,numberOf
                                             const pnums = item.product!=null?item.product.length:0;
                                             return(
                                                 <ListItemButton key={"catalog"+item.id}  selected={selectedIndex === item.key} onClick={(event) => handleListItemClick(event, item.key)}>
-                                                    <Link  to={`/app-catalog/${item.id}`}> {item.title+"("+pnums+")"} </Link>
+                                                    <Link  to={`/apps/${item.id}`}> {item.title+"("+pnums+")"} </Link>
                                                 </ListItemButton>
                                             );
                                         }
@@ -111,7 +111,7 @@ const Section = ({ cataLogData,productsData,marketplaceData,currentPage,numberOf
                                                                 return (
                                                                     <ListItemButton key={subitem.id+j} sx={{ pl: 4 }} selected={selectedIndex === subitem.key}
                                                                     onClick={(event) => {handleListItemClick(event, subitem.key);setOpen(false)}}>
-                                                                        <Link  to={`/app-catalog/${subitem.key}`}> {subitem.title+"("+subpnums+")"} </Link>
+                                                                        <Link  to={`/apps/${subitem.key}`}> {subitem.title+"("+subpnums+")"} </Link>
                                                                     </ListItemButton>
                                                                 )
                                                             })

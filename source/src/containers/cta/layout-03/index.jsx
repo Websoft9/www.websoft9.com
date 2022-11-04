@@ -131,7 +131,7 @@ const CTAArea = ({ data,resourceData }) => {
                                                     title={item.trademark}
                                                     image={{src: item.image.imageurl}}
                                                     desc={item.summary}
-                                                    path={`/apps/product/${item.key}`}
+                                                    path={`/apps/${item.key}`}
                                                 />
                                             </Col>
                                             // <Col
@@ -190,7 +190,7 @@ const CTAArea = ({ data,resourceData }) => {
                                 data?.type && data.type.map((item)=>{
                                     return (
                                         <Row style={{color:"dodgerblue"}} key={item.id}>                                           
-                                            <Link to={`/app-catalog/${item.key}`} onClick={()=>handleClick(item.key,item.catalog[0].key)} style={{paddingLeft:'0px',marginLeft:'0px'}}>{item.title} </Link>
+                                            <Link to={`/apps/${item.key}`} onClick={()=>handleClick(item.key,item.catalog[0].key)} style={{paddingLeft:'0px',marginLeft:'0px'}}>{item.title} </Link>
                                         </Row>
                                     );
                                 })
@@ -238,7 +238,7 @@ const CTAArea = ({ data,resourceData }) => {
                                 data?.component && data.component.map((item)=>{
                                     return (
                                         <Row style={{color:"dodgerblue"}} key={item}>
-                                            <Link to={`/apps/product/${item.key}`} style={{paddingLeft:'0px',marginLeft:'0px'}}>{item.trademark} </Link>
+                                            <Link to={`/apps/${item.key}`} style={{paddingLeft:'0px',marginLeft:'0px'}}>{item.trademark} </Link>
                                         </Row>
                                     );
                                 })

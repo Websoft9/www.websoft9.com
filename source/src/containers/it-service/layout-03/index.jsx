@@ -18,7 +18,7 @@ const ServiceArea = ({ data, ...rest }) => {
                                         title={feature.trademark}
                                         image={{src: feature.image.imageurl}}
                                         desc={feature.description}
-                                        path={`/apps/product/${feature.key}`}
+                                        path={`/apps/${feature.key}`}
                                     />
                                 </Col>
                             );

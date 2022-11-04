@@ -111,9 +111,9 @@ exports.createPages = async ({ graphql, actions }) => {
 
                 if(numberOfPages==0){
                     const currentPage = 1
-                    const rootPage =`app-catalog/${subCatalog.key}`;
+                    const rootPage =`apps/${subCatalog.key}`;
                     createPage({
-                        path:`app-catalog/${subCatalog.key}`,
+                        path:`apps/${subCatalog.key}`,
                         component: path.resolve('./src/templates/app-catalog/index.jsx'),
                         context: {
                             catalog: subCatalog.key,
@@ -129,10 +129,10 @@ exports.createPages = async ({ graphql, actions }) => {
                 Array.from({ length: numberOfPages }).forEach((_, subCataLogIndex)=>{
                     const isFirstPage = subCataLogIndex === 0;
                     const currentPage = subCataLogIndex + 1;
-                    const rootPage = `/app-catalog/${subCatalog.key}`;
+                    const rootPage = `/apps/${subCatalog.key}`;
 
                     createPage({
-                        path: isFirstPage ? `app-catalog/${subCatalog.key}`:`app-catalog/${subCatalog.key}/${currentPage}`,
+                        path: isFirstPage ? `apps/${subCatalog.key}`:`apps/${subCatalog.key}/${currentPage}`,
                         component: path.resolve('./src/templates/app-catalog/index.jsx'),
                         context: {
                             catalog: subCatalog.key,
@@ -215,7 +215,7 @@ exports.createPages = async ({ graphql, actions }) => {
     // 根据模板创建产品详情页
     products.forEach((product)=>{
         createPage({
-            path:`apps/product/${product.key}`,
+            path:`apps/${product.key}`,
             component:path.resolve('./src/templates/app-detail/index.jsx'),
             context:{
                 slug:product.key
@@ -277,18 +277,4 @@ exports.createPages = async ({ graphql, actions }) => {
             }
         })
     })
-
-
-    // let soluationData  = result.data.allContentfulResource.nodes.filter(data=>data.type.key == "solution" ); //获取所有解决方案
-    // //根据模板创建解决方案详情页
-    // soluationData.forEach((soluation)=>{
-    //     createPage({
-    //         path:`resource-center/resource/${resource.slug}`,
-    //         component:path.resolve('./src/templates/resource-detail/index.jsx'),
-    //         context:{
-    //             slug:resource.slug
-    //         }
-    //     })
-    // })
-
 }

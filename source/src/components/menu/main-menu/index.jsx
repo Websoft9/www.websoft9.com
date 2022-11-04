@@ -107,7 +107,7 @@ const MainMenu = ({
                                                             ) => {
                                                                 var path = "/";                                                                                                                           
                                                                 if(megaSubitem.os !== undefined ){
-                                                                    path = "/apps/product/"+megaSubitem.key
+                                                                    path = "/apps/"+megaSubitem.key
                                                                 }
                                                                 else if(megaSubitem.slug !== undefined){
                                                                     path = "/solution/"+megaSubitem.slug;

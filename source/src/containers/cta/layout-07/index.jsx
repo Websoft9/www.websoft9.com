@@ -198,7 +198,7 @@ const CTAArea = ({ data, location }) => {
                                         title={item.trademark}
                                         image={{src: item.image.imageurl}}
                                         desc={item.summary}
-                                        path={`/apps/product/${item.key}`}
+                                        path={`/apps/${item.key}`}
                                     />
                                     </Col>
                                     // <Col

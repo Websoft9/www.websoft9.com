@@ -70,7 +70,7 @@ const CTAArea = ({ data,relatedReading,siteData }) => {
                                     {data.products && data.products.map((product,i)=>{
                                         return (
                                             <React.Fragment key={product.id}>
-                                                <Link key={product.id+i} to={`/apps/product/${product.key}`} style={{color:"dodgerblue"}}>{product.trademark}</Link>
+                                                <Link key={product.id+i} to={`/apps/${product.key}`} style={{color:"dodgerblue"}}>{product.trademark}</Link>
                                                 {'  '}
                                             </React.Fragment>
                                         );

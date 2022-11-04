@@ -116,7 +116,7 @@ const Section = ({ cataLogData,productsData,currentPage,numberOfPages,rootPage }
                                                                     selected={selectedIndex === subitem.key}
                                                                     onClick={(event) => handleListItemClick(event, subitem.key,item.key)}>
                                                                         
-                                                                    <Link  to={`/app-catalog/${subitem.key}`}> {subitem.title+"("+subpnums+")"} </Link>
+                                                                    <Link  to={`/apps/${subitem.key}`}> {subitem.title+"("+subpnums+")"} </Link>
                                                                 </ListItemButton>
                                                             )
                                                         })
