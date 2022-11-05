@@ -226,22 +226,6 @@ exports.createPages = async ({ graphql, actions }) => {
     const resourceData  = result.data.allContentfulResource.nodes; //获取所有资源(排除solution)
     const resourceTypesNumberOfPages = Math.ceil(resourceData.length / 2 / postsPerPage); //计算所有资源总记录条数（由于有中英文两种数据，在计算时除2） 
 
-    //根据模板对全部资源进行分页
-    // Array.from({ length: resourceTypesNumberOfPages }).forEach((_, index) => {
-    //     const isFirstPage = index === 0;
-    //     const currentPage = index + 1;
-    //     createPage({
-    //         path: isFirstPage ? "resource-center" :`resource-center/page/${currentPage}`,
-    //         component: path.resolve('./src/templates/resource-center/index.jsx'),
-    //         context: {
-    //             limit: postsPerPage,
-    //             skip: index * postsPerPage,
-    //             currentPage,
-    //             resourceTypesNumberOfPages,
-    //         },
-    //     });
-    // });
-
     // 根据模板创建资源详情页
     resourceData.forEach((resource)=>{
         if(resource.type.key == "solution"){
