@@ -79,17 +79,10 @@ jobs:
         with:
           path: ./source/public
           
-      - name: commit data
-        run: |
-          git config --global user.email "330282372@qqcom"
-          git config --global user.name "Tooy1011"
-          git add ./public
-          git commit -m "push the public directory" -a
-          
-      - name: Push changes
-        uses: ad-m/github-push-action@master
+      - id: push
+        uses: stefanzweifel/git-auto-commit-action@v4
         with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
+          commit_message: "update public"
           
           
 
