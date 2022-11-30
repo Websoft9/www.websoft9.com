@@ -7,6 +7,7 @@ export const LogoWrapper = styled.div`
     a {
         img {
             width: 160px;
+            height:40px;
         }
     }
 
