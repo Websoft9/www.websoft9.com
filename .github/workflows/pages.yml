@@ -79,10 +79,17 @@ jobs:
         with:
           path: ./source/public
           
-      - id: push
-        uses: stefanzweifel/git-auto-commit-action@v4
+      - name: add and commit
+        uses: EndBug/add-and-commit@v9
         with:
-          commit_message: "update public"
+          add: './source/public'
+          message: 'update public'
+          tag_push: '--force'
+          
+#       - id: push
+#         uses: stefanzweifel/git-auto-commit-action@v4
+#         with:
+#           commit_message: "update public"
           
           
 
