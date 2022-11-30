@@ -20,7 +20,7 @@ module.exports = {
         {
             id: 1,
             icon: "fab fa-github social-link-icon",
-            link: "https://github.com/",
+            link: "https://github.com/websoft9",
             title: "github",
         },
         {
