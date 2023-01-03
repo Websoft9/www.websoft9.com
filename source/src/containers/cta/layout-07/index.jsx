@@ -152,7 +152,7 @@ const CTAArea = ({ data, location }) => {
                                 {language == "zh-CN" ? "$" : "¥"}
                                 {data.pricing}
                             </Text>
-                            <Button m="7px" >{t("Get it Now")}</Button>
+                            <Button m="7px" path={`/demand/${data.title}`}>{t("Get it Now")}</Button>
                         </Col>
                     </Row>
                 </Row>

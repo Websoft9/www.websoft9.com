@@ -67,6 +67,7 @@ exports.createPages = async ({ graphql, actions }) => {
             nodes {
             id
             key
+            title
             catalog {
                 key
             }
@@ -261,4 +262,15 @@ exports.createPages = async ({ graphql, actions }) => {
             }
         })
     })
+
+    servicesData.forEach((service)=>{
+        createPage({
+            path:`/demand/${service.title}`,
+            component:path.resolve('./src/templates/service-demand/index.jsx'),
+            context:{
+                slug:service.title
+            }
+        })
+    })
+
 }
