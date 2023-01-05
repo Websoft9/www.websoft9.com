@@ -1,4 +1,3 @@
-# www.websoft9.com
 
 ## github pages about gatsby
 
