@@ -149,7 +149,7 @@ const CTAArea = ({ data, location }) => {
                         <Col lg={3} className="text-center">
                             <Text>{data.priceModel?.[0].name}</Text>
                             <Text fontSize="30px" fontWeight="bold">
-                                {language == "zh-CN" ? "$" : "¥"}
+                                {language == "zh-CN" ? "¥": "$" }
                                 {data.pricing}
                             </Text>
                             <Button m="7px" path={`/demand/${data.title}`}>{t("Get it Now")}</Button>
