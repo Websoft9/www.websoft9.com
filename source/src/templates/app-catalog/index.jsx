@@ -14,7 +14,9 @@ const AppCatalogTemplate = ({pageContext,location,data }) => {
     var cataLogs  = data.allContentfulBaseCatalog.nodes[0].base_catalog;
 
     cataLogs.map((item)=>{
-        item.base_catalog.sort(function(a,b){return a.position-b.position}) //对子目录根据position进行排序
+        if(item.base_catalog && item.base_catalog.length > 0){
+            item.base_catalog.sort(function(a,b){return a.position-b.position}) //对子目录根据position进行排序
+        }
     })
 
     cataLogs.sort(function(a,b){return a.position-b.position}) //对目录根据position进行排序
