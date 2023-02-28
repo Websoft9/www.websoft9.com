@@ -11,3 +11,9 @@
 
 打开：【Action】>【Deploy Gatsby site to Pages】>【Run workflow】
 
+## FAQ
+
+####  WebpackError:TypeError: Cannot read properties of null (reading 'sort')?
+
+可能存在 Base_catalog 中某个一级目录下没有二级目录
+
