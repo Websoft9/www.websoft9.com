@@ -54,3 +54,7 @@ Websoft9 面向企业用户提供基于云原生软件产品，商业形态是�
 - 全球访问
 - 云资源成本
 - 单点登录
+
+## 参考网站
+
+界面和内容结构参考了如下几个网站：contentful, budibase, platform.sh, gitlab, mingdao, bt, quickbase. procore
