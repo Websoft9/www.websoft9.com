@@ -2,7 +2,7 @@
 #
 # To get started with Gatsby see: https://www.gatsbyjs.com/docs/quick-start/
 #
-name: Deploy Gatsby site to Pages
+name: Deploy to Github Pages and Azure Storage
 
 on: 
   workflow_dispatch:
