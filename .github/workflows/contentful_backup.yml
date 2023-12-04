@@ -1,9 +1,10 @@
 name: contentful automic backup
 
 on: 
-   workflow_dispatch
-#   schedule:
-#   - cron: "0 8 * * 6"
+   workflow_dispatch:
+   schedule:
+    # 在每周五的 20:00 UTC 运行
+    - cron:  '0 20 * * 5'
 
 jobs:
   export:
