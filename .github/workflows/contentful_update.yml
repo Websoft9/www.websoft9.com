@@ -1,0 +1,35 @@
+name: Contentful Update
+
+on:
+ workflow_dispatch:
+    inputs:
+      content_type_id:
+        description: 'Contentful content type ID'
+        required: true
+      fields_to_update:
+        description: 'Fields to update as JSON string'
+        required: true
+
+jobs:
+  update_contentful:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v2
+
+      - name: Set up Python
+        uses: actions/setup-python@v2
+        with:
+          python-version: '3.8'
+
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install contentful_management
+
+      - name: Run script
+        env:
+          CONTENTFUL_ACCESS_TOKEN: ${{ secrets.CONTENTFUL_ACCESS_TOKEN }}
+          CONTENT_TYPE_ID: ${{ github.event.inputs.content_type_id }}
+          FIELDS_TO_UPDATE: ${{ github.event.inputs.fields_to_update }}
+        run: python your_script.py
