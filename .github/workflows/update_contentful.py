@@ -106,6 +106,7 @@ def update_entries(content_type_id, fields_to_update, update_conditions=None):
 # 读取环境变量
 content_type_id = os.getenv('CONTENT_TYPE_ID')
 fields_to_update = json.loads(os.getenv('FIELDS_TO_UPDATE'))
+update_conditions = json.loads(os.getenv(''))
 
 # 调用函数
 update_stats = update_entries(content_type_id, fields_to_update)
