@@ -36,4 +36,4 @@ jobs:
           CONTENT_TYPE_ID: ${{ github.event.inputs.content_type_id }}
           FIELDS_TO_UPDATE: ${{ github.event.inputs.fields_to_update }}
           UPDATE_CONDITIONS: ${{ github.event.inputs.update_conditions }}
-        run: python update_contentful.py
+        run: python contentful/update_contentful.py
