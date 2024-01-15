@@ -9,6 +9,9 @@ on:
       fields_to_update:
         description: 'Fields to update as JSON string'
         required: true
+      update_conditions:
+        description: 'Conditions to select entries for update as JSON string'
+        required: false
 
 jobs:
   update_contentful:
@@ -32,4 +35,5 @@ jobs:
           CONTENTFUL_ACCESS_TOKEN: ${{ secrets.CONTENTFUL_ACCESS_TOKEN }}
           CONTENT_TYPE_ID: ${{ github.event.inputs.content_type_id }}
           FIELDS_TO_UPDATE: ${{ github.event.inputs.fields_to_update }}
+          UPDATE_CONDITIONS: ${{ github.event.inputs.update_conditions }}
         run: python update_contentful.py
