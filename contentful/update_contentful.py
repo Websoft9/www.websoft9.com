@@ -41,12 +41,7 @@ def update_entries(content_type_id, fields_to_update, update_conditions=None):
         query = {'content_type': content_type_id}
         if update_conditions:
             for field, value in update_conditions.items():
-                if value == 'true':
-                    query[f'fields.{field}'] = True
-                elif value == 'false':
-                    query[f'fields.{field}'] = False
-                else:
-                    query[f'fields.{field}'] = value
+                query[f'fields.{field}'] = value
 
         # 根据条件查找条目
         entries_to_update = fetch_all_entries(environment, query)
