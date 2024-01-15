@@ -32,4 +32,4 @@ jobs:
           CONTENTFUL_ACCESS_TOKEN: ${{ secrets.CONTENTFUL_ACCESS_TOKEN }}
           CONTENT_TYPE_ID: ${{ github.event.inputs.content_type_id }}
           FIELDS_TO_UPDATE: ${{ github.event.inputs.fields_to_update }}
-        run: python your_script.py
+        run: python update_contentful.py
