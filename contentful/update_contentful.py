@@ -109,10 +109,18 @@ def update_entries(content_type_id, fields_to_update, update_conditions=None):
 
 # 读取环境变量
 content_type_id = os.getenv('CONTENT_TYPE_ID')
-fields_to_update = json.loads(os.getenv('FIELDS_TO_UPDATE'))
-update_conditions = json.loads(os.getenv('UPDATE_CONDITIONS'))
+fields_to_update_json = os.getenv('FIELDS_TO_UPDATE')
+update_conditions_json = os.getenv('UPDATE_CONDITIONS')
 
-# 调用函数
-print(update_conditions)
-update_stats = update_entries(content_type_id, fields_to_update,update_conditions)
+# 解析 JSON 字符串，如果环境变量不存在或为空，则使用默认值
+fields_to_update = json.loads(fields_to_update_json) if fields_to_update_json else {}
+
+# 检查 UPDATE_CONDITIONS 环境变量是否存在并且不为空
+if update_conditions_json:
+    update_conditions = json.loads(update_conditions_json)
+    update_stats = update_entries(content_type_id, fields_to_update, update_conditions)
+else:
+    update_stats = update_entries(content_type_id, fields_to_update)
+
+# 输出更新结果
 print(update_stats)
