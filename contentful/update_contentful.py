@@ -109,5 +109,6 @@ fields_to_update = json.loads(os.getenv('FIELDS_TO_UPDATE'))
 update_conditions = json.loads(os.getenv('UPDATE_CONDITIONS'))
 
 # 调用函数
+print(update_conditions)
 update_stats = update_entries(content_type_id, fields_to_update,update_conditions)
 print(update_stats)
