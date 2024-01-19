@@ -16,6 +16,7 @@ on:
 jobs:
   update_contentful:
     runs-on: ubuntu-latest
+    if: false # 这将导致整个job被跳过
     steps:
       - name: Check out repository
         uses: actions/checkout@v2
