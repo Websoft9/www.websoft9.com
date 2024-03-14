@@ -24,22 +24,22 @@ module.exports = {
             title: "github",
         },
         {
-            id: 2,
+          id: 2,
+          icon: "fab fa-linkedin social-link-icon",
+          link: "https://www.linkedin.com/company/websoft9",
+          title: "Linkedin",
+        },
+        {
+            id: 3,
             icon: "fab fa-twitter social-link-icon",
             link: "https://www.twitter.com",
             title: "Twitter",
         },
         {
-            id: 3,
+            id: 4,
             icon: "fab fa-instagram social-link-icon",
             link: "https://www.instagram.com",
             title: "Instagram",
-        },
-        {
-            id: 4,
-            icon: "fab fa-linkedin social-link-icon",
-            link: "https://www.linkedin.com",
-            title: "Linkedin",
         },
         {
           id: 5,
