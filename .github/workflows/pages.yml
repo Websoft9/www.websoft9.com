@@ -80,6 +80,7 @@ jobs:
           path: ./source/public
           
       - name: add and commit
+        if: false
         uses: EndBug/add-and-commit@v9
         with:
           add: './source/public'
