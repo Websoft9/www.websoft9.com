@@ -1,0 +1,19 @@
+name: Deploy to Azure Storage
+
+on: 
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@master
+    - uses: actions/setup-node@v3
+      with:
+        node-version: 18.2.0        
+    - name: Gatsby build
+      run: |
+        yarn install
+        yarn run build
+      env:
+        CI: true
