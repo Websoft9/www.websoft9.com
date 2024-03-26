@@ -6,14 +6,25 @@ on:
 jobs:
   build:
     runs-on: ubuntu-latest
+
     steps:
     - uses: actions/checkout@master
-    - uses: actions/setup-node@v3
+
+    - name: Setup Node.js
+      uses: actions/setup-node@v3
       with:
-        node-version: 18.2.0        
-    - name: Gatsby build
-      run: |
-        yarn install
-        yarn run build
-      env:
-        CI: true
+        node-version: '18'
+
+    - name: Install Dependencies
+      run: yarn install
+
+    - name: Build
+      run: yarn build
+
+    - uses: bacongobbler/azure-blob-storage-upload@main
+      with:
+        source_dir: ./source/public
+        container_name: $web
+        connection_string: ${{ secrets.AZURE_STORAGE_W9MAINSITE }}
+        extra_args: '--destination-path ./'
+        overwrite: true
