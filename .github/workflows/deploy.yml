@@ -1,4 +1,4 @@
-name: Deploy to Azure Storage
+name: Build And Deploy to Azure Storage
 
 on: 
   workflow_dispatch:
@@ -19,7 +19,9 @@ jobs:
       run: yarn install
 
     - name: Build
-      run: yarn build
+      run: |
+        cd source
+        yarn build
 
     - uses: bacongobbler/azure-blob-storage-upload@main
       with:
