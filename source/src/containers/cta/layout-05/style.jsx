@@ -193,6 +193,10 @@ export const MarkdownStyle = styled.div`
             border:solid #000 1px;
         }
     }
+    a {
+        color: dodgerblue; /* 设置链接的默认颜色为蓝色 */
+        text-decoration: none; /* 去掉下划线 */
+    }
 `
 
 export const FloatingSocialBox = styled.div`

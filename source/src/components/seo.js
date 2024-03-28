@@ -37,19 +37,19 @@ const SEO = ({
     );
 
     let keywordsString = "";
-    keywords && keywords.map((key)=>{
-        if(typeof(key.name) == "undefined"){
-            keywordsString += key +",";
+    keywords && keywords.map((key) => {
+        if (typeof (key.name) == "undefined") {
+            keywordsString += key + ",";
         }
-        else{
-            keywordsString += key.name +",";
+        else {
+            keywordsString += key.name + ",";
         }
-        
+
     })
-    if(keywordsString.length>0){
-        keywordsString = keywordsString.substring(0,keywordsString.length-1);
+    if (keywordsString.length > 0) {
+        keywordsString = keywordsString.substring(0, keywordsString.length - 1);
     }
-    else{
+    else {
         keywordsString = keywords;
     }
 

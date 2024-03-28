@@ -14,21 +14,21 @@ const PartnerPage = ({ location, data }) => {
 
     return (
         <Layout location={location}>
-            <Seo title={data.allContentfulPage.nodes[0].title} description={data.allContentfulPage.nodes[0]?.description?.description} keywords={data.allContentfulPage.nodes[0]?.tags}/>
-            <Header  />
+            <Seo title={data.allContentfulPage.nodes[0].title} description={data.allContentfulPage.nodes[0]?.description?.description} keywords={data.allContentfulPage.nodes[0]?.tags} />
+            <Header />
 
             <main className="site-wrapper-reveal">
                 <HeroArea data={data.allContentfulPage.nodes[0].content[0]} />
 
-                <CultureArea data={data.allContentfulPage.nodes[0].content[1]} lgSize={4}/>
+                <CultureArea data={data.allContentfulPage.nodes[0].content[1]} lgSize={4} />
 
-                <PartnerArea data={ data.allContentfulPage.nodes[0].content[2] } />
+                <PartnerArea data={data.allContentfulPage.nodes[0].content[2]} />
 
-                <CultureArea data={data.allContentfulPage.nodes[0].content[3]} lgSize={4}/>
+                <CultureArea data={data.allContentfulPage.nodes[0].content[3]} lgSize={4} />
 
                 <PartnerStoreArea data={data.allContentfulPage.nodes[0].content[4]} />
 
-                <CtaArea data={ data.allContentfulPage.nodes[0].content[5] } />
+                <CtaArea data={data.allContentfulPage.nodes[0].content[5]} />
 
             </main>
             <Footer />
