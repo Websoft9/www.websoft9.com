@@ -1,4 +1,3 @@
-import defaultImage from "@assets/images/default.png";
 import BoxImage from "@components/box-image/layout-09";
 import SectionTitle from "@ui/section-title";
 import { Col, Container, Row } from "@ui/wrapper";
@@ -8,6 +7,7 @@ import remarkGfm from 'remark-gfm';
 import { MarkdownStyle, SectionWrap } from "./style";
 
 const BoxSection = ({ data, lgSize = 4 }) => {
+    const svgDir = require.context('@material-design-icons/svg/two-tone/');
     return (
         <SectionWrap>
             <Container>
@@ -15,6 +15,7 @@ const BoxSection = ({ data, lgSize = 4 }) => {
                 <Row>
                     {
                         data.features?.map((item, i) => {
+                            const svgFile = svgDir("./" + item.icon + ".svg").default;
                             return (
                                 <Col
                                     lg={lgSize}
@@ -24,10 +25,7 @@ const BoxSection = ({ data, lgSize = 4 }) => {
                                 >
                                     <BoxImage
                                         title={item.title}
-                                        image=
-                                        {
-                                            item.image == null ? { src: defaultImage } : { src: item.image }
-                                        }
+                                        icon={svgFile}
                                         desc={
                                             <MarkdownStyle>
                                                 <ReactMarkdown remarkPlugins={[remarkGfm]}>

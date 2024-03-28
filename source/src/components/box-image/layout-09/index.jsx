@@ -1,19 +1,34 @@
-import Image from "@ui/image";
 import React from "react";
+import ReactVivus from "react-vivus";
 import {
-    BoxContentWrap, BoxImgInner,
-    BoxImgWrap, BoxImgWrapper, HeadingWrap,
+    BoxContentWrap,
+    BoxIconImg,
+    BoxImgInner,
+    BoxImgWrapper, HeadingWrap,
     TextWrap
 } from "./style";
 
-const BoxImage = ({ title, image, desc, links, className, ...restProps }) => {
+const BoxImage = ({ title, icon, desc, links, className, ...restProps }) => {
     return (
         <BoxImgWrapper className={className} {...restProps}>
             <BoxImgInner style={{ boxShadow: 'none' }}>
-                {image?.src && (
+                {/* {image?.src && (
                     <BoxImgWrap>
                         <Image src={image.src} alt={image?.alt || title} />
                     </BoxImgWrap>
+                )} */}
+                {icon && (
+                    <BoxIconImg>
+                        <ReactVivus
+                            id={`svg-${icon}`}
+                            option={{
+                                file: icon,
+                                type: "oneByOne",
+                                animTimingFunction: "EASE",
+                                duration: 250,
+                            }}
+                        />
+                    </BoxIconImg>
                 )}
                 <BoxContentWrap>
                     {title && <HeadingWrap><b>{title}</b></HeadingWrap>}

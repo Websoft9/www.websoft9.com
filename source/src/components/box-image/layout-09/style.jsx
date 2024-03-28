@@ -133,3 +133,12 @@ export const BoxImgWrapper = styled.div`
         }
     }
 `;
+
+export const BoxIconImg = styled.div`
+    max-width: 80px;
+    flex-basis: 80px;
+    margin-block-end: 28px;
+    color: ${themeGet("colors.heading")};
+    margin-inline-start: auto;
+    margin-inline-end: auto;
+`;

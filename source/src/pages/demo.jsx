@@ -61,7 +61,7 @@ export const query = graphql`
                         ... on ContentfulBaseFeature{
                             id
                             title
-                            image
+                            icon
                             description{
                                 description
                             }
