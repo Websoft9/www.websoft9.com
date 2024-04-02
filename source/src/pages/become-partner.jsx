@@ -8,20 +8,20 @@ import Header from "@layout/header/layout-02";
 import { graphql } from 'gatsby';
 import React from "react";
 
-const BecomePartnerPage = ({pageContext,location,data }) => {
+const BecomePartnerPage = ({ pageContext, location, data }) => {
     return (
         <Layout location={location}>
-            <Seo title={data.allContentfulPage.nodes[0].title} description={data.allContentfulPage.nodes[0]?.description?.description} keywords={data.allContentfulPage.nodes[0]?.tags}/>
+            <Seo title={data.allContentfulPage.nodes[0].title} description={data.allContentfulPage.nodes[0]?.description?.description} keywords={data.allContentfulPage.nodes[0]?.tags} />
             <Header />
-        
+
             <main className="site-wrapper-reveal">
                 <PageHeader data={data.allContentfulPage.nodes[0].content[0]} />
-                
-                <IframeArea data={ data.allContentfulPage.nodes[0].content[1]?.link?.[0].value } width="1200px" height="1000px" />
 
-                <CtaArea data={ data.allContentfulPage.nodes[0].content[2] } />
+                <IframeArea data={data.allContentfulPage.nodes[0].content[1]?.link?.[0].value} width="1200px" height="1400px" />
+
+                <CtaArea data={data.allContentfulPage.nodes[0].content[2]} />
             </main>
-        
+
             <Footer />
         </Layout>
     );

@@ -17,12 +17,12 @@ import { useTranslation } from 'gatsby-plugin-react-i18next';
 import React from "react";
 import { HeroTextBox, ImageBoxTwo, StyledAnchor, StyledSection, StyledSubtitle, TestimonialRating } from "./style";
 
-const CTAArea = ({ data,resourceData }) => {
+const CTAArea = ({ data, resourceData }) => {
     const { t } = useTranslation();
 
-    const handleClick = (subkey,key) => {
-        window.sessionStorage.setItem("openIndex",key);
-        window.sessionStorage.setItem("selectedIndex",subkey);
+    const handleClick = (subkey, key) => {
+        window.sessionStorage.setItem("openIndex", key);
+        window.sessionStorage.setItem("selectedIndex", subkey);
     };
 
     const ratingItems = [];
@@ -47,89 +47,91 @@ const CTAArea = ({ data,resourceData }) => {
 
     return (
         <React.Fragment>
-            <div style={{float:"left",paddingLeft:"20px"}}>
+            <div style={{ float: "left", paddingLeft: "20px" }}>
                 <StyledAnchor onClick={() => navigate(-1)}>
                     {/* <i className="icon far fa-angle-left"></i> */}
-                    <svg t="1667186289168" className="icon"  viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="2811" width="48" height="48"><path d="M512 64C264.8 64 64 264.8 64 512s200.8 448 448 448 448-200.8 448-448S759.2 64 512 64z m0 832c-212 0-384-172-384-384s172-384 384-384 384 172 384 384-172 384-384 384z m158.4-610.4L444 512l226.4 226.4-44.8 45.6-272-272 272-272 44.8 45.6z" p-id="2812"></path></svg>
+                    <svg t="1667186289168" className="icon" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="2811" width="48" height="48"><path d="M512 64C264.8 64 64 264.8 64 512s200.8 448 448 448 448-200.8 448-448S759.2 64 512 64z m0 832c-212 0-384-172-384-384s172-384 384-384 384 172 384 384-172 384-384 384z m158.4-610.4L444 512l226.4 226.4-44.8 45.6-272-272 272-272 44.8 45.6z" p-id="2812"></path></svg>
                 </StyledAnchor>
             </div>
             <StyledSection>
-            <Container>
-                <Row
-                    alignItems="center"
-                    textAlign={["center", null, null, "left"]}
-                >
-                    <Col xl={3}>
-                        <HeroTextBox>
+                <Container>
+                    <Row
+                        alignItems="center"
+                        textAlign={["center", null, null, "left"]}
+                    >
+                        <Col xl={3}>
+                            <HeroTextBox>
                                 <ImageBoxTwo>
-                                    <Image src={data.image==null?defaultImage:data.image.imageurl} onError={(e)=>{e.target.onerror=null;e.target.src={defaultImage}}} alt=""/>
+                                    <Image src={data.image == null ? defaultImage : data.image.imageurl} onError={(e) => { e.target.onerror = null; e.target.src = { defaultImage } }} alt="" />
                                 </ImageBoxTwo>
-                        </HeroTextBox>
-                    </Col>
-                    <Col xl={7}>
-                        <HeroTextBox style={ {paddingLeft:'0px',marginLeft:'0px',}}>
-                            <StyledSubtitle as="h5">
-                                {data.trademark}
-                            </StyledSubtitle>
-                                                    
-                            <Text>{data.summary}</Text>
+                            </HeroTextBox>
+                        </Col>
+                        <Col xl={7}>
+                            <HeroTextBox style={{ paddingLeft: '0px', marginLeft: '0px', }}>
+                                <StyledSubtitle as="h5">
+                                    {data.trademark}
+                                </StyledSubtitle>
 
-                            <TestimonialRating>
-                                {ratingItems}
-                                {disableRating}
-                                {" "} | {" "} 
-                                {/* {
+                                <Text>{data.summary}</Text>
+
+                                <TestimonialRating>
+                                    {ratingItems}
+                                    {disableRating}
+                                    {" "} | {" "}
+                                    {/* {
                                     data?.type.map((item)=>{
                                         return (
                                             <React.Fragment key={item.id}>{item.title}{" |"}</React.Fragment>
                                         );
                                     })
                                 } */}
-                                {data.type?.[0].title}
-                            </TestimonialRating>
-                        </HeroTextBox>
-                    </Col>
-                    <Col xl={2}  className="text-center">
-                        <Button  m="7px" >{t("Get it Now")}</Button>
-                    </Col>
-                </Row>
-                <Row>
-                    <Line mt="40px" mb="40px" borderWidth="1px" style={{marginLeft:"30px"}} />
-                </Row>           
-                <Row>
-                    <Col xl={10}>
-                        { data?.screenshots && <FullWideSlider data={ data.screenshots}/> }
-                        
-                        {/* <Row>
+                                    {data.type?.[0].title}
+                                </TestimonialRating>
+                            </HeroTextBox>
+                        </Col>
+                        <Col xl={2} className="text-center">
+                            <Link to="/demo">
+                                <Button m="7px" >{t("Get it Now")}</Button>
+                            </Link>
+                        </Col>
+                    </Row>
+                    <Row>
+                        <Line mt="40px" mb="40px" borderWidth="1px" style={{ marginLeft: "30px" }} />
+                    </Row>
+                    <Row>
+                        <Col xl={10}>
+                            {data?.screenshots && <FullWideSlider data={data.screenshots} />}
+
+                            {/* <Row>
                             <TabArea dataOverview={data.overview?.overview} dataHighlights={data.highlights} dataDescription={data.description?.childMarkdownRemark.html}/>
                         </Row> */}
 
-                        <LegendArea1 title={t("Overview")} data={ data.overview?.overview }/>
+                            <LegendArea1 title={t("Overview")} data={data.overview?.overview} />
 
-                        <LegendArea3 title={t("Highlights")} data={ data.highlights }/>
+                            <LegendArea3 title={t("Highlights")} data={data.highlights} />
 
-                        <LegendArea2 title={t("Description")} data={ data.description?.childMarkdownRemark?.html }/>
+                            <LegendArea2 title={t("Description")} data={data.description?.childMarkdownRemark?.html} />
 
-                        {
-                            data?.faq && 
-                            <Row >
-                                <FAQArea  data={ data.faq }/>
-                            </Row>
-                        }
-
-                        <Row style={{paddingLeft:'30px'}} key="row-1-2">     
-                            {data?.type?.[0]?.product.length >0 && 
-                                <Heading as="h6" mb="37px" textAlign="left">
-                                    {t("Related Applications")}
-                                </Heading>
-                            }
                             {
-                                data?.type?.[0]?.product && data.type?.[0].product.filter((item)=>item.trademark != data.trademark).slice(0,3).map((item,i) => {
+                                data?.faq &&
+                                <Row >
+                                    <FAQArea data={data.faq} />
+                                </Row>
+                            }
+
+                            <Row style={{ paddingLeft: '30px' }} key="row-1-2">
+                                {data?.type?.[0]?.product.length > 0 &&
+                                    <Heading as="h6" mb="37px" textAlign="left">
+                                        {t("Related Applications")}
+                                    </Heading>
+                                }
+                                {
+                                    data?.type?.[0]?.product && data.type?.[0].product.filter((item) => item.trademark != data.trademark).slice(0, 3).map((item, i) => {
                                         return (
-                                            <Col lg={4} key={'col-item-'+i}>
+                                            <Col lg={4} key={'col-item-' + i}>
                                                 <BoxImage
                                                     title={item.trademark}
-                                                    image={{src: item.image.imageurl}}
+                                                    image={{ src: item.image.imageurl }}
                                                     desc={item.summary}
                                                     path={`/apps/${item.key}`}
                                                 />
@@ -151,151 +153,151 @@ const CTAArea = ({ data,resourceData }) => {
                                             //     />
                                             // </Col>   
                                         );
-                                })
-                            }
-                        </Row>
-                        <Row style={{paddingLeft:'30px'}} key="row-1-3">
-                            {
-                                resourceData.length >0 && 
-                                <Heading as="h6" mb="37px" textAlign="left">
-                                    {t("Learning Materials")}
-                                </Heading>   
-                            }
-                            {resourceData && resourceData.map((feature,i) => {
-                                var image = new Object();
-                                image.src = feature.image;
-                                return (
-                                    <Col
-                                        lg={4}
-                                        md={6}
-                                        className="box-item"
-                                        key={feature.id+i}
-                                    >
-                                        <BoxImage2
-                                            image={image}
-                                            title={feature.title}
-                                            category={feature.type.title}
-                                            // desc={feature.subTitle}
-                                            path={`/${feature.type.key}/${feature.slug}`}
-                                        />
-                                    </Col>
-                                );
-                            })}
-                        </Row>
-                    </Col>
-                    <Col  xl={2}>
-                        <Row style={{marginInlineStart:'20px',marginBottom:"20px",width:'200px'}}>
-                            <Row>{t("Classification")}</Row>
-                            {
-                                data?.type && data.type.map((item)=>{
-                                    return (
-                                        <Row style={{color:"dodgerblue"}} key={item.id}>                                           
-                                            <Link to={`/apps/${item.key}`} onClick={()=>handleClick(item.key,item.catalog[0].key)} style={{paddingLeft:'0px',marginLeft:'0px'}}>{item.title} </Link>
-                                        </Row>
-                                    );
-                                })
-                            }
-                        </Row>
-                        <Row style={{marginInlineStart:'20px',marginBottom:"20px",width:'200px'}}>
-                            <Row>{t("Os")}</Row>
-                            {
-                                 data?.os && data.os.map((item)=>{
-                                    return (
-                                        <Row style={{color:"dodgerblue"}} key={item} >{item}</Row>
-                                    );
-                                })
-                            }
-                        </Row>
-                        <Row style={{marginInlineStart:'20px',marginBottom:"20px",width:'200px'}}>
-                            <Row>{t("Open Source License")}</Row>
-                            <Row style={{color:"dodgerblue"}}>{ data?.license && data.license.key}</Row>
-                        </Row>
-                        <Row style={{marginInlineStart:'20px',marginBottom:"20px",width:'200px'}}>
-                            <Row>{t("Support Language")}</Row>
-                            {
-                                data?.supportLanguage && data.supportLanguage.map((item)=>{
-                                    return (
-                                        <Row style={{color:"dodgerblue"}} key={item}>{item}</Row>
-                                    );
-                                })
-                            }
-                        </Row>
-
-                        <Row style={{marginInlineStart:'20px',marginBottom:"20px",width:'200px'}}>
-                            <Row>{t("Languages")}</Row>
-                            {
-                                data?.program && data.program.map((item)=>{
-                                    return (
-                                        <Row style={{color:"dodgerblue"}} key={item}>{item.name}</Row>
-                                    );
-                                })
-                            }
-                        </Row>
-
-                        <Row style={{marginInlineStart:'20px',marginBottom:"20px",width:'200px'}}>
-                            <Row>{t("Components")}</Row>
-                            {
-                                data?.component && data.component.map((item)=>{
-                                    return (
-                                        <Row style={{color:"dodgerblue"}} key={item}>
-                                            <Link to={`/apps/${item.key}`} style={{paddingLeft:'0px',marginLeft:'0px'}}>{item.trademark} </Link>
-                                        </Row>
-                                    );
-                                })
-                            }
-                        </Row>
-
-                        <Row style={{marginInlineStart:'20px',marginBottom:"20px",width:'200px'}}>
-                            <Row>{t("Solution")}</Row>
-                            {
-                                data?.solution && data.solution.map((item)=>{
-                                    return (
-                                        <Row style={{color:"dodgerblue"}} key={item.id}>
-                                            <Link to={`/${item.type.key}/${item.slug}`} style={{paddingLeft:'0px',marginLeft:'0px'}}>{item.title} </Link>
-                                        </Row>
-                                    );
-                                })
-                            }
-                        </Row>
-                        <Row style={{marginInlineStart:'20px',marginBottom:"20px",width:'200px'}}>
-                            <Row>{t("Resource")}</Row>
-                            <Row style={{color:"dodgerblue"}}>                                
-                                <Link  to={`https://support.websoft9.com/docs/${data.key}`} style={{paddingLeft:'0px',marginLeft:'0px'}}> {t("Documentation")} </Link>
+                                    })
+                                }
                             </Row>
-                            <Row style={{color:"dodgerblue"}}>                               
-                                <Link  to="https://github.com/websoft9" style={{paddingLeft:'0px',marginLeft:'0px'}}> {t("GitHub")} </Link>
+                            <Row style={{ paddingLeft: '30px' }} key="row-1-3">
+                                {
+                                    resourceData.length > 0 &&
+                                    <Heading as="h6" mb="37px" textAlign="left">
+                                        {t("Learning Materials")}
+                                    </Heading>
+                                }
+                                {resourceData && resourceData.map((feature, i) => {
+                                    var image = new Object();
+                                    image.src = feature.image;
+                                    return (
+                                        <Col
+                                            lg={4}
+                                            md={6}
+                                            className="box-item"
+                                            key={feature.id + i}
+                                        >
+                                            <BoxImage2
+                                                image={image}
+                                                title={feature.title}
+                                                category={feature.type.title}
+                                                // desc={feature.subTitle}
+                                                path={`/${feature.type.key}/${feature.slug}`}
+                                            />
+                                        </Col>
+                                    );
+                                })}
                             </Row>
-                            {
-                                data?.websiteurl &&                             
-                                <Row style={{color:"dodgerblue"}}>
-                                    <Link  to={data.websiteurl} style={{paddingLeft:'0px',marginLeft:'0px'}}> {t("Official Website")} </Link>
+                        </Col>
+                        <Col xl={2}>
+                            <Row style={{ marginInlineStart: '20px', marginBottom: "20px", width: '200px' }}>
+                                <Row>{t("Classification")}</Row>
+                                {
+                                    data?.type && data.type.map((item) => {
+                                        return (
+                                            <Row style={{ color: "dodgerblue" }} key={item.id}>
+                                                <Link to={`/apps/${item.key}`} onClick={() => handleClick(item.key, item.catalog[0].key)} style={{ paddingLeft: '0px', marginLeft: '0px' }}>{item.title} </Link>
+                                            </Row>
+                                        );
+                                    })
+                                }
+                            </Row>
+                            <Row style={{ marginInlineStart: '20px', marginBottom: "20px", width: '200px' }}>
+                                <Row>{t("Os")}</Row>
+                                {
+                                    data?.os && data.os.map((item) => {
+                                        return (
+                                            <Row style={{ color: "dodgerblue" }} key={item} >{item}</Row>
+                                        );
+                                    })
+                                }
+                            </Row>
+                            <Row style={{ marginInlineStart: '20px', marginBottom: "20px", width: '200px' }}>
+                                <Row>{t("Open Source License")}</Row>
+                                <Row style={{ color: "dodgerblue" }}>{data?.license && data.license.key}</Row>
+                            </Row>
+                            <Row style={{ marginInlineStart: '20px', marginBottom: "20px", width: '200px' }}>
+                                <Row>{t("Support Language")}</Row>
+                                {
+                                    data?.supportLanguage && data.supportLanguage.map((item) => {
+                                        return (
+                                            <Row style={{ color: "dodgerblue" }} key={item}>{item}</Row>
+                                        );
+                                    })
+                                }
+                            </Row>
+
+                            <Row style={{ marginInlineStart: '20px', marginBottom: "20px", width: '200px' }}>
+                                <Row>{t("Languages")}</Row>
+                                {
+                                    data?.program && data.program.map((item) => {
+                                        return (
+                                            <Row style={{ color: "dodgerblue" }} key={item}>{item.name}</Row>
+                                        );
+                                    })
+                                }
+                            </Row>
+
+                            <Row style={{ marginInlineStart: '20px', marginBottom: "20px", width: '200px' }}>
+                                <Row>{t("Components")}</Row>
+                                {
+                                    data?.component && data.component.map((item) => {
+                                        return (
+                                            <Row style={{ color: "dodgerblue" }} key={item}>
+                                                <Link to={`/apps/${item.key}`} style={{ paddingLeft: '0px', marginLeft: '0px' }}>{item.trademark} </Link>
+                                            </Row>
+                                        );
+                                    })
+                                }
+                            </Row>
+
+                            <Row style={{ marginInlineStart: '20px', marginBottom: "20px", width: '200px' }}>
+                                <Row>{t("Solution")}</Row>
+                                {
+                                    data?.solution && data.solution.map((item) => {
+                                        return (
+                                            <Row style={{ color: "dodgerblue" }} key={item.id}>
+                                                <Link to={`/${item.type.key}/${item.slug}`} style={{ paddingLeft: '0px', marginLeft: '0px' }}>{item.title} </Link>
+                                            </Row>
+                                        );
+                                    })
+                                }
+                            </Row>
+                            <Row style={{ marginInlineStart: '20px', marginBottom: "20px", width: '200px' }}>
+                                <Row>{t("Resource")}</Row>
+                                <Row style={{ color: "dodgerblue" }}>
+                                    <Link to={`https://support.websoft9.com/docs/${data.key}`} style={{ paddingLeft: '0px', marginLeft: '0px' }}> {t("Documentation")} </Link>
                                 </Row>
-                            }
+                                <Row style={{ color: "dodgerblue" }}>
+                                    <Link to="https://github.com/websoft9" style={{ paddingLeft: '0px', marginLeft: '0px' }}> {t("GitHub")} </Link>
+                                </Row>
+                                {
+                                    data?.websiteurl &&
+                                    <Row style={{ color: "dodgerblue" }}>
+                                        <Link to={data.websiteurl} style={{ paddingLeft: '0px', marginLeft: '0px' }}> {t("Official Website")} </Link>
+                                    </Row>
+                                }
 
-                        </Row>
-                        <Row style={{marginInlineStart:'20px',marginBottom:"20px",width:'200px'}}>
-                            <Row>{t("Applicable Personnel")}</Row>
-                            {
-                                data?.userType && data.userType.map((item)=>{
-                                    return (
-                                        <Row style={{color:"dodgerblue"}} key={item.id}>{item.title}</Row>
-                                    );
-                                })
-                            }
-                        </Row>
-                        <Row style={{marginInlineStart:'20px',marginBottom:"20px",width:'200px'}}>
-                            <Row>{t("Feedback")}</Row>
-                            <Row style={{color:"dodgerblue"}}>
-                                <Link  to="/" style={{paddingLeft:'0px',marginLeft:'0px'}}> {t("Submit A Suggestion")} </Link>
                             </Row>
-                            <Row style={{color:"dodgerblue"}}>
-                                <Link  to="/services" style={{paddingLeft:'0px',marginLeft:'0px'}}> {t("Get Professional Services")} </Link>
+                            <Row style={{ marginInlineStart: '20px', marginBottom: "20px", width: '200px' }}>
+                                <Row>{t("Applicable Personnel")}</Row>
+                                {
+                                    data?.userType && data.userType.map((item) => {
+                                        return (
+                                            <Row style={{ color: "dodgerblue" }} key={item.id}>{item.title}</Row>
+                                        );
+                                    })
+                                }
                             </Row>
-                        </Row>
-                    </Col>
-                </Row>
-            </Container>
-        </StyledSection>
+                            <Row style={{ marginInlineStart: '20px', marginBottom: "20px", width: '200px' }}>
+                                <Row>{t("Feedback")}</Row>
+                                <Row style={{ color: "dodgerblue" }}>
+                                    <Link to="/" style={{ paddingLeft: '0px', marginLeft: '0px' }}> {t("Submit A Suggestion")} </Link>
+                                </Row>
+                                <Row style={{ color: "dodgerblue" }}>
+                                    <Link to="/services" style={{ paddingLeft: '0px', marginLeft: '0px' }}> {t("Get Professional Services")} </Link>
+                                </Row>
+                            </Row>
+                        </Col>
+                    </Row>
+                </Container>
+            </StyledSection>
         </React.Fragment>
     );
 };

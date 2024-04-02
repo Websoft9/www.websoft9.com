@@ -100,21 +100,21 @@ exports.createPages = async ({ graphql, actions }) => {
 
     const catalogs = result.data.allContentfulBaseCatalog.nodes[0].base_catalog; //获取所有产品目录
     const products = result.data.allContentfulProduct.nodes;     //获取所有产品
-    const postsPerPage = 9;  //每页记录条数
+    const postsPerPage = 99;  //每页记录条数(为了不分页，少修改代码的情况下，将每页数据调大)
     const numberOfPages = Math.ceil(products.length / 2 / postsPerPage); //计算所有产品总记录条数（由于有中英文两种数据，在计算时除2）
 
     //根据产品目录检索产品并分页
     catalogs.forEach((catalog, index) => {
-        if(catalog.base_catalog !=null){        
-            catalog.base_catalog.forEach((subCatalog)=>{
-                const nums  = subCatalog.product==null?0:subCatalog.product.length;
-                const numberOfPages = subCatalog.product==null ? 0 : Math.ceil(subCatalog.product.length / postsPerPage);
+        if (catalog.base_catalog != null) {
+            catalog.base_catalog.forEach((subCatalog) => {
+                const nums = subCatalog.product == null ? 0 : subCatalog.product.length;
+                const numberOfPages = subCatalog.product == null ? 0 : Math.ceil(subCatalog.product.length / postsPerPage);
 
-                if(numberOfPages==0){
+                if (numberOfPages == 0) {
                     const currentPage = 1
-                    const rootPage =`apps/${subCatalog.key}`;
+                    const rootPage = `apps/${subCatalog.key}`;
                     createPage({
-                        path:`apps/${subCatalog.key}`,
+                        path: `apps/${subCatalog.key}`,
                         component: path.resolve('./src/templates/app-catalog/index.jsx'),
                         context: {
                             catalog: subCatalog.key,
@@ -127,13 +127,13 @@ exports.createPages = async ({ graphql, actions }) => {
                     })
                 }
 
-                Array.from({ length: numberOfPages }).forEach((_, subCataLogIndex)=>{
+                Array.from({ length: numberOfPages }).forEach((_, subCataLogIndex) => {
                     const isFirstPage = subCataLogIndex === 0;
                     const currentPage = subCataLogIndex + 1;
                     const rootPage = `/apps/${subCatalog.key}`;
 
                     createPage({
-                        path: isFirstPage ? `apps/${subCatalog.key}`:`apps/${subCatalog.key}/${currentPage}`,
+                        path: isFirstPage ? `apps/${subCatalog.key}` : `apps/${subCatalog.key}/${currentPage}`,
                         component: path.resolve('./src/templates/app-catalog/index.jsx'),
                         context: {
                             catalog: subCatalog.key,
@@ -148,7 +148,7 @@ exports.createPages = async ({ graphql, actions }) => {
             })
         }
     })
-    
+
 
     //根据模板对全部产品进行分页
     Array.from({ length: numberOfPages }).forEach((_, index) => {
@@ -156,7 +156,7 @@ exports.createPages = async ({ graphql, actions }) => {
         const currentPage = index + 1;
         //if (isFirstPage) return;
         createPage({
-            path: isFirstPage ? "apps" :`apps/page/${currentPage}`,
+            path: isFirstPage ? "apps" : `apps/page/${currentPage}`,
             component: path.resolve('./src/templates/app-center/index.jsx'),
             context: {
                 limit: postsPerPage,
@@ -170,81 +170,80 @@ exports.createPages = async ({ graphql, actions }) => {
     const resourceTypes = result.data.allContentfulAboutContent.nodes;     //获取所有资源类别（排除了solution,解决方案用单独页面，不用模板生成）
 
     //根据资源分类检索资源并分页
-    resourceTypes.forEach((type,index)=>{
-            const nums  = type.resource == null ? 0 : type.resource.length;  //计算每个类别下的资源数
-            const numberOfPages = Math.ceil(nums / postsPerPage);  //计算总页数
+    resourceTypes.forEach((type, index) => {
+        const nums = type.resource == null ? 0 : type.resource.length;  //计算每个类别下的资源数
+        const numberOfPages = Math.ceil(nums / postsPerPage);  //计算总页数
 
-            if(numberOfPages==0){
-                const currentPage = 1
-                const rootPage =`/${type.key}`;
-                createPage({
-                    path:`${type.key}`,
-                    component: path.resolve('./src/templates/resource-type/index.jsx'),
-                    context: {
-                        resourceType: type.key,
-                        limit: postsPerPage,
-                        skip: 0,
-                        currentPage,
-                        numberOfPages,
-                        rootPage,
-                    },
-                })
-            }
+        if (numberOfPages == 0) {
+            const currentPage = 1
+            const rootPage = `/${type.key}`;
+            createPage({
+                path: `${type.key}`,
+                component: path.resolve('./src/templates/resource-type/index.jsx'),
+                context: {
+                    resourceType: type.key,
+                    limit: postsPerPage,
+                    skip: 0,
+                    currentPage,
+                    numberOfPages,
+                    rootPage,
+                },
+            })
+        }
 
-            Array.from({ length: numberOfPages }).forEach((_, subIndex)=>{
-                const isFirstPage = subIndex === 0;               
-                const currentPage = subIndex + 1;
-                const rootPage = `/${type.key}`;
-    
-                createPage({
-                    path: isFirstPage ? `${type.key}`:`${type.key}/${currentPage}`,
-                    component: path.resolve('./src/templates/resource-type/index.jsx'),
-                    context: {
-                        resourceType: type.key,
-                        limit: postsPerPage,
-                        skip: subIndex * postsPerPage,
-                        currentPage,
-                        numberOfPages,
-                        rootPage,
-                    },
-                })
+        Array.from({ length: numberOfPages }).forEach((_, subIndex) => {
+            const isFirstPage = subIndex === 0;
+            const currentPage = subIndex + 1;
+            const rootPage = `/${type.key}`;
+
+            createPage({
+                path: isFirstPage ? `${type.key}` : `${type.key}/${currentPage}`,
+                component: path.resolve('./src/templates/resource-type/index.jsx'),
+                context: {
+                    resourceType: type.key,
+                    limit: postsPerPage,
+                    skip: subIndex * postsPerPage,
+                    currentPage,
+                    numberOfPages,
+                    rootPage,
+                },
             })
         })
+    })
 
 
 
     // 根据模板创建产品详情页
-    products.forEach((product)=>{
+    products.forEach((product) => {
         createPage({
-            path:`apps/${product.key}`,
-            component:path.resolve('./src/templates/app-detail/index.jsx'),
-            context:{
-                slug:product.key
+            path: `apps/${product.key}`,
+            component: path.resolve('./src/templates/app-detail/index.jsx'),
+            context: {
+                slug: product.key
             }
         })
     })
 
-    const resourceData  = result.data.allContentfulResource.nodes; //获取所有资源(排除solution)
+    const resourceData = result.data.allContentfulResource.nodes; //获取所有资源(排除solution)
     const resourceTypesNumberOfPages = Math.ceil(resourceData.length / 2 / postsPerPage); //计算所有资源总记录条数（由于有中英文两种数据，在计算时除2） 
 
     // 根据模板创建资源详情页
-    resourceData.forEach((resource)=>{
-        if(resource.type.key == "solution"){
+    resourceData.forEach((resource) => {
+        if (resource.type.key == "solution") {
             createPage({
-                path:`${resource.type.key}/${resource.slug}`,
-                component:path.resolve('./src/templates/solution-detail/index.jsx'),
-                context:{
-                    slug:resource.slug
+                path: `${resource.type.key}/${resource.slug}`,
+                component: path.resolve('./src/templates/solution-detail/index.jsx'),
+                context: {
+                    slug: resource.slug
                 }
             })
         }
-        else
-        {
+        else {
             createPage({
-                path:`${resource.type.key}/${resource.slug}`,
-                component:path.resolve('./src/templates/resource-detail/index.jsx'),
-                context:{
-                    slug:resource.slug
+                path: `${resource.type.key}/${resource.slug}`,
+                component: path.resolve('./src/templates/resource-detail/index.jsx'),
+                context: {
+                    slug: resource.slug
                 }
             })
         }
@@ -253,22 +252,22 @@ exports.createPages = async ({ graphql, actions }) => {
     //根据模板创建服务详情页
     let servicesData = result.data.allContentfulService.nodes; //获取所有服务
 
-    servicesData.forEach((service)=>{
+    servicesData.forEach((service) => {
         createPage({
-            path:`/services/${service.catalog[0].key}/${service.key}`,
-            component:path.resolve('./src/templates/service-detail/index.jsx'),
-            context:{
-                slug:service.key
+            path: `/services/${service.catalog[0].key}/${service.key}`,
+            component: path.resolve('./src/templates/service-detail/index.jsx'),
+            context: {
+                slug: service.key
             }
         })
     })
 
-    servicesData.forEach((service)=>{
+    servicesData.forEach((service) => {
         createPage({
-            path:`/demand/${service.title}`,
-            component:path.resolve('./src/templates/service-demand/index.jsx'),
-            context:{
-                slug:service.title
+            path: `/demand/${service.title}`,
+            component: path.resolve('./src/templates/service-demand/index.jsx'),
+            context: {
+                slug: service.title
             }
         })
     })
