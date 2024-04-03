@@ -100,15 +100,16 @@ exports.createPages = async ({ graphql, actions }) => {
 
     const catalogs = result.data.allContentfulBaseCatalog.nodes[0].base_catalog; //获取所有产品目录
     const products = result.data.allContentfulProduct.nodes;     //获取所有产品
-    const postsPerPage = 99;  //每页记录条数(为了不分页，少修改代码的情况下，将每页数据调大)
-    const numberOfPages = Math.ceil(products.length / 2 / postsPerPage); //计算所有产品总记录条数（由于有中英文两种数据，在计算时除2）
+    const postsPerPage = 9;  //每页记录条数
+    const postsPerPage_app = 99;  //每页记录条数(为产品页面而单独设定)
+    const numberOfPages = Math.ceil(products.length / 2 / postsPerPage_app); //计算所有产品总记录条数（由于有中英文两种数据，在计算时除2）
 
     //根据产品目录检索产品并分页
     catalogs.forEach((catalog, index) => {
         if (catalog.base_catalog != null) {
             catalog.base_catalog.forEach((subCatalog) => {
                 const nums = subCatalog.product == null ? 0 : subCatalog.product.length;
-                const numberOfPages = subCatalog.product == null ? 0 : Math.ceil(subCatalog.product.length / postsPerPage);
+                const numberOfPages = subCatalog.product == null ? 0 : Math.ceil(subCatalog.product.length / postsPerPage_app);
 
                 if (numberOfPages == 0) {
                     const currentPage = 1
@@ -118,7 +119,7 @@ exports.createPages = async ({ graphql, actions }) => {
                         component: path.resolve('./src/templates/app-catalog/index.jsx'),
                         context: {
                             catalog: subCatalog.key,
-                            limit: postsPerPage,
+                            limit: postsPerPage_app,
                             skip: 0,
                             currentPage,
                             numberOfPages,
@@ -137,8 +138,8 @@ exports.createPages = async ({ graphql, actions }) => {
                         component: path.resolve('./src/templates/app-catalog/index.jsx'),
                         context: {
                             catalog: subCatalog.key,
-                            limit: postsPerPage,
-                            skip: subCataLogIndex * postsPerPage,
+                            limit: postsPerPage_app,
+                            skip: subCataLogIndex * postsPerPage_app,
                             currentPage,
                             numberOfPages,
                             rootPage,
@@ -159,8 +160,8 @@ exports.createPages = async ({ graphql, actions }) => {
             path: isFirstPage ? "apps" : `apps/page/${currentPage}`,
             component: path.resolve('./src/templates/app-center/index.jsx'),
             context: {
-                limit: postsPerPage,
-                skip: index * postsPerPage,
+                limit: postsPerPage_app,
+                skip: index * postsPerPage_app,
                 currentPage,
                 numberOfPages,
             },
