@@ -1,14 +1,14 @@
 import styled, {
-    css,
-    typography,
-    space,
-    color,
-    layout,
     border,
+    color,
+    css,
+    layout,
+    space,
     themeGet,
+    typography,
 } from "@styled";
-import { Link } from "gatsby";
 import { allowedTags } from "@utils";
+import { Link } from "gatsby";
 
 export const LinkStyled = css`
     ${typography};
@@ -23,40 +23,42 @@ export const LinkStyled = css`
         `}
 
     .icon {
-        font-size: 26px;
+        font-size: 14px;
+        // font-size: 26px;
     }
+
     ${(props) =>
         props.$hover &&
         css`
             &:hover {
                 ${(props) =>
-                    props.$hover.color === "primary" &&
-                    css`
+                props.$hover.color === "primary" &&
+                css`
                         color: ${themeGet("colors.primary")};
                     `}
                 ${(props) =>
-                    props.$hover.color === "secondary" &&
-                    css`
+                props.$hover.color === "secondary" &&
+                css`
                         color: ${themeGet("colors.secondary")};
                     `}
                 ${(props) =>
-                    props.$hover.color === "text" &&
-                    css`
+                props.$hover.color === "text" &&
+                css`
                         color: ${themeGet("colors.text")};
                     `}
                 ${(props) =>
-                    props.$hover.color === "heading" &&
-                    css`
+                props.$hover.color === "heading" &&
+                css`
                         color: ${themeGet("colors.heading")};
                     `}
                 ${(props) =>
-                    props.color !== "primary" &&
-                    props.color !== "secondary" &&
-                    props.color !== "text" &&
-                    props.color !== "heading" &&
-                    css`
+                props.color !== "primary" &&
+                props.color !== "secondary" &&
+                props.color !== "text" &&
+                props.color !== "heading" &&
+                css`
                         color: ${(props) =>
-                            props.color || themeGet("colors.primary")};
+                        props.color || themeGet("colors.primary")};
                     `}
             }
 
@@ -73,39 +75,39 @@ export const LinkStyled = css`
                         width: 0;
                         height: 1px;
                         ${(props) =>
-                            props.color === "primary" &&
-                            css`
+                        props.color === "primary" &&
+                        css`
                                 background-color: ${themeGet("colors.primary")};
                             `}
                         ${(props) =>
-                            props.color === "secondary" &&
-                            css`
+                        props.color === "secondary" &&
+                        css`
                                 background-color: ${themeGet(
-                                    "colors.secondary"
-                                )};
+                            "colors.secondary"
+                        )};
                             `}
                 ${(props) =>
-                            props.color === "text" &&
-                            css`
+                        props.color === "text" &&
+                        css`
                                 background-color: ${themeGet("colors.text")};
                             `}
                 ${(props) =>
-                            props.color === "heading" &&
-                            css`
+                        props.color === "heading" &&
+                        css`
                                 background-color: ${themeGet("colors.heading")};
                             `}
                 ${(props) =>
-                            props.color !== "primary" &&
-                            props.color !== "secondary" &&
-                            props.color !== "text" &&
-                            props.color !== "heading" &&
-                            css`
+                        props.color !== "primary" &&
+                        props.color !== "secondary" &&
+                        props.color !== "text" &&
+                        props.color !== "heading" &&
+                        css`
                                 background-color: ${(props) =>
-                                    props.color || themeGet("colors.primary")};
+                                props.color || themeGet("colors.primary")};
                             `}
                 ${(props) =>
-                            !props.color &&
-                            css`
+                        !props.color &&
+                        css`
                                 background-color: ${themeGet("colors.primary")};
                             `}
                     }

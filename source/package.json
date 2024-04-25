@@ -73,7 +73,8 @@
     "swiper": "^8.0.7",
     "tinycolor2": "^1.4.2",
     "video-react": "^0.15.0",
-    "vivus": "^0.4.6"
+    "vivus": "^0.4.6",
+    "react-loader-spinner": "^4.0.0"
   },
   "devDependencies": {
     "@babel/core": "7.13.15",
