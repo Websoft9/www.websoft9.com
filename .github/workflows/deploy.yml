@@ -1,4 +1,4 @@
-name: Build And Deploy to Azure Storage
+name: Build And Deploy to cloudflare
 
 on: 
   workflow_dispatch:
