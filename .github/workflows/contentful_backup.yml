@@ -75,19 +75,19 @@ jobs:
          fi 
          
         
-      - name: Send inform mail
-        if: ${{ always() }}
-        uses: dawidd6/action-send-mail@master
-        with:
-          server_address: smtp.163.com
-          server_port: 25
-          username: ${{ secrets.MAIL_USERNAME }}
-          password: ${{ secrets.MAIL_PASSWORD }}
-          subject: ${{env.email_subject}}
-          to: jing.zhao@websoft9.com
-          from: GitHub Actions
-          body: ${{env.email_body}}
-          attachments: ${{env.email_attachments}}        
+      # - name: Send inform mail
+      #   if: ${{ always() }}
+      #   uses: dawidd6/action-send-mail@master
+      #   with:
+      #     server_address: smtp.163.com
+      #     server_port: 25
+      #     username: ${{ secrets.MAIL_USERNAME }}
+      #     password: ${{ secrets.MAIL_PASSWORD }}
+      #     subject: ${{env.email_subject}}
+      #     to: jing.zhao@websoft9.com
+      #     from: GitHub Actions
+      #     body: ${{env.email_body}}
+      #     attachments: ${{env.email_attachments}}        
         
         
         
