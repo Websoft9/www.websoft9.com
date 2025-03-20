@@ -17,7 +17,7 @@ import {
 } from "./style";
 
 const Header = () => {
-    const {language } = useI18next();
+    const { language } = useI18next();
 
     const { sticky, headerRef, fixedRef } = useSticky();
     const [offCanvasOpen, setOffcanvasOpen] = useState(false);
@@ -32,7 +32,7 @@ const Header = () => {
 
     return (
         <StaticQuery
-        query={graphql`
+            query={graphql`
           {
             zhShortCutMenu: contentfulMenu(
                 type: {eq: "RightMenu"}
@@ -120,6 +120,12 @@ const Header = () => {
                         text:title
                         position
                         }
+                        ... on ContentfulBaseBrand {
+                        id
+                        key
+                        storeurl
+                        text:name
+                        }
                     }
                     }
                     ... on ContentfulBaseFeature {
@@ -174,6 +180,12 @@ const Header = () => {
                         text:title
                         position
                         }
+                        ... on ContentfulBaseBrand {
+                        id
+                        key
+                        storeurl
+                        text:name
+                        }
                     }
                     }
                     ... on ContentfulBaseFeature {
@@ -194,111 +206,111 @@ const Header = () => {
             }
           }
         `}
-        render={data => (
-            <Fragment>
-            <HeaderWrap ref={headerRef}>
-                <HeaderBottom ref={fixedRef} isSticky={sticky}>
-                    <HeaderMain>
-                        <HeaderLeft>
-                            <Logo darkLogo />
-                        </HeaderLeft>
-                        <HeaderMiddle>
-                            <HeaderNavigation>
-                                <MainMenu menuData={language == "zh-CN" ? data.zhMainMenu.nodes : data.enMainMenu.nodes} color="dark" />
-                            </HeaderNavigation>
-                        </HeaderMiddle>
-                        <HeaderRight>
-                            <HeaderRightInner isOpen={headerInnerOpen}>
-                                <HeaderElement
-                                    borderLeft={[null, null, "1px solid #eee"]}
-                                    borderRight={[null, null, "1px solid #eee"]}
-                                    mt={["15px", 0]}
-                                >
-                                    <HeaderForm />
-                                </HeaderElement>
-                                <HeaderElement
-                                    pr={[
-                                        "25px",
-                                        "10px",
-                                        0,
-                                        0,
-                                        "10px",
-                                        null,
-                                        "25px",
-                                    ]}
-                                >
-                                    <Language />
-                                </HeaderElement>
-                                    
-                            </HeaderRightInner>
-                            <HeaderElement
-                                pl="20px"
-                                display={["flex", null, null, null, "none"]}
-                            >
-                                <BurgerButton onClick={offCanvasHandler} />
-                            </HeaderElement>
+            render={data => (
+                <Fragment>
+                    <HeaderWrap ref={headerRef}>
+                        <HeaderBottom ref={fixedRef} isSticky={sticky}>
+                            <HeaderMain>
+                                <HeaderLeft>
+                                    <Logo darkLogo />
+                                </HeaderLeft>
+                                <HeaderMiddle>
+                                    <HeaderNavigation>
+                                        <MainMenu menuData={language == "zh-CN" ? data.zhMainMenu.nodes : data.enMainMenu.nodes} color="dark" />
+                                    </HeaderNavigation>
+                                </HeaderMiddle>
+                                <HeaderRight>
+                                    <HeaderRightInner isOpen={headerInnerOpen}>
+                                        <HeaderElement
+                                            borderLeft={[null, null, "1px solid #eee"]}
+                                            borderRight={[null, null, "1px solid #eee"]}
+                                            mt={["15px", 0]}
+                                        >
+                                            <HeaderForm />
+                                        </HeaderElement>
+                                        <HeaderElement
+                                            pr={[
+                                                "25px",
+                                                "10px",
+                                                0,
+                                                0,
+                                                "10px",
+                                                null,
+                                                "25px",
+                                            ]}
+                                        >
+                                            <Language />
+                                        </HeaderElement>
 
-                            <HeaderElement
-                                pl="15px"
-                                display={["flex", null, "none"]}
-                            >
-                                <Clickable
-                                    onClick={headerInnerHandler}
-                                    fontSize="20px"
-                                    color="kimberly"
-                                >
-                                    <i className="far fa-ellipsis-h-alt"></i>
-                                </Clickable>
-                            </HeaderElement>
-                        </HeaderRight>
-                        <HeaderRight>
-                            <HeaderRightInner>
-                                {
-                                    (language == "zh-CN" ? data.zhShortCutMenu.submenu : data.enShortCutMenu.submenu).map((shortcut)=>{
-                                        return (
-                                                <StyledNavitem
-                                                    className="nav-item"
-                                                    key={`mainmenu-${shortcut.id}`}
-                                                    hasSubmenu={false}
-                                                    hasMegamenu={false}
-                                                    $space={1}
-                                                    $alignment={"center"}
-                                                >
-                                                    <StyledNavlink
-                                                        className="nav-link"
-                                                        path={shortcut.link}
-                                                        hassubmenu={false}
-                                                        $color={"dark"}
-                                                        $vSpace={1}
-                                                        $bottomLine={true}
+                                    </HeaderRightInner>
+                                    <HeaderElement
+                                        pl="20px"
+                                        display={["flex", null, null, null, "none"]}
+                                    >
+                                        <BurgerButton onClick={offCanvasHandler} />
+                                    </HeaderElement>
+
+                                    <HeaderElement
+                                        pl="15px"
+                                        display={["flex", null, "none"]}
+                                    >
+                                        <Clickable
+                                            onClick={headerInnerHandler}
+                                            fontSize="20px"
+                                            color="kimberly"
+                                        >
+                                            <i className="far fa-ellipsis-h-alt"></i>
+                                        </Clickable>
+                                    </HeaderElement>
+                                </HeaderRight>
+                                <HeaderRight>
+                                    <HeaderRightInner>
+                                        {
+                                            (language == "zh-CN" ? data.zhShortCutMenu.submenu : data.enShortCutMenu.submenu).map((shortcut) => {
+                                                return (
+                                                    <StyledNavitem
+                                                        className="nav-item"
+                                                        key={`mainmenu-${shortcut.id}`}
+                                                        hasSubmenu={false}
+                                                        hasMegamenu={false}
+                                                        $space={1}
+                                                        $alignment={"center"}
                                                     >
-                                                        <span>{shortcut.text}</span>
-                                                    </StyledNavlink>
-                                                </StyledNavitem>
-                                        );
-                                    })
-                                }
-                            </HeaderRightInner>
-                        </HeaderRight>
-                    </HeaderMain>
-                </HeaderBottom>
-            </HeaderWrap>
-            <OffCanvas
-                scrollable={true}
-                isOpen={offCanvasOpen}
-                onClick={offCanvasHandler}
-            >
-                <OffCanvasHeader onClick={offCanvasHandler}>
-                    <Logo darkLogo align={{ default: "flex-start" }} />
-                </OffCanvasHeader>
-                <OffCanvasBody>
-                    <MobileMenu menuData={language == "zh-CN" ? data.zhMainMenu.nodes.concat(data.zhShortCutMenu.submenu) : data.enMainMenu.nodes.concat(data.zhShortCutMenu.submenu)} />
-                </OffCanvasBody>
-            </OffCanvas>
-        </Fragment>
-        )}
-      ></StaticQuery>
-       
+                                                        <StyledNavlink
+                                                            className="nav-link"
+                                                            path={shortcut.link}
+                                                            hassubmenu={false}
+                                                            $color={"dark"}
+                                                            $vSpace={1}
+                                                            $bottomLine={true}
+                                                        >
+                                                            <span>{shortcut.text}</span>
+                                                        </StyledNavlink>
+                                                    </StyledNavitem>
+                                                );
+                                            })
+                                        }
+                                    </HeaderRightInner>
+                                </HeaderRight>
+                            </HeaderMain>
+                        </HeaderBottom>
+                    </HeaderWrap>
+                    <OffCanvas
+                        scrollable={true}
+                        isOpen={offCanvasOpen}
+                        onClick={offCanvasHandler}
+                    >
+                        <OffCanvasHeader onClick={offCanvasHandler}>
+                            <Logo darkLogo align={{ default: "flex-start" }} />
+                        </OffCanvasHeader>
+                        <OffCanvasBody>
+                            <MobileMenu menuData={language == "zh-CN" ? data.zhMainMenu.nodes.concat(data.zhShortCutMenu.submenu) : data.enMainMenu.nodes.concat(data.zhShortCutMenu.submenu)} />
+                        </OffCanvasBody>
+                    </OffCanvas>
+                </Fragment>
+            )}
+        ></StaticQuery>
+
     );
 };
 

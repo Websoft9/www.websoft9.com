@@ -26,7 +26,7 @@ const MainMenu = ({
     ...props
 }) => {
     const { t } = useTranslation();
-    return (       
+    return (
         <StyledMainMenu $alignment={alignment} {...props}>
             <StyledNavbar>
                 {menuData?.map((menu) => {
@@ -56,17 +56,17 @@ const MainMenu = ({
                                     <i className="icon fa fa-angle-down"></i>
                                 )}
                             </StyledNavlink>
-                            
+
                             {megamenu && (
                                 <StyledMegamenu className="megamenu" >
-                                    {/* todo : 二级菜单第一列显示Feature */}      
-                                    <li key={"megamenu-1"+megamenu[0].id} >
+                                    {/* todo : 二级菜单第一列显示Feature */}
+                                    <li key={"megamenu-1" + megamenu[0].id} >
                                         <Row>
                                             <Col>
-                                                <Image src={megamenu[0].image} alt=""/>
+                                                <Image src={megamenu[0].image} alt="" />
                                             </Col>
                                             <Col>
-                                            <HeroTextBox>
+                                                <HeroTextBox>
                                                     <StyledSubtitle as="h5">
                                                         {megamenu[0].title}
                                                     </StyledSubtitle>
@@ -79,22 +79,22 @@ const MainMenu = ({
                                                         </ReactMarkdown>
                                                     </MarkdownStyle>
 
-                                                    <Button key={megamenu[0].id}  m="10px 10px 10px 0px" size="small" path={megamenu[0].buttons[0].value}>
+                                                    <Button key={megamenu[0].id} m="10px 10px 10px 0px" size="small" path={megamenu[0].buttons[0].value}>
                                                         {megamenu[0].buttons[0].key}
                                                     </Button>
-                                            </HeroTextBox>
+                                                </HeroTextBox>
                                             </Col>
                                         </Row>
-                                     </li>
+                                    </li>
                                     {/*  二级菜单显示 */}
                                     {megamenu.slice(1).map((megaitem, i) => {
                                         const megaSubmenu = megaitem.submenu;
-                                    
+
                                         return (
                                             <li
                                                 key={`megamenu-${megaitem.id}-${i}`}
                                             >
-                                                <StyledMegaTitle>   
+                                                <StyledMegaTitle>
                                                     {megaitem.text}
                                                 </StyledMegaTitle>
                                                 <Line mt="20px" mb="20px" borderWidth="1px" />
@@ -105,17 +105,20 @@ const MainMenu = ({
                                                                 megaSubitem,
                                                                 j
                                                             ) => {
-                                                                var path = "/";                                                                                                                           
-                                                                if(megaSubitem.os !== undefined ){
-                                                                    path = "/apps/"+megaSubitem.key
+                                                                var path = "/";
+                                                                if (megaSubitem.os !== undefined) {
+                                                                    path = "/apps/" + megaSubitem.key
                                                                 }
-                                                                else if(megaSubitem.slug !== undefined){
-                                                                    path = "/solution/"+megaSubitem.slug;
+                                                                else if (megaSubitem.slug !== undefined) {
+                                                                    path = "/solution/" + megaSubitem.slug;
                                                                 }
-                                                                else if(megaSubitem.position !== undefined){
-                                                                    path = "/services#"+megaSubitem.key;
+                                                                else if (megaSubitem.position !== undefined) {
+                                                                    path = "/services#" + megaSubitem.key;
                                                                 }
-                                                                else{
+                                                                else if (megaSubitem.storeurl !== undefined) {
+                                                                    path = megaSubitem.storeurl;
+                                                                }
+                                                                else {
                                                                     path = megaSubitem.link;
                                                                 }
                                                                 return (
@@ -129,11 +132,12 @@ const MainMenu = ({
                                                                                 bottomLine
                                                                             }
                                                                             $sublink
+                                                                            target={path.startsWith("http") ? "_blank" : undefined}
                                                                         >
                                                                             <span className="icon">
                                                                                 <i className="far" ></i>
                                                                             </span>
-                                                                            <span > { megaSubitem.text }
+                                                                            <span > {megaSubitem.text}
                                                                             </span>
                                                                         </StyledNavlink>
                                                                     </StyledNavitem>
