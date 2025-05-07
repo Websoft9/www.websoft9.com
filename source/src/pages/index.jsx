@@ -28,7 +28,7 @@ const IndexPage = ({ location, data }) => {
 
                 <TabArea data={data.allContentfulPage.nodes[0].content[2]}>
                     {
-                        data.allContentfulPage.nodes[0].content[1].features.map((item)=>{
+                        data.allContentfulPage.nodes[0].content[2].features.map((item)=>{
                             return(
                                 <SubHeroArea key={item.id} data={ item }/>
                             )
