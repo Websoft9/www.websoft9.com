@@ -31,22 +31,10 @@ module.exports = {
         },
         {
             id: 3,
-            icon: "fab fa-twitter social-link-icon",
-            link: "https://www.twitter.com",
-            title: "Twitter",
-        },
-        {
-            id: 4,
-            icon: "fab fa-instagram social-link-icon",
-            link: "https://www.instagram.com",
-            title: "Instagram",
-        },
-        {
-          id: 5,
-          icon: "fab fa-pinterest social-link-icon",
-          link: "https://pinterest.com",
-          title: "Pinterest",
-      },
+            icon: "fab fa-youtube social-link-icon",
+            link: "https://www.youtube.com/@Websoft9",
+            title: "YouTube",
+        }
     ],
     },
 
