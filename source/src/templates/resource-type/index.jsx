@@ -1,5 +1,5 @@
 import React from "react";
-import {graphql }  from  'gatsby';
+import { graphql } from 'gatsby';
 import Seo from "@components/seo";
 import Layout from "@layout";
 import Header from "@layout/header/layout-02";
@@ -12,33 +12,33 @@ import MenuItem from '@mui/material/MenuItem';
 import FormControl from '@mui/material/FormControl';
 import Select from '@mui/material/Select';
 import InputLabel from '@mui/material/InputLabel';
-import {Trans, useTranslation } from 'gatsby-plugin-react-i18next';
+import { Trans, useTranslation } from 'gatsby-plugin-react-i18next';
 import Text from "@ui/text";
 
-const ResourceTypeTemplate = ({pageContext,location,data }) => {
+const ResourceTypeTemplate = ({ pageContext, location, data }) => {
     const { t } = useTranslation();
-    const { currentPage, numberOfPages,rootPage} = pageContext;
+    const { currentPage, numberOfPages, rootPage } = pageContext;
     const solutionData = data.allSolution.nodes; //所有解决方案 
     const allData = data.allContentfulResource.nodes; //所有子类的资源
 
-    const [solutionType, setSolutionType] =  React.useState('ALL');
-    const [resourceData,setResourceData] = React.useState(allData);
+    const [solutionType, setSolutionType] = React.useState('ALL');
+    const [resourceData, setResourceData] = React.useState(allData);
 
     const solutionHandleChange = (event) => {
         const type = event.target.value;
 
-        if(type == "ALL"){
+        if (type == "ALL") {
             setResourceData(allData);
         }
-        else{
+        else {
             let values = [];
-            allData.map((item)=>{
-                if(item!=null){               
-                        item.solutions?.map((sub)=>{
-                            if(sub.slug == type){
-                                values.push(item);
-                            }
-                        })
+            allData.map((item) => {
+                if (item != null) {
+                    item.solutions?.map((sub) => {
+                        if (sub.slug == type) {
+                            values.push(item);
+                        }
+                    })
                 }
             })
             setResourceData(values);
@@ -48,19 +48,19 @@ const ResourceTypeTemplate = ({pageContext,location,data }) => {
 
     return (
         <Layout location={location}>
-            <Seo title={data.allContentfulPage.nodes[0].title} description={data.allContentfulPage.nodes[0]?.description?.description} keywords={data.allContentfulPage.nodes[0]?.tags}/>
+            <Seo title={data.allContentfulPage.nodes[0].title} description={data.allContentfulPage.nodes[0]?.description?.description} keywords={data.allContentfulPage.nodes[0]?.tags} />
             <Header />
-        
-        <main className="site-wrapper-reveal">
 
-            <div style={{paddingBlockStart: "55px"}}>
-                <Container>
-                    <Row>
-                    <Col lg={6}>
-                            <Text fontSize="30px" fontWeight="bold">{t("BROWSE ALL")}{" "}{data.allContentfulResource.nodes?.[0]?.type?.title}</Text>
-                    </Col>
-                    <Col>
-                        <Box sx={{ minWidth: 120 }}>
+            <main className="site-wrapper-reveal">
+
+                <div style={{ paddingBlockStart: "55px" }}>
+                    <Container>
+                        <Row>
+                            <Col lg={6}>
+                                <Text fontSize="30px" fontWeight="bold">{t("BROWSE ALL")}{" "}{data.allContentfulResource.nodes?.[0]?.type?.title}</Text>
+                            </Col>
+                            <Col>
+                                {/* <Box sx={{ minWidth: 120 }}>
                             <FormControl fullWidth>
                                 <InputLabel id="demo-simple-select-label">{t("Categories")}</InputLabel>
                                 <Select
@@ -82,24 +82,24 @@ const ResourceTypeTemplate = ({pageContext,location,data }) => {
                                     }
                                 </Select>
                             </FormControl>
-                        </Box>
-                    </Col>
-                </Row>                   
-                </Container>
-            </div>
-            
-            <ResourceArea
-                resourceData = {resourceData}
-                rootPage = {rootPage}
-                currentPage = {currentPage}
-                numberOfPages= {numberOfPages}
-                location = {location}
-            />
+                        </Box> */}
+                            </Col>
+                        </Row>
+                    </Container>
+                </div>
 
-            <CtaArea data={ data.allContentfulPage.nodes[0].content[1] } />
-        </main>
-        
-        <Footer />
+                <ResourceArea
+                    resourceData={resourceData}
+                    rootPage={rootPage}
+                    currentPage={currentPage}
+                    numberOfPages={numberOfPages}
+                    location={location}
+                />
+
+                <CtaArea data={data.allContentfulPage.nodes[0].content[1]} />
+            </main>
+
+            <Footer />
         </Layout>
     );
 };

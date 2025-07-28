@@ -15,163 +15,163 @@ import { useTranslation } from 'gatsby-plugin-react-i18next';
 import React from "react";
 import { Col, Container, Row } from "react-bootstrap";
 
-const ResourceCenterPage = ({location,data }) => {
+const ResourceCenterPage = ({ location, data }) => {
     const { t } = useTranslation();
-    
-    const cataLogData = data.allContentfulAboutContent.nodes.filter((item)=>item.key != "solution").filter((item)=>item.key != "news").filter((item)=>item.key != "promotion"); //所有资源目录(排除解决方案和新闻)
+
+    const cataLogData = data.allContentfulAboutContent.nodes.filter((item) => item.key != "solution").filter((item) => item.key != "news").filter((item) => item.key != "promotion"); //所有资源目录(排除解决方案和新闻)
     const solutionData = data.allSolution.nodes; //所有解决方案
-    const allData = data.allContentfulResource.nodes.filter((item)=>item.type.key != "news").filter((item)=>item.type.key != "solution"); //所有资源(排除新闻)
+    const allData = data.allContentfulResource.nodes.filter((item) => item.type.key != "news").filter((item) => item.type.key != "solution"); //所有资源(排除新闻)
 
-    const [solutionType, setSolutionType] =  React.useState('ALL');
-    const [contentType, setContentType] =  React.useState('ALL');
+    const [solutionType, setSolutionType] = React.useState('ALL');
+    const [contentType, setContentType] = React.useState('ALL');
 
-    const [resourceData,setResourceData] = React.useState(allData);
+    const [resourceData, setResourceData] = React.useState(allData);
 
     const solutionHandleChange = (event) => {
         const type = event.target.value;
-        if(type == "ALL" && contentType == "ALL"){ //查询所有解决方案下所有相关资源
+        if (type == "ALL" && contentType == "ALL") { //查询所有解决方案下所有相关资源
             setResourceData(allData);
         }
-        else if(contentType == "ALL"){//根据某一个解决方案查询所有相关资源
+        else if (contentType == "ALL") {//根据某一个解决方案查询所有相关资源
             let values = [];
-            allData.map((item)=>{
-                if(item!=null){
-                        item.solutions?.map((sub)=>{
-                            if(sub.slug == type){
-                                values.push(item);
-                            }
-                        })
+            allData.map((item) => {
+                if (item != null) {
+                    item.solutions?.map((sub) => {
+                        if (sub.slug == type) {
+                            values.push(item);
+                        }
+                    })
                 }
             })
             setResourceData(values);
         }
-        else if(type == "ALL"){ //全部解决方案下根据类型查询
-            setResourceData(allData.filter((item)=>item.type.key == contentType));
+        else if (type == "ALL") { //全部解决方案下根据类型查询
+            setResourceData(allData.filter((item) => item.type.key == contentType));
         }
-        else{            
+        else {
             let values = [];
-            allData.map((item)=>{
-                if(item!=null){               
-                        item.solutions?.map((sub)=>{
-                            if(sub.slug == type){
-                                values.push(item);
-                            }
-                        })
+            allData.map((item) => {
+                if (item != null) {
+                    item.solutions?.map((sub) => {
+                        if (sub.slug == type) {
+                            values.push(item);
+                        }
+                    })
                 }
             })
-            setResourceData(values.filter((item)=>item.type.key == contentType));
+            setResourceData(values.filter((item) => item.type.key == contentType));
         }
         setSolutionType(type);
     };
 
     const cataLogHandleChange = (event) => {
-        const type = event.target.value;    
-        if(solutionType == "ALL" && type == "ALL"){
+        const type = event.target.value;
+        if (solutionType == "ALL" && type == "ALL") {
             setResourceData(allData);
         }
-        else if(solutionType == "ALL"){
-            setResourceData(allData.filter((item)=>item.type.key == type));
+        else if (solutionType == "ALL") {
+            setResourceData(allData.filter((item) => item.type.key == type));
         }
-        else if(type == "ALL"){
+        else if (type == "ALL") {
             let values = [];
-            allData.map((item)=>{
-                if(item!=null){               
-                        item.solutions?.map((sub)=>{
-                            if(sub.slug == solutionType){
-                                values.push(item);
-                            }
-                        })
+            allData.map((item) => {
+                if (item != null) {
+                    item.solutions?.map((sub) => {
+                        if (sub.slug == solutionType) {
+                            values.push(item);
+                        }
+                    })
                 }
-            })   
+            })
             setResourceData(values);
         }
-        else{
+        else {
             let values = [];
-            allData.map((item)=>{
-                if(item!=null){               
-                        item.solutions?.map((sub)=>{
-                            if(sub.slug == solutionType){
-                                values.push(item);
-                            }
-                        })
-                }               
-            })            
-            setResourceData(values.filter((item)=>item.type.key == type));
+            allData.map((item) => {
+                if (item != null) {
+                    item.solutions?.map((sub) => {
+                        if (sub.slug == solutionType) {
+                            values.push(item);
+                        }
+                    })
+                }
+            })
+            setResourceData(values.filter((item) => item.type.key == type));
         }
         setContentType(type);
     };
 
     return (
         <Layout location={location}>
-            <Seo title={data.allContentfulPage.nodes[0].title} description={data.allContentfulPage.nodes[0]?.description?.description} keywords={data.allContentfulPage.nodes[0]?.tags}/>
+            <Seo title={data.allContentfulPage.nodes[0].title} description={data.allContentfulPage.nodes[0]?.description?.description} keywords={data.allContentfulPage.nodes[0]?.tags} />
             <Header />
-        
-        <main className="site-wrapper-reveal">
-            <HeroArea data={data.allContentfulPage.nodes[0].content[0]} />
 
-            <div style={{paddingBlockStart: "55px"}}>
-                <Container>
-                    <Row>
-                    <Col>
-                        <Box sx={{ minWidth: 120 }}>
-                            <FormControl fullWidth>
-                                <InputLabel id="demo-simple-select-label">{t("Categories")}</InputLabel>
-                                <Select
-                                labelId="demo-simple-select-label"
-                                id="demo-simple-select"
-                                value={solutionType}
-                                label="Categories"
-                                onChange={solutionHandleChange}
-                                >
-                                    <MenuItem value="ALL">
-                                        <em>{t("ALL")}</em>
-                                    </MenuItem>
-                                    {
-                                        solutionData.map((item)=>{
-                                            return(
-                                                <MenuItem key={item.id} value={item.slug}>{item.title}</MenuItem>
-                                            ); 
-                                        })
-                                    }
-                                </Select>
-                            </FormControl>
-                        </Box>
-                    </Col>
-                    <Col>
-                        <Box sx={{ minWidth: 120 }}>
-                            <FormControl fullWidth>
-                                <InputLabel id="demo-simple-select-label">{t("Type of asset")}</InputLabel>
-                                <Select
-                                labelId="demo-simple-select-label"
-                                id="demo-simple-select"
-                                value={contentType}
-                                label="Type of asset"
-                                onChange={cataLogHandleChange}
-                                >
-                                    <MenuItem value="ALL">
-                                        <em>{t("ALL")}</em>
-                                    </MenuItem>
-                                    {
-                                        cataLogData.map((item)=>{
-                                            return(
-                                                <MenuItem key={item.id} value={item.key}>{item.title}</MenuItem>
-                                            ); 
-                                        })
-                                    }
-                                </Select>
-                            </FormControl>
-                        </Box>
-                    </Col>
-                </Row>                   
-                </Container>
-            </div>
-           
-            <ResourceArea resourceData={resourceData} location={location} />
+            <main className="site-wrapper-reveal">
+                <HeroArea data={data.allContentfulPage.nodes[0].content[0]} />
 
-            <CtaArea data={ data.allContentfulPage.nodes[0].content[1] } />
-        </main>
-        
-        <Footer />
+                <div style={{ paddingBlockStart: "55px" }}>
+                    <Container>
+                        <Row>
+                            <Col>
+                                {/* <Box sx={{ minWidth: 120 }}>
+                                    <FormControl fullWidth>
+                                        <InputLabel id="demo-simple-select-label">{t("Categories")}</InputLabel>
+                                        <Select
+                                            labelId="demo-simple-select-label"
+                                            id="demo-simple-select"
+                                            value={solutionType}
+                                            label="Categories"
+                                            onChange={solutionHandleChange}
+                                        >
+                                            <MenuItem value="ALL">
+                                                <em>{t("ALL")}</em>
+                                            </MenuItem>
+                                            {
+                                                solutionData.map((item) => {
+                                                    return (
+                                                        <MenuItem key={item.id} value={item.slug}>{item.title}</MenuItem>
+                                                    );
+                                                })
+                                            }
+                                        </Select>
+                                    </FormControl>
+                                </Box> */}
+                            </Col>
+                            <Col>
+                                <Box sx={{ minWidth: 120 }}>
+                                    <FormControl fullWidth>
+                                        <InputLabel id="demo-simple-select-label">{t("Type of asset")}</InputLabel>
+                                        <Select
+                                            labelId="demo-simple-select-label"
+                                            id="demo-simple-select"
+                                            value={contentType}
+                                            label="Type of asset"
+                                            onChange={cataLogHandleChange}
+                                        >
+                                            <MenuItem value="ALL">
+                                                <em>{t("ALL")}</em>
+                                            </MenuItem>
+                                            {
+                                                cataLogData.filter(item => allData.some(data => data.type.key === item.key)).map((item) => {
+                                                    return (
+                                                        <MenuItem key={item.id} value={item.key}>{item.title}</MenuItem>
+                                                    );
+                                                })
+                                            }
+                                        </Select>
+                                    </FormControl>
+                                </Box>
+                            </Col>
+                        </Row>
+                    </Container>
+                </div>
+
+                <ResourceArea resourceData={resourceData} location={location} />
+
+                <CtaArea data={data.allContentfulPage.nodes[0].content[1]} />
+            </main>
+
+            <Footer />
         </Layout>
     );
 };
