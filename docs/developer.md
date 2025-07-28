@@ -99,3 +99,7 @@ curl --include \
 #### 如何更改网站logo？
 
 目录是：assets/images/logo    ，英文是: w9.svg  中文是：源生云.svg
+
+#### 如何更改底部的社交图标？
+
+[gatsby-config.js](https://github.com/Websoft9/www.websoft9.com/blob/main/source/gatsby-config.js)
