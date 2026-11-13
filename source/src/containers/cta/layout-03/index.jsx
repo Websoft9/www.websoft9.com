@@ -131,7 +131,7 @@ const CTAArea = ({ data, resourceData }) => {
                                             <Col lg={4} key={'col-item-' + i}>
                                                 <BoxImage
                                                     title={item.trademark}
-                                                    image={{ src: item.image.imageurl }}
+                                                    image={{ src: item.image?.imageurl || defaultImage }}
                                                     desc={item.summary}
                                                     path={`/apps/${item.key}`}
                                                 />
